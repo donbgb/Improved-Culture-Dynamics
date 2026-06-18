@@ -1,0 +1,328 @@
+﻿lixue_school = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:confucianism_policy
+			has_member = root
+		}
+	}
+
+	modifier = {
+		stability_cost_efficiency = 0.2
+	}
+
+	opinions = {
+		
+	}
+}
+
+xinxue_school = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:confucianism_policy
+			has_member = root
+		}
+	}
+
+	modifier = {
+		global_monthly_literacy = 0.01
+	}
+
+	opinions = {
+		
+	}
+}
+
+yongjia_school = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:confucianism_policy
+			has_member = root
+		}
+	}
+
+	modifier = {
+		global_merchant_capacity_modifier = 0.1
+		monthly_towards_free_trade = societal_value_monthly_move
+	}
+
+	opinions = {
+		
+	}
+}
+
+yongkang_school = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:confucianism_policy
+			has_member = root
+		}
+	}
+
+	modifier = {
+		army_tradition_decay = -0.0015
+	}
+
+	opinions = {
+		
+	}
+}
+
+kaozhenxue_school = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:confucianism_policy
+			has_member = root
+		}
+		current_year > 1650
+		culture = { has_culture_group = culture_group:chinese_group }
+	}
+
+	modifier = {
+		cultural_influence_modifier = 0.5
+	}
+
+	opinions = {
+		
+	}
+}
+
+zhedongxue_school = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:confucianism_policy
+			has_member = root
+		}
+		current_year > 1650
+		culture = { has_culture_group = culture_group:chinese_group }
+	}
+
+	modifier = {
+		prestige_decay = -0.002
+	}
+
+	opinions = {
+		
+	}
+}
+
+shenyan_school = {
+	religion = sanjiao
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:confucianism_policy
+			has_member = root
+		}
+		current_year > 1450
+		culture = { has_culture_group = culture_group:chinese_group }
+	}
+
+	modifier = {
+		global_monthly_food_modifier = 0.1
+	}
+
+	opinions = {
+		
+	}
+}
+
+songnihak_school = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:confucianism_policy
+			has_member = root
+		}
+		culture = culture:korean_culture
+	}
+	
+	
+	enabled = {
+		NOT = {
+			has_religious_aspect = religious_aspect:lixue_school
+		}
+	}
+
+	modifier = {
+		stability_cost_efficiency = 0.1
+		monthly_legitimacy = 0.1
+	}
+
+	opinions = {
+		
+	}
+}
+
+silhak_school = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:confucianism_policy
+			has_member = root
+		}
+		current_year > 1600
+		culture = culture:korean_culture
+	}
+
+	modifier = {
+		global_institution_growth_modifier = 0.1
+	}
+
+	opinions = {
+		
+	}
+}
+
+zhengyi_dao = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:daoism_policy
+			has_member = root
+		}
+	}
+
+	modifier = {
+		global_monthly_development = 0.001
+	}
+
+	opinions = {
+		
+	}
+}
+
+quanzhen_school = {
+	religion = sanjiao
+	religion = shinto
+	
+	visible = {
+		any_international_organization = {
+			international_organization_has_policy = policy:daoism_policy
+			has_member = root
+		}
+	}
+
+	modifier = {
+		global_life_expectancy = 3
+		global_disease_resistance = 0.05
+	}
+
+	opinions = {
+		
+	}
+}
+
+musok_aspect = {
+	religion = sanjiao
+
+	visible = {
+		culture = culture:korean_culture
+	}
+
+	modifier = {
+		monthly_rebel_growth = -0.0005
+	}
+
+	opinions = {
+		
+	}
+}
+
+tin_nguong_dan_gian = {
+	religion = sanjiao
+
+	visible = {
+		culture = culture:vietnamese_culture
+	}
+
+	modifier = {
+		monthly_rebel_growth = -0.0005
+	}
+
+	opinions = {
+		
+	}
+}
+
+honji_suijaku = {
+	religion = shinto
+
+	modifier = {
+		diplomatic_capacity_modifier = 0.05
+		improve_relation_impact = 0.1
+	}
+
+	opinions = {
+		
+	}
+}
+
+inverted_honji_suijaku = {
+	religion = shinto
+
+	modifier = {
+		land_morale_modifier = 0.05
+	}
+
+	opinions = {
+		
+	}
+}
+
+yoshida_shinto = {
+	religion = shinto
+	
+	visible = {
+		current_year > 1470
+	}
+
+	modifier = {
+		monthly_rebel_growth = -0.0005
+		monthly_purity = 0.1
+	}
+
+	opinions = {
+		
+	}
+}
+
+fukko_shinto = {
+	religion = shinto
+	
+	visible = {
+		current_year > 1690
+	}
+
+	modifier = {
+		tolerance_own = 1.5
+		monthly_towards_spiritualist = societal_value_monthly_move
+	}
+
+	opinions = {
+		
+	}
+}

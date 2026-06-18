@@ -1,0 +1,39 @@
+﻿l_braz_por:
+ # Cultural Templates
+ #
+ poitevin: "Aguianais"
+ greater_polish: "Polonês"
+ ruthenian: "Kyivita"
+ moldovan: "Romeno"
+ rhine_franconian: "Renano"
+ high_alemannic: "Alemânico"
+ danube_bavarian: "Bávaro"
+ lower_egyptian_culture: "Egípcio"
+ severian: "Chernihiviano"
+ east_franconian: "Francônio"
+ western_pomeranian: "Meclemburguês"
+ eastern_pomeranian: "Pomerano"
+ bedouin_culture: "Bedawi"
+ ava_culture: "Guarani"
+ 
+ foreign_cultural_law: "Minorias Culturais"
+ integrate_foreign_traditions: "Integrar Identidades"
+ blood_tax_of_foreigners: "Imposto de Sangue de Minorias"
+ 
+ promote_chinese_traditions: "Sociedade Sinizada"
+ limit_chinese_traditions: "Sociedade Nativista"
+ 
+ tibetan_buddhism: "Maaiana"
+ tibetan_buddhism_ADJ: "Maaiana Tibetano"
+ mahayana: "Maaiana Oriental"
+ mahayana_ADJ: "Maaiana Oriental"
+ mahayana_desc: "Maaiana Oriental refere-se à seitas interligadas do Budismo Maaiana que foram estruturadas na $china$ e na Rota da Seda. Embora na China, Coreia e no Vietnã, o Budismo Maaiana geralmente ocorre como uma manifestação de uma estrutura religiosa maior e não existe independentemente do Confucionismo, seitas Budistas chinesas e o Cânone chinês foram introduzidas independentemente na Rota da Seda, permitindo o desenvolvimento de uma crença maaiana desconectada. Essa tradição é caracterisada não apenas por crenças maaianas típicas como a crença no caminho do $bodhisattva$ como sendo um trajeto disponível a todos para alcançar o estado de Buda, mas também por seu sincretismo com práticas tocarianas budistas já existentes e pela poderosa concepção de liberdade individual na prática da fé, fundindo e cruzando textos e crenças."
+ sanjiao_desc: "O termo 'três ensinamentos' (sānjiào) ou tam giáo em vietnamita e samgyo em coreano, refere-se à crenças politeístas presentes na China, Coreia e no Vietnã, cuja organização estrutural e teológica principalmente se deriva dos três ensinamentos do $confucianism_policy$, $daoism_policy$, e $buddhist$. Tendo desenvolvido e incorporado um ao outro como parte de uma cosmovisão religiosa, os três ensinamentos não existem independentemente um do outro ou do politeísmo popular. Ao invés disso, os ensinamentos são manifestações de um contexto religiosa mais amplo."
+    
+ miaphysite: "Ortodoxia Oriental"
+ miaphysite_ADJ: "Ortodoxo Oriental"
+ nestorianism: "Siríaco Oriental"
+ nestorianism_ADJ: "Siríaco Oriental"
+ nestorianism_desc: "$nestorianism$ refere-se às crenças e práticas da Igreja do Oriente, cuja distinção e divisão de outras tradições cristãs tem origem não apenas no seu uso do rito siríaco oriental mas também no trabalho do bispo assírio Babai, o Grande, sobre a cristologia. Babai promulgou uma teologia diofisista, afirmando que os dois 'qnomes' de Cristo são puros mas eternamente unidos em sua única 'parsopa'. Embora essa tradição cristã venere Nestório de Constantinopla como um santo e é frequentemente chamada de 'nestoriana' por outros cristãos, o Cristianismo siríaco oriental não segue os supostos ensinamentos de Nestório pois não crê que duas pessoas existem no corpo de Cristo, e sim que existe apenas uma pessoa para um corpo."
+
+ 

@@ -1,0 +1,23 @@
+﻿
+REPLACE:mandala_system = {
+	major = yes
+	potential = {
+		capital.sub_continent = sub_continent:south_east_asia
+		OR = {
+			religion.group = religion_group:dharmic
+			religion = religion:theravada
+			religion = religion:southern_mahayana
+			religion = religion:satsana_phi
+		}
+	}
+	allow = {
+	}
+
+	country_modifier = {
+		cultures_capacity = 3
+		monthly_towards_decentralization = societal_value_minor_monthly_move
+		allow_tributary_subject = yes
+	}
+
+	years = 4
+}

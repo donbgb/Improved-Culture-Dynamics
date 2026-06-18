@@ -1,0 +1,25 @@
+﻿
+
+##############################################
+REPLACE:spiritualist_vs_humanist = {
+	left_modifier = {
+		global_clergy_city_desired_pop_scaled = 0.02
+		
+		global_pop_conversion_speed_modifier = 0.5
+		religious_unity_importance_modifier = 0.2
+		court_language_is_liturgical_language_importance_modifier = 0.25
+		bias_for_scholar_policies = 25
+		bias_for_tolerant_policies = -100
+		antagonism_religion_influence = 0.5
+	}
+	right_modifier = {
+		global_burghers_city_desired_pop_scaled = 0.02
+		
+		cultures_capacity_modifier = 0.25
+		religious_unity_importance_modifier = -0.2
+		court_language_is_liturgical_language_importance_modifier = -0.25
+		bias_for_scholar_policies = 25
+		bias_for_tolerant_policies = 100
+		antagonism_religion_influence = -0.5
+	}
+}

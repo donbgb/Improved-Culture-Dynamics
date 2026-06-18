@@ -1,0 +1,182 @@
+﻿icd_nothing_price_cost_modifier={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+icd_expel_minority_price_cost_modifier={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+national_russian_culture_movement_resistance_modifier ={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+local_russian_culture_movement_resistance_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_russian_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=movement
+	}
+}
+
+local_russian_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_dutch_culture_movement_resistance_modifier ={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+local_dutch_culture_movement_resistance_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_dutch_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=movement
+	}
+}
+
+local_dutch_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_lithuanian_culture_movement_resistance_modifier ={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+local_lithuanian_culture_movement_resistance_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_lithuanian_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=movement
+	}
+}
+
+local_lithuanian_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_ruthenian_culture_movement_resistance_modifier ={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+local_ruthenian_culture_movement_resistance_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_ruthenian_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=movement
+	}
+}
+
+local_ruthenian_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+national_azeri_culture_movement_resistance_modifier ={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+local_azeri_culture_movement_resistance_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_azeri_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=movement
+	}
+}
+
+local_azeri_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+
+national_turkification_culture_movement_resistance_modifier ={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+local_turkification_culture_movement_resistance_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_turkification_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=movement
+	}
+}
+
+local_turkification_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+

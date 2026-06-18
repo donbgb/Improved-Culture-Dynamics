@@ -1,0 +1,793 @@
+﻿
+icd_cultural_setup = {
+
+	province_definition:filastin_province = {
+		every_location_in_province_definition = {
+			every_pop = {
+				limit = { culture = culture:syriac_culture }
+				change_pop_culture = culture:levantine_culture
+			}
+		}
+	}
+	province_definition:sharat_province = {
+		every_location_in_province_definition = {
+			every_pop = {
+				limit = { culture = culture:syriac_culture }
+				change_pop_culture = culture:levantine_culture
+			}
+		}
+	}
+	province_definition:hawran_province = {
+		every_location_in_province_definition = {
+			every_pop = {
+				limit = { culture = culture:syriac_culture }
+				change_pop_culture = culture:levantine_culture
+			}
+		}
+	}
+	
+	sub_continent:south_asia = {
+		every_location_in_sub_continent = {
+			every_pop= {
+				limit = { pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.5
+					type = pop_type:peasants
+				}
+			}
+		}
+	}
+	region:russian_region = {
+		every_location_in_region = {
+			every_pop= {
+				limit = { pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.5
+					type = pop_type:peasants
+				}
+			}
+		}
+	}
+	region:steppes_region = {
+		every_location_in_region = {
+			every_pop= {
+				limit = { pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.5
+					type = pop_type:peasants
+				}
+			}
+		}
+	}
+	area:desht_kipchak_area = {
+		every_location_in_area = {
+			every_pop= {
+				limit = { pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.5
+					type = pop_type:peasants
+				}
+			}
+		}
+	}
+	region:ural_region = {
+		every_location_in_region = {
+			every_pop= {
+				limit = { pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.5
+					type = pop_type:peasants
+				}
+			}
+		}
+	}
+	region:xinjiang_region = {
+		every_location_in_region = {
+			every_pop= {
+				limit = { pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.4
+					type = pop_type:peasants
+				}
+			}
+		}
+	}
+	
+	
+	
+
+	c:MAM = {
+		
+		every_pop= {
+				limit = { culture = culture:syriac_culture pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.1
+					culture = culture:levantine_culture
+					type = pop_type:peasants
+				}
+			}
+		
+	}
+	
+	
+	
+	
+	every_country = {
+
+			every_pop= {
+				limit = { religion = religion:judaism pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 1.0
+					type = pop_type:peasants
+				}
+			}
+			
+			every_pop= {
+				limit = { culture = culture:syriac_culture pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.7
+					type = pop_type:peasants
+				}
+			}
+			
+			every_pop= {
+				limit = { culture = culture:mandean_culture pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.8
+					type = pop_type:peasants
+				}
+			}
+			
+			every_pop = {
+				limit = { OR = { pop_type = pop_type:burghers pop_type = pop_type:nobles pop_type = pop_type:soldiers pop_type = pop_type:laborers }
+				culture = culture:coptic_culture }
+				change_pop_culture = culture:lower_egyptian_culture
+			}
+			every_character = {
+				limit = { culture = culture:coptic_culture }
+				change_character_culture = culture:lower_egyptian_culture
+			}
+			
+			every_pop= {
+				limit = { culture = culture:coptic_culture pop_type = pop_type:slaves }
+				split_pop = {
+					fraction = 0.7
+					type = pop_type:peasants
+				}
+			}
+			
+			every_pop= {
+				limit = { culture = culture:coptic_culture }
+				split_pop = {
+					fraction = 0.4
+					culture = culture:lower_egyptian_culture
+				}
+			}
+			
+			every_pop= {
+				limit = { culture = culture:mizrahi pop_type = pop_type:slaves }
+				change_pop_type = pop_type:peasants
+			}
+			every_pop= {
+				limit = { culture = culture:levantine_culture pop_type = pop_type:slaves }
+				change_pop_type = pop_type:peasants
+			}
+			
+			every_pop = {
+				limit = { culture = culture:saintongeais }
+				change_pop_culture = culture:poitevin
+			}
+			
+			every_character = {
+				limit = { culture = culture:saintongeais }
+				change_character_culture = culture:poitevin
+			}
+			
+			every_pop = {
+				limit = { culture = culture:berrichon }
+				change_pop_culture = culture:french
+			}
+			
+			every_character= {
+				limit = { culture = culture:berrichon }
+				change_character_culture = culture:french
+			}
+			
+			every_pop = {
+				limit = { culture = culture:franc_comtois }
+				change_pop_culture = culture:burgundian
+			}
+
+	
+			
+			every_character = {
+				limit = { culture = culture:franc_comtois }
+				change_character_culture = culture:burgundian
+			}
+			
+			every_pop = {
+				limit = { culture = culture:vivaro_alpine }
+				change_pop_culture = culture:provencal
+			}
+			
+			every_character = {
+				limit = { culture = culture:vivaro_alpine }
+				change_character_culture = culture:provencal
+			}
+			
+			every_pop = {
+				limit = { OR = { culture = culture:lesser_polish culture = culture:mazovian }}
+				change_pop_culture = culture:greater_polish
+			}
+			
+			every_character = {
+				limit = { OR = { culture = culture:lesser_polish culture = culture:mazovian }}
+				change_character_culture = culture:greater_polish
+			}
+			
+			every_pop = {
+				limit = { culture = culture:halychian_culture }
+				change_pop_culture = culture:volhynian_culture
+			}
+			
+			every_character = {
+				limit = { culture = culture:halychian_culture }
+				change_character_culture = culture:volhynian_culture
+			}
+			
+			every_pop = {
+				limit = { culture = culture:polesian_culture }
+				change_pop_culture = culture:ruthenian
+			}
+			
+			every_character = {
+				limit = { culture = culture:halychian_culture }
+				change_character_culture = culture:volhynian_culture
+			}
+			
+			every_pop = {
+				limit = { OR = { culture = culture:transylvanian culture = culture:wallachian }}
+				change_pop_culture = culture:moldovan
+			}
+			
+			every_character = {
+				limit = { OR = { culture = culture:transylvanian culture = culture:wallachian }}
+				change_character_culture = culture:moldovan
+			}
+			
+			every_pop = {
+				limit = { OR = { culture = culture:ripuarian_franconian culture = culture:moselle_franconian }}
+				change_pop_culture = culture:rhine_franconian
+			}
+			
+			every_character = {
+				limit = { OR = { culture = culture:ripuarian_franconian culture = culture:moselle_franconian }}
+				change_character_culture = culture:rhine_franconian
+			}
+			
+			every_pop = {
+				limit = { culture = culture:rhine_alemannic }
+				change_pop_culture = culture:high_alemannic 
+			}
+			
+			every_character = {
+				limit = { culture = culture:rhine_alemannic }
+				change_character_culture = culture:high_alemannic
+			}
+			
+			every_pop = {
+				limit = { OR = { culture = culture:southern_bavarian culture = culture:upper_palatine }}
+				change_pop_culture = culture:danube_bavarian
+			}
+			
+			
+			every_character = {
+				limit = { OR = { culture = culture:southern_bavarian culture = culture:upper_palatine }}
+				change_character_culture = culture:danube_bavarian
+			}
+			
+			every_pop = {
+				limit = { culture = culture:angrian }
+				change_pop_culture = culture:westphalian
+			}
+			
+			
+			every_character = {
+				limit = { culture = culture:angrian }
+				change_character_culture = culture:westphalian
+			}
+			
+			every_pop = {
+				limit = { culture = culture:holsatian }
+				change_pop_culture = culture:lower_saxon
+			}
+			
+			every_character = {
+				limit = { culture = culture:holsatian }
+				change_character_culture = culture:lower_saxon
+			}
+			
+			every_pop = {
+				limit = { culture = culture:markish }
+				change_pop_culture = culture:brandenburgish
+			}
+			
+			
+			every_character = {
+				limit = { culture = culture:markish }
+				change_character_culture = culture:brandenburgish
+			}
+			
+			every_pop = {
+				limit = { culture = culture:szekely_culture }
+				change_pop_culture = culture:hungarian
+			}
+			
+			
+			every_character = {
+				limit = { culture = culture:szekely_culture }
+				change_character_culture = culture:hungarian
+			}
+			
+			every_pop = {
+				limit = { culture = culture:northumbrian }
+				change_pop_culture = culture:english
+			}
+			
+			
+			every_character = {
+				limit = { culture = culture:northumbrian }
+				change_character_culture = culture:english
+			}
+			
+			every_pop = {
+				limit = { culture = culture:upper_egyptian_culture }
+				change_pop_culture = culture:lower_egyptian_culture
+			}
+			
+			every_character  = {
+				limit = { culture = culture:upper_egyptian_culture }
+				change_character_culture = culture:lower_egyptian_culture 
+			}
+			
+			every_owned_location = {
+				force_refresh_culture_and_religion = this
+			}
+			
+			if = {
+				limit = { OR = { culture = culture:lesser_polish culture = culture:mazovian }}
+				change_culture = culture:greater_polish
+			}
+			if = {
+				limit = { OR = { culture = culture:transylvanian culture = culture:wallachian }}
+				change_culture = culture:moldovan
+			}
+
+			
+			if = {
+				limit = { culture = culture:vivaro_alpine }
+				change_culture = culture:provencal
+			}
+			if = {
+				limit = { culture = culture:franc_comtois }
+				change_culture = culture:burgundian
+			}
+			if = {
+				limit = { culture = culture:berrichon }
+				change_culture = culture:french
+			}
+			if = {
+				limit = { culture = culture:saintongeais }
+				change_culture = culture:poitevin
+			}
+			if = {
+				limit = { culture = culture:halychian_culture }
+				change_culture = culture:volhynian_culture
+			}
+			if = {
+				limit = { culture = culture:polesian_culture }
+				change_culture = culture:ruthenian
+			}
+			if = {
+				limit = { OR = { culture = culture:ripuarian_franconian culture = culture:moselle_franconian }}
+				change_culture = culture:rhine_franconian
+			}
+			if = {
+				limit = { culture = culture:rhine_alemannic }
+				change_culture = culture:high_alemannic
+			}
+			if = {
+				limit = { OR = { culture = culture:southern_bavarian culture = culture:upper_palatine }}
+				change_culture = culture:danube_bavarian
+			}
+			if = {
+				limit = { culture = culture:angrian }
+				change_culture = culture:westphalian
+			}
+			if = {
+				limit = { culture = culture:holsatian }
+				change_culture = culture:lower_saxon
+			}
+			if = {
+				limit = { culture = culture:markish }
+				change_culture = culture:brandenburgish
+			}
+			if = {
+				limit = { culture = culture:szekely_culture }
+				change_culture = culture:hungarian
+			}
+			if = {
+				limit = { culture = culture:northumbrian }
+				change_culture = culture:english
+			}
+			if = {
+				limit = { culture = culture:upper_egyptian_culture }
+				change_culture = culture:lower_egyptian_culture
+			}
+	}
+}
+
+icd_remove_accepted_tolerated_cultures = {
+	every_country = {
+	
+		if = {
+			limit = {
+				has_tolerated_culture = culture:saintongeais
+				NOT = { culture = culture:poitevin }
+			}
+			remove_tolerated_culture = culture:saintongeais
+			add_tolerated_culture = culture:poitevin
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:saintongeais
+				NOT = { culture = culture:poitevin }
+			}
+			remove_accepted_culture = culture:saintongeais
+			add_accepted_culture = culture:poitevin
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:berrichon
+				NOT = { culture = culture:french }
+			}
+			remove_tolerated_culture = culture:berrichon
+			add_tolerated_culture = culture:french
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:berrichon
+				NOT = { culture = culture:french }
+			}
+			remove_accepted_culture = culture:berrichon
+			add_accepted_culture = culture:french
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:franc_comtois
+				NOT = { culture = culture:french }
+			}
+			remove_tolerated_culture = culture:franc_comtois
+			add_tolerated_culture = culture:french
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:franc_comtois
+				NOT = { culture = culture:burgundian }
+			}
+			remove_accepted_culture = culture:franc_comtois
+			add_accepted_culture = culture:burgundian
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:vivaro_alpine
+				NOT = { culture = culture:provencal }
+			}
+			remove_tolerated_culture = culture:vivaro_alpine
+			add_tolerated_culture = culture:provencal
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:vivaro_alpine
+				NOT = { culture = culture:provencal }
+			}
+			remove_accepted_culture = culture:vivaro_alpine
+			add_accepted_culture = culture:provencal
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:lesser_polish
+				NOT = { culture = culture:greater_polish }
+			}
+			remove_tolerated_culture = culture:lesser_polish
+			add_tolerated_culture = culture:greater_polish
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:lesser_polish
+				NOT = { culture = culture:greater_polish }
+			}
+			remove_accepted_culture = culture:lesser_polish
+			add_accepted_culture = culture:greater_polish
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:mazovian
+				NOT = { culture = culture:greater_polish }
+			}
+			remove_tolerated_culture = culture:mazovian
+			add_tolerated_culture = culture:greater_polish
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:mazovian
+				NOT = { culture = culture:greater_polish }
+			}
+			remove_accepted_culture = culture:mazovian
+			add_accepted_culture = culture:greater_polish
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:halychian_culture
+				NOT = { culture = culture:volhynian_culture }
+			}
+			remove_tolerated_culture = culture:halychian_culture
+			add_tolerated_culture = culture:volhynian_culture
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:halychian_culture
+				NOT = { culture = culture:volhynian_culture }
+			}
+			remove_accepted_culture = culture:halychian_culture
+			add_accepted_culture = culture:volhynian_culture
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:polesian_culture
+				NOT = { culture = culture:ruthenian }
+			}
+			remove_tolerated_culture = culture:polesian_culture
+			add_tolerated_culture = culture:ruthenian
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:polesian_culture
+				NOT = { culture = culture:ruthenian }
+			}
+			remove_accepted_culture = culture:polesian_culture
+			add_accepted_culture = culture:ruthenian
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:transylvanian
+				NOT = { culture = culture:moldovan }
+			}
+			remove_tolerated_culture = culture:transylvanian
+			add_tolerated_culture = culture:moldovan
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:transylvanian
+				NOT = { culture = culture:moldovan }
+			}
+			remove_accepted_culture = culture:transylvanian
+			add_accepted_culture = culture:moldovan
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:wallachian
+				NOT = { culture = culture:moldovan }
+			}
+			remove_tolerated_culture = culture:wallachian
+			add_tolerated_culture = culture:moldovan
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:wallachian
+				NOT = { culture = culture:moldovan }
+			}
+			remove_accepted_culture = culture:wallachian
+			add_accepted_culture = culture:moldovan
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:ripuarian_franconian
+				NOT = { culture = culture:rhine_franconian }
+			}
+			remove_tolerated_culture = culture:ripuarian_franconian
+			add_tolerated_culture = culture:rhine_franconian
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:ripuarian_franconian
+				NOT = { culture = culture:rhine_franconian }
+			}
+			remove_accepted_culture = culture:ripuarian_franconian
+			add_accepted_culture = culture:rhine_franconian
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:moselle_franconian
+				NOT = { culture = culture:rhine_franconian }
+			}
+			remove_tolerated_culture = culture:moselle_franconian
+			add_tolerated_culture = culture:rhine_franconian
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:moselle_franconian
+				NOT = { culture = culture:rhine_franconian }
+			}
+			remove_accepted_culture = culture:moselle_franconian
+			add_accepted_culture = culture:rhine_franconian
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:rhine_alemannic
+				NOT = { culture = culture:high_alemannic }
+			}
+			remove_tolerated_culture = culture:rhine_alemannic
+			add_tolerated_culture = culture:high_alemannic
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:rhine_alemannic
+				NOT = { culture = culture:high_alemannic }
+			}
+			remove_accepted_culture = culture:rhine_alemannic
+			add_accepted_culture = culture:high_alemannic
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:southern_bavarian
+				NOT = { culture = culture:danube_bavarian }
+			}
+			remove_tolerated_culture = culture:southern_bavarian
+			add_tolerated_culture = culture:danube_bavarian
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:southern_bavarian
+				NOT = { culture = culture:danube_bavarian }
+			}
+			remove_accepted_culture = culture:southern_bavarian
+			add_accepted_culture = culture:danube_bavarian
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:upper_palatine
+				NOT = { culture = culture:danube_bavarian }
+			}
+			remove_tolerated_culture = culture:upper_palatine
+			add_tolerated_culture = culture:danube_bavarian
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:upper_palatine
+				NOT = { culture = culture:danube_bavarian }
+			}
+			remove_accepted_culture = culture:upper_palatine
+			add_accepted_culture = culture:danube_bavarian
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:angrian
+				NOT = { culture = culture:westphalian }
+			}
+			remove_tolerated_culture = culture:angrian
+			add_tolerated_culture = culture:westphalian
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:angrian
+				NOT = { culture = culture:westphalian }
+			}
+			remove_accepted_culture = culture:angrian
+			add_accepted_culture = culture:westphalian
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:holsatian
+				NOT = { culture = culture:lower_saxon }
+			}
+			remove_tolerated_culture = culture:holsatian
+			add_tolerated_culture = culture:lower_saxon
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:holsatian
+				NOT = { culture = culture:lower_saxon }
+			}
+			remove_accepted_culture = culture:holsatian
+			add_accepted_culture = culture:lower_saxon
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:markish
+				NOT = { culture = culture:brandenburgish }
+			}
+			remove_tolerated_culture = culture:markish
+			add_tolerated_culture = culture:brandenburgish
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:markish
+				NOT = { culture = culture:brandenburgish }
+			}
+			remove_accepted_culture = culture:markish
+			add_accepted_culture = culture:brandenburgish
+		}
+		
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:szekely_culture
+				NOT = { culture = culture:hungarian }
+			}
+			remove_tolerated_culture = culture:szekely_culture
+			add_tolerated_culture = culture:hungarian
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:szekely_culture
+				NOT = { culture = culture:hungarian }
+			}
+			remove_accepted_culture = culture:szekely_culture
+			add_accepted_culture = culture:hungarian
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:northumbrian
+				NOT = { culture = culture:english }
+			}
+			remove_tolerated_culture = culture:northumbrian
+			add_tolerated_culture = culture:english
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:northumbrian
+				NOT = { culture = culture:english }
+			}
+			remove_accepted_culture = culture:northumbrian
+			add_accepted_culture = culture:english
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:upper_egyptian_culture
+				NOT = { culture = culture:lower_egyptian_culture }
+			}
+			remove_tolerated_culture = culture:upper_egyptian_culture
+			add_tolerated_culture = culture:lower_egyptian_culture
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:upper_egyptian_culture
+				NOT = { culture = culture:lower_egyptian_culture }
+			}
+			remove_accepted_culture = culture:upper_egyptian_culture
+			add_accepted_culture = culture:lower_egyptian_culture
+		}
+	}
+}
+
+###saintongeais|upper_egyptian_culture|northumbrian|markish|upper_palatine|southern_bavarian|angrian|holsatian|berrichon|franc_comtois|vivaro_alpine|lesser_polish|mazovian|halychian_culture|polesian_culture|transylvanian|wallachian|ripuarian_franconian|moselle_franconian|szekely_culture|rhine_alemannic###

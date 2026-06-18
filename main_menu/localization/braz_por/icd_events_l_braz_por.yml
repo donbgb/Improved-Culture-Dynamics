@@ -1,0 +1,37 @@
+﻿l_braz_por:
+ icd_substitute_events.1002.title: "A Questão dos Mouriscos"
+ icd_substitute_events.1002.desc: "Embora muitos [ShowCultureNameWithNoTooltip('andalusi')] em nossa nação converteram para nossa fé, alguns de nossos conselheiros ainda suspeitam que eles possuam convicções [ShowReligionGroupAdjective('muslim')] secretas e tenham uma potencial lealdade à paises do mundo Islã. A insistência dessa população em continuar a usar árabe como a sua lingua materna e sua identificação distinta são vistos como sinais dessa realidade. Para que possamos assegurar a integridade e segurança do nosso estado, nós deveriamos expulsar eles como parte da solução. Ou poderíamos simplesmente aceitar sua existência continua em nossa nação."
+ icd_substitute_events.1002.a: "Expulsai-os!"
+ icd_substitute_events.1002.b: "Eles podem ficar"
+ 
+ flavor_cas.1002.title: "Conversão dos Mudéjar"
+ flavor_cas.1002.desc: "Após nossa conquista de [ShowAreaName('granada_area')] e [ShowAreaName('andalusia_area')], estamos diante de uma considerável população dos [ShowCultureName('andalusi')] e [ShowReligionGroupAdjective('muslim')] como nossos súditos. A Inquisição já começou a expansão de suas atividades na área para garantir que a conversão das pessoas não tenha problemas. A menos que [target_character.GetName] intervenha pessoalmente contra a Inquisição, isso garantiria a conversão da maioria do povo [ShowCultureNameWithNoTooltip('andalusi')], enquanto aqueles que se recusassem seriam expulsos do país."
+
+
+ icd_reapply_promoting.1.title: "reapply"
+ icd_reapply_promoting.1.desc: "reapply"
+ icd_reapply_promoting.1.a: "reapply"
+
+ icd_minority_events.1.title: "Fuga dos Judeus"
+ icd_minority_events.1.desc: "A falta de proteção dada à população [ShowReligionAdjectiveWithNoTooltip('judaism')] no nosso estado criou um estado de alerta entre os judeus. Tensões entre eles e o resto da população e um clima de ansiedade levou a algumas famílias [ShowReligionAdjectiveWithNoTooltip('judaism')] começarem a considerar fugir de nossas terras. Para evitar o caos público, é evidente que nós precisamos nos posicionar sobre essea assunto. Porém, há muita discordância sobre se seria melhor nós os expulsarmos definitivamente ou se seria melhor darmos a eles proteções legais." 
+ icd_minority_events.1.a: "Nós os protegeremos!"
+ icd_minority_events.1.b: "Talvez seria melhor se fossem expulsos"
+ 
+ icd_minority_events.2.title: "Proteções aos [ShowEstateTypeName('dhimmi_estate')]?"
+ icd_minority_events.2.desc: "Representantes dos [ShowEstateTypeName('dhimmi_estate')] recentemente vieram a nossa corte trazendo notícias sobre a discriminação e perseguição religiosa que eles tem enfrentado por ambos oficiais do estado e o população como um todo. Alguns vêem essa atitude como entrando em conflito com princípios [ShowReligionGroupName('muslim')] e tem argumentado que nós deveriamos dar aos [ShowEstateTypeName('dhimmi_estate')] as proteções que eles merecem. Se fizermos isso, porém, reduziriamos nossa capacidade de os converter."
+ icd_minority_events.2.a: "Nós vamos conceder proteções aos nossos sujeitos [ShowReligionAdjectiveWithNoTooltip('judaism')] e [ShowReligionGroupAdjectiveWithNoTooltip('christian')]!"
+ icd_minority_events.2.b: "Trazer eles para nossa religião não é pecado"
+ icd_minority_events.3.title: "A Identidade dos Sabeus"
+ icd_minority_events.3.desc: "Os Sabeus são um grupo religiosa mencionado no Alcorão, que supostamente pertencem aos [ShowEstateTypeName('dhimmi_estate')] e, portanto, são um povo que merecem ampla proteção sobre a lei xaria. Embora exista dúvidas sobre sua verdadeira identidade, alguns de nossos sujeitos [ShowReligionAdjective('mandeaism')] vieram a nós proclamando que eles são os verdadeiros sabeus e percentem à categoria de Povo do Livro. Se esse for o caso, isso significa que os [ShowReligionAdjective('mandeaism')] merecem as mesmas proteções que nós concedemos aos Povos do Livro."
+ icd_minority_events.3.a: "Eles são os sabeus e merecem ser protegidos!"
+ icd_minority_events.3.b: "Isso é uma mentira, eles não são nada mais do que pagãos."
+
+ icd_minority_events.4.title: "Violência contra os Judeus"
+ icd_minority_events.4.desc: "Crises de violência e perseguição religiosa tem ocorrido em nosso país, com o povo [ShowReligionAdjectiveWithNoTooltip('judaism')] como principal alvo. Essa violência profundamente contradiz as liberdades e proteções que nós concedemos até agora para os nossos sujeitos [ShowReligionAdjectiveWithNoTooltip('judaism')]. Isso cria uma questão complicada para nossa estado, pois somos forçados ou a defender pagãos contra o povo de nossa fé, ou ignoramos a situação e permitimos o desordem social. O risco dessa violência aumentar e traduzir em ódio contra o nosso próprio governo leva muitos dentro de nosso governo a sugerirem que nós revoguemos essas proteções e que deixemos os judeus lidarem com o problema sozinhos."
+ icd_minority_events.4.a: "Nós vamos continuar a proteger a população [ShowReligionAdjectiveWithNoTooltip('judaism')]"
+ icd_minority_events.4.b: "Nós precisamos revogar todas proteções"
+ 
+ icd_minority_events.5.title: "Um Convite aos Judeus"
+ icd_minority_events.5.desc: "A população [ShowReligionAdjectiveWithNoTooltip('judaism')] de alguns de nossos vizinhos tem se demonstrado valiosa economicamente e culturalmente. Como os judeus atualmente estão expostos a um alto risco de violência e perseguição religiosa naqueles territórios, seria uma ideia interessante nós já concedermos proteções religiosas ao povo [ShowReligionAdjectiveWithNoTooltip('judaism')] na esperança que eles venham em um futuro breve ao nosso estado, trazendo consigo seu conhecimento."
+ icd_minority_events.5.a: "Convide um pequeno grupo deles para cá e lhes conceda proteções!"
+ icd_minority_events.5.b: "Eles nunca seram bem-vindos aqui"

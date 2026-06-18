@@ -1,0 +1,209 @@
+﻿
+icd_religion_setup = {
+
+	every_country = {
+	
+	
+		
+		every_pop= {
+			limit = { culture = culture:alawite_culture }
+			change_pop_religion = religion:alawite_religion
+			change_pop_culture = culture:levantine_culture
+		}
+		
+		every_pop= {
+			limit = { culture = culture:uyghur_culture }
+			split_pop = {
+					fraction = 0.2
+					religion = religion:tibetan_buddhism
+			}
+		}
+		
+		every_character = {
+			limit = { culture = culture:alawite_culture }
+			change_character_religion = religion:alawite_religion
+			change_character_culture = culture:levantine_culture
+		}
+		
+		every_pop= {
+			limit = { OR = { culture = culture:vietnamese_culture culture = culture:muong_culture } religion = religion:mahayana }
+			change_pop_religion = religion:sanjiao
+		}
+		
+		every_pop= {
+			limit = { culture = culture:cham_culture religion = religion:hindu }
+			change_pop_religion = religion:nusantaran_hindu
+		}
+		
+		every_character = {
+			limit = { culture = culture:cham_culture religion = religion:hindu }
+			change_character_religion = religion:nusantaran_hindu
+		}
+		every_character = {
+			limit = { culture = culture:vietnamese_culture religion = religion:hindu }
+			change_character_religion = religion:nusantaran_hindu
+		}
+		
+		every_pop= {
+				limit = { OR = { culture = culture:korean_culture culture = culture:tamna_culture culture = culture:jurchen_culture } religion = religion:mahayana }
+				change_pop_religion = religion:sanjiao
+		}
+		
+		every_character= { ###character####
+				limit = { OR = { culture = culture:vietnamese_culture culture = culture:muong_culture } religion = religion:mahayana }
+				change_character_religion = religion:sanjiao
+		}
+		
+		every_character= {
+				limit = { OR = { culture = culture:korean_culture culture = culture:tamna_culture } religion = religion:mahayana }
+				change_character_religion = religion:sanjiao
+		}
+		
+		
+		every_pop= { ###lao###
+				limit = { culture = culture:lao_culture religion = religion:mahayana }
+				change_pop_religion = religion:southern_mahayana
+		}
+		
+		every_pop= {
+				limit = { OR = { culture = culture:bai_culture culture = culture:derung_culture } religion = religion:mahayana }
+				change_pop_religion = religion:southern_mahayana
+		}
+		
+		every_character = {
+			limit = { culture = culture:lao_culture religion = religion:mahayana  }
+			change_character_religion = religion:southern_mahayana
+		}
+		
+		every_character = {
+			limit = { OR = { culture = culture:bai_culture culture = culture:derung_culture } religion = religion:mahayana  }
+			change_character_religion = religion:southern_mahayana
+		}
+		
+		##indonesia##
+		every_character = {
+			limit = { OR = { birth_location.region = region:indonesia_region birth_location.area = area:malay_peninsula_area } 
+			culture = { has_culture_group = culture_group:austronesian_group } OR = { religion = religion:mahayana religion = religion:hindu }
+			}
+			change_character_religion = religion:nusantaran_hindu
+		}
+		
+		every_pop= {
+			limit = { OR = { culture = culture:malay_culture culture = culture:acehnese_culture culture = culture:bidayuh_culture culture = culture:banjar_culture culture = culture:kutai_culture}
+			OR = { pop_type = pop_type:peasants pop_type = pop_type:tribesmen pop_type = pop_type:laborers }
+			OR = { religion = religion:hindu religion = religion:mahayana religion = religion:nusantaran_hindu } }
+			split_pop = {
+					fraction = 0.7
+					religion = religion:malay_folk_religion
+			}
+		}
+		every_pop= {
+			limit = { OR = { culture = culture:sundanese_culture culture = culture:javanese_culture culture = culture:madurese_culture culture = culture:balinese_culture culture = culture:sasak_culture culture = culture:sumbawa_culture }
+			OR = { pop_type = pop_type:peasants pop_type = pop_type:tribesmen pop_type = pop_type:laborers } 
+			OR = { religion = religion:hindu  } }
+			split_pop = {
+					fraction = 0.7
+					religion = religion:hyang_religion
+			}
+		}
+		every_pop= {
+			limit = { OR = { culture = culture:sundanese_culture culture = culture:javanese_culture culture = culture:madurese_culture culture = culture:balinese_culture culture = culture:sasak_culture culture = culture:sumbawa_culture }
+			OR = { pop_type = pop_type:peasants pop_type = pop_type:tribesmen pop_type = pop_type:laborers } 
+			OR = { religion = religion:nusantaran_hindu religion = religion:mahayana  } }
+			split_pop = {
+					fraction = 0.4
+					religion = religion:hyang_religion
+			}
+		}
+		every_pop= {
+			limit = { culture = culture:minangkabau_culture
+			OR = { pop_type = pop_type:peasants pop_type = pop_type:tribesmen pop_type = pop_type:laborers }
+			OR = { religion = religion:hindu religion = religion:mahayana religion = religion:nusantaran_hindu } }
+			split_pop = {
+					fraction = 0.7
+					religion = religion:minangkabau_religion
+			}
+		}
+		every_pop= {
+			limit = { culture = culture:kutai_culture 
+			OR = { pop_type = pop_type:peasants pop_type = pop_type:tribesmen pop_type = pop_type:laborers }
+			OR = { religion = religion:hindu religion = religion:mahayana religion = religion:nusantaran_hindu } }
+			split_pop = {
+					fraction = 0.7
+					religion = religion:kaharingan_religion
+			}
+		}
+		every_pop= {
+			limit = { OR = { culture = culture:tausug_culture culture = culture:subanon_culture culture = culture:cebuano_culture culture = culture:hiligaynon_culture culture = culture:tagalog_culture }
+			OR = { pop_type = pop_type:peasants pop_type = pop_type:tribesmen pop_type = pop_type:laborers }
+			OR = { religion = religion:hindu religion = religion:mahayana religion = religion:nusantaran_hindu } }
+			split_pop = {
+					fraction = 0.7
+					religion = religion:anitism_religion
+			}
+		}
+		every_pop= {
+			limit = { culture = culture:tetum_culture 
+			OR = { pop_type = pop_type:peasants pop_type = pop_type:tribesmen pop_type = pop_type:laborers }
+			OR = { religion = religion:hindu religion = religion:mahayana religion = religion:nusantaran_hindu } }
+			split_pop = {
+					fraction = 0.7
+					religion = religion:lamatuan_religion
+			}
+		}
+		
+		if = {
+			limit = { OR = { religion = religion:mahayana religion = religion:hindu } culture = { has_culture_group = culture_group:austronesian_group } }
+			change_religion = religion:nusantaran_hindu
+		}
+		##indonesia end###
+		
+		if = {
+			limit = { religion = religion:hindu culture = culture:cham_culture }
+			change_religion = religion:nusantaran_hindu
+		}
+		if = {
+			limit = { religion = religion:mahayana culture = culture:bai_culture }
+			change_religion = religion:southern_mahayana
+		}
+		if = {
+			limit = { religion = religion:mahayana culture = culture:lao_culture }
+			change_religion = religion:southern_mahayana
+		}
+		if = {
+			limit = { religion = religion:mahayana culture = culture:vietnamese_culture }
+			change_religion = religion:sanjiao
+		}
+		if = {
+			limit = { religion = religion:mahayana OR = { culture = culture:korean_culture culture = culture:tamna_culture culture = culture:jurchen_culture } }
+			change_religion = religion:sanjiao
+		}
+		
+		every_owned_location = {
+			force_refresh_culture_and_religion = this
+		}
+	}
+	
+	region:indonesia_region = {
+		every_location_in_region = {
+			every_pop= {
+				limit = { OR = { religion = religion:mahayana religion = religion:hindu } culture = { has_culture_group = culture_group:austronesian_group } }
+				change_pop_religion = religion:nusantaran_hindu
+			}
+			force_refresh_culture_and_religion = this
+		}
+	}
+	
+	area:malay_peninsula_area = {
+		every_location_in_area = {
+			every_pop= {
+				limit = { OR = { religion = religion:mahayana religion = religion:hindu } culture = { has_culture_group = culture_group:austronesian_group } }
+				change_pop_religion = religion:nusantaran_hindu
+			}
+			force_refresh_culture_and_religion = this
+		}
+	}
+	
+	
+
+}

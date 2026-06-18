@@ -1,0 +1,55 @@
+﻿REPLACE:sanjiao = { 
+	color = map_chinese
+	group = buddhist
+
+	language = classical_chinese_language
+	
+	max_sects = 3 #uh oh#
+	
+	religious_aspects = 2
+	
+	definition_modifier = {
+		allow_righteousness = yes
+		allow_harmony = yes
+		monthly_legitimacy = 0.05
+		global_max_literacy = 10
+		can_have_monasteries = yes
+	}
+
+	opinions = {
+		mahayana = positive
+		tibetan_buddhism = negative
+	}
+	
+	tags = { buddhist_gfx }
+}
+
+REPLACE:shinto = { 
+	color = color_shinto
+	group = buddhist
+
+	language = japanese_language
+	
+	religious_aspects = 1
+		
+	has_purity = yes
+	has_honor = yes
+	max_sects = 1
+	
+	definition_modifier = {
+		global_max_literacy = 10
+		tolerance_heretic = 1
+		tolerance_heathen = 1
+		can_have_monasteries = yes
+	}
+	
+	factions = {
+		imperial_court
+		shogunate_court
+		ikko_ikki
+		religious_sects
+		kirishitan_monks
+	}
+
+	tags = { shinto_gfx buddhist_gfx }
+}

@@ -1,0 +1,9 @@
+﻿l_braz_por:
+ rule_icd_promote_culture_cabinet_action: "#color_yellow ICD#!: Promote Culture Cabinet Action Rule"
+ setting_icd_cabinet_action_off: "Unavailable"
+ setting_icd_cabinet_action_off_desc: "The 'Promote Culture' cabinet action is not available and is replaced by a cabinet action that can mark which culture a province should assimilate to. Most historical experience, but with less player agency."
+ setting_icd_cabinet_action_on_vanilla: "Fully Available"
+ setting_icd_cabinet_action_on_vanilla_desc: "The 'Promote Culture' cabinet action is available and identical to vanilla. Not recommended and will hurt the experience."
+ setting_icd_cabinet_action_on_edited: "Available but Edited"
+ setting_icd_cabinet_action_on_edited_desc: "An edited version of the 'Promote Culture' cabinet action is available."
+ 

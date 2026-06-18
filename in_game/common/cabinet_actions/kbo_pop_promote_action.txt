@@ -1,0 +1,16 @@
+﻿kbo_pop_promote_action = {
+	icon = pop_promote_action
+	ability = adm
+	
+	potential = {
+		has_variable = serf_social_integration_variable
+		num_locations > 0 
+	}
+
+	country_modifier = {
+		wrong_culture_levy_size = 0.1
+		global_pop_assimilation_speed_modifier = 0.1
+		global_pop_promotion_speed_modifier = 0.2
+	}
+	
+}

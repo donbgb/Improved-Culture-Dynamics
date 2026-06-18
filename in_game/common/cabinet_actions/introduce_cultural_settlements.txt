@@ -1,0 +1,183 @@
+﻿introduce_cultural_settlements = {
+	ability = adm
+	
+	allow_multiple = yes
+	
+	potential = {
+		num_locations > 0 
+	}
+	
+	allow = {
+		cultural_unity < 1.0
+	}
+	
+	select_trigger = {
+		looking_for_a = culture
+		target_flag = target
+		#for the AI we have an optimisation to only look through religions that are present. Human can look at all...but will have some disabled
+		source_ai_override = actor
+		source_flags_ai_override = include_any_present
+		name = "promote_culture_select_culture"
+		none_available_msg_key = "promote_culture_no_culture"
+		column = {
+			data = name
+		}
+		column = {
+			data = culture_percentage_in_country
+		}
+		default_sort = culture_percentage_in_country
+		visible = {
+			OR = {
+				AND = { # for humans
+					scope:actor = {
+						is_ai = no
+					}
+					is_primary_or_accepted_in = scope:actor
+				}
+
+				AND = { # for AI
+					scope:actor = {
+						is_ai = yes
+					}
+					is_primary_in = scope:actor 
+				}
+			}
+			scope:actor = {
+				any_owned_location = {
+					dominant_culture = root
+				}
+			}
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = province
+		source = actor
+		target_flag = target_origin
+		name = "relocate_people_select_origin_province"
+		none_available_msg_key = "relocate_people_no_provinces"
+		column = {
+			data = name
+		}
+		column = {
+			data = population
+		}
+		column = {
+			data = province_culture_percentage
+		}
+		default_sort = population
+		visible = {
+			culture_population = {
+				culture = scope:target
+				value > 0.500
+			}
+			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = relocate_people interaction_target = root } }
+		}
+		map_color = define:NMapColors|MAP_COLOR_HIGH
+	}
+	
+	select_trigger = {
+		looking_for_a = province
+		source = actor
+		target_flag = target_destination
+		name = "relocate_people_select_destination_province"
+		none_available_msg_key = "relocate_people_no_provinces"
+		column = {
+			data = name
+		}
+		column = {
+			data = population
+		}
+		column = {
+			data = province_culture_percentage
+		}
+		default_sort = province_culture_percentage
+		visible = {
+			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = relocate_people interaction_target = root } }
+			NOT = { this = scope:target_origin }
+			any_location_in_province = {
+				integration_level = integrated
+			}
+		}
+		map_color = define:NMapColors|MAP_COLOR_LOW
+	}
+
+	on_activate = {
+		custom_tooltip = introduce_cultural_settlements_tt
+		if = {
+			limit = {
+				exists = scope:target_origin
+				exists = scope:target_destination
+			}
+			add_migration = {
+				owner = scope:actor
+				from = scope:target_origin.province_definition
+				to = scope:target_destination.province_definition
+				culture = scope:target
+				amount = {
+					value = 0.100
+					multiply = {
+						value = 1
+						if = {
+							limit = {
+								exists = scope:cabinet
+							}
+							add = "scope:cabinet.effective_skill"
+						}
+					}
+				}
+				months = -1
+			}
+			scope:target_destination = {
+				set_variable = {
+					name = promoting_culture
+					value = scope:target
+				}
+			}
+		}
+	}
+
+	on_deactivate = {
+		if = {
+			limit = {
+				exists = scope:target_origin
+				exists = scope:target_destination
+			}
+			remove_migration = {
+				owner = scope:actor
+				from = scope:target_origin.province_definition
+				to = scope:target_destination.province_definition
+				culture = scope:target
+			}
+		}
+	}
+	
+	is_finished = {
+		trigger_if = {
+			limit = {
+				exists = scope:target_origin
+				exists = scope:target_destination
+			}
+				scope:target_origin = {
+					culture_population = {
+						culture = scope:target
+						value < 1
+					}
+				}
+		}
+	}
+
+	progress = {
+		scope:target_origin = {
+			value = "culture_population(scope:target)"
+		}
+		scope:target_destination = {
+			value = "culture_population(scope:target)"
+		}
+	}
+
+	map_marker = {
+		show_for_owner = yes
+	}
+
+}

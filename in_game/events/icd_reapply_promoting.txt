@@ -1,0 +1,169 @@
+﻿namespace = icd_reapply_promoting
+
+
+icd_reapply_promoting.1 = {
+	type = country_event
+	title = icd_reapply_promoting.1.title
+	desc = icd_reapply_promoting.1.desc
+	outcome = neutral
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_policy = minority_rule
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				remove_variable = promoting_culture
+			}
+			every_province = {
+				limit = { 
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_policy = regional_autonomy
+			}
+			every_province = {
+				limit = { 
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				remove_variable = promoting_culture
+			}
+			every_province = {
+				limit = { 
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_policy = ethnic_communities
+			}
+			every_province = {
+				limit = { 
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				remove_variable = promoting_culture
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						any_location_in_province = {
+							any_neighbor_location = {
+								dominant_culture ?= root.culture
+							}
+						}
+						culture_percentage = {
+							culture = root.culture
+							value > 0.2
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.2
+							}
+						}
+					}
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_policy = monocultural_opportunity
+			}
+			every_province = {
+				limit = { 
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				remove_variable = promoting_culture
+			}
+		}
+		
+		if = {
+			limit = {
+				has_policy = dialects_of_german
+			}
+			every_province = {
+				limit = { 
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				remove_variable = promoting_culture
+			}
+			icd_region_culture_law_german = yes
+		}
+		
+		if = {
+			limit = {
+				has_policy = dialects_of_arabic
+			}
+			every_province = {
+				limit = { 
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				remove_variable = promoting_culture
+			}
+			icd_region_culture_law_arabic = yes
+		}
+		
+		if = {
+			limit = {
+				has_policy = dialects_of_italian
+			}
+			every_province = {
+				limit = { 
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				remove_variable = promoting_culture
+			}
+			icd_region_culture_law_italian = yes
+		}
+		
+	}
+	
+	option = { ##huh###
+		name = icd_reapply_promoting.1.a
+	}
+}

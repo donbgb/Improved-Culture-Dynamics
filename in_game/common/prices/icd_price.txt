@@ -1,0 +1,9 @@
+﻿
+icd_nothing_price = {
+	gold = 0
+}
+
+icd_dhimmi_price = {
+	prestige = 5
+	stability = 5
+}

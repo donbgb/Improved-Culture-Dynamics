@@ -1,0 +1,155 @@
+﻿azeri_culture_movement = {
+	culture = azeri_culture
+
+	potential = {
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = azeri_culture_movement_allow_tt
+			always = no
+		}
+	}
+
+	monthly_spawn_chance = {
+		value = 0	
+	}
+	
+	spawn = {
+		ordered_ownable_location = {
+			limit = { dominant_culture ?= culture:azeri_culture  }
+			max = 1
+
+			order_by = {
+				value = population				
+			}
+			spawn_movement = {
+				movement_definition = scope:movement_definition
+				supporters = {
+					value = population
+					multiply = 0.15
+				}
+			}
+		}
+	}
+
+	#what's done by spreaders
+	environmental_infection = {
+		value = 0.05
+	}
+
+	required_cultures = { adhari_culture }
+	
+
+	r0 = { 
+		value = 0.01
+		if = {
+			limit = {
+				NOT = { root.owner ?= { culture = { has_culture_group = culture_group:turkic_group } }
+					root.owner ?= { culture = { has_culture_group = culture_group:mongolian_group } }
+					root.owner.ruler_or_heir_if_regent ?= { culture = { has_culture_group = culture_group:turkic_group } }
+					AND = {
+						culture:azeri_culture = { is_accepted_in = root.owner }
+						OR = {
+							NOT = { culture:adhari_culture = { is_accepted_in = root.owner } }
+							root.owner = { culture = culture:adhari_culture }
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+
+	calc_interval_days = 90
+
+	development = negative
+	literacy = negative
+
+	on_spread_to_country = {
+	}
+	
+	specific_pop_type_effect = {
+		pop_type = tribesmen
+		multiplier = 2.0
+	}
+
+	specific_pop_type_effect = {
+		pop_type = burghers
+		multiplier = 0.01
+	}
+
+	specific_pop_type_effect = {
+		pop_type = nobles
+		multiplier = 0.01
+	}
+	
+	specific_pop_type_effect = {
+		religion = zoroastrian
+		multiplier = 0
+	}
+
+	location_stagnation_chance = {
+		if = {
+			limit = {
+				dominant_culture ?= culture:azeri_culture
+			}
+			value = 1
+		}
+		if = {
+			limit = {
+				has_location_modifier = azeri_culture_movement_momentum_waning_locally
+			}
+			value = 1
+		}
+	}
+	
+	on_calc_effect ={
+	}
+
+	map_color = {
+		if = {
+			limit = {
+				OR = {
+					"culture_percentage(culture:azeri_culture)" > 0
+					"culture_percentage(culture:adhari_culture)" > 0
+				}
+				NOT = { root.owner ?= { culture = { has_culture_group = culture_group:turkic_group } }
+					root.owner ?= { culture = { has_culture_group = culture_group:mongolian_group } }
+					root.owner.ruler_or_heir_if_regent ?= { culture = { has_culture_group = culture_group:turkic_group } }
+					culture:azeri_culture = { is_accepted_in = root.owner }
+				}
+			}
+			value = define:NMapColors|MAP_COLOR_NULL
+		}
+		else_if = {
+			limit = {
+				"culture_percentage(culture:adhari_culture)" < 0.05
+				"culture_percentage(culture:azeri_culture)" > 0.05
+			}
+			value = define:NMapColors|MAP_COLOR_MAX
+		}
+		else_if = {
+			limit = {
+				"culture_percentage(culture:azeri_culture)" > "culture_percentage(culture:adhari_culture)"
+			}
+			value = define:NMapColors|MAP_COLOR_HIGH
+		}
+		else_if = {
+			limit = {
+				"culture_percentage(culture:azeri_culture)" > 0
+			}
+			value = define:NMapColors|MAP_COLOR_MID
+		}
+		else = {
+			value = define:NMapColors|MAP_COLOR_LOW
+		}
+	}
+	
+	location_spread_threshold = {
+		value = 0.05 # % of the people need to be infected to spread to neighbors
+	}
+	
+	
+
+}

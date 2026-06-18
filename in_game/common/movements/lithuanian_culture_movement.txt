@@ -1,0 +1,133 @@
+﻿lithuanian_culture_movement = {
+	culture = lithuanian_culture_formed
+
+	potential = {
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = lithuanian_culture_movement_allow_tt
+			always = no
+		}
+	}
+
+	monthly_spawn_chance = {
+		value = 0
+		
+		
+	}
+	
+	spawn = {
+		ordered_ownable_location = {
+			limit = { OR = { owner = { has_or_had_tag = LIT } owner = { is_subject_or_below_of = c:LIT } }  }
+			max = 1
+
+			order_by = {
+				value = population				
+			}
+			spawn_movement = {
+				movement_definition = scope:movement_definition
+				supporters = {
+					value = population
+					multiply = 0.15
+				}
+			}
+		}
+	}
+
+	#what's done by spreaders
+	environmental_infection = {
+		value = 0.05
+	}
+
+	required_cultures = { aukstaitian samogitian curonian }
+	
+
+	r0 = { 
+		value = { 0.85 0.95 }
+		if = {
+			limit = {
+				NOT = { root.owner ?= { has_or_had_tag = UKR } }
+				NOT = { root.owner ?= { is_subject_or_below_of = c:UKR } }
+			}
+			multiply = 0.5
+		}
+	}
+
+	calc_interval_days = 30
+
+	development = positive
+	literacy = positive
+	pop_satisfaction = positive
+
+	on_spread_to_country = {
+	}
+	
+	specific_pop_type_effect = {
+		pop_type = tribesmen
+		multiplier = 0.5
+	}
+
+	specific_pop_type_effect = {
+		culture = curonian
+		multiplier = 0.1
+	}
+
+	location_stagnation_chance = {
+		if = {
+			limit = {
+				dominant_culture ?= culture:lithuanian_culture_formed
+			}
+			value = 1
+		}
+		if = {
+			limit = {
+				has_location_modifier = lithuanian_culture_movement_momentum_waning_locally
+			}
+			value = 1
+		}
+	}
+	
+	on_calc_effect ={
+		every_location_with_movement = {
+			limit = {
+				NOT = {
+					dominant_culture ?= culture:lithuanian_culture_formed
+				}
+			}
+			add_location_modifier = {
+				modifier = lithuanian_culture_movement_momentum_waning_locally
+				size = 0.08
+				mode = add_and_extend
+			}
+		}
+	}
+
+	map_color = {
+		if = {
+			limit = {
+				location_modifier_strength = {
+					modifier = lithuanian_culture_movement_momentum_waning_locally
+					value > 0.9
+				}
+			}
+			value = define:NMapColors|MAP_COLOR_NULL 
+		}
+		else_if = {
+			limit = {
+				"culture_percentage(culture:lithuanian_culture_formed)" > 0.05
+			}
+			value = rgb { 154 75 120 }
+		}
+		else = {
+			value = define:NMapColors|MAP_COLOR_LOW
+		}
+	}
+	
+	location_spread_threshold = {
+		value = 0.25 # % of the people need to be infected to spread to neighbors
+	}
+	
+	
+
+}

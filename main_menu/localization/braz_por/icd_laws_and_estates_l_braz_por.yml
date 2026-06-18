@@ -1,0 +1,116 @@
+﻿l_braz_por:
+ cultural_majority_law: "Maioria Cultura"
+ cultural_majority_law_desc: "Determina a autonomia e os privilégios que grandes comunidades possuem sobre seus territórios."
+ 
+ 
+ minority_rule: "Governo Minoritário"
+ minority_rule_desc: "A identidade cultural da nossa elite política não é compartilhada pela grande maioria de nossa população. Para que possemos governar nosso território, nós necessariamente precisamos permitir que outras culturas tenham um grau de autonomia e presença política."
+ 
+ 
+ persianate: "Persianato"
+ persianate_desc: "Embora a identidade cultural de nossa elite política é inteiramente distinta, nós fomos fortemente influênciados pela cultura persa, com nossa corte refletindo costumes persas e nosso governo tendo a língua persa como principal meio de comunicação."
+ cultural_manifestation_privileges: "Mecenato Cultural"
+ cultural_manifestation_privileges_desc: "Nosso estado e as elites locais são encorajados a apoiar e patrocinar minorias culturais e seus rituais e celebrações."
+ guild_restrictions: "Restrições de Associação"
+ guild_restrictions_desc: "Minorias culturais são frequentemente proibidas de entrarem em guildas ou criarem suas próprias associações econômicas e profissionais, fazendo com que sejam encorajadas a adotarem outras normas culturais."
+ self_governing_institutions: "Instituições Autarquicas"
+ self_governing_institutions_desc: "Minorias culturais em nosso território mantêm um certo nível de autonomia política e social, sendo capazes de se organizarem políticamente, judicialmente e socialmente in certos espaços."
+ icd_voivodeship_of_transylvania: "As Três Nações da Transilvânia"
+ icd_voivodeship_of_transylvania_desc: "A Transilvânia é composta por três nações - os nobres húngaros, os Saxões Transilvanos e os soldados-camponeses Sículos. Todos eles são permitidos um grande nível de autonomia cultural e política, em troca de seu apoio crucial na manutenção da Transilvânia e a defesa militar do reino."
+ assertive_assimilation: "Centralização Cultural"
+ assertive_assimilation_desc: "Nossa culturas se manifesta por meio de nossa burocracia e instituições de governo, que exercem assim um grande nível de autoridade sobre minorias em nosso país."
+ 
+ icd_politics_of_language_law: "Políticas de Língua"
+ icd_politics_of_language_law_desc: "Além de questões relacionadas ao idioma do pleito, nosso posicionamente em relação as línguas faladas em nosso estado deve ser esclarecido."
+ monolingual_courts: "Fóruns Monolinguísticos"
+ monolingual_courts_desc: "Tribunais, conselhos locais e outros espaçõs governamentais devem utilizar apenas nossa língua comum para todas questões. À línguas locais não deve ser dado nenhum papel político."
+ linguistic_autonomy: "Autonomia Linguística"
+ linguistic_autonomy_desc: "Comunidades tem um grande nível de autonomia para trabalharem e conduzirem todo tipo de questão em sua própria língua."
+ language_of_the_elites: "Língua das Elites"
+ language_of_the_elites_desc: "Nossa língua comum é a língua das elites e dos cultos, não das massas. Nós precisamos manter a dignidade e a força de nossa língua entre os poderosos e os ricos em nosso território e precisamos prevenir que nossa fala seja contaminada pela ralé."
+ ordinance_of_villers_cotterets: "Ordinância de Villers-Cotterêts"
+ ordinance_of_villers_cotterets_desc: "O uso do francês é obrigatório em todos atos legais, contratos notarizados e legislação oficial. O latim não deve ser mais usado e se nossa política faz o uso de línguas patois díficil, que assim seja."
+ 
+ icd_politics_of_ritual_law: "Políticas de Ritual"
+ icd_politics_of_ritual_law_desc: "A relação entre culture e fé em nosso governo e em nossa sociedade deve ser estruturada e ordenada."
+ religious_and_ritual_regulation: "Agências Regulatórias"
+ religious_and_ritual_regulation_desc: "Todos rituais culturais e religiosos em nosso território devem ser supervisionados por uma agência governamental. Membros de comunidades culturais ou religiosas devem aderir às regulações decretadas pela respectiva agência."
+ cultural_religious_subversion: "Restrições Culturais e Religiosas"
+ cultural_religious_subversion_desc: "Fé e cultura são inseparáveis, e para garantir que nossa população não desvie culturalmente ou em sua fé, nós precisamos garantir que todos em nosso território estão integrados em tanto nossa fé como nossa identidade. Tradições, costumes, crenças e textos que não se enquadram em nossa visão de mundo devem ser desencorajados e erradicados quando necessário."
+ faith_across_cultures: "Fé Através de Etnias"
+ faith_across_cultures_desc: "É a fé que nos une, não a língua ou etnia. A religião atravessa qualquer seja a parede ou limite cultural, e nossa fé as vezes deve até adotar tradições e costumes locais ao invés de os reprimir."
+ enshrined_cosmopolitanism: "Cosmopolitismo Consagrado" 
+ enshrined_cosmopolitanism_desc: "Nosso país é intrinsecamente multicultural e multireligioso, e ele só consegue prosperar e se sustentar se a maioria das expressões religiosas e culturais forem respeitadas."
+ 
+ icd_national_identity_law: "Identidade Nacional"
+ icd_national_identity_law_desc: "O desenvolvimento de uma comunidade imaginada entre nosso povos pode ser uma ferramente para nosso estado mas também uma fonte de divisão e discórdia. Nós precisamos alinhar qual tipo de comunidade e identidade nosso país deveria se basear em." 
+ civic_nationhood: "Nação Cívica"
+ civic_nationhood_desc: "Nosso país é uma nação-estado que representa apenas uma nação. Essa nação é definida por sua cultura, seus valores e sua tradição, ao invés de necessariamnte ser restrita a laços sanguíneos." 
+ ethnic_identity: "Identidade Étnica"
+ ethnic_identity_desc: "Nossa identidade nacional deriva de nossa história, ancestralidade compartilhada e nossos laços étnicos. Nós somos um povo com uma origem antiga."
+ subjecthood: "Sujeição"
+ Subjecthood_desc: "A identidade de nosso país se sustenta por meio de sua monarquia e pela associação com nossa dinastia."
+ union_of_many: "União de Muitos"
+ union_of_many_desc: "Nosso país sem dúvidas é povoado por nações mas ele não é definido por nenhuma delas. Nossas políticas criam as pontes que conectam vários povos em nosso território."
+ religious_community: "Comunidade Religiosa"
+ religious_community_desc: "Nosso país é definido por sua fé e religião, unindo todos os povos sobre uma comunidade religiosa supranacional."
+ 
+ jewish_charter: "Carta Judáica"
+ jewish_charter_desc: "Por meio da promulgação de uma carta que protege os direitos de comunidades judáicas em nosso território, com proteções proteções legais, direitos a residência, liberdade comercial e autonomia religiosa, nós conseguimos assegurar que tanto nossas cidades como as comunidades judáicas locais consigam prosperar."
+ 
+ icd_sabian_abrahamic_communities: "Comunidades Sábicas"
+ icd_sabian_abrahamic_communities_desc: "A comunidade [ShowReligionAdjective('mandeaism')] historicamente se coloca como sendo parte do grupo misterioso referido como os 'sabeus' no Alcorão. Isso lhes faz serem membros do #italic Ḏimmī#! em um país muçulmano. Como membros do #italic Ḏimmī#!, vira a responsabilidade de um governante justo lhes proteger."
+  
+ standardised_system_of_education: "Standardised Education"
+ standardised_system_of_education_desc: "A singular standardised system of education will permit us to not only greatly improve the acess that all of our people have to education but also ensure that we are promoting a singular culture that reflects our state's values."
+
+
+
+ discrimination_of_language: "Linguistic Discrimination"
+ discrimination_of_language_desc: "Only a handful of languages should have permission to be spoken in our territory. Minorities and cultures that do not speak these are expected to learn them and abandon their old tongue."
+ national_identity: "National Identity"
+ national_identity_desc: "One state, one nation. We have become aware of our unity and our identity, and must spread it if we wish to hold to greater territory."
+ 
+ regional_autonomy: "Sociedade Pluricultural"
+ regional_autonomy_desc: "Nossa sociedade surge não de apenas uma cultura mas de muitas identidades distintas. Partes distintas de nosso país são dadas diferentes níveis de autonomia cultural."
+ ethnic_communities: "Integração Gradual"
+ ethnic_communities_desc: "Nós encorajamos aquelas comunidades e minorias mais perto de nossa cultura primária de adotarem nossos meios e aprenderem de nosso comportamento. Terras mais distantes, porém, estão livres para manterem suas próprias políticas."
+ monocultural_opportunity: "Assimilação em Massa"
+ monocultural_opportunity_desc: "Nossa sociedade é fundada na base de uma cultura apenas, e nós, por tanto, promovemos uma cultura apenas. Onde nosso estado vai, ele tenta promover e espalhar nossas atitudes e tradições culturais."
+ dialects_of_german: "Identidades Alemãs Plurais"
+ dialects_of_german_desc: "Existem muitos tipos de alemão no mundo, e embora nós representamos apenas um tipo específico de alemão, nós reconhecemos e apreciamos as diferenças e semelhanças que existem entre nós."
+ dialects_of_arabic: "Identidades Arabes Plurais"
+ dialects_of_arabic_desc: "Existem muitos tipos de árabe no mundo, e embora nós representamos apenas um tipo específico de árabe, nós reconhecemos e apreciamos as diferenças e semelhanças que existem entre nós."
+ dialects_of_italian: "Identidades Italianas Plurais"
+ dialects_of_italian_desc: "Existem muitos tipos de italiano no mundo, e embora nós representamos apenas um tipo específico de italiano, nós reconhecemos e apreciamos as diferenças e semelhanças que existem entre nós."
+
+
+ colonial_culture: "Assimilação Colonial"
+ colonial_culture_desc: "Estruturas coloniais baseadas na exploração, colonização e desmantelamento de instituições culturais locais faz com que a assimilação seja mais eficiente e produtiva economicamente."
+
+
+ minority_rule_tt: "Com essa política, a população vai assimilar para a cultura dominante de sua província, independentemente da cultura de seu país. Essa política cria um risco para sua cultura principal pois minorias de sua cultura principal serão assimiladas na cultura dominante de seus respectivos locais. Reduzir assimilação cultural é preferível do que a aumentar. Isso só pode ser alterado por meio de ações de gabinete, como promover a cultura."
+ regional_autonomy_tt: "Com essa política, a população vai assimilar para a cultura dominante de sua província, independentemente da cultura de seu país. Isso só pode ser alterado por meio de ações de gabinete, como promover a cultura ou marcar com uma cultura."
+ ethnic_communities_tt: "Com essa política, a população vai assimilar para a cultura dominante de sua província, ao menos que a província seja vizinha de uma onde a sua cultura principal é dominante ou se existem minorias significantes de sua cultura na província. Essa política estimula que sua cultura principal/primária cresça ao longo de suas fronteiras culturais e por meio de colonos, enquanto preserva culturas mais distantes. Isso só pode ser alterado por meio de ações de gabinete, como promover a cultura ou marcar com uma cultura."
+ monocultural_opportunity_tt: "Com essa política, a população vai assimilar sempre para a cultura dominante do seu país. Isso só pode ser alterado por meio de ações de gabinete, como promover a cultura ou marcar com uma cultura."
+ dialects_of_german_tt: "Com essa política, a população alemã não é assimilada (excluindo os tchecos, baixo-francônios e os frísios). Populações que não são alemãs são assimiladas para uma cultura alemã vizinha. Isso só pode ser alterado por meio de ações de gabinete, como promover a cultura ou marcar com uma cultura."
+ dialects_of_arabic_tt: "Com essa política, a população árabe não é assimilada (excluindo os siríacos). Populações que não são árabes são assimiladas para uma cultura árabe vizinha. Isso só pode ser alterado por meio de ações de gabinete, como promover a cultura ou marcar com uma cultura."
+ dialects_of_german_tt: "Com essa política, a população italiana não é assimilada. Populações que não são italianas são assimiladas para uma cultura italiana vizinha. Isso só pode ser alterado por meio de ações de gabinete, como promover a cultura ou marcar com uma cultura."
+
+ icd_nothing_price: "Não custa nada"
+
+ new_foreign_cultural_law: "Minorias Culturais"
+ new_foreign_cultural_law_desc: "A existência de pequenos grupos minoritários em nossa sociedade requer que nós adotemos políticas específicas para lidarmos com eles."
+ 
+ this_policy: "this"
+ this_policy_desc: "This"
+ 
+ icd_jewish_charter_tt: "Onde há uma comunidade [ShowReligionAdjective('judaism')] sem nenhum pagão ou herege:"
+ 
+ turkish_integration: "Integração Turca"
+ turkish_integration_desc: "Nossa cultura e identidade como turcos e nossa religião muçulmana são profundamente conectadas. À medida que expandimos para o leste e o oeste, outras culutras com outras religiões vão ser muito mais fáceis de lidar com se convertermos ou assimilarmos elas primeiro." 
+
+ icd_vlach_law: "Lei Valáquia para os Valáquios"
+ icd_vlach_law_desc: "Ao permitir que os nossos sujeitos Valáquios sigam a lei comum romena, nós garantimos um respeito por seu estilo de vida tradicional e lucramos dele por meio dos produtos animais que o pastoralismo deles traz para comunidades vizinhas."
+ 
+ 

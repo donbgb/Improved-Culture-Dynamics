@@ -1,0 +1,115 @@
+﻿improve_cultural_opinion = {
+	ability = dip
+	
+	allow_multiple = no
+	
+	potential = {
+		num_locations > 0 
+	}
+	
+	days = 3950
+	
+	allow = {
+		cultural_unity < 1.0
+	}
+	
+	select_trigger = {
+		looking_for_a = culture
+		target_flag = target
+		source_ai_override = actor
+		source_flags_ai_override = include_any_present
+		name = "improve_cultural_opinion_select_culture"
+		none_available_msg_key = "improve_cultural_opinion_no_culture"
+		column = {
+			data = name
+		}
+		column = {
+			data = culture_percentage_in_country
+		}
+		default_sort = culture_percentage_in_country
+		visible = {
+			NOT = {
+				scope:actor = {
+					culture = root
+				}
+			}
+			NOT = {
+				cultural_view = {
+					target = scope:actor.culture
+					value = kindred
+				}
+			}
+			scope:actor = {
+				culture_percentage_in_country = {
+					culture = root
+					value > 0.05
+				}
+			}
+		}
+	}
+	
+	on_activate = { 
+		custom_tooltip = improve_cultural_opinion_tt
+		scope:actor = {
+			add_country_modifier = {
+				modifier = icd_cultural_opinion_cost
+				mode = add
+			}
+		}
+	}
+	
+	on_deactivate = {
+		scope:actor = {
+			remove_country_modifier = icd_cultural_opinion_cost
+		}
+	}
+	
+	is_finished = {
+		trigger_if = {
+			limit = {
+				exists = scope:target
+			}
+			OR = {
+				scope:actor = {
+					culture_percentage_in_country = {
+						culture = scope:target
+						value < 0.05
+					}
+				}
+				scope:target = {
+					cultural_view = {
+						target = scope:actor.culture
+						value = kindred
+					}
+				}
+				scope:actor = {
+					culture = scope:target
+				}
+				NOT = {
+					scope:actor = {
+						has_country_modifier = icd_cultural_opinion_cost
+					}
+				}
+			}
+		}
+	}
+	
+	on_fully_activated = {
+		if = {
+			limit = {
+				exists = scope:target
+			}
+		scope:target = {
+			change_cultural_view = {
+				target = scope:actor.culture
+				change = 1
+				}
+			}
+			scope:actor = {
+				remove_country_modifier = icd_cultural_opinion_cost
+			}
+		}
+	}
+	
+	
+}

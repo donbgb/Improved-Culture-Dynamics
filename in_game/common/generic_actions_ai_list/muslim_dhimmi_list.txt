@@ -1,0 +1,8 @@
+﻿orthodox_list = {
+	potential = {
+		religion.group = religion_group:muslim
+	}
+	actions = {
+		icd_muslim_dhimmi_choose
+	}
+}

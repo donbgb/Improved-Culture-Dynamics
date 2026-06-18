@@ -1,0 +1,47 @@
+﻿l_english:
+ # Cultural Templates
+ #
+ poitevin: "Aguianais"
+ greater_polish: "Polish"
+ ruthenian: "Kyivan"
+ moldovan: "Romanian"
+ rhine_franconian: "Rhenish"
+ high_alemannic: "Alemannic"
+ danube_bavarian: "Bavarian"
+ lower_egyptian_culture: "Egyptian"
+ severian: "Chernihivan"
+ east_franconian: "Franconian"
+ western_pomeranian: "Mecklenburgish"
+ eastern_pomeranian: "Pomeranian"
+ bedouin_culture: "Bedawi"
+ ava_culture: "Guarani"
+ 
+ foreign_cultural_law: "Cultural Minorities"
+ integrate_foreign_traditions: "Assimilate Identities"
+ blood_tax_of_foreigners: "Blood Tax of Minorities"
+ 
+ promote_chinese_traditions: "Sinicized Society"
+ limit_chinese_traditions: "Nativist Society"
+ 
+ tibetan_buddhism: "Tibetan Mahāyāna"
+ tibetan_buddhism_ADJ: "Tibetan Mahāyāna"
+ mahayana: "Eastern Mahāyāna"
+ mahayana_ADJ: "Eastern Mahāyāna"
+ mahayana_desc: "Eastern Mahāyāna refers to related sects of Mahāyāna $buddhist$ that largely took shape in $china$ and the Silk Road. Though in China, Korea and Vietnam, Mahāyāna Buddhism is generally a manifestation of a larger religious framework and usually does not exist independently of Confucianism, Chinese Buddhist sects and the $chinese_group$ Canon were introduced independently into the Silk Road, permitting the spread of a disconnected Eastern Mahāyāna faith. This faith is characterised not only by typical Mahāyāna beliefs such a belief in the $bodhisattva$ path as available to all as a way to achieve Buddhahood, but also by its syncretism with pre-existing Tocharian Buddhist practices and by its strong sense of individual freedom in practicing faith, freely merging and intersecting texts and beliefs."
+ sanjiao_desc: "The term 'Three Teachings' (sānjiào) or tam giáo in Vietnamese and samgyo in Korean, refers to the polytheistic faiths present in China, Korea and Vietnam, whose theological and structural organization largely derive from the three teachings of $confucianism_policy$, $daoism_policy$, and $buddhist$. Having developed and incorporated each other as part of a broader religious worldview, the Three Teachings do not exist independently of each other or of folk polytheism, instead being distinct manifestations of a broader religious context."
+    
+ miaphysite: "Oriental Orthodoxy"
+ miaphysite_ADJ: "Oriental Orthodox"
+ nestorianism: "East Syriac"
+ nestorianism_ADJ: "East Syriac"
+ nestorianism_desc: "$nestorianism$ refers to the beliefs and practices of the Church of the East, whose distinction and division from other branches of Christianity relate not only to their use of the East Syriac Rite but to the work of Assyrian bishop Babai the Great regarding Christology. Babai promulgated a dyophiste theology, affirming that the two 'qnome' of Christ are unmixed but eternally united in his single 'parsopa'. Though this branch of Christianity venerates Nestorius of Constantinople as a saint and is often labelled as 'Nestorian' by other Christians, East Syriac Christianity does not follow Nestorius' supposed teachings as it does not believe that two persons exist in the one body of Christ."
+
+ anglo_irish: "Hiberno-Norman"
+ 
+ enforce_culture: "Enforce Culture"
+ enforce_culture_act: "Enforce Culture in [SCOPE.sCountry('recipient').GetName]"
+ enforce_culture_desc: "We will demand that they adopt a given culture as their primary culture."
+ enforce_culture_effect_text: "[SCOPE.sCountry('actor').GetName] enforce a culture on [SCOPE.sCountry('recipient').GetName]"
+ enforce_culture_effect_text_past: "[SCOPE.sCountry('actor').GetName] enforced a culture on [SCOPE.sCountry('recipient').GetName]"
+ PROPOSE_enforce_culture: "Enforce Culture in $RECIPIENT$?\n$INFO$."
+ INCOMING_OFFER_union_enforce_culture: "$ACTOR$ are trying to enforce a [culture|e] on us. Do we let it happen?\n\n$INFO$"

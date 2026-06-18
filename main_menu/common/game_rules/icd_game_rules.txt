@@ -1,0 +1,27 @@
+﻿icd_promote_culture_cabinet_action = {
+	default = icd_cabinet_action_off
+
+	icd_cabinet_action_off = {
+		flag = flavour_rule
+	}
+	
+	icd_cabinet_action_on_edited = {
+		flag = flavour_rule
+	}
+
+	icd_cabinet_action_on_vanilla = {
+		flag = flavour_rule
+	}
+}
+
+icd_culture_marking = {
+	default = icd_culture_marking_off
+
+	icd_culture_marking_off = {
+		flag = flavour_rule
+	}
+	
+	icd_culture_marking_on = {
+		flag = flavour_rule
+	}
+}

@@ -1,0 +1,1091 @@
+﻿
+icd_region_culture_law_german = {
+			
+			every_province = {
+				limit = {
+					dominant_culture ?= { has_culture_group = culture_group:german_group }
+					NOT = {
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+			every_province = {
+				limit = {
+					OR = {
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.2
+							}
+						}
+					}
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = root.culture
+				}
+			}
+			every_province = {
+				limit = { 
+					area = area:silesia_area
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:german_silesian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:rhine_franconian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:rhine_franconian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:westphalian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:westphalian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:high_alemannic
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:high_alemannic
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:danube_bavarian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:danube_bavarian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:saxon
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:saxon
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:low_franconian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:low_franconian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:brandenburgish
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:brandenburgish
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:prussian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:prussian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:eastern_pomeranian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:eastern_pomeranian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:lower_saxon
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:lower_saxon
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:western_pomeranian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:western_pomeranian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:east_franconian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:east_franconian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:eastphalian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:eastphalian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:german_baltic
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:german_baltic
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:german_carpathian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:german_carpathian
+				}
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						any_location_in_province = {
+							any_neighbor_location = {
+								dominant_culture ?= root.culture
+							}
+						}
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.2
+							}
+						}
+						has_variable = promoting_culture
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+}
+
+icd_region_culture_law_arabic = {
+			
+			every_province = {
+				limit = { dominant_culture ?= { has_culture_group = culture_group:arabic_group }
+					NOT = {
+						dominant_culture ?= culture:syriac_culture
+					}
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:iraqi_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:iraqi_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:andalusi
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:andalusi
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:hassaniya
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:hassaniya
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:moroccan
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:moroccan
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:algerian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:algerian
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:levantine_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:levantine_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:najdi_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:najdi_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:tunisian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:tunisian
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:libyan_arabic_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:libyan_arabic_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:sudanese_arab
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:sudanese_arab
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:lower_egyptian_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:lower_egyptian_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:hijazi_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:hijazi_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:yemeni_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:yemeni_culture
+				}
+			}
+			
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:kaliji_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:kaliji_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:bahrani_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:bahrani_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:shihhi_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:shihhi_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:omani_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:omani_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:hadhrami_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:hadhrami_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:mehri_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:mehri_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:dhofari_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:dhofari_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:soqotri_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:soqotri_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:arabic_group } }
+						dominant_culture ?= culture:syriac_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:maltese
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:maltese
+				}
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						any_location_in_province = {
+							any_neighbor_location = {
+								dominant_culture ?= root.culture
+							}
+						}
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.2
+							}
+						}
+						has_variable = promoting_culture
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+			
+}
+
+
+
+
+
+
+icd_region_culture_law_italian = {
+			
+			every_province = {
+				limit = { dominant_culture ?= { has_culture_group = culture_group:italian_group }
+					NOT = {
+						dominant_culture ?= culture:italki
+						dominant_culture ?= culture:sardinian
+					}
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.2
+							}
+						}
+					}
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = root.culture
+				}
+			}
+			every_province = {
+				limit = { dominant_culture ?= culture:sardinian
+					NOT = {
+						culture_percentage = {
+							culture = culture:corsican
+							value > 0.1
+						}
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+			every_province = {
+				limit = { dominant_culture ?= culture:sardinian
+					culture_percentage = {
+						culture = culture:corsican
+						value > 0.1
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:corsican
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:corsican
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:corsican
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:emilian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:emilian
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:friulian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:friulian
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:ladin
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:ladin
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:ligurian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:ligurian
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:lombard
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:lombard
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:maltese
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:maltese
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:neapolitan
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:neapolitan
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:piedmontese
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:piedmontese
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:romansh
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:romansh
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:sicilian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:sicilian
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:tuscan
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:tuscan
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:median
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:median
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:venetian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:venetian
+				}
+			}
+			every_province = {
+				limit = { 
+					OR = {
+						NOT = { dominant_culture ?= { has_culture_group = culture_group:italian_group } }
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:dalmatian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:dalmatian
+				}
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						any_location_in_province = {
+							any_neighbor_location = {
+								dominant_culture ?= root.culture
+							}
+						}
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.2
+							}
+						}
+						has_variable = promoting_culture
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+			
+}

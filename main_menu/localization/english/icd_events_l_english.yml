@@ -1,0 +1,51 @@
+﻿l_english:
+ icd_substitute_events.1002.title: "Question of the Moriscos"
+ icd_substitute_events.1002.desc: "Though many [ShowCultureNameWithNoTooltip('andalusi')] in our nation have converted to our faith, some of our advisors still suspect that they hold secret [ShowReligionGroupAdjective('muslim')] convictions and a potential loyalty to foreign states. Their insistence to continue using Arabic as a language and their unique identity are both seen as clear evidence of this. In order to ensure the integrity and security of our state, we could expel them as a solution. Or we could simply accept their existence."
+ icd_substitute_events.1002.a: "Expel them!"
+ icd_substitute_events.1002.b: "They can stay"
+ 
+ flavor_cas.1002.title: "Conversion of the Mudéjar"
+ flavor_cas.1002.desc: "After our conquest of [ShowAreaName('granada_area')] and [ShowAreaName('andalusia_area')] we are faced with a significant population of [ShowCultureName('andalusi')] and [ShowReligionGroupAdjective('muslim')] people as our subject. The Inquisition has already started the expansion of its activities in the area to ensure the conversion of the people can proceed without issues. Unless [target_character.GetName] intervenes personally against the inquisition, this would ensure the conversion of most of the [ShowCultureNameWithNoTooltip('andalusi')] people, while those who refuse conversion would be expelled from the country."
+
+
+ icd_reapply_promoting.1.title: "reapply"
+ icd_reapply_promoting.1.desc: "reapply"
+ icd_reapply_promoting.1.a: "reapply"
+
+ icd_minority_events.1.title: "Flight of the Jewish"
+ icd_minority_events.1.desc: "The lack of protection afforded to the [ShowReligionAdjectiveWithNoTooltip('judaism')] population of our state has led to many of them fearing for their lives and way of life. The anxiety and tensions between them and the rest of our population has led to some [ShowReligionAdjectiveWithNoTooltip('judaism')] families to consider even fleeing from our lands. To avoid public chaos, it is apparent we must take a stand on this issue, but there is considerable disagreement on whether it would be best to simply expel them once and for all or to grant them legal protections."
+ icd_minority_events.1.a: "Grant them protection!"
+ icd_minority_events.1.b: "Perhaps they should be expelled"
+ 
+ icd_minority_events.2.title: "Protections to the [ShowEstateTypeName('dhimmi_estate')]?"
+ icd_minority_events.2.desc: "Representatives of the [ShowEstateTypeName('dhimmi_estate')] have recently come to our court detailing the religious discrimination and persecution they have faced by both officers of our state and commonfolk. Some see these attitudes as going against the principles of [ShowReligionGroupName('muslim')] and have argued that we should extend to the [ShowEstateTypeName('dhimmi_estate')] the protections they deserve. Should we do this, however, we may find ourselves ineffective at converting them."
+ icd_minority_events.2.a: "Grant religious protection to our [ShowReligionAdjectiveWithNoTooltip('judaism')] and [ShowReligionGroupAdjectiveWithNoTooltip('christian')] subjects!"
+ icd_minority_events.2.b: "There is no harm in spreading our word"
+ icd_minority_events.3.title: "Identity of the Sabians"
+ icd_minority_events.3.desc: "The Sabians are a religious group mentioned in the Quran who supposedly belong to the [ShowEstateTypeName('dhimmi_estate')] and, as such, are a people deserving of full protection under Sharia law. Though there is some question about their true identity, members of our [ShowReligionAdjective('mandeaism')] have come to us claiming that they are, in fact, the Sabians and belong to the category of People of the Book. If that is the case, this would make the [ShowReligionAdjective('mandeaism')] deserving of the same religious protections we afford the other People of the Book."
+ icd_minority_events.3.a: "They are the Sabians and deserve to be protected!"
+ icd_minority_events.3.b: "This is a falsehood, they are nothing but heathens"
+ 
+ icd_minority_events.4.title: "Violence against the Jewish"
+ icd_minority_events.4.desc: "Outbreaks of violence and religious persecution have been taking place in our country, with [ShowReligionAdjectiveWithNoTooltip('judaism')] people as their targets. Such outbreaks of violence strongly contrasts to the liberties and protections we have thus far afforded these [ShowReligionAdjectiveWithNoTooltip('judaism')] subjects. With these protections forcing our government to defend these Jewish heathens from the people of our faith, questions have arisen regarding the legitimacy of these privileges to begin with. The risk of the escalation of hatred against the [ShowReligionAdjectiveWithNoTooltip('judaism')] translating into hatred against our government suggests that we should perhaps revoke these protections and let the [ShowReligionAdjectiveWithNoTooltip('judaism')] fight for their lives by themselves."
+ icd_minority_events.4.a: "We shall continue protecting our [ShowReligionAdjectiveWithNoTooltip('judaism')] population"
+ icd_minority_events.4.b: "The [ShowReligionAdjectiveWithNoTooltip('judaism')] can fend for themselves"
+ 
+ icd_minority_events.5.title: "An Invitation to the Jewish"
+ icd_minority_events.5.desc: "The [ShowReligionAdjectiveWithNoTooltip('judaism')] populations of some of our neighbours has proven itself to be quite valuable economically and culturally. As they face the threat of violence and religious persecution in those territories, perhaps it would be an interesting idea to preemptively grant all [ShowReligionAdjectiveWithNoTooltip('judaism')] people protections in the hopes that they flee from those lands to our state, with their expertise and knowledge."
+ icd_minority_events.5.a: "Invite a small number of them and grant them protection!"
+ icd_minority_events.5.b: "They will never be welcome here"
+ 
+ 
+ 
+ icd_minority_events.1001.title: "Flight of the [ROOT.GetVariable('icd_expel_origin_country').GetCountry.MakeScope.GetVariable('icd_expel_culture_people').GetCulture.GetNameWithNoTooltip] People" 
+ icd_minority_events.1001.desc: "[ROOT.GetVariable('icd_expel_origin_country').GetCountry.GetFullName] have begun to threaten their [ROOT.GetVariable('icd_expel_origin_country').GetCountry.MakeScope.GetVariable('icd_expel_culture_people').GetCulture.GetNameWithNoTooltip] population, and they appear to be planning to expel these people in great numbers. It is likely that any [ROOT.GetVariable('icd_expel_origin_country').GetCountry.MakeScope.GetVariable('icd_expel_culture_people').GetCulture.GetNameWithNoTooltip] refugees will seek to enter our state due to our cultural proximity. The question is, of course, whether we should accept them at all or not."
+ icd_minority_events.1001.a: "Welcome these people!"
+ icd_minority_events.1001.b: "We won't be welcoming anyone"
+ icd_minority_events.1002.title: "No Home for the [ROOT.GetVariable('icd_expel_culture_people').GetCulture.GetNameWithNoTooltip] People"
+ icd_minority_events.1002.desc: "It seems our attempts to expel the [ROOT.GetVariable('icd_expel_culture_people').GetCulture.GetName] people will most likely end in failure as no states in our diplomatic network seem willing or able to receive them. For now, they will have to remain as our subjects."
+ icd_minority_events.1002.a: "So be it"
+ icd_minority_events.1003.title: "Expelling the [ROOT.GetVariable('icd_expel_culture_people').GetCulture.GetNameWithNoTooltip] People"
+ icd_minority_events.1003.desc: "Our preparations are complete, the time has come for us to expel the [ROOT.GetVariable('icd_expel_culture_people').GetCulture.GetName] people from our territory. Though we may not be sucessful in expelling all of them at once, we will make sure to drive off a considerable number of them for at least two years."
+ icd_minority_events.1003.a: "Let us begin"
+ icd_minority_events.1003.b: "On second thought, this is a bad idea"

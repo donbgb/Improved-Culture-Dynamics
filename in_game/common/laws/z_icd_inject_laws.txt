@@ -1,0 +1,55 @@
+﻿
+
+INJECT:cultural_traditions_law = {
+	promote_chinese_traditions = {
+		potential = {
+			OR = {
+				is_subject_of = c:CHI
+				capital ?= { sub_continent = sub_continent:east_asia }
+				capital ?= { sub_continent = sub_continent:south_east_asia }
+			}
+			NOR = {
+				tag = CHI
+				culture = { has_culture_group = culture_group:chinese_group }
+			}
+		}
+		country_modifier = {
+			monthly_towards_sinicized = societal_value_monthly_move
+			cultural_tradition_modifier = -0.1
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+	limit_chinese_traditions = {
+		potential = {
+			OR = {
+				is_subject_of = c:CHI
+				capital ?= { sub_continent = sub_continent:east_asia }
+				capital ?= { sub_continent = sub_continent:south_east_asia }
+			}
+			NOT = { culture = { has_culture_group = culture_group:chinese_group } }
+			NOT = { tag = CHI }
+		}
+		country_modifier = {
+			monthly_towards_unsinicized = societal_value_monthly_move
+			cultural_influence_modifier = 0.05
+			monthly_legitimacy = 0.03
+			monthly_republican_tradition = 0.02
+			monthly_devotion = 0.03
+			monthly_tribal_cohesion = 0.03
+		}
+		estate_preferences = {
+			peasants_estate
+		}
+		years = 2
+	}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+﻿promote_culture_remove_mark = {
+	ability = dip
+	
+	allow_multiple = yes
+	
+	potential = {
+		num_locations > 0
+		OR = {
+			has_game_rule = icd_culture_marking_on
+			any_province = {
+				has_variable = no_reapplying_promotion
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	select_trigger = {
+		looking_for_a = province
+		source = actor
+		target_flag = target_1
+		name = "promote_culture_select_province"
+		none_available_msg_key = "promote_culture_no_provinces"
+		column = {
+			data = name
+		}
+		default_sort = province_culture_percentage
+		visible = {
+			has_variable = no_reapplying_promotion
+			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_culture interaction_target = target_1 } }
+			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_culture_edited interaction_target = target_1 } }
+			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_culture_mark_only interaction_target = root } }
+		}
+		map_color = {
+			value = define:NMapColors|MAP_COLOR_HIGH
+		}
+	}
+
+	is_finished = {
+		always = yes
+	}
+
+	on_activate = {
+		custom_tooltip = promote_culture_remove_mark_tt
+		if = {
+			limit = {
+				exists = scope:target_1
+			}
+			remove_variable = no_reapplying_promotion
+		}
+	}
+	
+	on_deactivate = {
+		if = {
+			limit = {
+				exists = scope:target_1
+			}
+			scope:target_1 = {
+				set_variable = {
+					name = promoting_culture
+					value = scope:target_1.dominant_culture
+				}
+				remove_variable = no_reapplying_promotion
+			}
+		}
+	}
+
+	
+	ai_will_do = {
+		value = -15005000
+	}
+}

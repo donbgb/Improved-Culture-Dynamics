@@ -1,0 +1,16 @@
+﻿l_english:
+
+ mapmode_icd_culture_assimilation_mode_name: "Cultural Majority Assimilation"
+ MAPMODE_ICD_CULTURE_ASSIMILATION_MODE: "#T $mapmode_icd_culture_assimilation_mode_name$#!\nThis shows which culture a location is assimilating to - be it our culture, another country's culture or the local dominant culture."
+ icd_culture_assimilation_mode_max: "Assimilating to Our Primary Culture"
+ icd_culture_assimilation_mode_low: "Our Culture Assimilating to Another"
+ icd_culture_assimilation_mode_high: "Assimilating to Another Primary Culture"
+ icd_culture_assimilation_mode_mid: "Assimilating to Location's Dominant Culture"
+ icd_culture_assimilation_mode_orange: "Assimilating to Another Culture"
+ icd_culture_assimilation_mode_black: "Uncolonized"
+ 
+ 
+ ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP_NONE: "Uncolonized locations do not assimilate"
+ ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP: "[ROOT.GetLocation.GetName]'s Dominant [culture|e] is [ROOT.GetLocation.GetDominantCulture.GetName]. The location is currently assimilating to [ROOT.GetLocation.GetProvince.MakeScope.GetVariable('promoting_culture').GetCulture.GetName]"
+ ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP_NO_PROMOTING: "[ROOT.GetLocation.GetName]'s Dominant [culture|e] is [ROOT.GetLocation.GetDominantCulture.GetName]. The location is currently assimilating to [ROOT.GetLocation.GetOwner.GetCulture.GetName]"
+ 

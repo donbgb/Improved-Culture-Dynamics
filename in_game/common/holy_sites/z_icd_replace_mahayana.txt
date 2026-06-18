@@ -1,0 +1,6 @@
+﻿REPLACE:borobudur_temple = {
+    location = borobudur
+    type = temple
+    importance = 4
+	religions = { southern_mahayana nusantaran_hindu }
+}

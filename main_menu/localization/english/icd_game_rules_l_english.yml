@@ -1,0 +1,13 @@
+﻿l_english:
+ rule_icd_promote_culture_cabinet_action: "#color_yellow ICD#!: Promote Culture and Unify Culture"
+ setting_icd_cabinet_action_off: "Unavailable"
+ setting_icd_cabinet_action_off_desc: "The 'Promote Culture' and 'Unify Culture Group' cabinet actions are not available. Most historical experience, but with less player agency."
+ setting_icd_cabinet_action_on_vanilla: "Fully Available"
+ setting_icd_cabinet_action_on_vanilla_desc: "The 'Promote Culture' and 'Unify Culture Group' cabinet actions are available and identical to vanilla. Not recommended and will hurt the experience. Unifying your culture group in particular may cause awkward situations."
+ setting_icd_cabinet_action_on_edited: "Available but Edited"
+ setting_icd_cabinet_action_on_edited_desc: "An edited version of the 'Promote Culture' cabinet action is available. The 'Unify Culture Group' cabinet action is not available."
+ rule_icd_culture_marking: "#color_yellow ICD#!: Culture Marking"
+ setting_icd_culture_marking_off: "Unavailable"
+ setting_icd_culture_marking_off_desc: "The 'Marking' cabinet action is not available. This delivers a less exploitable but less creatively flexible experience."
+ setting_icd_culture_marking_on: "Available"
+ setting_icd_culture_marking_on_desc: "The 'Marking' cabinet action is available. This cabinet action can be abused by the player, which can lead to some of the cultural mechanics of the mod being rendered useless."

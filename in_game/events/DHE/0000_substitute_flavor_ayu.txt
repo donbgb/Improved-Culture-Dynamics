@@ -1,0 +1,135 @@
+﻿namespace = flavor_ayu
+
+flavor_ayu.6 = { #Wat Chaiwatthanaram
+	type = country_event
+	title = flavor_ayu.6.title
+	desc = flavor_ayu.6.desc
+	outcome = neutral
+
+	historical_info = flavor_ayu.6.historical_info
+
+	dynamic_historical_event = {
+		tag = AYU
+		tag = SIA
+		from = 1600.1.1
+		to = 1700.1.1
+		monthly_chance = 5
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		has_ruler = yes
+		ruler.total_abilities >= 200
+		OR = {
+			religion = religion:theravada
+			religion = religion:mahayana
+			religion = religion:southern_mahayana
+			religion = religion:tibetan_buddhism
+		}
+		capital = location:ayodhya
+	}
+
+	illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		ruler = { save_scope_as = target_ruler }
+		location:ayodhya = { save_scope_as = target_location }
+	}
+
+	option = {
+		name = flavor_ayu.6.a
+		historical_option = yes
+		location:ayodhya = {
+			construct_building = {
+				building_type = building_type:wat_chaiwatthanaram_temple_building
+				cost_multiplier = 0.9
+				cost_multiplier_reason = "royal_sponsorship"
+			}
+		}
+	}
+	option = {
+		name = flavor_ayu.6.b
+		add_government_power = government_power_weak_penalty
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+		add_prestige = prestige_mild_bonus
+	}
+}
+
+flavor_ayu.8 = { #The Buddha's Footprint
+	type = country_event
+	title = flavor_ayu.8.title
+	desc = flavor_ayu.8.desc
+	outcome = neutral
+
+	historical_info = flavor_ayu.8.historical_info
+
+	dynamic_historical_event = {
+		tag = AYU
+		tag = SIA
+		from = 1600.1.1
+		to = 1700.1.1
+		monthly_chance = 5
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		has_ruler = yes
+		owns = location:saraburi
+		OR = {
+			religion = religion:theravada
+			religion = religion:mahayana
+			religion = religion:southern_mahayana
+			religion = religion:tibetan_buddhism
+		}
+	}
+
+	illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		ruler = { save_scope_as = target_ruler }
+		location:saraburi = { save_scope_as = target_location }
+	}
+
+	option = {
+		name = flavor_ayu.8.a
+		historical_option = yes
+		location:saraburi = {
+			if = {
+				limit = {
+					OR = {
+						location_rank = location_rank:town
+						location_rank = location_rank:city
+					}
+					NOT = { has_building_with_at_least_one_level = temple }
+				}
+				construct_building = {
+					building_type = building_type:temple
+					cost_multiplier = 1
+					cost_multiplier_reason = "royal_sponsorship"
+				}
+			}
+			else = {
+				change_development = development_mild_bonus
+			}
+		}
+		add_karma = karma_mild_bonus
+		change_societal_value = { type = spiritualist_vs_humanist value = societal_value_tiny_move_to_left }
+	}
+
+	option = {
+		name = flavor_ayu.8.b
+		add_prestige = prestige_weak_bonus
+		change_societal_value = { type = spiritualist_vs_humanist value = societal_value_minor_move_to_right }
+		change_societal_value = { type = traditionalist_vs_innovative value = societal_value_minor_move_to_right }
+	}
+}

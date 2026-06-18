@@ -1,0 +1,96 @@
+﻿REPLACE:MAZ_f = { # Mazovia
+	level = 1
+	required_locations_fraction = 0.9
+	rule = historical
+	potential = {
+		culture = culture:greater_polish
+	}
+	allow = {
+		owns = location:warsaw
+	}
+	
+	name = MAZ
+	flag = MAZ
+	adjective = MAZ_ADJ
+	tag = MAZ
+	color = map_MAZ
+	
+	areas = {
+		mazovia_area
+	}
+	form_effect = {
+	}
+}
+
+REPLACE:SHL_f = {
+	level = 2
+	required_locations_fraction = 0.75
+	rule = historical
+	
+	potential = {
+		culture = culture:lower_saxon
+	}
+
+	name = SHL
+	flag = SHL
+	adjective = SHL_ADJ
+	tag = SHL
+	color = map_SHL
+	areas = {
+		holstein_area
+	}
+	form_effect = {
+	}
+}
+
+REPLACE:TRA_f = {
+	level = 2
+	required_locations_fraction = 0.75
+	rule = plausible
+
+	potential = {
+		OR = {
+			culture = culture:hungarian
+			culture = culture:moldovan
+			culture = culture:german_transylvanian
+			culture = culture:szekely_culture
+		}
+	}
+	allow = {
+		
+	}
+
+	name = TRA
+	flag = TRA	
+	adjective = TRA_ADJ
+	tag = TRA
+	color = map_transylvanian
+
+	areas = {
+		transylvania_area
+	}
+
+	form_effect = {
+	}
+}
+
+MVA_f = {
+	level = 1
+	required_locations_fraction = 0.9
+	rule = historical
+	
+	potential = {
+		culture = culture:czech
+	}
+
+	name = MVA
+	flag = MVA
+	adjective = MVA_ADJ
+	tag = MVA
+	color = map_MVA
+	areas = {
+		moravia_area
+	}
+	form_effect = {
+	}
+}

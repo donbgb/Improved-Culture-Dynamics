@@ -1,0 +1,45 @@
+﻿
+#icd_population_removal = {
+	#game_data = {
+#		category = province
+#	}
+#	local_monthly_development = -0.005
+#	local_merchant_power = -0.1
+#	local_monthly_prosperity = -0.0025
+#	local_unrest = 0.1
+#}
+
+icd_population_removal_relocate = {
+	game_data = {
+		category = province
+	}
+	local_monthly_development = -0.02
+	local_merchant_power = -0.25
+	local_merchant_capacity = -5
+	local_monthly_prosperity = -0.005
+	local_unrest = 0.25
+	local_monthly_food_modifier = -0.25
+}
+
+icd_relocation_effort_cost = {
+	game_data = {
+		category = country 
+	}
+	court_spending_efficiency  = -0.002
+	stability_cost_efficiency = -0.0004
+}
+
+icd_cultural_opinion_cost = {
+	game_data = {
+		category = country
+	}
+	tax_income_efficiency  = -0.05
+	global_pop_assimilation_speed_modifier = -0.75
+}
+
+icd_expel_minority_cost= {
+	game_data = {
+		category = country
+	}
+	tax_income_efficiency  = -0.05
+}

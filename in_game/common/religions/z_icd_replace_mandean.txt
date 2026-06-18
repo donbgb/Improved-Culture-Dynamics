@@ -1,0 +1,4 @@
+﻿INJECT:mandeaism = { 
+	culture_locked = yes
+}
+

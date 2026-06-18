@@ -1,0 +1,58 @@
+﻿fire_artist = { 
+	message = yes
+	is_consort_action = no
+	on_own_nation = yes
+
+	potential = {
+	}
+
+	ai_tick = monthly
+	ai_tick_frequency = 4
+
+	allow = {
+	}
+	
+	select_trigger = {
+		looking_for_a = character
+		source = actor
+		target_flag = recipient
+		name = "choose_character"
+		column = {
+			data = name
+		}
+		visible = {
+			is_alive = yes
+			is_artist = yes
+		}
+		enabled = {
+		}
+	}
+
+	effect = {
+		scope:actor = {
+			add_prestige = prestige_mild_penalty
+		}
+		hidden_effect = {
+			kill_character_silently = scope:recipient
+		}
+	}
+
+	ai_will_do = {
+		#if = {
+		#	limit = {
+			#	scope:actor = {
+		#			num_artists > {
+		#				value = modifier:num_possible_artists
+		#				add = 2
+		#			}
+		#		}
+		#	}
+		#	add = 25
+		#}
+		#subtract = {
+		#	desc = "game_concept_prestige"
+		#	value = "scope:actor.currency_utility(prestige|-10)"
+		#}
+		value = -4000
+	}
+}	

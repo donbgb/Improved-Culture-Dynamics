@@ -1,0 +1,15 @@
+﻿#Schools of Jurisprudence
+REPLACE:alawi_school = {
+	color = rgb { 49 27 2 }
+
+	enabled_for_country = {
+		religion = religion:alawite_religion
+	}
+	enabled_for_character = {
+		religion = religion:alawite_religion
+	}
+	
+	modifier = {
+		tolerance_heathen = 1
+	}
+}

@@ -1,0 +1,854 @@
+﻿namespace = icd_new_cultures
+
+icd_new_cultures.1 = { ####RUSSIAN###
+	type = country_event
+	title = icd_new_cultures.1.title
+	desc = icd_new_cultures.1.desc
+	fire_only_once = yes
+	outcome = neutral
+
+	trigger = {
+	}
+	illustration_tags = {
+        10 = happy
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+	}
+	option = { ###CREATE A NEW CULTURE###
+		name = icd_new_cultures.1.a
+		historical_option = yes
+		custom_tooltip = icd_new_cultures.1.a.tt
+		
+		every_country = {
+			limit = {
+				any_pop = {
+					culture = { has_culture_group = culture_group:russian_group }
+				}
+				NOT = { has_or_had_tag = RUS }
+				NOT = { is_subject_or_below_of = c:RUS }
+			}
+			every_owned_location = {
+				limit = {
+					culture_group_percentage = {
+						culture_group =  culture_group:russian_group
+						value > 0
+					}
+					NOT = {
+						dominant_culture ?= root.culture
+					}
+				}
+				add_location_modifier = {
+					modifier = russian_culture_movement_momentum_waning_locally
+					size = 1
+					mode = add_and_extend
+				}
+			}
+		}
+		
+		every_pop = {
+			limit = {
+				culture = { 
+					has_culture_group = culture_group:russian_group
+					is_primary_in = root
+				}
+			}
+			split_pop = {
+				culture = culture:russian_culture_formed
+				fraction = 0.51
+			}
+		}
+		
+		capital = {			
+				spawn_movement = {
+					movement_definition = movement_definition:russian_culture_movement
+					supporters = {
+						value = population
+						multiply = 0.1
+				}
+			}
+		}
+		
+		every_subject_or_below = {
+			if = {
+				limit = {
+					culture = { 
+						has_culture_group = culture_group:russian_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+					}
+				}
+				change_culture = culture:russian_culture_formed
+			}
+			every_character = {
+					limit = {
+						culture = {
+							has_culture_group = culture_group:russian_group
+							OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+					}
+				}
+				change_character_culture = culture:russian_culture_formed
+				}
+		}
+		
+		every_character = {
+			limit = {
+				culture = {
+					has_culture_group = culture_group:russian_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+				}
+			}
+			change_character_culture = culture:russian_culture_formed
+		}
+		
+		ruler = {
+			if = {
+			limit = {
+				culture = {
+					has_culture_group = culture_group:russian_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+					}
+				}
+			change_character_culture = culture:russian_culture_formed
+			every_close_relative = {
+				limit = {
+				culture = {
+					has_culture_group = culture_group:russian_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+				}
+				is_ruler = no
+			}
+			change_character_culture = culture:russian_culture_formed
+			}
+			}
+		}
+		culture_group:russian_group = {
+			every_culture_in_culture_group = {
+				limit = {
+					OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+					}
+				}
+				change_cultural_view = {
+					target = culture:russian_culture_formed
+					change = 3
+				}
+				reverse_change_cultural_view = {
+					target = culture:russian_culture_formed
+					change = 3
+				}
+			}
+		}
+		
+		change_culture = culture:russian_culture_formed
+		
+		
+		
+		set_global_variable = icd_russian_culture_formed
+	}
+}
+
+icd_new_cultures.2 = { ###NETHERLANDS###
+	type = country_event
+	title = icd_new_cultures.1.title
+	desc = icd_new_cultures.1.desc
+	fire_only_once = yes
+	outcome = neutral
+	
+	trigger = {
+	}
+	illustration_tags = {
+        10 = happy
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+	}
+	option = { ###CREATE A NEW CULTURE###
+		name = icd_new_cultures.1.a
+		historical_option = yes
+		custom_tooltip = icd_new_cultures.1.a.tt
+		
+		
+		every_country = {
+			limit = {
+				any_pop = {
+					culture = { has_culture_group = culture_group:netherlandish_group }
+				}
+				NOT = { has_or_had_tag = NED }
+				NOT = { is_subject_or_below_of = c:NED }
+			}
+			every_owned_location = {
+				limit = {
+					culture_group_percentage = {
+						culture_group =  culture_group:netherlandish_group
+						value > 0
+					}
+					NOT = {
+						dominant_culture ?= root.culture
+					}
+				}
+				add_location_modifier = {
+					modifier = dutch_culture_movement_momentum_waning_locally
+					size = 1
+					mode = add_and_extend
+				}
+			}
+		}
+		
+		every_pop = {
+			limit = {
+				culture = { 
+					has_culture_group = culture_group:netherlandish_group
+					is_primary_in = root
+				}
+			}
+			split_pop = {
+				culture = culture:dutch_culture_formed
+				fraction = 0.51
+			}
+		}
+		
+		capital = {			
+				spawn_movement = {
+					movement_definition = movement_definition:dutch_culture_movement
+					supporters = {
+						value = population
+						multiply = 0.1
+				}
+			}
+		}
+
+		every_subject_or_below = {
+			if = {
+				limit = {
+					culture = { 
+						has_culture_group = culture_group:netherlandish_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						}
+					}
+				}
+				change_culture = culture:dutch_culture_formed
+			}
+			every_character = {
+					limit = {
+						culture = {
+							has_culture_group = culture_group:netherlandish_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						}
+					}
+				}
+				change_character_culture = culture:dutch_culture_formed
+				}
+		}
+		
+		every_character = {
+			limit = {
+				culture = {
+					has_culture_group = culture_group:netherlandish_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						}
+				}
+			}
+			change_character_culture = culture:dutch_culture_formed
+		}
+		
+		ruler = {
+			if = {
+			limit = {
+				culture = {
+					has_culture_group = culture_group:netherlandish_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						}
+				}
+			}
+			change_character_culture = culture:dutch_culture_formed
+			every_close_relative = {
+				limit = {
+				culture = {
+					has_culture_group = culture_group:netherlandish_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						}
+				}
+				is_ruler = no
+			}
+			change_character_culture = culture:dutch_culture_formed
+			}
+		}
+		}
+		
+		culture_group:netherlandish_group = {
+			every_culture_in_culture_group = {
+				limit = {
+					OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+					}
+				}
+				change_cultural_view = {
+					target = culture:dutch_culture_formed
+					change = 3
+				}
+				reverse_change_cultural_view = {
+					target = culture:dutch_culture_formed
+					change = 3
+				}
+			}
+		}
+
+		change_culture = culture:dutch_culture_formed
+		
+		set_global_variable = icd_dutch_culture_formed
+	}
+}
+
+icd_new_cultures.3 = { ### northumbria ###
+	type = country_event
+	title = icd_new_cultures.1.title
+	desc = icd_new_cultures.1.desc
+	fire_only_once = yes
+	outcome = neutral
+
+	trigger = {
+	}
+	illustration_tags = {
+        10 = happy
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+	}
+	option = { ###CREATE A NEW CULTURE###
+		name = icd_new_cultures.1.a
+		historical_option = yes
+		custom_tooltip = icd_new_cultures.1.a.tt
+		
+		set_global_variable = northumbrian_revival
+		
+		area:northumbria_area = {
+			every_location_in_area = {
+				every_pop = {
+					limit = {
+						culture = culture:english
+						NOT = {
+							location = location:macclesfield
+							location = location:nantwich
+							location = location:chester
+							location = location:liverpool
+							location = location:manchester
+							location = location:blackburn
+							location = location:doncaster
+							location = location:wakefield
+							location = location:leeds
+							location = location:pontefract
+						}
+					}
+				change_pop_culture = culture:northumbrian
+				}
+			}
+		}
+		every_pop = {
+			limit = {
+				culture = culture:northumbrian
+				location = {
+					OR = {
+						any_neighbor_location = {
+							area = area:midlands_area
+						}
+						province_definition = province_definition:lancashire_province
+						province_definition = province_definition:west_riding_province
+					}
+				}
+			}
+			split_pop = {
+				culture = culture:english
+				fraction = { 0.12 0.38 }
+			}
+		}
+		area:scottish_lowlands_area = {
+			every_location_in_area = {
+				every_pop = {
+					limit = {
+						culture = culture:english
+					}
+				change_pop_culture = culture:northumbrian
+				}
+			}
+		}
+				
+		every_character = {
+				limit = {
+					culture = culture:english
+					birth_location.area = area:northumbria_area
+				}
+				change_character_culture = culture:northumbrian
+		}
+		
+		ruler = {
+			if = {
+			limit = {
+				culture = culture:english
+				birth_location.area = area:northumbria_area
+			}
+			change_character_culture = culture:northumbrian
+			every_close_relative = {
+				limit = {
+				culture = culture:english
+				is_ruler = no
+				birth_location.area = area:northumbria_area
+			}
+			change_character_culture = culture:northumbrian
+			}
+		}
+		}
+
+		every_country = {
+			limit = {
+				culture = culture:english
+				NOT = {
+					is_subject_or_below_of = c:ENG
+				}
+				capital = {
+					area = area:northumbria_area
+					NOT = {
+						this = location:chester
+						this = location:nantwich
+						this = location:macclesfield
+					}
+				}
+			}
+			change_culture = culture:northumbrian
+			every_character = {
+				limit = {
+					culture = culture:english
+					birth_location.area = area:northumbria_area
+				}
+				change_character_culture = culture:northumbrian
+			}
+		}
+		
+		
+		
+		change_culture = culture:northumbrian
+	}
+}
+
+icd_new_cultures.4 = { ### mazovia ###
+	type = country_event
+	title = icd_new_cultures.1.title
+	desc = icd_new_cultures.1.desc
+	fire_only_once = yes
+	outcome = neutral
+	
+	trigger = {
+	}
+	illustration_tags = {
+        10 = happy
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+	}
+	option = { ###CREATE A NEW CULTURE###
+		name = icd_new_cultures.1.a
+		historical_option = yes
+		custom_tooltip = icd_new_cultures.1.a.tt
+		
+		set_global_variable = mazovian_revival
+		
+		area:mazovia_area = {
+			every_location_in_area = {
+				every_pop = {
+					limit = {
+						culture = culture:greater_polish
+					}
+				change_pop_culture = culture:mazovian
+				}
+
+			}
+		}
+		every_pop = {
+			limit = {
+				culture = culture:mazovian
+				location = {
+					any_neighbor_location = {
+						OR = {
+							area = area:central_poland_area
+							area = area:lesser_poland_area
+						}
+					}
+				}
+			}
+			split_pop = {
+				culture = culture:greater_polish
+				fraction = { 0.12 0.28 }
+			}
+		}
+
+		every_country = {
+			limit = {
+				culture = culture:greater_polish
+				NOT = {
+					is_subject_or_below_of = c:POL
+				}
+				capital = {
+					area = area:mazovia_area
+				}
+			}
+			change_culture = culture:mazovian
+			every_character = {
+				limit = {
+					culture = culture:greater_polish
+					birth_location.area = area:mazovia_area
+				}
+				change_character_culture = culture:mazovian
+			}
+		}
+
+		every_character = {
+				limit = {
+					culture = culture:greater_polish
+					birth_location.area = area:mazovia_area
+				}
+				change_character_culture = culture:mazovian
+			}
+			
+		ruler = {
+			if = {
+			limit = {
+				culture = culture:greater_polish
+				birth_location.area = area:mazovia_area
+			}
+			change_character_culture = culture:mazovian
+			every_close_relative = {
+				limit = {
+				culture = culture:greater_polish
+				is_ruler = no
+				birth_location.area = area:mazovia_area
+			}
+			change_character_culture = culture:mazovian
+			}
+		}
+		}
+		
+		change_culture = culture:mazovian
+		
+		
+	}
+	
+}
+
+icd_new_cultures.5 = { ####LITHUANIAN EVENT###
+	type = country_event
+	title = icd_new_cultures.1.title
+	desc = icd_new_cultures.1.desc
+	fire_only_once = yes
+	outcome = neutral
+	trigger = {
+		
+	}
+	illustration_tags = {
+        10 = happy
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+	}
+	option = { ###CREATE A NEW CULTURE###
+		name = icd_new_cultures.1.a
+		historical_option = yes
+		custom_tooltip = icd_new_cultures.1.a.tt
+		
+		every_pop = {
+			limit = {
+				culture = { 
+					has_culture_group = culture_group:lithuanian_group
+					is_primary_in = root
+				}
+			}
+			split_pop = {
+				culture = culture:lithuanian_culture_formed
+				fraction = 0.55
+			}
+		}
+		
+		capital = {			
+				spawn_movement = {
+					movement_definition = movement_definition:lithuanian_culture_movement
+					supporters = {
+						value = population
+						multiply = 0.1
+				}
+			}
+		}
+			
+		every_subject_or_below = {
+			every_character = {
+					limit = {
+						culture = {
+							has_culture_group = culture_group:lithuanian_group
+						}
+					}
+				change_character_culture = culture:lithuanian_culture_formed
+				}
+		}
+		
+		every_character = {
+			limit = {
+				culture = {
+					has_culture_group = culture_group:lithuanian_group
+					}
+				}
+			change_character_culture = culture:lithuanian_culture_formed
+		}
+		
+		ruler = {
+			if = {
+			limit = {
+				culture = {
+					has_culture_group = culture_group:lithuanian_group
+				}
+			}
+			change_character_culture = culture:lithuanian_culture_formed
+			every_close_relative = {
+				limit = {
+				culture = {
+					has_culture_group = culture_group:lithuanian_group
+				}
+				is_ruler = no
+			}
+			change_character_culture = culture:lithuanian_culture_formed
+			}
+		}
+		}
+		
+		culture_group:lithuanian_group = {
+			every_culture_in_culture_group = {
+				change_cultural_view = {
+					target = culture:lithuanian_culture_formed
+					change = 3
+				}
+				reverse_change_cultural_view = {
+					target = culture:lithuanian_culture_formed
+					change = 3
+				}
+			}
+		}
+		
+		change_culture = culture:lithuanian_culture_formed
+		
+		set_global_variable = icd_lithuanian_culture_formed
+	}
+	
+}
+
+icd_new_cultures.6 = { ####RUTHENIA###
+	type = country_event
+	title = icd_new_cultures.1.title
+	desc = icd_new_cultures.1.desc
+	fire_only_once = yes
+	outcome = neutral
+	
+	trigger = {
+	}
+	illustration_tags = {
+        10 = happy
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+	}
+	option = { ###CREATE A NEW CULTURE###
+		name = icd_new_cultures.1.a
+		historical_option = yes
+		custom_tooltip = icd_new_cultures.1.a.tt
+		
+		every_country = {
+			limit = {
+				any_pop = {
+					culture = { has_culture_group = culture_group:russian_group }
+				}
+				NOT = { has_or_had_tag = UKR }
+				NOT = { is_subject_or_below_of = c:UKR }
+			}
+			every_owned_location = {
+				limit = {
+					culture_group_percentage = {
+						culture_group =  culture_group:russian_group
+						value > 0
+					}
+					NOT = {
+						dominant_culture ?= root.culture
+					}
+				}
+				add_location_modifier = {
+					modifier = ruthenian_culture_movement_momentum_waning_locally
+					size = 1
+					mode = add_and_extend
+				}
+			}
+		}
+		
+		every_pop = {
+			limit = {
+				culture = { 
+					has_culture_group = culture_group:russian_group
+					is_primary_in = root
+				}
+			}
+			split_pop = {
+				culture = culture:ruthenian_culture_formed
+				fraction = 0.51
+			}
+		}
+		
+		capital = {			
+				spawn_movement = {
+					movement_definition = movement_definition:ruthenian_culture_movement
+					supporters = {
+						value = population
+						multiply = 0.1
+				}
+			}
+		}
+		
+		every_subject_or_below = {
+			if = {
+				limit = {
+					culture = { 
+						has_culture_group = culture_group:russian_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+					}
+				}
+				change_culture = culture:ruthenian_culture_formed
+			}
+			every_character = {
+					limit = {
+						culture = {
+							has_culture_group = culture_group:russian_group
+							OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+					}
+				}
+				change_character_culture = culture:ruthenian_culture_formed
+				}
+		}
+		
+		every_character = {
+			limit = {
+				culture = {
+					has_culture_group = culture_group:russian_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+				}
+			}
+			change_character_culture = culture:ruthenian_culture_formed
+		}
+		
+		ruler = {
+			if = {
+			limit = {
+				culture = {
+					has_culture_group = culture_group:russian_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+				}
+			}
+			change_character_culture = culture:ruthenian_culture_formed
+			every_close_relative = {
+				limit = {
+				culture = {
+					has_culture_group = culture_group:russian_group
+						OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+						}
+				}
+				is_ruler = no
+			}
+			change_character_culture = culture:ruthenian_culture_formed
+			}
+		}
+		}
+		
+		culture_group:russian_group = {
+			every_culture_in_culture_group = {
+				limit = {
+					OR = {
+						is_primary_in = root
+						is_accepted_in = root
+						is_tolerated_in = root
+					}
+				}
+				change_cultural_view = {
+					target = culture:ruthenian_culture_formed
+					change = 3
+				}
+				reverse_change_cultural_view = {
+					target = culture:ruthenian_culture_formed
+					change = 3
+				}
+			}
+		}
+		
+		change_culture = culture:ruthenian_culture_formed
+		
+		
+		
+		set_global_variable = icd_ruthenian_culture_formed
+	}
+}
+

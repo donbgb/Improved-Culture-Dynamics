@@ -1,0 +1,11 @@
+﻿l_braz_por:
+ russian_culture_formed: "Russo"
+ dutch_culture_formed: "Neerlandês"
+ ruthenian_culture_formed: "Ruteno"
+ icd_new_cultures.1.a.tt: "Nós vamos formar uma cultura nova!"
+ icd_new_cultures.1.title: "Uma cultura [ROOT.GetCountry.GetAdjective] nova"
+ icd_new_cultures.1.desc: "Nossa transformação política recente e a unificação de nossa população sob uma bandeira trouxeram mudanças culturas em nossa sociedade. Não é mais apropriado falarmos sobre uma cultura [ROOT.GetCountry.GetCulture.GetName] separada de culturas vizinhas associadas, mas sim falarmos sobre uma cultura nacional unida que guia nosso estado. Iremos prosseguir com essa transformação cultural."
+ icd_new_cultures.1.a: "Uma nova cultura!"
+ lithuanian_culture_formed: "Lituano"
+ 
+ MVA_f: "Formar a Moravia"

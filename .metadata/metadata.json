@@ -1,0 +1,12 @@
+﻿{
+	"name":	"Improved Culture Dynamics",
+	"id":	"improvedculturedynamics",
+	"version":	"1.0",
+	"picture": "thumbnail.png",
+	"supported_game_version":	"1.2",
+	"short_description":	"Improved Culture Dynamics",
+	"tags":	["Gameplay", "Historical", "Balance", "Religion", "Events" ],
+	"relationships":	[],
+	"game_custom_data":	{
+}
+}

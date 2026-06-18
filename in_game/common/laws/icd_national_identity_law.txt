@@ -1,0 +1,118 @@
+﻿icd_national_identity_law = {
+	icon = foreign_cultural_law
+	law_category = socioeconomic
+	potential = {
+		OR = {
+			has_embraced_institution = institution:enlightenment
+			has_embraced_institution = institution:industrialization
+		}
+		num_locations > 0
+	}
+	
+	civic_nationhood = {
+		country_modifier = {
+			global_pop_assimilation_speed = 0.005
+			monthly_towards_innovative = societal_value_huge_monthly_move
+			monthly_towards_individualism = societal_value_huge_monthly_move
+		}
+		
+		allow = {
+			"estate_power(estate_type:crown_estate)" > 0.3
+			OR = {
+				has_reform = government_reform:revolutionary_empire
+				has_reform = government_reform:revolutionary_republic
+				has_reform = government_reform:revolutionary_autocracy
+				has_reform = government_reform:military_regime_reform
+				has_reform = government_reform:constitutional_state
+				
+			}
+			NOT = {
+				has_policy = self_governing_institutions
+				has_policy = minority_rule
+			}
+		}
+		
+		estate_preferences = {
+			burghers_estate
+		}
+		
+		ai_will_do = {
+			value = 400
+		}
+		
+		years = 2
+	}
+	ethnic_identity = {
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+		}
+		potential = {
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		
+		ai_will_do = {
+			value = 300
+		}
+		
+		years = 2
+	}
+	subjecthood = {
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+		}
+		allow = {
+			government_type = government_type:monarchy
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		
+		ai_will_do = {
+			value = 300
+		}
+		
+		years = 2
+	}
+	union_of_many = {
+		country_modifier = {
+			monthly_towards_humanist = societal_value_huge_monthly_move
+		}
+		allow = {
+			OR = {
+				has_policy = regional_autonomy
+				has_policy = minority_rule
+				has_policy = self_governing_institutions
+			}
+		}
+		estate_preferences = {
+			peasants_estate
+		}
+		
+		ai_will_do = {
+			value = 300
+		}
+		
+		years = 2
+	}
+	
+	religious_community = {
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			monthly_towards_spiritualist = societal_value_huge_monthly_move
+		}
+		allow = {
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		
+		ai_will_do = {
+			value = 300
+		}
+		
+		years = 2
+	}
+
+}

@@ -1,0 +1,10 @@
+﻿REPLACE:nation_state_advance = {	
+	age = age_6_revolutions
+	
+	potential = {
+		always = no
+	}
+	
+	requires = separation_of_powers
+	icon = cultures_capacity_mil_choice
+}

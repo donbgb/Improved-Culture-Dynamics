@@ -1,0 +1,58 @@
+﻿REPLACE:northumbrian = {
+	language = northumbrian_dialect
+	
+	color = map_NOL
+	
+	tags = { english_gfx north_british_gfx british_gfx western_european_gfx european_gfx }
+
+	opinions = {
+		english = kindred 
+		scottish = positive
+		anglo_irish = positive
+		norman = enemy
+	}
+
+	culture_groups = {
+		british_group
+	}
+	
+	active = no
+}
+
+REPLACE:moravian = {
+	language = czech_dialect
+	
+	color = map_moravian
+	
+	tags = { czech_gfx west_slavic_gfx slavic_gfx western_european_gfx european_gfx }
+
+	opinions = {
+		czech = kindred
+		silesian = kindred
+		slovak = kindred
+	}
+	culture_groups = {
+		bohemian_group
+		slavic_group
+	}
+	
+}
+
+REPLACE:mazovian = {
+	language = polish_dialect
+	
+	color = map_MAZ
+	
+	tags = { polish_gfx west_slavic_gfx slavic_gfx eastern_european_gfx european_gfx }
+
+	opinions = {
+		greater_polish = kindred
+		lesser_polish = kindred
+	}
+	culture_groups = {
+		polish_group
+		slavic_group
+	}
+	
+	active = no
+}

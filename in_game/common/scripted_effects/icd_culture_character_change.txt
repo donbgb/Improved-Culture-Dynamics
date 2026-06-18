@@ -1,0 +1,191 @@
+﻿
+icd_character_culture_change = {
+			
+			if = {
+				limit = { 
+					culture = culture:alawite_culture
+				}
+				change_character_religion = religion:alawite_religion
+				change_character_culture = culture:levantine_culture
+			}
+
+			if = {
+				limit = { 
+					culture = { has_culture_group = culture_group:chinese_group }
+					religion = religion:mahayana
+					NOT = { owner.religion = religion:mahayana }
+				}
+				change_character_religion = religion:sanjiao
+			}
+
+			if = {
+				limit = { 
+					culture = { has_culture_group = culture_group:netherlandish_group } 
+					root = { owner ?= { culture = culture:dutch_culture_formed } }
+					has_global_variable = icd_dutch_culture_formed
+				}
+				change_character_culture = culture:dutch_culture_formed
+			}
+			
+			if = {
+				limit = { OR = { culture = culture:korean_culture culture = culture:tamna_culture } religion = religion:mahayana NOT = { owner.religion = religion:mahayana } }
+				change_character_religion = religion:sanjiao
+			}
+			if = {
+				limit = { OR = { culture = culture:vietnamese_culture culture = culture:muong_culture } religion = religion:mahayana NOT = { owner.religion = religion:mahayana } }
+				change_character_religion = religion:sanjiao
+			}
+			if = {
+				limit = { culture = culture:tamna_culture religion = religion:mahayana NOT = { owner.religion = religion:mahayana } }
+				change_character_religion = religion:sanjiao
+			}
+			
+			if = {
+				limit = { culture = culture:lao_culture religion = religion:mahayana NOT = { owner.religion = religion:mahayana } }
+				change_character_religion = religion:southern_mahayana
+			}
+			
+			if = {
+				limit = { culture = culture:cham_culture religion = religion:hindu NOT = { owner.religion = religion:hindu } }
+				change_character_religion = religion:nusantaran_hindu
+			}
+		
+			if = {
+				limit = { OR = { culture = culture:bai_culture culture = culture:derung_culture } religion = religion:mahayana NOT = { owner.religion = religion:mahayana } }
+				change_character_religion = religion:southern_mahayana
+			}
+		
+			if = {
+				limit = { OR = { birth_location.region = region:indonesia_region birth_location.area = area:malay_peninsula_area } 
+				culture = { has_culture_group = culture_group:austronesian_group } religion = religion:mahayana
+				NOT = { owner.religion = religion:mahayana }
+				}
+				change_character_religion = religion:nusantaran_hindu
+			}
+			if = {
+				limit = { OR = { birth_location.region = region:indonesia_region birth_location.area = area:malay_peninsula_area } 
+				culture = { has_culture_group = culture_group:austronesian_group } religion = religion:hindu
+				NOT = { owner.religion = religion:hindu }
+				}
+				change_character_religion = religion:nusantaran_hindu
+			}
+			
+			if = {
+				limit = { 
+					culture = { has_culture_group = culture_group:russian_group } 
+					root = { owner ?= { culture = culture:ruthenian_culture_formed } }
+					has_global_variable = icd_ruthenian_culture_formed
+				}
+				change_character_culture = culture:ruthenian_culture_formed
+			}
+			
+			if = {
+				limit = { 
+					culture = { has_culture_group = culture_group:russian_group } 
+					root = { owner ?= { culture = culture:russian_culture_formed } }
+					has_global_variable = icd_russian_culture_formed
+				}
+				change_character_culture = culture:russian_culture_formed
+			}
+
+			if = {
+				limit = { 
+					culture = { has_culture_group = culture_group:lithuanian_group } 
+					root = { owner ?= { culture = culture:lithuanian_culture_formed } }
+					has_global_variable = icd_lithuanian_culture_formed
+				}
+				change_character_culture = culture:lithuanian_culture_formed
+			}
+	
+			if = {
+				limit = { culture = culture:saintongeais }
+				change_character_culture = culture:poitevin
+			}
+			
+			if = {
+				limit = { culture = culture:berrichon }
+				change_character_culture = culture:french
+			}
+			
+			if = {
+				limit = { culture = culture:franc_comtois }
+				change_character_culture = culture:burgundian
+			}
+			
+			if = {
+				limit = { culture = culture:vivaro_alpine }
+				change_character_culture = culture:provencal
+			}
+			
+			if = {
+				limit = { culture = culture:lesser_polish }
+				change_character_culture = culture:greater_polish
+			}
+			if = {
+				limit = { culture = culture:mazovian NOT = { has_global_variable = mazovian_revival } }
+				change_character_culture = culture:greater_polish
+			}
+			
+			if = {
+				limit = { culture = culture:halychian_culture }
+				change_character_culture = culture:volhynian_culture
+			}
+			
+			if = {
+				limit = { culture = culture:polesian_culture }
+				change_character_culture = culture:ruthenian
+			}
+			
+			if = {
+				limit = { OR = { culture = culture:transylvanian culture = culture:wallachian }}
+				change_character_culture = culture:moldovan
+			}
+			
+			if = {
+				limit = { OR = { culture = culture:ripuarian_franconian culture = culture:moselle_franconian }}
+				change_character_culture = culture:rhine_franconian
+			}
+			
+			if = {
+				limit = { culture = culture:rhine_alemannic }
+				change_character_culture = culture:high_alemannic
+			}
+			
+			if = {
+				limit = { OR = { culture = culture:southern_bavarian culture = culture:upper_palatine }}
+				change_character_culture = culture:danube_bavarian
+			}
+			
+			if = {
+				limit = { culture = culture:angrian }
+				change_character_culture = culture:westphalian
+			}
+			
+			if = {
+				limit = { culture = culture:holsatian }
+				change_character_culture = culture:lower_saxon
+			}
+			
+			if = {
+				limit = { culture = culture:markish }
+				change_character_culture = culture:brandenburgish
+			}
+			
+			if = {
+				limit = { culture = culture:szekely_culture }
+				change_character_culture = culture:hungarian
+			}
+			
+			if = {
+				limit = { culture = culture:northumbrian  NOT = { has_global_variable = northumbrian_revival }}
+				change_character_culture = culture:english
+			}
+			
+			if = {
+				limit = { culture = culture:upper_egyptian_culture  }
+				change_character_culture = culture:lower_egyptian_culture 
+			}
+			
+}
+
+

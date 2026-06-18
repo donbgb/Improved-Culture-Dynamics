@@ -1,0 +1,25 @@
+﻿## Not hardcoded
+# Modifiers in this file will automatically be applied to all countries
+#	- Tooltips will also be generated
+#	- The AI will also understand them
+
+
+
+
+
+icd_tribesmen_assimilation = {
+	category = yes
+	type = country
+	
+	potential_trigger = {
+		NOT = {
+			has_estate_privilege = estate_privilege:icd_unify_the_tribes
+		}
+	}
+	
+	hide_effects = yes
+	alert = no
+	requires_real = no # Non-"real" countries are Rebels, Pirates and Mercenaries. Default is yes.
+
+	global_tribesmen_assimilation_blocked = yes
+}

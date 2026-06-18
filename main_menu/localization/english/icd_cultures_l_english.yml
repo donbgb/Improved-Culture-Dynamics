@@ -1,0 +1,14 @@
+﻿l_english:
+ russian_culture_formed: "Russian"
+ dutch_culture_formed: "Dutch"
+ ruthenian_culture_formed: "Ruthenian"
+ icd_new_cultures.1.a.tt: "We will form a new culture!"
+ icd_new_cultures.1.b.tt: "We will have five years to prepare for the formation of a new culture"
+ icd_new_cultures.1.title: "A New [ROOT.GetCountry.GetAdjective] Culture"
+ icd_new_cultures.1.desc: "Our recent political transformations and the unification of our population under one banner has brought about cultural shifts in our society. It is no longer appropriate to talk about a [ROOT.GetCountry.GetCulture.GetName] culture separate from related neighbouring cultures, but rather a unified overarching civic culture that guides our state. Should we proceed with this cultural transformation?"
+ icd_new_cultures.1.a: "Establish a new culture!"
+ icd_new_cultures.1.b: "Give us some time to prepare"
+ icd_new_cultures.1.c: "This doesn't sound like a good idea"
+ lithuanian_culture_formed: "Lithuanian"
+ 
+ MVA_f: "Form Moravia"

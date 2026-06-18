@@ -1,0 +1,187 @@
+﻿relocate_people = {
+	ability = adm
+	
+	allow_multiple = no
+	
+	potential = {
+		num_locations > 0 
+		OR = {
+			culture = { has_culture_group = culture_group:turkic_group }
+			culture = { has_culture_group = culture_group:iranian_group }
+			country_rank_level = 4
+		}
+	}
+	
+	allow = {
+		cultural_unity < 1.0
+		OR = {
+			country_rank = country_rank:rank_kingdom
+			country_rank = country_rank:rank_empire
+		}
+		has_embraced_institution = institution:legalism
+		government_type = government_type:monarchy
+	}
+	
+	select_trigger = {
+		looking_for_a = province
+		source = actor
+		target_flag = target_origin
+		name = "relocate_people_select_origin_province"
+		none_available_msg_key = "relocate_people_no_provinces"
+		column = {
+			data = name
+		}
+		column = {
+			data = population
+		}
+		default_sort = population
+		visible = {
+			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = relocate_people interaction_target = root } }
+		}
+		map_color = define:NMapColors|MAP_COLOR_HIGH
+	}
+	
+	select_trigger = {
+		looking_for_a = culture
+		target_flag = target
+		#for the AI we have an optimisation to only look through religions that are present. Human can look at all...but will have some disabled
+		source_ai_override = actor
+		source_flags_ai_override = include_any_present
+		name = "relocate_people_select_culture"
+		none_available_msg_key = "relocate_people_no_culture"
+		column = {
+			data = name
+		}
+		visible = {
+			scope:target_origin = { 
+				culture_population = {
+					culture = root
+					value > 0
+				}
+			}
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = province
+		source = actor
+		target_flag = target_destination
+		name = "relocate_people_select_destination_province"
+		none_available_msg_key = "relocate_people_no_provinces"
+		column = {
+			data = name
+		}
+		column = {
+			data = population
+		}
+		column = {
+			data = province_culture_percentage
+		}
+		default_sort = province_culture_percentage
+		visible = {
+			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = relocate_people interaction_target = root } }
+			NOT = { this = scope:target_origin }
+		}
+		map_color = define:NMapColors|MAP_COLOR_LOW
+	}
+
+	on_activate = {
+		custom_tooltip = relocate_people_tt
+		if = {
+			limit = {
+				exists = scope:target_origin
+				exists = scope:target_destination
+			}
+			add_migration = {
+				owner = scope:actor
+				from = scope:target_origin.province_definition
+				to = scope:target_destination.province_definition
+				culture = scope:target
+				amount = {
+					value = 0.100
+					multiply = {
+						value = 1
+						if = {
+							limit = {
+								exists = scope:cabinet
+							}
+							add = "scope:cabinet.effective_skill"
+						}
+					}
+				}
+				months = -1
+			}
+			scope:target_origin = {
+				add_province_modifier = {
+					modifier = icd_population_removal_relocate
+				}
+			}
+			
+			scope:actor = {
+				add_country_modifier = {
+					modifier = icd_relocation_effort_cost
+					size = {
+						value = 1
+						multiply = {
+							value = "scope:target_origin.province_capital.distance_to(scope:target_destination.province_capital)"
+						}
+						
+					}
+				}
+			}
+		}
+	}
+
+	on_deactivate = {
+		if = {
+			limit = {
+				exists = scope:target_origin
+				exists = scope:target_destination
+			}
+			remove_migration = {
+				owner = scope:actor
+				from = scope:target_origin.province_definition
+				to = scope:target_destination.province_definition
+				culture = scope:target
+			}
+			scope:target_origin = {
+				remove_province_modifier = icd_population_removal_relocate
+			}
+			scope:actor = { 
+				remove_country_modifier = icd_relocation_effort_cost
+			}
+		}
+	}
+	
+	is_finished = {
+		trigger_if = {
+			limit = {
+				exists = scope:target_origin
+				exists = scope:target_destination
+			}
+				scope:target_origin = {
+					culture_population = {
+						culture = scope:target
+						value < 1
+					}
+				}
+		}
+	}
+
+	progress = {
+		scope:target_origin = {
+			value = "culture_population(scope:target)"
+		}
+		scope:target_destination = {
+			value = "culture_population(scope:target)"
+		}
+	}
+
+	map_marker = {
+		show_for_owner = yes
+	}
+
+	ai_will_do = {
+		value = -1000
+	}
+}

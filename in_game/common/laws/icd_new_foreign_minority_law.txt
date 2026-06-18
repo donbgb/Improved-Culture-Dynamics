@@ -1,0 +1,194 @@
+﻿new_foreign_cultural_law = {
+	icon = foreign_cultural_law
+	law_category = socioeconomic
+	
+	potential = {
+		root = { cultural_unity < 1.0 }
+		num_locations > 0
+	}
+	
+	persianate = {
+		country_modifier = {
+			cultural_influence_modifier = -0.1
+			change_court_language_cost_modifier = 0.5
+			monthly_prestige = 0.1
+			global_nobles_max_literacy = 5
+		}
+		potential = {
+			NOT = {
+				culture = { has_culture_group = culture_group:iranian_group }
+			}
+			OR = {
+				capital.sub_continent = sub_continent:middle_east
+				capital.sub_continent = sub_continent:south_asia
+				capital.sub_continent = sub_continent:central_asia
+			}
+			religion.group = religion_group:muslim
+		}
+		allow = {
+			court_language = language:persian_language
+		}
+		
+		estate_preferences = {
+			nobles_estate
+		}
+		
+		years = 2
+		ai_will_do = {
+			value = 400
+		}
+	}
+	
+	
+	cultural_manifestation_privileges = {
+		country_modifier = {
+			artist_salary_modifier = -0.1
+			add_accepted_culture_cost_modifier = -0.5
+			global_pop_assimilation_speed_modifier = -0.1
+		}
+		estate_preferences = {
+			peasants_estate
+		}
+		years = 2
+		
+		ai_will_do = {
+			value = 200
+		}
+	}
+	
+	guild_restrictions = {
+		country_modifier = {
+			global_pop_assimilation_speed_modifier = 0.1
+			global_trade_protection_factor = 0.1
+		}
+		allow = {
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		years = 2
+		
+		ai_will_do = {
+			value = 200
+		}
+	}
+	blood_tax_of_foreigners = {
+		country_modifier = {
+			wrong_culture_levy_size = 0.25
+			add_accepted_culture_cost_modifier = 0.25
+			global_pop_assimilation_speed_modifier = -0.05
+		}
+		allow = {
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		
+		ai_will_do = {
+			value = 200
+		}
+		
+		years = 2
+	}
+	assertive_assimilation = {
+		country_modifier = {
+			global_pop_assimilation_speed_modifier = 0.4
+			cultures_capacity_modifier = -0.2
+		}
+		allow = {
+			"estate_power(estate_type:crown_estate)" > 0.4
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		
+		ai_will_do = {
+			value = 200
+		}
+		
+		years = 2
+	}	
+	self_governing_institutions = {
+		country_modifier = {
+			cultures_capacity = 0.5
+			add_accepted_culture_cost_modifier = -0.5
+			global_monthly_development = 0.0005
+			global_pop_assimilation_speed_modifier = -0.8
+			global_pop_conversion_speed_modifier = -0.5
+			monthly_towards_humanist = societal_value_minor_monthly_move
+		}
+		potential = {
+		}
+		allow = {
+			OR = {
+				has_estate_privilege = estate_privilege:dhimmi_abrahamic_communities
+				has_estate_privilege = estate_privilege:dharmic_dhimmi_communities
+				has_estate_privilege = estate_privilege:icd_sabian_abrahamic_communities
+				has_policy = minority_rule
+				has_policy = regional_autonomy
+			}
+		}
+		estate_preferences = {
+			peasants_estate
+		}
+		years = 2
+		
+		ai_will_do = {
+			value = 200
+		}
+		
+	}
+	
+	agrarian_constitution = {
+		potential = {
+			country_exists = c:TEU
+			this = c:TEU
+		}
+		country_modifier = {
+			global_distance_from_capital_speed_propagation = 0.025
+			global_pop_assimilation_speed_modifier = 0.25
+			global_tribal_promotion = 0.1
+			global_tribes_estate_power = -1.0
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		
+		ai_will_do = {
+			value = 350
+		}
+		
+		years = 2
+	}
+	
+	icd_privileges_in_hungary = {
+		potential = {
+			OR = {
+				AND = {
+					country_exists = c:HUN
+					this = c:HUN
+				}
+				AND = {
+					country_exists = c:TRA
+					this = c:TRA
+				}
+			}
+		}
+		country_modifier = {
+			global_levy_size_modifier = 0.05
+			wrong_culture_levy_size = 0.1
+			global_pop_assimilation_speed_modifier = -0.85
+			cultures_capacity = 1
+		}
+		
+		estate_preferences = {
+			nobles_estate
+		}
+		
+		ai_will_do = {
+			value = 400
+		}
+		
+		years = 2
+	}
+}

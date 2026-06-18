@@ -1,0 +1,447 @@
+﻿cultural_majority_law = {
+	icon = foreign_cultural_law
+	law_category = socioeconomic
+
+	potential = {
+		cultural_unity < 1.0
+		num_locations > 0
+	}
+	
+	locked = {
+		OR = {
+			AND = {
+				tag = JAL
+				language_percentage_in_country = {
+					language = root.culture.language
+					value <= 0.20
+				}
+				has_policy = minority_rule
+			}
+			AND = {
+				tag = CHB
+				language_percentage_in_country = {
+					language = root.culture.language
+					value <= 0.20
+				}
+				has_policy = minority_rule
+			}
+		}
+	}
+
+	minority_rule = {
+		price = icd_nothing_price
+		country_modifier = {
+			cultures_capacity = 2
+			cultural_influence_modifier = -0.3
+		}
+		potential = {
+			OR = {
+				AND = {
+					language_percentage_in_country = {
+						language = root.culture.language
+						value <= 0.10
+					}
+					culture_population_in_country = {
+						culture = root.culture
+						value < 3000000
+					}
+				}
+				AND = {
+					language_percentage_in_country = {
+						language = root.culture.language
+						value <= 0.20
+					}
+					tag = JAL
+				}
+				AND = {
+					language_percentage_in_country = {
+						language = root.culture.language
+						value <= 0.20
+					}
+					tag = CHB
+				}
+			}
+		}
+		months = 1
+		
+		on_activate = {
+			custom_tooltip = minority_rule_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			every_province = {
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+		}
+		ai_will_do = {
+			value = 750
+		}
+	}
+	
+	regional_autonomy = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed_modifier = -0.1
+			cultures_capacity = 1.0
+		}
+		allow = {
+			OR = {
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
+			}
+			OR = {
+				has_policy = confederal_union
+				has_policy = federal_tribe_policy
+				societal_value:centralization_vs_decentralization > 80
+				tag = ARA
+				has_reform = government_reform:mandala_system
+			}
+		}
+		
+		on_activate = {
+			custom_tooltip = regional_autonomy_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			every_province = {
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+		}
+		months = 1
+		ai_will_do = {
+			value = 400
+		}
+	}
+	
+	ethnic_communities = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			global_integration_speed_modifier = 0.1
+		}
+		allow = {
+			OR = {
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
+			}
+		}
+		
+		on_activate = {
+			custom_tooltip = ethnic_communities_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						any_location_in_province = {
+							any_neighbor_location = {
+								dominant_culture ?= root.culture
+							}
+						}
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.2
+							}
+						}
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+		}
+		months = 1
+		ai_will_do = {
+			value = 500
+		}
+	}
+	
+	monocultural_opportunity = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			global_estate_target_satisfaction = small_permanent_target_satisfaction
+		}
+		allow = {
+			OR = {
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
+			}
+			OR = {
+				has_policy = unitary_administration
+				has_policy = absolute_rulership
+				societal_value:centralization_vs_decentralization < -70
+			}
+			"estate_power(estate_type:crown_estate)" > 0.3
+		}
+		
+		on_activate = {
+			custom_tooltip = monocultural_opportunity_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+		}
+		months = 1
+		ai_will_do = {
+			value = 480
+		}
+	}
+	
+	dialects_of_german = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			cultures_capacity = 0.25
+			diplomatic_reputation = diplomatic_reputation_weak_bonus
+			add_tolerated_culture_cost_modifier = -0.5
+		}
+		potential = {
+			culture = { has_culture_group = culture_group:german_group }
+			NOT = {
+				culture = culture:frisian
+				culture = culture:walloon
+				culture = culture:dutch_culture_formed
+				culture = culture:ashkenazi
+				culture = culture:czech
+			}
+		}
+		allow = {
+			OR = {
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
+			}
+		}
+		
+		on_activate = {
+			custom_tooltip = dialects_of_german_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			icd_region_culture_law_german = yes
+		}
+		months = 1
+		ai_will_do = {
+			value = 700
+		}
+	}
+	
+	dialects_of_italian = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			cultures_capacity = 0.25
+			diplomatic_reputation = diplomatic_reputation_weak_bonus
+			add_tolerated_culture_cost_modifier = -0.5
+		}
+		potential = {
+			culture = { has_culture_group = culture_group:italian_group }
+			NOT = {
+				culture = culture:italki
+			}
+		}
+		allow = {
+			OR = {
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
+			}
+		}
+		
+		on_activate = {
+			custom_tooltip = dialects_of_italian_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			icd_region_culture_law_italian = yes
+		}
+		months = 1
+		ai_will_do = {
+			value = 200
+		}
+	}
+	
+	dialects_of_arabic = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			cultures_capacity = 0.25
+			diplomatic_reputation = diplomatic_reputation_weak_bonus
+			add_tolerated_culture_cost_modifier = -0.5
+		}
+		potential = {
+			culture = { has_culture_group = culture_group:arabic_group }
+			NOT = {
+				culture = culture:syriac_culture
+			}
+		}
+		allow = {
+			OR = {
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
+			}
+		}
+		
+		on_activate = {
+			custom_tooltip = dialects_of_arabic_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			icd_region_culture_law_arabic = yes
+		}
+		months = 1
+		ai_will_do = {
+			value = 700
+		}
+	}
+	
+
+	turkic_integration = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			add_tolerated_culture_cost_modifier = -0.25
+			global_estate_target_satisfaction = small_permanent_target_satisfaction
+		}
+		potential = {
+			culture = { has_culture_group = culture_group:turkic_group }
+		}
+		allow = {
+			OR = {
+				religion = religion:sunni
+				religion = religion:shia
+			}
+			has_estate_privilege = estate_privilege:dhimmi_abrahamic_communities
+		}
+		
+		on_activate = {
+			custom_tooltip = ethnic_communities_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						any_location_in_province = {
+							any_neighbor_location = {
+								dominant_culture ?= root.culture
+							}
+						}
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						dominant_culture ?= { has_culture_group = culture_group:turkic_group }
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.2
+							}
+						}
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+		}
+		location_modifier = {
+			potential_trigger = {
+				OR = {
+					region = region:balkan_region
+					region = region:anatolia_region
+					region = region:caucasus_region
+				}
+				NOT = {
+					area = area:albania_area
+					area = area:bosnia_area
+				}
+				OR = {
+					dominant_culture ?= { has_culture_group = culture_group:turkic_group }
+				}
+				NOT = { 
+					dominant_religion ?= religion:sunni
+					dominant_religion ?= religion:shia
+				}
+			}
+			local_pop_conversion_speed_modifier = 2.5
+		}
+		months = 1
+		ai_will_do = {
+			value = 100
+		}
+	}
+	
+	colonial_culture = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			cultures_capacity = 0.25
+			global_pop_assimilation_speed_modifier = 0.5
+			global_migration_speed_modifier = 0.05
+			court_spending_efficiency = 0.05
+		}
+		potential = {
+			is_colonial_subject = yes
+		}
+		
+		on_activate = {
+			every_province = {
+				remove_variable = promoting_culture
+			}
+		}
+		months = 1
+		ai_will_do = {
+			value = 800
+		}
+	}
+	
+}

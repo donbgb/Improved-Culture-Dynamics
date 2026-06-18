@@ -1,0 +1,9 @@
+﻿l_braz_por:
+ fire_artist: "Demita o Artista"
+ fire_artist_act: "Demita o Artista"
+ fire_artist_desc_specific: "[recipient.GetName] será demitido de nossa corte e nunca mais voltará."
+ fire_artist_desc: "O [character|e] irá parar de trabalhar como artista em nossa corte e nunca mais voltará."
+ fire_artist_past: "[recipient.GetName] foi demitido"
+ fire_artist_act_past: "[recipient.GetName] foi demitido."
+ 
+ 

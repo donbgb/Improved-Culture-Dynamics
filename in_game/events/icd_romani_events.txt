@@ -1,0 +1,641 @@
+﻿namespace = icd_romani_events
+
+icd_romani_events.1 = { ####random migration###
+	type = country_event
+	title = icd_minority_events.1.title
+	desc = icd_minority_events.1.desc
+	outcome = neutral
+	
+	hidden = yes
+	
+	trigger = {
+		
+	}
+	
+	illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		while = {
+			count = 3
+			random_owned_location = {
+				limit = { 
+					culture_population = {
+						culture = culture:romani_culture
+						value > 0.150
+					}
+				}
+				save_scope_as = icd_romani_location_origin
+			}
+			
+			scope:icd_romani_location_origin.market = {
+				random_location_in_market = {
+					limit = {
+						culture_population = {
+							culture = culture:romani_culture
+							value = 0
+						}
+						has_owner = yes
+					}
+					save_scope_as = icd_romani_location_destination
+				}
+			}
+			
+			add_migration = {
+				 from_location = scope:icd_romani_location_origin
+				 to_location = scope:icd_romani_location_destination
+				 culture = culture:romani_culture
+				 type = pop_type:tribesmen
+				 months = 1
+				 amount = 0.100
+			}
+			
+			clear_saved_scope = icd_romani_location_origin
+			clear_saved_scope = icd_romani_location_destination
+		}
+		
+	}
+	
+	option = {
+		name = icd_minority_events.1.a
+		
+	}
+}
+
+icd_romani_events.2 = { ####spread discovery age###
+	type = country_event
+	title = icd_minority_events.1.title
+	desc = icd_minority_events.1.desc
+	outcome = neutral
+	
+	hidden = yes
+	
+	trigger = {
+		owns = location:sredets
+	}
+	
+	illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+
+			
+		while = {
+			count = 3
+			icd_romani_migration_effect = {
+				target = area:moldavia_area
+			}
+			icd_romani_migration_effect = {
+				target = area:south_alfold_area
+			}
+			icd_romani_migration_effect = {
+				target = area:north_alfold_area
+			}
+			icd_romani_migration_effect = {
+				target = area:transdanubia_area
+			}
+			icd_romani_migration_effect = {
+				target = area:styria_area
+			}
+			icd_romani_migration_effect = {
+				target = area:carinthia_area
+			}
+			icd_romani_migration_effect = {
+				target = area:austria_area
+			}
+			icd_romani_migration_effect = {
+				target = area:moravia_area
+			}
+			icd_romani_migration_effect = {
+				target = area:bohemia_area
+			}
+			icd_romani_migration_effect = {
+				target = area:upper_austria_area
+			}
+			icd_romani_migration_effect = {
+				target = area:bavaria_area
+			}
+			icd_romani_migration_effect = {
+				target = area:swabia_area
+			}
+			icd_romani_migration_effect = {
+				target = area:eastern_switzerland_area
+			}
+			icd_romani_migration_effect = {
+				target = area:central_switzerland_area
+			}
+			icd_romani_migration_effect = {
+				target = area:western_switzerland_area
+			}
+			icd_romani_migration_effect = {
+				target = area:upper_rhine_area
+			}
+			icd_romani_migration_effect = {
+				target = area:alsace_area
+			}
+			icd_romani_migration_effect = {
+				target = area:lorraine_area
+			}
+			icd_romani_migration_effect = {
+				target = area:bavaria_area
+			}
+			icd_romani_migration_effect = {
+				target = area:champagne_area
+			}
+			icd_romani_migration_effect = {
+				target = area:ile_de_france_area
+			}
+			icd_romani_migration_effect = {
+				target = area:provence_area
+			}
+			icd_romani_migration_effect = {
+				target = area:languedoc_area
+			}
+			icd_romani_migration_effect = {
+				target = area:catalonia_area
+			}
+			icd_romani_migration_effect = {
+				target = area:savoy_area
+			}
+			icd_romani_migration_effect = {
+				target = area:veneto_area
+			}
+			icd_romani_migration_effect = {
+				target = area:emilia_area
+			}
+			icd_romani_migration_effect = {
+				target = area:tuscany_area
+			}
+			icd_romani_migration_effect = {
+				target = area:lazio_area
+			}
+			icd_romani_migration_effect = {
+				target = area:lombardy_area
+			}
+		}
+	}
+	
+	option = {
+		name = icd_minority_events.1.a
+		
+			
+	}
+}
+
+icd_romani_events.3 = { ####spread reformation age###
+	type = country_event
+	title = icd_minority_events.1.title
+	desc = icd_minority_events.1.desc
+	outcome = neutral
+	
+	
+	trigger = {
+		owns = location:sredets
+	}
+	
+	illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+
+					
+		region:balkan_region = {
+			every_area_in_region = {
+				limit = {
+					culture_population = {
+						culture = culture:romani_culture
+						value = 0
+					}
+				}
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		region:carpathia_region = {
+			every_area_in_region = {
+				limit = {
+					culture_population = {
+						culture = culture:romani_culture
+						value = 0
+					}
+				}
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		
+		region:iberia_region = {
+			every_area_in_region = {
+				limit = {
+					culture_population = {
+						culture = culture:romani_culture
+						value = 0
+					}
+				}
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		
+		icd_romani_migration_effect = {
+			target = area:home_counties_area
+		}
+
+		region:france_region = {
+			every_area_in_region = {
+				limit = {
+					culture_population = {
+						culture = culture:romani_culture
+						value = 0
+					}
+				}
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		
+		region:baltic_region = {
+			every_area_in_region = {
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		region:ruthenia_region = {
+			every_area_in_region = {
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		region:russian_region = {
+			every_area_in_region = {
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		region:north_german_region = {
+			every_area_in_region = {
+				limit = {
+					culture_population = {
+						culture = culture:romani_culture
+						value = 0
+					}
+				}
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		region:south_german_region = {
+			every_area_in_region = {
+				limit = {
+					culture_population = {
+						culture = culture:romani_culture
+						value = 0
+					}
+				}
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		
+		region:italy_region = {
+			every_area_in_region = {
+				limit = {
+					culture_population = {
+						culture = culture:romani_culture
+						value = 0
+					}
+				}
+				icd_romani_migration_effect = {
+					target = this
+				}
+			}
+		}
+		
+		
+		icd_romani_migration_effect = {
+			target = area:west_county_area
+		}
+		icd_romani_migration_effect = {
+			target = area:east_anglia_area
+		}
+		icd_romani_migration_effect = {
+			target = area:midlands_area
+		}
+		icd_romani_migration_effect = {
+			target = area:wales_area
+		}
+		icd_romani_migration_effect = {
+			target = area:northumbria_area
+		}
+		icd_romani_migration_effect = {
+			target = area:scottish_lowlands_area
+		}
+		icd_romani_migration_effect = {
+			target = area:denmark_area
+		}
+		icd_romani_migration_effect = {
+			target = area:skaneland_area
+		}
+		icd_romani_migration_effect = {
+			target = area:svealand_area
+		}
+		icd_romani_migration_effect = {
+			target = area:syd_norge_area
+		}
+		icd_romani_migration_effect = {
+			target = area:zaporizhzhia_area
+		}
+		icd_romani_migration_effect = {
+			target = area:sloboda_ukraine_area
+		}
+		icd_romani_migration_effect = {
+			target = area:crimea_area
+		}
+		icd_romani_migration_effect = {
+			target = area:yedisan_area
+		}
+	}
+	
+	option = {
+		name = icd_minority_events.1.a
+		
+	}
+}
+
+
+icd_romani_events.99 = { ####when romani arrive###
+	type = country_event
+	title = icd_romani_events.99.title
+	desc = icd_romani_events.99.desc
+	outcome = neutral
+	
+	
+	trigger = {
+	}
+	
+	
+	illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+		continent:europe = {
+			random_location_in_continent = {
+				limit = { 
+					culture_population = {
+						culture = culture:romani_culture
+						value > 0.250
+					}
+					NOT = {
+						owner = {
+							has_variable = icd_romani_forbidden_entry
+						}
+					}
+				}
+				province_definition = {
+					save_scope_as = icd_romani_province_here
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.99.a ##slave##
+		
+		grant_estate_privilege = estate_privilege:icd_romani_slaves
+	}
+	option = {
+		name = icd_romani_events.99.b ##anti-romani##
+		
+		grant_estate_privilege = estate_privilege:icd_anti_romani_laws
+	}
+	option = {
+		name = icd_romani_events.99.c ##craftsmen##
+		
+		grant_estate_privilege = estate_privilege:icd_romani_craftsmen
+	}
+	option = {
+		name = icd_romani_events.99.d ##expel##
+		
+		set_variable = icd_romani_forbidden_entry
+		
+		every_province = {
+			limit = {
+				culture_population = {
+					culture = culture:romani_culture
+					value > 0
+				}
+			}
+			add_migration = {
+				owner = root
+				from = this.province_definition
+				to = scope:icd_romani_province_here
+				culture = culture:romani_culture
+				amount = 2.000
+				months = 12
+			}
+		}
+				
+	}
+	option = {
+		name = icd_romani_events.99.e ##cool###
+		
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+		
+		set_variable = icd_romani_are_chill
+	}
+}
+
+icd_romani_events.90 = { ###if romani are detected in borders####
+	type = country_event
+	title = icd_romani_events.90.title
+	desc = icd_romani_events.90.desc
+	outcome = neutral
+	
+	
+	trigger = {
+		culture_population = {
+			culture = culture:romani_culture
+			value > 0.100
+		}
+		NOT = {
+			has_estate_privilege = estate_privilege:icd_romani_slaves
+			has_estate_privilege = estate_privilege:icd_anti_romani_laws
+			has_estate_privilege = estate_privilege:icd_romani_craftsmen
+			has_variable = icd_romani_forbidden_entry
+			has_variable = icd_romani_are_chill
+			has_variable = icd_temporary_romani_variable
+		}
+	}
+	
+	illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+		continent:europe = {
+			random_location_in_continent = {
+				limit = { 
+					culture_population = {
+						culture = culture:romani_culture
+						value > 0.250
+					}
+					NOT = {
+						owner = {
+							has_variable = icd_romani_forbidden_entry
+						}
+					}
+				}
+				province_definition = {
+					save_scope_as = icd_romani_province_here
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.99.a ##slave##
+		
+		grant_estate_privilege = estate_privilege:icd_romani_slaves
+		
+		ai_will_select  = { value = 50 }
+
+	}
+	option = {
+		name = icd_romani_events.99.b ##anti-romani##
+		
+		grant_estate_privilege = estate_privilege:icd_anti_romani_laws
+		
+		ai_will_select  = { value = 50 }
+	}
+	option = {
+		name = icd_romani_events.99.c ##craftsmen##
+		
+		grant_estate_privilege = estate_privilege:icd_romani_craftsmen
+		
+		ai_will_select  = { value = 20 }
+	}
+	option = {
+		name = icd_romani_events.99.d ##expel##
+		
+		set_variable = icd_romani_forbidden_entry
+		
+		every_province = {
+			limit = {
+				culture_population = {
+					culture = culture:romani_culture
+					value > 0
+				}
+			}
+			add_migration = {
+				owner = root
+				from = this.province_definition
+				to = scope:icd_romani_province_here
+				culture = culture:romani_culture
+				amount = 2.000
+				months = 12
+			}
+		}
+
+		ai_will_select  = { value = 5 }
+				
+	}
+	option = {
+		name = icd_romani_events.99.e ##cool###
+		
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+		
+		set_variable = icd_romani_are_chill
+		
+		ai_will_select  = { value = -500 }
+	}
+}
+
+icd_romani_events.98 = { ###automatic expulsion####
+	type = country_event
+	title = icd_romani_events.99.title
+	desc = icd_romani_events.99.desc
+	outcome = neutral
+	
+	hidden = yes
+	
+	trigger = {
+		culture_population = {
+			culture = culture:romani_culture
+			value > 0
+		}
+		has_variable = icd_romani_forbidden_entry
+	}
+	
+	illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+		continent:europe = {
+			random_location_in_continent = {
+				limit = { 
+					culture_population = {
+						culture = culture:romani_culture
+						value > 0.250
+					}
+					NOT = {
+						owner = {
+							has_variable = icd_romani_forbidden_entry
+						}
+					}
+				}
+				province_definition = {
+					save_scope_as = icd_romani_province_here
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.99.d ##expel##
+				
+		every_province = {
+			limit = {
+				culture_population = {
+					culture = culture:romani_culture
+					value > 0
+				}
+			}
+			add_migration = {
+				owner = root
+				from = this.province_definition
+				to = scope:icd_romani_province_here
+				culture = culture:romani_culture
+				amount = 2.000
+				months = 12
+			}
+		}
+				
+	}
+}

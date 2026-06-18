@@ -1,0 +1,56 @@
+﻿
+malay_folk_religion = { 
+	color = map_malay
+	group = folk_se_asian_group
+
+	religious_aspects = 1
+	
+	definition_modifier = {
+		cultural_influence_modifier = 0.1
+		trade_sea_efficiency = 0.2
+	}
+	
+	opinions = {
+	}
+}
+
+hyang_religion = { 
+	color = rgb { 134 117 150 }
+	group = folk_se_asian_group
+
+	religious_aspects = 1
+	
+	definition_modifier = {
+		cultural_influence_modifier = 0.1
+		trade_sea_efficiency = 0.2
+	}
+	
+	opinions = {
+	}
+}
+
+nusantaran_hindu = { 
+	color = rgb { 189 127 74 }
+	group = dharmic
+	
+	language = sanskrit_language
+	
+	has_avatars = yes
+
+	has_karma = yes
+	max_sects = 1
+	
+	definition_modifier = {
+		tolerance_heathen = 1
+		monthly_karma = 0.1
+		can_have_monasteries = yes
+		trade_sea_efficiency = 0.2
+	}
+	
+	opinions = {
+		hindu = kindred
+		southern_mahayana = kindred
+	}
+	
+	tags = { dharmic_gfx }
+}

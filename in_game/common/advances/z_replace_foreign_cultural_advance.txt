@@ -1,0 +1,7 @@
+﻿REPLACE:foreign_cultural_law_advance = {
+	age = age_3_discovery
+	potential = {
+		always = no
+	}
+	raw_material_in_province_impact = 0.025
+}

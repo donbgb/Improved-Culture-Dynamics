@@ -1,0 +1,9 @@
+﻿l_english:
+ fire_artist: "Dismiss Artist"
+ fire_artist_act: "$dismiss artist$"
+ fire_artist_desc_specific: "[recipient.GetName] will be dismissed from our court and will never return."
+ fire_artist_desc: "The [character|e] will stop working as an artist in our court, and will never return."
+ fire_artist_past: "[recipient.GetName] has been dismissed"
+ fire_artist_act_past: "[recipient.GetName]'s services have been dismissed."
+ 
+ 

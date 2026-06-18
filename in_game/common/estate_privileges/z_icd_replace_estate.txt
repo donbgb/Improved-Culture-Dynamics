@@ -1,0 +1,178 @@
+﻿# privileges
+
+REPLACE:invite_german_settlers = { #Encourage German Migration
+	estate = peasants_estate
+
+	potential = { #The culture of the country is German, but the main culture is not
+		
+		religion = religion:catholic 
+		capital ?= {
+			OR = {
+				region = region:baltic_region
+				region = region:carpathia_region
+				area = area:baltic_area
+				area = area:bohemia_area
+				area = area:moravia_area
+			}
+		}
+	}
+	allow = {
+		NOT = {has_policy = closed_borders_law} #Incompatible
+	}
+
+	can_revoke = {
+		OR = {
+			language_percentage_in_country = {
+				language = language:german_language
+				value < 0.025
+			}
+			societal_value:centralization_vs_decentralization < -50
+			"estate_power(estate_type:crown_estate)" > 0.3
+			NOT = {
+				any_accepted_culture = {
+					custom_tooltip = { 
+						text = icd_german_language_tt
+						language = language:german_language
+					}
+				}
+				any_tolerated_culture = {
+					custom_tooltip = { 
+						text = icd_german_language_tt
+						language = language:german_language
+					}
+				}
+			}
+		}
+	}
+
+	
+	country_modifier = {
+		peasants_estate_target_satisfaction = medium_privilege_target_satisfaction
+		global_peasants_estate_power = 0.2
+		enables_german_migration = yes
+	}
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = icd_invite_german_settlers_tt
+			hidden_trigger = {
+				owner ?= {
+					OR = {
+						NOT = {
+							culture = { has_culture_group = culture_group:german_group }
+						}
+						culture = culture:czech
+					}
+				}
+				OR = {
+					dominant_culture ?= { has_culture_group = culture_group:german_group } 
+					culture_group_percentage = {
+						culture_group = culture_group:german_group
+						value > 0.05
+					}
+					culture_group_population ?= {
+						culture_group = culture_group:german_group
+						value > 10
+					}
+				}
+				culture_group_population ?= {
+					culture_group = culture_group:german_group
+					value > 0.2
+				}
+			}
+		}
+		local_pop_assimilation_speed_modifier = -0.6
+	}
+	
+	
+	on_activate = {
+		custom_tooltip = invite_german_settlers.tt
+	}
+}
+
+REPLACE:ius_teutonicum = {
+	estate = peasants_estate
+
+	potential = {
+		culture ?= { has_culture_group = culture_group:bohemian_group }
+	}
+
+	allow = {
+	}
+
+	can_revoke = {
+		OR = {
+			language_percentage_in_country = {
+				language = language:german_language
+				value < 0.025
+			}
+			societal_value:centralization_vs_decentralization < -70
+			"estate_power(estate_type:crown_estate)" > 0.4
+			NOT = {
+				any_accepted_culture = {
+					custom_tooltip = { 
+						text = icd_german_language_tt
+						language = language:german_language
+					}
+				}
+				any_tolerated_culture = {
+					custom_tooltip = { 
+						text = icd_german_language_tt
+						language = language:german_language
+					}
+				}
+			}
+		}
+	}
+	
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = icd_invite_german_settlers_tt
+			hidden_trigger = {
+				owner ?= {
+					OR = {
+						NOT = {
+							culture = { has_culture_group = culture_group:german_group }
+						}
+						culture = culture:czech
+					}
+				}
+				OR = {
+					dominant_culture ?= { has_culture_group = culture_group:german_group } 
+					culture_group_percentage = {
+						culture_group = culture_group:german_group
+						value > 0.05
+					}
+					culture_group_population ?= {
+						culture_group = culture_group:german_group
+						value > 10
+					}
+				}
+				culture_group_population ?= {
+					culture_group = culture_group:german_group
+					value > 0.2
+				}
+			}
+		}
+		local_pop_assimilation_speed_modifier = -0.9
+	}
+	
+	country_modifier = {
+		peasants_estate_target_satisfaction = medium_privilege_target_satisfaction
+		global_peasants_estate_power = 0.2
+		peasants_estate_max_tax = -0.1
+		wrong_culture_levy_size = 0.2
+		nobles_estate_target_satisfaction = medium_privilege_target_satisfaction_penalty
+	}
+}
+
+
+REPLACE:tribes_protected_faith = {
+	estate = tribes_estate
+
+	country_modifier = {
+		tribes_estate_target_satisfaction = medium_privilege_target_satisfaction
+		global_tribal_promotion = -0.1
+		global_tribesmen_conversion_blocked = yes
+		global_tribes_estate_power = 0.5
+	}
+}

@@ -1,0 +1,14 @@
+﻿strengthen_culture = {
+	ability = dip
+	
+	country_modifier = {
+		global_pop_assimilation_speed_modifier = 0.25
+		cultural_influence_modifier = 0.5
+	}
+	
+	progress = {
+		scope:actor = {
+			value = cultural_unity
+		}
+	}
+}

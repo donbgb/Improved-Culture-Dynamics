@@ -1,0 +1,127 @@
+﻿REPLACE:union_enforce_culture = {
+	type = union
+	category = CATEGORY_UNION_ACTIONS
+	potential = {
+        scope:actor = {
+            union ?= {
+                modifier:enabled_union_enforcement_actions = yes
+            }
+        }
+	}
+	allow = {
+	}
+	select_trigger = {
+		looking_for_a = country
+		interaction_source_list = {
+			scope:actor = {
+				every_subject = {
+					add_to_list = source
+				}
+			}
+		}
+		target_flag = recipient
+		name = "choose_country"
+		column = {
+			data = name
+		}
+		visible = {
+		}
+        enabled = {
+            opinion = {
+                target = scope:actor
+                value >= MIN_JUNIOR_PARTNER_OPINION_FOR_ACTIONS
+            }
+		}
+	}
+	select_trigger = {
+		looking_for_a = culture
+		interaction_source_list = {
+			scope:actor = {
+				every_primary_or_accepted_or_tolerated_culture = {
+					add_to_list = source
+				}
+			}
+			scope:recipient = {
+				every_present_culture_in_country = {
+					add_to_list = source
+				}
+			}
+		}
+		target_flag = target_culture
+		name = "choose_culture"
+		column = {
+			data = name
+		}
+		visible = {
+			scope:recipient = {
+				OR = {
+					AND = {
+						culture_percentage_in_country = {
+							culture = root
+							value > 0.1
+						}
+						scope:actor = {
+							is_ai = no
+						}
+					}
+					AND = {
+						scope:actor = {
+							is_ai = yes
+						}
+						root = { is_primary_in = scope:actor }
+					}
+				}
+				NOT = {
+					root = scope:recipient.culture
+				}
+			}
+		}
+	}
+	effect = {
+		scope:recipient = {
+				change_culture = scope:target_culture
+				every_cabinet = {
+				limit = {
+					has_cabinet_action = yes
+					or = {
+						cabinet_action = cabinet_action:assimilate_area
+						cabinet_action = cabinet_action:promote_culture
+						cabinet_action = cabinet_action:promote_culture_edited
+					}
+				}
+				stop_cabinet_action = {}
+			}
+		}
+		scope:recipient = {
+			add_opinion = {
+                target = scope:actor
+                modifier = opinion_enforced_culture
+            }
+		}
+	}
+    reject_effect = {
+		scope:recipient = {
+			add_opinion = {
+                target = scope:actor
+                modifier = opinion_tried_enforced_culture
+            }
+		}
+    }
+	
+	block_when_at_war = yes
+
+	ai_will_do = {
+		subtract = {
+			desc = "VOTE_BASE_VALUE"
+			value = 100
+		}
+		add = {
+			desc = "TARGET_ACCEPTANCE"
+			value = "scope:actor.country_interaction_acceptance(country_interaction:negotiate_succession_law|scope:recipient)"
+		}
+	}
+
+	accept = {
+        value = "scope:actor.country_interaction_acceptance(country_interaction:negotiate_succession_law|scope:recipient)"
+	}
+}

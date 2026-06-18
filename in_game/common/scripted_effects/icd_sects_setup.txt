@@ -1,0 +1,123 @@
+﻿
+icd_sects_setup = {
+
+	
+
+	create_international_organization = {
+		type = international_organization_type:sect
+	
+		add_policy_to_international_organization = policy:perfect_teaching_policy
+		
+		set_variable = {
+			name = sect_favor
+			value = 30
+		}
+		set_variable = {
+			name = religion
+			value = religion:mahayana
+		}
+	}
+	
+	create_international_organization = {
+		type = international_organization_type:sect
+	
+		add_policy_to_international_organization = policy:sogatan_policy
+		add_policy_to_international_organization = policy:vajrayana_policy
+		
+		set_variable = {
+			name = sect_favor
+			value = 30
+		}
+		set_variable = {
+			name = religion
+			value = religion:southern_mahayana
+		}
+	}
+	
+	region:xinjiang_region = {
+		every_location_in_region = {
+			limit = { is_ownable = yes }
+			random_international_organization = {
+				limit = { international_organization_has_policy = policy:perfect_teaching_policy }
+				add_location_to_international_organization = prev
+			}
+		}
+	}
+	
+	area:gansu_area = {
+		every_location_in_area = {
+			limit = { is_ownable = yes }
+			random_international_organization = {
+				limit = { international_organization_has_policy = policy:perfect_teaching_policy }
+				add_location_to_international_organization = prev
+			}
+		}
+	}
+	
+	region:indonesia_region = {
+		every_location_in_region = {
+			limit = { is_ownable = yes }
+			random_international_organization = {
+				limit = { international_organization_has_policy = policy:sogatan_policy }
+				add_location_to_international_organization = prev
+			}
+		}
+	}
+	
+	region:korea_region = {
+		every_location_in_region = {
+			limit = { is_ownable = yes }
+			random_international_organization = {
+				limit = { international_organization_has_policy = policy:daoism_policy }
+				add_location_to_international_organization = prev
+			}
+		}
+	}	
+	area:red_river_delta_area = {
+		every_location_in_area = {
+			limit = { is_ownable = yes }
+			random_international_organization = {
+				limit = { international_organization_has_policy = policy:confucianism_policy }
+				add_location_to_international_organization = prev
+			}
+		}
+	}
+	
+	region:xinjiang_region = {
+		every_location_in_region = {
+			limit = { is_ownable = yes }
+			random_international_organization = {
+				limit = { international_organization_has_policy = policy:flower_garland_school_policy }
+				add_location_to_international_organization = prev
+			}
+		}
+	}
+	region:xinjiang_region = {
+		every_location_in_region = {
+			limit = { is_ownable = yes }
+			random_international_organization = {
+				limit = { international_organization_has_policy = policy:meditation_school_policy }
+				add_location_to_international_organization = prev
+			}
+		}
+	}
+	
+	random_international_organization = {
+		limit = { international_organization_has_policy = policy:azhaliism_policy }
+		remove_variable = religion
+		set_variable = {
+			name = religion
+			value = religion:southern_mahayana
+		}
+	}
+	
+	random_international_organization = {
+		limit = { OR = { international_organization_has_policy = policy:confucianism_policy international_organization_has_policy = policy:daoism_policy }}
+		add_country_to_international_organization = c:DAI
+		add_country_to_international_organization = c:KOR
+		add_country_to_international_organization = c:SYG
+		add_country_to_international_organization = c:DAI
+		add_country_to_international_organization = c:SSG
+		add_country_to_international_organization = c:TMN
+	}
+}

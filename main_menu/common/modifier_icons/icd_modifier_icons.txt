@@ -1,0 +1,4 @@
+﻿
+icd_nothing_price_cost_modifier = {
+	positive = "gfx/interface/icons/modifier_types/set_policy_cost_modifier.dds"
+}

@@ -1,0 +1,30 @@
+﻿
+REPLACE:tribesmen = {
+	color = pop_tribes
+	
+	promote_to = peasants
+	promote_to = soldiers
+	
+	pop_food_consumption = 0.0
+	
+	grow = yes
+	
+	tribal_rules = yes	#can have special promotion factors
+	
+	assimilation_conversion_factor = 0.05
+	
+	pop_percentage_impact = {
+		local_crown_estate_power = -0.03
+		local_integration_speed_modifier = -0.005
+		local_pop_assimilation_speed_modifier = -0.007
+	}
+	literacy_impact = {
+		local_tribal_promotion = 0.5
+		local_levy_recruitment_speed_modifier = 0.2
+	}
+
+	city_graphics = 0.01
+	cossacks_estate = { is_cossacks = yes }
+	peasants_estate = { culture = { has_culture_group = culture_group:romani_group } }
+	tribes_estate = {}
+}

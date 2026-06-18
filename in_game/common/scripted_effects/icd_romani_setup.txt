@@ -1,0 +1,420 @@
+﻿
+icd_romani_setup = {
+
+	c:SER = {
+		grant_estate_privilege = estate_privilege:icd_romani_slaves
+	}
+	
+	c:BYZ = {
+		grant_estate_privilege = estate_privilege:icd_romani_craftsmen
+	}
+	
+	c:BUL = {
+		grant_estate_privilege = estate_privilege:icd_romani_slaves
+	}
+	c:WAL = {
+		grant_estate_privilege = estate_privilege:icd_romani_slaves
+	}
+	c:BOS = {
+		grant_estate_privilege = estate_privilege:icd_romani_slaves
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:icd_anti_romani_laws = {
+				is_implementable_in = prev
+			}
+			religion.group = religion_group:christian
+			NOT = {
+				has_estate_privilege = estate_privilege:icd_anti_romani_laws
+				has_estate_privilege = estate_privilege:icd_romani_slaves
+				has_estate_privilege = estate_privilege:icd_romani_craftsmen
+			}
+		}
+		grant_estate_privilege = estate_privilege:icd_anti_romani_laws
+	}
+	
+	sub_continent:eastern_europe = {
+		every_location_in_sub_continent = {
+			every_pop = {
+				limit = { culture = culture:romani_culture }
+				change_pop_type = pop_type:tribesmen
+			}
+		}
+	}
+	
+	sub_continent:middle_east = {
+		every_location_in_sub_continent = {
+			every_pop = {
+				limit = { culture = culture:domari_culture }
+				change_pop_type = pop_type:tribesmen
+			}
+		}
+	}
+	
+	sub_continent:eastern_europe = {
+		every_location_in_sub_continent = {
+			every_pop = {
+				limit = { culture = culture:lomari_culture }
+				change_pop_type = pop_type:tribesmen
+			}
+		}
+	}
+	
+	area:marmara_area = {
+		every_location_in_area = {
+			every_pop = {
+				limit = { culture = culture:domari_culture }
+				change_pop_culture = culture:romani_culture
+				change_pop_type = pop_type:tribesmen
+			}
+		}
+	}
+	
+	area:west_anatolia_area = {
+		every_location_in_area = {
+			every_pop = {
+				limit = { culture = culture:domari_culture }
+				add_pop_size = {
+					value = pop_size
+					multiply = -1
+				}
+			}
+		}
+	}
+	
+	area:central_anatolia_area = {
+		every_location_in_area = {
+			every_pop = {
+				limit = { culture = culture:domari_culture }
+				add_pop_size = {
+					value = pop_size
+					multiply = -1
+				}
+			}
+		}
+	}
+	
+	area:pontus_area = {
+		every_location_in_area = {
+			every_pop = {
+				limit = { culture = culture:domari_culture }
+				add_pop_size = {
+					value = pop_size
+					multiply = -1
+				}
+			}
+		}
+	}
+	
+	location:candia = {
+		add_pop = {
+			culture = culture:romani_culture
+			religion = religion:orthodox
+			type = pop_type:tribesmen
+			size = 0.350
+		}
+	}
+	
+	location:chania = {
+		add_pop = {
+			culture = culture:romani_culture
+			religion = religion:orthodox
+			type = pop_type:tribesmen
+			size = 0.200
+		}
+	}
+	
+	location:rodos = {
+		add_pop = {
+			culture = culture:romani_culture
+			religion = religion:orthodox
+			type = pop_type:tribesmen
+			size = 0.255
+		}
+	}
+	
+	location:marmaris = {
+		add_pop = {
+			culture = culture:romani_culture
+			religion = religion:orthodox
+			type = pop_type:tribesmen
+			size = 0.120
+		}
+	}
+	
+	area:morea_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 4
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.315
+			}
+		}
+	}
+	
+	area:northern_greece_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 6
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.235
+			}
+		}
+	}
+	
+	area:macedonia_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 10
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.340
+			}
+		}
+	}
+	
+	area:serbia_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 7
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.290
+			}
+		}
+	}
+	
+	area:bulgaria_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 10
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.315
+			}
+		}
+	}
+	
+	area:wallachia_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 15
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.270
+			}
+		}
+	}
+	
+	area:thrace_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 14
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.310
+			}
+		}
+	}
+	
+	area:bosnia_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 6
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.290
+			}
+		}
+	}
+	
+	area:croatia_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 3
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.200
+			}
+		}
+	}
+	
+	area:slavonia_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 2
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.210
+			}
+		}
+	}
+	
+	area:transylvania_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 5
+			
+			add_pop = {
+				culture = culture:romani_culture
+				religion = religion:orthodox
+				type = pop_type:tribesmen
+				size = 0.120
+			}
+		}
+	}
+	
+	area:levant_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+				
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 20
+			
+			add_pop = {
+				culture = culture:domari_culture
+				religion = religion:sunni
+				type = pop_type:tribesmen
+				size = 0.210
+			}
+		}
+	}
+	
+	area:lower_egypt_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+				
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 9
+			
+			add_pop = {
+				culture = culture:domari_culture
+				religion = religion:sunni
+				type = pop_type:tribesmen
+				size = 0.380
+			}
+		}
+	}
+	
+	area:upper_egypt_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+				
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 5
+			
+			add_pop = {
+				culture = culture:domari_culture
+				religion = religion:sunni
+				type = pop_type:tribesmen
+				size = 0.150
+			}
+		}
+	}
+	
+	area:iraq_arabi_area = {
+		ordered_location_in_area = {
+			limit = {
+				has_owner = yes
+				
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 8
+			
+			add_pop = {
+				culture = culture:domari_culture
+				religion = religion:sunni
+				type = pop_type:tribesmen
+				size = 0.200
+			}
+		}
+	}
+
+}

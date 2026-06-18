@@ -1,0 +1,97 @@
+﻿
+on_game_start = {
+	
+	on_actions = {
+		icd_culture_on_action
+		delay = { days =  1 }
+		icd_culture_on_action_majority
+	}
+
+}
+
+on_character_created = {
+	
+	on_actions = {
+		icd_character_culture_on_action
+	}
+
+}
+
+yearly_country_pulse = {
+	
+	on_actions = {
+		icd_reapply_promoting_culture
+	}
+
+}
+
+icd_reapply_promoting_culture= {
+	trigger = {
+		always = yes
+	}
+	
+	events = {
+		icd_reapply_promoting.1
+		icd_minority_events.1
+		icd_minority_events.2
+		icd_minority_events.3
+		icd_minority_events.4
+		icd_minority_events.5
+		icd_minority_events.6
+	}
+
+}
+
+four_yearly_country_pulse = {
+	
+	on_actions = {
+		icd_morisco_event
+	}
+}
+
+icd_morisco_event = {
+	trigger = {
+		culture = { has_culture_group = culture_group:iberian_group }
+	}
+
+	events = {
+		icd_substitute_events.1002
+	}
+}
+
+icd_culture_on_action = {
+	trigger = {
+		always = yes
+	}
+	
+	effect = {
+		icd_cultural_setup = yes
+		icd_religion_setup = yes
+		icd_remove_accepted_tolerated_cultures = yes
+		icd_sects_setup = yes
+		icd_movements_setup = yes
+		icd_politics_setup = yes
+		icd_romani_setup = yes
+	}
+
+}
+icd_culture_on_action_majority = {
+	trigger = {
+		always = yes
+	}
+	
+	effect = {
+		icd_majority_law_setup = yes
+	}
+
+}
+icd_character_culture_on_action = {
+	trigger = {
+		always = yes
+	}
+	
+	effect = {
+		icd_character_culture_change = yes
+	}
+
+}

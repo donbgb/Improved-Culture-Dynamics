@@ -1,0 +1,184 @@
+﻿new_national_culture = {
+	ability = adm
+	allow_multiple = no
+	years = 5
+	potential = {
+		OR = {
+			tag = RUS
+			tag = NED
+			AND = {
+				tag = NOL
+				current_year < 1437 
+			}
+			AND = {
+				tag = MAZ
+				current_year < 1437 
+			}
+			tag = UKR
+			tag = LIT
+		}
+	}
+	allow = {
+		OR = {
+			AND = {
+				tag = RUS
+				culture = { has_culture_group = culture_group:russian_group }
+				NOT = { has_global_variable = icd_russian_culture_formed } 
+			}
+			AND = {
+				tag = NOL
+				OR = {
+					is_subject = no
+					any_overlord_or_above = {
+						NOT = {
+							has_or_had_tag = ENG
+							culture = culture:english
+						}
+					}
+				}
+				num_locations_owned_or_owned_by_subjects_or_below > 4
+				area:northumbria_area = {
+					any_location_in_area = {
+						owner = root
+					}
+				}
+				culture = { has_culture_group = culture_group:british_group }
+				NOT = { has_global_variable = northumbrian_revival } 
+			}
+			AND = {
+				tag = NED
+				culture = { has_culture_group = culture_group:netherlandish_group }
+				NOT = { has_global_variable = icd_dutch_culture_formed } 
+			}
+			AND = {
+				tag = LIT
+				root.culture = { has_culture_group = culture_group:lithuanian_group }
+				NOT = {
+					any_country = {
+						NOT = {
+							tag = LIT
+						}
+						culture = { 
+						has_culture_group = culture_group:lithuanian_group
+						}
+					}
+				}
+				NOT = { has_global_variable = icd_lithuanian_culture_formed }
+				current_year > 1380 
+			}
+			AND = {
+				tag = MAZ
+				OR = {
+					is_subject = no
+					any_overlord_or_above = {
+						NOT = {
+							has_or_had_tag = POL
+							culture = culture:greater_polish
+						}
+					}
+				}
+				num_locations_owned_or_owned_by_subjects_or_below > 4
+				area:mazovia_area = {
+					any_location_in_area = {
+						owner = root
+					}
+				}
+				culture = { has_culture_group = culture_group:polish_group }
+				NOT = { has_global_variable = mazovian_revival }
+			}
+			AND = {
+				tag = UKR
+				culture = { has_culture_group = culture_group:russian_group }
+				NOT = { has_global_variable = icd_ruthenian_culture_formed }
+			}
+		}
+	}
+
+	country_modifier = {
+	}
+	on_fully_activated = {
+		
+		if = {
+			limit = {
+				scope:actor = { 
+					tag = RUS
+				}
+			}
+			scope:actor = {
+				trigger_event_silently = {
+					id = icd_new_cultures.1
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { 
+					tag = NED
+				}
+			}
+			scope:actor = {
+				trigger_event_silently = {
+					id = icd_new_cultures.2
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { 
+					tag = NOL
+				}
+			}
+			scope:actor = {
+				trigger_event_silently = {
+					id = icd_new_cultures.3
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { 
+					tag = MAZ
+				}
+			}
+			scope:actor = {
+				trigger_event_silently = {
+					id = icd_new_cultures.4
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { 
+					tag = LIT
+				}
+			}
+			scope:actor = {
+				trigger_event_silently = {
+					id = icd_new_cultures.5
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { 
+					tag = UKR
+				}
+			}
+			scope:actor = {
+				trigger_event_silently = {
+					id = icd_new_cultures.6
+					days = 1
+				}
+			}
+		}
+	}
+	
+	ai_will_do = {
+		value = 500
+	}
+}

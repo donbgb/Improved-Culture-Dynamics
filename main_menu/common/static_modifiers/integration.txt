@@ -1,0 +1,41 @@
+﻿integration_none = {
+	game_data = {
+		category = location
+	}
+}
+
+integration_conquered = {
+	game_data = {
+		category = location
+	}
+	local_max_control = -0.05
+	local_separatism = 0.5
+	local_garrison_growth = -0.005
+	local_pop_assimilation_speed = -0.05
+	local_pop_conversion_speed = -0.05
+}
+integration_colonized = {
+	game_data = {
+		category = location
+	}
+	local_monthly_control = 0.001
+}
+integration_integrated = {
+	game_data = {
+		category = location
+	}
+	local_separatism = 0.2
+	local_monthly_control = 0.0005
+	local_max_control = 0.20
+}
+integration_core = {
+	game_data = {
+		category = location
+	}
+	local_monthly_control = 0.001
+	local_max_control = 0.20
+	growth_is_primary_culture = no
+	owner_gets_vision_when_occupied = yes
+	local_tribal_promotion = 0.05
+}
+

@@ -1,0 +1,149 @@
+﻿turkification_culture_movement = {
+	culture = turkmen_culture
+
+	potential = {
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = turkification_culture_movement_allow_tt
+			always = no
+		}
+	}
+
+	monthly_spawn_chance = {
+		value = 0	
+	}
+	
+	spawn = {
+		ordered_ownable_location = {
+			limit = { dominant_culture ?= culture:mongolian_culture  }
+			max = 1
+
+			order_by = {
+				value = population				
+			}
+			spawn_movement = {
+				movement_definition = scope:movement_definition
+				supporters = {
+					value = population
+					multiply = 0.15
+				}
+			}
+		}
+	}
+
+	#what's done by spreaders
+	environmental_infection = {
+		value = 0.2
+	}
+
+	required_cultures = { mongolian_culture oirat_culture }
+	
+
+	r0 = { 
+		value = 0.03
+		if = {
+			limit = {
+				root.owner ?= { culture = { has_culture_group = culture_group:mongolian_group } }
+			}
+			multiply = 0
+		}
+		if = {
+			limit = {
+				NOT = { root.region ?= region:persia_region }
+				NOT = { root.region ?= region:crescent_region }
+				NOT = { root.region ?= region:caucasus_region }
+				NOT = { root.region ?= region:anatolia_region }
+				NOT = { root.area ?= area:western_khorasan_area }
+			}
+			multiply = 0
+		}
+	}
+
+	calc_interval_days = 30
+
+	literacy = negative
+
+	on_spread_to_country = {
+	}
+	
+	specific_pop_type_effect = {
+		pop_type = tribesmen
+		multiplier = 2.0
+	}
+
+	specific_pop_type_effect = {
+		pop_type = burghers
+		multiplier = 0.01
+	}
+
+	specific_pop_type_effect = {
+		pop_type = nobles
+		multiplier = 0.01
+	}
+	
+	specific_pop_type_effect = {
+		religion = tengri
+		multiplier = 0
+	}
+
+	location_stagnation_chance = {
+		if = {
+			limit = {
+				dominant_culture ?= culture:turkmen_culture
+			}
+			value = 1
+		}
+	}
+	
+	on_calc_effect ={
+	}
+
+	map_color = {
+		if = {
+			limit = {
+				OR = {
+					"culture_percentage(culture:mongolian_culture)" > 0
+					"culture_percentage(culture:oirat_culture)" > 0
+					"culture_percentage(culture:turkmen_culture)" > 0
+				}
+				root.owner ?= { culture = { has_culture_group = culture_group:mongolian_group } }
+			}
+			value = define:NMapColors|MAP_COLOR_NULL
+		}
+		else_if = {
+			limit = {
+				AND = {
+					"culture_percentage(culture:mongolian_culture)" < 0.02
+					"culture_percentage(culture:oirat_culture)" < 0.02
+				}
+				"culture_percentage(culture:turkmen_culture)" > 0.02
+			}
+			value = define:NMapColors|MAP_COLOR_MAX
+		}
+		else_if = {
+			limit = {
+				"culture_percentage(culture:turkmen_culture)" > "culture_percentage(culture:mongolian_culture)"
+				"culture_percentage(culture:turkmen_culture)" > "culture_percentage(culture:oirat_culture)"
+			}
+			value = define:NMapColors|MAP_COLOR_HIGH
+		}
+		else_if = {
+			limit = {
+				"culture_percentage(culture:turkmen_culture)" > 0
+			}
+			value = define:NMapColors|MAP_COLOR_MID
+		}
+		else = {
+			value = define:NMapColors|MAP_COLOR_LOW
+		}
+	}
+	
+	location_spread_threshold = {
+		value = 0.05 # % of the people need to be infected to spread to neighbors
+	}
+	
+	
+
+}

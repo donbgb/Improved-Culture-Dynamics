@@ -1,0 +1,40 @@
+﻿
+russian_culture_movement_momentum_waning_locally = {
+	game_data = {
+		category = movement
+	}
+    local_russian_culture_movement_growth_modifier = -1
+}
+
+
+dutch_culture_movement_momentum_waning_locally = {
+	game_data = {
+		category = movement
+	}
+    local_dutch_culture_movement_growth_modifier = -1
+}
+
+
+lithuanian_culture_movement_momentum_waning_locally = {
+	game_data = {
+		category = movement
+	}
+    local_lithuanian_culture_movement_growth_modifier = -1
+}
+
+
+ruthenian_culture_movement_momentum_waning_locally = {
+	game_data = {
+		category = movement
+	}
+    local_ruthenian_culture_movement_growth_modifier = -1
+}
+
+
+azeri_culture_movement_momentum_waning_locally = {
+	game_data = {
+		category = movement
+	}
+    local_azeri_culture_movement_growth_modifier = -1
+}
+

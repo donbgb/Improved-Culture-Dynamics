@@ -1,0 +1,44 @@
+﻿icd_muslim_dhimmi_choose = {
+	type = religious
+
+	sound = UI_action_religion_generic
+	
+	potential = {
+		scope:actor = {
+			religion.group = religion_group:muslim
+		}
+	}
+
+	allow = {
+	}
+
+	cooldown = {
+		type = orthodox_synod
+		months = 3
+	}
+	
+	price = price:icd_dhimmi_price
+
+	ai_tick = never
+
+	select_trigger = {
+		looking_for_a = religion
+		source = actor
+		target_flag = recipient
+		name = "choose_religion"
+		column = {
+			data = name
+		}
+	}
+
+	effect = {
+		scope:actor = {
+			trigger_event_silently = icd_minority_events.7
+		}
+	}
+	
+	ai_will_do = {
+		#base
+		value = -60000
+	}
+}

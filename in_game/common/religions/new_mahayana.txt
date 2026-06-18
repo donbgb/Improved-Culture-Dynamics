@@ -1,0 +1,22 @@
+﻿
+southern_mahayana = { 
+	color = rgb { 89 37 42 }
+	group = buddhist
+	
+	has_karma = yes
+	max_sects = 2
+	
+	definition_modifier = {
+		tolerance_heathen = 1
+		monthly_karma = 0.1
+		global_max_literacy = 5
+		can_have_monasteries = yes
+	}
+	
+	opinions = {
+		tibetan_buddhism = positive
+	}
+	
+	tags = { buddhist_gfx }
+}
+

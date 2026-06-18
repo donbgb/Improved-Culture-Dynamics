@@ -1,0 +1,194 @@
+﻿
+REPLACE:sect_name = {
+	type = international_organization
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:confucianism_policy
+		}
+		localization_key = SECT_CONFUCIANISM_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:perfect_teaching_policy
+		}
+		localization_key = SECT_PERFECT_TEACHING_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:sogatan_policy
+		}
+		localization_key = SECT_SOGATAN_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:daoism_policy
+		}
+		localization_key = SECT_DAOISM_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:jodou_shinshuu_policy
+			international_organization_has_policy = policy:pure_land_school_policy
+		}
+		localization_key = SECT_JOUDO_SHINSHUU
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:pure_land_school_policy
+		}
+		localization_key = SECT_PURE_LAND_SCHOOL_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:tiantai_policy
+			international_organization_has_policy = policy:vajrayana_policy
+		}
+		localization_key = SECT_TENDAI_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:tiantai_policy
+			international_organization_has_policy = policy:nichiren_policy
+		}
+		localization_key = SECT_NICHIREN_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:tiantai_policy
+		}
+		localization_key = SECT_TIANTAI_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:dharma_school_policy
+		}
+		localization_key = SECT_DHARMA_SCHOOL_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:flower_garland_school_policy
+		}
+		localization_key = SECT_FLOWER_GARLAND_SCHOOL_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:meditation_school_policy
+		}
+		localization_key = SECT_MEDITATION_SCHOOL_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:mantra_school_policy
+		}
+		localization_key = SECT_MANTRA_SCHOOL_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:shugendo_policy
+		}
+		localization_key = SECT_SHUGENDO_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:azhaliism_policy
+		}
+		localization_key = SECT_AZHALIISM_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:musok_policy
+		}
+		localization_key = SECT_MUSOK_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:nyigma_policy
+		}
+		localization_key = SECT_NYIGMA_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:kadam_policy
+		}
+		localization_key = SECT_KADAM_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:kagyu_policy
+		}
+		localization_key = SECT_KAGYU_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:sakya_policy
+		}
+		localization_key = SECT_SAKYA_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:jonang_policy
+		}
+		localization_key = SECT_JONANG_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:mulasarvastivada_policy
+		}
+		localization_key = SECT_MULASARVASTIVADA_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:mahavihara_policy
+		}
+		localization_key = SECT_MAHAVIHARA_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:burmese_buddhism_policy
+		}
+		localization_key = SECT_BURMESE_BUDDHISM_NAME
+	}
+	
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:lankavong_policy
+		}
+		localization_key = SECT_LANKAVONG_NAME
+	}
+
+	text = {
+		trigger = {
+			international_organization_has_policy = policy:khmer_buddhism_policy
+		}
+		localization_key = SECT_KHMER_BUDDHISM_NAME
+	}
+
+	text = {
+		localization_key = SECT_NAME
+		fallback = yes
+	}
+}

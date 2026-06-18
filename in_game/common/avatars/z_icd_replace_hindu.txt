@@ -1,0 +1,16 @@
+﻿REPLACE:buddha_avatar = {
+    god = vishnu_god
+
+    allow = {
+		OR = {
+			"religion_group_percentage_in_country(religion_group:buddhist)" > 0
+			religion = religion:nusantaran_hindu
+		}
+    }
+
+    country_modifier = {
+        tolerance_heretic = 0.5
+        tolerance_heathen = 0.5
+    }
+}
+

@@ -1,0 +1,36 @@
+﻿
+icd_movements_setup = {
+
+	random_location_in_the_world = {
+		limit = { dominant_culture ?= culture:azeri_culture  }
+		spawn_movement = {
+			movement_definition = movement_definition:azeri_culture_movement
+			supporters = {
+				value = population
+				multiply = 0.15
+			}
+			
+		}
+	}
+	
+	location:nishapur = {
+		spawn_movement = {
+			movement_definition = movement_definition:turkification_culture_movement
+			supporters = {
+				value = population
+				multiply = 0.15
+			}
+		}
+	}
+	
+	location:qatruyeh = {
+		spawn_movement = {
+			movement_definition = movement_definition:turkification_culture_movement
+			supporters = {
+				value = population
+				multiply = 0.1
+			}
+		}
+	}
+	
+}

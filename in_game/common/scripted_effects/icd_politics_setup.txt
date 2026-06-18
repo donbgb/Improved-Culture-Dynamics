@@ -1,0 +1,220 @@
+﻿
+icd_politics_setup = {
+	
+	c:MVA = {
+		grant_estate_privilege = estate_privilege:ius_teutonicum
+	}
+	
+	c:HUN = {
+		grant_estate_privilege = estate_privilege:icd_vlach_law
+		add_policy = policy:icd_privileges_in_hungary
+	}
+	c:SER = {
+		grant_estate_privilege = estate_privilege:icd_vlach_law
+	}
+	c:MAM = {
+		grant_estate_privilege = estate_privilege:icd_dhimmi_druze_chieftaincies
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:icd_tribal_cavalry_logistics = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:icd_tribal_cavalry_logistics
+			}
+			OR = {
+				capital.region = region:persia_region
+				capital.region = region:arabia_region
+				capital.region = region:maghreb_region
+			}
+		}
+		grant_estate_privilege = estate_privilege:icd_tribal_cavalry_logistics
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:tribes_pasture_access = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:tribes_pasture_access
+			}
+			OR = {
+				capital.sub_continent = sub_continent:middle_east
+				capital.sub_continent = sub_continent:central_asia
+				capital.region = region:mongolia_region
+				capital.region = region:manchuria_region
+				capital.region = region:xinjiang_region
+			}
+		}
+		grant_estate_privilege = estate_privilege:tribes_pasture_access
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:tribes_protected_faith = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:tribes_protected_faith
+			}
+			OR = {
+				capital.sub_continent = sub_continent:south_asia
+			}
+		}
+		grant_estate_privilege = estate_privilege:tribes_protected_faith
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:tribes_respect_tribal_traditions = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:tribes_respect_tribal_traditions
+			}
+			OR = {
+				capital.sub_continent = sub_continent:south_asia
+				capital.sub_continent = sub_continent:central_asia
+				capital.region = region:steppes_region
+				culture = { has_culture_group = culture_group:turkic_group }
+			}
+		}
+		grant_estate_privilege = estate_privilege:tribes_respect_tribal_traditions
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:tribes_land_rights = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:tribes_land_rights
+			}
+			OR = {
+				capital.sub_continent = sub_continent:south_asia
+				capital.sub_continent = sub_continent:central_asia
+				capital.continent = continent:africa
+				capital.sub_continent = sub_continent:south_east_asia
+			}
+		}
+		grant_estate_privilege = estate_privilege:tribes_land_rights
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:icd_tribal_commercial_networks = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:icd_tribal_commercial_networks
+			}
+			OR = {
+				capital.sub_continent = sub_continent:central_asia
+				capital.sub_continent = sub_continent:north_africa
+				capital.sub_continent = sub_continent:middle_east
+				capital.region = region:steppes_region
+			}
+		}
+		grant_estate_privilege = estate_privilege:icd_tribal_commercial_networks
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:tribes_tribal_levies = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:tribes_tribal_levies
+			}
+		}
+		grant_estate_privilege = estate_privilege:tribes_tribal_levies
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:tribes_tribal_registry = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:tribes_tribal_registry
+			}
+			OR = {
+				capital.sub_continent = sub_continent:central_asia
+				capital.sub_continent = sub_continent:north_africa
+				capital.sub_continent = sub_continent:middle_east
+			}
+		}
+		grant_estate_privilege = estate_privilege:tribes_tribal_registry
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:ius_teutonicum = {
+				is_implementable_in = prev
+			}
+			culture = culture:silesian
+		}
+		grant_estate_privilege = estate_privilege:ius_teutonicum
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:dhimmi_abrahamic_communities = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				tag = BRN
+				tag = HAB
+			}
+		}
+		grant_estate_privilege = estate_privilege:dhimmi_abrahamic_communities
+	}
+			
+	every_country = {
+		limit = {
+			estate_privilege:jewish_charter = {
+				is_implementable_in = prev
+			}
+			NOT = {
+				tag = BRN
+				tag = HAB
+			}
+		}
+		grant_estate_privilege = estate_privilege:jewish_charter
+	}
+
+	c:BRI = {
+		change_culture = culture:gallo
+		ruler = {
+			change_character_culture = culture:french
+			every_close_relative = {
+				limit = { culture = culture:breton }
+				change_character_culture = culture:french
+			}
+		}
+		every_character = {
+			limit = { culture = culture:breton NOT = { estate_type = estate_type:peasants_estate }}
+			change_character_culture = culture:gallo
+		}
+	}
+	c:TEU = {
+		add_policy = policy:agrarian_constitution
+	}
+
+	every_country = {
+		limit = {
+			court_language = language:persian_language
+			NOT = {
+				culture = { has_culture_group = culture_group:iranian_group }
+			}
+			NOT = {
+				this = c:ZAN
+			}
+		}
+		add_policy = policy:persianate
+	}
+
+}

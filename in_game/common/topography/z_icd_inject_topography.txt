@@ -1,0 +1,20 @@
+﻿
+INJECT:mountains = {
+	location_modifier = { 
+		local_pop_assimilation_speed_modifier = -0.75
+		local_tribal_promotion = -0.1
+	}
+}
+
+INJECT:hills = {
+	location_modifier = { 
+		local_pop_assimilation_speed_modifier = -0.25
+	}
+}
+
+INJECT:wetlands = {
+	location_modifier = { 
+		local_pop_assimilation_speed_modifier = -0.50
+		local_tribal_promotion = -0.05
+	}
+}

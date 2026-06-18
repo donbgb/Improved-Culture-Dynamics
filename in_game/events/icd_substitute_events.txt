@@ -1,0 +1,263 @@
+﻿namespace = icd_substitute_events
+
+
+icd_substitute_events.1002 = { #Assimilation of the Moriscos ###
+	type = country_event
+	hide_portraits = yes
+	fire_only_once = yes
+	title = icd_substitute_events.1002.title
+	desc = icd_substitute_events.1002.desc
+	outcome = neutral
+	
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_peasants_foreign_religion_pop_type_effect = yes
+
+		ruler = {
+			save_scope_as = target_character
+		}
+		region:maghreb_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					dominant_religion.group ?= religion_group:muslim
+					is_coastal = yes
+					is_discovered_by = root
+				}
+				save_scope_as = escape_target1
+			}
+		}
+		region:maghreb_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					dominant_religion.group ?= religion_group:muslim
+					is_coastal = yes
+					is_discovered_by = root
+				}
+				save_scope_as = escape_target2
+			}
+		}
+		region:maghreb_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					dominant_religion.group ?= religion_group:muslim
+					is_coastal = yes
+					is_discovered_by = root
+				}
+				save_scope_as = escape_target3
+			}
+		}
+		region:maghreb_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					dominant_religion.group ?= religion_group:muslim
+					is_coastal = yes
+					is_discovered_by = root
+				}
+				save_scope_as = escape_target4
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target1
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = { # distance * (1 - integration)
+					value = "capital.distance_to(root.capital)"
+					multiply = {
+						value = -1
+					}
+				}
+				max = 1
+				limit = {
+					religion.group ?= religion_group:muslim
+					any_owned_location = {
+						is_coastal = yes
+					}
+				}
+				random_owned_location = {
+					save_scope_as = escape_target1
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target2
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = { # distance * (1 - integration)
+					value = "capital.distance_to(root.capital)"
+					multiply = {
+						value = -1
+					}
+				}
+				max = 1
+				limit = {
+					religion.group ?= religion_group:muslim
+					any_owned_location = {
+						is_coastal = yes
+					}
+				}
+				random_owned_location = {
+					save_scope_as = escape_target2
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target3
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = { # distance * (1 - integration)
+					value = "capital.distance_to(root.capital)"
+					multiply = {
+						value = -1
+					}
+				}
+				max = 1
+				limit = {
+					religion.group ?= religion_group:muslim
+					any_owned_location = {
+						is_coastal = yes
+					}
+				}
+				random_owned_location = {
+					save_scope_as = escape_target3
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target4
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = { # distance * (1 - integration)
+					value = "capital.distance_to(root.capital)"
+					multiply = {
+						value = -1
+					}
+				}
+				max = 1
+				limit = {
+					religion.group ?= religion_group:muslim
+					any_owned_location = {
+						is_coastal = yes
+					}
+				}
+				random_owned_location = {
+					save_scope_as = escape_target4
+				}
+			}
+		}
+	}
+
+	trigger = {
+		religion.group = religion_group:christian
+		culture != culture:andalusi
+		any_owned_location = {
+			culture_percentage = {
+				culture = culture:andalusi
+				value > 0
+			}
+		}
+		OR = {
+			capital.region = region:iberia_region
+			culture = { has_culture_group = culture_group:iberian_group }
+		}
+		current_year > 1540
+		NOT = { has_variable = icd_refused_andalusi_deportation }
+	}
+
+	option = {
+		name = icd_substitute_events.1002.a
+		historical_option = yes
+
+		ai_will_select = { value = 20 }
+		
+		every_owned_location = {
+			every_pop = {
+				limit = {
+					owner = root
+					culture = culture:andalusi
+				}
+				split_pop = {
+					fraction = 0.3
+					culture = root.culture
+				}
+			}
+		}
+		every_province = {
+			limit = {
+				culture_percentage = {
+					culture = culture:andalusi
+					value > 0
+				}
+				region = region:iberia_region
+			}
+			add_migration = {
+				owner = prev
+				from = this.province_definition
+				to = scope:escape_target1.province_definition
+				culture = culture:andalusi
+				amount = 0.900
+				months = 60
+			}
+			add_migration = {
+				owner = prev
+				from = this.province_definition
+				to = scope:escape_target2.province_definition
+				culture = culture:andalusi
+				amount = 0.900
+				months = 60
+			}
+			add_migration = {
+				owner = prev
+				from = this.province_definition
+				to = scope:escape_target3.province_definition
+				culture = culture:andalusi
+				amount = 0.900
+				months = 60
+			}
+			add_migration = {
+				owner = prev
+				from = this.province_definition
+				to = scope:escape_target4.province_definition
+				culture = culture:andalusi
+				amount = 0.900
+				months = 60
+			}
+		}
+		
+	}
+
+	option = {
+		name = icd_substitute_events.1002.b
+
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_severe_penalty }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
+		add_stability = stability_severe_penalty
+		
+		set_variable = icd_refused_andalusi_deportation
+	}
+}

@@ -1,0 +1,626 @@
+﻿#generic privileges
+icd_sabian_abrahamic_communities = {
+	icon = dhimmi_abrahamic_communities
+	estate = dhimmi_estate
+	potential = {
+		religion ?= {
+			group ?= religion_group:muslim
+		}
+		any_owned_location = {
+			religion_percentage = {
+				religion = religion:mandeaism
+				value > 0
+			}
+		}
+	}
+	can_revoke = {
+		OR = {
+			is_human = yes
+			religious_unity < 0.5
+		}
+	}
+	allow = {}
+	location_modifier = {
+		potential_trigger = {
+			religion_percentage = {
+				religion = religion:mandeaism
+				value > 0
+			}
+			OR = {
+				dominant_religion ?= { 
+					OR = {
+						group = religion_group:christian
+						group = religion_group:israelite_group
+						group = religion_group:muslim
+					}
+				}
+				dominant_religion = religion:mandeaism
+			}
+		}
+		local_heathen_pop_conversion_speed_modifier = -2.0
+		local_unrest = -0.1
+	}
+	location_modifier = {
+		potential_trigger = {
+			religion_percentage = {
+				religion = religion:mandeaism
+				value > 0
+			}
+			OR = {
+				dominant_religion ?= { 
+					OR = {
+						group = religion_group:christian
+						group = religion_group:israelite_group
+						group = religion_group:muslim
+					}
+				}
+				dominant_religion = religion:mandeaism
+			}
+			integration_level = core
+		}
+		building_enslavement_power = -0.100
+	}
+	country_modifier = {
+		tolerance_heathen = 1
+		dhimmi_estate_target_satisfaction = medium_privilege_target_satisfaction
+		global_dhimmi_estate_power = 1
+	}
+}
+
+icd_dhimmi_druze_chieftaincies = {
+	icon = icd_dhimmi_druze_chieftaincies
+	estate = dhimmi_estate
+	potential = {
+		religion ?= {
+			group ?= religion_group:muslim
+		}
+		any_owned_location = {
+			religion_percentage = {
+				religion = religion:druzism
+				value > 0
+			}
+		}
+	}
+	
+	can_revoke = {
+		OR = {
+			is_human = yes
+			religious_unity < 0.5
+		}
+	}
+	allow = {}
+	location_modifier = {
+		potential_trigger = {
+			religion_percentage = {
+				religion = religion:druzism
+				value > 0
+			}
+			OR = {
+				dominant_religion ?= { 
+					OR = {
+						group = religion_group:christian
+						group = religion_group:israelite_group
+						group = religion_group:muslim
+						group = religion_group:druzism
+					}
+				}
+			}
+		}
+		local_heathen_pop_conversion_speed_modifier = -2.0
+		local_unrest = -0.1
+	}
+	location_modifier = {
+		potential_trigger = {
+			religion_percentage = {
+				religion = religion:druzism
+				value > 0
+			}
+			OR = {
+				dominant_religion ?= { 
+					OR = {
+						group = religion_group:christian
+						group = religion_group:israelite_group
+						group = religion_group:muslim
+						group = religion_group:druzism
+					}
+				}
+			}
+			integration_level = core
+		}
+		building_enslavement_power = -0.100
+	}
+	country_modifier = {
+		dhimmi_estate_target_satisfaction = small_privilege_target_satisfaction
+		global_dhimmi_estate_power = 0
+		global_peasant_enfranchisment = -0.05
+	}
+}
+
+jewish_charter = {
+	icon = dhimmi_promote_tolerance
+	estate = burghers_estate
+	potential = {
+			religion.group = religion_group:christian
+		}
+	allow = {
+		any_owned_location = {
+			religion_group_percentage = {
+				religion_group = religion_group:israelite_group
+				value > 0
+			}
+		}
+		NOT = {
+			has_policy = state_inquisitors
+			has_policy = spa_inquisition_policy
+		}
+		custom_tooltip = {
+			text = jewish_banned_tt
+			NOT = {
+				has_variable = icd_jewish_banned
+			}
+		}
+	}
+	can_revoke = {
+		hidden_trigger = {
+			OR = {
+				is_human = yes
+				tag = FRA
+				tag = ENG
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+				AND = {
+					tag = CAS
+					current_year > 1650
+				}
+				AND = {
+					tag = POR
+					current_year > 1650
+				}
+				religious_unity < 0.5
+			}
+		}
+	}
+	country_modifier = {
+		tolerance_heathen = 1
+		global_trades_per_burgher = 0.1
+		global_burghers_estate_power = 0.1
+	}
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = icd_jewish_charter_tt
+			hidden_trigger = {
+				religion_group_percentage = {
+					religion_group = religion_group:israelite_group
+					value > 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:tonal_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_african_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_european_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_permic_group
+					value = 0
+				}
+				OR = {
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:muslim
+							value = 0
+						}
+						religion_group_percentage = {
+							religion_group = religion_group:dharmic
+							value = 0
+						}
+						religion_group_percentage = {
+							religion_group = religion_group:buddhist
+							value = 0
+						}
+						religion_group_percentage = {
+							religion_group = religion_group:manichaean_group
+							value = 0
+						}
+						religion_group_percentage = {
+							religion_group = religion_group:zoroastrian_group
+							value = 0
+						}
+						religion_group_percentage = {
+							religion_group = religion_group:yazidi_group
+							value = 0
+						}
+					}
+					is_overseas_for_owner = no
+				}
+				OR = {
+					dominant_religion = { group = religion_group:christian }
+					dominant_religion = { group = religion_group:israelite_group }
+				}
+			}
+		}
+		local_heathen_pop_conversion_speed_modifier = -3.0
+		building_enslavement_power = -0.100
+	}	
+}
+
+icd_entrenched_tribal_livelihood = {
+	icon = nobles_land_rights
+	estate = tribes_estate
+	
+	allow = {
+
+	}
+	
+	country_modifier = {
+		tribes_estate_target_satisfaction = large_privilege_target_satisfaction
+		block_tribal_promotion = yes
+		global_tribes_estate_power = 0.1
+	}
+}
+
+icd_tribal_governorates = {
+	icon = tribes_in_administration
+	estate = tribes_estate
+	
+	allow = {
+		OR = {
+			pop_type_percentage_in_country = {
+				pop_type = pop_type:tribesmen
+				value >= 0.08
+			}
+			pop_type_population_in_country = {
+				pop_type = pop_type:tribesmen
+				value >= 2000000
+			}
+		}
+	}
+	
+	country_modifier = {
+		tribes_estate_target_satisfaction = medium_privilege_target_satisfaction
+		global_monthly_rural_control = 0.00025
+		global_tribes_estate_power = 2.0
+	}
+}
+
+icd_frontier_armed_tribesmen = {
+	icon = tribal_host
+	estate = tribes_estate
+	
+	allow = {
+		OR = {
+			pop_type_percentage_in_country = {
+				pop_type = pop_type:tribesmen
+				value >= 0.08
+			}
+			pop_type_population_in_country = {
+				pop_type = pop_type:tribesmen
+				value >= 2000000
+			}
+		}
+	}
+	
+	country_modifier = {
+		tribes_estate_target_satisfaction = medium_privilege_target_satisfaction
+		global_hostile_attrition = 1
+		monthly_towards_decentralization = societal_value_tiny_monthly_move
+		global_tribes_estate_power = 0.5
+	}
+}
+icd_tribal_cavalry_logistics = {
+	icon = cossacks_allowed_free_roaming
+	estate = tribes_estate
+	
+	allow = {
+		OR = {
+			pop_type_percentage_in_country = {
+				pop_type = pop_type:tribesmen
+				value >= 0.08
+			}
+			pop_type_population_in_country = {
+				pop_type = pop_type:tribesmen
+				value >= 2000000
+			}
+		}
+	}
+	
+	country_modifier = {
+		tribes_estate_target_satisfaction = small_privilege_target_satisfaction
+		land_morale_movement_cost = -0.0001
+		global_tribes_estate_power = 0.75
+	}
+}
+icd_tribal_commercial_networks = {
+	icon = amenokal_salt_traders
+	estate = tribes_estate
+	
+	allow = {
+		OR = {
+			pop_type_percentage_in_country = {
+				pop_type = pop_type:tribesmen
+				value >= 0.08
+			}
+			pop_type_population_in_country = {
+				pop_type = pop_type:tribesmen
+				value >= 2000000
+			}
+		}
+	}
+	
+	country_modifier = {
+		tribes_estate_target_satisfaction = small_privilege_target_satisfaction
+		trade_land_efficiency = 0.2
+		global_merchant_capacity_modifier = 0.05
+		global_tribes_estate_power = 0.75
+	}
+}
+
+icd_unify_the_tribes = {
+	icon = ghazi_privilege
+	estate = tribes_estate
+	
+	potential = {
+		OR = {
+			government_type = government_type:tribe
+			government_type = government_type:steppe_horde
+		}
+	}
+	
+	
+	country_modifier = {
+		global_tribes_estate_power = 0.25
+		tribes_estate_target_satisfaction = 0
+		pure_tooltip_entry = icd_unify_the_tribes_tt
+	}
+}
+
+
+icd_vlach_law = {
+	estate = peasants_estate
+	icon = tribes_pasture_access
+
+	potential = {
+		NOT = {
+			culture = { has_culture_group = culture_group:romanian_group }
+		}
+		any_pop = { 
+			OR = {
+				culture = { has_culture_group = culture_group:romanian_group }
+			}
+		}
+	}
+	
+	can_revoke = {
+		NOT = {
+			any_accepted_culture = {
+				custom_tooltip = { 
+					text = icd_romanian_language_tt
+					language = language:romanian_language
+				}
+			}
+			any_tolerated_culture = {
+				custom_tooltip = { 
+					text = icd_romanian_language_tt
+					language = language:romanian_language
+				}
+			}
+		}
+	}
+
+	country_modifier = {
+		global_livestock_output_modifier = 0.05
+		global_wool_output_modifier = 0.05
+		global_pop_food_consumption = -0.01
+		peasants_estate_target_satisfaction = small_privilege_target_satisfaction
+		global_peasants_estate_power = 0.1
+	}
+	
+	location_modifier = {
+		potential_trigger = {
+			OR = {
+				dominant_culture.language ?= language:romanian_language
+				culture_group_percentage = {
+					culture_group = culture_group:romanian_group
+					value > 0.13
+				}
+			}
+		}
+		local_pop_assimilation_speed_modifier = -0.9
+		
+	}
+	years = 2
+}
+
+
+icd_romani_slaves = {
+	estate = nobles_estate
+	icon = icd_romani_slaves
+
+	potential = {
+		NOT = {
+			culture = { has_culture_group = culture_group:romani_group }
+		}
+		any_pop = { 
+			OR = {
+				culture = { has_culture_group = culture_group:romani_group }
+				pop_type = pop_type:tribesmen
+			}
+		}
+	}
+	
+	allow = {
+		NOT = {
+			has_estate_privilege = estate_privilege:icd_anti_romani_laws
+			has_estate_privilege = estate_privilege:icd_romani_craftsmen
+		}
+	}
+	
+	can_revoke = {
+	}
+	
+	on_activate = {
+		if = {
+			limit = {
+				has_variable = icd_romani_are_chill
+			}
+			remove_variable = icd_romani_are_chill
+		}
+	}
+
+	country_modifier = {
+		nobles_estate_target_satisfaction = small_privilege_target_satisfaction
+		global_nobles_estate_power = 0
+		
+	}
+	
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = {
+				text = icd_romani_privilege_tt
+				culture_group_population = {
+					culture_group = culture_group:romani_group
+					value > 0.050
+				}
+				any_pop = {
+					culture = { has_culture_group = culture_group:romani_group }
+					pop_type = pop_type:tribesmen
+				}
+			}
+		}
+		local_tribal_promotion = -4.0
+		local_raw_material_output = 0.025
+	}
+	years = 2
+}
+
+icd_anti_romani_laws = {
+	estate = peasants_estate
+	icon = icd_anti_romani_laws
+
+	potential = {
+		NOT = {
+			culture = { has_culture_group = culture_group:romani_group }
+		}
+		any_pop = { 
+			OR = {
+				culture = { has_culture_group = culture_group:romani_group }
+				pop_type = pop_type:tribesmen
+			}
+		}
+	}
+	
+	on_activate = {
+		if = {
+			limit = {
+				has_variable = icd_romani_are_chill
+			}
+			remove_variable = icd_romani_are_chill
+		}
+	}
+	
+	allow = {
+		NOT = {
+			has_estate_privilege = estate_privilege:icd_romani_slaves
+			has_estate_privilege = estate_privilege:icd_romani_craftsmen
+		}
+	}
+	
+	can_revoke = {
+	}
+
+	country_modifier = {
+		peasants_estate_target_satisfaction = small_privilege_target_satisfaction
+		global_peasants_estate_power = 0
+	}
+	
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = {
+				text = icd_romani_privilege_tt
+				culture_group_population = {
+					culture_group = culture_group:romani_group
+					value > 0.050
+				}
+				any_pop = {
+					culture = { has_culture_group = culture_group:romani_group }
+					pop_type = pop_type:tribesmen
+				}
+			}
+		}
+		local_tribal_promotion = -4.0
+		local_peasants_estate_unrest = -0.1
+	}
+	years = 2
+}
+
+icd_romani_craftsmen = {
+	estate = burghers_estate
+	icon = icd_romani_craftsmen
+
+	potential = {
+		NOT = {
+			culture = { has_culture_group = culture_group:romani_group }
+		}
+		any_pop = { 
+			OR = {
+				culture = { has_culture_group = culture_group:romani_group }
+				pop_type = pop_type:tribesmen
+			}
+		}
+	}
+	
+	on_activate = {
+		if = {
+			limit = {
+				has_variable = icd_romani_are_chill
+			}
+			remove_variable = icd_romani_are_chill
+		}
+	}
+	
+	allow = {
+		NOT = {
+			has_estate_privilege = estate_privilege:icd_anti_romani_laws
+			has_estate_privilege = estate_privilege:icd_romani_slaves 
+		}
+	}
+	
+	can_revoke = {
+	}
+
+	country_modifier = {
+		burghers_estate_target_satisfaction = small_privilege_target_satisfaction
+		global_burghers_estate_power = 0
+		
+	}
+	
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = {
+				text = icd_romani_privilege_tt
+				culture_group_population = {
+					culture_group = culture_group:romani_group
+					value > 0.050
+				}
+				any_pop = {
+					culture = { has_culture_group = culture_group:romani_group }
+					pop_type = pop_type:tribesmen
+				}
+				NOT = {
+					any_pop = {
+						NOT = { culture = { has_culture_group = culture_group:romani_group } }
+						pop_type = pop_type:tribesmen
+					}
+				}
+			}
+		}
+		local_tribal_promotion = -2.0
+		local_merchant_power = 0.025
+	}
+	years = 2
+}
