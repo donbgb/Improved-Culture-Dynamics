@@ -121,9 +121,7 @@
 		}
 		allow = {
 			OR = {
-				has_estate_privilege = estate_privilege:dhimmi_abrahamic_communities
-				has_estate_privilege = estate_privilege:dharmic_dhimmi_communities
-				has_estate_privilege = estate_privilege:icd_sabian_abrahamic_communities
+				has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 				has_policy = minority_rule
 				has_policy = regional_autonomy
 			}

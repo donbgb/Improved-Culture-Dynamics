@@ -126,3 +126,19 @@
  icd_settle_tribesmen_control_tt: "Only provinces with an average of 30% Control can be targeted"
  
  icd_begin_expelling_tt: "Begins expelling [SCOPE.sCulture('icd_migration_culture_scope').GetName] [pops|e] for 24 months"
+ 
+ 
+ 
+ icd_muslim_dhimmi_choose: "Status of the Dhimmi"
+ icd_muslim_dhimmi_choose_desc: "Decide which religious minorities in our state count as dhimmi, and which do not."
+ PERFORM_icd_muslim_dhimmi_choose_ACTION: "Change the status of the dhimmi"
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_SETUP: "When the status of the dhimmi is changed."
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_HEADER: "$MESSENGER$"
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_TITLE: "Reconsider the dhimmi!"
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_EFFECTS: "[SCOPE.sCountry('actor').GetName] are reconsidering the status of the dhimmi."
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_DESC: "Membership to the Dhimmi was altered in [SCOPE.sCountry('actor').GetName]"
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_LOG: "Reconsider the Status of the Dhimmi."
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_BTN1: "OK"
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_BTN2: "OK"
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_BTN3: "$common_string_go_to$"
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_MAP: ""

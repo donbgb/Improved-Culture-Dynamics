@@ -59,6 +59,20 @@ icd_region_culture_law_german = {
 				limit = { 
 					any_location_in_province = {
 						any_neighbor_location = {
+							dominant_culture ?= culture:ripuarian_franconian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:ripuarian_franconian
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
 							dominant_culture ?= culture:rhine_franconian
 						}
 					}
@@ -95,6 +109,20 @@ icd_region_culture_law_german = {
 				set_variable = {
 					name = promoting_culture
 					value = culture:high_alemannic
+				}
+			}
+			every_province = {
+				limit = { 
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:swabian
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:swabian
 				}
 			}
 			every_province = {

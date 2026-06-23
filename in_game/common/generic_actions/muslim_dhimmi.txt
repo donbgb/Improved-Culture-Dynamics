@@ -14,7 +14,7 @@
 
 	cooldown = {
 		type = orthodox_synod
-		months = 3
+		days = 1
 	}
 	
 	price = price:icd_dhimmi_price

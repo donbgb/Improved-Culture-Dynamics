@@ -58,15 +58,10 @@
  
  jewish_charter: "Jewish Charter"
  jewish_charter_desc: "By enacting a charter that protects the rights of Jewish communities in our territory, including legal protection, rights of residence, freedom of trade, and religious autonomy, we can ensure that both our towns and the local Jewish communities prosper."
- 
- icd_sabian_abrahamic_communities: "Sabian Communities"
- icd_sabian_abrahamic_communities_desc: "The [ShowReligionAdjective('mandeaism')] community has historically claimed to be the mysterious group referred to as the 'Sabians' in the Quran. This would make them #italic Ḏimmī#! in a [ShowReligionGroupAdjective('muslim')] state. As one of the #italic Ḏimmī#!, it becomes the responsibility of a just ruler to protect them."
- 
+  
  standardised_system_of_education: "Standardised Education"
  standardised_system_of_education_desc: "A singular standardised system of education will permit us to not only greatly improve the acess that all of our people have to education but also ensure that we are promoting a singular culture that reflects our state's values."
 
- discrimination_of_language: "Linguistic Discrimination"
- discrimination_of_language_desc: "Only a handful of languages should have permission to be spoken in our territory. Minorities and cultures that do not speak these are expected to learn them and abandon their old tongue."
  national_identity: "National Identity"
  national_identity_desc: "One state, one nation. We have become aware of our unity and our identity, and must spread it if we wish to hold to greater territory."
  
@@ -90,15 +85,12 @@
  regional_autonomy_tt: "With this policy, pops will only assimilate to their province's dominant culture, regardless of the country's primary culture. This policy makes migration of your primary culture into dominant culture locations ineffective. This can only be altered with the use of the Promote Culture cabinet action or the Marking cabinet action, which temporarily changes this dynamic in the province it applies to."
  ethnic_communities_tt: "With this policy, pops will assimilate only to their province's dominant culture unless they neighbour your primary culture or there are significant minorities in those provinces belonging to your primary culture. This policy stimulates the primary culture to spread out from its borders and from settlers, while preserving more distant cultures. This can only be altered with the use of the Promote Culture cabinet action or the Marking cabinet action, which temporarily changes this dynamic in the province it applies to."
  monocultural_opportunity_tt: "With this policy, pops will assimilate to the country's primary culture, unless the Promote Culture cabinet action or the Marking cabinet action are used."
- dialects_of_german_tt: "With this policy, pops of German cultures are not assimilated (excluding Czech, Low Franconian and Frisian). Pops that are not German are assimilated to a neighbouring German culture. The Promote Culture cabinet action or the Marking cabinet action can override this."
+ dialects_of_german_tt: "With this policy, pops of German cultures are not assimilated (excluding Czech and Frisian). Pops that are not German are assimilated to a neighbouring German culture. The Promote Culture cabinet action or the Marking cabinet action can override this."
  dialects_of_arabic_tt: "With this policy, pops of Arabic cultures are not assimilated (excluding Syriac). Pops that are not Arabic are assimilated to a neighbouring Arabic culture. The Promote Culture cabinet action or the Marking cabinet action can override this."
  dialects_of_italian_tt: "With this policy, pops of Italian cultures are not assimilated. Pops that are not Italian are assimilated to a neighbouring Italian culture. The Promote Culture cabinet action or the Marking cabinet can override this."
  
  icd_nothing_price: "Costs nothing"
- 
- icd_tribal_unification: "Tribal Unification"
- icd_tribal_unification_desc: "To achieve national unity, we must bring together the tribes of our state and teach them our language. Only as one can we triumph."
- 
+  
  new_foreign_cultural_law: "Cultural Minorities"
  new_foreign_cultural_law_desc: "The existence of small minority groups within our state requires us to adopt specific policies and political institutions to deal with them."
  this_policy: "this"
@@ -107,12 +99,7 @@
  icd_jewish_charter_tt: "Where there is a [ShowReligionAdjective('judaism')] community and no heretics or pagans:"
  
  turkic_integration: "Turkic Integration"
- turkic_integration_desc: "Our culture as Turks and our Muslim religion are inevitably tied. As we expand into the east and west, other cultures with different religions will likely be far more easier to bring into our fold if we convert or assimilate them first."
- 
- scandinavian_frontiers: "Scandinavian Frontiers"
- scandinavian_frontiers_desc: "During our settlement of Scandinavia, it has become apparent that the influence of Finnic culture is extremely strong near their borders. In fact, Finnish influence has far surpassed that of Swedish."
- scandinavian_frontiers_tt: "With this policy, pops in the interior of Finland will assimilate to Finnish culture instead of Swedish. In other parts of the world, pops will assimilate only to their province's dominant culture unless they neighbour your primary culture or there are significant minorities in those provinces belonging to your primary culture. This can only be altered with the use of the Promote Culture cabinet action or the Marking cabinet action, which temporarily changes this dynamic in the province it applies to."
- 
+ turkic_integration_desc: "Our culture as Turks and our Muslim religion are inevitably tied. As we expand into the east and west, other cultures with different religions will likely be far more easier to bring into our fold if we convert or assimilate them first." 
  
  icd_vlach_law: "Vlach Law"
  icd_vlach_law_desc: "By permitting our Vlach subjects to follow Romanian common law, we can respect their traditional way of life and profit from it through the animal goods their pastoralism brings to neighbouring communities." 
@@ -163,3 +150,21 @@
  icd_anti_romani_laws_desc: "The opportunities available to the Romani people are severely restricted and their freedoms impeded. Their ability to own land is limited, they are not permitted to participate in church service and they are forbidden from becoming members of guilds. They are expected to live separately from society and to have limited access to it"
  icd_romani_craftsmen: "Romani Craftsmen"
  icd_romani_craftsmen_desc: "The Romani are treated as a distinct professional class. They are still heavily scrutinised and restricted in their activity, but are otherwise permitted to openly engage in various trades such as gunsmithing, smelting, tin-plating, sieve-making and others." 
+ 
+ icd_dhimmi_communities_protection: "Contract of Protection"
+ icd_dhimmi_communities_protection_desc: "A [ShowReligionGroupAdjective('muslim')] state and its [ShowEstateTypeName('dhimmi_estate')] subjects are bound by a contract of protection - the ʿaqd al-dhimma. Per the contract, the [ShowEstateTypeName('dhimmi_estate')] are not to be coerced into any faith and must be allowed to practice their religion freely and in safety. In return, they must pay the jizya tax and follow principles that ensure they show respect towards their [ShowReligionGroupAdjective('muslim')] sovereign. The question, however, is to what extent these protections should be upheld and which communities should be deserving of said protections. Deciding which faiths are part of the [ShowEstateTypeName('dhimmi_estate')] and whether they should have their faith fully protected is a question only our state will be able to answer."
+ icd_dhimmi_communities_trigger_tt: "Every [location|e] where a [ShowEstateTypeName('dhimmi_estate')] community is present:"
+ icd_dhimmi_communities_allow_tt: "Must recognise the [ShowEstateTypeName('dhimmi_estate')]"
+ icd_dhimmi_communities_revoke_tt: "Can only be revoked if no [ShowEstateTypeName('dhimmi_estate')] are recognised by the state."
+
+ icd_permitted_restoration: "Permitted Restorations"
+ icd_permitted_restoration_desc: "The [ShowEstateTypeName('dhimmi_estate')] are permitted to freely repair and restore religious buildings and places of worship without requesting specific authorization from local [ShowReligionGroupAdjective('muslim')] authorities. Such permission strengthens the [ShowEstateTypeName('dhimmi_estate')]'s freedoms and makes them happier, at the cost of weakening our attempts at conversion."
+ icd_permission_for_awqaf: "Permission for Awqāf"
+ icd_permission_for_awqaf_desc: "Wealthy members of the [ShowEstateTypeName('dhimmi_estate')] who lack suitable heirs may choose to allocate charitable endowments, known as awqāf, to religious institutions and religious groups in their will. While many consider such donations to be aid in strengthening and propagating a heathen religion, permitting such a dynamic makes our people happier."
+ icd_sufi_coexistence: "Sufi Syncretism"
+ icd_sufi_coexistence_desc: "Sufi orders have an important role to play in bridging the divide between Muslims and non-Muslims. Their rituals and practices are often seen as similar to existing rituals held by the dhimmi, and by permitting the Sufis to occupy an important position in interfaith relations, we encourage heathens to seek Sufi counsel and wisdom and to syncretise some of their beliefs with Islam."
+ icd_abandon_the_ghiyar: "Abandon the Ghiyār"
+ icd_abandon_the_ghiyar_desc: "The ghiyār are the sumptuary rules that dictate what non-Muslims can wear and how they can behave. By relaxing and abandoning some of these rules, we bridge the gap between Muslim and non-Muslim and make life less hostile and divisive for the [ShowEstateTypeName('dhimmi_estate')]."
+ 
+ icd_druze_emirs: "Hereditary Druze Emirs"
+ icd_druze_emirs_desc: "By permitting Iqta appointments in Mount Lebanon and Jabal al-Druze to become effectively hereditary, being passed from brother to brother and father to son in specific Druze dynasties, we ensure that we have powerful allies in this part of the Levant, who are willing to support us militarily in return for their religious and political autonomy."

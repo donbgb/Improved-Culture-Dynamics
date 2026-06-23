@@ -5,7 +5,8 @@
  greater_polish: "Polish"
  ruthenian: "Kyivan"
  moldovan: "Romanian"
- rhine_franconian: "Rhenish"
+ rhine_franconian: "Hessian"
+ ripuarian_franconian: "Rhenish"
  high_alemannic: "Alemannic"
  danube_bavarian: "Bavarian"
  lower_egyptian_culture: "Egyptian"
@@ -45,3 +46,8 @@
  enforce_culture_effect_text_past: "[SCOPE.sCountry('actor').GetName] enforced a culture on [SCOPE.sCountry('recipient').GetName]"
  PROPOSE_enforce_culture: "Enforce Culture in $RECIPIENT$?\n$INFO$."
  INCOMING_OFFER_union_enforce_culture: "$ACTOR$ are trying to enforce a [culture|e] on us. Do we let it happen?\n\n$INFO$"
+
+
+ dhimmi_land_rights: "Guarantee Village Rights"
+ dhimmi_land_rights_desc: "Towns and villages with a strong heathen majority can be given greater freedom over their religious expression. Their residents need not be as concerned about following the requirements and mandates of the #italic Ḏimmī#!"
+ 

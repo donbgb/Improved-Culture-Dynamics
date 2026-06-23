@@ -25,6 +25,12 @@ REPLACE:tribesmen = {
 
 	city_graphics = 0.01
 	cossacks_estate = { is_cossacks = yes }
-	peasants_estate = { culture = { has_culture_group = culture_group:romani_group } }
+	peasants_estate = { 
+		OR = {
+			culture = { has_culture_group = culture_group:romani_group } 
+			culture = { has_culture_group = culture_group:baltic_group }
+			culture = culture:merya_culture
+		}
+	}
 	tribes_estate = {}
 }

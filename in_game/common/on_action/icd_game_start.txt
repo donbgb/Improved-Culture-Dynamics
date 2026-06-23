@@ -34,10 +34,12 @@ icd_reapply_promoting_culture= {
 		icd_reapply_promoting.1
 		icd_minority_events.1
 		icd_minority_events.2
-		icd_minority_events.3
+		icd_minority_events.31
 		icd_minority_events.4
 		icd_minority_events.5
 		icd_minority_events.6
+		icd_romani_events.90
+		icd_romani_events.98
 	}
 
 }
@@ -94,4 +96,40 @@ icd_character_culture_on_action = {
 		icd_character_culture_change = yes
 	}
 
+}
+
+
+on_new_age = {
+		
+	on_actions = {
+		icd_romani_on_new_age
+	}
+		
+}
+
+icd_romani_on_new_age = {
+	
+	events = {
+		icd_romani_events.2
+		icd_romani_events.3
+	}
+
+}
+
+four_yearly_country_pulse = {
+
+	on_actions = {
+		icd_random_four_yearly
+	}
+	
+}
+
+icd_random_four_yearly = {
+
+	random_events = {
+		5 = icd_romani_events.4
+		5 = icd_romani_events.5
+		5 = icd_romani_events.6
+		85 = 0
+	}
 }

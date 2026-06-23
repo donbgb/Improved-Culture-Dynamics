@@ -3,7 +3,9 @@
  STATIC_MODIFIER_NAME_icd_population_removal_relocate: "Impact of Relocating Population"
  STATIC_MODIFIER_NAME_icd_relocation_effort_cost: "State Cost of Relocation"
  STATIC_MODIFIER_NAME_icd_cultural_opinion_cost: "Cost of Improving Cultural Opinion"
+ STATIC_MODIFIER_NAME_icd_king_of_the_gypsies: "Support from the King of the Gypsies"
  
+ icd_dhimmi_price: "Dhimmi Status Price"
  
  MODIFIER_TYPE_NAME_icd_nothing_price_cost_modifier: ""
  MODIFIER_TYPE_DESC_icd_nothing_price_cost_modifier: ""

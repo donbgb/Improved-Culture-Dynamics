@@ -1,6 +1,60 @@
 ﻿
 icd_politics_setup = {
 	
+
+	every_country = {
+		limit = {
+			religion.group = religion_group:muslim
+			culture = culture:turkish_culture
+		}
+		grant_estate_privilege = estate_privilege:dhimmi_legal_autonomy
+	}
+	
+	c:MAM = {
+		grant_estate_privilege = estate_privilege:icd_druze_emirs
+	}
+	c:AMR = {
+		grant_estate_privilege = estate_privilege:icd_druze_emirs
+	}
+	c:AAL = {
+		grant_estate_privilege = estate_privilege:icd_druze_emirs
+	}
+	c:DLH = {
+		grant_estate_privilege = estate_privilege:icd_permitted_restoration
+		grant_estate_privilege = estate_privilege:icd_abandon_the_ghiyar
+		grant_estate_privilege = estate_privilege:dhimmi_administrative_posts
+	}
+	c:GLH = {
+		grant_estate_privilege = estate_privilege:dhimmi_promote_tolerance
+		grant_estate_privilege = estate_privilege:dhimmi_promote_dhimmi_hierarchy
+	}
+	
+	every_country = {
+		limit = {
+			religion.group = religion_group:muslim
+			"estate(estate_type:dhimmi_estate)" = {
+				num_privileges < 4
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:dhimmi_land_rights
+			}
+		}
+		grant_estate_privilege = estate_privilege:dhimmi_land_rights
+	}
+	
+	every_country = {
+		limit = {
+			religion.group = religion_group:muslim
+			"estate(estate_type:dhimmi_estate)" = {
+				num_privileges < 4
+			}
+			NOT = {
+				has_estate_privilege = estate_privilege:dhimmi_legal_autonomy
+			}
+		}
+		grant_estate_privilege = estate_privilege:dhimmi_legal_autonomy
+	}
+	
 	c:MVA = {
 		grant_estate_privilege = estate_privilege:ius_teutonicum
 	}
@@ -12,8 +66,48 @@ icd_politics_setup = {
 	c:SER = {
 		grant_estate_privilege = estate_privilege:icd_vlach_law
 	}
-	c:MAM = {
-		grant_estate_privilege = estate_privilege:icd_dhimmi_druze_chieftaincies
+	
+	c:BOU = {
+		change_culture = culture:french
+		ruler = {
+			change_character_culture = culture:french
+			every_close_relative = {
+				limit = { culture = culture:berrichon }
+				change_character_culture = culture:french
+			}
+		}
+	}
+	
+	c:SAN = {
+		change_culture = culture:french
+		ruler = {
+			change_character_culture = culture:french
+			every_close_relative = {
+				limit = { culture = culture:berrichon }
+				change_character_culture = culture:french
+			}
+		}
+	}
+	
+	c:MIE = {
+		change_culture = culture:french
+	}
+	c:ANJ = {
+		change_culture = culture:french
+	}
+	c:MRC = {
+		change_culture = culture:french
+	}
+	
+	c:BLS = {
+		change_culture = culture:french
+		ruler = {
+			change_character_culture = culture:french
+			every_close_relative = {
+				limit = { culture = culture:berrichon }
+				change_character_culture = culture:french
+			}
+		}
 	}
 	
 	every_country = {
@@ -159,19 +253,6 @@ icd_politics_setup = {
 		}
 		grant_estate_privilege = estate_privilege:ius_teutonicum
 	}
-	
-	every_country = {
-		limit = {
-			estate_privilege:dhimmi_abrahamic_communities = {
-				is_implementable_in = prev
-			}
-			NOT = {
-				tag = BRN
-				tag = HAB
-			}
-		}
-		grant_estate_privilege = estate_privilege:dhimmi_abrahamic_communities
-	}
 			
 	every_country = {
 		limit = {
@@ -185,6 +266,8 @@ icd_politics_setup = {
 		}
 		grant_estate_privilege = estate_privilege:jewish_charter
 	}
+	
+	
 
 	c:BRI = {
 		change_culture = culture:gallo
@@ -216,5 +299,61 @@ icd_politics_setup = {
 		}
 		add_policy = policy:persianate
 	}
+	
+	
+	
+	every_country = {
+		limit = {
+			religion ?= {
+				group ?= religion_group:muslim
+			}
+			religious_unity < 1.0
+		}
+		
+		if = {
+			limit = {
+				religion_group_percentage_in_country = {
+					religion_group = religion_group:zoroastrian_group
+					value > 0
+				}
+			}
+			set_variable = icd_iranic_dhimmi_disabled
+		}
+		if = {
+			limit = {
+				religion_group_percentage_in_country = {
+					religion_group = religion_group:buddhist
+					value > 0
+				}
+			}
+			set_variable = icd_buddhist_dhimmi_disabled
+		}
+	}
 
+	every_country = {
+		limit = {
+			estate_privilege:icd_dhimmi_communities_protection = {
+				is_implementable_in = prev
+			}
+		}
+		grant_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+	}
+	every_country = {
+		limit = {
+			has_estate_privilege = estate_privilege:dhimmi_abrahamic_communities
+		}
+		revoke_estate_privilege = estate_privilege:dhimmi_abrahamic_communities
+	}
+	every_country = {
+		limit = {
+			has_estate_privilege = estate_privilege:dhimmi_pact_of_umar
+		}
+		revoke_estate_privilege = estate_privilege:dhimmi_pact_of_umar
+	}
+	every_country = {
+		limit = {
+			has_estate_privilege = estate_privilege:dharmic_dhimmi_communities
+		}
+		revoke_estate_privilege = estate_privilege:dharmic_dhimmi_communities
+	}
 }

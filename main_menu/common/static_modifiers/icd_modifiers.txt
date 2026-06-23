@@ -37,9 +37,9 @@ icd_cultural_opinion_cost = {
 	global_pop_assimilation_speed_modifier = -0.75
 }
 
-icd_expel_minority_cost= {
+icd_king_of_the_gypsies = {
 	game_data = {
 		category = country
 	}
-	tax_income_efficiency  = -0.05
+	global_production_efficiency = small_production_efficiency_bonus
 }

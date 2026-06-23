@@ -18,20 +18,8 @@ icd_romani_setup = {
 	c:BOS = {
 		grant_estate_privilege = estate_privilege:icd_romani_slaves
 	}
-	
-	every_country = {
-		limit = {
-			estate_privilege:icd_anti_romani_laws = {
-				is_implementable_in = prev
-			}
-			religion.group = religion_group:christian
-			NOT = {
-				has_estate_privilege = estate_privilege:icd_anti_romani_laws
-				has_estate_privilege = estate_privilege:icd_romani_slaves
-				has_estate_privilege = estate_privilege:icd_romani_craftsmen
-			}
-		}
-		grant_estate_privilege = estate_privilege:icd_anti_romani_laws
+	c:KNI = {
+		grant_estate_privilege = estate_privilege:icd_romani_slaves
 	}
 	
 	sub_continent:eastern_europe = {
@@ -415,6 +403,21 @@ icd_romani_setup = {
 				size = 0.200
 			}
 		}
+	}
+	
+	every_country = {
+		limit = {
+			estate_privilege:icd_anti_romani_laws = {
+				is_implementable_in = prev
+			}
+			religion.group = religion_group:christian
+			NOT = {
+				has_estate_privilege = estate_privilege:icd_anti_romani_laws
+				has_estate_privilege = estate_privilege:icd_romani_slaves
+				has_estate_privilege = estate_privilege:icd_romani_craftsmen
+			}
+		}
+		grant_estate_privilege = estate_privilege:icd_anti_romani_laws
 	}
 
 }

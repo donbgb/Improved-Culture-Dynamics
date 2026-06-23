@@ -93,24 +93,94 @@ icd_cultural_setup = {
 		}
 	}
 	
+	area:transylvania_area = {
+		every_location_in_area = {
+			limit = { owner = { tag = HUN culture = culture:hungarian } }
+			every_pop= {
+				limit = { pop_type = pop_type:nobles }
+				change_pop_culture = culture:hungarian
+			}
+		}
+	}
 	
 	
 
 	c:MAM = {
-		
 		every_pop= {
-				limit = { culture = culture:syriac_culture pop_type = pop_type:slaves }
-				split_pop = {
-					fraction = 0.1
-					culture = culture:levantine_culture
-					type = pop_type:peasants
-				}
+			limit = { culture = culture:syriac_culture pop_type = pop_type:slaves }
+			split_pop = {
+				fraction = 0.1
+				culture = culture:levantine_culture
+				type = pop_type:peasants
 			}
-		
+		}
 	}
 	
-	
-	
+	area:upper_rhine_area = {
+		every_location_in_area = {
+			every_pop = {
+				limit = { culture = culture:rhine_franconian } 
+				change_pop_culture = culture:ripuarian_franconian
+			}
+		}
+	}
+	region:france_region = {
+		every_location_in_region = {
+			every_pop = {
+				limit = { culture = culture:rhine_franconian } 
+				change_pop_culture = culture:ripuarian_franconian
+			}
+		}
+	}
+	region:south_german_region = {
+		every_location_in_region = {
+			every_pop = {
+				limit = { culture = culture:rhine_franconian } 
+				change_pop_culture = culture:ripuarian_franconian
+			}
+		}
+	}
+	province_definition:hunsruck_province = {
+		every_location_in_province_definition = {
+			every_pop = {
+				limit = { culture = culture:rhine_franconian } 
+				change_pop_culture = culture:ripuarian_franconian
+			}
+		}
+	}
+
+	location:worms = {
+		every_pop= {
+			limit = { culture = culture:rhine_franconian }
+			split_pop = {
+				fraction = 0.2
+				culture = culture:ripuarian_franconian
+			}
+		}
+	}
+
+	location:bensheim = {
+		every_pop= {
+			limit = { culture = culture:ripuarian_franconian }
+			split_pop = {
+				fraction = 0.65
+				culture = culture:rhine_franconian
+			}
+		}
+	}
+	location:erbach = {
+		every_pop= {
+			limit = { culture = culture:ripuarian_franconian }
+			split_pop = {
+				fraction = 0.31
+				culture = culture:rhine_franconian
+			}
+			split_pop = {
+				fraction = 0.16
+				culture = culture:east_franconian
+			}
+		}
+	}
 	
 	every_country = {
 
@@ -183,15 +253,6 @@ icd_cultural_setup = {
 				change_character_culture = culture:poitevin
 			}
 			
-			every_pop = {
-				limit = { culture = culture:berrichon }
-				change_pop_culture = culture:french
-			}
-			
-			every_character= {
-				limit = { culture = culture:berrichon }
-				change_character_culture = culture:french
-			}
 			
 			every_pop = {
 				limit = { culture = culture:franc_comtois }
@@ -203,6 +264,20 @@ icd_cultural_setup = {
 			every_character = {
 				limit = { culture = culture:franc_comtois }
 				change_character_culture = culture:burgundian
+			}
+			every_character = {
+				limit = { culture = culture:rhine_franconian
+					birth_location = {
+						OR = {
+							area = area:rhineland_area
+							area = area:upper_rhine_area
+							area = area:lorraine_area
+							area = area:alsace_area
+							area = area:swabia_area
+						}
+					}
+				}
+				change_character_culture = culture:ripuarian_franconian
 			}
 			
 			every_pop = {
@@ -235,11 +310,6 @@ icd_cultural_setup = {
 				change_character_culture = culture:volhynian_culture
 			}
 			
-			every_pop = {
-				limit = { culture = culture:polesian_culture }
-				change_pop_culture = culture:ruthenian
-			}
-			
 			every_character = {
 				limit = { culture = culture:halychian_culture }
 				change_character_culture = culture:volhynian_culture
@@ -256,13 +326,13 @@ icd_cultural_setup = {
 			}
 			
 			every_pop = {
-				limit = { OR = { culture = culture:ripuarian_franconian culture = culture:moselle_franconian }}
-				change_pop_culture = culture:rhine_franconian
+				limit = { culture = culture:moselle_franconian }
+				change_pop_culture = culture:ripuarian_franconian
 			}
 			
 			every_character = {
-				limit = { OR = { culture = culture:ripuarian_franconian culture = culture:moselle_franconian }}
-				change_character_culture = culture:rhine_franconian
+				limit = { culture = culture:moselle_franconian }
+				change_character_culture = culture:ripuarian_franconian
 			}
 			
 			every_pop = {
@@ -319,17 +389,6 @@ icd_cultural_setup = {
 			}
 			
 			every_pop = {
-				limit = { culture = culture:szekely_culture }
-				change_pop_culture = culture:hungarian
-			}
-			
-			
-			every_character = {
-				limit = { culture = culture:szekely_culture }
-				change_character_culture = culture:hungarian
-			}
-			
-			every_pop = {
 				limit = { culture = culture:northumbrian }
 				change_pop_culture = culture:english
 			}
@@ -350,9 +409,7 @@ icd_cultural_setup = {
 				change_character_culture = culture:lower_egyptian_culture 
 			}
 			
-			every_owned_location = {
-				force_refresh_culture_and_religion = this
-			}
+			
 			
 			if = {
 				limit = { OR = { culture = culture:lesser_polish culture = culture:mazovian }}
@@ -363,6 +420,20 @@ icd_cultural_setup = {
 				change_culture = culture:moldovan
 			}
 
+			if = {
+				limit = { culture = culture:rhine_franconian
+					capital = {
+						OR = {
+							area = area:rhineland_area
+							area = area:upper_rhine_area
+							area = area:lorraine_area
+							area = area:alsace_area
+							area = area:swabia_area
+						}
+					}
+				}
+				change_culture = culture:ripuarian_franconian
+			}
 			
 			if = {
 				limit = { culture = culture:vivaro_alpine }
@@ -373,10 +444,6 @@ icd_cultural_setup = {
 				change_culture = culture:burgundian
 			}
 			if = {
-				limit = { culture = culture:berrichon }
-				change_culture = culture:french
-			}
-			if = {
 				limit = { culture = culture:saintongeais }
 				change_culture = culture:poitevin
 			}
@@ -385,12 +452,8 @@ icd_cultural_setup = {
 				change_culture = culture:volhynian_culture
 			}
 			if = {
-				limit = { culture = culture:polesian_culture }
-				change_culture = culture:ruthenian
-			}
-			if = {
-				limit = { OR = { culture = culture:ripuarian_franconian culture = culture:moselle_franconian }}
-				change_culture = culture:rhine_franconian
+				limit = { culture = culture:moselle_franconian }
+				change_culture = culture:ripuarian_franconian
 			}
 			if = {
 				limit = { culture = culture:rhine_alemannic }
@@ -413,10 +476,6 @@ icd_cultural_setup = {
 				change_culture = culture:brandenburgish
 			}
 			if = {
-				limit = { culture = culture:szekely_culture }
-				change_culture = culture:hungarian
-			}
-			if = {
 				limit = { culture = culture:northumbrian }
 				change_culture = culture:english
 			}
@@ -424,7 +483,15 @@ icd_cultural_setup = {
 				limit = { culture = culture:upper_egyptian_culture }
 				change_culture = culture:lower_egyptian_culture
 			}
+			
+			every_owned_location = {
+				force_refresh_culture_and_religion = this
+			}
 	}
+	
+	
+	
+	
 }
 
 icd_remove_accepted_tolerated_cultures = {
@@ -445,23 +512,6 @@ icd_remove_accepted_tolerated_cultures = {
 			}
 			remove_accepted_culture = culture:saintongeais
 			add_accepted_culture = culture:poitevin
-		}
-		
-		if = {
-			limit = {
-				has_tolerated_culture = culture:berrichon
-				NOT = { culture = culture:french }
-			}
-			remove_tolerated_culture = culture:berrichon
-			add_tolerated_culture = culture:french
-		}
-		if = {
-			limit = {
-				has_accepted_culture = culture:berrichon
-				NOT = { culture = culture:french }
-			}
-			remove_accepted_culture = culture:berrichon
-			add_accepted_culture = culture:french
 		}
 		
 		if = {
@@ -547,25 +597,7 @@ icd_remove_accepted_tolerated_cultures = {
 			}
 			remove_accepted_culture = culture:halychian_culture
 			add_accepted_culture = culture:volhynian_culture
-		}
-		
-		if = {
-			limit = {
-				has_tolerated_culture = culture:polesian_culture
-				NOT = { culture = culture:ruthenian }
-			}
-			remove_tolerated_culture = culture:polesian_culture
-			add_tolerated_culture = culture:ruthenian
-		}
-		if = {
-			limit = {
-				has_accepted_culture = culture:polesian_culture
-				NOT = { culture = culture:ruthenian }
-			}
-			remove_accepted_culture = culture:polesian_culture
-			add_accepted_culture = culture:ruthenian
-		}
-		
+		}		
 		if = {
 			limit = {
 				has_tolerated_culture = culture:transylvanian
@@ -602,36 +634,34 @@ icd_remove_accepted_tolerated_cultures = {
 		
 		if = {
 			limit = {
-				has_tolerated_culture = culture:ripuarian_franconian
-				NOT = { culture = culture:rhine_franconian }
-			}
-			remove_tolerated_culture = culture:ripuarian_franconian
-			add_tolerated_culture = culture:rhine_franconian
-		}
-		if = {
-			limit = {
-				has_accepted_culture = culture:ripuarian_franconian
-				NOT = { culture = culture:rhine_franconian }
-			}
-			remove_accepted_culture = culture:ripuarian_franconian
-			add_accepted_culture = culture:rhine_franconian
-		}
-		
-		if = {
-			limit = {
 				has_tolerated_culture = culture:moselle_franconian
-				NOT = { culture = culture:rhine_franconian }
+				NOT = { culture = culture:ripuarian_franconian }
 			}
 			remove_tolerated_culture = culture:moselle_franconian
-			add_tolerated_culture = culture:rhine_franconian
+			add_tolerated_culture = culture:ripuarian_franconian
 		}
 		if = {
 			limit = {
 				has_accepted_culture = culture:moselle_franconian
-				NOT = { culture = culture:rhine_franconian }
+				NOT = { culture = culture:ripuarian_franconian }
 			}
 			remove_accepted_culture = culture:moselle_franconian
-			add_accepted_culture = culture:rhine_franconian
+			add_accepted_culture = culture:ripuarian_franconian
+		}
+		
+		if = {
+			limit = {
+				has_tolerated_culture = culture:rhine_franconian
+				NOT = { any_owned_location = { area = area:hesse_area } }
+			}
+			remove_tolerated_culture = culture:rhine_franconian
+		}
+		if = {
+			limit = {
+				has_accepted_culture = culture:rhine_franconian
+				NOT = { any_owned_location = { area = area:hesse_area } }
+			}
+			remove_accepted_culture = culture:rhine_franconian
 		}
 		
 		if = {
@@ -736,24 +766,6 @@ icd_remove_accepted_tolerated_cultures = {
 			add_accepted_culture = culture:brandenburgish
 		}
 		
-		
-		if = {
-			limit = {
-				has_tolerated_culture = culture:szekely_culture
-				NOT = { culture = culture:hungarian }
-			}
-			remove_tolerated_culture = culture:szekely_culture
-			add_tolerated_culture = culture:hungarian
-		}
-		if = {
-			limit = {
-				has_accepted_culture = culture:szekely_culture
-				NOT = { culture = culture:hungarian }
-			}
-			remove_accepted_culture = culture:szekely_culture
-			add_accepted_culture = culture:hungarian
-		}
-		
 		if = {
 			limit = {
 				has_tolerated_culture = culture:northumbrian
@@ -790,4 +802,4 @@ icd_remove_accepted_tolerated_cultures = {
 	}
 }
 
-###saintongeais|upper_egyptian_culture|northumbrian|markish|upper_palatine|southern_bavarian|angrian|holsatian|berrichon|franc_comtois|vivaro_alpine|lesser_polish|mazovian|halychian_culture|polesian_culture|transylvanian|wallachian|ripuarian_franconian|moselle_franconian|szekely_culture|rhine_alemannic###
+###saintongeais|upper_egyptian_culture|northumbrian|markish|upper_palatine|southern_bavarian|angrian|holsatian|franc_comtois|vivaro_alpine|lesser_polish|mazovian|halychian_culture|transylvanian|wallachian|moselle_franconian|rhine_alemannic###

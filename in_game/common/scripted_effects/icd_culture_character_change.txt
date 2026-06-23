@@ -101,11 +101,7 @@ icd_character_culture_change = {
 				limit = { culture = culture:saintongeais }
 				change_character_culture = culture:poitevin
 			}
-			
-			if = {
-				limit = { culture = culture:berrichon }
-				change_character_culture = culture:french
-			}
+
 			
 			if = {
 				limit = { culture = culture:franc_comtois }
@@ -132,18 +128,31 @@ icd_character_culture_change = {
 			}
 			
 			if = {
-				limit = { culture = culture:polesian_culture }
-				change_character_culture = culture:ruthenian
-			}
-			
-			if = {
 				limit = { OR = { culture = culture:transylvanian culture = culture:wallachian }}
 				change_character_culture = culture:moldovan
 			}
 			
 			if = {
-				limit = { OR = { culture = culture:ripuarian_franconian culture = culture:moselle_franconian }}
-				change_character_culture = culture:rhine_franconian
+				limit = { culture = culture:moselle_franconian }
+				change_character_culture = culture:ripuarian_franconian
+			}
+			
+			if = {
+				limit = { 
+					culture = culture:rhine_franconian
+					owner ?= { 
+						NOT = { culture = culture:rhine_franconian }
+					}
+					birth_location = {
+						NOT = {
+							dominant_culture = culture:rhine_franconian
+						}
+						NOT = {
+							area = area:hesse_area
+						}
+					}
+				}
+				change_character_culture = culture:ripuarian_franconian
 			}
 			
 			if = {
@@ -169,11 +178,6 @@ icd_character_culture_change = {
 			if = {
 				limit = { culture = culture:markish }
 				change_character_culture = culture:brandenburgish
-			}
-			
-			if = {
-				limit = { culture = culture:szekely_culture }
-				change_character_culture = culture:hungarian
 			}
 			
 			if = {

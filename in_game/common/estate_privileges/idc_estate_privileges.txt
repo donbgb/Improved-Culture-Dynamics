@@ -1,141 +1,4 @@
-﻿#generic privileges
-icd_sabian_abrahamic_communities = {
-	icon = dhimmi_abrahamic_communities
-	estate = dhimmi_estate
-	potential = {
-		religion ?= {
-			group ?= religion_group:muslim
-		}
-		any_owned_location = {
-			religion_percentage = {
-				religion = religion:mandeaism
-				value > 0
-			}
-		}
-	}
-	can_revoke = {
-		OR = {
-			is_human = yes
-			religious_unity < 0.5
-		}
-	}
-	allow = {}
-	location_modifier = {
-		potential_trigger = {
-			religion_percentage = {
-				religion = religion:mandeaism
-				value > 0
-			}
-			OR = {
-				dominant_religion ?= { 
-					OR = {
-						group = religion_group:christian
-						group = religion_group:israelite_group
-						group = religion_group:muslim
-					}
-				}
-				dominant_religion = religion:mandeaism
-			}
-		}
-		local_heathen_pop_conversion_speed_modifier = -2.0
-		local_unrest = -0.1
-	}
-	location_modifier = {
-		potential_trigger = {
-			religion_percentage = {
-				religion = religion:mandeaism
-				value > 0
-			}
-			OR = {
-				dominant_religion ?= { 
-					OR = {
-						group = religion_group:christian
-						group = religion_group:israelite_group
-						group = religion_group:muslim
-					}
-				}
-				dominant_religion = religion:mandeaism
-			}
-			integration_level = core
-		}
-		building_enslavement_power = -0.100
-	}
-	country_modifier = {
-		tolerance_heathen = 1
-		dhimmi_estate_target_satisfaction = medium_privilege_target_satisfaction
-		global_dhimmi_estate_power = 1
-	}
-}
-
-icd_dhimmi_druze_chieftaincies = {
-	icon = icd_dhimmi_druze_chieftaincies
-	estate = dhimmi_estate
-	potential = {
-		religion ?= {
-			group ?= religion_group:muslim
-		}
-		any_owned_location = {
-			religion_percentage = {
-				religion = religion:druzism
-				value > 0
-			}
-		}
-	}
-	
-	can_revoke = {
-		OR = {
-			is_human = yes
-			religious_unity < 0.5
-		}
-	}
-	allow = {}
-	location_modifier = {
-		potential_trigger = {
-			religion_percentage = {
-				religion = religion:druzism
-				value > 0
-			}
-			OR = {
-				dominant_religion ?= { 
-					OR = {
-						group = religion_group:christian
-						group = religion_group:israelite_group
-						group = religion_group:muslim
-						group = religion_group:druzism
-					}
-				}
-			}
-		}
-		local_heathen_pop_conversion_speed_modifier = -2.0
-		local_unrest = -0.1
-	}
-	location_modifier = {
-		potential_trigger = {
-			religion_percentage = {
-				religion = religion:druzism
-				value > 0
-			}
-			OR = {
-				dominant_religion ?= { 
-					OR = {
-						group = religion_group:christian
-						group = religion_group:israelite_group
-						group = religion_group:muslim
-						group = religion_group:druzism
-					}
-				}
-			}
-			integration_level = core
-		}
-		building_enslavement_power = -0.100
-	}
-	country_modifier = {
-		dhimmi_estate_target_satisfaction = small_privilege_target_satisfaction
-		global_dhimmi_estate_power = 0
-		global_peasant_enfranchisment = -0.05
-	}
-}
-
+﻿
 jewish_charter = {
 	icon = dhimmi_promote_tolerance
 	estate = burghers_estate
@@ -184,6 +47,7 @@ jewish_charter = {
 		tolerance_heathen = 1
 		global_trades_per_burgher = 0.1
 		global_burghers_estate_power = 0.1
+		religious_unity_importance_modifier = -0.2
 	}
 	location_modifier = {
 		potential_trigger = {
@@ -229,10 +93,6 @@ jewish_charter = {
 						}
 						religion_group_percentage = {
 							religion_group = religion_group:zoroastrian_group
-							value = 0
-						}
-						religion_group_percentage = {
-							religion_group = religion_group:yazidi_group
 							value = 0
 						}
 					}
@@ -380,6 +240,51 @@ icd_unify_the_tribes = {
 }
 
 
+icd_druze_emirs = {
+	icon = icd_druze_emirs
+	estate = nobles_estate
+	
+	potential = {
+		religion_population_in_country = {
+			religion = religion:druzism
+			value > 0.200
+		}
+	}
+	
+	allow = {
+		any_owned_location = {
+			OR = {
+				province_definition = province_definition:lebanon_province
+				province_definition = province_definition:hawran_province
+				province_definition = province_definition:shaam_province
+			}
+		}
+	}
+	
+	country_modifier = {
+		nobles_estate_target_satisfaction = 0
+		global_nobles_estate_power = 0.2
+	}
+	
+	location_modifier = {
+		potential_trigger = {
+			OR = {
+				province_definition = province_definition:lebanon_province
+				province_definition = province_definition:hawran_province
+				province_definition = province_definition:shaam_province
+			}
+			hidden_trigger = {
+				any_pop = {
+					religion = religion:druzism
+				}
+			}
+		}
+		local_heathen_pop_conversion_speed_modifier = -1.0
+		local_defensive = 0.1
+		local_levy_size_modifier = 0.5
+	}
+}
+
 icd_vlach_law = {
 	estate = peasants_estate
 	icon = tribes_pasture_access
@@ -446,8 +351,8 @@ icd_romani_slaves = {
 			culture = { has_culture_group = culture_group:romani_group }
 		}
 		any_pop = { 
-			OR = {
-				culture = { has_culture_group = culture_group:romani_group }
+			AND = {
+				culture = culture:romani_culture
 				pop_type = pop_type:tribesmen
 			}
 		}
@@ -460,7 +365,16 @@ icd_romani_slaves = {
 		}
 	}
 	
+	on_deactivate = {
+		trigger_event_silently = {
+			id = icd_romani_events.95
+		}
+	}
+	
 	can_revoke = {
+		hidden_trigger = {
+			is_ai = no
+		}
 	}
 	
 	on_activate = {
@@ -475,7 +389,6 @@ icd_romani_slaves = {
 	country_modifier = {
 		nobles_estate_target_satisfaction = small_privilege_target_satisfaction
 		global_nobles_estate_power = 0
-		
 	}
 	
 	location_modifier = {
@@ -484,7 +397,7 @@ icd_romani_slaves = {
 				text = icd_romani_privilege_tt
 				culture_group_population = {
 					culture_group = culture_group:romani_group
-					value > 0.050
+					value > 0
 				}
 				any_pop = {
 					culture = { has_culture_group = culture_group:romani_group }
@@ -492,7 +405,7 @@ icd_romani_slaves = {
 				}
 			}
 		}
-		local_tribal_promotion = -4.0
+		local_tribal_promotion = -6.0
 		local_raw_material_output = 0.025
 	}
 	years = 2
@@ -504,10 +417,10 @@ icd_anti_romani_laws = {
 
 	potential = {
 		NOT = {
-			culture = { has_culture_group = culture_group:romani_group }
+			culture = culture:romani_culture
 		}
 		any_pop = { 
-			OR = {
+			AND = {
 				culture = { has_culture_group = culture_group:romani_group }
 				pop_type = pop_type:tribesmen
 			}
@@ -544,7 +457,7 @@ icd_anti_romani_laws = {
 				text = icd_romani_privilege_tt
 				culture_group_population = {
 					culture_group = culture_group:romani_group
-					value > 0.050
+					value > 0
 				}
 				any_pop = {
 					culture = { has_culture_group = culture_group:romani_group }
@@ -552,8 +465,8 @@ icd_anti_romani_laws = {
 				}
 			}
 		}
-		local_tribal_promotion = -4.0
-		local_peasants_estate_unrest = -0.1
+		local_tribal_promotion = -6.0
+		local_peasants_estate_unrest = -0.05
 	}
 	years = 2
 }
@@ -564,10 +477,10 @@ icd_romani_craftsmen = {
 
 	potential = {
 		NOT = {
-			culture = { has_culture_group = culture_group:romani_group }
+			culture = culture:romani_culture
 		}
 		any_pop = { 
-			OR = {
+			AND = {
 				culture = { has_culture_group = culture_group:romani_group }
 				pop_type = pop_type:tribesmen
 			}
@@ -592,7 +505,7 @@ icd_romani_craftsmen = {
 	
 	can_revoke = {
 	}
-
+	
 	country_modifier = {
 		burghers_estate_target_satisfaction = small_privilege_target_satisfaction
 		global_burghers_estate_power = 0
@@ -605,7 +518,7 @@ icd_romani_craftsmen = {
 				text = icd_romani_privilege_tt
 				culture_group_population = {
 					culture_group = culture_group:romani_group
-					value > 0.050
+					value > 0
 				}
 				any_pop = {
 					culture = { has_culture_group = culture_group:romani_group }
@@ -619,7 +532,7 @@ icd_romani_craftsmen = {
 				}
 			}
 		}
-		local_tribal_promotion = -2.0
+		local_tribal_promotion = -4.0
 		local_merchant_power = 0.025
 	}
 	years = 2

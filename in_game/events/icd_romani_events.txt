@@ -1,68 +1,78 @@
 ﻿namespace = icd_romani_events
 
-icd_romani_events.1 = { ####random migration###
-	type = country_event
-	title = icd_minority_events.1.title
-	desc = icd_minority_events.1.desc
-	outcome = neutral
-	
-	hidden = yes
-	
-	trigger = {
-		
-	}
-	
-	illustration_tags = {
-        10 = regular
-        10 = exterior
-    }
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
-		while = {
-			count = 3
-			random_owned_location = {
-				limit = { 
-					culture_population = {
-						culture = culture:romani_culture
-						value > 0.150
-					}
-				}
-				save_scope_as = icd_romani_location_origin
-			}
+#icd_romani_events.1 = { ####random migration###
+#	type = country_event
+#	title = icd_minority_events.1.title
+#	desc = icd_minority_events.1.desc
+#	outcome = neutral
+#	
+#	hidden = yes
+#	
+#	trigger = {
+#		any_owned_location = {
+#			culture_population_in_country = {
+#				culture = culture:romani_culture
+#				value > 0.150
+#			}
+#		}
+#	}
+#	
+#	illustration_tags = {
+#        10 = regular
+  #      10 = exterior
+ #   }
+#	immediate = {
+#		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+#		while = {
+#			count = 3
+#			random_owned_location = {
+#				limit = { 
+#					culture_population = {
+#						culture = culture:romani_culture
+#						value > 0.150
+#					}
+#				}
+#				save_scope_as = icd_romani_location_origin
+#			}
+#			
+#			scope:icd_romani_location_origin = {
+#				market = {
+#					random_location_in_market = {
+#						limit = {
+#							culture_population = {
+#								culture = culture:romani_culture
+#								value = 0
+#							}
+#							has_owner = yes
+#							NOT = {
+#								this = scope:icd_romani_location_origin
+#							}
+#						}
+#						save_scope_as = icd_romani_location_destination
+#					}
+#				}
+#			}
 			
-			scope:icd_romani_location_origin.market = {
-				random_location_in_market = {
-					limit = {
-						culture_population = {
-							culture = culture:romani_culture
-							value = 0
-						}
-						has_owner = yes
-					}
-					save_scope_as = icd_romani_location_destination
-				}
-			}
+#			add_migration = {
+#				 from_location = scope:icd_romani_location_origin
+#				 to_location = scope:icd_romani_location_destination
+#				 culture = culture:romani_culture
+#				 type = pop_type:tribesmen
+#				 months = 1
+#				 amount = 0.100
+#			}
 			
-			add_migration = {
-				 from_location = scope:icd_romani_location_origin
-				 to_location = scope:icd_romani_location_destination
-				 culture = culture:romani_culture
-				 type = pop_type:tribesmen
-				 months = 1
-				 amount = 0.100
-			}
-			
-			clear_saved_scope = icd_romani_location_origin
-			clear_saved_scope = icd_romani_location_destination
-		}
+#			clear_saved_scope = icd_romani_location_origin
+#			clear_saved_scope = icd_romani_location_destination
+#		}
 		
-	}
+#	}
 	
-	option = {
-		name = icd_minority_events.1.a
+#	option = {
+#		name = icd_minority_events.1.a
 		
-	}
-}
+#	}
+#}
 
 icd_romani_events.2 = { ####spread discovery age###
 	type = country_event
@@ -74,6 +84,7 @@ icd_romani_events.2 = { ####spread discovery age###
 	
 	trigger = {
 		owns = location:sredets
+		current_age = age_3_discovery
 	}
 	
 	illustration_tags = {
@@ -84,8 +95,7 @@ icd_romani_events.2 = { ####spread discovery age###
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
 
 			
-		while = {
-			count = 3
+	
 			icd_romani_migration_effect = {
 				target = area:moldavia_area
 			}
@@ -171,12 +181,12 @@ icd_romani_events.2 = { ####spread discovery age###
 				target = area:tuscany_area
 			}
 			icd_romani_migration_effect = {
-				target = area:lazio_area
+				target = area:upper_saxony_area
 			}
 			icd_romani_migration_effect = {
 				target = area:lombardy_area
 			}
-		}
+
 	}
 	
 	option = {
@@ -195,6 +205,7 @@ icd_romani_events.3 = { ####spread reformation age###
 	
 	trigger = {
 		owns = location:sredets
+		current_age = age_4_reformation
 	}
 	
 	illustration_tags = {
@@ -204,170 +215,81 @@ icd_romani_events.3 = { ####spread reformation age###
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
 
+		while = {	
+			count = 10
+			
+			region:balkan_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
+			region:carpathia_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
+			
+			region:iberia_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
+			
+			region:france_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
+			
+			region:baltic_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
+			region:ruthenia_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
+			region:russian_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
+			region:north_german_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
+			region:south_german_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
+			
+			region:italy_region = {
+				icd_romani_migration_effect_region = {
+					target = this
+				}
+			}
 					
-		region:balkan_region = {
-			every_area_in_region = {
-				limit = {
-					culture_population = {
-						culture = culture:romani_culture
-						value = 0
-					}
-				}
-				icd_romani_migration_effect = {
+			region:steppes_region = {
+				icd_romani_migration_effect_region = {
 					target = this
 				}
 			}
-		}
-		region:carpathia_region = {
-			every_area_in_region = {
-				limit = {
-					culture_population = {
-						culture = culture:romani_culture
-						value = 0
-					}
-				}
-				icd_romani_migration_effect = {
+			
+			region:scandinavian_region = {
+				icd_romani_migration_effect_region = {
 					target = this
 				}
 			}
-		}
-		
-		region:iberia_region = {
-			every_area_in_region = {
-				limit = {
-					culture_population = {
-						culture = culture:romani_culture
-						value = 0
-					}
-				}
-				icd_romani_migration_effect = {
+			
+			region:great_britain_region = {
+				icd_romani_migration_effect_region = {
 					target = this
 				}
 			}
-		}
-		
-		icd_romani_migration_effect = {
-			target = area:home_counties_area
-		}
-
-		region:france_region = {
-			every_area_in_region = {
-				limit = {
-					culture_population = {
-						culture = culture:romani_culture
-						value = 0
-					}
-				}
-				icd_romani_migration_effect = {
-					target = this
-				}
-			}
-		}
-		
-		region:baltic_region = {
-			every_area_in_region = {
-				icd_romani_migration_effect = {
-					target = this
-				}
-			}
-		}
-		region:ruthenia_region = {
-			every_area_in_region = {
-				icd_romani_migration_effect = {
-					target = this
-				}
-			}
-		}
-		region:russian_region = {
-			every_area_in_region = {
-				icd_romani_migration_effect = {
-					target = this
-				}
-			}
-		}
-		region:north_german_region = {
-			every_area_in_region = {
-				limit = {
-					culture_population = {
-						culture = culture:romani_culture
-						value = 0
-					}
-				}
-				icd_romani_migration_effect = {
-					target = this
-				}
-			}
-		}
-		region:south_german_region = {
-			every_area_in_region = {
-				limit = {
-					culture_population = {
-						culture = culture:romani_culture
-						value = 0
-					}
-				}
-				icd_romani_migration_effect = {
-					target = this
-				}
-			}
-		}
-		
-		region:italy_region = {
-			every_area_in_region = {
-				limit = {
-					culture_population = {
-						culture = culture:romani_culture
-						value = 0
-					}
-				}
-				icd_romani_migration_effect = {
-					target = this
-				}
-			}
-		}
-		
-		
-		icd_romani_migration_effect = {
-			target = area:west_county_area
-		}
-		icd_romani_migration_effect = {
-			target = area:east_anglia_area
-		}
-		icd_romani_migration_effect = {
-			target = area:midlands_area
-		}
-		icd_romani_migration_effect = {
-			target = area:wales_area
-		}
-		icd_romani_migration_effect = {
-			target = area:northumbria_area
-		}
-		icd_romani_migration_effect = {
-			target = area:scottish_lowlands_area
-		}
-		icd_romani_migration_effect = {
-			target = area:denmark_area
-		}
-		icd_romani_migration_effect = {
-			target = area:skaneland_area
-		}
-		icd_romani_migration_effect = {
-			target = area:svealand_area
-		}
-		icd_romani_migration_effect = {
-			target = area:syd_norge_area
-		}
-		icd_romani_migration_effect = {
-			target = area:zaporizhzhia_area
-		}
-		icd_romani_migration_effect = {
-			target = area:sloboda_ukraine_area
-		}
-		icd_romani_migration_effect = {
-			target = area:crimea_area
-		}
-		icd_romani_migration_effect = {
-			target = area:yedisan_area
 		}
 	}
 	
@@ -420,16 +342,22 @@ icd_romani_events.99 = { ####when romani arrive###
 		name = icd_romani_events.99.a ##slave##
 		
 		grant_estate_privilege = estate_privilege:icd_romani_slaves
+		
+		ai_will_select  = { value = 50 }
 	}
 	option = {
 		name = icd_romani_events.99.b ##anti-romani##
 		
 		grant_estate_privilege = estate_privilege:icd_anti_romani_laws
+		
+		ai_will_select  = { value = 100 }
 	}
 	option = {
 		name = icd_romani_events.99.c ##craftsmen##
 		
 		grant_estate_privilege = estate_privilege:icd_romani_craftsmen
+		
+		ai_will_select  = { value = 2 }
 	}
 	option = {
 		name = icd_romani_events.99.d ##expel##
@@ -452,6 +380,8 @@ icd_romani_events.99 = { ####when romani arrive###
 				months = 12
 			}
 		}
+		
+		ai_will_select  = { value = -20 }
 				
 	}
 	option = {
@@ -462,6 +392,8 @@ icd_romani_events.99 = { ####when romani arrive###
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
 		
 		set_variable = icd_romani_are_chill
+		
+		ai_will_select  = { value = -700 }
 	}
 }
 
@@ -473,7 +405,7 @@ icd_romani_events.90 = { ###if romani are detected in borders####
 	
 	
 	trigger = {
-		culture_population = {
+		culture_population_in_country = {
 			culture = culture:romani_culture
 			value > 0.100
 		}
@@ -527,14 +459,14 @@ icd_romani_events.90 = { ###if romani are detected in borders####
 		
 		grant_estate_privilege = estate_privilege:icd_anti_romani_laws
 		
-		ai_will_select  = { value = 50 }
+		ai_will_select  = { value = 100 }
 	}
 	option = {
 		name = icd_romani_events.99.c ##craftsmen##
 		
 		grant_estate_privilege = estate_privilege:icd_romani_craftsmen
 		
-		ai_will_select  = { value = 20 }
+		ai_will_select  = { value = 2 }
 	}
 	option = {
 		name = icd_romani_events.99.d ##expel##
@@ -558,7 +490,7 @@ icd_romani_events.90 = { ###if romani are detected in borders####
 			}
 		}
 
-		ai_will_select  = { value = 5 }
+		ai_will_select  = { value = -200 }
 				
 	}
 	option = {
@@ -570,7 +502,7 @@ icd_romani_events.90 = { ###if romani are detected in borders####
 		
 		set_variable = icd_romani_are_chill
 		
-		ai_will_select  = { value = -500 }
+		ai_will_select  = { value = -1000 }
 	}
 }
 
@@ -583,7 +515,7 @@ icd_romani_events.98 = { ###automatic expulsion####
 	hidden = yes
 	
 	trigger = {
-		culture_population = {
+		culture_population_in_country = {
 			culture = culture:romani_culture
 			value > 0
 		}
@@ -639,3 +571,445 @@ icd_romani_events.98 = { ###automatic expulsion####
 				
 	}
 }
+
+icd_romani_events.95 = { ####when privilege is revoked###
+	type = country_event
+	title = icd_romani_events.95.title
+	desc = icd_romani_events.95.desc
+	outcome = neutral
+	
+	
+	trigger = {
+	}
+	
+	
+	illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+	}
+	
+	option = {
+		name = icd_romani_events.99.a ##slave##
+		
+		grant_estate_privilege = estate_privilege:icd_romani_slaves
+		
+		ai_will_select  = { value = 50 }
+	}
+	option = {
+		name = icd_romani_events.99.b ##anti-romani##
+		
+		grant_estate_privilege = estate_privilege:icd_anti_romani_laws
+		
+		ai_will_select  = { value = 100 }
+	}
+	option = {
+		name = icd_romani_events.99.c ##craftsmen##
+		
+		grant_estate_privilege = estate_privilege:icd_romani_craftsmen
+		
+		ai_will_select  = { value = 2 }
+	}
+	option = {
+		name = icd_romani_events.99.d ##expel##
+		
+		set_variable = icd_romani_forbidden_entry
+		
+		every_province = {
+			limit = {
+				culture_population = {
+					culture = culture:romani_culture
+					value > 0
+				}
+			}
+			add_migration = {
+				owner = root
+				from = this.province_definition
+				to = scope:icd_romani_province_here
+				culture = culture:romani_culture
+				amount = 2.000
+				months = 12
+			}
+		}
+		
+		ai_will_select  = { value = -20 }
+				
+	}
+	option = {
+		name = icd_romani_events.99.e ##cool###
+		
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+		
+		set_variable = icd_romani_are_chill
+		
+		ai_will_select  = { value = -700 }
+	}
+}
+
+icd_romani_events.4 = { ##flavour promising romani###
+	type = country_event
+	title = icd_romani_events.4.title
+	desc = icd_romani_events.4.desc
+	outcome = neutral
+		
+	trigger = {
+		culture_population_in_country = {
+			culture = culture:romani_culture
+			value > 0
+		}
+		NOT = {
+			has_variable = icd_romani_forbidden_entry
+		}
+	}
+	
+	fire_only_once = yes
+	
+	illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+		
+		create_character = {
+			adm = { 80 95 }
+			dip = { 80 95 }
+			mil = { 70 80 }
+			culture = culture:romani_culture
+			religion = root.religion
+			age = { 20 30 }
+			birth_location = root.capital
+			random_estate_type_trigger = {
+				root = { estate_type_allowed_in_cabinet = {	estate_type = prev } }
+			}
+			create_in_limbo = yes
+			save_scope_as = icd_romani_cabinet_scope
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.4.a ##has a place in our court##
+		
+		add_legitimacy = legitimacy_weak_penalty 
+	}
+	
+	option = {
+		name = icd_romani_events.4.b ##nothing##
+
+		hidden_effect = {
+			kill_character_silently = scope:icd_romani_cabinet_scope
+		}
+		
+	}
+
+}
+
+icd_romani_events.5 = { ##flavour inspired painting###
+	type = country_event
+	title = icd_romani_events.5.title
+	desc = icd_romani_events.5.desc
+	outcome = neutral
+	fire_only_once = yes
+		
+	trigger = {
+		culture_population_in_country = {
+			culture = culture:romani_culture
+			value > 0
+		}
+		NOT = {
+			has_variable = icd_romani_forbidden_entry
+		}
+		any_artist = {
+			owner = root
+			artist_type = painter
+		}
+		current_year > 1550
+	}
+	
+	illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+	immediate = {
+		event_illustration_government_estate_effect = yes
+		
+		random_artist = {
+			limit = {
+				artist_type = painter
+			}
+			save_scope_as = icd_painting_artist_scope
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.5.a ##paint it##
+
+		change_gold_effect = { scale = -1 }
+		add_prestige = prestige_weak_bonus
+		
+		root.capital = {
+			create_art = {
+			 type = work_of_art_type:painting
+			 quality = { 60 90 }
+			 artist = scope:icd_painting_artist_scope
+			}
+		}
+		
+	}
+	
+	option = {
+		name = icd_romani_events.5.b ##nothing##
+
+	}
+
+}
+
+icd_romani_events.6 = { ##flavour king of the gypsy###
+	type = country_event
+	title = icd_romani_events.6.title
+	desc = icd_romani_events.6.desc
+	outcome = neutral
+		
+	trigger = {
+		culture_population_in_country = {
+			culture = culture:romani_culture
+			value > 0
+		}
+		NOT = {
+			has_variable = icd_romani_forbidden_entry
+		}
+	}
+	
+	fire_only_once = yes
+	
+	illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		
+		create_character = {
+			adm = { 70 95 }
+			dip = { 70 95 }
+			mil = { 70 95 }
+			culture = culture:romani_culture
+			religion = root.religion
+			birth_location = root.capital
+			age = { 20 30 }
+			estate = estate_type:nobles_estate
+			create_in_limbo = yes
+			save_scope_as = icd_romani_king_gypsy_scope
+			
+			add_character_modifier = {
+				mode = add_and_extend
+				modifier = banned_from_cabinet
+				years = -1
+			}
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.6.a ##recognise his position##
+		
+		 every_pop = {
+			limit = {
+				culture = culture:romani_culture
+			}
+			add_pop_satisfaction = pop_satisfaction_weak_bonus
+		}
+		
+		scope:icd_romani_king_gypsy_scope = {
+			set_nickname = icd_king_of_the_gypsies_nickname
+		}
+		
+		add_country_modifier = {
+			modifier = icd_king_of_the_gypsies
+			years = 5
+			mode = add_and_extend
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.6.b ##nothing##
+
+		scope:icd_romani_king_gypsy_scope = {
+			change_character_estate = estate_type:peasants_estate
+		}
+		
+		add_legitimacy = legitimacy_mild_bonus 
+	}
+
+}
+
+icd_romani_events.7 = { ##stefan razvan###
+	type = country_event
+	title = icd_romani_events.7.title
+	desc = icd_romani_events.7.desc
+	outcome = neutral
+		
+	trigger = {
+		culture_population_in_country = {
+			culture = culture:romani_culture
+			value > 0
+		}
+		NOT = {
+			has_variable = icd_romani_forbidden_entry
+		}
+		OR = {
+			stability < 50
+			legitimacy < 30
+			ruler = {
+				total_abilities <= 80
+			}
+		}
+		government_type = government_type:monarchy
+	}
+	
+	dynamic_historical_event = {
+		tag = MOL
+		tag = RMN
+		tag = WAL
+		from = 1550.1.1
+		to = 1650.1.1
+		monthly_chance = 30
+	}
+	
+	fire_only_once = yes
+	
+	illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		
+		create_named_dynasty = icd_razvan_dynasty
+		
+		create_character = {
+			first_name = name_stephen
+			adm = { 70 95 }
+			dip = { 70 95 }
+			mil = { 70 95 }
+			culture = culture:romani_culture
+			religion = root.religion
+			age = { 20 30 } 
+			birth_location = root.capital
+			estate = estate_type:nobles_estate
+			save_scope_as = icd_stefan_razvan
+			dynasty = dynasty:icd_razvan_dynasty
+		}
+		
+		set_variable = {
+			name = icd_stefan_razvan_variable
+			value = scope:icd_stefan_razvan
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.7.a ##recognise his position##
+		historical_option = yes
+		
+		 hidden_effect = {
+			trigger_event_silently = {
+				id = icd_romani_events.8
+				months = 5
+			}
+		 }
+	}
+	
+	option = {
+		name = icd_romani_events.7.b ##nothing##
+
+		hidden_effect = {
+			kill_character_silently = scope:icd_stefan_razvan
+		}
+	}
+}
+
+icd_romani_events.8 = { ##stefan razvan takes over###
+	type = country_event
+	title = icd_romani_events.8.title
+	desc = icd_romani_events.8.desc
+	outcome = neutral
+		
+	trigger = {
+		has_variable = icd_stefan_razvan_variable
+	}
+			
+	illustration_tags = {
+        10 = angry
+        10 = interior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		
+		ruler = {
+		save_scope_as = icd_our_ruler_versus_stefan
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.7.a ##coup##
+		historical_option = yes
+		
+		 set_new_ruler = var:icd_stefan_razvan_variable
+		 
+		 add_legitimacy = legitimacy_mild_penalty
+		 add_stability = stability_mild_bonus
+		 
+		 if = {
+			limit = {
+				tag_exists = WAL
+				NOT = { root = c:WAL }
+			}
+			add_opinion = {
+				target = c:WAL
+				modifier = opinion_good_relations
+			}
+		 }
+		 if = {
+			limit = {
+				tag_exists = TRA
+				NOT = { root = c:TRA }
+			}
+			add_opinion = {
+				target = c:TRA
+				modifier = opinion_good_relations
+			}
+		 }
+		 if = {
+			limit = {
+				tag_exists = MOL
+				NOT = { root = c:MOL }
+			}
+			add_opinion = {
+				target = c:MOL
+				modifier = opinion_good_relations
+			}
+		 }
+		 if = {
+			limit = {
+				root = {
+					is_subject = yes
+				}
+			}
+			add_liberty_desire = liberty_desire_mild_plus
+		 }
+		 
+		 remove_variable = icd_stefan_razvan_variable
+	}
+	
+	option = {
+		name = icd_romani_events.7.b ##thwarted##
+
+		hidden_effect = {
+			kill_character_silently = var:icd_stefan_razvan_variable
+		}
+	}
+}
+

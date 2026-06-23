@@ -201,9 +201,10 @@
 			OR = {
 				has_policy = unitary_administration
 				has_policy = absolute_rulership
+				has_policy = civic_nationhood
 				societal_value:centralization_vs_decentralization < -70
+				"estate_power(estate_type:crown_estate)" > 0.5
 			}
-			"estate_power(estate_type:crown_estate)" > 0.3
 		}
 		
 		on_activate = {
@@ -358,7 +359,9 @@
 				religion = religion:sunni
 				religion = religion:shia
 			}
-			has_estate_privilege = estate_privilege:dhimmi_abrahamic_communities
+			NOT = { has_variable = icd_israelite_dhimmi_disabled }
+			NOT = { has_variable = icd_christian_dhimmi_disabled }
+			has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 		}
 		
 		on_activate = {

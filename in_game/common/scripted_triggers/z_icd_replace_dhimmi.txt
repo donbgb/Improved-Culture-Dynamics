@@ -1,0 +1,36 @@
+﻿REPLACE:is_dhimmi = {
+	OR = {	
+		AND = {
+			religion.group = religion_group:israelite_group
+			owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled }  }
+		}
+		AND = {
+			religion.group = religion_group:christian
+			owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled }  }
+		}
+		AND = {
+			religion.group = religion_group:mandean_group
+			owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled}  }
+		}
+		AND = {
+			religion.group = religion_group:manichaean_group
+			owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled}  }
+		}
+		AND = {
+			religion.group = religion_group:zoroastrian_group
+			owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled }  }
+		}
+		AND = {
+			religion.group = religion_group:dharmic
+			owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled }  }
+		}
+		AND = {
+			religion.group = religion_group:buddhist
+			owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled }  }
+		}
+	}
+	owner ?= { 
+		religion.group = religion_group:muslim
+	}
+	is_linked_to_foreign_building = no
+}

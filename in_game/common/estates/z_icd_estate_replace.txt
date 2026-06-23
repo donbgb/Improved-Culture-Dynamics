@@ -1,49 +1,4 @@
 ﻿
-REPLACE:dhimmi_estate = {
-	color = estate_dhimmi
-	power_per_pop  = 0.02
-	tax_per_pop = 1
-	rival = -0.01
-	alliance = 0.01
-	can_generate_mercenary_leaders = no
-	
-	disenfranchise_to = nobles_estate
-	
-	revolt_court_language = common_language
-	characters_have_dynasty = never # new characters never spawn with a dynasty
-	use_diminutive = yes
-	
-	bank = yes 	#can and will loan money
-	
-	#multiplied with (satisfaction - LOW_SATISFACTION_THRESHOLD)
-	satisfaction = {
-		tolerance_heathen = 2
-		country_cabinet_efficiency = 0.1
-	}
-	#multiplied with (relative_power - LOW_POWER_THRESHOLD) if > LOW_POWER_THRESHOLD
-	high_power = {
-		dhimmi_estate_max_tax = -0.3
-		monthly_towards_humanist = societal_value_significant_monthly_move
-	}
-	
-	
-	#multiplied with -(relative_power - LOW_POWER_THRESHOLD) if < LOW_POWER_THRESHOLD
-	low_power = {
-		dhimmi_estate_max_tax = 0.5
-		pop_join_rebel_threshold = -0.1
-	}
-
-	opinion = {
-		add = {
-			desc = "ESTATE_OPINION_BASE"
-			value = "opinion(scope:target)"
-			multiply = 0.05
-		}
-		
-		
-	}
-}
-
 REPLACE:tribes_estate = {
 	color = pop_tribes
 	power_per_pop  = 0.15

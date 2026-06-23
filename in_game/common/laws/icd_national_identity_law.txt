@@ -11,7 +11,7 @@
 	
 	civic_nationhood = {
 		country_modifier = {
-			global_pop_assimilation_speed = 0.005
+			global_pop_assimilation_speed = 0.006
 			monthly_towards_innovative = societal_value_huge_monthly_move
 			monthly_towards_individualism = societal_value_huge_monthly_move
 		}

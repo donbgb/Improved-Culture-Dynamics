@@ -1,0 +1,467 @@
+﻿#generic privileges
+icd_dhimmi_communities_protection = {
+	icon = dhimmi_abrahamic_communities
+	estate = dhimmi_estate
+	potential = {
+		religion ?= {
+			group ?= religion_group:muslim
+		}
+	}
+	
+	can_revoke = {
+		NOT = { 
+			has_policy = turkic_integration
+		}
+		hidden_trigger = {
+			OR = {
+				is_human = yes
+				religious_unity < 0.3
+			}
+		}
+		NOT = {
+			custom_tooltip = { 
+				text = icd_dhimmi_communities_revoke_tt
+				OR = {
+					NOT = { has_variable = icd_israelite_dhimmi_disabled }
+					NOT = { has_variable = icd_christian_dhimmi_disabled }
+					NOT = { has_variable = icd_sabian_dhimmi_disabled}
+					NOT = { has_variable = icd_iranic_dhimmi_disabled }
+					NOT = { has_variable = icd_dharmic_dhimmi_disabled }
+					NOT = { has_variable = icd_buddhist_dhimmi_disabled }
+				}
+			}
+		}
+	}
+	allow = {
+		custom_tooltip = { 
+			text = icd_dhimmi_communities_allow_tt
+			OR = {
+				NOT = { has_variable = icd_israelite_dhimmi_disabled }
+				NOT = { has_variable = icd_christian_dhimmi_disabled }
+				NOT = { has_variable = icd_sabian_dhimmi_disabled}
+				NOT = { has_variable = icd_iranic_dhimmi_disabled }
+				NOT = { has_variable = icd_dharmic_dhimmi_disabled }
+				NOT = { has_variable = icd_buddhist_dhimmi_disabled }
+			}
+		}
+	}
+	
+	
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = {
+				text = icd_dhimmi_communities_trigger_tt
+				OR = {
+					dominant_religion ?= { 
+							group = religion_group:muslim
+						}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:israelite_group
+						}
+						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:christian
+						}
+						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:mandean_group
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:manichaean_group
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:zoroastrian_group
+						}
+						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:dharmic
+						}
+						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:buddhist
+						}
+						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
+					}
+				}
+				OR = {
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:israelite_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:christian
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
+					}
+					
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:mandean_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:manichaean_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:zoroastrian_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:dharmic
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:buddhist
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
+					}
+				}
+			}
+		}
+		local_heathen_pop_conversion_speed_modifier = -0.5
+	}
+	
+	location_modifier = {
+		potential_trigger = {
+			integration_level = core
+		}
+		building_enslavement_power = -0.100
+	}
+	
+	country_modifier = {
+		dhimmi_estate_target_satisfaction = small_privilege_target_satisfaction
+		global_dhimmi_estate_power = 1
+	}
+	country_modifier = {
+		potential_trigger = {
+			"estate(estate_type:dhimmi_estate)" = {
+				num_privileges > 3
+			}
+		}
+		tolerance_heathen = 1.0
+	}
+	country_modifier = {
+		potential_trigger = {
+			"estate(estate_type:dhimmi_estate)" = {
+				num_privileges > 5
+			}
+		}
+		tolerance_heathen = 1.0
+	}
+	
+}
+
+
+icd_permitted_restoration = {
+	icon = austrian_monastery_reform_melk
+	estate = dhimmi_estate
+
+	allow = {
+		custom_tooltip = { 
+			text = icd_dhimmi_communities_allow_tt
+			OR = {
+				NOT = { has_variable = icd_israelite_dhimmi_disabled }
+				NOT = { has_variable = icd_christian_dhimmi_disabled }
+				NOT = { has_variable = icd_sabian_dhimmi_disabled}
+				NOT = { has_variable = icd_iranic_dhimmi_disabled }
+				NOT = { has_variable = icd_dharmic_dhimmi_disabled }
+				NOT = { has_variable = icd_buddhist_dhimmi_disabled }
+			}
+		}
+	}
+
+	country_modifier = {
+		dhimmi_estate_target_satisfaction = small_privilege_target_satisfaction
+		global_dhimmi_estate_power = 0.5
+		global_peasant_enfranchisment = 0.1
+	}
+	
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = {
+				text = icd_dhimmi_communities_trigger_tt
+				OR = {
+					dominant_religion ?= { 
+							group = religion_group:muslim
+						}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:israelite_group
+						}
+						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:christian
+						}
+						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:mandean_group
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:manichaean_group
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:zoroastrian_group
+						}
+						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:dharmic
+						}
+						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:buddhist
+						}
+						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
+					}
+				}
+				OR = {
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:israelite_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:christian
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
+					}
+					
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:mandean_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:manichaean_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:zoroastrian_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:dharmic
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:buddhist
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
+					}
+				}
+			}
+		}
+		local_heathen_pop_conversion_speed_modifier = -0.25
+	}
+}
+
+icd_permission_for_awqaf = {
+	icon = waqf_payments
+	estate = dhimmi_estate
+
+	allow = {
+		custom_tooltip = { 
+			text = icd_dhimmi_communities_allow_tt
+			OR = {
+				NOT = { has_variable = icd_israelite_dhimmi_disabled }
+				NOT = { has_variable = icd_christian_dhimmi_disabled }
+				NOT = { has_variable = icd_sabian_dhimmi_disabled}
+				NOT = { has_variable = icd_iranic_dhimmi_disabled }
+				NOT = { has_variable = icd_dharmic_dhimmi_disabled }
+				NOT = { has_variable = icd_buddhist_dhimmi_disabled }
+			}
+		}
+	}
+
+	country_modifier = {
+		dhimmi_estate_target_satisfaction = medium_privilege_target_satisfaction
+		clergy_estate_target_satisfaction = small_privilege_target_satisfaction_penalty
+		global_dhimmi_estate_power = 0.33
+		global_peasant_enfranchisment = 0.05
+		monthly_towards_communalism = societal_value_monthly_move
+	}
+
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = {
+				text = icd_dhimmi_communities_trigger_tt
+				OR = {
+					dominant_religion ?= { 
+							group = religion_group:muslim
+						}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:israelite_group
+						}
+						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:christian
+						}
+						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:mandean_group
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:manichaean_group
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:zoroastrian_group
+						}
+						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:dharmic
+						}
+						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
+					}
+					AND = {
+						dominant_religion ?= { 
+							group = religion_group:buddhist
+						}
+						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
+					}
+				}
+				OR = {
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:israelite_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:christian
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
+					}
+					
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:mandean_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:manichaean_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:zoroastrian_group
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:dharmic
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
+					}
+					AND = {
+						religion_group_percentage = {
+							religion_group = religion_group:buddhist
+							value > 0.01
+						}
+						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
+					}
+				}
+			}
+		}
+		local_heathen_pop_conversion_speed_modifier = -0.25
+	}
+}
+
+icd_abandon_the_ghiyar = {
+	icon = taluqdar_nobility
+	estate = dhimmi_estate
+	
+	country_modifier = {
+		dhimmi_estate_target_satisfaction = medium_privilege_target_satisfaction
+		clergy_estate_target_satisfaction = small_privilege_target_satisfaction_penalty
+		global_dhimmi_estate_power = 0.2
+		cultures_capacity = 0.5
+	}
+}

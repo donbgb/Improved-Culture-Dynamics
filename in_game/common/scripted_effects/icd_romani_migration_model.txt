@@ -6,11 +6,28 @@ icd_romani_migration_effect = {
 			limit = { 
 				culture_population = {
 					culture = culture:romani_culture
-					value > 0.250
+					value > 0.080
 				}
 			}
 			province_definition = {
 				save_scope_as = icd_romani_province_origin
+			}
+		}
+	}
+	
+	continent:europe = {
+		random_location_in_continent = {
+			limit = { 
+				culture_population = {
+					culture = culture:romani_culture
+					value > 0.080
+				}
+				NOT = {
+					this = scope:icd_romani_province_origin
+				}
+			}
+			province_definition = {
+				save_scope_as = icd_romani_province_origin_two
 			}
 		}
 	}
@@ -38,7 +55,10 @@ icd_romani_migration_effect = {
 				 culture = culture:romani_culture
 				 type = pop_type:tribesmen
 				 months = 1
-				 amount = { 0.100 0.200 }
+				 amount = {
+					value = "scope:icd_romani_province_origin.culture_population(culture:romani_culture)"
+					divide = 2
+				}
 			}
 			if = {
 				limit = {
@@ -62,6 +82,107 @@ icd_romani_migration_effect = {
 						name = icd_temporary_romani_variable
 						days = 10
 					}
+				}
+			}
+		}
+		random_province_in_area = {
+			limit = {
+				culture_population = {
+					culture = culture:romani_culture
+					value = 0
+				}
+				owner = {
+					NOT = {
+						has_variable = icd_romani_forbidden_entry
+					}
+				}
+			}
+			add_migration = {
+				 from = scope:icd_romani_province_origin_two
+				 to = this.province_definition
+				 culture = culture:romani_culture
+				 type = pop_type:tribesmen
+				 months = 1
+				 amount = {
+					value = "scope:icd_romani_province_origin_two.culture_population(culture:romani_culture)"
+					divide = 2
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						this.owner = {
+							has_estate_privilege = estate_privilege:icd_romani_slaves
+							has_estate_privilege = estate_privilege:icd_anti_romani_laws
+							has_estate_privilege = estate_privilege:icd_romani_craftsmen
+							has_variable = icd_romani_forbidden_entry
+							has_variable = icd_romani_are_chill
+							has_variable = icd_temporary_romani_variable
+						}
+					}
+				}
+				this.owner = {
+					trigger_event_silently = {
+						id = icd_romani_events.99
+						days = 1
+					}
+					set_variable = {
+						name = icd_temporary_romani_variable
+						days = 10
+					}
+				}
+			}
+		}
+	}
+	
+	clear_saved_scope = icd_romani_province_origin
+	
+}
+
+icd_romani_migration_effect_region = {
+
+	continent:europe = {
+		random_location_in_continent = {
+			limit = { 
+				culture_population = {
+					culture = culture:romani_culture
+					value > 0.080
+				}
+			}
+			province_definition = {
+				save_scope_as = icd_romani_province_origin
+			}
+		}
+	}
+
+	$target$ = {
+		random_location_in_region = {
+			limit = {
+				has_owner = yes
+				NOT = {
+					climate = arctic
+					climate = cold_arid
+				}
+				population > 10
+				culture_population = {
+					culture = culture:romani_culture
+					value = 0
+				}
+				owner = {
+					NOT = {
+						has_variable = icd_romani_forbidden_entry
+					}
+				}
+			}
+			add_migration = {
+				 from = scope:icd_romani_province_origin
+				 to = this.province_definition
+				 culture = culture:romani_culture
+				 type = pop_type:tribesmen
+				 months = 1
+				 amount = {
+					value = "scope:icd_romani_province_origin.culture_population(culture:romani_culture)"
+					divide = 3
 				}
 			}
 		}

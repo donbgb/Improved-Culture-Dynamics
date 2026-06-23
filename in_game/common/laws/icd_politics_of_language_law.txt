@@ -10,7 +10,7 @@
 	
 	allow = {
 		OR = {
-			court_language = culture.language
+			court_language = root.culture.language
 			has_policy = language_of_pleading_common
 			has_policy = multi_lingual_court
 		}
@@ -92,6 +92,10 @@
 	
 	language_of_the_elites = {
 		potential = {
+			NOT = { 
+				government_type = government_type:tribe
+				government_type = government_type:steppe_horde
+			}
 		}
 		country_modifier = {
 			global_pop_assimilation_speed = 0.01
@@ -115,7 +119,7 @@
 			has_or_had_tag = FRA
 		}
 		allow = {
-			current_year > 1530
+			current_year > 1500
 		}
 		country_modifier = {
 			global_pop_assimilation_speed = 0.001

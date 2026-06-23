@@ -45,15 +45,23 @@
 		value = 0.01
 		if = {
 			limit = {
-				NOT = { root.owner ?= { culture = { has_culture_group = culture_group:turkic_group } }
-					root.owner ?= { culture = { has_culture_group = culture_group:mongolian_group } }
-					root.owner.ruler_or_heir_if_regent ?= { culture = { has_culture_group = culture_group:turkic_group } }
+				OR = {
 					AND = {
-						culture:azeri_culture = { is_accepted_in = root.owner }
+						root.owner ?= { culture = { has_culture_group = culture_group:iranian_group } }
+						NOT = { root.owner.ruler_or_heir_if_regent ?= { culture = { has_culture_group = culture_group:turkic_group } } }
 						OR = {
-							NOT = { culture:adhari_culture = { is_accepted_in = root.owner } }
-							root.owner = { culture = culture:adhari_culture }
+							NOT = {
+								culture:azeri_culture = { is_accepted_in = root.owner }
+							}
+							culture:adhari_culture = { is_accepted_in = root.owner }
 						}
+					}
+					root.owner ?= { culture = culture:adhari_culture }
+					AND = {
+						NOT = {
+							culture:azeri_culture = { is_accepted_in = root.owner }
+						}
+						culture:adhari_culture = { is_accepted_in = root.owner }
 					}
 				}
 			}
@@ -114,10 +122,28 @@
 					"culture_percentage(culture:azeri_culture)" > 0
 					"culture_percentage(culture:adhari_culture)" > 0
 				}
-				NOT = { root.owner ?= { culture = { has_culture_group = culture_group:turkic_group } }
-					root.owner ?= { culture = { has_culture_group = culture_group:mongolian_group } }
-					root.owner.ruler_or_heir_if_regent ?= { culture = { has_culture_group = culture_group:turkic_group } }
-					culture:azeri_culture = { is_accepted_in = root.owner }
+				OR = {
+					AND = {
+						root.owner ?= { culture = { has_culture_group = culture_group:iranian_group } }
+						NOT = { root.owner.ruler_or_heir_if_regent ?= { culture = { has_culture_group = culture_group:turkic_group } } }
+						root.owner ?= {
+							OR = {
+								NOT = {
+									culture:azeri_culture = { is_accepted_in = root.owner }
+								}
+								culture:adhari_culture = { is_accepted_in = root.owner }
+							}
+						}
+					}
+					root.owner ?= { culture = culture:adhari_culture }
+					root.owner ?= {
+						AND = {
+							NOT = {
+								culture:azeri_culture = { is_accepted_in = root.owner }
+							}
+							culture:adhari_culture = { is_accepted_in = root.owner }
+						}
+					}
 				}
 			}
 			value = define:NMapColors|MAP_COLOR_NULL

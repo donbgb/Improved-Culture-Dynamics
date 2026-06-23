@@ -95,9 +95,6 @@
 		visible = {
 			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = relocate_people interaction_target = root } }
 			NOT = { this = scope:target_origin }
-			any_location_in_province = {
-				integration_level = integrated
-			}
 		}
 		map_color = define:NMapColors|MAP_COLOR_LOW
 	}
@@ -115,7 +112,7 @@
 				to = scope:target_destination.province_definition
 				culture = scope:target
 				amount = {
-					value = 0.100
+					value = 0.200
 					multiply = {
 						value = 1
 						if = {
@@ -133,6 +130,9 @@
 					name = promoting_culture
 					value = scope:target
 				}
+				set_variable = {
+					name = no_reapplying_promotion
+				}
 			}
 		}
 	}
@@ -148,6 +148,16 @@
 				from = scope:target_origin.province_definition
 				to = scope:target_destination.province_definition
 				culture = scope:target
+			}
+			scope:target_destination = {
+				remove_variable = promoting_culture
+				remove_variable = no_reapplying_promotion
+			}
+			scope:target_destination = {
+				set_variable = {
+					name = promoting_culture
+					value = scope:target_destination.dominant_culture
+				}
 			}
 		}
 	}

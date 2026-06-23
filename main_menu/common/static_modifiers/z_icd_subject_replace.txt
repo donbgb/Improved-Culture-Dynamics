@@ -1,0 +1,11 @@
+﻿
+REPLACE:is_subject = {
+	game_data = {
+		category = country
+	}
+	
+	pop_join_rebel_threshold = -0.1
+	global_estate_target_satisfaction = large_permanent_target_satisfaction
+	global_pop_assimilation_speed_modifier = 0
+	global_pop_conversion_speed_modifier = 0
+}

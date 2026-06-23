@@ -1,0 +1,93 @@
+﻿
+icd_dhimmi_communities_each_israelite = {
+	type = country
+	
+	text = {
+		trigger = {
+			NOT = { has_variable = icd_israelite_dhimmi_disabled }
+			religion_group_population_in_country = {
+				religion_group = religion_group:israelite_group
+				value > 0.010
+			}
+		}
+		localization_key = icd_dhimmi_communities_each_israelite_custom
+	}
+}
+icd_dhimmi_communities_each_christian = {
+	type = country
+	
+	text = {
+		trigger = {
+			NOT = { has_variable = icd_christian_dhimmi_disabled }
+			religion_group_population_in_country = {
+				religion_group = religion_group:christian
+				value > 0.010
+			}
+		}
+		localization_key = icd_dhimmi_communities_each_christian_custom
+	}
+}
+icd_dhimmi_communities_each_sabian = {
+	type = country
+	
+	text = {
+		trigger = {
+			NOT = { has_variable = icd_sabian_dhimmi_disabled}
+			OR = {
+				religion_group_population_in_country = {
+					religion_group = religion_group:mandean_group
+					value > 0.010
+				}
+				religion_group_population_in_country = {
+					religion_group = religion_group:manichaean_group
+					value > 0.010
+				}
+			}
+		}
+		localization_key = icd_dhimmi_communities_each_sabian_custom
+	}
+}
+icd_dhimmi_communities_each_iranic = {
+	type = country
+	
+	text = {
+		trigger = {
+			NOT = { has_variable = icd_iranic_dhimmi_disabled }
+			religion_group_population_in_country = {
+				religion_group = religion_group:zoroastrian_group
+				value > 0.010
+			}
+		}
+		localization_key = icd_dhimmi_communities_each_iranic_custom
+	}
+}
+icd_dhimmi_communities_each_dharmic = {
+	type = country
+	
+	text = {
+		trigger = {
+			NOT = { has_variable = icd_dharmic_dhimmi_disabled }
+			religion_group_population_in_country = {
+				religion_group = religion_group:dharmic
+				value > 0.010
+			}
+		}
+		localization_key = icd_dhimmi_communities_each_dharmic_custom
+	}
+}
+icd_dhimmi_communities_each_buddhist = {
+	type = country
+	
+	text = {
+		trigger = {
+			NOT = { has_variable = icd_buddhist_dhimmi_disabled }
+			religion_group_population_in_country = {
+				religion_group = religion_group:buddhist
+				value > 0.010
+			}
+		}
+		localization_key = icd_dhimmi_communities_each_buddhist_custom
+	}
+}
+
+
