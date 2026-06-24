@@ -69,6 +69,11 @@
 		pop_type = tribesmen
 		multiplier = 0.01
 	}
+	
+	specific_pop_type_effect = {
+		culture = cossack_culture
+		multiplier = 0
+	}
 
 
 	location_stagnation_chance = {

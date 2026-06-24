@@ -56,3 +56,26 @@ REPLACE:mazovian = {
 	
 	active = no
 }
+
+REPLACE:romani_culture = { # 
+	language = romani_dialect
+	
+	color = map_romani
+	
+	tags = { romanian_gfx hungarian_gfx east_mediterranean_gfx romani_gfx indian_gfx }
+
+	country_modifier = {
+	}
+	character_modifier = {
+	}
+	location_modifier = {
+	}
+
+	opinions = {
+		domari_culture = kindred
+	}
+
+	culture_groups = {
+		romani_group
+	}
+}

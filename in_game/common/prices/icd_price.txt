@@ -4,6 +4,5 @@ icd_nothing_price = {
 }
 
 icd_dhimmi_price = {
-	prestige = 5
-	stability = 5
+	
 }

@@ -16,19 +16,19 @@
 		}
 	}
 	
-	monolingual_courts = {
+	linguistic_exchange = {
 		country_modifier = {
-			global_pop_assimilation_speed = 0.001
+			diplomatic_reputation = diplomatic_reputation_weak_bonus
+			embrace_institution_cost_modifier = -0.15
 		}
 		allow = {
 			NOT = {
-				has_policy = self_governing_institutions
-				has_policy = minority_rule
+				court_language = root.culture.language
 			}
 		}
 		
 		estate_preferences = {
-			burghers_estate
+			nobles_estate
 		}
 		
 		ai_will_do = {
@@ -38,13 +38,38 @@
 		years = 2
 	}
 	
+	monolingual_courts = {
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			court_language_is_common_language_importance_modifier = 100
+		}
+		allow = {
+			NOT = {
+				has_policy = self_governing_institutions
+				has_policy = minority_rule
+				has_policy = icd_privileges_in_hungary
+			}
+			court_language = root.culture.language
+		}
+		
+		estate_preferences = {
+			burghers_estate
+		}
+		
+		ai_will_do = {
+			value = 500
+		}
+		
+		years = 2
+	}
+	
 	language_of_opportunity = {
 		country_modifier = {
 			global_pop_assimilation_speed_modifier = 0.15
 			global_pop_promotion_speed_modifier = 0.1
+			court_language_is_common_language_importance_modifier = 30
 		}
 		allow = {
-			
 		}
 		
 		estate_preferences = {
@@ -78,6 +103,8 @@
 					OR = {
 						culture = culture:castilian
 						culture = culture:portuguese
+						culture = culture:turkish_culture
+						culture = { has_culture_group = culture_group:russian_group }
 						culture = { has_culture_group = culture_group:german_group }
 					}
 				}
@@ -96,6 +123,9 @@
 				government_type = government_type:tribe
 				government_type = government_type:steppe_horde
 			}
+		}
+		allow = {
+			court_language = root.culture.language
 		}
 		country_modifier = {
 			global_pop_assimilation_speed = 0.01
@@ -120,6 +150,7 @@
 		}
 		allow = {
 			current_year > 1500
+			court_language = root.culture.language
 		}
 		country_modifier = {
 			global_pop_assimilation_speed = 0.001

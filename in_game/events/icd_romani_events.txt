@@ -683,9 +683,7 @@ icd_romani_events.4 = { ##flavour promising romani###
 			religion = root.religion
 			age = { 20 30 }
 			birth_location = root.capital
-			random_estate_type_trigger = {
-				root = { estate_type_allowed_in_cabinet = {	estate_type = prev } }
-			}
+			estate = estate_type:burghers_estate
 			create_in_limbo = yes
 			save_scope_as = icd_romani_cabinet_scope
 		}
@@ -695,6 +693,10 @@ icd_romani_events.4 = { ##flavour promising romani###
 		name = icd_romani_events.4.a ##has a place in our court##
 		
 		add_legitimacy = legitimacy_weak_penalty 
+		
+		scope:icd_romani_cabinet_scope = {
+			move_country = root
+		}
 	}
 	
 	option = {
@@ -748,13 +750,13 @@ icd_romani_events.5 = { ##flavour inspired painting###
 	option = {
 		name = icd_romani_events.5.a ##paint it##
 
-		change_gold_effect = { scale = -1 }
+		change_gold_effect = { scale = -4 }
 		add_prestige = prestige_weak_bonus
 		
 		root.capital = {
 			create_art = {
 			 type = work_of_art_type:painting
-			 quality = { 60 90 }
+			 quality = { 60 89 }
 			 artist = scope:icd_painting_artist_scope
 			}
 		}
@@ -825,6 +827,8 @@ icd_romani_events.6 = { ##flavour king of the gypsy###
 		
 		scope:icd_romani_king_gypsy_scope = {
 			set_nickname = icd_king_of_the_gypsies_nickname
+			
+			move_country = root
 		}
 		
 		add_country_modifier = {
@@ -855,7 +859,7 @@ icd_romani_events.7 = { ##stefan razvan###
 	trigger = {
 		culture_population_in_country = {
 			culture = culture:romani_culture
-			value > 0
+			value > 0.5
 		}
 		NOT = {
 			has_variable = icd_romani_forbidden_entry
@@ -874,9 +878,9 @@ icd_romani_events.7 = { ##stefan razvan###
 		tag = MOL
 		tag = RMN
 		tag = WAL
-		from = 1550.1.1
-		to = 1650.1.1
-		monthly_chance = 30
+		from = 1590.1.1
+		to = 1620.1.1
+		monthly_chance = 5
 	}
 	
 	fire_only_once = yes
@@ -914,6 +918,10 @@ icd_romani_events.7 = { ##stefan razvan###
 		name = icd_romani_events.7.a ##recognise his position##
 		historical_option = yes
 		
+		scope:icd_stefan_razvan = {
+			move_country = root
+		}
+		
 		 hidden_effect = {
 			trigger_event_silently = {
 				id = icd_romani_events.8
@@ -925,9 +933,8 @@ icd_romani_events.7 = { ##stefan razvan###
 	option = {
 		name = icd_romani_events.7.b ##nothing##
 
-		hidden_effect = {
-			kill_character_silently = scope:icd_stefan_razvan
-		}
+		kill_character_silently = scope:icd_stefan_razvan
+		
 	}
 }
 
@@ -954,7 +961,7 @@ icd_romani_events.8 = { ##stefan razvan takes over###
 	}
 	
 	option = {
-		name = icd_romani_events.7.a ##coup##
+		name = icd_romani_events.8.a ##coup##
 		historical_option = yes
 		
 		 set_new_ruler = var:icd_stefan_razvan_variable
@@ -1002,13 +1009,87 @@ icd_romani_events.8 = { ##stefan razvan takes over###
 		 }
 		 
 		 remove_variable = icd_stefan_razvan_variable
+		 
+		 hidden_effect = {
+			trigger_event_silently = {
+				id = icd_romani_events.9
+				months = 5
+			}
+		 }
 	}
 	
 	option = {
-		name = icd_romani_events.7.b ##thwarted##
+		name = icd_romani_events.8.b ##thwarted##
 
-		hidden_effect = {
-			kill_character_silently = var:icd_stefan_razvan_variable
+		kill_character = var:icd_stefan_razvan_variable
+	}
+}
+
+icd_romani_events.9 = { ##stefan razvan challenges###
+	type = country_event
+	title = icd_romani_events.9.title
+	desc = icd_romani_events.9.desc
+	outcome = neutral
+	
+	illustration_tags = {
+        10 = angry
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		
+		ordered_neighbor_country = {
+			limit = {
+				religion.group = religion_group:christian
+			}
+			max = 1
+			order_by = total_population
+			
+			save_scope_as = icd_big_country_will_invade
+			
+		}
+		
+		ruler = {
+			save_scope_as = icd_ruler
+		}
+	}
+	
+	option = {
+		name = icd_romani_events.9.a ##thwarted##
+
+		ordered_character = {
+			limit = {
+				NOT = {
+					dynasty = root.ruler.dynasty
+					is_spouse_of = root.ruler
+				}
+				has_estate = estate_type:nobles_estate
+				culture = root.culture
+				religion = root.religion
+			}
+			order_by = total_abilities
+			max = 1
+			
+			save_scope_as = icd_new_ruler
+		}
+
+		ruler = {
+			kill_character = {
+				target = this
+			}
+		}
+		
+		set_new_ruler = scope:icd_new_ruler
+	}
+	
+	option = {
+		name = icd_romani_events.9.b ##keep stefan##
+
+		scope:icd_big_country_will_invade = {
+			add_casus_belli = {
+				target = root
+				type = casus_belli:cb_subjugation
+			}
 		}
 	}
 }

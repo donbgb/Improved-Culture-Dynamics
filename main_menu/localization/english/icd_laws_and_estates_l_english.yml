@@ -23,13 +23,15 @@
  monolingual_courts: "Monolingual Forums"
  monolingual_courts_desc: "Judicial courts, local councils and any other governmental spaces are to use only our main common language for all matters. Local languages are not to be given any public role."
  language_of_opportunity: "Language of Opportunity"
- language_of_opportunity_desc: "Though there is some space for the use of local languages, most public matters are dealt with in our main common language. Anyone who wishes to ascend and improve his lot in life, must be willing to master our language and assimilate."
+ language_of_opportunity_desc: "Though there is some space for the use of local and courtly languages, most commercial and economic matters are dealt with in our main common language. Anyone who wishes to ascend and improve his lot in life, must be willing to master our language and assimilate."
  linguistic_autonomy: "Linguistic Autonomy"
  linguistic_autonomy_desc: "Communities have a large degree of autonomy to work and conduct matters in their own language."
  language_of_the_elites: "Learned Language of the Elites"
  language_of_the_elites_desc: "Our common language is the language of the elite and the educated, not of the masses. We must maintain our language's dignity and strength among all the wealthy and powerful in our territory and must prevent our speech from being sullied by the rabble."
  ordinance_of_villers_cotterets: "Ordinance of Villers-Cotterêts"
  ordinance_of_villers_cotterets_desc: "The use of French is mandatory in all legal acts, notarized contracts and official legislation. Latin is no longer to be utilised and if this policy makes the use of patois difficult, so be it." 
+ linguistic_exchange: "Worldly Lingua Franca"
+ linguistic_exchange_desc: "By adopting and using a foreign language in our government and court, we connect our state to the broader world and society. Our ties beyond our borders help us to learn from others and to enrich our state and society through new experiences."
  
  icd_politics_of_ritual_law: "Politics of Ritual"
  icd_politics_of_ritual_law_desc: "The relationship between culture and faith in our government and society must be outlined and structured."
@@ -168,3 +170,6 @@
  
  icd_druze_emirs: "Hereditary Druze Emirs"
  icd_druze_emirs_desc: "By permitting Iqta appointments in Mount Lebanon and Jabal al-Druze to become effectively hereditary, being passed from brother to brother and father to son in specific Druze dynasties, we ensure that we have powerful allies in this part of the Levant, who are willing to support us militarily in return for their religious and political autonomy."
+ 
+ icd_turkic_integration_modifier_tt: "Every location where the [dominant_culture|e] is [ShowCultureGroupName('turkic_group')] but the [dominant_religion|e] isn't [ShowReligionGroupAdjective('muslim')]:"
+ 

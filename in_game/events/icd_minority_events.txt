@@ -1132,7 +1132,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -3460,10 +3460,11 @@ icd_minority_events.7 = { ###action religion###
 	
 	illustration_tags = {
         10 = regular
-        10 = interior
+        10 = exterior
     }
 	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		event_illustration_peasants_foreign_religion_pop_type_effect = yes
+		
 		
 		if = {
 			limit = {
@@ -3485,6 +3486,8 @@ icd_minority_events.7 = { ###action religion###
 				value > 0
 			}
 		}
+		
+		add_stability = stability_mild_penalty
 		
 		if = {
 			limit = {
@@ -3532,6 +3535,8 @@ icd_minority_events.7 = { ###action religion###
 			
 		}
 		
+		add_stability = stability_mild_penalty
+		
 		if = {
 			limit = {
 				has_policy = turkic_integration
@@ -3569,6 +3574,8 @@ icd_minority_events.7 = { ###action religion###
 	
 	option = {
 		name = icd_minority_events.7.c
+		
+		add_stability = stability_mild_penalty
 		
 		trigger = {
 			OR = {
@@ -3623,6 +3630,8 @@ icd_minority_events.7 = { ###action religion###
 	
 	option = {
 		name = icd_minority_events.7.e
+		
+		add_stability = stability_mild_penalty
 			
 		trigger = {
 			OR = {
@@ -3662,6 +3671,8 @@ icd_minority_events.7 = { ###action religion###
 	option = {
 		name = icd_minority_events.7.f
 		
+		add_stability = stability_mild_penalty
+		
 		trigger = {
 			religion_group_percentage_in_country = {
 				religion_group = religion_group:dharmic
@@ -3696,6 +3707,8 @@ icd_minority_events.7 = { ###action religion###
 	}
 	option = {
 		name = icd_minority_events.7.g
+		
+		add_stability = stability_mild_penalty
 		
 		trigger = {
 			religion_group_percentage_in_country = {

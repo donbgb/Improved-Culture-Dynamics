@@ -14,6 +14,11 @@
 	}
 	
 	allow = {
+		NOT = {
+			any_cabinet_action = {
+				this = cabinet_action:introduce_cultural_settlements
+			}
+		}
 	}
 
 	select_trigger = {
@@ -31,6 +36,7 @@
 			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_culture interaction_target = target_1 } }
 			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_culture_edited interaction_target = target_1 } }
 			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_culture_mark_only interaction_target = root } }
+			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = introduce_cultural_settlements interaction_target = target_1 } }
 		}
 		map_color = {
 			value = define:NMapColors|MAP_COLOR_HIGH

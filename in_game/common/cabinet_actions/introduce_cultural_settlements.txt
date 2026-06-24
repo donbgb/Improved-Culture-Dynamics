@@ -112,7 +112,7 @@
 				to = scope:target_destination.province_definition
 				culture = scope:target
 				amount = {
-					value = 0.200
+					value = 0.250
 					multiply = {
 						value = 1
 						if = {

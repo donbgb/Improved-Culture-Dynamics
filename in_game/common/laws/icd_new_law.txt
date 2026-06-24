@@ -398,21 +398,24 @@
 		}
 		location_modifier = {
 			potential_trigger = {
-				OR = {
-					region = region:balkan_region
-					region = region:anatolia_region
-					region = region:caucasus_region
-				}
-				NOT = {
-					area = area:albania_area
-					area = area:bosnia_area
-				}
-				OR = {
-					dominant_culture ?= { has_culture_group = culture_group:turkic_group }
-				}
-				NOT = { 
-					dominant_religion ?= religion:sunni
-					dominant_religion ?= religion:shia
+				custom_tooltip = {
+					text = icd_turkic_integration_modifier_tt
+					OR = {
+						region = region:balkan_region
+						region = region:anatolia_region
+						region = region:caucasus_region
+					}
+					NOT = {
+						area = area:albania_area
+						area = area:bosnia_area
+					}
+					OR = {
+						dominant_culture ?= { has_culture_group = culture_group:turkic_group }
+					}
+					NOT = { 
+						dominant_religion ?= religion:sunni
+						dominant_religion ?= religion:shia
+					}
 				}
 			}
 			local_pop_conversion_speed_modifier = 2.5

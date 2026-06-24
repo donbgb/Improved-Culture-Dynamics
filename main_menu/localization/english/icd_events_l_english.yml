@@ -61,9 +61,9 @@
  icd_dhimmi_communities_each_buddhist_custom: "[ShowReligionGroupAdjective('buddhist')] [pops|e] are currently part of the [ShowEstateTypeName('dhimmi_estate')]"
  
  icd_minority_events.7.title: "Status of the Dhimmi"
- icd_minority_events.7.desc: "We may choose which [religions|e] should be considered part of the [ShowEstateTypeName('dhimmi_estate')]. Members of the [ShowEstateTypeName('dhimmi_estate')] are protected from conversion and are afforded autonomy and certain rights, but in exchange must pay the jizya tax and follow certain principles. The extent to which protections are in place depends on the [ShowEstateTypeName('dhimmi_estate')] [estate|e]'s privileges. Changes regarding this will usually only take effect after the beginning of February. Currently protected [religions|e]:\n\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_israelite')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_christian')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_sabian')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_iranic')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_dharmic')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_buddhist')]"
+ icd_minority_events.7.desc: "We may choose which [religions|e] should be considered part of the [ShowEstateTypeName('dhimmi_estate')]. Members of the [ShowEstateTypeName('dhimmi_estate')] are protected from conversion and are afforded autonomy and certain rights, but in exchange must pay the jizya tax and are bound by several restrictions in their day-to-day life.\n\nIn societies with low [tolerance|e], the [ShowEstateTypeName('dhimmi_estate')] experience greater protections and liberties than other [heathens|e]. In societies with high [tolerance|e], the condition of being a [ShowEstateTypeName('dhimmi_estate')] is discriminatory. The position of [ShowEstateTypeName('dhimmi_estate')] can be used either as a tool of repression, or as a tool of promoting religious tolerance. The extent to which protections are in place depends on the [ShowEstateTypeName('dhimmi_estate')] [estate|e]'s privileges. Currently protected [religions|e]:\n\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_israelite')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_christian')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_sabian')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_iranic')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_dharmic')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_buddhist')]"
  
- icd_dhimmi_turkic_integration_tt: "We may not change the status of Jews and Christians while we have Turkic Integration active"
+ icd_dhimmi_turkic_integration_tt: "We may not change the status of Jews and Christians while we have the policy Turkic Integration active. Clicking this will not work"
  
  icd_minority_events.7.a: "Change the status of Jews and Samaritans"
  icd_israelite_dhimmi_remove_tt: "Removes [ShowReligionGroupAdjective('israelite_group')] [pops|e] from the [ShowEstateTypeName('dhimmi_estate')].\nChanges regarding this will usually only take effect after the beginning of February."
@@ -95,9 +95,9 @@
  
  icd_romani_events.99.title: "Arrival of a Different People"
  icd_romani_events.99.desc: "Local authorities have reported the arrival of a distinct group of people into our lands, speaking a strange tongue. Some say they are Tatars, others that they are Egyptians, while others refer to them as cingane or $romani_culture$. Regardless, the reality is that these people appear to be destitute and seem to have fled exploitation in some of our neighbouring countries. Already, our [estates|e] expect us to implement similar laws, treating them as either slaves or unwanted folk, and they will not be pleased if we fail to abide."
- icd_romani_events.99.a: "They may be owned as slaves by the nobility, the Crown and landowning clergy"
- icd_romani_events.99.b: "They are to be excluded from society and the common folk"
- icd_romani_events.99.c: "Let us see take advantage of what skills they have"
+ icd_romani_events.99.a: "They may be owned as slaves by the nobility and the Crown"
+ icd_romani_events.99.b: "They are to be separated from society and the common folk"
+ icd_romani_events.99.c: "Let us take advantage of what skills they have"
  icd_romani_events.99.d: "Expel these outlandish people!"
  icd_romani_events.99.e: "They are to be treated with fairness and justice, as any other man"
  icd_romani_events.90.title: "Settlements of Romani"
@@ -112,7 +112,7 @@
  icd_romani_events.5.desc: "Our artist [SCOPE.sCharacter('icd_painting_artist_scope').GetName] has become inspired by scenes of the $romani_culture$ community in our country, and has been planning a large painting depicting their way of life. Should we support such a painting, it will provide a valuable addition to our galleries."
  icd_romani_events.5.a: "Paint it!"
  icd_romani_events.5.b: "It isn't worth the investment"
- icd_romani_events.6.title: "King of the Gypsies"
+ icd_romani_events.6.title: "the King of the Gypsies"
  icd_romani_events.6.desc: "Among the $romani_culture$, a man by the name of [SCOPE.sCharacter('icd_romani_king_gypsy_scope').GetName] has stood out for his leadership and authority. He has begun taking on the title of 'King of the Gypsies', and has assumed an important role in the relationship and ties between $romani_culture$ and non-Romani in both the professional and political spheres. Should we recognise his position formally, we may inevitably profit."
  icd_king_of_the_gypsies_nickname: "King of the Gypsies"
  icd_romani_events.6.a: "He is a true king!"
@@ -127,7 +127,18 @@
  icd_romani_events.8.a: "The time has come for a change in leadership"
  icd_romani_events.8.b: "Have this man executed at once!"
  
+ icd_romani_events.9.title: "A Threatening Leader"
+ icd_romani_events.9.desc: "Our ruler, [ROOT.GetCountry.GetGovernment.GetRuler.GetName], has proven popular amongst the populace not only in our borders but beyond. [ROOT.GetCountry.GetGovernment.GetRuler.GetHisHer|U] fierce rallying of the local peoples has proven threatening to [SCOPE.sCountry('icd_big_country_will_invade').GetName] who have begun to argue that [ROOT.GetCountry.GetGovernment.GetRuler.GetName] and [ROOT.GetCountry.GetGovernment.GetRuler.GetHisHer] dynasty are illegitimate usurpers with no right to rule. They propose to restore proper governance in our borders. We risk a military intervention should things continue like this."
+ icd_romani_events.9.a: "Perhaps the nobles can sort this issue out by themselves"
+ icd_romani_events.9.b: "[ROOT.GetCountry.GetGovernment.GetRuler.GetName] will not be threatened"
+ 
  icd_romani_events.95.title: "Status of the Romani"
  icd_romani_events.95.desc: "As we have removed the recent restrictions on the $romani_culture$, we must consider a change in policy and approach. What position should we adopt in relation to them?"
- icd_romani_events.95.a: "
+ 
+ 
+ icd_muslim_events.1.title: "Conversion of the Bosnians"
+ icd_muslim_events.1.desc: "The faithfulness of the $bosnian$s to local religions is surprisingly shallow. Historical competition between [ShowReligionName('catholic')] and [ShowReligionName('orthodox')] in Bosnia has weakened the religious fabric of society there and led to a lack of clerical and spiritual organization. Allowed to exist thanks to this vaccuum, the schismatic [ShowReligionAdjective('bosnian_church')], however, failed to create a stronger alternative. With our arrival and conquest of these lands, the local people have appeared surprisingly open to [ShowReligionGroupName('muslim')] and seem to be willing to convert and commit to our faith. If we begin proselytising efforts among them, we will be sure to see a large number of converts."
+ icd_muslim_events.1.a: "Spread the word to the $bosnian$s"
+ icd_muslim_events.1.b: "And lose a source of jizya tax? Never"
+ 
  
