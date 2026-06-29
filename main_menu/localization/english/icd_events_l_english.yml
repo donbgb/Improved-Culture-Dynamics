@@ -56,7 +56,7 @@
  icd_dhimmi_communities_each_israelite_custom: "[ShowReligionGroupName('israelite_group')] [pops|e] are currently part of the [ShowEstateTypeName('dhimmi_estate')]"
  icd_dhimmi_communities_each_christian_custom: "[ShowReligionGroupAdjective('christian')] [pops|e] are currently part of the [ShowEstateTypeName('dhimmi_estate')]"
  icd_dhimmi_communities_each_sabian_custom: "[ShowReligionGroupAdjective('mandean_group')] and [ShowReligionGroupAdjective('manichaean_group')] [pops|e] are currently part of the [ShowEstateTypeName('dhimmi_estate')]"
- icd_dhimmi_communities_each_iranic_custom: "[ShowReligionGroupAdjective('zoroastrian_group')][pops|e] are currently part of the [ShowEstateTypeName('dhimmi_estate')]"
+ icd_dhimmi_communities_each_iranic_custom: "[ShowReligionGroupAdjective('zoroastrian_group')] [pops|e] are currently part of the [ShowEstateTypeName('dhimmi_estate')]"
  icd_dhimmi_communities_each_dharmic_custom: "[ShowReligionGroupAdjective('dharmic')] [pops|e] are currently part of the [ShowEstateTypeName('dhimmi_estate')]"
  icd_dhimmi_communities_each_buddhist_custom: "[ShowReligionGroupAdjective('buddhist')] [pops|e] are currently part of the [ShowEstateTypeName('dhimmi_estate')]"
  
