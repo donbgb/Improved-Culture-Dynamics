@@ -35,8 +35,6 @@ icd_reapply_promoting_culture= {
 		icd_minority_events.1
 		icd_minority_events.2
 		icd_minority_events.31
-		icd_minority_events.4
-		icd_minority_events.5
 		icd_minority_events.6
 		icd_romani_events.90
 		icd_romani_events.98
@@ -48,16 +46,20 @@ four_yearly_country_pulse = {
 	
 	on_actions = {
 		icd_morisco_event
+		icd_random_four_yearly
 	}
 }
 
 icd_morisco_event = {
 	trigger = {
-		culture = { has_culture_group = culture_group:iberian_group }
 	}
 
 	events = {
-		icd_substitute_events.1002
+		icd_minority_events.10
+		icd_minority_events.9
+		icd_minority_events.4
+		icd_minority_events.5
+		icd_minority_events.8
 	}
 }
 
@@ -114,14 +116,6 @@ icd_romani_on_new_age = {
 		icd_romani_events.3
 	}
 
-}
-
-four_yearly_country_pulse = {
-
-	on_actions = {
-		icd_random_four_yearly
-	}
-	
 }
 
 icd_random_four_yearly = {

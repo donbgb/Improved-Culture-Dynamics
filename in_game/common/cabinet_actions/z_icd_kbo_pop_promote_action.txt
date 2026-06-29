@@ -1,4 +1,4 @@
-﻿kbo_pop_promote_action = {
+﻿REPLACE:kbo_pop_promote_action = {
 	icon = pop_promote_action
 	ability = adm
 	

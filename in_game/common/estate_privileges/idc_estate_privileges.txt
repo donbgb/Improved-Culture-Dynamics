@@ -98,10 +98,7 @@ jewish_charter = {
 					}
 					is_overseas_for_owner = no
 				}
-				OR = {
-					dominant_religion = { group = religion_group:christian }
-					dominant_religion = { group = religion_group:israelite_group }
-				}
+				dominant_religion = { group = religion_group:christian }
 			}
 		}
 		local_heathen_pop_conversion_speed_modifier = -3.0

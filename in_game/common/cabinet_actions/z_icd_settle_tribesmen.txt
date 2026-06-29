@@ -1,9 +1,13 @@
-﻿settle_tribesmen = {
+﻿REPLACE:settle_tribesmen = {
 	ability = mil
 	
 	potential = {
 		num_locations > 0 
 		num_pop_type_in_country:tribesmen > 0
+		NOT = {
+			government_type = government_type:tribe
+			government_type = government_type:steppe_horde
+		}
 	}
 	
 

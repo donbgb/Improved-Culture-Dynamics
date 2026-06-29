@@ -1,8 +1,8 @@
 ﻿l_english:
- icd_substitute_events.1002.title: "Question of the Moriscos"
- icd_substitute_events.1002.desc: "Though many [ShowCultureNameWithNoTooltip('andalusi')] in our nation have converted to our faith, some of our advisors still suspect that they hold secret [ShowReligionGroupAdjective('muslim')] convictions and a potential loyalty to foreign states. Their insistence to continue using Arabic as a language and their unique identity are both seen as clear evidence of this. In order to ensure the integrity and security of our state, we could expel them as a solution. Or we could simply accept their existence."
- icd_substitute_events.1002.a: "Expel them!"
- icd_substitute_events.1002.b: "They can stay"
+ icd_minority_events.10.title: "Question of the Moriscos"
+ icd_minority_events.10.desc: "Though many [ShowCultureNameWithNoTooltip('andalusi')] in our nation have converted to our faith, some of our advisors still suspect that they hold secret [ShowReligionGroupAdjective('muslim')] convictions and a potential loyalty to foreign states. Their insistence to continue using Arabic as a language and their unique identity are both seen as clear evidence of this. In order to ensure the integrity and security of our state, we could expel them as a solution. Or we could simply accept their existence."
+ icd_minority_events.10.a: "Expel them!"
+ icd_minority_events.10.b: "They can stay"
  
  flavor_cas.1002.title: "Conversion of the Mudéjar"
  flavor_cas.1002.desc: "After our conquest of [ShowAreaName('granada_area')] and [ShowAreaName('andalusia_area')] we are faced with a significant population of [ShowCultureName('andalusi')] and [ShowReligionGroupAdjective('muslim')] people as our subject. The Inquisition has already started the expansion of its activities in the area to ensure the conversion of the people can proceed without issues. Unless [target_character.GetName] intervenes personally against the inquisition, this would ensure the conversion of most of the [ShowCultureNameWithNoTooltip('andalusi')] people, while those who refuse conversion would be expelled from the country."
@@ -137,8 +137,12 @@
  
  
  icd_muslim_events.1.title: "Conversion of the Bosnians"
+ icd_muslim_events.1.entry: "Conversion of the Bosnians"
  icd_muslim_events.1.desc: "The faithfulness of the $bosnian$s to local religions is surprisingly shallow. Historical competition between [ShowReligionName('catholic')] and [ShowReligionName('orthodox')] in Bosnia has weakened the religious fabric of society there and led to a lack of clerical and spiritual organization. Allowed to exist thanks to this vaccuum, the schismatic [ShowReligionAdjective('bosnian_church')], however, failed to create a stronger alternative. With our arrival and conquest of these lands, the local people have appeared surprisingly open to [ShowReligionGroupName('muslim')] and seem to be willing to convert and commit to our faith. If we begin proselytising efforts among them, we will be sure to see a large number of converts."
  icd_muslim_events.1.a: "Spread the word to the $bosnian$s"
  icd_muslim_events.1.b: "And lose a source of jizya tax? Never"
  
- 
+ icd_minority_events.9.title: "Expel the Crimeans?"
+ icd_minority_events.9.desc: "The presence of the [ShowCultureName('crimean')] people in our territory has proven to be a hinderance to our ambitions of taming the Steppes, and a source of conflict and disharmony. Their wildly different traditions and beliefs, and their nomadic heritage prove difficult for us to control. We are faced increasingly with having to make a decision on whether we should continue allowing these people to live in our lands by seeking to accept them into our society, or if we should expel them promptly.\n\nIf we do expel them, they will likely see us and our institutions as enemies, and we should be warned that all our efforts to convert them to our faith will have been wasted."
+ icd_minority_events.9.a: "Expel them!"
+ icd_minority_events.9.b: "Let them remain"

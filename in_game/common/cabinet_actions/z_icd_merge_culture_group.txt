@@ -1,4 +1,4 @@
-﻿merge_culture_group = {
+﻿REPLACE:merge_culture_group = {
 	ability = adm
 	allow_multiple = no
 	years = 10

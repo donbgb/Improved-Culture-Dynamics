@@ -1,4 +1,4 @@
-﻿develop_province = {
+﻿REPLACE:develop_province = {
 	ability = adm
 	
 	allow_multiple = yes

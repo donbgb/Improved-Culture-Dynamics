@@ -7,9 +7,10 @@
 	buildable = no
 	levy = yes
 	
-	combat = { 
+	combat = {
 		grasslands = 0.1
 		sparse = 0.1
+		inland = 0.05
 	}
 	
 	maintenance_demand =  steppe_horse_archers_maintenance
@@ -28,9 +29,10 @@ a_tribal_cavalry_discovery = {
 	buildable = no
 	levy = yes
 	
-	combat = { 
+	combat = {
 		grasslands = 0.1
 		sparse = 0.1
+		inland = 0.05
 	}
 	
 	maintenance_demand =  steppe_horse_archers_maintenance

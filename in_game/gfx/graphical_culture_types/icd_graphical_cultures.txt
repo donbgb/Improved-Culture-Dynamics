@@ -1,8 +1,0 @@
-﻿
-icd_romani_gfx = {
-	priority = 100 # regional
-	culture_tag = european_gfx
-	ethnicities = {
-		10 = indian_ethnicity
-	}
-}

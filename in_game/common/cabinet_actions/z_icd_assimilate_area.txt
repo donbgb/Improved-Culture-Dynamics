@@ -1,20 +1,19 @@
-﻿promote_culture = {
+﻿REPLACE:assimilate_area = {
 	ability = dip
-	
-	allow_multiple = yes
+	allow_multiple = no
 	
 	potential = {
 		num_locations > 0
-		has_game_rule = icd_cabinet_action_on_vanilla
+		always = no
 	}
 	
 	allow = {
 		cultural_unity < 1.0
 	}
-	
+
 	select_trigger = {
 		looking_for_a = culture
-		target_flag = target
+		target_flag = target_culture
 		#for the AI we have an optimisation to only look through religions that are present. Human can look at all...but will have some disabled
 		source_ai_override = actor
 		source_flags_ai_override = include_any_present
@@ -65,46 +64,34 @@
 	}
 
 	select_trigger = {
-		looking_for_a = province
+		looking_for_a = area
 		source = actor
-		target_flag = target_1
-		name = "promote_culture_select_province"
-		none_available_msg_key = "promote_culture_no_provinces"
+		target_flag = target
+		name = "assimilate_area_select_area"
+		none_available_msg_key = "assimilate_area_no_areas"
 		column = {
 			data = name
 		}
 		column = {
-			data = province_culture_percentage
+			data = area_primary_culture_percentage
 		}
 		column = {
 			data = population
 		}
-		default_sort = province_culture_percentage
+		default_sort = area_primary_culture_percentage
 		visible = {
-			any_location_in_province = {
-				OR = {
-					NOT = { dominant_culture = owner.culture }
-					local_cultural_unity < 1.0
+			any_location_in_area = {
+				local_cultural_unity < 1.0
+				owner ?= {
+					this = scope:actor
 				}
 			}
-			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_culture interaction_target = target_1 } }
 		}
 		map_color = {
 			lerp = {
 				min_color = define:NMapColors|MAP_COLOR_LOW
 				max_color = define:NMapColors|MAP_COLOR_HIGH
-				factor = "province.culture_percentage(scope:target)"
-			}
-		}
-	}
-
-	is_finished = {
-		scope:target_1 = {
-			"culture_percentage(scope:target)" >= 1.0
-			not = {
-				any_location_in_province = {
-					NOT = { dominant_culture = scope:target }
-				}
+				factor = "area.culture_percentage(scope:target_culture)"
 			}
 		}
 	}
@@ -112,57 +99,36 @@
 	on_activate = {
 		if = {
 			limit = {
-				exists = scope:target_1
+				exists = scope:target
 			}
-			scope:target_1 = {
-				set_variable = {
-					name = promoting_culture
-					value = scope:target
+			scope:target = {
+				every_province_in_area = {
+					limit = {
+						owner = scope:actor
+					}
+					set_variable = {
+						name = promoting_culture
+						value = scope:target_culture
+					}
 				}
-				set_variable = {
-					name = no_reapplying_promotion
-				}
-			}
-		}
-	}
-
-	on_deactivate = {
-		if = {
-			limit = {
-				exists = scope:target_1
-			}
-			scope:target_1 = {
-				remove_variable = promoting_culture
-				remove_variable = no_reapplying_promotion
 			}
 		}
 	}
 
 	location_modifier = {
-		local_pop_assimilation_speed = 0.04
-		local_migration_attraction = -0.15
+		local_pop_assimilation_speed = 0.005
+		local_unrest = 0.25
+		local_monthly_development_modifier = -0.25
 	}
 
-	progress = {
-		scope:target_1 = {
-			value = "culture_percentage(scope:target)"
-		}
-	}
 
 	map_marker = {
 		show_for_owner = yes
 	}
 
-	ai_will_do = {
-		add = {
-			desc = "Wrong culture"
-			if = {
-				limit = {
-					exists = scope:target
-					scope:target != scope:actor.culture				
-				}
-				value = -1000
-			}
+	progress = {
+		scope:target = {
+			value = "culture_percentage_in_area(scope:actor|scope:target_culture)"
 		}
 	}
 }

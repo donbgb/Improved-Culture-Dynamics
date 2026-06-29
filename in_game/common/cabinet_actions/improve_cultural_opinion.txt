@@ -7,7 +7,7 @@
 		num_locations > 0 
 	}
 	
-	days = 3950
+	years = 10
 	
 	allow = {
 		cultural_unity < 1.0

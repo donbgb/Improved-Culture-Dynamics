@@ -9,11 +9,6 @@
 	}
 	
 	allow = {
-		OR = {
-			court_language = root.culture.language
-			has_policy = language_of_pleading_common
-			has_policy = multi_lingual_court
-		}
 	}
 	
 	linguistic_exchange = {
@@ -33,6 +28,21 @@
 		
 		ai_will_do = {
 			value = 300
+			if = { 
+				limit = { 
+					OR = {
+						culture = culture:castilian
+						culture = culture:portuguese
+						culture = culture:french
+						culture = culture:turkish_culture
+						culture = { has_culture_group = culture_group:russian_group }
+						culture = { has_culture_group = culture_group:german_group }
+					}
+				}
+				subtract = {
+					value = 100
+				}
+			}
 		}
 		
 		years = 2
@@ -103,6 +113,7 @@
 					OR = {
 						culture = culture:castilian
 						culture = culture:portuguese
+						culture = culture:french
 						culture = culture:turkish_culture
 						culture = { has_culture_group = culture_group:russian_group }
 						culture = { has_culture_group = culture_group:german_group }

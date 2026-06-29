@@ -39,7 +39,6 @@ icd_muslim_events.1 = { #
 	
 	dynamic_historical_event = {
 		tag = TUR
-		tag = RUM
 		tag = KAR
 		tag = KRD
 		tag = SRU
@@ -89,14 +88,12 @@ icd_muslim_events.1 = { #
 				culture = culture:bosnian
 				NOT = { 
 					location = {
-						area = {
-							OR = {
-								area = area:bosnia_area
-								area = area:croatia_area
-								area = area:slavonia_area
-								area = area:serbia_area
-								area = area:slovenia_area
-							}
+						OR = {
+							area = area:bosnia_area
+							area = area:croatia_area
+							area = area:slavonia_area
+							area = area:serbia_area
+							area = area:slovenia_area
 						}
 					}
 				}
