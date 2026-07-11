@@ -7,36 +7,6 @@
 
 # Picks first valid entry
 
-levy_tribal_cavalry_discovery = {
-	size = levy_generic_infantry_size		#yes, its infantry, as it scales
-
-	allowed_pop_type = tribesmen
-	
-	allow = {
-		location = {
-			market = {
-				OR = {
-					is_produced_in_market = goods:horses 
-					is_traded_in_market = goods:horses 
-				}
-			}
-			NOT = {
-				climate = arctic
-				vegetation = jungle
-			}
-			NOR = {
-				climate = tropical
-				vegetation = forest
-			}
-		}
-	}
-	country_allow = {	
-		NOT = { government_type = government_type:steppe_horde }
-		country_has_estate = estate_type:tribes_estate
-	}
-	
-	unit = a_tribal_cavalry_discovery
-}
 
 levy_tribal_cavalry_renaissance = {
 	size = levy_generic_infantry_size		#yes, its infantry, as it scales

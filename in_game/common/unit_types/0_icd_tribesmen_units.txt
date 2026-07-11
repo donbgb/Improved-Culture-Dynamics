@@ -19,25 +19,3 @@
 
 	gfx_tags = { spear_tag light_tag }
 }
-
-a_tribal_cavalry_discovery = {
-	copy_from = a_age_3_discovery_light_cavalry
-	is_special = yes
-
-	movement_speed = 1.0
-	initiative = 2
-	buildable = no
-	levy = yes
-	
-	combat = {
-		grasslands = 0.1
-		sparse = 0.1
-		inland = 0.05
-	}
-	
-	maintenance_demand =  steppe_horse_archers_maintenance
-	construction_demand = steppe_horse_archers_construction
-	
-
-	gfx_tags = { spear_tag light_tag }
-}

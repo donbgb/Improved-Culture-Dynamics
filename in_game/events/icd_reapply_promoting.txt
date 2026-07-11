@@ -33,6 +33,15 @@ icd_reapply_promoting.1 = {
 					value = this.dominant_culture
 				}
 			}
+			if = {
+				limit = {
+					religion_percentage_in_country = {
+						religion = root.religion
+						value <= 0.10
+					}
+				}
+				add_policy = policy:icd_minority_religion
+			}
 		}
 		
 		if = {

@@ -1,0 +1,83 @@
+﻿anabaptist = { 
+	color = map_anabaptist
+	group = christian
+	
+	culture_locked = yes
+	
+	enable = 9999.1.1
+	
+	religious_aspects = 3
+	has_religious_influence = yes
+	
+	definition_modifier = {
+		global_peasant_enfranchisment = 0.25
+		global_peasants_estate_power = 1.0
+
+		global_hostile_attrition = 1
+
+		monthly_religious_influence = 0.2
+
+		maximum_religious_influence = 500
+	}
+	
+	opinions = {
+	}
+
+	unique_names = {
+		name_aaron name_abraham 
+		name_bartholomew name_benjamin 
+		name_cornelius
+		name_elias Ezra
+		name_gabriel 
+		name_isaac 
+		name_james Jason name_jeremiah name_jonas Jonathan name_jordan name_joseph name_joshua Josiah 
+		name_moses 
+		Nathan Nathaniel 
+		name_samuel name_salomon
+		name_timothy
+		name_zechariah	
+	}
+
+	tags = { protestant_gfx western_christian_gfx christian_gfx abrahamic_gfx }
+	custom_tags = { protestant church_aspects }
+}
+
+unitarian = { 
+	color = map_unitarian
+	group = christian
+	
+	enable = 9999.1.1
+	
+	religious_aspects = 3
+	has_religious_influence = yes
+	
+	definition_modifier = {
+		tolerance_heathen = 1
+		army_initiative = 0.1
+
+		monthly_religious_influence = 0.2		
+
+		maximum_religious_influence = 500
+	}
+	
+	opinions = {
+	}
+
+	unique_names = {
+		name_aaron name_abraham 
+		name_bartholomew name_benjamin 
+		name_cornelius
+		name_elias Ezra
+		name_gabriel 
+		name_isaac 
+		name_james Jason name_jeremiah name_jonas Jonathan name_jordan name_joseph name_joshua Josiah 
+		name_moses 
+		Nathan Nathaniel 
+		name_samuel name_salomon
+		name_timothy
+		name_zechariah	
+	}
+
+	tags = { protestant_gfx western_christian_gfx christian_gfx abrahamic_gfx }
+	custom_tags = { protestant church_aspects }
+}

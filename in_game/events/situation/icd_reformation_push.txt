@@ -1,0 +1,845 @@
+﻿namespace = icd_reformation_push
+
+scripted_effect add_to_reformer_list = {
+	add_to_global_variable_list = {
+		name = reformer_list
+		target = scope:target_character
+	}
+}
+icd_reformation_push.2 = {
+	type = country_event
+	title = icd_reformation_push.2.title
+	desc = icd_reformation_push.2.desc
+	outcome = neutral
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = TEU
+		from = 1526.1.1
+		to = 1570.1.1
+		monthly_chance = 10
+	}
+
+	trigger = {
+		is_subject = no
+		at_war = no
+		government_type = government_type:theocracy
+		num_locations > 1
+		
+		NOT = {
+			any_neighbor_country = {
+				religion.group = religion_group:folk_european_group
+			}
+			c:LIT = {
+				religion.group = religion_group:folk_european_group
+			}
+			c:POL = {
+				religion.group = religion_group:folk_european_group
+			}
+			country_exists = c:PRU
+		}
+		religion = religion:catholic
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_poptype_effect = { foreground = pop_type:clergy background = pop_type:soldiers }
+	
+	}
+
+	option = {
+		name = icd_reformation_push.2.a  ##convert##
+		
+		if = {
+			limit = {
+				c:LIV = { 
+					government_type = government_type:theocracy
+					religion = religion:catholic
+				}
+			}
+			custom_tooltip = {
+				text = icd_livonians_will_decide
+				c:LIV = {
+					trigger_event_silently = {
+						id = icd_reformation_push.3
+						days = 5
+					}
+				}
+			}
+		}
+		
+		revoke_estate_privilege = estate_privilege:clergy_military_orders
+		remove_reform = government_reform:military_order_reform
+		
+		form_country = formable_country:PRU_f
+		change_government_type = government_type:monarchy
+		
+		hidden_effect = {
+			ordered_owned_location = {
+				limit = { dominant_religion = religion:catholic }
+				order_by = population
+				max = {
+					value = 2
+					add = {
+						value = root.num_provinces
+						multiply = 0.9
+					}
+				}
+				check_range_bounds = no
+			
+				every_pop = {
+					limit = { religion = religion:catholic 
+						culture = culture:prussian
+					}
+					split_pop = {
+						fraction = 0.05
+						religion = religion:lutheran
+					}
+				}
+				every_pop = {
+					limit = { religion = religion:catholic 
+						culture = culture:prussian
+						OR = {
+							pop_type = pop_type:nobles
+							pop_type = pop_type:clergy
+						}
+					}
+					split_pop = {
+						fraction = 0.3
+						religion = religion:lutheran
+					}
+				}
+			}
+		}
+		
+		change_religion = religion:lutheran
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:lutheran }
+		every_character = {
+			limit = {
+				religion = religion:catholic 
+				culture = culture:prussian
+				OR = {
+					has_estate = estate_type:clergy_estate
+					has_estate = estate_type:nobles_estate
+				}
+			}
+			change_character_religion = religion:lutheran
+		}
+		historical_option = yes
+		
+		add_legitimacy = legitimacy_mild_penalty
+		
+	}
+	option = {
+		name = icd_reformation_push.2.b
+	
+		add_stability = stability_mild_penalty
+	}
+}
+
+
+icd_reformation_push.3 = { ###livonia question of lutheranism#
+	type = country_event
+	title = icd_reformation_push.3.title
+	desc = icd_reformation_push.3.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_poptype_effect = { foreground = pop_type:clergy background = pop_type:soldiers }
+	
+		c:PRU = {
+			save_scope_as = target_one
+		}
+	}
+
+	option = {
+		name = icd_reformation_push.3.a  ##convert##
+		
+		revoke_estate_privilege = estate_privilege:clergy_military_orders
+		remove_reform = government_reform:military_order_reform
+		
+		change_government_type = government_type:monarchy
+		
+		hidden_effect = {
+			ordered_owned_location = {
+				limit = { dominant_religion = religion:catholic }
+				order_by = population
+				max = {
+					value = 2
+					add = {
+						value = root.num_provinces
+						multiply = 0.25
+					}
+				}
+				check_range_bounds = no
+			
+				every_pop = {
+					limit = { religion = religion:catholic 
+						culture = culture:german_baltic
+					}
+					split_pop = {
+						fraction = 0.02
+						religion = religion:lutheran
+					}
+				}
+				every_pop = {
+					limit = { religion = religion:catholic 
+						culture = culture:german_baltic
+						OR = {
+							pop_type = pop_type:nobles
+							pop_type = pop_type:clergy
+						}
+					}
+					split_pop = {
+						fraction = 0.3
+						religion = religion:lutheran
+					}
+				}
+			}
+		}
+		
+		change_religion = religion:lutheran
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:lutheran }
+		every_character = {
+			limit = {
+				religion = religion:catholic 
+				culture = culture:german_baltic
+				OR = {
+					has_estate = estate_type:clergy_estate
+					has_estate = estate_type:nobles_estate
+				}
+			}
+			change_character_religion = religion:lutheran
+		}
+		
+		add_legitimacy = legitimacy_mild_penalty
+		
+	}
+	option = {
+		name = icd_reformation_push.3.b
+	
+		add_stability = stability_mild_penalty
+		
+		if = {
+			limit = {
+				OR = {
+					root = { is_subject_or_below_of = c:TEU }
+					root = { is_subject_or_below_of = c:PRU }
+				}
+			}
+			c:TEU = {
+				cancel_subject = root
+			}
+			c:PRU = {
+				cancel_subject = root
+			}
+		}
+		
+	}
+	
+	option = {
+		name = icd_reformation_push.3.c
+		
+		trigger = {
+			OR = {
+				root = { is_subject_or_below_of = c:TEU }
+				root = { is_subject_or_below_of = c:PRU }
+			}
+		}	
+	
+		revoke_estate_privilege = estate_privilege:clergy_military_orders
+		remove_reform = government_reform:military_order_reform
+		
+		change_government_type = government_type:monarchy
+		
+		hidden_effect = {
+			ordered_owned_location = {
+				limit = { dominant_religion = religion:catholic }
+				order_by = population
+				max = {
+					value = 2
+					add = {
+						value = root.num_provinces
+						multiply = 0.25
+					}
+				}
+				check_range_bounds = no
+			
+				every_pop = {
+					limit = { religion = religion:catholic 
+						culture = culture:german_baltic
+					}
+					split_pop = {
+						fraction = 0.02
+						religion = religion:lutheran
+					}
+				}
+				every_pop = {
+					limit = { religion = religion:catholic 
+						culture = culture:german_baltic
+						OR = {
+							pop_type = pop_type:nobles
+							pop_type = pop_type:clergy
+						}
+					}
+					split_pop = {
+						fraction = 0.3
+						religion = religion:lutheran
+					}
+				}
+			}
+		}
+		
+		change_religion = religion:lutheran
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:lutheran }
+		every_character = {
+			limit = {
+				religion = religion:catholic 
+				culture = culture:german_baltic
+				OR = {
+					has_estate = estate_type:clergy_estate
+					has_estate = estate_type:nobles_estate
+				}
+			}
+			change_character_religion = religion:lutheran
+		}
+		
+		add_legitimacy = legitimacy_mild_penalty
+		
+		if = {
+			limit = {
+				OR = {
+					root = { is_subject_or_below_of = c:TEU }
+					root = { is_subject_or_below_of = c:PRU }
+				}
+			}
+			c:TEU = {
+				cancel_subject = root
+			}
+			c:PRU = {
+				cancel_subject = root
+			}
+		}
+		
+		hidden_effect = {
+			add_opinion = { target = c:POL modifier = opinion_angry }
+			add_opinion = { target = c:LIT modifier = opinion_angry }
+		}
+	}
+}
+icd_reformation_push.4 = { ###secularisation##
+	type = country_event
+	title = icd_reformation_push.4.title
+	desc = icd_reformation_push.4.desc
+	outcome = neutral
+
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+	
+	}
+
+	option = {
+		name = icd_reformation_push.4.a  ##okay##
+		
+		if = {
+			limit = {
+				has_estate_privilege = estate_privilege:clergy_military_orders
+			}
+			revoke_estate_privilege = estate_privilege:clergy_military_orders
+		}
+		
+		if = {
+			limit = {
+				has_reform = government_reform:military_order_reform
+			}
+			remove_reform = government_reform:military_order_reform
+		}
+		
+		change_government_type = government_type:monarchy
+		
+		change_religion_for_ruler_and_family = { country = ROOT religion = root.religion }
+		
+		add_legitimacy = legitimacy_mild_penalty
+		
+		ai_will_select = {
+			value = 100000
+		}
+		
+	}
+	
+	option = { #no#
+		name = icd_reformation_push.4.b
+	}
+}
+
+icd_reformation_push.5 = { ###norway##
+	type = country_event
+	title = icd_reformation_push.5.title
+	desc = icd_reformation_push.5.desc
+	outcome = neutral
+
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+	
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = NOR
+		from = 1533.1.1
+		to = 1580.1.1
+		monthly_chance = 10
+	}
+	
+	trigger = {
+		religion = religion:catholic
+		is_subject = no
+		c:SWE = {
+			tag = SWE
+			OR = {
+				religion = religion:lutheran
+				religion = religion:calvinist
+			}
+		}
+		c:DAN = {
+			tag = DAN
+			OR = {
+				religion = religion:lutheran
+				religion = religion:calvinist
+			}
+		}
+		any_neighbor_country = {
+			OR = {
+				religion = religion:lutheran
+				religion = religion:calvinist
+			}
+		}
+		NOT = { is_leader_of_international_organization = international_organization:hre }
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+	
+	}
+
+	option = {
+		name = icd_reformation_push.5.a  ##lutheran##
+		
+
+		change_religion = religion:lutheran
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:lutheran }
+		
+		hidden_effect = {
+			capital.area = {
+				every_location_in_area = {
+					every_pop = {
+						limit = {
+							culture = root.culture
+							religion = religion:catholic 
+							owner ?= root
+						}
+						split_pop = {
+							fraction = 0.7
+							religion = religion:lutheran
+						}
+					}
+				}
+			}
+			every_owned_location = {
+				limit = { local_control > 0.5 }
+				every_pop = {
+					limit = {
+						culture = root.culture
+						religion = religion:catholic 
+						owner ?= root
+					}
+					split_pop = {
+						fraction = 0.1
+						religion = religion:lutheran
+					}
+				}
+			}
+		}
+		
+		add_stability = stability_severe_penalty
+	}
+	
+	option = {
+		name = icd_reformation_push.5.b  ##calv##
+		
+		trigger = {
+			religion:calvinist = {
+				is_religion_enabled = yes
+			}
+			any_neighbor_country = {
+			religion = religion:calvinist
+			}
+		}
+
+		change_religion = religion:calvinist
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:calvinist }
+		
+		hidden_effect = {
+			capital.area = {
+				every_location_in_area = {
+					every_pop = {
+						limit = {
+							culture = root.culture
+							religion = religion:catholic 
+							owner ?= root
+						}
+						split_pop = {
+							fraction = 0.7
+							religion = religion:calvinist
+						}
+					}
+				}
+			}
+			every_owned_location = {
+				limit = { local_control > 0.5 }
+				every_pop = {
+					limit = {
+						culture = root.culture
+						religion = religion:catholic 
+						owner ?= root
+					}
+					split_pop = {
+						fraction = 0.1
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+		
+		add_stability = stability_severe_penalty
+		
+		ai_will_select = { value = -500 }
+	}
+	option = {
+		name = icd_reformation_push.5.c  ##not interested##
+		
+		
+	}
+}
+
+
+
+
+
+
+icd_reformation_push.6 = { ###luneburg##
+	type = country_event
+	title = icd_reformation_push.6.title
+	desc = icd_reformation_push.6.desc
+	outcome = neutral
+
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+	
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = LUN
+		from = 1525.1.1
+		to = 1580.1.1
+		monthly_chance = 10
+	}
+	
+	trigger = {
+		is_subject = no
+		religion = religion:catholic
+		religion:lutheran = { is_religion_enabled = yes }
+		NOT = { is_leader_of_international_organization = international_organization:hre }
+		
+		has_ruler = yes
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+	
+		ruler ?= {
+			save_scope_as = target_ruler
+		}
+	}
+
+	option = {
+		name = icd_reformation_push.5.a  ##okay##
+		historical_option = yes
+		
+		change_religion = religion:lutheran
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:lutheran }
+		
+		hidden_effect = {
+			capital.area = {
+				every_location_in_area = {
+					every_pop = {
+						limit = {
+							culture = root.culture
+							religion = religion:catholic 
+							owner ?= root
+						}
+						split_pop = {
+							fraction = 0.7
+							religion = religion:lutheran
+						}
+					}
+				}
+			}
+			every_owned_location = {
+				limit = { local_control > 0.5 }
+				every_pop = {
+					limit = {
+						culture = root.culture
+						religion = religion:catholic 
+						owner ?= root
+					}
+					split_pop = {
+						fraction = 0.1
+						religion = religion:lutheran
+					}
+				}
+			}
+		}
+		
+		scope:target_ruler = {
+			set_nickname = icd_the_confessor
+		}
+		
+		add_stability = stability_severe_penalty
+	}
+	
+	option = {
+		name = icd_reformation_push.6.b  ##not interested##
+		
+	}
+}
+
+icd_reformation_push.7 = { ###religious zeal dying down##
+	type = country_event
+	title = icd_reformation_push.7.title
+	desc = icd_reformation_push.7.desc
+	outcome = neutral
+	image = "gfx/interface/illustrations/situation/reformation.dds"
+
+
+	immediate = {
+	
+	}
+
+	option = {
+		name = icd_reformation_push.7.a  ##okay##
+		
+		every_owned_location = {
+			remove_location_modifier = icd_religious_zeal
+		}
+	}
+}
+
+icd_reformation_push.8 = { ###to all heathens##
+	type = country_event
+	title = icd_reformation_push.8.title
+	desc = icd_reformation_push.8.desc
+	outcome = neutral
+	image = "gfx/interface/illustrations/situation/reformation.dds"
+
+
+	immediate = {
+	
+	}
+
+	option = {
+		name = icd_reformation_push.8.a  ##fiercely resist this##
+		
+		add_country_modifier = {
+			modifier = icd_rejection_of_novel_religions
+			years = 35
+		}
+	}
+	
+	option = {
+		name = icd_reformation_push.8.b  ##no##
+		
+		ai_will_select = {
+			value = 50000
+		}
+	}
+}
+
+
+icd_reformation_push.9 = { ###calvins takeover of geneva##
+	type = country_event
+	title = icd_reformation_push.9.title
+	desc = icd_reformation_push.9.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+	
+	fire_only_once = yes
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:clergy_estate }
+		
+		random_country = {
+			limit = { religion = religion:calvinist }
+			save_scope_as = target_exile
+		}
+		
+		character:john_calvin = {
+			save_scope_as = john_calvin
+		}
+	}
+	
+	option = { ##calvins triumph##
+		name = icd_reformation_push.9.a
+		custom_tooltip = {
+			text = lots_of_calvinists
+			every_owned_location = {
+				limit = { area = root.capital.area }
+				every_pop = {
+					limit = {
+						religion = religion:catholic
+					}
+					split_pop = {
+						fraction = { 0.4 0.55 }
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			root = {
+				OR = {
+					has_or_had_tag = GNV
+					num_locations_owned_or_owned_by_subjects_or_below < 20
+				}
+			}
+		}
+		hidden_effect = {
+			while = {
+				count = {
+					value = num_characters
+					divide = 4
+				}
+				random_character = {
+					limit = {
+						religion = religion:catholic
+					}
+					change_character_religion = religion:calvinist
+				}
+			}
+		}
+		
+		change_religion = religion:calvinist
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:calvinist }
+		
+		ai_will_select = { value = 400 }
+		
+		trigger_event_silently = {
+			id = icd_reformation_push.10
+			months = 2
+		}
+	}
+	
+	option = { ##calvins failure##
+		name = icd_reformation_push.9.b
+		
+		scope:john_calvin = {
+			move_country = scope:target_exile
+		}
+	}
+	
+	option = { ##nothing happens##
+		name = icd_reformation_push.9.c
+		
+		
+	}
+	
+}
+
+icd_reformation_push.10 = { ###calvins missionary work##
+	type = country_event
+	title = icd_reformation_push.10.title
+	desc = icd_reformation_push.10.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+	
+	fire_only_once = yes
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		
+		character:john_calvin = {
+			save_scope_as = john_calvin
+		}
+	}
+	
+	
+	option = { ##calvins missions##
+		name = icd_reformation_push.10.a
+		
+		if = {
+			limit = {
+				location:geneve = {
+					NOT = {
+						has_building = building_type:university
+					}
+				}
+			}
+			location:geneve = {
+                construct_building = {
+                    building_type = building_type:university
+                    cost_multiplier = 0
+                    cost_multiplier_reason = "game_concept_event"
+                }
+            }
+		}
+		
+		location:geneve = {
+			change_development = development_mild_bonus
+		}
+		
+		religion:calvinist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:john_calvin
+					location = location:montpellier
+				}
+			}
+		}
+		
+		ai_will_select = { value = 200 }
+	}
+	
+	option = { ##well##
+		name = icd_reformation_push.10.b
+	}
+}

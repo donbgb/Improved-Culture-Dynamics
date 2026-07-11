@@ -1,0 +1,638 @@
+﻿icd_tolerance_heathen_law = {
+	icon = icd_tolerance_own
+	law_category = religious
+
+	potential = {
+		num_locations > 0
+		religious_unity < 1.0
+	}
+	locked = {
+		OR = {
+			AND = {
+				has_policy = icd_jewish_charter
+				NOT = {
+					is_human = yes
+					tag = FRA
+					tag = ENG
+					has_policy = state_inquisitors
+					has_policy = spa_inquisition_policy
+					AND = {
+						tag = CAS
+						current_year > 1650
+					}
+					AND = {
+						tag = POR
+						current_year > 1650
+					}
+					religious_unity < 0.5
+				}
+			}
+			AND = {
+				has_policy = icd_jewish_ghetto
+				NOT = {
+					is_human = yes
+					has_policy = state_inquisitors
+					has_policy = spa_inquisition_policy
+					religious_unity < 0.5
+				}
+			}
+			AND = {
+				has_policy = council_of_three_lands_policy
+				NOT = {
+					is_human = yes
+					has_policy = state_inquisitors
+					religious_unity < 0.5
+				}
+			}
+		}
+	}
+	
+	
+	icd_proselytism_heathen = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_conversion_speed_modifier = 0.025
+		}
+		potential = {
+		}
+		
+		allow = {
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		months = 1
+		
+		on_activate = {
+		}
+		
+	}
+	
+	icd_repressive_conversion_heathen = {
+		country_modifier = {
+			global_heathen_pop_conversion_speed_modifier = 0.20
+			global_pop_conversion_speed_modifier = 0.025
+			tolerance_heathen = -1
+		}
+		allow = {
+			NOT = {
+				has_policy = icd_secular_state
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		years = 2
+		
+		on_activate = {
+		}
+		
+	}
+	
+	icd_syncretic_persuasion = {
+		country_modifier = {
+			cultures_capacity_modifier = 0.1
+			global_pop_assimilation_speed_modifier = -0.1
+		}
+		allow = {
+			NOT = {
+				has_policy = icd_secular_state	
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		years = 2
+		
+		on_activate = {
+		}
+		
+	}
+	
+	cultural_religious_subversion = {
+		country_modifier = {
+			global_pop_assimilation_speed_modifier = 0.20
+			global_pop_conversion_speed_modifier = 0.05
+			tolerance_heathen = -1
+			monthly_towards_spiritualist = societal_value_minor_monthly_move
+		}
+		allow = {
+			NOT = {
+				has_policy = self_governing_institutions
+				has_policy = icd_secular_state
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		potential = {
+			has_embraced_institution = institution:confessionalism
+		}
+		estate_preferences = {
+			clergy_estate
+		}
+		
+		
+		
+		years = 2
+	}
+	
+	
+	icd_distinct_civilizations = {
+		country_modifier = {
+			tolerance_heathen = 3
+		}
+		location_modifier = {
+			potential_trigger = {
+					custom_tooltip = icd_distinct_civilizations_tt
+					hidden_trigger = {
+						NOT = {
+							dominant_religion = root.religion
+						}
+						dominant_religion = { 
+							OR = { 
+								group = religion_group:buddhist
+								group = religion_group:christian
+								group = religion_group:dharmic
+								group = religion_group:druze_group
+								group = religion_group:israelite_group
+								group = religion_group:mandean_group
+								group = religion_group:manichaean_group
+								group = religion_group:muslim
+								group = religion_group:yazidi_group
+								group = religion_group:zoroastrian_group
+							} 
+						}
+						OR = {
+							is_overseas_for_owner = yes
+							root = {
+								is_subject = yes
+							}
+						}
+					}
+				}
+			local_heathen_pop_conversion_speed_modifier = -5.0
+		}
+		potential = {
+			has_embraced_institution = institution:enlightenment
+		}
+		allow = {
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		years = 2
+		
+		on_activate = {
+		}
+		ai_will_do = {
+			value = -50
+			if = {
+				limit = {
+					OR = {
+						is_subject_type = trade_company
+					}
+				}
+				add = 700
+			}
+		}
+	}
+	
+
+	icd_protected_faiths_policy = {
+		potential = {
+			NOT = {
+				religion.group = religion_group:christian
+				religion.group = religion_group:muslim
+				religion.group = religion_group:israelite_group
+			}
+		}
+		allow = {
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+			heathen_population_fraction > 0.25
+		}
+		country_modifier = {
+			tolerance_heathen = 2
+		}
+		years = 2
+	}
+	icd_aljama_communities = {
+		potential = {
+			religion.group = religion_group:christian
+			culture = { has_culture_group = culture_group:iberian_group }
+			NOT = {
+				has_variable = icd_no_moriscos_none
+			}
+		}
+		allow = {
+			any_owned_location = {
+			religion_group_percentage = {
+				religion_group = religion_group:muslim
+				value > 0
+				}
+			}
+			NOT = {
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		country_modifier = {
+			tolerance_heathen = 1
+		}
+		location_modifier = {
+			potential_trigger = {
+				custom_tooltip = icd_muslim_morerias_tt
+				hidden_trigger = {
+					OR = {
+						religion_group_percentage = {
+							religion_group = religion_group:israelite_group
+							value > 0
+						}
+						religion_group_percentage = {
+							religion_group = religion_group:muslim
+							value > 0
+						}
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:tonal_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_african_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_european_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_permic_group
+						value = 0
+					}
+					dominant_religion = { group = religion_group:christian }
+				}
+			}
+			local_heathen_pop_conversion_speed_modifier = -2.0
+			building_enslavement_power = -0.100
+		}
+		years = 2
+	}
+	icd_sulh_i_kul = {
+		potential = {
+			has_or_had_tag = MUG
+			religion.group = religion_group:muslim
+		}
+		allow = {
+			religious_school ?= religious_school:din_i_ilahi_school
+			NOT = {
+				has_policy = icd_secular_state
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		country_modifier = {
+			tolerance_heathen = 3.5
+			clergy_estate_target_satisfaction = -0.3
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		ai_will_do = {
+			value = 2000
+		}
+		years = 2
+	}
+	
+	icd_jewish_charter = {
+		potential = {
+			religion.group = religion_group:christian
+		}
+		allow = {
+			any_owned_location = {
+				religion_group_percentage = {
+					religion_group = religion_group:israelite_group
+					value > 0
+				}
+			}
+			NOT = {
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			custom_tooltip = {
+				text = jewish_banned_tt
+				NOT = {
+					has_variable = icd_jewish_banned
+				}
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		country_modifier = {
+			tolerance_heathen = 1.25
+			global_trades_per_burgher = 0.1
+		}
+		location_modifier = {
+			potential_trigger = {
+				custom_tooltip = icd_jewish_charter_tt
+				hidden_trigger = {
+					religion_group_percentage = {
+						religion_group = religion_group:israelite_group
+						value > 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:tonal_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_african_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_european_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_permic_group
+						value = 0
+					}
+					OR = {
+						AND = {
+							religion_group_percentage = {
+								religion_group = religion_group:muslim
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:dharmic
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:buddhist
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:manichaean_group
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:zoroastrian_group
+								value = 0
+							}
+						}
+						is_overseas_for_owner = no
+					}
+					dominant_religion = { group = religion_group:christian }
+				}
+			}
+			local_heathen_pop_conversion_speed_modifier = -3.0
+			building_enslavement_power = -0.100
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+	
+	icd_jewish_ghetto = {
+		potential = {
+			religion.group = religion_group:christian
+		}
+		allow = {
+			any_owned_location = {
+				religion_group_percentage = {
+					religion_group = religion_group:israelite_group
+					value > 0
+				}
+			}
+			NOT = {
+				has_policy = spa_inquisition_policy
+			}
+			custom_tooltip = {
+				text = jewish_banned_tt
+				NOT = {
+					has_variable = icd_jewish_banned
+				}
+			}
+			OR = {
+				current_year > 1600
+				has_global_variable = icd_cum_nimis_absurdum
+			}
+			NOT = {
+				has_policy = icd_secular_state
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		country_modifier = {
+			tolerance_heathen = -0.5
+			global_trades_per_burgher = 0.1
+			pure_tooltip_entry = icd_jewish_ghetto_tt
+		}
+		location_modifier = {
+			potential_trigger = {
+				custom_tooltip = icd_jewish_charter_tt
+				hidden_trigger = {
+					religion_group_percentage = {
+						religion_group = religion_group:israelite_group
+						value > 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:tonal_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_african_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_european_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_permic_group
+						value = 0
+					}
+					OR = {
+						AND = {
+							religion_group_percentage = {
+								religion_group = religion_group:muslim
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:dharmic
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:buddhist
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:manichaean_group
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:zoroastrian_group
+								value = 0
+							}
+						}
+						is_overseas_for_owner = no
+					}
+					dominant_religion = { group = religion_group:christian }
+				}
+			}
+			local_heathen_pop_conversion_speed_modifier = -1.5
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		years = 2
+	}
+	
+	council_of_three_lands_policy = {
+		unique = yes
+		potential = { 
+			has_advance = council_of_three_lands_advance 
+		}
+		allow = { 
+			religion_percentage_in_country = {
+				religion = religion:judaism
+				value > 0
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		country_modifier = {
+			cultures_capacity = 1
+			tolerance_heathen = 1.5
+		}
+		location_modifier = {
+			potential_trigger = {
+				custom_tooltip = icd_jewish_charter_tt
+				hidden_trigger = {
+					religion_group_percentage = {
+						religion_group = religion_group:israelite_group
+						value > 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:tonal_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_african_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_european_group
+						value = 0
+					}
+					religion_group_percentage = {
+						religion_group = religion_group:folk_permic_group
+						value = 0
+					}
+					OR = {
+						AND = {
+							religion_group_percentage = {
+								religion_group = religion_group:muslim
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:dharmic
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:buddhist
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:manichaean_group
+								value = 0
+							}
+							religion_group_percentage = {
+								religion_group = religion_group:zoroastrian_group
+								value = 0
+							}
+						}
+						is_overseas_for_owner = no
+					}
+					dominant_religion = { group = religion_group:christian }
+				}
+			}
+			local_heathen_pop_conversion_speed_modifier = -5.0
+		}
+		
+		years = 2
+	}
+	
+	icd_exalted_dhimmi = {
+		potential = {
+			religion.group = religion_group:muslim
+			country_has_estate = estate_type:dhimmi_estate
+		}
+		allow = {
+			has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+			"estate(estate_type:dhimmi_estate)" = {
+				num_privileges > 5
+			}
+			NOT = {
+				has_policy = icd_secular_state
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		country_modifier = {
+			tolerance_heathen = 1.5
+		}
+		years = 2
+	}
+	
+	icd_yassa_tolerance = {
+		potential = {
+			OR = {
+				government_type = government_type:tribe
+				government_type = government_type:steppe_horde
+			}
+			OR = {
+				culture = { has_culture_group = culture_group:mongolian_group }
+				religion = religion:tengri
+			}
+		}
+		allow = {
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		country_modifier = {
+			tolerance_heathen = 3
+		}
+		years = 2
+	}
+	
+	icd_custodians = {
+		potential = {
+			OR = {
+				religion = religion:judaism
+				religion = religion:samaritanism
+				religion = religion:mandeaism
+			}
+		}
+		allow = {
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		country_modifier = {
+			global_heathen_pop_conversion_speed_modifier = -2.0
+			tolerance_heathen = 3
+		}
+		years = 2
+	}
+}

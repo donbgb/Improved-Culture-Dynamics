@@ -1,0 +1,20 @@
+﻿
+REPLACE:enforce_religion_effect = {
+	$target$ = {
+		change_religion = $actor$.religion
+		change_religion_for_ruler_and_family = { country = $target$ religion = $actor$.religion }
+		capital = {
+			every_pop = {
+				limit = {
+					NOT = {
+						religion = $actor$.religion
+					}
+				}
+				split_pop = {
+					fraction = 0.05
+					religion = $actor$.religion
+				}
+			}
+		}
+	}
+}

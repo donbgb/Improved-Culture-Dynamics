@@ -1,0 +1,51 @@
+﻿
+REPLACE:confessionalism_advance = {
+	icon = pop_promotion_speed_age_4
+	age = age_4_reformation
+		
+	global_pop_conversion_speed = 0.001
+
+	depth = 0
+	
+	allow = { has_embraced_institution = institution:confessionalism }
+}
+
+REPLACE:confessional_court = {
+	age = age_4_reformation
+	icon = court_accounting
+	court_spending_efficiency = 0.1
+	
+	requires = power_projection_advance_3
+}
+
+REPLACE:missionary_schools = {
+	age = age_3_discovery
+	 
+	for = adm
+
+	global_pop_conversion_speed_modifier = 0.1
+}
+
+REPLACE:utr_city_churches = {
+	age = age_1_traditions
+	icon = pop_promotion_speed_age_4
+	potential = {
+		has_or_had_tag = UTR
+	}
+	global_urban_build_buildings_efficiency = 0.1
+
+	requires = legalism_advance
+}
+
+REPLACE:otm_christian_conversion = {
+	icon = otm_nanban_trade
+	age = age_4_reformation
+	potential = {
+		has_or_had_tag = OTM
+	}
+
+	requires = imperial_ambitions
+
+	global_pop_conversion_speed_modifier = 0.1
+	monthly_religious_influence = 0.1
+}

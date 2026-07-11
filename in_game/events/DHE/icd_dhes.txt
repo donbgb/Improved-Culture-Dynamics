@@ -1,0 +1,120 @@
+﻿namespace = icd_dhes
+
+
+
+
+icd_dhes.2 = { #
+	hide_portraits = yes
+	fire_only_once = yes
+	title = icd_dhes.2.title
+	desc = icd_dhes.2.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+
+	dynamic_historical_event = {
+		tag = PAP
+		from = 1540.1.1
+		to = 1650.1.1
+		monthly_chance = 10
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+	}
+
+	trigger = {
+		religion = religion:catholic
+		situation:reformation = {
+			situation_is_active = yes
+		}
+		any_pop = {
+			religion = religion:judaism
+		}
+		has_policy = icd_jewish_charter
+	}
+
+	option = {
+		name = icd_dhes.2.a
+		historical_option = yes
+		
+		add_policy = policy:icd_jewish_ghetto
+		set_global_variable = icd_cum_nimis_absurdum
+		
+		if = {
+			limit = { capital.region = region:italy_region }
+			religion:catholic = {
+				every_country_in_religion = {
+					limit = {
+						capital.region = region:italy_region
+					}
+					trigger_event_non_silently = {
+						id = icd_dhes.3
+						days = 10
+					}
+				}
+			}
+		}
+		else = {
+			every_neighbor_country = {
+				limit = {
+					capital.region = region:italy_region
+					religion = religion:catholic
+				}
+				trigger_event_non_silently = {
+					id = icd_dhes.3
+					days = 10
+				}
+			}
+		}
+		
+		ai_will_select = { value = 20 }
+	}
+
+	option = {
+		name = icd_dhes.2.b
+	}
+}
+
+
+icd_dhes.3 = { #
+	hide_portraits = yes
+	fire_only_once = yes
+	title = icd_dhes.3.title
+	desc = icd_dhes.3.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = icd_dhes.3.a
+		historical_option = yes
+		
+		add_policy = policy:icd_jewish_ghetto
+	}
+
+	option = {
+		name = icd_dhes.3.b
+		
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+		
+		c:PAP = {
+			add_opinion = {
+				target = root
+				modifier = opinion_angry
+			}
+		}
+	}
+}
+

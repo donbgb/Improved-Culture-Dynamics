@@ -4,10 +4,3 @@
 	
 	requires = unlock_cavalry_advance
 }
-
-unlock_tribal_cavalry_discovery_advance = {
-	age = age_3_discovery
-	unlock_levy = levy_tribal_cavalry_discovery
-	
-	requires = unlock_lancers_advance
-}

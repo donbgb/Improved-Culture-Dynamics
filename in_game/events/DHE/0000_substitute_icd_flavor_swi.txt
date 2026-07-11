@@ -1,0 +1,592 @@
+﻿namespace = flavor_swi
+#README
+# events 1 - 99 are events specifically for the united tag of Switzerland
+# events 100 - 999 are events for the Swiss Confederation IO
+# events 1000+ are dynamic historical events for the different Swiss cantons (+ unified Switzerland too)
+
+
+#The Switzerland and the Empire
+
+scripted_effect core_and_seize_swiss_lands = {
+	every_location_in_area = {
+		limit = {
+			is_ownable = yes
+			NOT = { is_core_of = root }
+		}
+		add_core = root
+	}
+	every_location_in_area = {
+		limit = {
+			has_owner = yes
+			NOT = { owner = root }
+			owner ?= {
+				NOT = { is_member_of_international_organization = international_organization:swiss_confederation }
+				is_subject_or_below_of = root
+			}
+		}
+		change_location_owner = root
+	}
+}
+
+#The Swiss Confederation and the Reformation
+
+#Zwingli's Reformation in Switzerland
+flavor_swi.1100 = { #Zwingli is appointed as preacher
+	type = country_event
+	title = flavor_swi.1100.title
+	desc = flavor_swi.1100.desc
+	outcome = neutral
+	historical_info = flavor_swi.1100.historical_info
+
+	fire_only_once = yes
+
+	dynamic_historical_event = {
+		tag = SWI
+		tag = BCH
+		tag = STG
+		tag = ZUR
+		tag = SYZ
+		tag = GLR
+		tag = URI
+		tag = OBW
+		tag = LCU
+		tag = SIT
+		tag = BRN
+		tag = SLT
+		tag = NEU
+		tag = BAS
+		tag = LSA
+		tag = KYB
+		tag = TRN
+		tag = GNV
+		tag = SCL
+		tag = WER
+		from = 1504.1.1
+		to = 1514.1.1
+		monthly_chance = 20
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
+
+		character:swi_huldrych_zwingli = {
+			save_scope_as = target_character
+		}
+		random_neighbor_country = {
+			save_scope_as = exile_destination
+		}
+	}
+
+	trigger = {
+		OR = {
+			owns = location:bern
+			owns = location:glarus
+			owns = location:zurich
+		}
+		religion.group = religion_group:christian
+		character:swi_huldrych_zwingli ?= {
+			is_alive = yes
+			owner = root
+		}
+	}
+
+	option = {
+		name = flavor_swi.1100.a
+		historical_option = yes
+
+		add_prestige = prestige_mild_penalty
+	}
+
+}
+
+flavor_swi.1101 = { #Zwingli is accused as a heretic
+	type = country_event
+	title = flavor_swi.1101.title
+	desc = flavor_swi.1101.desc
+	outcome = neutral
+	historical_info = flavor_swi.1101.historical_info
+
+	fire_only_once = yes
+
+	dynamic_historical_event = {
+		tag = SWI
+		tag = BCH
+		tag = STG
+		tag = ZUR
+		tag = SYZ
+		tag = GLR
+		tag = URI
+		tag = OBW
+		tag = LCU
+		tag = SIT
+		tag = BRN
+		tag = SLT
+		tag = NEU
+		tag = BAS
+		tag = LSA
+		tag = KYB
+		tag = TRN
+		tag = GNV
+		tag = SCL
+		tag = WER
+		from = 1516.1.1
+		to = 1526.1.1
+		monthly_chance = 50
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+
+		random_neighbor_country = {
+			save_scope_as = exile_destination
+		}
+		character:swi_huldrych_zwingli ?= {
+			save_scope_as = target_character
+		}
+	}
+
+	trigger = {
+		character:swi_huldrych_zwingli ?= {
+			is_alive = yes
+			owner = root
+		}
+	}
+
+	option = {
+		name = flavor_swi.1101.a
+		historical_option = yes
+
+		scope:target_character = {
+			change_character_religion = religion:calvinist
+		}
+		custom_tooltip = flavor_swi.conversion.tt
+		hidden_effect = {
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						owner = root
+						religion = religion:catholic
+					}
+					split_pop = {
+						fraction = 0.1
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+		root = {
+			trigger_event_non_silently = {
+				id = flavor_swi.1102
+				days = 15
+			}
+		}
+
+		ai_will_select  = { value = 100 }
+
+	}
+
+	option = {
+		name = flavor_swi.1101.b
+
+		custom_tooltip = flavor_swi.conversion.tt
+		hidden_effect = {
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						religion = religion:catholic
+					}
+					split_pop = {
+						fraction = 0.05
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_extreme_penalty }
+		scope:target_character = {
+			move_country = scope:exile_destination
+			change_character_religion = religion:calvinist
+		}
+	}
+}
+
+flavor_swi.1102 = { #Disputation of Zürich
+	type = country_event
+	title = flavor_swi.1102.title
+	desc = flavor_swi.1102.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:nobles_estate }
+
+		character:swi_huldrych_zwingli = {
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = flavor_swi.1102.a
+		historical_option = yes
+
+		set_variable = swi_zwingli_won_debate
+		custom_tooltip = flavor_swi.large_conversion.tt
+		hidden_effect = {
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						religion = religion:catholic
+					}
+					split_pop = {
+						fraction = 0.1
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+		
+		ai_will_select  = { value = 100 }
+	}
+
+	option = {
+		name = flavor_swi.1102.b
+
+		set_variable = swi_zwingli_imprisoned_debate
+		scope:target_character = {
+			add_character_modifier = {
+				modifier = refuses_to_serve_in_cabinet
+				years = -1
+				mode = add_and_extend
+			}
+		}
+	}
+}
+
+flavor_swi.1103 = { #Conversion of Zwingli
+	type = country_event
+	title = flavor_swi.1103.title
+	desc = flavor_swi.1103.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	dynamic_historical_event = {
+		tag = SWI
+		tag = BCH
+		tag = STG
+		tag = ZUR
+		tag = SYZ
+		tag = GLR
+		tag = URI
+		tag = OBW
+		tag = LCU
+		tag = SIT
+		tag = BRN
+		tag = SLT
+		tag = NEU
+		tag = BAS
+		tag = LSA
+		tag = KYB
+		tag = TRN
+		tag = GNV
+		tag = SCL
+		tag = WER
+		from = 1522.1.1
+		to = 1544.1.1
+		monthly_chance = 100
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+
+		random_neighbor_country = {
+			save_scope_as = exile_destination
+		}
+		character:swi_huldrych_zwingli = {
+			save_scope_as = target_character
+		}
+	}
+
+	trigger = {
+		custom_tooltip = {
+			text = variable_swi_zwingli_won_debate_tt
+			has_variable = swi_zwingli_won_debate
+		}
+		dominant_religion = religion:calvinist
+	}
+
+	option = {
+		name = flavor_swi.1103.a
+
+		change_religion = religion:calvinist
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:calvinist }
+		add_stability = stability_weak_bonus
+		scope:target_character = {
+			change_character_religion = religion:calvinist
+		}
+		
+		every_neighbor_country = {
+			limit = {
+				is_member_of_international_organization = international_organization:swiss_confederation
+				culture = culture:high_alemannic
+				any_pop = {
+					culture = culture:high_alemannic
+				}
+			}
+			trigger_event_non_silently = {
+				id = flavor_swi.9990
+				days = 15
+			}
+		}
+	}
+}
+
+flavor_swi.1104 = { #Zwingli Imprisoned - Peasants Revolt
+	hide_portraits = yes
+	type = country_event
+	title = flavor_swi.1104.title
+	desc = flavor_swi.1104.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	dynamic_historical_event = {
+		tag = SWI
+		tag = BCH
+		tag = STG
+		tag = ZUR
+		tag = SYZ
+		tag = GLR
+		tag = URI
+		tag = OBW
+		tag = LCU
+		tag = SIT
+		tag = BRN
+		tag = SLT
+		tag = NEU
+		tag = BAS
+		tag = LSA
+		tag = KYB
+		tag = TRN
+		tag = GNV
+		tag = SCL
+		tag = WER
+		from = 1516.1.1
+		to = 1544.1.1
+		monthly_chance = 40
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		random_neighbor_country = {
+			save_scope_as = exile_destination
+		}
+		character:swi_huldrych_zwingli = {
+			save_scope_as = target_character
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					any_rebel = {
+						rebel_name_key = zwingli_support_rebels
+					}
+				}
+			}
+			create_rebel = {
+				category = estate
+				name = zwingli_support_rebels
+				save_scope_as = target_zwingli_support_rebels
+				estate = peasants_estate
+			}
+		}
+		else = {
+			random_rebel = {
+				limit = {
+					rebel_name_key = zwingli_support_rebels
+				}
+				save_scope_as = target_zwingli_support_rebels
+				add_rebel_progress = rebel_progress_mild_penalty
+			}
+		}
+	}
+
+	trigger = {
+		custom_tooltip = {
+			text = variable_swi_zwingli_imprisoned_debate_tt
+			has_variable = swi_zwingli_imprisoned_debate
+		}
+		dominant_religion = religion:calvinist
+		character:swi_huldrych_zwingli = {
+			is_alive = yes
+			owner = root
+		}
+	}
+
+	option = {
+		name = flavor_swi.1104.a
+
+		custom_tooltip = {
+			text = zwingli_support_rebels_joining
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						owner = root
+						religion = religion:calvinist
+					}
+					add_pop_satisfaction = pop_satisfaction_ultimate_penalty
+					change_pop_allegiance = scope:target_zwingli_support_rebels
+				}
+			}
+		}
+	}
+
+	option = {
+		name = flavor_swi.1104.b
+
+		scope:target_character = {
+			remove_character_modifier = refuses_to_serve_in_cabinet
+			change_character_religion = religion:calvinist
+		}
+		add_stability = stability_mild_penalty
+	}
+	
+	option = {
+		name = flavor_swi.1104.c
+
+		scope:target_character = {
+			remove_character_modifier = refuses_to_serve_in_cabinet
+			change_character_religion = religion:calvinist
+		}
+		add_stability = stability_mild_penalty
+		change_religion = religion:calvinist
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:calvinist }
+		
+		every_neighbor_country = {
+			limit = {
+				is_member_of_international_organization = international_organization:swiss_confederation
+				culture = culture:high_alemannic
+				any_pop = {
+					culture = culture:high_alemannic
+				}
+			}
+			trigger_event_non_silently = {
+				id = flavor_swi.9990
+				days = 2
+			}
+		}
+	}
+}
+
+flavor_swi.9990 = { #teachings spread ##
+	hide_portraits = yes
+	type = country_event
+	title = flavor_swi.9990.title
+	desc = flavor_swi.9990.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		character:swi_huldrych_zwingli = {
+			save_scope_as = target_character
+		}
+
+	}
+	
+	option = {
+		name = flavor_swi.9990.a
+		custom_tooltip = flavor_swi.german_conversion.tt
+		hidden_effect = {
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						religion = religion:catholic
+						culture = culture:high_alemannic
+					}
+					split_pop = {
+						fraction = 0.2
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = flavor_swi.9990.b
+		
+		custom_tooltip = flavor_swi.german_conversion.tt
+		hidden_effect = {
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						religion = religion:catholic
+						culture = culture:high_alemannic
+					}
+					split_pop = {
+						fraction = 0.25
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+		
+		change_religion = religion:calvinist
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:calvinist }
+	}
+	
+	option = {
+		name = flavor_swi.9990.c
+
+		custom_tooltip = flavor_swi.german_conversion.tt
+		hidden_effect = {
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						religion = religion:catholic
+						culture = culture:high_alemannic
+					}
+					split_pop = {
+						fraction = 0.05
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+		
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+	}
+}

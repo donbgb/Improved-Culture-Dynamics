@@ -17,16 +17,11 @@ icd_muslim_events.1 = { #
 				value > 0.25
 			}
 		}
+		own_entire_area = area:bosnia_area
 		any_owned_location = {
 			area = area:bosnia_area
-		}
-		NOT = {
-			any_country = {
-				religion.group = religion_group:christian
-				culture_population_in_country = {
-					culture = culture:bosnian
-					value > 12.000
-				}
+			NOT = {
+				integration_level = conquered 
 			}
 		}
 	}
@@ -78,7 +73,7 @@ icd_muslim_events.1 = { #
 				}
 				add_location_modifier = {
 					modifier = icd_muslim_bosnia
-					years = 6
+					years = 50
 					mode = add_and_extend
 				}
 			}
@@ -105,7 +100,7 @@ icd_muslim_events.1 = { #
 				every_pop = {
 					limit = { culture = culture:bosnian }
 					split_pop = {
-						fraction = 0.2
+						fraction = 0.3
 						religion = root.religion
 					}
 				}

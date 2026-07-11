@@ -1,0 +1,759 @@
+﻿namespace = icd_reformed
+
+scripted_effect add_to_reformer_list = {
+	add_to_global_variable_list = {
+		name = reformer_list
+		target = scope:target_character
+	}
+}
+
+icd_reformed.1 = { #andreas karlstadt#
+	type = country_event
+	category = situation_event
+	title = icd_reformed.1.title
+	desc = icd_reformed.1.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_andrew
+			last_name = Karlstadt
+			religion = religion:lutheran
+			birth_date = 1486.1.1
+			birth_location = location:karlstadt
+			estate = estate_type:clergy_estate
+			adm = { 40 80 }
+			dip = { 40 70 }
+			mil = { 40 70 }
+			script = icd_reformer_andreas_karlstadt
+			save_scope_as = target_character
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		
+		character:martin_luther = {
+			owner ?= { 
+				save_scope_as = target_country
+			}
+		}
+		
+		hidden_effect = {
+			location:leipzig = {
+				owner = {
+					trigger_event_silently = {
+						id = icd_reformed.2
+						months = 2
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			character:icd_reformer_andreas_karlstadt = {
+				owner = {
+					trigger_event_silently = {
+						id = icd_reformed.3
+						years = 3
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = reformation.1.a
+		
+		character:icd_reformer_andreas_karlstadt = { 
+			move_country = scope:target_country
+		}
+	}
+}
+
+icd_reformed.2 = { #The Leipzig Debate
+	type = country_event
+	title = flavor_mei.190.title
+	desc = flavor_mei.190.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		create_character = {
+			first_name = name_john
+			last_name = Maier_von_Eck
+			birth_date = 1486.11.13
+			birth_location = location:memmingen
+			estate = estate_type:clergy_estate
+			adm = { 40 75 }
+			dip = { 40 75 }
+			mil = { 10 50 }
+			culture = culture:swabian
+			save_scope_as = target_character2
+			create_in_limbo = yes
+		}
+		
+		character:icd_reformer_andreas_karlstadt = { 
+			move_country = root
+		}
+	}
+
+	trigger = {
+		owns = location:leipzig
+		religion:lutheran = {
+			is_religion_enabled = yes
+		}
+		always = no
+		character:icd_reformer_andreas_karlstadt = {
+			is_alive = yes
+		}
+	}
+
+	option = {
+		name = flavor_mei.190.a
+		historical_option = yes
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_severe_penalty }
+		hidden_effect = {
+			kill_character_silently = scope:target_character2
+  		}
+	}
+
+	option = {
+		name = flavor_mei.190.b
+		scope:target_character2 = {
+			move_country = root
+		}
+		add_religious_influence = religious_influence_severe_bonus
+		change_societal_value = { type = traditionalist_vs_innovative value = societal_value_large_move_to_left }
+		change_societal_value = { type = spiritualist_vs_humanist value = societal_value_large_move_to_left }
+		hidden_effect = {
+  		}
+	}
+
+	option = {
+		name = flavor_mei.190.c
+		scope:target_character = {
+			move_country = root
+		}
+		add_religious_influence = religious_influence_severe_penalty
+		change_societal_value = { type = traditionalist_vs_innovative value = societal_value_large_move_to_right }
+		change_societal_value = { type = spiritualist_vs_humanist value = societal_value_large_move_to_right }
+		
+	}
+}
+
+icd_reformed.3 = { # karlstadt changes views#
+	type = country_event
+	category = situation_event
+	title = icd_reformed.3.title
+	desc = icd_reformed.3.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+
+		character:icd_reformer_andreas_karlstadt = {
+			save_scope_as = target_character
+		}
+	}
+	
+	trigger = {
+		character:icd_reformer_andreas_karlstadt = {
+			is_alive = yes
+		}
+	}
+
+	option = {
+		name = icd_reformed.3.a
+		
+		scope:target_character = {
+			change_character_religion = religion:calvinist
+			owner ?= {
+				capital ?= {
+					every_pop = {
+						limit = {
+							OR = {
+								religion = religion:lutheran
+								religion = religion:catholic
+							}
+						}
+						split_pop = {
+							fraction = 0.1
+							religion = religion:calvinist
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = icd_reformed.3.b ##has he ever heard of anabaptism#
+		
+		scope:target_character = {
+			change_character_religion = religion:anabaptist
+			owner ?= {
+				capital ?= {
+					every_pop = {
+						limit = {
+							OR = {
+								religion = religion:lutheran
+								religion = religion:catholic
+							}
+						}
+						split_pop = {
+							fraction = 0.1
+							religion = religion:anabaptist
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+icd_reformed.4 = { #johannes oecolampadius
+	type = country_event
+	category = situation_event
+	title = reformation.3.title
+	desc = reformation.3.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_john
+			last_name = Hussgen
+			religion = religion:calvinist
+			birth_date = 1482.1.1
+			culture = culture:ripuarian_franconian
+			birth_location = location:heilbronn
+			estate = estate_type:clergy_estate
+			adm = { 60 90 }
+			dip = { 60 90 }
+			mil = { 60 90 }
+			script = icd_johannes_oecolampadius
+			save_scope_as = target_character
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:basel = {
+			save_scope_as = target_location
+			set_variable = received_reformer
+		}
+	}
+	
+	option = {
+		name = reformation.3.a
+		
+		religion:calvinist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+		
+		location:basel = {
+			every_pop = {
+				limit = {
+					OR = {
+						religion = religion:catholic
+						religion = religion:lutheran
+					}
+				}
+				split_pop = {
+					fraction = 0.1
+					religion = religion:calvinist
+				}
+			}
+		}
+	}
+}
+
+
+
+icd_reformed.5 = { #preachers in strassburg#
+	type = country_event
+	category = situation_event
+	title = icd_reformed.5.title
+	desc = icd_reformed.5.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_matthew
+			last_name = Zell
+			religion = religion:lutheran
+			birth_date = 1477.9.21
+			culture = culture:rhine_franconian
+			birth_location = location:strasbourg
+			estate = estate_type:clergy_estate
+			adm = { 60 90 }
+			dip = { 60 90 }
+			mil = { 60 90 }
+			script = icd_matthaus_zell
+			save_scope_as = target_character_two
+		}
+		add_to_global_variable_list = {
+			name = reformer_list
+			target = scope:target_character_two
+		}
+		create_character = {
+			first_name = name_martin
+			last_name = Bucer
+			religion = religion:calvinist
+			birth_date = 1491.10.11
+			culture = culture:high_alemannic
+			birth_location = location:benfeld
+			estate = estate_type:clergy_estate
+			adm = { 60 90 }
+			dip = { 60 90 }
+			mil = { 60 90 }
+			script = icd_martin_bucer
+			save_scope_as = target_character
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		
+		location:strasbourg = {
+			save_scope_as = target_location
+			set_variable = received_reformer
+		}
+	}
+	
+	option = {
+		name = icd_reformed.5.a
+		
+		religion:calvinist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+		
+		religion:lutheran = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character_two
+					location = scope:target_location
+				}
+			}
+		}
+	}
+}
+
+icd_reformed.6 = { #Jan laski 
+	type = country_event
+	category = situation_event
+	title = reformation.3.title
+	desc = reformation.3.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_john
+			last_name = Laski
+			culture = culture:greater_polish
+			birth_location = location:szadek
+			religion = religion:calvinist
+			script = icd_john_laski
+			birth_date = 1490.1.1
+			estate = estate_type:clergy_estate
+			adm = { 40 90 }
+			dip = { 40 90 }
+			mil = { 40 90 }
+			save_scope_as = target_character
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:kielce = {
+			save_scope_as = target_location
+			set_variable = received_reformer
+			hidden_effect = {
+				every_pop = {
+					limit = { religion = religion:lutheran 
+						owner ?= {
+							NOT = {
+								religion = religion:lutheran
+							}
+						}
+					}
+					split_pop = {
+						fraction = 0.8
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = reformation.3.a
+
+		religion:calvinist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+	}
+}
+
+icd_reformed.7 = { #Caspar Schwenckfeld 
+	type = country_event
+	category = situation_event
+	title = reformation.3.title
+	desc = reformation.3.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_casper
+			last_name = Schwenckfeld
+			culture = culture:german_silesian
+			birth_location = location:legnica
+			religion = religion:lutheran
+			script = icd_caspar_schwenckfeld
+			birth_date = 1489.1.1
+			estate = estate_type:clergy_estate
+			adm = { 40 90 }
+			dip = { 40 90 }
+			mil = { 40 90 }
+			save_scope_as = target_character
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:legnica = {
+			save_scope_as = target_location
+			set_variable = received_reformer
+		}
+		
+		trigger_event_silently = {
+			id = icd_radical_reformation.4
+			years = 3
+		}
+	}
+
+	option = {
+		name = reformation.3.a
+
+		religion:lutheran = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:target_location = {
+					owner ?= {
+						has_or_had_tag = LGC
+					}
+				}
+			}
+			scope:target_location.owner = {
+				trigger_event_non_silently = {
+					id = icd_reformed.8
+					months = 1
+				}
+			}
+		}
+	}
+}
+
+icd_reformed.8 = { #convert legnica# 
+	type = country_event
+	category = situation_event
+	title = icd_reformed.8.title
+	desc = icd_reformed.8.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+
+		character:icd_caspar_schwenckfeld = {
+			save_scope_as = target_character
+		}
+		
+		ruler ?= {
+			save_scope_as = target_ruler
+		}
+	}
+
+	option = {
+		name = icd_reformed.8.a
+		historical_option = yes
+	
+		change_religion = religion:lutheran
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:lutheran }
+	}
+	
+	option = {
+		name = icd_reformed.8.b
+	}
+}
+
+icd_reformed.9 = { #Johannes Bugenhagen# 
+	type = country_event
+	category = situation_event
+	title = reformation.3.title
+	desc = reformation.3.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_john
+			last_name = Bugenhagen
+			culture = culture:eastern_pomeranian
+			birth_location = location:stettin
+			religion = religion:lutheran
+			script = icd_john_bugenhagen
+			birth_date = 1485.6.24
+			estate = estate_type:clergy_estate
+			adm = { 80 95 }
+			dip = { 40 90 }
+			mil = { 40 50 }
+			save_scope_as = target_character
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:stettin = {
+			save_scope_as = target_location
+			set_variable = received_reformer
+		}
+	}
+
+	option = {
+		name = reformation.3.a
+
+		religion:lutheran = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+	}
+}
+
+icd_reformed.10 = { #Caspar Olevian# 
+	type = country_event
+	category = situation_event
+	title = icd_reformed.10.title
+	desc = icd_reformed.10.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_casper
+			last_name = Olevian
+			culture = culture:ripuarian_franconian
+			birth_location = location:trier
+			religion = religion:calvinist
+			script = icd_caspar_olevian
+			birth_date = 1536.8.10
+			estate = estate_type:clergy_estate
+			adm = { 80 95 }
+			dip = { 60 80 }
+			mil = { 60 80 }
+			save_scope_as = target_character
+		}
+		
+		location:heidelberg = {
+			save_scope_as = target_location
+			set_variable = received_reformer
+		}
+	}
+
+	option = {
+		name = icd_reformed.10.a
+		
+		hidden_effect = {
+			add_to_reformer_list = yes
+			situation:reformation = {
+				var:lutheran_character = {
+					save_scope_as = target_luther
+				}
+			}
+		}
+
+		religion:calvinist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+
+		hidden_effect = {
+			capital.area = {
+				every_location_in_area = {
+					every_pop = {
+						limit = {
+							culture = root.culture
+							religion = religion:lutheran 
+							owner ?= root
+						}
+						split_pop = {
+							fraction = { 0.3 0.6 }
+							religion = religion:calvinist
+						}
+					}
+				}
+			}
+			every_owned_location = {
+				limit = { local_control > 0.5 }
+				every_pop = {
+					limit = {
+						culture = root.culture
+						religion = religion:lutheran 
+						owner ?= root
+					}
+					split_pop = {
+						fraction = { 0.3 0.45 }
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = icd_reformed.10.b
+
+		hidden_effect = {
+			kill_character_silently = scope:target_character
+		}
+	}
+}

@@ -47,9 +47,23 @@ INJECT:cultural_traditions_law = {
 	}
 }
 
-
-
-
-
+INJECT:marriage_law = {
+	icd_abrahamic_marriage = {
+		potential = {
+			AND = {
+				religion = religion:hussite
+				has_religious_aspect = religious_aspect:icd_anabaptist_polygamy
+			}
+		}
+		country_modifier = {
+			female_spouses = 4
+			male_spouses = 1
+		}
+		estate_preferences = {
+			clergy_estate
+		}
+		years = 2
+	}
+}
 
 

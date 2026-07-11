@@ -57,11 +57,14 @@
 						}
 					}
 					root.owner ?= { culture = culture:adhari_culture }
-					AND = {
-						NOT = {
-							culture:azeri_culture = { is_accepted_in = root.owner }
+					root.owner ?= {
+						AND = {
+							NOT = {
+								culture = culture:azeri_culture
+								culture:azeri_culture = { is_accepted_in = root.owner }
+							}
+							culture:adhari_culture = { is_accepted_in = root.owner }
 						}
-						culture:adhari_culture = { is_accepted_in = root.owner }
 					}
 				}
 			}
@@ -139,6 +142,7 @@
 					root.owner ?= {
 						AND = {
 							NOT = {
+								culture = culture:azeri_culture
 								culture:azeri_culture = { is_accepted_in = root.owner }
 							}
 							culture:adhari_culture = { is_accepted_in = root.owner }

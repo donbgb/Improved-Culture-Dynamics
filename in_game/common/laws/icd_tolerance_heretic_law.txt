@@ -1,0 +1,399 @@
+﻿icd_tolerance_heretic_law = {
+	icon = icd_tolerance_own
+	law_category = religious
+
+	potential = {
+		num_locations > 0
+		religious_unity < 1.0
+	}
+	
+	locked = {
+		OR = {
+			has_policy = papal_control
+			has_policy = local_courts
+			has_policy = state_inquisitors
+			has_policy = spa_inquisition_policy
+		}
+	}
+	
+	
+	icd_proselytism_heretic = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_conversion_speed_modifier = 0.020
+		}
+		potential = {
+		}
+		allow = {
+			NOT = {
+				has_policy = papal_control
+				has_policy = local_courts
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		months = 1
+		
+		on_activate = {
+		}
+		
+	}
+	
+	icd_repressive_conversion_heretic = {
+		country_modifier = {
+			global_heretic_pop_conversion_speed_modifier = 0.20
+			global_pop_conversion_speed_modifier = 0.025
+			tolerance_heretic = -1
+		}
+		allow = {
+			NOT = {
+				has_policy = icd_secular_state
+			}
+			NOT = {
+				has_policy = papal_control
+				has_policy = local_courts
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		years = 2
+		
+		on_activate = {
+		}
+		
+	}
+
+	icd_liberty_of_conscience = {
+		country_modifier = {
+			tolerance_heretic = 3
+			global_pop_conversion_speed_modifier = -0.3
+			clergy_estate_target_satisfaction = -0.15
+		}
+		potential = {
+			has_embraced_institution = institution:enlightenment
+		}
+		allow = {
+			NOT = {
+				has_policy = papal_control
+				has_policy = local_courts
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		years = 2
+		
+		on_activate = {
+		}
+		
+	}
+	
+	icd_ecumenic_traditions = {
+		country_modifier = {
+			tolerance_heretic = 0.5
+		}
+		potential = {
+			OR = {
+				culture = { has_culture_group = culture_group:slavic_group }
+				culture = { has_culture_group = culture_group:carpathian_group }
+			}
+			religion.group = religion_group:christian
+		}
+		allow = {
+			NOT = {
+				has_policy = papal_control
+				has_policy = local_courts
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		location_modifier = {
+			potential_trigger = {
+					custom_tooltip = icd_ecumenic_traditions_tt
+					hidden_trigger = {
+						OR = {
+							religion_percentage = {
+								religion = religion:orthodox
+								value > 0.05
+							}
+							religion_percentage = {
+								religion = religion:catholic
+								value > 0.05
+							}
+						}
+						religion_percentage = {
+							religion = religion:lutheran
+							value = 0
+						}
+						religion_percentage = {
+							religion = religion:lollardy
+							value = 0
+						}
+						religion_percentage = {
+							religion = religion:bogomilism
+							value = 0
+						}
+						religion_percentage = {
+							religion = religion:calvinist
+							value = 0
+						}
+						religion_percentage = {
+							religion = religion:catharism
+							value = 0
+						}
+						religion_percentage = {
+							religion = religion:hussite
+							value = 0
+						}
+						religion_percentage = {
+							religion = religion:waldensian
+							value = 0
+						}
+						religion_percentage = {
+							religion = religion:strigolniki
+							value = 0
+						}
+						dominant_religion = { group = religion_group:christian }
+					}
+				}
+			local_heretic_pop_conversion_speed_modifier = -1.5
+		}
+		years = 2
+		
+		on_activate = {
+		}
+	}
+	
+	icd_city_of_faiths = {
+		country_modifier = {
+			tolerance_heretic = 3.0
+			national_lutheranism_movement_resistance_modifier = 1.0
+			national_calvinism_movement_resistance_modifier = 1.0
+		}
+		potential = {	
+			OR = {
+				religion = religion:calvinist
+				religion = religion:lutheran
+				religion = religion:anabaptist
+			}
+			government_type = government_type:republic
+		}
+		years = 2
+		allow = {
+			NOT = {
+				has_policy = papal_control
+				has_policy = local_courts
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+			NOT = {
+				"religion_percentage_in_country(religion:catholic)" > 0.45
+				capital ?= {
+					dominant_religion = religion:catholic
+				}
+			}
+		}
+		on_activate = {
+		}
+		
+		
+		ai_will_do = {
+			if = {
+				limit = {
+					tag = SFC
+				}
+				value = 6000
+			}
+		}
+		
+	}
+	
+	icd_edict_of_torda = {
+		country_modifier = {
+			tolerance_heretic = 2.25
+			diplomatic_reputation = -2
+		}
+		potential = {	
+			OR = {
+				has_or_had_tag = TRA
+				has_or_had_tag = HUN
+			}
+			religion.group = religion_group:christian
+			has_variable = icd_unlocked_torda
+		}
+		years = 2
+		allow = {
+			NOT = {
+				has_policy = papal_control
+				has_policy = local_courts
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		on_activate = {
+		}
+		
+		
+		ai_will_do = {
+			if = {
+				limit = {
+					OR = {
+						religious_unity < 0.5
+						is_leader_of_international_organization = international_organization:hre
+						is_subject = yes
+					}
+				}
+				value = -6000
+			}
+		}
+		
+	}
+	
+	icd_dharmic_coexistence = {
+		country_modifier = {
+			tolerance_heretic = 1.75
+		}
+		potential = {
+			religion.group = religion_group:dharmic
+		}
+		allow = {
+			NOT = {
+				has_policy = papal_control
+				has_policy = local_courts
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		years = 2
+		
+		on_activate = {
+		}
+		
+	}
+	
+	icd_islamic_orthopraxy = {
+		country_modifier = {
+			clergy_estate_target_satisfaction = -0.025
+			tolerance_heretic = 2
+		}
+		allow = {
+			NOT = {
+				has_policy = papal_control
+				has_policy = local_courts
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		potential = {
+			religion.group = religion_group:muslim
+			OR = {
+				government_type = government_type:tribe
+				government_type = government_type:steppe_horde
+				culture = culture:turkoman_culture
+				culture = { has_culture_group = culture_group:mongolian_group }
+				has_or_had_tag = TIM
+				has_or_had_tag = YEM
+				has_or_had_tag = MDA
+				has_or_had_tag = MEC
+				religious_school = religious_school:alevism_school
+				AND = {
+					culture = { has_culture_group = culture_group:turkic_group }
+					situation:rise_of_the_ottomans = {
+						situation_is_active = yes
+					}
+				}
+				is_member_of_international_organization = international_organization:ilkhanate
+			}
+		}
+		years = 2
+		
+		on_activate = {
+		}
+		
+	}
+	
+	icd_faiths_of_the_folk = {
+		country_modifier = {
+			tolerance_heretic = 2.5
+		}
+		allow = {
+			NOT = {
+				has_policy = papal_control
+				has_policy = local_courts
+				has_policy = state_inquisitors
+				has_policy = spa_inquisition_policy
+			}
+			NOT = {
+				has_policy = icd_minority_religion
+			}
+		}
+		location_modifier = {
+			potential_trigger = {
+				custom_tooltip = icd_faiths_of_the_folk_tt
+				"culture_percentage(owner.culture)" > "religion_percentage(owner.religion)"
+			}
+			local_heretic_pop_conversion_speed_modifier = 2.0
+		}
+		location_modifier = {
+			potential_trigger = {
+				custom_tooltip = icd_faiths_of_the_folk_tt_two
+				 "culture_percentage(owner.culture)" <= "religion_percentage(owner.religion)"
+			}
+			local_heretic_pop_conversion_speed_modifier = -1.0
+		}
+		potential = {
+			OR = {
+				religion.group = religion_group:folk_african_group
+				religion.group = religion_group:folk_argentinian_group
+				religion.group = religion_group:folk_aridoamerica_group
+				religion.group = religion_group:folk_asian_group
+				religion.group = religion_group:folk_australian_group
+				religion.group = religion_group:folk_brazilian_group
+				religion.group = religion_group:folk_caribbean_group
+				religion.group = religion_group:folk_central_american_group
+				religion.group = religion_group:tonal_group
+				religion.group = religion_group:folk_european_group
+				religion.group = religion_group:folk_melanesian_group
+				religion.group = religion_group:folk_micronesian_group
+				religion.group = religion_group:folk_north_american_group
+				religion.group = religion_group:folk_papuan_group
+				religion.group = religion_group:folk_permic_group
+				religion.group = religion_group:folk_peruvian_group
+				religion.group = religion_group:folk_polynesian_group
+				religion.group = religion_group:folk_se_asian_group
+				religion.group = religion_group:folk_south_american_group
+			}
+		}
+		years = 2
+		
+		on_activate = {
+		}
+		
+	}
+	
+	
+	
+}

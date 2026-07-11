@@ -180,3 +180,30 @@ local_turkification_culture_movement_growth_modifier={
 	}
 }
 
+national_anabaptist_movement_resistance_modifier  ={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+local_anabaptist_movement_resistance_modifier ={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_anabaptist_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=movement
+	}
+}
+
+local_anabaptist_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}

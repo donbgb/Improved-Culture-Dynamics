@@ -131,6 +131,7 @@
  
  icd_muslim_dhimmi_choose: "Status of the Dhimmi"
  icd_muslim_dhimmi_choose_desc: "Decide which religious minorities in our state count as dhimmi, and which do not."
+ PERFORM_icd_muslim_dhimmi_choose_ACTION: "Status of the Dhimmi"
  PERFORM_icd_muslim_dhimmi_choose_ACTION_SETUP: "When the status of the dhimmi is changed."
  PERFORM_icd_muslim_dhimmi_choose_ACTION_HEADER: "$MESSENGER$"
  PERFORM_icd_muslim_dhimmi_choose_ACTION_TITLE: "Reconsider the dhimmi!"
@@ -141,3 +142,11 @@
  PERFORM_icd_muslim_dhimmi_choose_ACTION_BTN2: "OK"
  PERFORM_icd_muslim_dhimmi_choose_ACTION_BTN3: "$common_string_go_to$"
  PERFORM_icd_muslim_dhimmi_choose_ACTION_MAP: ""
+ 
+ icd_promote_the_counter_reformation: "Promote the Counter-Reformation"
+ icd_promote_the_counter_reformation_desc: "Promotes the Counter-Reformation, restricting the spread of Protestant faiths into our territory."
+ icd_promote_the_counter_reformation_active: "Promoting the Counter-Reformation"
+ icd_promote_the_counter_reformation_action: "Promote the Counter-Reformation"
+ icd_promote_the_counter_reformation_action_progress: "Promoting the Counter-Reformation"
+ icd_promote_the_counter_reformation_action_progress_wordier: "Promoting the Counter-Reformation"
+ icd_promote_the_counter_reformation_action_progress_tooltip: "Promoting the Counter-Reformation"

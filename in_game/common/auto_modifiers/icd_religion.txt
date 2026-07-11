@@ -1,0 +1,45 @@
+﻿## Not hardcoded
+# Modifiers in this file will automatically be applied to all countries
+#	- Tooltips will also be generated
+#	- The AI will also understand them
+
+
+
+
+
+icd_tolerance_heretic = {
+	type = country
+	
+	potential_trigger = {
+		modifier:tolerance_heretic >= -1.0
+	}
+	
+	scales_with = {
+		value = icd_religion_tolerance_heretic
+	} 
+	
+	hide_effects = no
+	alert = no
+	requires_real = no # Non-"real" countries are Rebels, Pirates and Mercenaries. Default is yes.
+
+	global_heretic_pop_conversion_speed_modifier = -0.1
+}
+
+icd_tolerance_heathen = {
+	type = country
+	
+	potential_trigger = {
+		modifier:tolerance_heathen >= -1.0
+	}
+	
+	scales_with = {
+		value = icd_religion_tolerance_heathen
+	} 
+	
+	hide_effects = no
+	alert = no
+	requires_real = no # Non-"real" countries are Rebels, Pirates and Mercenaries. Default is yes.
+
+	global_heathen_pop_conversion_speed_modifier = -0.1
+}
+

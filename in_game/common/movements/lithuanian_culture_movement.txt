@@ -70,7 +70,7 @@
 
 	specific_pop_type_effect = {
 		culture = curonian
-		multiplier = 0.1
+		multiplier = 0.025
 	}
 
 	location_stagnation_chance = {

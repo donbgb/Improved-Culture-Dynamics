@@ -1,0 +1,223 @@
+﻿arianism = {
+	icon = modalism
+	religion = unitarian
+	
+	enabled = {
+		NOT = {
+			has_religious_aspect = religious_aspect:adoptionism
+			has_religious_aspect = religious_aspect:modalism
+			has_religious_aspect = religious_aspect:nonadorantism
+		}
+	}
+	
+	modifier = {
+		global_distance_from_capital_speed_propagation = 0.10
+		monthly_religious_influence = 0.1
+	}
+
+	opinions = {
+		arianism = 10
+		
+		modalism = -10
+		adoptionism = -10
+		nonadorantism = -10
+	}
+}
+
+nonadorantism = {
+	icon = modalism
+	religion = unitarian
+	
+	enabled = {
+		NOT = {
+			has_religious_aspect = religious_aspect:adoptionism
+			has_religious_aspect = religious_aspect:arianism
+			has_religious_aspect = religious_aspect:modalism
+		}
+	}
+	
+	modifier = {
+		discipline = 0.05
+		monthly_religious_influence = 0.1
+	}
+
+	opinions = {
+		nonadorantism = 10
+		
+		modalism = -10
+		adoptionism = -10
+		arianism = -10
+	}
+}
+
+absolute_pacifism = {
+	icon = pacifism
+	religion = anabaptist
+	religion = unitarian
+
+	visible = {
+		OR = {
+			has_religious_aspect = religious_aspect:adult_baptism
+			has_religious_aspect = religious_aspect:arianism
+			has_religious_aspect = religious_aspect:nonadorantism
+			has_religious_aspect = religious_aspect:adoptionism
+			has_religious_aspect = religious_aspect:modalism
+		}
+	}
+	
+	enabled = {
+		NOT = {
+			has_religious_aspect = religious_aspect:pacifism
+		}
+		NOT = {
+			has_religious_aspect = religious_aspect:justified_conflicts
+		}
+	}
+	
+	modifier = {
+		cannot_declare_no_cb_wars = yes
+		declaring_war_cost_modifier = 4.0
+		global_levy_size_modifier = -0.5
+
+		improve_relation_impact = 0.5
+		global_monthly_prosperity = 0.003
+		global_monthly_development = 0.005
+
+		monthly_towards_conciliatory = societal_value_significant_monthly_move
+	}
+
+	opinions = {	
+		absolute_pacifism = 10
+		pacifism = 5
+
+		war_sermons = -20
+		justified_conflicts = -20
+	}
+}
+
+community_of_goods = {
+	religion = anabaptist
+	
+	visible = {
+		has_religious_aspect = religious_aspect:adult_baptism
+	}
+	
+	modifier = {
+		global_peasant_enfranchisment = 0.5
+		global_rural_build_buildings_efficiency = 0.2
+		global_urban_build_buildings_efficiency = -0.05
+		global_merchant_capacity_modifier = -0.1
+		global_trades_per_burgher = -0.5
+		global_burghers_estate_power = -1.0
+		global_nobles_estate_power = -1.0
+		global_peasants_estate_power = 10.0
+		monthly_towards_free_subjects = societal_value_large_monthly_move
+		monthly_towards_communalism = societal_value_large_monthly_move
+	}
+
+	opinions = {
+		community_of_goods = 10
+	}
+}
+
+
+limited_divine_knowledge = {
+	religion = unitarian
+	
+	visible = {
+		OR = {
+			has_religious_aspect = religious_aspect:arianism
+			has_religious_aspect = religious_aspect:nonadorantism
+			has_religious_aspect = religious_aspect:adoptionism
+			has_religious_aspect = religious_aspect:modalism
+		}
+	}
+	
+	modifier = {
+		retreat_delay = -10
+		land_morale_modifier = 0.1
+	}
+
+	opinions = {
+	}
+}
+
+icd_anabaptist_polygamy = {
+	religion = anabaptist
+	
+	visible = {
+		has_religious_aspect = religious_aspect:adult_baptism
+	}
+	
+	modifier = {
+		pure_tooltip_entry = icd_enable_polygamy
+		global_clergy_pop_growth = 0.0002
+	}
+
+	opinions = {
+	}
+}
+
+icd_teetotalism = {
+	religion = anabaptist
+	
+	visible = {
+		has_religious_aspect = religious_aspect:adult_baptism
+	}
+	
+	modifier = {
+		ban_imports_of_wine = yes
+		ban_imports_of_beer = yes
+		ban_imports_of_liquor = yes
+		global_beer_pop_demand = -0.5
+		global_wine_pop_demand = -0.5
+		global_liquor_pop_demand = -0.5
+		
+		global_production_efficiency = medium_production_efficiency_bonus
+	}
+
+	opinions = {
+		icd_teetotalism = 5
+	}
+}
+
+icd_godhead = {
+	religion = anabaptist
+	religion = unitarian
+	
+	visible = {
+		OR = {
+			has_religious_aspect = religious_aspect:adult_baptism
+			has_religious_aspect = religious_aspect:arianism
+			has_religious_aspect = religious_aspect:nonadorantism
+			has_religious_aspect = religious_aspect:adoptionism
+			has_religious_aspect = religious_aspect:modalism
+		}
+	}
+	
+	modifier = {
+		global_estate_satisfaction_recovery = 0.0005
+	}
+
+	opinions = {
+		icd_godhead = 10
+	}
+}
+
+icd_celestial_flesh = { ##type of docetism##
+	religion = anabaptist
+	
+	visible = {
+		has_religious_aspect = religious_aspect:adult_baptism
+	}
+	
+	modifier = {
+		monthly_legitimacy = 0.1
+		monthly_republican_tradition = 0.1
+		monthly_devotion = 0.1
+		monthly_towards_spiritualist = societal_value_monthly_move
+	}
+
+	opinions = {
+	}
+}

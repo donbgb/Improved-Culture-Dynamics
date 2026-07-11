@@ -109,7 +109,8 @@ icd_minority_events.1000 = { ###expel minority cabinet action###
 						}
 					}
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -362,7 +363,8 @@ icd_minority_events.1 = { ###jewish exodus###
 			monthly_conversion > 0
 		}
 		NOT = {
-			has_estate_privilege = estate_privilege:jewish_charter
+			has_policy = icd_jewish_charter
+			has_policy = council_of_three_lands_policy
 		}
 		religion.group = religion_group:christian
 		NOT = {
@@ -389,7 +391,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -418,7 +421,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -449,7 +453,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -479,7 +484,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -509,7 +515,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -540,7 +547,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -572,7 +580,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -604,7 +613,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -633,7 +643,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -663,7 +674,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -692,7 +704,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -721,7 +734,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -751,7 +765,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -782,7 +797,8 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -811,7 +827,8 @@ icd_minority_events.1 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -856,7 +873,8 @@ icd_minority_events.1 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -891,7 +909,8 @@ icd_minority_events.1 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -948,7 +967,8 @@ icd_minority_events.1 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -983,7 +1003,8 @@ icd_minority_events.1 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1028,7 +1049,8 @@ icd_minority_events.1 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1063,7 +1085,8 @@ icd_minority_events.1 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1120,7 +1143,8 @@ icd_minority_events.1 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1146,7 +1170,7 @@ icd_minority_events.1 = { ###jewish exodus###
 	option = { ##reinstate their privileges###
 		name = icd_minority_events.1.a
 		
-		grant_estate_privilege = estate_privilege:jewish_charter
+		add_policy = policy:icd_jewish_charter
 		
 		set_variable = {
 			name = icd_jewish_permitted
@@ -1174,6 +1198,11 @@ icd_minority_events.1 = { ###jewish exodus###
 					OR = {
 						region = region:iberia_region
 						region = region:balkan_region
+						area = area:sicily_area
+						area = area:basilicata_area
+						area = area:apulia_area
+						area = area:campania_area
+						area = area:abruzzo_area
 						sub_continent = sub_continent:north_africa
 						sub_continent = sub_continent:middle_east
 					}
@@ -1272,6 +1301,11 @@ icd_minority_events.1 = { ###jewish exodus###
 					NOT = {
 						region = region:iberia_region
 						region = region:balkan_region
+						area = area:sicily_area
+						area = area:basilicata_area
+						area = area:apulia_area
+						area = area:campania_area
+						area = area:abruzzo_area
 						sub_continent = sub_continent:north_africa
 						sub_continent = sub_continent:middle_east
 					}
@@ -1362,6 +1396,22 @@ icd_minority_events.1 = { ###jewish exodus###
 				}
 			}
 	}
+	option = {
+		name = icd_minority_events.1.c
+		trigger = {
+			OR = {
+				current_year > 1570
+				has_global_variable = icd_cum_nimis_absurdum
+			}
+		}
+		
+		remove_policy = policy:icd_jewish_charter
+		add_policy = policy:icd_jewish_ghetto
+		set_variable = {
+			name = icd_jewish_permitted
+			days = 20000
+		}
+	}
 }
 
 icd_minority_events.2 = { ##dhimmi ask muslims for protection###
@@ -1440,6 +1490,7 @@ icd_minority_events.2 = { ##dhimmi ask muslims for protection###
 					this = estate_privilege:icd_permission_for_awqaf
 					this = estate_privilege:icd_permitted_restoration
 				}
+				save_scope_as = icd_privilege_one
 				root = {
 					grant_estate_privilege = prev
 				}
@@ -1452,6 +1503,7 @@ icd_minority_events.2 = { ##dhimmi ask muslims for protection###
 					this = estate_privilege:dhimmi_legal_autonomy
 					this = estate_privilege:icd_permission_for_awqaf
 					this = estate_privilege:icd_permitted_restoration
+					NOT = { this = scope:icd_privilege_one }
 				}
 				root = {
 					grant_estate_privilege = prev
@@ -1546,10 +1598,13 @@ icd_minority_events.4 = { ##jewish pogroms###
 				religion = religion:judaism
 			}
 		}
-		has_estate_privilege = estate_privilege:jewish_charter
+		has_policy = icd_jewish_charter
 		OR = {
 			is_situation_active = situation:black_death
-			is_situation_active = situation:reformation
+			AND = {
+				is_situation_active = situation:reformation
+				has_global_variable = icd_cum_nimis_absurdum
+			}
 			has_variable = spa_holy_inquisition
 		}
 		NOT = {
@@ -1577,7 +1632,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1606,7 +1662,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1637,7 +1694,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1667,7 +1725,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1697,7 +1756,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1728,7 +1788,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1760,7 +1821,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1792,7 +1854,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1821,7 +1884,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1851,7 +1915,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1880,7 +1945,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1909,7 +1975,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1939,7 +2006,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -1970,7 +2038,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2000,7 +2069,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 							has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 							NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2027,7 +2097,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 							has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 							NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2053,7 +2124,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 							has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 							NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2083,7 +2155,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2109,7 +2182,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2136,7 +2210,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2162,7 +2237,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2192,7 +2268,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2261,9 +2338,11 @@ icd_minority_events.4 = { ##jewish pogroms###
 						tag = REG
 						tag = MLO
 						tag = TEU
+						is_subject_or_below_of = c:FRA
+						is_subject_or_below_of = c:TEU
 					}
 				}
-				value = 40
+				value = 70
 			}
 			else_if = {
 				limit = {
@@ -2276,14 +2355,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 						capital.area = area:friesland_area
 					}
 				}
-				value = -50
+				value = -80
 			}
 			else = {
-				value = 10
+				value = 2
 			}
 		}
 		
-		revoke_estate_privilege = estate_privilege:jewish_charter
+		remove_policy = policy:icd_jewish_charter
 		
 		random_owned_location = {
 			every_pop = {
@@ -2306,6 +2385,11 @@ icd_minority_events.4 = { ##jewish pogroms###
 					OR = {
 						region = region:iberia_region
 						region = region:balkan_region
+						area = area:sicily_area
+						area = area:basilicata_area
+						area = area:apulia_area
+						area = area:campania_area
+						area = area:abruzzo_area
 						sub_continent = sub_continent:north_africa
 						sub_continent = sub_continent:middle_east
 					}
@@ -2404,6 +2488,11 @@ icd_minority_events.4 = { ##jewish pogroms###
 					NOT = {
 						region = region:iberia_region
 						region = region:balkan_region
+						area = area:sicily_area
+						area = area:basilicata_area
+						area = area:apulia_area
+						area = area:campania_area
+						area = area:abruzzo_area
 						sub_continent = sub_continent:north_africa
 						sub_continent = sub_continent:middle_east
 					}
@@ -2503,6 +2592,56 @@ icd_minority_events.4 = { ##jewish pogroms###
 			months = 12
 		}
 	}
+	
+	option = {
+		name = icd_minority_events.4.c
+		trigger = {
+			OR = {
+				current_year > 1570
+				has_global_variable = icd_cum_nimis_absurdum
+			}
+		}
+		
+		remove_policy = policy:icd_jewish_charter
+		add_policy = policy:icd_jewish_ghetto
+		
+		set_variable = {
+			name = icd_jewish_permitted
+			days = 20000
+		}
+		
+		ai_will_select = { 
+			if = {
+				limit = {
+					OR = {
+						tag = PAP
+						tag = VEN
+						tag = FRN
+						tag = PIE
+						capital.region = region:italy_region
+					}
+				}
+				value = 40
+			}
+			else_if = {
+				limit = {
+					OR = {
+						capital.region = region:baltic_region
+						capital.region = region:ruthenia_region
+						capital.area = area:flanders_area
+						capital.area = area:holland_area
+						capital.area = area:brabant_area
+						capital.area = area:friesland_area
+					}
+				}
+				value = -50
+			}
+			else = {
+				value = 10
+			}
+		}
+	}
+		
 }
 
 icd_minority_events.5 = { ##invite the jews###
@@ -2564,7 +2703,7 @@ icd_minority_events.5 = { ##invite the jews###
 			}
 		}
 		
-		grant_estate_privilege = estate_privilege:jewish_charter
+		add_policy = policy:icd_jewish_charter
 		
 		ai_will_select = { value = 10 }
 		
@@ -2600,7 +2739,8 @@ icd_minority_events.6 = { ###jewish exodus###
 			monthly_conversion > 0
 		}
 		NOT = {
-			has_estate_privilege = estate_privilege:jewish_charter
+			has_policy = icd_jewish_charter
+			has_policy = council_of_three_lands_policy
 		}
 		NOT = {
 			has_variable = icd_jewish_migration
@@ -2629,7 +2769,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2658,7 +2799,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2689,7 +2831,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2719,7 +2862,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2749,7 +2893,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2780,7 +2925,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2812,7 +2958,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2844,7 +2991,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2873,7 +3021,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2903,7 +3052,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2932,7 +3081,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2961,7 +3111,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -2991,7 +3142,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3022,7 +3174,8 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 					owner = {
 						OR = {
-							has_estate_privilege = estate_privilege:jewish_charter
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
 							AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3052,7 +3205,8 @@ icd_minority_events.6 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3079,7 +3233,8 @@ icd_minority_events.6 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3105,7 +3260,8 @@ icd_minority_events.6 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3135,7 +3291,8 @@ icd_minority_events.6 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3161,7 +3318,8 @@ icd_minority_events.6 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3188,7 +3346,8 @@ icd_minority_events.6 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3214,7 +3373,8 @@ icd_minority_events.6 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3244,7 +3404,8 @@ icd_minority_events.6 = { ###jewish exodus###
 				max = 1
 				limit = {
 					OR = {
-						has_estate_privilege = estate_privilege:jewish_charter
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
 						AND = {
 								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 								NOT = { has_variable = icd_israelite_dhimmi_disabled }
@@ -3275,6 +3436,11 @@ icd_minority_events.6 = { ###jewish exodus###
 					OR = {
 						region = region:iberia_region
 						region = region:balkan_region
+						area = area:sicily_area
+						area = area:basilicata_area
+						area = area:apulia_area
+						area = area:campania_area
+						area = area:abruzzo_area
 						sub_continent = sub_continent:north_africa
 						sub_continent = sub_continent:middle_east
 					}
@@ -3373,6 +3539,11 @@ icd_minority_events.6 = { ###jewish exodus###
 					NOT = {
 						region = region:iberia_region
 						region = region:balkan_region
+						area = area:sicily_area
+						area = area:basilicata_area
+						area = area:apulia_area
+						area = area:campania_area
+						area = area:abruzzo_area
 						sub_continent = sub_continent:north_africa
 						sub_continent = sub_continent:middle_east
 					}
@@ -3505,13 +3676,6 @@ icd_minority_events.7 = { ###action religion###
 		
 		if = {
 			limit = {
-				has_policy = turkic_integration
-				NOT = { has_variable = icd_israelite_dhimmi_disabled }
-			}
-			custom_tooltip = icd_dhimmi_turkic_integration_tt
-		}
-		else_if = {
-			limit = {
 				NOT = { has_variable = icd_israelite_dhimmi_disabled }
 			}
 			custom_tooltip = icd_israelite_dhimmi_remove_tt
@@ -3551,14 +3715,8 @@ icd_minority_events.7 = { ###action religion###
 		
 		add_stability = stability_mild_penalty
 		
+	
 		if = {
-			limit = {
-				has_policy = turkic_integration
-				NOT = { has_variable = icd_israelite_dhimmi_disabled }
-			}
-			custom_tooltip = icd_dhimmi_turkic_integration_tt
-		}
-		else_if = {
 			limit = {
 				NOT = { has_variable = icd_christian_dhimmi_disabled }
 			}
@@ -3794,7 +3952,7 @@ icd_minority_events.8 = { ##religious violence###
 		any_owned_location = {
 			religion_group_percentage = {
 				religion_group = religion_group:israelite_group
-				value > 0.4
+				value > 0.48
 			}
 		}
 		religion.group = religion_group:christian
@@ -3817,7 +3975,7 @@ icd_minority_events.8 = { ##religious violence###
 			limit = {
 				religion_group_percentage = {
 					religion_group = religion_group:israelite_group
-					value > 0.4
+					value > 0.48
 				}
 			}
 			every_pop = {
@@ -3842,7 +4000,7 @@ icd_minority_events.8 = { ##religious violence###
 			limit = {
 				religion_group_percentage = {
 					religion_group = religion_group:israelite_group
-					value > 0.4
+					value > 0.48
 				}
 			}
 			every_pop = {
@@ -4129,7 +4287,7 @@ icd_minority_events.9 = { #expel the crimeans ###
 		OR = {
 			capital.region = region:ruthenia_region
 			capital.region = region:steppes_region
-			capital.region = region:russia_region
+			capital.region = region:russian_region
 			culture = { has_culture_group = culture_group:russian_group }
 		}
 		current_year > 1540
@@ -4424,7 +4582,8 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 				}
 			}
 		}
-	}
+		
+		}
 
 	trigger = {
 		religion.group = religion_group:christian
@@ -4528,8 +4687,10 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 		
 		set_variable = {
 			name = icd_no_andalusi_deportation
-			months = 31
+			months = 60
 		}
+		
+		set_variable = icd_no_moriscos_none
 		
 	}
 

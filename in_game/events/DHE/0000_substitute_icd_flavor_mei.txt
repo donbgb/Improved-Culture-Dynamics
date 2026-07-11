@@ -1,0 +1,97 @@
+﻿namespace = flavor_mei
+#README
+# events 1 - 99 are events specifically for the united tag of Switzerland
+# events 100 - 999 are events for the Swiss Confederation IO
+# events 1000+ are dynamic historical events for the different Swiss cantons (+ unified Switzerland too)
+
+
+flavor_mei.190 = { #The Leipzig Debate
+	type = country_event
+	title = flavor_mei.190.title
+	desc = flavor_mei.190.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	hidden = yes
+	orphan = yes
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		create_character = {
+			first_name = name_andrew
+			last_name = Karlstadt
+			birth_date = 1486.1.1
+			birth_location = location:karlstadt
+			estate = estate_type:clergy_estate
+			adm = { 40 75 }
+			dip = { 40 75 }
+			mil = { 10 50 }
+			culture = culture:east_franconian
+			save_scope_as = target_character
+			create_in_limbo = yes
+		}
+		create_character = {
+			first_name = name_john
+			last_name = Maier_von_Eck
+			birth_date = 1486.11.13
+			birth_location = location:memmingen
+			estate = estate_type:clergy_estate
+			adm = { 40 75 }
+			dip = { 40 75 }
+			mil = { 10 50 }
+			culture = culture:swabian
+			save_scope_as = target_character2
+			create_in_limbo = yes
+		}
+	}
+
+	trigger = {
+		owns = location:leipzig
+		religion:lutheran = {
+			is_religion_enabled = yes
+		}
+		always = no
+	}
+
+	option = {
+		name = flavor_mei.190.a
+		historical_option = yes
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_severe_penalty }
+		hidden_effect = {
+   			kill_character_silently = scope:target_character
+			kill_character_silently = scope:target_character2
+  		}
+	}
+
+	option = {
+		name = flavor_mei.190.b
+		scope:target_character2 = {
+			move_country = root
+		}
+		add_religious_influence = religious_influence_severe_bonus
+		change_societal_value = { type = traditionalist_vs_innovative value = societal_value_large_move_to_left }
+		change_societal_value = { type = spiritualist_vs_humanist value = societal_value_large_move_to_left }
+		hidden_effect = {
+   			kill_character_silently = scope:target_character
+  		}
+	}
+
+	option = {
+		name = flavor_mei.190.c
+		scope:target_character = {
+			move_country = root
+		}
+		add_religious_influence = religious_influence_severe_penalty
+		change_societal_value = { type = traditionalist_vs_innovative value = societal_value_large_move_to_right }
+		change_societal_value = { type = spiritualist_vs_humanist value = societal_value_large_move_to_right }
+		hidden_effect = {
+			kill_character_silently = scope:target_character2
+  		}
+	}
+}

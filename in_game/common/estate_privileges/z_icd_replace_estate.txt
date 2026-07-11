@@ -176,3 +176,25 @@ REPLACE:tribes_protected_faith = {
 		global_tribes_estate_power = 0.5
 	}
 }
+
+REPLACE:clergy_enforced_unity = {
+	estate = clergy_estate
+
+	potential = {
+	}
+	allow = {
+	}
+	can_revoke = {
+	}
+	
+	country_modifier = {
+		global_clergy_estate_power = 0.25
+		global_pop_conversion_speed_modifier = 0.10
+		tolerance_heathen = -0.1
+		tolerance_heretic = -0.1
+		monthly_towards_communalism = societal_value_monthly_move
+
+	}
+
+	months = 3
+}

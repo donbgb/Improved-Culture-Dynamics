@@ -1,110 +1,4 @@
 ﻿
-jewish_charter = {
-	icon = dhimmi_promote_tolerance
-	estate = burghers_estate
-	potential = {
-			religion.group = religion_group:christian
-		}
-	allow = {
-		any_owned_location = {
-			religion_group_percentage = {
-				religion_group = religion_group:israelite_group
-				value > 0
-			}
-		}
-		NOT = {
-			has_policy = state_inquisitors
-			has_policy = spa_inquisition_policy
-		}
-		custom_tooltip = {
-			text = jewish_banned_tt
-			NOT = {
-				has_variable = icd_jewish_banned
-			}
-		}
-	}
-	can_revoke = {
-		hidden_trigger = {
-			OR = {
-				is_human = yes
-				tag = FRA
-				tag = ENG
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-				AND = {
-					tag = CAS
-					current_year > 1650
-				}
-				AND = {
-					tag = POR
-					current_year > 1650
-				}
-				religious_unity < 0.5
-			}
-		}
-	}
-	country_modifier = {
-		tolerance_heathen = 1
-		global_trades_per_burgher = 0.1
-		global_burghers_estate_power = 0.1
-		religious_unity_importance_modifier = -0.2
-	}
-	location_modifier = {
-		potential_trigger = {
-			custom_tooltip = icd_jewish_charter_tt
-			hidden_trigger = {
-				religion_group_percentage = {
-					religion_group = religion_group:israelite_group
-					value > 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:tonal_group
-					value = 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_african_group
-					value = 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_european_group
-					value = 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_permic_group
-					value = 0
-				}
-				OR = {
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:muslim
-							value = 0
-						}
-						religion_group_percentage = {
-							religion_group = religion_group:dharmic
-							value = 0
-						}
-						religion_group_percentage = {
-							religion_group = religion_group:buddhist
-							value = 0
-						}
-						religion_group_percentage = {
-							religion_group = religion_group:manichaean_group
-							value = 0
-						}
-						religion_group_percentage = {
-							religion_group = religion_group:zoroastrian_group
-							value = 0
-						}
-					}
-					is_overseas_for_owner = no
-				}
-				dominant_religion = { group = religion_group:christian }
-			}
-		}
-		local_heathen_pop_conversion_speed_modifier = -3.0
-		building_enslavement_power = -0.100
-	}	
-}
 
 icd_entrenched_tribal_livelihood = {
 	icon = nobles_land_rights
@@ -133,7 +27,7 @@ icd_tribal_governorates = {
 			}
 			pop_type_population_in_country = {
 				pop_type = pop_type:tribesmen
-				value >= 2000000
+				value >= 1000
 			}
 		}
 	}
@@ -157,7 +51,7 @@ icd_frontier_armed_tribesmen = {
 			}
 			pop_type_population_in_country = {
 				pop_type = pop_type:tribesmen
-				value >= 2000000
+				value >= 1000
 			}
 		}
 	}
@@ -181,7 +75,7 @@ icd_tribal_cavalry_logistics = {
 			}
 			pop_type_population_in_country = {
 				pop_type = pop_type:tribesmen
-				value >= 2000000
+				value >= 1000
 			}
 		}
 	}
@@ -204,7 +98,7 @@ icd_tribal_commercial_networks = {
 			}
 			pop_type_population_in_country = {
 				pop_type = pop_type:tribesmen
-				value >= 2000000
+				value >= 1000
 			}
 		}
 	}
@@ -252,8 +146,10 @@ icd_druze_emirs = {
 		any_owned_location = {
 			OR = {
 				province_definition = province_definition:lebanon_province
+				province_definition = province_definition:hims_province
 				province_definition = province_definition:hawran_province
 				province_definition = province_definition:shaam_province
+				province_definition = province_definition:latakia_province
 			}
 		}
 	}
@@ -269,14 +165,11 @@ icd_druze_emirs = {
 				province_definition = province_definition:lebanon_province
 				province_definition = province_definition:hawran_province
 				province_definition = province_definition:shaam_province
-			}
-			hidden_trigger = {
-				any_pop = {
-					religion = religion:druzism
-				}
+				province_definition = province_definition:hims_province
+				province_definition = province_definition:latakia_province
 			}
 		}
-		local_heathen_pop_conversion_speed_modifier = -1.0
+		local_pop_conversion_speed_modifier = -1.0
 		local_defensive = 0.1
 		local_levy_size_modifier = 0.5
 	}

@@ -39,6 +39,11 @@
 
  anglo_irish: "Hiberno-Norman"
  
+ calvinist: "Reformed"
+ calvinist_ADJ: "Reformed"
+ calvinist_desc: "A religion that initially took shape based on the teachings of Huldrych Zwingli and John Oecolampadius, but was given greater definition by John Calvin and Heinrich Bullinger, $calvinist$ is a significant branch of Protestantism rooted in the principles of simplicity in worship and the supremacy of the Holy Bible. Its doctrine emphasizes predestination, asserting that God has preordained the destiny of all creation."
+
+ 
  enforce_culture: "Enforce Culture"
  enforce_culture_act: "Enforce Culture in [SCOPE.sCountry('recipient').GetName]"
  enforce_culture_desc: "We will demand that they adopt a given culture as their primary culture."
@@ -50,4 +55,25 @@
 
  dhimmi_land_rights: "Guarantee Village Rights"
  dhimmi_land_rights_desc: "Towns and villages with a strong heathen majority can be given greater freedom over their religious expression. Their residents need not be as concerned about following the requirements and mandates of the #italic Ḏimmī#!"
- 
+
+
+
+ flavor_swi.conversion.tt: "Some of our [pops|e] in [ROOT.GetCountry.GetName] will convert to [ShowReligionName('calvinist')]."
+ flavor_swi.1101.desc: "The sermons of [target_character.GetName] changed over the last couple of years. Where he initially preached in accordance with the [ShowReligionAdjective('catholic')] doctrine, he now tends to strife far from it. More and more, his speeches include criticism of [ShowReligionAdjectiveWithNoTooltip('catholic')] rituals like fasting and clerical celibacy. Moreover, his teachings also appear to be opposed to [ShowReligionAdjectiveWithNoTooltip('lutheran')] doctrines. A confrontation about his actions could spark an outrage among his followers, but might be necessary if we want to preserve the integrity of the [ShowReligionAdjectiveWithNoTooltip('catholic')] faith."
+ flavor_swi.large_conversion.tt: "A lot of our [pops|e] in [ROOT.GetCountry.GetName] will convert to [ShowReligionName('calvinist')]."
+ flavor_swi.1104.title: "Support for [target_character.GetNameWithNoTooltip]"
+ zwingli_support_rebels_joining: "All [ShowReligionAdjective('calvinist')] [pops|e] in [ROOT.GetCountry.GetNameWithNoTooltip] lose [ShowNamedValue('pop_satisfaction_ultimate_penalty')|+=2%] [pop_satisfaction|e] and join [target_zwingli_support_rebels.GetName]."
+ flavor_swi.1103.desc: "With the continuous effect of [target_character.GetName] and other preachers who have joined his cause, [ROOT.GetCountry.GetName] is now a predominant [ShowReligionAdjective('calvinist')] country. Due to their widespread influence, we will have no choice but to proclaim [ShowReligionNameWithNoTooltip('calvinist')] as our faith."
+ flavor_swi.1104.c: "Perhaps [target_character.GetNameWithNoTooltip] is right"
+
+ zwingli_support_rebels_joining: "All [ShowReligionAdjective('calvinist')] [pops|e] in [ROOT.GetCountry.GetNameWithNoTooltip] lose [ShowNamedValue('pop_satisfaction_ultimate_penalty')|+=2%] [pop_satisfaction|e] and join [target_zwingli_support_rebels.GetName]."
+ flavor_swi.111.desc.fallback: "[ShowReligionAdjective('catholic')] and [ShowReligionAdjective('calvinist')] members alike see each other with hostility. Such an encounter eventually escalated in [target_location.GetName], becoming the trigger for what will be known as the Wars of [target_location.GetNameWithNoTooltip]."
+
+ ##not overwrite change location later##
+ flavor_swi.german_conversion.tt: "A lot of our [ShowCultureNameWithNoTooltip('high_alemannic')] [pops|e] in [ROOT.GetCountry.GetName] will convert to [ShowReligionName('calvinist')]."
+ flavor_swi.german_small_conversion.tt: "Some of our [ShowCultureNameWithNoTooltip('high_alemannic')] [pops|e] in [ROOT.GetCountry.GetName] will convert to [ShowReligionName('calvinist')]."
+ flavor_swi.9990.title: "Spread of [target_character.GetNameWithNoTooltip]'s Teachings"
+ flavor_swi.9990.desc: "The teachings of [target_character.GetNameWithNoTooltip] have spread to our country and people, where they have found significant traction with the [ShowCultureNameWithNoTooltip('high_alemannic')]. This brings great concern to our [ShowReligionAdjective('catholic')] clerics as it indicates a shift in our society towards [ShowReligionName('calvinist')]."
+ flavor_swi.9990.a: "There isn't much we can do about this"
+ flavor_swi.9990.b: "Perhaps [target_character.GetNameWithNoTooltip] is right"
+ flavor_swi.9990.c: "We must act to contain the spread of this heresy!"

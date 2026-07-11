@@ -1,0 +1,50 @@
+﻿
+
+icd_religion_tolerance_heretic = {
+	if = {
+		limit = {
+			modifier:tolerance_heretic < 0
+		}
+		value = 10
+		add = modifier:tolerance_heretic
+		add = modifier:tolerance_heretic
+		add = modifier:tolerance_heretic
+		add = modifier:tolerance_heretic
+		add = modifier:tolerance_heretic
+		add = modifier:tolerance_heretic
+		add = modifier:tolerance_heretic
+		add = modifier:tolerance_heretic
+		add = modifier:tolerance_heretic
+		add = modifier:tolerance_heretic
+	}
+	else = {
+		value = modifier:tolerance_heretic
+		multiply = 5
+		add = 10
+	}
+	
+}
+
+icd_religion_tolerance_heathen = {
+	if = {
+		limit = {
+			modifier:tolerance_heathen < 0
+		}
+		value = 10
+		add = modifier:tolerance_heathen
+		add = modifier:tolerance_heathen
+		add = modifier:tolerance_heathen
+		add = modifier:tolerance_heathen
+		add = modifier:tolerance_heathen
+		add = modifier:tolerance_heathen
+		add = modifier:tolerance_heathen
+		add = modifier:tolerance_heathen
+		add = modifier:tolerance_heathen
+		add = modifier:tolerance_heathen
+	}
+	else = {
+		value = modifier:tolerance_heathen
+		multiply = 5
+		add = 10
+	}
+}

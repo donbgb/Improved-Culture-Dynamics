@@ -12,6 +12,16 @@
  nusantaran_hindu_ADJ: "Nusantaran Hindu"
  nusantaran_hindu_desc: "Rather than a singular religion, $nusantaran_hindu$ refers to similar interconnected Hindu-Buddhist beliefs, practices and traditions that are prevalent in Indonesia. This faith typically incorporates ideals found in both Buddhism and Hinduism, defending a syncretic but hierarchical relationship of both faiths that often subordinates Buddhism to Hindusim. It also heavily incorporates local Indonesian folk beliefs and traditions into both perspectives. Focus is given on the $dharmic$ cosmic order and moksha, as well as on the figure of the Buddha and nirvana - Śiva and Buddha are often equated, for instance. Practicioners typically do not exclusively participate in a particular manifestation of this religion and go to both Buddhist monasteries and Hindu temples, though Buddhist and Hindu clergy are generally separate and compete for royal patronage."
  
+ anabaptist: "Anabaptism"
+ anabaptist_ADJ: "Anabaptist"
+ anabaptist_desc: "Anabaptism is a strand of Christianity, which believes that Christianity should be a consciously chosen faith, shared by a community of faithful that is organised separately from structures of the secular world. Among their beliefs, Anabaptists see baptism as being valid only when the baptised can make a conscious decision and they reject hierarchical priestly structures or state churches. Many Anabaptist groups also practice pacifism, the sharing of goods and seek to live a modest ascetic life."
+ 
+ unitarian: "Unitarianism"
+ unitarian_ADJ: "Unitarian"
+ unitarian_desc: "Unitarianism is a nontrinitarian strand of Christianity that took shape during the Reformation in Poland and Transylvania primarily. Unitarians maintain that God is one and indivisible and they see Jesus as a lesser creation of God. Other beliefs may vary, but often include a rejection of the use of violence and an emphasis on the free will of humans."
+ 
+ icd_enable_polygamy: "Enables the [ShowPolicyName('icd_abrahamic_marriage')] [policy|e]"
+ 
  malay_folk_religion: "Malay"
  malay_folk_religion_ADJ: "Malay"
  malay_folk_religion_desc: "The $malay_folk_religion$ $common_folk_religion_desc$"
@@ -62,5 +72,26 @@
  sogatan_policy: "Sogatan"
  sogatan_policy_desc: "Sogatan is an Old Javanese term for Buddhist. It refers to the form of esoteric Buddhism that took shape in Indonesia alongside Hinduism."
  
+ arianism: "Arianism"
+ arianism_desc: "We reject the traditional Trinity of equal parts, instead seeing Christ, who pre-existed as the Logos, as another of God's creations. As such, though Christ is divine and pre-existed, he is not an equal to God the Father."
+ nonadorantism: "Nonadorantism"
+ nonadorantism_desc: "We reject the holy Trinity and the pre-existence of Christ, and see Christ as only a man with a messianic purpose, conceived as a man through either a virgin or non-virgin birth. As only a human, Christ is not to be worshipped or adored, and all prayer must be exclusively directed to the one God."
+ absolute_pacifism: "Absolute Pacifism"
+ absolute_pacifism_desc: "Blessed are the peacemakers. One's commitment to peace should be absolute, and service or action even in just war is inexcusable."
+ community_of_goods: "Community of Goods"
+ community_of_goods_desc: "'All the believers were together and had everything in common. They sold property and possessions to give to anyone who had need'. Our Christian communities shall own all things collectively and distribute them based on need rather than profit."
+ limited_divine_knowledge: "Divine Nescience"
+ limited_divine_knowledge_desc: "God's omniscience is restricted only to the certain truths that will definitely happen in the future. Events and situations that are products of human choice and free will are unknown to Him."
  
+ icd_abrahamic_marriage: "Biblical Polygamy"
+ icd_abrahamic_marriage_desc: "The Bible condones the practice of polygamy, it is not our role to deny such an ancient right."
+ icd_anabaptist_polygamy: "Biblical Polygamy"
+ icd_anabaptist_polygamy_desc: "The Bible condones the practice of polygamy, it is not our role to deny such an ancient right."
+ icd_teetotalism: "Teetotalism"
+ icd_teetotalism_desc: "The consumption of alcohol is to be strictly forbidden"
+ icd_godhead: "Membership in the Godhead"
+ icd_godhead_desc: "Every true Christian is a member in the Godhead, and shares in God's grace and love."
+ icd_celestial_flesh: "Celestial Flesh"
+ icd_celestial_flesh_desc: "Jesus did not have physical flesh formed from the Virgin Mary, but instead his human body was brought down directly from heaven"
  
+ REFORMATION_HAS_ANABAPTIST_MOVEMENT: "[ShowReligionName('anabaptist')] movement active (Anabaptism spreading)"

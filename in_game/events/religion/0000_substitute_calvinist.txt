@@ -1,0 +1,169 @@
+﻿namespace = calvinist
+
+calvinist.1 = {
+	type = country_event
+	title = calvinist.1.title
+	desc = calvinist.1.desc
+	outcome = neutral
+	
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = angry
+    	10 = exterior
+    }
+	
+	immediate = {
+		character:john_calvin = {
+			save_scope_as = john_calvin
+		}
+		
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+
+	}
+
+
+	option = {
+		name = calvinist.1.a
+
+		location:paris = {
+			every_pop = {
+				limit = {
+					religion.group = religion_group:christian
+					pop_type = pop_type:clergy
+				}
+				split_pop = {
+					fraction = 0.25
+					religion = religion:calvinist
+				}
+			}
+		}
+	}
+}
+
+
+scripted_effect lots_of_calvinists = {
+	every_owned_location = {
+		limit = { area = root.capital.area }
+		every_pop = {
+			limit = {
+				religion = religion:catholic
+			}
+			split_pop = {
+				fraction = { 0.20 0.35 }
+				religion = religion:calvinist
+			}
+		}
+	}
+
+}
+
+
+
+calvinist.2 = {
+	type = country_event
+	title = calvinist.2.title
+	desc = calvinist.2.desc
+	outcome = neutral
+	image = "gfx/interface/icons/trade_goods/illustrations/icon_goods_books.dds"
+	
+	fire_only_once = yes
+
+	immediate = {
+		character:john_calvin = {
+			save_scope_as = john_calvin
+		}
+	}
+
+	option = {
+		name = calvinist.2.a
+		custom_tooltip = {
+			text = lots_of_calvinists
+			lots_of_calvinists = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns = location:geneve
+				}
+			}
+			location:geneve.owner = {
+				trigger_event_silently = {
+					id = calvinist.3
+					days = { 365 900 }
+				}
+			}
+		}
+		else = {
+			religion:calvinist = {
+				ordered_movement_in_religion = {
+					max = 1
+					order_by = { value = 1 }
+					add_spreader = {
+						character = scope:john_calvin
+						location = location:geneve
+					}
+				}
+			}
+		}
+	}
+}
+
+
+calvinist.3 = {
+	type = country_event
+	title = calvinist.3.title
+	desc = calvinist.3.desc
+	outcome = neutral
+	
+	fire_only_once = yes
+	
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	
+	immediate = {
+		character:john_calvin = {
+			save_scope_as = john_calvin
+		}
+		
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+
+	}
+
+	option = {
+		name = calvinist.3.a
+		custom_tooltip = {
+			text = lots_of_calvinists
+			lots_of_calvinists = yes
+		}
+		
+		scope:john_calvin = {
+			move_country = root
+		}
+		
+		hidden_effect = {
+			while = {
+				count = {
+					value = num_characters
+					divide = 2
+				}
+				random_character = {
+					limit = {
+						religion = religion:catholic
+						NOT = {
+							estate_type = estate_type:nobles_estate
+						}
+					}
+					change_character_religion = religion:anglican
+				}
+			}
+		}
+		trigger_event_silently = {
+			id = icd_reformation_push.9
+			months = { 6 12 }
+		}
+	}
+}
+

@@ -139,8 +139,7 @@
 	
 	agrarian_constitution = {
 		potential = {
-			country_exists = c:TEU
-			this = c:TEU
+			has_or_had_tag = TEU
 		}
 		country_modifier = {
 			global_distance_from_capital_speed_propagation = 0.025

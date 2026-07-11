@@ -25,6 +25,14 @@
 				}
 				has_policy = minority_rule
 			}
+			AND = {
+				tag = PLE
+				culture_percentage_in_country = {
+					culture = root.culture
+					value <= 0.10
+				}
+				has_policy = minority_rule
+			}
 		}
 	}
 
@@ -60,6 +68,13 @@
 					}
 					tag = CHB
 				}
+				AND = {
+					culture_percentage_in_country = {
+						culture = root.culture
+						value <= 0.10
+					}
+					tag = PLE
+				}
 			}
 		}
 		months = 1
@@ -73,6 +88,20 @@
 				set_variable = {
 					name = promoting_culture
 					value = this.dominant_culture
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						religion_percentage_in_country = {
+							religion = root.religion
+							value <= 0.05
+						}
+						NOT = {
+							government_type = government_type:theocracy
+						}
+					}
+					add_policy = policy:icd_minority_religion
 				}
 			}
 		}
@@ -344,24 +373,34 @@
 	}
 	
 
-	turkic_integration = {
+	ethnoreligious_integration = {
 		price = icd_nothing_price
 		country_modifier = {
 			global_pop_assimilation_speed = 0.001
-			add_tolerated_culture_cost_modifier = -0.25
 			global_estate_target_satisfaction = small_permanent_target_satisfaction
 		}
 		potential = {
-			culture = { has_culture_group = culture_group:turkic_group }
+			NOT = {
+				culture = { has_culture_group = culture_group:iranian_group }
+				culture = culture:lower_egyptian_culture
+				culture = culture:levantine_culture
+				culture = culture:iraqi_culture
+			}
+			OR = {
+				religion.group = religion_group:muslim
+				religion = religion:judaism
+				religion = religion:samaritanism
+				religion = religion:mandeaism
+			}
 		}
 		allow = {
 			OR = {
-				religion = religion:sunni
-				religion = religion:shia
+				AND = {
+					country_has_estate = estate_type:dhimmi_estate
+					has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+				}
+				has_policy = icd_custodians
 			}
-			NOT = { has_variable = icd_israelite_dhimmi_disabled }
-			NOT = { has_variable = icd_christian_dhimmi_disabled }
-			has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
 		}
 		
 		on_activate = {
@@ -396,33 +435,36 @@
 				}
 			}
 		}
-		location_modifier = {
+		location_modifier = { ##turks###
 			potential_trigger = {
 				custom_tooltip = {
-					text = icd_turkic_integration_modifier_tt
-					OR = {
-						region = region:balkan_region
-						region = region:anatolia_region
-						region = region:caucasus_region
-					}
-					NOT = {
-						area = area:albania_area
-						area = area:bosnia_area
-					}
-					OR = {
-						dominant_culture ?= { has_culture_group = culture_group:turkic_group }
-					}
-					NOT = { 
-						dominant_religion ?= religion:sunni
-						dominant_religion ?= religion:shia
+					text = icd_ethnoreligious_integration_tt
+					"culture_group_percentage(culture_group:turkic_group)" > "religion_group_percentage(religion_group:muslim)"
+					OR = {	
+						owner = { culture = { has_culture_group = culture_group:jewish_group } }
+						owner = { culture = { has_culture_group = culture_group:turkic_group } }
 					}
 				}
 			}
-			local_pop_conversion_speed_modifier = 2.5
+			local_heathen_pop_conversion_speed_modifier = 3.5
+		}
+		location_modifier = { ##turks###
+			potential_trigger = {
+				custom_tooltip = {
+					text = icd_ethnoreligious_integration_tt
+					"culture_percentage(owner.culture)" > "religion_group_percentage(religion_group:muslim)"
+					owner = {
+						NOT = { 
+							culture = { has_culture_group = culture_group:turkic_group } 
+						}
+					}
+				}
+			}
+			local_heathen_pop_conversion_speed_modifier = 3.5
 		}
 		months = 1
 		ai_will_do = {
-			value = 100
+			value = 700
 		}
 	}
 	

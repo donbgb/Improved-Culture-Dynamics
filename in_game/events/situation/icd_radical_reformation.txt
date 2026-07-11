@@ -1,0 +1,1736 @@
+﻿namespace = icd_radical_reformation
+
+scripted_effect add_to_reformer_list = {
+	add_to_global_variable_list = {
+		name = reformer_list
+		target = scope:target_character
+	}
+}
+
+icd_radical_reformation.1 = { #Zwickau prophets
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.1.title
+	desc = icd_radical_reformation.1.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		character:martin_luther = {
+			save_scope_as = target_character_luther
+		}
+		
+		character:reformer_philip_melanchton = {
+			save_scope_as = target_character_melanchton
+		}
+		
+		religion:anabaptist = {
+			enable_religion = yes
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.1.a
+		
+		location:wittenberg = {
+			every_pop = {
+				limit = {
+					OR = {
+						religion = religion:lutheran
+						religion = religion:catholic
+						religion = religion:calvinist
+					}
+				}
+				split_pop = {
+					fraction = 0.05
+					religion = religion:anabaptist
+				}
+			}
+		}
+	}
+}
+	
+icd_radical_reformation.2 = { #Swiss Brethren and Conrad Grebel#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.2.title
+	desc = icd_radical_reformation.2.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_conrad # 
+			last_name = Grebel
+			religion = religion:anabaptist
+			adm = { 60 80 }
+			dip = { 60 80 }
+			mil = { 60 80 }
+			birth_date = 1498.1.1
+			birth_location = location:zurich
+			culture = culture:high_alemannic
+			estate = estate_type:burghers_estate
+			save_scope_as = target_character
+			script = swi_conrad_grebel
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+		}
+		
+		
+		
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:zurich = {
+			save_scope_as = target_location
+			set_variable = received_anabaptist
+		}
+		random_neighbor_country = {
+			save_scope_as = exile_destination
+		}
+		
+		scope:target_location = {
+			spawn_movement = {
+				movement_definition = movement_definition:anabaptist_movement
+				supporters = {
+					value = population
+					multiply = 0.01
+				}
+			}
+		}
+
+		religion:anabaptist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+		
+		trigger_event_silently = {
+			id = icd_radical_reformation.3
+			years = 1
+		}
+		
+		character:swi_huldrych_zwingli = {
+			save_scope_as = icd_reformer_rude
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.2.a ##okay##
+		
+		ai_will_select = {
+			value = -500
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.2.b ##exile##
+
+		scope:target_character = {
+			move_country = scope:exile_destination
+		}
+		
+		location:zurich = {
+			add_location_modifier = {
+				modifier = icd_expelled_anabaptists
+				years = 20
+			}
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.2.c ##kill##
+
+		scope:target_character = {
+			kill_character = scope:target_character
+		}
+		
+		location:zurich = {
+			add_location_modifier = {
+				modifier = icd_expelled_anabaptists
+				years = 20
+			}
+		}
+	}
+}
+
+icd_radical_reformation.3 = { #northeast switzerland#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.3.title
+	desc = icd_radical_reformation.3.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+	}
+	
+	option = {
+		name = icd_radical_reformation.3.a
+		
+		random_owned_location = {
+			save_scope_as = target_this_location
+			province_definition = {
+				every_location_in_province_definition = {
+					every_pop = {
+						limit = {
+							OR = {
+								religion = religion:lutheran
+								religion = religion:catholic
+								religion = religion:calvinist
+							}
+						}
+						split_pop = {
+							fraction = 0.04
+							religion = religion:anabaptist
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+icd_radical_reformation.4 = { #conversion of caspar##
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.4.title
+	desc = icd_radical_reformation.4.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+	
+	trigger = {
+		character:icd_caspar_schwenckfeld = {
+			is_alive = yes
+		}
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+	}
+
+	option = {
+		name = icd_radical_reformation.4.a
+		historical_option = yes
+		
+		character:icd_caspar_schwenckfeld = {
+			change_character_religion = religion:anabaptist
+		}
+		
+		location:legnica = {
+			every_pop = {
+				limit = {
+					OR = {
+						religion = religion:lutheran
+						religion = religion:catholic
+						religion = religion:calvinist
+					}
+				}
+				split_pop = {
+					fraction = 0.1
+					religion = religion:anabaptist
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.4.b
+		
+		trigger = {
+			religion = religion:lutheran
+		}
+		
+		character:icd_caspar_schwenckfeld = {
+			change_character_religion = religion:anabaptist
+		}
+		
+		location:legnica = {
+			every_pop = {
+				limit = {
+					OR = {
+						religion = religion:lutheran
+						religion = religion:catholic
+						religion = religion:calvinist
+					}
+				}
+				split_pop = {
+					fraction = 0.1
+					religion = religion:anabaptist
+				}
+			}
+		}
+		
+		change_religion = religion:anabaptist
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:anabaptist }
+	}
+	
+	option = {
+		name = icd_radical_reformation.4.c
+	
+		kill_character = character:icd_caspar_schwenckfeld
+	}
+
+}
+
+icd_radical_reformation.5 = { #Balthasar Hubmaier
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.5.title
+	desc = icd_radical_reformation.5.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_balthazar
+			last_name = Hubmaier
+			religion = religion:anabaptist
+			culture = culture:danube_bavarian
+			birth_date = 1480.1.1
+			birth_location = location:friedberg
+			estate = estate_type:clergy_estate
+			adm = { 40 90 }
+			dip = { 40 90 }
+			mil = { 40 90 }
+			script = icd_balthazar_hubmaier
+			save_scope_as = target_character
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:hodonin = {
+			save_scope_as = target_location
+			set_variable = received_anabaptist
+		}
+		 
+	}
+
+	option = {
+		name = icd_radical_reformation.5.a
+
+		religion:anabaptist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.5.b
+		
+		trigger = {
+			scope:target_location = {
+				owner ?= {
+					num_locations < 6
+				}
+			}
+		}
+
+		religion:anabaptist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+		
+		change_religion = religion:anabaptist
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:anabaptist }
+	}
+}
+
+
+icd_radical_reformation.6 = { #Michael Sattler and Schleitheim Confession#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.6.title
+	desc = icd_radical_reformation.6.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_michael
+			last_name = Sattler
+			religion = religion:anabaptist
+			birth_date = 1490.1.1
+			culture = culture:high_alemannic
+			birth_location = location:freiburg
+			estate = estate_type:clergy_estate
+			adm = { 50 90 }
+			dip = { 50 90 }
+			mil = { 50 90 }
+			script = icd_michael_settler
+			save_scope_as = target_character
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:schaffhausen = {
+			save_scope_as = target_location
+			set_variable = received_anabaptist
+		}
+		 
+	}
+
+	option = {
+		name = icd_radical_reformation.6.a
+
+		religion:anabaptist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+	}
+}
+
+icd_radical_reformation.7 = { #Jakob Hutter in Tyrol#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.7.title
+	desc = icd_radical_reformation.7.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_james
+			last_name = Hutter
+			religion = religion:anabaptist
+			birth_date = 1500.1.1
+			culture = culture:danube_bavarian
+			birth_location = location:bolzano
+			estate = estate_type:peasants_estate
+			adm = { 50 90 }
+			dip = { 50 90 }
+			mil = { 50 90 }
+			script = icd_jacob_hutter
+			save_scope_as = target_character
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:sterzing = {
+			save_scope_as = target_location
+			set_variable = received_anabaptist
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.7.a
+		
+		religion:anabaptist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+	}
+}
+
+icd_radical_reformation.8 = { #hans hut
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.8.title
+	desc = icd_radical_reformation.8.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_john
+			last_name = Hut
+			religion = religion:anabaptist
+			birth_date = 1490.1.1
+			culture = culture:east_franconian
+			birth_location = location:hildburghausen
+			estate = estate_type:burghers_estate
+			adm = { 70 95 }
+			dip = { 60 90 }
+			mil = { 70 95 }
+			script = icd_john_hut
+			save_scope_as = target_character
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:hassfurt = {
+			save_scope_as = target_location
+			set_variable = received_anabaptist
+		}
+		 
+	}
+
+	option = {
+		name = icd_radical_reformation.7.a
+
+		religion:anabaptist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+	}
+	
+}
+
+icd_radical_reformation.9 = { #menno simons
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.9.title
+	desc = icd_radical_reformation.9.desc
+	outcome = neutral
+
+	
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_menno
+			last_name = Simens
+			religion = religion:anabaptist
+			birth_date = 1496.1.1
+			culture = culture:frisian
+			birth_location = location:stavoren
+			estate = estate_type:clergy_estate
+			adm = { 50 100 }
+			dip = { 50 100 }
+			mil = { 50 60 }
+			script = icd_menno_simons
+			save_scope_as = target_character
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:emden = {
+			save_scope_as = target_location
+			set_variable = received_anabaptist
+		}
+		 
+	}
+
+	option = {
+		name = icd_radical_reformation.7.a
+
+		religion:anabaptist = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+	}
+	
+}
+
+icd_radical_reformation.10 = { #Peter Gonesius and Unitarianism#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.10.title
+	desc = icd_radical_reformation.10.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		religion:unitarian = {
+			enable_religion = yes
+		}
+
+		religion:anglican = {
+			religion:anglican = {
+				set_religious_view = {
+					target = religion:unitarian
+					value = enemy
+				}
+			}
+			religion:catholic = {
+				set_religious_view = {
+					target = religion:unitarian
+					value = enemy
+				}
+			}
+			religion:lutheran = {
+				set_religious_view = {
+					target = religion:unitarian
+					value = enemy
+				}
+			}
+			religion:calvinist = {
+				set_religious_view = {
+					target = religion:unitarian
+					value = enemy
+				}
+			}
+			religion:hussite = {
+				set_religious_view = {
+					target = religion:unitarian
+					value = enemy
+				}
+			}
+		}
+
+		create_character = {
+			first_name = name_peter
+			last_name = Goniadza
+			religion = religion:unitarian
+			birth_date = 1525.1.1
+			culture = culture:greater_polish
+			birth_location = location:goniadz
+			estate = estate_type:clergy_estate
+			adm = { 50 90 }
+			dip = { 50 90 }
+			mil = { 50 90 }
+			script = icd_peter_goniadza
+			save_scope_as = target_character
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:krakow	= {
+			set_variable = received_anabaptist
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.10.a
+
+		random_owned_location = {
+			limit = {
+				is_overseas_for_owner = no
+				OR = {
+					dominant_religion = religion:catholic
+					dominant_religion = religion:lutheran
+				}
+			}
+			province_definition = {
+				every_location_in_province_definition = {
+					every_pop = {
+						limit = {
+							OR = {
+								religion = religion:lutheran
+								religion = religion:catholic
+								religion = religion:calvinist
+							}
+						}
+						split_pop = {
+							fraction = 0.3
+							religion = religion:unitarian
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+icd_radical_reformation.11 = { #Polish Brethren and Sozzini#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.11.title
+	desc = icd_radical_reformation.11.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_faustus
+			last_name = Sozzini
+			religion = religion:unitarian
+			birth_date = 1539.12.10
+			culture = culture:tuscan
+			birth_location = location:siena
+			estate = estate_type:burghers_estate
+			adm = { 70 95 }
+			dip = { 60 95 }
+			mil = { 70 95 }
+			script = icd_fausto_sozzini
+			save_scope_as = target_character
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:opatow = {
+			save_scope_as = target_location
+			set_variable = received_anabaptist
+		}
+		 
+	}
+	
+	option = {
+		name = icd_radical_reformation.11.a
+
+		scope:target_location = {
+			province_definition = {
+				every_location_in_province_definition = {
+					every_pop = {
+						limit = {
+							OR = {
+								religion = religion:lutheran
+								religion = religion:catholic
+								religion = religion:calvinist
+							}
+						}
+						split_pop = {
+							fraction = { 0.1 0.35 }
+							religion = religion:unitarian
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+icd_radical_reformation.12 = { ##
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.12.title
+	desc = icd_radical_reformation.12.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_francis.name_david
+			last_name = Hertel
+			religion = religion:calvinist
+			birth_date = 1520.1.1
+			culture = culture:hungarian
+			birth_location = location:cluj
+			estate = estate_type:clergy_estate
+			adm = { 80 95 }
+			dip = { 80 95 }
+			mil = { 50 85 }
+			script = icd_ferenc_david
+			save_scope_as = target_character
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+		} 
+	}
+	
+	option = {
+		name = icd_radical_reformation.12.a
+
+		scope:target_character = {
+			move_country = root
+		}
+
+		location:cluj = {
+			set_variable = received_anabaptist
+		}
+		
+		trigger_event_silently = {
+			id = icd_radical_reformation.13
+			years = 2
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.12.b
+		
+		scope:target_character = {
+			add_character_modifier = {
+				modifier = permanently_banned_from_cabinet
+				mode = add_and_extend
+				years = -1
+			}
+		}
+		
+		if = {
+			limit = { 
+				OR = {
+					has_or_had_tag = TRA
+					has_or_had_tag = HUN
+				} 
+			}
+			trigger_event_silently = {
+				id = icd_radical_reformation.14
+				years = 2
+			}
+		}
+	}
+}
+
+
+icd_radical_reformation.13 = { #ferenc david converts to unitarian#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.13.title
+	desc = icd_radical_reformation.13.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+		
+		character:icd_ferenc_david = {
+			save_scope_as = target_character
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:cluj = {
+			save_scope_as = target_location
+		}
+		
+		area:transylvania_area = {
+			every_location_in_area = {
+				every_pop = {
+					limit = {
+						OR = {
+							religion = religion:lutheran
+							religion = religion:catholic
+							religion = religion:calvinist
+						}
+						OR = {
+							culture = culture:hungarian
+							culture = culture:szekely_culture
+						}
+					}
+					split_pop = {
+						fraction = { 0.2 0.55 }
+						religion = religion:unitarian
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.13.a
+
+		scope:target_character = {
+			change_character_religion = religion:unitarian
+		}
+		
+		if = {
+			limit = { 
+				OR = {
+					has_or_had_tag = TRA
+					has_or_had_tag = HUN
+				} 
+			}
+			trigger_event_silently = {
+				id = icd_radical_reformation.14
+				months = 4
+			}
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.13.b
+
+		scope:target_character = {
+			change_character_religion = religion:unitarian
+		}
+		
+		trigger = {
+			NOT = { is_leader_of_international_organization = international_organization:hre }
+			is_subject = no
+			OR = {
+				tag = TRA
+				any_neighbor_country = {
+					religion.group = religion_group:muslim
+				}
+			}
+			OR = {
+				stability < 0
+				legitimacy < 0
+				religion = religion:lutheran
+				religion = religion:calvinist
+				religion = religion:anabaptist
+			}
+		}
+
+		change_religion = religion:unitarian
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:unitarian }
+		
+		add_legitimacy = legitimacy_severe_penalty
+		add_stability = stability_mild_penalty
+		
+		if = {
+			limit = { 
+				OR = {
+					has_or_had_tag = TRA
+					has_or_had_tag = HUN
+				} 
+			}
+			trigger_event_silently = {
+				id = icd_radical_reformation.14
+				months = 4
+			}
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.13.c
+
+		scope:target_character = {
+			change_character_religion = religion:unitarian
+		}
+		
+		kill_character = scope:target_character
+	}
+}
+
+
+icd_radical_reformation.14 = { #edict of torda#
+	fire_only_once = yes
+	title = icd_radical_reformation.14.title
+	desc = icd_radical_reformation.14.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = icd_radical_reformation.14.a
+		
+		add_policy = policy:icd_edict_of_torda
+		set_variable = icd_unlocked_torda
+	}
+
+	option = {
+		name = icd_radical_reformation.14.b
+		set_variable = icd_unlocked_torda
+	}
+	
+}
+
+
+##munster rebellion##
+icd_radical_reformation.20 = { #munster rebellion - anabaptists rise#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.20.title
+	desc = icd_radical_reformation.20.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+	
+	dynamic_historical_event = {
+		tag = MUN
+		from = 1530.1.1
+		to = 1545.1.1
+		monthly_chance = 10
+	}
+	
+	trigger = {
+		religion:anabaptist = {
+			is_religion_enabled = yes
+		}
+		owns = location:munster
+		OR = {
+			religion = religion:catholic
+			religion = religion:lutheran
+		}
+		num_provinces > 1
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+		
+				
+		create_character = {
+			first_name = name_bernard
+			last_name = Knipperdolling
+			religion = religion:anabaptist
+			birth_date = 1495.1.1
+			culture = culture:westphalian
+			birth_location = location:munster
+			estate = estate_type:burghers_estate
+			adm = { 70 95 }
+			dip = { 60 95 }
+			mil = { 70 95 }
+			script = icd_bernhard_knipperdolling
+			save_scope_as = target_character
+			add_trait = trait:unsuited_for_naval_command
+			add_trait = trait:unsuited_for_army_command
+			add_character_modifier = {
+				modifier = permanently_banned_from_cabinet
+				mode = add_and_extend
+				years = -1
+			}
+		} 
+		
+		location:munster = {
+			every_pop = {
+				limit = { 
+					OR = {
+						religion = religion:catholic 
+						religion = religion:lutheran
+					}
+				}
+				split_pop = {
+					fraction = 0.15
+					religion = religion:anabaptist
+				}
+				add_pop_satisfaction = pop_satisfaction_mild_penalty
+			}
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.20.a
+		
+		custom_tooltip = icd_munster_radicals_gather_tt
+		
+		trigger_event_silently = {
+			id = icd_radical_reformation.21
+			years = 1
+		}
+	}
+}
+
+icd_radical_reformation.21 = { #munster escalation#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.21.title
+	desc = icd_radical_reformation.21.desc
+	outcome = neutral
+
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+	
+	trigger = {
+		religion:anabaptist = {
+			is_religion_enabled = yes
+		}
+		owns = location:munster
+		religion = religion:catholic
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+		
+		character:icd_bernhard_knipperdolling = {
+			save_scope_as = target_character
+		}
+		
+		location:munster = {
+			every_pop = {
+				limit = { religion = religion:catholic }
+				split_pop = {
+					fraction = 0.55
+					religion = religion:anabaptist
+				}
+				add_pop_satisfaction = pop_satisfaction_severe_penalty
+			}
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.21.a
+		
+		custom_tooltip = icd_munster_radicals_gather_more_tt
+		
+		
+		trigger_event_silently = {
+			id = icd_radical_reformation.22
+			months = 6
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.21.b
+		
+		add_stability = stability_extreme_penalty
+		add_legitimacy = legitimacy_mild_penalty
+		change_gold_effect = { scale = -7 }
+	}
+}
+
+icd_radical_reformation.22 = { #munster rebellion#
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.22.title
+	desc = icd_radical_reformation.22.desc
+	outcome = neutral
+
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+
+		
+		create_character = {
+			first_name = name_john
+			last_name = Matthys
+			religion = religion:anabaptist
+			birth_date = 1500.1.1
+			culture = culture:low_franconian
+			birth_location = location:amsterdam
+			estate = estate_type:burghers_estate
+			adm = { 70 95 }
+			dip = { 60 95 }
+			mil = { 70 95 }
+			script = icd_jan_matthys
+			save_scope_as = target_character_two
+		}
+
+		location:munster = {
+			create_country_from_location = {
+				set_capital = location:munster
+					
+				change_country_name = JERU_country
+				change_country_adjective = JERU_country_ADJ
+			
+				change_government_type = government_type:republic
+				change_religion = religion:anabaptist
+				
+				set_new_ruler = scope:target_character_two
+				change_culture = location:munster.dominant_culture
+				
+				add_government_power = 50
+				add_gold = 1500
+				add_estate_satisfaction = { type = estate_type:nobles_estate value = 5 }
+				add_estate_satisfaction = { type = estate_type:clergy_estate value = 5 }
+				add_estate_satisfaction = { type = estate_type:peasants_estate value = 5 }
+				add_estate_satisfaction = { type = estate_type:burghers_estate value = 5 }
+				add_estate_satisfaction = { type = estate_type:tribes_estate value = 5 }
+				every_pop = {
+					add_pop_satisfaction = pop_satisfaction_extreme_bonus
+				}
+				
+				save_scope_as = target_country
+				
+				add_country_modifier = {
+					modifier = icd_new_jerusalem_fervor
+					mode = add_and_extend
+					years = 5
+				}
+				if = {
+					limit = {
+						root = {
+							is_member_of_international_organization = international_organization:hre
+						}
+					}
+					international_organization:hre = {
+						add_country_to_international_organization = scope:target_country
+					}
+				}
+				
+				drop_antagonism_bomb = {
+					target = scope:target_country.capital
+					modifier = antagonism_subjugated_nation
+					value = 15
+				}
+			}
+			province = {
+				every_location_in_province = {
+					change_location_owner = scope:target_country
+				}
+			}
+			scope:target_country = {
+				every_province = {
+					limit = { any_location_in_province = { NOT = { integration_level = core } } }
+					change_province_integration = core
+				}
+			}
+		}
+		
+		character:icd_bernhard_knipperdolling = {
+			save_scope_as = target_character
+			remove_trait = trait:unsuited_for_naval_command
+			remove_trait = trait:unsuited_for_army_command
+			remove_character_modifier = permanently_banned_from_cabinet
+			move_country = scope:target_country
+		}
+		
+	}
+	
+	option = {
+		name = icd_radical_reformation.22.a
+		
+		scope:target_country = {
+			declare_war_with_cb = {	
+				target = c:MUN
+				type = casus_belli:cb_independence_war	
+			}
+		}
+		
+		hidden_effect = {
+			scope:target_country = {
+				raise_all_levies = {
+					type = army
+					instant = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = icd_radical_reformation.22.b
+		
+		trigger = {
+			is_ai = no
+		}
+		
+		scope:target_country = {
+			declare_war_with_cb = {	
+				target = c:MUN
+				type = casus_belli:cb_independence_war	
+			}
+		}
+		
+		change_player = scope:target_country
+		
+		hidden_effect = {
+			scope:target_country = {
+				raise_all_levies = {
+					type = army
+					instant = yes
+				}
+			}
+		}
+	}
+}
+
+
+
+###great peasant war###
+icd_radical_reformation.100 = { #great peasant war - beginnings
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.100.title
+	desc = icd_radical_reformation.100.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+	
+	orphan = yes
+	
+	trigger = {
+		always = no
+		situation:reformation = {
+			situation_is_active = yes
+		}
+		num_locations > 1
+		"estate(estate_type:peasants_estate)" = { num_privileges < 6 }
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+
+		trigger_event_silently = {
+			id = icd_radical_reformation.6
+			days = 6
+		}
+	}
+
+	option = {
+		name = icd_radical_reformation.100.a
+		
+		create_rebel = {
+			name = icd_great_peasant_rebellion
+			category = estate
+			estate = peasants_estate
+			save_scope_as = great_peasant_rebel
+		}
+		
+		set_variable = {
+			name = icd_great_peasant_rebel_var
+			value = scope:great_peasant_rebel
+		}
+
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
+		
+		every_owned_location = {
+			limit = {
+				OR = {
+					area = area:swabia_area
+					area = area:franconia_area
+					area = area:tirol_area
+					area = area:salzburg_area
+					area = area:carinthia_area
+				}
+			}
+			set_variable = icd_german_peasant_war
+			every_pop = {
+				limit = {
+					owner = root
+					pop_type = pop_type:peasants
+				}
+				change_pop_allegiance = scope:great_peasant_rebel
+				add_pop_satisfaction = pop_satisfaction_mild_penalty
+			}
+		}
+		
+		random_neighbor_country = {
+			limit = {
+				num_locations > 1
+				any_owned_location = {
+					OR = {
+						area = area:swabia_area
+						area = area:franconia_area
+						area = area:tirol_area
+						area = area:salzburg_area
+						area = area:carinthia_area
+					}
+					NOT = {
+						has_variable = icd_german_peasant_war
+					}
+				}
+				"estate(estate_type:peasants_estate)" = { num_privileges < 6 }
+			}
+			trigger_event_silently = {
+				id = icd_radical_reformation.101
+				days = 1
+			}
+		}
+		trigger_event_silently = {
+			id = icd_radical_reformation.102
+			days = 90
+		}
+		
+		ai_will_select = { value = 100 }
+	}
+	
+	option = {
+		name = icd_radical_reformation.100.b ##implement reforms immediately###
+		
+		
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_extreme_penalty }
+
+		"estate(estate_type:peasants_estate)" = {
+			random_possible_privilege = {
+				save_scope_as = icd_privilege_one
+				root = { grant_estate_privilege = prev }
+			}
+		}
+		"estate(estate_type:peasants_estate)" = {
+			random_possible_privilege = {
+				limit = {
+					NOT = { this = scope:icd_privilege_one }
+				}
+				save_scope_as = icd_privilege_two
+				root = { grant_estate_privilege = prev }
+			}
+		}
+		"estate(estate_type:peasants_estate)" = {
+			random_possible_privilege = {
+				limit = {
+					NOT = { this = scope:icd_privilege_one }
+					NOT = { this = scope:icd_privilege_two }
+				}
+				save_scope_as = icd_privilege_three
+				root = { grant_estate_privilege = prev }
+			}
+		}
+	}
+}
+
+icd_radical_reformation.101 = { #great peasant war - spreads
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.101.title
+	desc = icd_radical_reformation.101.desc
+	outcome = neutral
+
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = icd_radical_reformation.101.a
+		
+		create_rebel = {
+			name = icd_great_peasant_rebellion
+			category = estate
+			estate = peasants_estate
+			save_scope_as = great_peasant_rebel
+		}
+		
+		set_variable = {
+			name = icd_great_peasant_rebel_var
+			value = scope:great_peasant_rebel
+		}
+
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
+		
+		every_owned_location = {
+			limit = {
+				OR = {
+					area = area:swabia_area
+					area = area:franconia_area
+					area = area:tirol_area
+					area = area:salzburg_area
+					area = area:carinthia_area
+				}
+			}
+			set_variable = icd_german_peasant_war
+			every_pop = {
+				limit = {
+					owner = root
+					pop_type = pop_type:peasants
+				}
+				change_pop_allegiance = scope:great_peasant_rebel
+				add_pop_satisfaction = pop_satisfaction_mild_penalty
+			}
+		}
+		
+		random_neighbor_country = {
+			limit = {
+				num_locations > 1
+				any_owned_location = {
+					OR = {
+						area = area:swabia_area
+						area = area:franconia_area
+						area = area:tirol_area
+						area = area:salzburg_area
+						area = area:carinthia_area
+					}
+					NOT = {
+						has_variable = icd_german_peasant_war
+					}
+				}
+				"estate(estate_type:peasants_estate)" = { num_privileges < 6 }
+			}
+			trigger_event_silently = {
+				id = icd_radical_reformation.101
+				days = 1
+			}
+		}
+		ai_will_select = { value = 100 }
+	}
+	
+	option = {
+		name = icd_radical_reformation.101.b ##implement reforms immediately###
+		
+		
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_extreme_penalty }
+
+		"estate(estate_type:peasants_estate)" = {
+			random_possible_privilege = {
+				save_scope_as = icd_privilege_one
+				root = { grant_estate_privilege = prev }
+			}
+		}
+		"estate(estate_type:peasants_estate)" = {
+			random_possible_privilege = {
+				limit = {
+					NOT = { this = scope:icd_privilege_one }
+				}
+				save_scope_as = icd_privilege_two
+				root = { grant_estate_privilege = prev }
+			}
+		}
+		"estate(estate_type:peasants_estate)" = {
+			random_possible_privilege = {
+				limit = {
+					NOT = { this = scope:icd_privilege_one }
+					NOT = { this = scope:icd_privilege_two }
+				}
+				save_scope_as = icd_privilege_three
+				root = { grant_estate_privilege = prev }
+			}
+		}
+	}
+}
+
+icd_radical_reformation.102 = { #great peasant war - outbreak
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.102.title
+	desc = icd_radical_reformation.102.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+	
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+		
+		every_country = {
+			limit = {
+				any_owned_location = {
+					has_variable = icd_german_peasant_war
+				}
+				NOT = {
+					this = root
+				}
+			}
+			trigger_event_silently = {
+				id = icd_radical_reformation.103
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = icd_radical_reformation.102.a
+				
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+				
+		every_owned_location = {
+			limit = {
+				has_variable = icd_german_peasant_war
+			}
+			every_pop = {
+				limit = {
+					owner = root
+					pop_type = pop_type:peasants
+				}
+				change_pop_allegiance = scope:great_peasant_rebel
+				add_pop_satisfaction = pop_satisfaction_severe_penalty
+			}
+			remove_variable = icd_german_peasant_war
+		}
+		
+		var:icd_great_peasant_rebel_var = {
+			add_rebel_progress = 1
+		}
+		
+		remove_variable = icd_great_peasant_rebel_var
+	}
+}
+
+icd_radical_reformation.103 = { #great peasant war - full outbreak
+	type = country_event
+	category = situation_event
+	title = icd_radical_reformation.103.title
+	desc = icd_radical_reformation.103.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+	
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = icd_radical_reformation.103.a
+				
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+				
+		every_owned_location = {
+			limit = {
+				has_variable = icd_german_peasant_war
+			}
+			every_pop = {
+				limit = {
+					owner = root
+					pop_type = pop_type:peasants
+				}
+				change_pop_allegiance = scope:great_peasant_rebel
+				add_pop_satisfaction = pop_satisfaction_severe_penalty
+			}
+			remove_variable = icd_german_peasant_war
+		}
+		
+		var:icd_great_peasant_rebel_var = {
+			add_rebel_progress = 1
+		}
+		
+		remove_variable = icd_great_peasant_rebel_var
+	}
+}
+

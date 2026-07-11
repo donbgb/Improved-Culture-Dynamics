@@ -1,0 +1,4 @@
+﻿
+icd_reformation_resistance = {
+
+}

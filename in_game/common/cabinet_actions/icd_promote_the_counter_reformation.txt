@@ -1,0 +1,23 @@
+﻿icd_promote_the_counter_reformation = {
+	ability = mil
+	
+	potential = {
+		religion = religion:catholic
+		situation:reformation = {
+			situation_is_active = yes
+		}
+		OR = {
+			situation:council_of_trent = { situation_is_active = yes }
+			situation:council_of_trent = { situation_has_ended = yes }
+		}
+	}
+
+	country_modifier = {
+		national_lutheranism_movement_resistance_modifier = 0.35
+		national_calvinism_movement_resistance_modifier = 0.35
+		national_anabaptist_movement_resistance_modifier = 0.2
+	}
+	
+	progress = {
+	}
+}

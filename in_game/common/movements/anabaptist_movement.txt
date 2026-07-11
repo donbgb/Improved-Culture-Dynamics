@@ -1,0 +1,180 @@
+﻿anabaptist_movement = {
+	religion = anabaptist
+
+	potential = {
+		religion:anabaptist = { is_religion_enabled = yes }
+		situation:reformation = {
+			situation_is_active = yes
+		}
+	}
+	
+		
+	on_calc_effect = {
+		every_location_with_movement = {
+			limit = {
+				has_location_modifier = icd_religious_zeal
+				owner ?= {
+					NOT = {
+						religion = religion:catholic
+					}
+				}
+			}
+			remove_location_modifier = icd_religious_zeal
+		}
+		if = {
+			limit = {
+				OR = {
+					situation:council_of_trent = { situation_has_ended = no }
+					situation:reformation = {
+						years_since_situation_start < 35
+					}
+				}
+			}
+			every_location_with_movement = {
+				limit = {
+					NOT = {
+						has_location_modifier = icd_religious_zeal
+					}
+					owner ?= {
+						religion = religion:catholic
+					}
+				}
+				add_location_modifier = {
+					modifier = icd_religious_zeal
+					mode = add
+				}
+			}
+		}
+		else = {
+			every_country = {
+				limit = {
+					any_owned_location = {
+						has_location_modifier = icd_religious_zeal
+					}
+				}
+				trigger_event_non_silently = icd_reformation_push.7
+			}
+		}
+	}
+
+	monthly_spawn_chance = { value = 0 }
+	spawn = { }
+
+	environmental_infection = { value = 0.05 }
+
+	# Slightly lower R0 than Lutheranism — Calvinism spread more selectively.
+	# Phase 1 (Lever 1) — time-phased multiplier anchored to council_of_trent situation lifecycle.
+	# Stochastic { 0.0 X } range form preserves the current spread variance at each phase.
+	r0 = {
+		# Schmalkaldic boom: ≥5y after Reformation spawn, Trent not yet started, capped at 40y
+		# so a player who indefinitely delays Trent doesn't ride the boom forever.
+		if = {
+			limit = { dominant_religion ?= religion:anabaptist }
+			value = { 0.0 0.0015 }
+		}
+		else_if = {
+			limit = { "religion_percentage(religion:anabaptist)" > 0.35
+			}
+			value = { 0.0 0.0015 }
+		}
+		else_if = {
+			limit = { "religion_percentage(religion:anabaptist)" > 0.2
+			}
+			value = { 0.0 0.004 }
+		}
+		else_if = {
+			limit = {
+				situation:reformation = {
+					years_since_situation_start >= 5
+					years_since_situation_start < 40
+				}
+				NOT = { situation:council_of_trent = { situation_is_active = yes } }
+				NOT = { situation:council_of_trent = { situation_has_ended = yes } }
+			}
+			value = { 0.0 0.020 }
+		}
+		# Council of Trent active: world watches, growth slows but does not pause.
+		else_if = {
+			limit = { situation:council_of_trent = { situation_is_active = yes } }
+			value = { 0.0 0.020 }
+		}
+		# Counter-Reformation: Trent ended, <60y since Reformation spawn — borders harden.
+		else_if = {
+			limit = {
+				situation:council_of_trent = { situation_has_ended = yes }
+				situation:reformation = { years_since_situation_start < 50 }
+			}
+			value = { 0.0 0.004 }
+		}
+		# Stable confessional boundaries: post-Trent and ≥60y since Reformation spawn.
+		else_if = {
+			limit = { situation:council_of_trent = { situation_has_ended = yes } }
+			value = { 0.0 0.0015 }
+		}
+		# Fallthrough: pre-boom (<5y post-spawn), or boom-exhaust (≥40y, Trent never convened).
+		else = {
+			value = { 0.0 0.015 }
+		}
+	}
+
+	calc_interval_days = {20 40}
+
+	# Only pops of these religions can convert to Lutheranism
+	required_religions = {
+		anglican
+		catharism
+		catholic
+		hussite
+		lollardy
+		lutheran
+		waldensian
+		calvinist
+	}
+
+	development = neutral
+	literacy = positive
+	local_control = negative
+	pop_satisfaction = negative
+
+	# peasants dig it#
+	specific_pop_type_effect = { pop_type = burghers  multiplier = 1.5   }
+	specific_pop_type_effect = { pop_type = nobles    multiplier = 0.1  }
+	specific_pop_type_effect = { pop_type = peasants  multiplier = 1.25 }
+	specific_pop_type_effect = { pop_type = clergy    multiplier = 0.7 }
+	specific_pop_type_effect = { pop_type = slaves    multiplier = 0   }
+	specific_pop_type_effect = { religion = hussite   multiplier = 0.5 }
+	specific_pop_type_effect = { religion = lutheran   multiplier = 0.8 }
+	specific_pop_type_effect = { religion = catharism   multiplier = 0.5 }
+	specific_pop_type_effect = { religion = calvinist   multiplier = 0.5 }
+	specific_pop_type_effect = { religion = lutheran   multiplier = 0.5 }
+
+	location_spread_threshold = { value = 0.01 }
+
+	#on_spread_to_country = {
+		#trigger_event_non_silently = reformation.900
+	#}
+
+	map_color = {
+		if = {
+			limit = {
+				"religion_percentage(religion:anabaptist)" = 0
+			}
+			value = define:NMapColors|MAP_COLOR_NULL
+		}
+		else_if = {
+			limit = {
+				dominant_religion = religion:anabaptist
+			}
+			value = define:NMapColors|MAP_COLOR_HIGH
+		}
+		else_if = {
+			limit = {
+				"religion_percentage(religion:anabaptist)" > 0.025
+			}
+			value = define:NMapColors|MAP_COLOR_MID
+		}
+		else = {
+			value = define:NMapColors|MAP_COLOR_LOW
+		}
+	}
+}

@@ -171,6 +171,18 @@ REPLACE:dhimmi_land_rights = {
 						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
 					}
 				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_asian_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_european_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_se_asian_group
+					value = 0
+				}
 			}
 		}
 		local_heathen_pop_conversion_speed_modifier = -0.5
@@ -182,7 +194,7 @@ REPLACE:dhimmi_promote_tolerance = {
 
 	country_modifier = {
 		dhimmi_estate_target_satisfaction = small_privilege_target_satisfaction
-		tolerance_heathen = 1
+		tolerance_heathen = 1.0
 		monthly_towards_humanist = societal_value_minor_monthly_move
 		global_dhimmi_estate_power = 0.05
 	}
@@ -303,6 +315,18 @@ REPLACE:dhimmi_promote_tolerance = {
 						}
 						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
 					}
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_asian_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_european_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_se_asian_group
+					value = 0
 				}
 			}
 		}
@@ -448,6 +472,18 @@ REPLACE:dhimmi_administrative_posts = {
 						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
 					}
 				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_asian_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_european_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_se_asian_group
+					value = 0
+				}
 			}
 		}
 		local_heathen_pop_conversion_speed_modifier = -0.50
@@ -581,6 +617,18 @@ REPLACE:dhimmi_legal_autonomy = {
 						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
 					}
 				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_asian_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_european_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_se_asian_group
+					value = 0
+				}
 			}
 		}
 		local_heathen_pop_conversion_speed_modifier = -0.5
@@ -712,6 +760,18 @@ REPLACE:dhimmi_mazalim_court = {
 						}
 						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
 					}
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_asian_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_european_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_se_asian_group
+					value = 0
 				}
 			}
 		}
@@ -846,6 +906,18 @@ REPLACE:dhimmi_in_administration = {
 						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
 					}
 				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_asian_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_european_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_se_asian_group
+					value = 0
+				}
 			}
 		}
 		local_heathen_pop_conversion_speed_modifier = -0.25
@@ -965,8 +1037,30 @@ REPLACE:dhimmi_promote_dhimmi_hierarchy = {
 						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
 					}
 				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_asian_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_european_group
+					value = 0
+				}
+				religion_group_percentage = {
+					religion_group = religion_group:folk_se_asian_group
+					value = 0
+				}
 			}
 		}
 		local_heathen_pop_conversion_speed_modifier = -0.5
+	}
+}
+
+REPLACE:dhimmi_traditions = {
+	estate = dhimmi_estate
+	
+	country_modifier = {
+		dhimmi_estate_target_satisfaction = small_privilege_target_satisfaction
+		cultural_influence_modifier = -0.10
+		global_dhimmi_estate_power = 0.33
 	}
 }

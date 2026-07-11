@@ -6,7 +6,7 @@ icd_majority_law_setup = {
 			law:cultural_majority_law = { is_implementable_in = prev } 
 			NOT = {
 				has_policy = minority_rule
-				has_policy = turkic_integration
+				has_policy = ethnoreligious_integration
 				has_policy = dialects_of_german
 				has_policy = dialects_of_arabic
 				has_policy = ethnic_communities
@@ -25,11 +25,11 @@ icd_majority_law_setup = {
 		}
 		else_if = {
 			limit = {
-				policy:turkic_integration = {
+				policy:ethnoreligious_integration = {
 					is_implementable_in = prev
 				}
 			}
-			add_policy = policy:turkic_integration
+			add_policy = policy:ethnoreligious_integration
 		}
 		else_if = {
 			limit = {
@@ -56,5 +56,6 @@ icd_majority_law_setup = {
 			add_policy = policy:ethnic_communities
 		}
 	}
+	
 
 }

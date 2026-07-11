@@ -1,0 +1,186 @@
+﻿icd_tolerance_own = {
+	icon = icd_tolerance_own
+	law_category = religious
+
+	potential = {
+		num_locations > 0
+	}
+	
+	locked = {
+		has_policy = icd_minority_religion
+		religion_percentage_in_country = {
+			religion = root.religion
+			value <= 0.1
+		}
+	}
+	
+	icd_minority_religion = {
+		price = icd_nothing_price
+		country_modifier = {
+			tolerance_heretic = 2
+			tolerance_heathen = 3.5
+			global_pop_conversion_speed_modifier = -5.0
+		}
+		potential = {
+			has_policy = minority_rule
+			religion_percentage_in_country = {
+				religion = root.religion
+				value <= 0.05
+			}
+			NOT = {
+				government_type = government_type:theocracy
+			}
+		}
+		months = 1
+		
+		on_activate = {
+		}
+		
+		ai_will_do = {
+			value = 5000000
+		}
+	}
+	
+	icd_sanction_of_faith = {
+		price = icd_nothing_price
+		country_modifier = {
+			monthly_prestige = 0.01
+		}
+		potential = {
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		months = 1
+		
+		on_activate = {
+		}
+	}
+	
+	icd_confessional_state = {
+		country_modifier = {
+			global_pop_conversion_speed = 0.001
+			tolerance_heathen = -0.5
+			tolerance_heretic = -0.5
+		}
+		potential = {
+			has_embraced_institution = institution:confessionalism
+		}
+		estate_preferences = {
+			clergy_estate
+		}
+		years = 2
+		
+		on_activate = {
+		}
+
+	}
+	
+	icd_secular_state = {
+		country_modifier = {
+			monthly_towards_humanist = societal_value_monthly_move
+			global_pop_conversion_speed_modifier = -0.25
+			clergy_estate_target_satisfaction = -0.2
+			tolerance_heathen = 0.5
+			tolerance_heretic = 0.5
+		}
+		potential = {
+			has_embraced_institution = institution:enlightenment
+		}
+
+		estate_preferences = {
+			burghers_estate
+		}
+		allow = {
+			NOT = {
+				country_has_estate = estate_type:dhimmi_estate
+			}
+		}
+		years = 2
+
+		on_activate = {
+		}
+
+	}
+
+	icd_god_monarchy = {
+		country_modifier = {
+			tolerance_own = 1
+			stability_decay = 0.0001
+		}
+		potential = {
+			OR = {
+				religion = religion:nusantaran_hindu
+				religion = religion:isese_religion
+				religion = religion:inti
+				culture = culture:khmer_culture
+			}
+			government_type = government_type:monarchy
+		}
+		
+		estate_preferences = {
+			crown_estate
+		}
+		
+		ai_will_do = {
+			value = 400
+		}
+		
+		years = 2
+	}
+	
+	religious_and_ritual_regulation = {
+		country_modifier = {
+			monthly_religious_rebel_growth = -0.01
+			global_crown_estate_power = 0.1
+		}
+		potential = {
+			OR = {
+				religion = religion:sanjiao
+				religion = religion:mahayana
+				religion = religion:shinto
+			}
+		}
+		
+		estate_preferences = {
+			crown_estate
+		}
+		
+		ai_will_do = {
+			value = 400
+		}
+		
+		years = 2
+	}
+
+
+	icd_privatization_of_religion = {
+		country_modifier = {
+			tolerance_own = -2
+			clergy_estate_blocked_from_cabinet = yes
+			clergy_estate_blocked_from_parliament = yes
+			global_clergy_estate_power = -2.0
+			clergy_estate_target_satisfaction = -0.2
+			research_speed_modifier = 0.2
+		}
+		potential = {
+			religion = religion:sanjiao
+		}
+		allow = {
+			OR = {
+				has_religious_aspect = religious_aspect:lixue_school
+				has_religious_aspect = religious_aspect:songnihak_school
+			}
+		}
+
+		estate_preferences = {
+			crown_estate
+		}
+
+		years = 2
+		
+		on_activate = {
+		}
+	}
+	
+}

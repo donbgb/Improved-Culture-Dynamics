@@ -8,7 +8,6 @@
 
 
 icd_tribesmen_assimilation = {
-	category = yes
 	type = country
 	
 	potential_trigger = {

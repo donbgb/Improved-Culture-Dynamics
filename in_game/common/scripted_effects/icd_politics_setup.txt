@@ -12,6 +12,7 @@ icd_politics_setup = {
 	
 	c:MAM = {
 		grant_estate_privilege = estate_privilege:icd_druze_emirs
+		revoke_estate_privilege = estate_privilege:dhimmi_promote_tolerance
 	}
 	c:AMR = {
 		grant_estate_privilege = estate_privilege:icd_druze_emirs
@@ -27,6 +28,68 @@ icd_politics_setup = {
 	c:GLH = {
 		grant_estate_privilege = estate_privilege:dhimmi_promote_tolerance
 		grant_estate_privilege = estate_privilege:dhimmi_promote_dhimmi_hierarchy
+	}
+	
+	c:CRT = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+
+	c:CYP = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+	c:NAX = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+
+	c:ARG = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+
+	c:ACH = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+
+	c:PAT = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+
+	c:SAO = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+	c:ATH = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+	c:BOD = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+	c:NEO = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+	c:NEG = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+	c:CEP = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+	c:GAZ = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
+	}
+	c:CYP = {
+		add_policy = policy:minority_rule
+		add_policy = policy:icd_minority_religion	
 	}
 	
 	every_country = {
@@ -255,19 +318,106 @@ icd_politics_setup = {
 	}
 			
 	every_country = {
-		limit = {
-			estate_privilege:jewish_charter = {
-				is_implementable_in = prev
+		if = {
+			limit = {
+				policy:icd_aljama_communities = {
+					is_implementable_in = prev
+				}
+				law:icd_tolerance_heathen_law = {
+					is_implementable_in = prev
+				}
 			}
-			NOT = {
-				tag = BRN
-				tag = HAB
-			}
+			add_policy = policy:icd_aljama_communities
 		}
-		grant_estate_privilege = estate_privilege:jewish_charter
+		else_if = {
+			limit = {
+				law:icd_tolerance_heathen_law = {
+					is_implementable_in = prev
+				}
+				policy:icd_jewish_charter = {
+					is_implementable_in = prev
+				}
+				NOT = {
+					tag = BRN
+					tag = HAB
+				}
+			}
+			add_policy = policy:icd_jewish_charter
+		}
+		else_if = {
+			limit = {
+				law:icd_tolerance_heathen_law = {
+					is_implementable_in = prev
+				}
+				policy:icd_proselytism_heathen = {
+					is_implementable_in = prev
+				}
+			}
+			add_policy = policy:icd_proselytism_heathen
+		}
 	}
 	
 	
+	every_country = {
+		if = {
+			limit = {
+				law:icd_tolerance_heretic_law = {
+					is_implementable_in = prev
+				}
+				policy:icd_dharmic_coexistence = {
+					is_implementable_in = prev
+				}
+			}
+			add_policy = policy:icd_dharmic_coexistence
+		}
+		else_if = {
+			limit = {
+				law:icd_tolerance_heretic_law = {
+					is_implementable_in = prev
+				}
+				policy:icd_islamic_orthopraxy = {
+					is_implementable_in = prev
+				}
+			}
+			add_policy = policy:icd_islamic_orthopraxy
+		}
+		else_if = {
+			limit = {
+				law:icd_tolerance_heretic_law = {
+					is_implementable_in = prev
+				}
+				policy:icd_faiths_of_the_folk = {
+					is_implementable_in = prev
+				}
+			}
+			add_policy = policy:icd_faiths_of_the_folk
+		}
+		else_if = {
+			limit = {
+				law:icd_tolerance_heretic_law = {
+					is_implementable_in = prev
+				}
+				policy:icd_proselytism_heretic = {
+					is_implementable_in = prev
+				}
+			}
+			add_policy = policy:icd_proselytism_heretic
+		}
+	}
+	
+	every_country = {
+		if = {
+			limit = {
+				law:icd_tolerance_own = {
+					is_implementable_in = prev
+				}
+				policy:icd_sanction_of_faith = {
+					is_implementable_in = prev
+				}
+			}
+			add_policy = policy:icd_sanction_of_faith
+		}
+	}
 
 	c:BRI = {
 		change_culture = culture:gallo
@@ -356,4 +506,6 @@ icd_politics_setup = {
 		}
 		revoke_estate_privilege = estate_privilege:dharmic_dhimmi_communities
 	}
+
+	
 }

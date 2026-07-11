@@ -1,0 +1,142 @@
+﻿namespace = flavor_hab
+
+flavor_hab.35 = { #Peasant Uprising in Salzburg
+	hide_portraits = yes
+	type = country_event
+	title = flavor_hab.35.title
+	desc = flavor_hab.35.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	historical_info = flavor_hab.35.historical_info
+	orphan = yes
+	
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	trigger = {
+		always = no
+	}
+
+	immediate = {
+		event_illustration_poptype_effect = { foreground = pop_type:clergy   background = pop_type:clergy }
+		create_rebel = {
+			name = hab_salzburger_peasant_revolt
+			category = estate
+			estate = peasants_estate
+			save_scope_as = salzburger_rebel
+		}
+	}
+
+	option = {
+		name = flavor_hab.35.a
+		change_gold_effect = { scale = -6 }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+		location:salzburg = {
+			change_control = control_mild_penalty
+			every_pop = {
+				limit = {
+					owner = root
+					pop_type = pop_type:peasants
+				}
+				add_pop_satisfaction = pop_satisfaction_mild_bonus
+			}
+		}
+		destroy_rebel = scope:salzburger_rebel
+	}
+
+	option = {
+		name = flavor_hab.35.b
+		historical_option = yes
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_extreme_penalty }
+		location:salzburg = {
+			every_pop = {
+				limit = {
+					owner = root
+					pop_type = pop_type:peasants
+				}
+				add_pop_satisfaction = pop_satisfaction_ultimate_penalty
+				change_pop_allegiance = scope:salzburger_rebel
+			}
+		}
+		set_variable = hab_peasant_rebels_joining
+	}
+}
+
+flavor_hab.36 = { #The Peasant Rebellion Spreads
+	hide_portraits = yes
+	type = country_event
+	title = flavor_hab.36.title
+	desc = flavor_hab.36.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	orphan = yes
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	trigger = {
+		always = no
+	}
+
+	immediate = {
+		event_illustration_poptype_effect = { foreground = pop_type:clergy   background = pop_type:clergy }
+		random_owned_location = {
+		 	limit = {
+				area = area:salzburg_area
+				this != location:salzburg
+		 	}
+			save_scope_as = rebel_spread_1
+		}
+		random_owned_location = {
+		 	limit = {
+				area = area:salzburg_area
+				NOT = { this = scope:rebel_spread_1 }
+				this != location:salzburg
+		 	}
+			save_scope_as = rebel_spread_2
+		}
+		random_rebel = {
+            limit = {
+                rebel_name_key = hab_salzburger_peasant_revolt
+            }
+            save_scope_as = salzburger_rebel
+        }
+	}
+
+	option = {
+		name = flavor_hab.36.a
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+		scope:rebel_spread_1 = {
+			every_pop = {
+				limit = {
+					owner = root
+					pop_type = pop_type:peasants
+				}
+				add_pop_satisfaction = pop_satisfaction_extreme_penalty
+				change_pop_allegiance = scope:salzburger_rebel
+			}
+		}
+		scope:rebel_spread_2 = {
+			every_pop = {
+				limit = {
+					owner = root
+					pop_type = pop_type:peasants
+				}
+				add_pop_satisfaction = pop_satisfaction_extreme_penalty
+				change_pop_allegiance = scope:salzburger_rebel
+			}
+		}
+	}
+
+	after = {
+		remove_variable = hab_peasant_rebels_joining
+	}
+}

@@ -23,14 +23,5 @@ icd_movements_setup = {
 		}
 	}
 	
-	location:qatruyeh = {
-		spawn_movement = {
-			movement_definition = movement_definition:turkification_culture_movement
-			supporters = {
-				value = population
-				multiply = 0.1
-			}
-		}
-	}
 	
 }
