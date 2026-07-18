@@ -19,6 +19,7 @@
 					tag = ENG
 					has_policy = state_inquisitors
 					has_policy = spa_inquisition_policy
+					has_policy = por_inquisition_policy
 					AND = {
 						tag = CAS
 						current_year > 1650
@@ -35,6 +36,7 @@
 				NOT = {
 					is_human = yes
 					has_policy = state_inquisitors
+					has_policy = por_inquisition_policy
 					has_policy = spa_inquisition_policy
 					religious_unity < 0.5
 				}
@@ -225,6 +227,7 @@
 			}
 			NOT = {
 				has_policy = state_inquisitors
+				has_policy = por_inquisition_policy
 				has_policy = spa_inquisition_policy
 			}
 			
@@ -309,6 +312,7 @@
 			NOT = {
 				has_policy = state_inquisitors
 				has_policy = spa_inquisition_policy
+				has_policy = por_inquisition_policy
 			}
 			custom_tooltip = {
 				text = jewish_banned_tt
@@ -371,6 +375,7 @@
 			}
 			NOT = {
 				has_policy = spa_inquisition_policy
+				has_policy = por_inquisition_policy
 			}
 			custom_tooltip = {
 				text = jewish_banned_tt

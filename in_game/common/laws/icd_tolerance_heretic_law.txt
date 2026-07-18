@@ -10,6 +10,7 @@
 			has_policy = local_courts
 			has_policy = state_inquisitors
 			has_policy = spa_inquisition_policy
+			has_policy = por_inquisition_policy
 			has_policy = icd_minority_religion
 		}
 	}

@@ -57,10 +57,18 @@ icd_morisco_event = {
 	events = {
 		icd_minority_events.10
 		icd_minority_events.9
-		icd_minority_events.4
 		icd_minority_events.5
 		icd_minority_events.8
 	}
+
+	random_events = {
+		30 = icd_minority_events.4
+		70 = 0
+
+		chance_to_happen = 100
+	}
+
+
 }
 
 icd_culture_on_action = {

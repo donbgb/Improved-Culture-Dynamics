@@ -99,7 +99,7 @@
 				situation:council_of_trent = { situation_has_ended = yes }
 				situation:reformation = { years_since_situation_start < 50 }
 			}
-			value = { 0.0 0.020 }
+			value = { 0.0 0.017 }
 		}
 		# Stable confessional boundaries: post-Trent and ≥60y since Reformation spawn.
 		else_if = {

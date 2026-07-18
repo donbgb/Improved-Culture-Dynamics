@@ -365,6 +365,8 @@ icd_minority_events.1 = { ###jewish exodus###
 		NOT = {
 			has_policy = icd_jewish_charter
 			has_policy = council_of_three_lands_policy
+			has_policy = icd_aljama_communities
+			has_policy = icd_jewish_ghetto
 		}
 		religion.group = religion_group:christian
 		NOT = {
@@ -1602,7 +1604,8 @@ icd_minority_events.4 = { ##jewish pogroms###
 		OR = {
 			is_situation_active = situation:black_death
 			is_situation_active = situation:reformation
-			has_variable = spa_holy_inquisition
+			has_policy = spa_inquisition_policy
+			has_policy = por_inquisition_policy
 		}
 		NOT = {
 			has_variable = icd_jewish_permitted
