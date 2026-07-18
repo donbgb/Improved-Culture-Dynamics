@@ -13,11 +13,14 @@
 	}
 
 	country_modifier = {
-		national_lutheranism_movement_resistance_modifier = 0.35
-		national_calvinism_movement_resistance_modifier = 0.35
-		national_anabaptist_movement_resistance_modifier = 0.2
+		national_lutheranism_movement_resistance_modifier = 0.25
+		national_calvinism_movement_resistance_modifier = 0.25
+		national_anabaptist_movement_resistance_modifier = 0.1
 	}
 	
 	progress = {
+	}
+	ai_will_do = {
+		value = -10000
 	}
 }

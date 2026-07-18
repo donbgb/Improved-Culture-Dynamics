@@ -5,6 +5,9 @@
 	potential = {
 		num_locations > 0
 		religious_unity < 1.0
+		NOT = {
+			has_policy = icd_minority_religion
+		}
 	}
 	locked = {
 		OR = {
@@ -57,9 +60,7 @@
 		}
 		
 		allow = {
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		months = 1
 		
@@ -78,9 +79,7 @@
 			NOT = {
 				has_policy = icd_secular_state
 			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		years = 2
 		
@@ -97,9 +96,6 @@
 		allow = {
 			NOT = {
 				has_policy = icd_secular_state	
-			}
-			NOT = {
-				has_policy = icd_minority_religion
 			}
 		}
 		years = 2
@@ -121,9 +117,7 @@
 				has_policy = self_governing_institutions
 				has_policy = icd_secular_state
 			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		potential = {
 			has_embraced_institution = institution:confessionalism
@@ -177,9 +171,7 @@
 			has_embraced_institution = institution:enlightenment
 		}
 		allow = {
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		years = 2
 		
@@ -208,9 +200,7 @@
 			}
 		}
 		allow = {
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 			heathen_population_fraction > 0.25
 		}
 		country_modifier = {
@@ -237,9 +227,7 @@
 				has_policy = state_inquisitors
 				has_policy = spa_inquisition_policy
 			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		country_modifier = {
 			tolerance_heathen = 1
@@ -292,9 +280,7 @@
 			NOT = {
 				has_policy = icd_secular_state
 			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		country_modifier = {
 			tolerance_heathen = 3.5
@@ -330,9 +316,7 @@
 					has_variable = icd_jewish_banned
 				}
 			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		country_modifier = {
 			tolerance_heathen = 1.25
@@ -361,31 +345,6 @@
 					religion_group_percentage = {
 						religion_group = religion_group:folk_permic_group
 						value = 0
-					}
-					OR = {
-						AND = {
-							religion_group_percentage = {
-								religion_group = religion_group:muslim
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:dharmic
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:buddhist
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:manichaean_group
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:zoroastrian_group
-								value = 0
-							}
-						}
-						is_overseas_for_owner = no
 					}
 					dominant_religion = { group = religion_group:christian }
 				}
@@ -426,9 +385,7 @@
 			NOT = {
 				has_policy = icd_secular_state
 			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		country_modifier = {
 			tolerance_heathen = -0.5
@@ -459,31 +416,6 @@
 						religion_group = religion_group:folk_permic_group
 						value = 0
 					}
-					OR = {
-						AND = {
-							religion_group_percentage = {
-								religion_group = religion_group:muslim
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:dharmic
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:buddhist
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:manichaean_group
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:zoroastrian_group
-								value = 0
-							}
-						}
-						is_overseas_for_owner = no
-					}
 					dominant_religion = { group = religion_group:christian }
 				}
 			}
@@ -505,9 +437,7 @@
 				religion = religion:judaism
 				value > 0
 			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		country_modifier = {
 			cultures_capacity = 1
@@ -537,31 +467,6 @@
 						religion_group = religion_group:folk_permic_group
 						value = 0
 					}
-					OR = {
-						AND = {
-							religion_group_percentage = {
-								religion_group = religion_group:muslim
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:dharmic
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:buddhist
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:manichaean_group
-								value = 0
-							}
-							religion_group_percentage = {
-								religion_group = religion_group:zoroastrian_group
-								value = 0
-							}
-						}
-						is_overseas_for_owner = no
-					}
 					dominant_religion = { group = religion_group:christian }
 				}
 			}
@@ -584,9 +489,7 @@
 			NOT = {
 				has_policy = icd_secular_state
 			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		country_modifier = {
 			tolerance_heathen = 1.5
@@ -606,9 +509,7 @@
 			}
 		}
 		allow = {
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		country_modifier = {
 			tolerance_heathen = 3
@@ -625,9 +526,7 @@
 			}
 		}
 		allow = {
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		country_modifier = {
 			global_heathen_pop_conversion_speed_modifier = -2.0

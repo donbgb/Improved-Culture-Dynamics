@@ -1601,10 +1601,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 		has_policy = icd_jewish_charter
 		OR = {
 			is_situation_active = situation:black_death
-			AND = {
-				is_situation_active = situation:reformation
-				has_global_variable = icd_cum_nimis_absurdum
-			}
+			is_situation_active = situation:reformation
 			has_variable = spa_holy_inquisition
 		}
 		NOT = {

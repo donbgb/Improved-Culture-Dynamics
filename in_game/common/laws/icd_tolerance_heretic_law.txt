@@ -5,17 +5,14 @@
 	potential = {
 		num_locations > 0
 		religious_unity < 1.0
-	}
-	
-	locked = {
-		OR = {
+		NOT = {
 			has_policy = papal_control
 			has_policy = local_courts
 			has_policy = state_inquisitors
 			has_policy = spa_inquisition_policy
+			has_policy = icd_minority_religion
 		}
 	}
-	
 	
 	icd_proselytism_heretic = {
 		price = icd_nothing_price
@@ -25,12 +22,7 @@
 		potential = {
 		}
 		allow = {
-			NOT = {
-				has_policy = papal_control
-				has_policy = local_courts
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-			}
+			
 			NOT = {
 				has_policy = icd_minority_religion
 			}
@@ -52,15 +44,6 @@
 			NOT = {
 				has_policy = icd_secular_state
 			}
-			NOT = {
-				has_policy = papal_control
-				has_policy = local_courts
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
 		}
 		years = 2
 		
@@ -79,15 +62,7 @@
 			has_embraced_institution = institution:enlightenment
 		}
 		allow = {
-			NOT = {
-				has_policy = papal_control
-				has_policy = local_courts
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+
 		}
 		years = 2
 		
@@ -106,14 +81,12 @@
 				culture = { has_culture_group = culture_group:carpathian_group }
 			}
 			religion.group = religion_group:christian
+			has_or_had_tag = VEN
+			has_or_had_tag = NAP
+			has_or_had_tag = ALB
+			has_reform = government_reform:partitio_reform
 		}
 		allow = {
-			NOT = {
-				has_policy = papal_control
-				has_policy = local_courts
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-			}
 			NOT = {
 				has_policy = icd_minority_religion
 			}
@@ -191,15 +164,7 @@
 		}
 		years = 2
 		allow = {
-			NOT = {
-				has_policy = papal_control
-				has_policy = local_courts
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 			NOT = {
 				"religion_percentage_in_country(religion:catholic)" > 0.45
 				capital ?= {
@@ -237,15 +202,7 @@
 		}
 		years = 2
 		allow = {
-			NOT = {
-				has_policy = papal_control
-				has_policy = local_courts
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		on_activate = {
 		}
@@ -274,15 +231,7 @@
 			religion.group = religion_group:dharmic
 		}
 		allow = {
-			NOT = {
-				has_policy = papal_control
-				has_policy = local_courts
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		years = 2
 		
@@ -297,15 +246,7 @@
 			tolerance_heretic = 2
 		}
 		allow = {
-			NOT = {
-				has_policy = papal_control
-				has_policy = local_courts
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		potential = {
 			religion.group = religion_group:muslim
@@ -340,15 +281,7 @@
 			tolerance_heretic = 2.5
 		}
 		allow = {
-			NOT = {
-				has_policy = papal_control
-				has_policy = local_courts
-				has_policy = state_inquisitors
-				has_policy = spa_inquisition_policy
-			}
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+			
 		}
 		location_modifier = {
 			potential_trigger = {

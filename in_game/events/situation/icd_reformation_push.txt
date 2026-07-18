@@ -27,6 +27,15 @@ icd_reformation_push.2 = {
 		government_type = government_type:theocracy
 		num_locations > 1
 		
+		capital = {
+			OR = {
+				region = region:baltic_region
+				area = area:pomerania_area
+				area = area:brandenburg_area
+				area = area:silesia_area
+			}
+		}
+		
 		NOT = {
 			any_neighbor_country = {
 				religion.group = religion_group:folk_european_group
@@ -132,7 +141,56 @@ icd_reformation_push.2 = {
 		}
 		historical_option = yes
 		
+		set_country_rank_effect = { rank = country_rank:rank_duchy }
+		
 		add_legitimacy = legitimacy_mild_penalty
+		
+		hidden_effect = {
+			random_owned_location = {
+				limit = {
+					OR = {
+						area = area:upper_rhine_area
+						area = area:swabia_area
+						area = area:franconia_area
+					}
+					NOT = { is_connected_to = root.capital }
+				}
+				save_scope_as = target_order_capital
+				
+				create_country_from_location = {
+					change_government_type = government_type:theocracy
+					grant_estate_privilege = estate_privilege:clergy_military_orders
+					add_reform = government_reform:military_order_reform
+					change_country_name = TEU
+					change_country_adjective = TEU_ADJ
+					change_country_color = map_TEU
+					change_country_flag = TEU
+					
+					set_capital = scope:target_order_capital
+					
+					research_advance = advance_type:order_headquarters_advance
+					research_advance = advance_type:fortress_church_advance
+					
+					set_country_rank_effect = { rank = country_rank:rank_duchy }
+					
+					save_scope_as = target_order_country
+				}
+			}
+			every_owned_location = {
+				limit = {
+					is_connected_to = scope:target_order_capital
+					NOT = { is_connected_to = root.capital }
+				}
+				change_location_owner = scope:target_order_country
+			}
+			
+			scope:target_order_country = {
+				every_province = {
+					limit = { any_location_in_province = { NOT = { integration_level = core } } }
+					change_province_integration = core
+				}
+			}
+		}
 		
 	}
 	option = {

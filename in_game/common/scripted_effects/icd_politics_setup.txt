@@ -53,16 +53,6 @@ icd_politics_setup = {
 		add_policy = policy:minority_rule
 		add_policy = policy:icd_minority_religion	
 	}
-
-	c:PAT = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
-
-	c:SAO = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
 	c:ATH = {
 		add_policy = policy:minority_rule
 		add_policy = policy:icd_minority_religion	
@@ -408,6 +398,9 @@ icd_politics_setup = {
 	every_country = {
 		if = {
 			limit = {
+				NOT = {
+					has_policy = icd_minority_religion
+				}
 				law:icd_tolerance_own = {
 					is_implementable_in = prev
 				}

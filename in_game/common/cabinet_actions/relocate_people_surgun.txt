@@ -19,7 +19,6 @@
 			country_rank = country_rank:rank_empire
 		}
 		has_embraced_institution = institution:legalism
-		government_type = government_type:monarchy
 	}
 	
 	select_trigger = {

@@ -99,7 +99,7 @@
 				situation:council_of_trent = { situation_has_ended = yes }
 				situation:reformation = { years_since_situation_start < 50 }
 			}
-			value = { 0.0 0.015 }
+			value = { 0.0 0.020 }
 		}
 		# Stable confessional boundaries: post-Trent and ≥60y since Reformation spawn.
 		else_if = {
@@ -149,8 +149,9 @@
 			# Lever 5 — anti-flip-flop: if location is already strongly Lutheran, Calvinism
 			# spreads at half R0. Prevents oscillating Lutheran → Calvinist → Lutheran in
 			# border regions. Stacks multiplicatively with the L1 phase value above.
+			
 			if = {
-				limit = { "religion_percentage(religion:lutheran)" > 0.49 }
+				limit = { "religion_percentage(religion:lutheran)" > 0.5 }
 				multiply = 0.5
 			}
 			if = {

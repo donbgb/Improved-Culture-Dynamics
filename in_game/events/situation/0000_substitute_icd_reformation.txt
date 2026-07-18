@@ -591,6 +591,13 @@ reformation.11 = { #Guido de Bres
 		hidden_effect = {
 			area:holland_area = {
 				every_location_in_area = {
+					limit = {
+						owner ?= {
+							NOT = {
+								religion = religion:lutheran
+							}
+						}
+					}
 					every_pop = {
 						limit = { 
 							religion = religion:lutheran 
@@ -609,6 +616,13 @@ reformation.11 = { #Guido de Bres
 			}
 			area:friesland_area = {
 				every_location_in_area = {
+					limit = {
+						owner ?= {
+							NOT = {
+								religion = religion:lutheran
+							}
+						}
+					}
 					every_pop = {
 						limit = { 
 							religion = religion:lutheran 
@@ -627,6 +641,13 @@ reformation.11 = { #Guido de Bres
 			}
 			area:brabant_area = {
 				every_location_in_area = {
+					limit = {
+						owner ?= {
+							NOT = {
+								religion = religion:lutheran
+							}
+						}
+					}
 					every_pop = {
 						limit = { 
 							religion = religion:lutheran 

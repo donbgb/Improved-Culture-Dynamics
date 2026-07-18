@@ -340,7 +340,7 @@
 						has_reform = government_reform:military_order_reform
 					}
 					religion = religion:catholic
-					"religion_percentage_in_country(scope:actor.religion)" > 0.15
+					"religion_percentage_in_country(scope:actor.religion)" > 0.2
 				}
 			}
 			add = {

@@ -248,3 +248,5 @@
  
  por_inquisition_policy: "Portuguese Inquisition"
  por_inquisition_policy_desc: "An inquisition modelled on the Spanish, organised and governed through the state but staffed primarily by clerical agents, bureaucratic officials and members of the nobility known as familiares."
+ 
+ icd_minority_religion_tt: "Will block other [policies|e] from being chosen so long as it is valid"

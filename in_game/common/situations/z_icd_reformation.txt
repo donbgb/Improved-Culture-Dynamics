@@ -1,5 +1,5 @@
 ﻿REPLACE:reformation = {
-	monthly_spawn_chance = 0.08
+	monthly_spawn_chance = 0.10
 	hint_tag = hint_reformation
 	can_start = {
 		current_year >= 1517
