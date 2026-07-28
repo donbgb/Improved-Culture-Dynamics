@@ -1,0 +1,316 @@
+﻿namespace = icd_conversion_events
+
+
+icd_conversion_events.1 = { #
+	type = country_event
+	hide_portraits = yes
+	fire_only_once = yes
+	title = icd_muslim_events.1.title
+	desc = icd_muslim_events.1.desc
+	outcome = neutral
+		
+	trigger = {
+		religion.group = religion_group:muslim
+		any_owned_location = {
+			culture_percentage = {
+				culture = culture:bosnian
+				value > 0.25
+			}
+		}
+		own_entire_area = area:bosnia_area
+		any_owned_location = {
+			area = area:bosnia_area
+			NOT = {
+				integration_level = conquered 
+			}
+		}
+	}
+
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+	
+	dynamic_historical_event = {
+		tag = TUR
+		tag = KAR
+		tag = KRD
+		tag = SRU
+		tag = AYD
+		tag = MEN
+		tag = GRM
+		tag = INA
+		tag = TVS
+		tag = HMD
+		tag = TEK
+		tag = ALY
+		tag = ERE
+		tag = AHI
+		tag = CND
+		tag = KBD
+		tag = TDJ
+		tag = BFR
+		tag = DUL
+		from = 1400.1.1
+		to = 1830.1.1
+		monthly_chance = 10
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+	}
+
+	option = {
+		name = icd_muslim_events.1.a
+
+		area:bosnia_area = {
+			every_location_in_area = {
+				limit = { 
+					OR = { is_owned_or_owned_by_subjects_or_below_of = root 
+						owner = { religion.group = religion_group:muslim }
+					} 
+				}
+				add_location_modifier = {
+					modifier = icd_muslim_bosnia
+					years = 50
+					mode = add_and_extend
+				}
+			}
+		}
+		every_pop = {
+			limit = { 
+				culture = culture:bosnian
+				NOT = { 
+					location = {
+						OR = {
+							area = area:bosnia_area
+							area = area:croatia_area
+							area = area:slavonia_area
+							area = area:serbia_area
+							area = area:slovenia_area
+						}
+					}
+				}
+			}
+			change_pop_religion = root.religion
+		}
+		area:bosnia_area = {
+			every_location_in_area = {
+				every_pop = {
+					limit = { culture = culture:bosnian }
+					split_pop = {
+						fraction = 0.3
+						religion = root.religion
+					}
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = icd_muslim_events.1.b
+
+		add_estate_satisfaction = { type = estate_type:dhimmi_estate value = estate_satisfaction_severe_bonus }
+	}
+}
+
+icd_conversion_events.2 = { #
+	type = country_event
+	hide_portraits = yes
+	fire_only_once = yes
+	title = icd_conversion_events.2.title
+	desc = icd_conversion_events.2.desc
+	outcome = neutral
+	
+	trigger = {
+		religion = religion:tengri
+		religion_percentage_in_country = {
+			religion = religion:sunni
+			value > 0
+		}
+		OR = {
+			capital.sub_continent = sub_continent:middle_east
+			capital.sub_continent = sub_continent:eastern_europe
+			capital.sub_continent = sub_continent:central_asia
+			culture = { has_culture_group = culture_group:tatar_group }
+			culture = { language = language:kipchak_language }
+		}
+		NOT = { has_variable = icd_conversion_tengri_block }
+	}
+
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+	}
+	
+	option = {
+		name = icd_conversion_events.2.a
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_bonus }
+		
+		ai_will_select = {
+			value = 1
+		}
+		
+		set_variable = icd_conversion_tengri_block
+	}
+	option = {
+		name = icd_conversion_events.2.b
+		
+		change_religion = religion:sunni
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:sunni }
+		every_character = {
+			limit = {
+				religion = religion:tengri 
+				culture = root.culture
+				has_estate = estate_type:nobles_estate
+			}
+			change_character_religion = religion:sunni
+		}
+		
+		
+		hidden_effect = {
+			every_owned_location = {
+				limit = {
+					local_control > 0.6
+				}
+				every_pop = {
+					limit = {
+						pop_type = pop_type:nobles
+						religion = religion:tengri
+					}
+					change_pop_religion = religion:sunni
+				}
+			}
+		}
+		ai_will_select = {
+			value = 99
+		}
+	}
+}
+
+icd_conversion_events.3 = { #
+	type = country_event
+	hide_portraits = yes
+	fire_only_once = yes
+	title = icd_conversion_events.3.title
+	desc = icd_conversion_events.3.desc
+	outcome = neutral
+	
+	trigger = {
+		religion = religion:tengri
+		capital.sub_continent = sub_continent:east_asia
+		culture = { has_culture_group = culture_group:mongolian_group }
+		NOT = { has_variable = icd_conversion_tengri_block }
+		current_year > 1550
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+	}
+	
+	option = {
+		name = icd_conversion_events.3.a
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_bonus }
+		
+		ai_will_select = {
+			value = 30
+		}
+		
+		set_variable = icd_conversion_tengri_block
+	}
+	option = {
+		name = icd_conversion_events.3.b
+		
+		change_religion = religion:tibetan_buddhism
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:tibetan_buddhism }
+		every_character = {
+			limit = {
+				religion = religion:tengri 
+				culture = root.culture
+				has_estate = estate_type:nobles_estate
+			}
+			change_character_religion = religion:tibetan_buddhism
+		}
+		
+		
+		hidden_effect = {
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						pop_type = pop_type:nobles
+						religion = religion:tengri
+					}
+					change_pop_religion = religion:tibetan_buddhism
+				}
+				every_pop = {
+					limit = {
+						pop_type = pop_type:clergy
+						religion = religion:tengri
+					}
+					change_pop_religion = religion:tibetan_buddhism
+				}
+			}
+		}
+		ai_will_select = {
+			value = 70
+		}
+	}
+	
+	option = {
+		name = icd_conversion_events.3.c
+		
+		change_religion = religion:mahayana
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:mahayana }
+		every_character = {
+			limit = {
+				religion = religion:tengri 
+				culture = root.culture
+				has_estate = estate_type:nobles_estate
+			}
+			change_character_religion = religion:mahayana
+		}
+		
+		trigger = {
+			any_neighbor_country = {
+				OR = {
+					religion = religion:mahayana
+					religion = religion:sanjiao
+				}
+			}
+		}
+		
+		hidden_effect = {
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						pop_type = pop_type:nobles
+						religion = religion:tengri
+					}
+					change_pop_religion = religion:mahayana
+				}
+				every_pop = {
+					limit = {
+						pop_type = pop_type:clergy
+						religion = religion:tengri
+					}
+					change_pop_religion = religion:mahayana
+				}
+			}
+		}
+		
+		ai_will_select = {
+			value = 5
+		}
+	}
+}

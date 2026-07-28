@@ -111,5 +111,27 @@
 		}
 	}
 	
-	
+	ai_will_do = {
+		if = {
+			limit = { exists = scope:target }
+			if = {
+				limit = {
+					scope:target = {
+						OR = {
+							is_accepted_in = scope:actor
+							is_tolerated_in = scope:actor
+						}
+						cultural_view = {
+							target = scope:actor.culture
+							value < neutral
+						}
+					}
+				}
+
+				add = {
+					value = 150
+				}
+			}
+		}
+	}
 }

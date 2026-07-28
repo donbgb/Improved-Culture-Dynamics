@@ -177,7 +177,7 @@
  icd_druze_emirs: "Hereditary Levantine Emirs"
  icd_druze_emirs_desc: "By permitting Iqta appointments in Mount Lebanon, Jabal al-Druze, Jabal Amil and surrounding regions to become effectively hereditary, being passed from brother to brother and father to son amongst local Levantine Shia, Druze and Maronite dynasties, we ensure that we have powerful allies in this part of the Levant. They will be much more willing to support us militarily in return for their religious and political autonomy."
  
- icd_ethnoreligious_integration_tt: "Every location where [pops|e] of our [primary_culture|e] outnumber [ShowReligionGroupAdjective('muslim')] [pops|e]:"
+ icd_ethnoreligious_integration_tt: "Every location where our [primary_culture|e] outnumbers [ShowReligionGroupAdjective('muslim')]s:"
  
  icd_tolerance_own: "State and Religion"
  icd_tolerance_own_desc: "The relationship between the state and its primary religion must be structured."
@@ -250,3 +250,10 @@
  por_inquisition_policy_desc: "An inquisition modelled on the Spanish, organised and governed through the state but staffed primarily by clerical agents, bureaucratic officials and members of the nobility known as familiares."
  
  icd_minority_religion_tt: "Will block other [policies|e] from being chosen so long as it is valid"
+ 
+ 
+ dialects_of_tatar: "Plural Tatar Identities"
+ dialects_of_tatar_desc: "There are many kinds of Tatars in the world, and though we represent only a specific kind of Tatar, we recognise and appreciate the differences that exist between all of us."
+ dialects_of_tatar_tt: "With this policy, pops of Tatar cultures are not assimilated. Pops that are not Tatar are assimilated to a neighbouring Tatar culture. The Promote Culture cabinet action or the Marking cabinet action can override this."
+ 
+

@@ -28,6 +28,7 @@ icd_politics_setup = {
 	c:GLH = {
 		grant_estate_privilege = estate_privilege:dhimmi_promote_tolerance
 		grant_estate_privilege = estate_privilege:dhimmi_promote_dhimmi_hierarchy
+		add_policy = policy:self_governing_institutions
 	}
 	
 	c:CRT = {

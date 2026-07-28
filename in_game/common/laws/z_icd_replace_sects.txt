@@ -1,4 +1,4 @@
-﻿main_philosophy_law = {
+﻿REPLACE:main_philosophy_law = {
 	type = international_organization
 	law_category = religious
 	
@@ -700,7 +700,7 @@
 
 }
 
-vajrayana_law = {
+REPLACE:vajrayana_law = {
 	type = international_organization
 	law_category = religious
 	
@@ -760,7 +760,7 @@ vajrayana_law = {
 	}
 }
 
-sect_school_law = {
+REPLACE:sect_school_law = {
 	type = international_organization
 	law_category = religious
 

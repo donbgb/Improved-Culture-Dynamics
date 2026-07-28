@@ -1,70 +1,17 @@
-﻿russian_culture_formed = {
-	language = russian_dialect
-	color = map_RUS
+﻿icd_parsi_culture = {
+	language = gujarati_language
+	color = religion_zoroastrian
 	
-	tags = { russian_gfx east_slavic_gfx slavic_gfx eastern_european_gfx european_gfx }
+	tags = { indian_gfx }
 
 	opinions = {
+		gujarati = positive
 	}
 
 	culture_groups = {
-		russian_group
-		slavic_group
+		indian_group
+		indo_aryan_group
+		iranian_group
 	}
 	
-	active = no
-}
-
-dutch_culture_formed = {
-	language = dutch_dialect
-	
-	color = map_NED
-	
-	tags = { dutch_gfx north_german_gfx german_gfx western_european_gfx european_gfx }
-	
-	opinions = {
-		
-	}	
-	
-	culture_groups = {
-		netherlandish_group
-		german_group
-	}
-	
-	active = no
-}
-
-ruthenian_culture_formed = {
-	language = ukrainian_dialect
-	color = map_galicia_lodomeria
-	
-	tags = { russian_gfx east_slavic_gfx slavic_gfx eastern_european_gfx european_gfx }
-
-	opinions = {
-	}
-
-	culture_groups = {
-		russian_group
-		slavic_group
-	}
-
-	active = no
-}
-
-
-lithuanian_culture_formed = {
-	language = lithuanian_dialect
-	color = rgb { 154 75 120 }
-	
-	tags = { baltic_gfx eastern_european_gfx european_gfx }
-
-	opinions = {
-	}
-
-	culture_groups = {
-		lithuanian_group
-		baltic_group
-	}
-
-	active = no
 }

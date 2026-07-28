@@ -1,0 +1,138 @@
+﻿REPLACE:invite_turkic_migration = {
+	type = situation
+	show_message = no
+	potential = {
+		scope:actor = {
+			has_variable = enable_turkic_migration_variable
+			culture = { has_culture_group = culture_group:turkic_group }
+		}
+	}
+
+	allow = {
+		scope:actor = {
+			any_province = {
+				culture_percentage = {
+					culture = scope:actor.culture
+					value > 0.5
+				}
+			}
+		}
+	}
+
+	automation_tick = never
+	automation_tick_frequency = 12
+	ai_tick = monthly
+	ai_tick_frequency = 6
+	price = price:rto_press_claims_price
+
+	cooldown = {
+		type = invite_turkic_migration
+		years = 2
+	}
+
+	select_trigger = {
+		looking_for_a = situation
+		interaction_source_list = {
+			situation:rise_of_the_ottomans = {
+				add_to_list = source
+			}
+		}
+		target_flag = recipient
+		name = "choose_situation"
+		column = {
+			data = name
+		}
+		visible = {
+			situation:rise_of_the_ottomans = this
+			situation_is_active = yes
+			var:strongest_beylik_variable = scope:actor
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = culture
+		target_flag = target_culture
+		source = actor
+		name = "promote_culture_select_culture"
+		none_available_msg_key = "promote_culture_no_culture"
+		column = {
+			data = name
+		}
+		column = {
+			data = culture_percentage_in_country
+		}
+		default_sort = culture_percentage_in_country
+		visible = {
+			root = scope:actor.culture
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = province
+		target_flag = target_province_destination
+		name = "choose_province"
+		none_available_msg_key = "no_provinces_available"
+		column = { data = name }
+		column = { data = population }
+		column = { data = province_culture_percentage }
+		visible = {
+			owner ?= scope:actor
+			culture_percentage = {
+				culture = scope:actor.culture
+				value < 0.5
+			}
+		}
+		enabled = {
+			NOT = {
+				dominant_culture = root.culture
+			}
+		}
+	}
+	effect = { 
+		if = {
+			limit = {
+				exists = scope:target_province_destination
+			}
+			scope:actor = { trigger_event_non_silently = rise_of_the_ottomans.216 }
+		}
+		else = {
+			custom_tooltip = roto_turkic_migration_tt
+		}
+	}
+
+	ai_will_do = {
+		add = 15
+		if = {
+			limit = { exists = scope:target_province_destination }
+			subtract = 35
+
+				
+			add = {	#More likely to migrate towards high tax base provinces
+				desc = "[target_province_destination.GetName] [tax_base|e]" 
+				value = scope:target_province_destination.province_tax_base
+				multiply = 1
+			}
+			add = {
+				desc = "[target_province_destination.GetName] [control|e]"
+				value = 10
+				multiply = scope:target_province_destination.province_average_control
+			}
+			add = {
+				desc = "[target_province_destination.GetName] [population|e]"
+				value = scope:target_province_destination.population
+				multiply = 100
+				divide = scope:actor.total_population
+			}
+			if = {
+				limit = {
+					scope:target_province_destination = { has_province_modifier = cultural_intermixing_modifier }
+				}
+
+				add = {
+					desc = "cultural_intermixing_modifier"
+					value = -50
+				}
+			}
+		}
+	}
+}

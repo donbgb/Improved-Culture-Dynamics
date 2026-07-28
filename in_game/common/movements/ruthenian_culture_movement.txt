@@ -121,6 +121,7 @@
 				modifier = ruthenian_culture_movement_momentum_waning_locally
 				size = 0.5
 				mode = add_and_extend
+				years = 15
 			}
 		}
 	}

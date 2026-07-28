@@ -147,6 +147,15 @@
 		
 		on_activate = {
 		}
+		
+		ai_will_do = {
+			if = {
+				limit = {
+					has_reform = government_reform:partitio_reform
+				}
+				value = 6000
+			}
+		}
 	}
 	
 	icd_city_of_faiths = {

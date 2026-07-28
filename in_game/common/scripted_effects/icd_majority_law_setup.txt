@@ -13,6 +13,7 @@ icd_majority_law_setup = {
 				has_policy = regional_autonomy
 				has_policy = monocultural_opportunity
 				has_policy = dialects_of_italian
+				has_policy = dialects_of_tatar
 			}
 		}
 		if = {
@@ -25,11 +26,11 @@ icd_majority_law_setup = {
 		}
 		else_if = {
 			limit = {
-				policy:ethnoreligious_integration = {
+				policy:dialects_of_tatar = {
 					is_implementable_in = prev
 				}
 			}
-			add_policy = policy:ethnoreligious_integration
+			add_policy = policy:dialects_of_tatar
 		}
 		else_if = {
 			limit = {
@@ -46,6 +47,14 @@ icd_majority_law_setup = {
 				}
 			}
 			add_policy = policy:dialects_of_arabic
+		}
+		else_if = {
+			limit = {
+				policy:ethnoreligious_integration = {
+					is_implementable_in = prev
+				}
+			}
+			add_policy = policy:ethnoreligious_integration
 		}
 		else_if = {
 			limit = {

@@ -1,5 +1,73 @@
 ﻿namespace = icd_new_cultures
 
+icd_new_cultures.1000 = { ####deletes movements###
+	type = country_event
+	title = icd_new_cultures.1.title
+	desc = icd_new_cultures.1.desc
+	fire_only_once = yes
+	outcome = neutral
+
+	trigger = {
+	}
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_or_had_tag = RUS
+			}
+			culture:russian_culture_formed = {
+				every_movement_in_culture = {
+					destroy_movement = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_or_had_tag = NED
+			}
+			culture:dutch_culture_formed = {
+				every_movement_in_culture = {
+					destroy_movement = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_or_had_tag = LIT
+			}
+			culture:lithuanian_culture_formed = {
+				every_movement_in_culture = {
+					destroy_movement = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_or_had_tag = UKR
+			}
+			culture:ruthenian_culture_formed = {
+				every_movement_in_culture = {
+					destroy_movement = yes
+				}
+			}
+		}
+		culture = {
+			every_movement_in_culture = {
+				destroy_movement = yes
+			}
+		}
+		
+		
+	}
+	
+	option = {
+		name = icd_new_cultures.1.a
+	}
+
+}
+
+
 icd_new_cultures.1 = { ####RUSSIAN###
 	type = country_event
 	title = icd_new_cultures.1.title
@@ -15,6 +83,11 @@ icd_new_cultures.1 = { ####RUSSIAN###
     }
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
+		trigger_event_silently = {
+			id = icd_new_cultures.1000
+			years = 10
+		}
 		
 	}
 	option = { ###CREATE A NEW CULTURE###
@@ -44,6 +117,7 @@ icd_new_cultures.1 = { ####RUSSIAN###
 					modifier = russian_culture_movement_momentum_waning_locally
 					size = 1
 					mode = add_and_extend
+					years = 15
 				}
 			}
 		}
@@ -143,22 +217,53 @@ icd_new_cultures.1 = { ####RUSSIAN###
 			}
 			}
 		}
-		culture_group:russian_group = {
-			every_culture_in_culture_group = {
+		hidden_effect = {
+			every_culture = {
 				limit = {
-					OR = {
-						is_primary_in = root
-						is_accepted_in = root
-						is_tolerated_in = root
+					cultural_view = {
+						target = root.culture
+						value = kindred
 					}
 				}
 				change_cultural_view = {
 					target = culture:russian_culture_formed
-					change = 3
+					change = 2
+				}
+			}
+			every_culture = {
+				limit = {
+					reverse_cultural_view = {
+						target = root.culture
+						value = kindred
+					}
 				}
 				reverse_change_cultural_view = {
 					target = culture:russian_culture_formed
-					change = 3
+					change = 2
+				}
+			}
+			every_culture = {
+				limit = {
+					cultural_view = {
+						target = root.culture
+						value = positive
+					}
+				}
+				change_cultural_view = {
+					target = culture:russian_culture_formed
+					change = 1
+				}
+			}
+			every_culture = {
+				limit = {
+					reverse_cultural_view = {
+						target = root.culture
+						value = positive
+					}
+				}
+				reverse_change_cultural_view = {
+					target = culture:russian_culture_formed
+					change = 1
 				}
 			}
 		}
@@ -187,6 +292,10 @@ icd_new_cultures.2 = { ###NETHERLANDS###
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
 		
+		trigger_event_silently = {
+			id = icd_new_cultures.1000
+			years = 10
+		}
 	}
 	option = { ###CREATE A NEW CULTURE###
 		name = icd_new_cultures.1.a
@@ -216,6 +325,7 @@ icd_new_cultures.2 = { ###NETHERLANDS###
 					modifier = dutch_culture_movement_momentum_waning_locally
 					size = 1
 					mode = add_and_extend
+					years = 10
 				}
 			}
 		}
@@ -311,22 +421,53 @@ icd_new_cultures.2 = { ###NETHERLANDS###
 		}
 		}
 		
-		culture_group:netherlandish_group = {
-			every_culture_in_culture_group = {
+		hidden_effect = {
+			every_culture = {
 				limit = {
-					OR = {
-						is_primary_in = root
-						is_accepted_in = root
-						is_tolerated_in = root
+					cultural_view = {
+						target = root.culture
+						value = kindred
 					}
 				}
 				change_cultural_view = {
 					target = culture:dutch_culture_formed
-					change = 3
+					change = 2
+				}
+			}
+			every_culture = {
+				limit = {
+					reverse_cultural_view = {
+						target = root.culture
+						value = kindred
+					}
 				}
 				reverse_change_cultural_view = {
 					target = culture:dutch_culture_formed
-					change = 3
+					change = 2
+				}
+			}
+			every_culture = {
+				limit = {
+					cultural_view = {
+						target = root.culture
+						value = positive
+					}
+				}
+				change_cultural_view = {
+					target = culture:dutch_culture_formed
+					change = 1
+				}
+			}
+			every_culture = {
+				limit = {
+					reverse_cultural_view = {
+						target = root.culture
+						value = positive
+					}
+				}
+				reverse_change_cultural_view = {
+					target = culture:dutch_culture_formed
+					change = 1
 				}
 			}
 		}
@@ -352,6 +493,7 @@ icd_new_cultures.3 = { ### northumbria ###
     }
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		
 		
 	}
 	option = { ###CREATE A NEW CULTURE###
@@ -591,6 +733,10 @@ icd_new_cultures.5 = { ####LITHUANIAN EVENT###
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
 		
+		trigger_event_silently = {
+			id = icd_new_cultures.1000
+			years = 10
+		}
 	}
 	option = { ###CREATE A NEW CULTURE###
 		name = icd_new_cultures.1.a
@@ -660,15 +806,53 @@ icd_new_cultures.5 = { ####LITHUANIAN EVENT###
 		}
 		}
 		
-		culture_group:lithuanian_group = {
-			every_culture_in_culture_group = {
+		hidden_effect = {
+			every_culture = {
+				limit = {
+					cultural_view = {
+						target = root.culture
+						value = kindred
+					}
+				}
 				change_cultural_view = {
 					target = culture:lithuanian_culture_formed
-					change = 3
+					change = 2
+				}
+			}
+			every_culture = {
+				limit = {
+					reverse_cultural_view = {
+						target = root.culture
+						value = kindred
+					}
 				}
 				reverse_change_cultural_view = {
 					target = culture:lithuanian_culture_formed
-					change = 3
+					change = 2
+				}
+			}
+			every_culture = {
+				limit = {
+					cultural_view = {
+						target = root.culture
+						value = positive
+					}
+				}
+				change_cultural_view = {
+					target = culture:lithuanian_culture_formed
+					change = 1
+				}
+			}
+			every_culture = {
+				limit = {
+					reverse_cultural_view = {
+						target = root.culture
+						value = positive
+					}
+				}
+				reverse_change_cultural_view = {
+					target = culture:lithuanian_culture_formed
+					change = 1
 				}
 			}
 		}
@@ -696,6 +880,10 @@ icd_new_cultures.6 = { ####RUTHENIA###
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
 		
+		trigger_event_silently = {
+			id = icd_new_cultures.1000
+			years = 10
+		}
 	}
 	option = { ###CREATE A NEW CULTURE###
 		name = icd_new_cultures.1.a
@@ -724,6 +912,7 @@ icd_new_cultures.6 = { ####RUTHENIA###
 					modifier = ruthenian_culture_movement_momentum_waning_locally
 					size = 1
 					mode = add_and_extend
+					years = 15
 				}
 			}
 		}
@@ -824,22 +1013,53 @@ icd_new_cultures.6 = { ####RUTHENIA###
 		}
 		}
 		
-		culture_group:russian_group = {
-			every_culture_in_culture_group = {
+		hidden_effect = {
+			every_culture = {
 				limit = {
-					OR = {
-						is_primary_in = root
-						is_accepted_in = root
-						is_tolerated_in = root
+					cultural_view = {
+						target = root.culture
+						value = kindred
 					}
 				}
 				change_cultural_view = {
 					target = culture:ruthenian_culture_formed
-					change = 3
+					change = 2
+				}
+			}
+			every_culture = {
+				limit = {
+					reverse_cultural_view = {
+						target = root.culture
+						value = kindred
+					}
 				}
 				reverse_change_cultural_view = {
 					target = culture:ruthenian_culture_formed
-					change = 3
+					change = 2
+				}
+			}
+			every_culture = {
+				limit = {
+					cultural_view = {
+						target = root.culture
+						value = positive
+					}
+				}
+				change_cultural_view = {
+					target = culture:ruthenian_culture_formed
+					change = 1
+				}
+			}
+			every_culture = {
+				limit = {
+					reverse_cultural_view = {
+						target = root.culture
+						value = positive
+					}
+				}
+				reverse_change_cultural_view = {
+					target = culture:ruthenian_culture_formed
+					change = 1
 				}
 			}
 		}

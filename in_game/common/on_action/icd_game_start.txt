@@ -59,6 +59,8 @@ icd_morisco_event = {
 		icd_minority_events.9
 		icd_minority_events.5
 		icd_minority_events.8
+		icd_conversion_events.2
+		icd_conversion_events.3
 	}
 
 	random_events = {

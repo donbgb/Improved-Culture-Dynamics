@@ -80,8 +80,9 @@
 			monthly_towards_humanist = societal_value_monthly_move
 			global_pop_conversion_speed_modifier = -0.25
 			clergy_estate_target_satisfaction = -0.2
-			tolerance_heathen = 0.5
-			tolerance_heretic = 0.5
+			research_speed_modifier = 0.025
+			tolerance_heathen = 1.5
+			tolerance_heretic = 1.5
 		}
 		potential = {
 			has_embraced_institution = institution:enlightenment
@@ -131,7 +132,7 @@
 	religious_and_ritual_regulation = {
 		country_modifier = {
 			monthly_religious_rebel_growth = -0.01
-			global_crown_estate_power = 0.1
+			global_crown_estate_power = 0.025
 		}
 		potential = {
 			OR = {

@@ -1,0 +1,290 @@
+﻿REPLACE:add_accepted_culture = {
+	type = owncountry
+
+	potential = {
+	}
+
+	allow = {
+		trigger_if = {
+			limit = {
+				exists = scope:target
+				exists = scope:actor
+			}
+			scope:actor = {
+				culture_population_in_country = {
+					culture = scope:target
+					value > 0
+				}
+			}
+		}
+	}
+
+	ai_tick = never
+	ai_tick_frequency = 12
+
+	automation_tick = monthly
+	automation_tick_frequency = 1
+	player_automated_category = cultureacceptance
+	
+	price = price:add_accepted_culture
+
+	select_trigger = {
+		looking_for_a = culture
+		target_flag = target
+		source = actor
+		source_flags = only_tolerated
+
+		name = "add_accepted_culture_select_culture"
+		none_available_msg_key = "add_accepted_culture_no_cultures"
+		column = {
+			data = name
+		}
+		visible = {
+			not = { is_accepted_in = scope:actor }
+		}
+		enabled = {
+			is_tolerated_in = scope:actor
+			NOT = {
+				scope:actor.culture = this
+			}
+			
+			OR = {
+				AND = {
+					hidden_trigger = {
+						scope:actor = { is_ai = yes }
+						scope:actor = {
+							OR = {
+								culture_percentage_in_country = {
+									culture = root
+									value >= 0.05
+								}
+								culture_population_in_country = {
+									culture = root
+									value >= 1000
+								}
+								any_estate = {
+									NOT = { estate_type = estate_type:tribes_estate }
+									dominant_culture ?= { this = root }
+								}
+							}
+						}
+						reverse_cultural_view = {
+							target = scope:actor.culture
+							value > enemy
+						}
+						cultural_view = {
+							target = scope:actor.culture
+							value > enemy
+						}
+						OR = {
+							cultural_view = {
+								target = scope:actor.culture
+								value >= positive
+							}
+							reverse_cultural_view = {
+								target = scope:actor.culture
+								value >= positive
+							}
+							has_shared_culture_group = scope:actor.culture
+							language = scope:actor.culture.language
+							language = scope:actor.court_language
+							scope:actor = {
+								any_province = {
+									culture_percentage = {
+										culture = scope:actor.culture
+										value = 0
+									}
+									dominant_culture = root
+									dominant_religion = scope:actor.religion
+								}
+							}
+						}
+						NOT = {
+							scope:actor = {
+								used_cultures_capacity >= modifier:cultures_capacity
+							}
+						}
+					}
+				}
+				AND = {
+					scope:actor = { is_ai = no }
+					scope:actor = {
+						OR = {
+							culture_percentage_in_country = {
+								culture = root
+								value >= 0.01
+							}
+
+							culture_population_in_country = {
+								culture = root
+								value >= 1000
+							}
+							any_estate = {
+								dominant_culture ?= { this = root }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		scope:actor = {
+			if = {
+				limit = {
+					exists = scope:target
+				}
+				add_accepted_culture = scope:target
+			}
+		}
+	}
+
+	ai_will_do = {
+		# handled in code
+	}
+}
+
+REPLACE:add_tolerated_culture = {
+	type = owncountry
+
+	potential = {
+	}
+
+	allow = {
+		trigger_if = {
+			limit = {
+				exists = scope:target
+				exists = scope:actor
+			}
+			scope:actor = {
+				culture_population_in_country = {
+					culture = scope:target
+					value > 0
+				}
+			}
+		}
+	}
+
+	ai_tick = never
+	ai_tick_frequency = 12
+
+	automation_tick = monthly
+	automation_tick_frequency = 1
+	player_automated_category = cultureacceptance
+	
+	price = price:add_tolerated_culture
+
+	select_trigger = {
+		looking_for_a = culture
+		#for the AI we have an optimisation to only look through cultures that are present. Human can look at all...but will have some disabled
+		source_ai_override = actor
+		target_flag = target
+		source_flags_ai_override = include_any_present
+		name = "add_tolerated_culture_select_culture"
+		none_available_msg_key = "add_tolerated_culture_no_cultures"
+		column = {
+			data = name
+		}
+		enabled = {
+			NOR = {
+				scope:actor.culture = this
+				is_tolerated_in = scope:actor
+				is_accepted_in = scope:actor
+			}
+			OR = {
+				AND = {
+					hidden_trigger = {
+						scope:actor = { is_ai = yes }
+						scope:actor = {
+							OR = {
+								culture_percentage_in_country = {
+									culture = root
+									value >= 0.05
+								}
+								culture_population_in_country = {
+									culture = root
+									value >= 1000
+								}
+								any_estate = {
+									NOT = { estate_type = estate_type:tribes_estate }
+									dominant_culture ?= { this = root }
+								}
+							}
+						}
+						reverse_cultural_view = {
+							target = scope:actor.culture
+							value > enemy
+						}
+						cultural_view = {
+							target = scope:actor.culture
+							value > enemy
+						}
+						OR = {
+							cultural_view = {
+								target = scope:actor.culture
+								value >= positive
+							}
+							reverse_cultural_view = {
+								target = scope:actor.culture
+								value >= positive
+							}
+							has_shared_culture_group = scope:actor.culture
+							language = scope:actor.culture.language
+							language = scope:actor.court_language
+							scope:actor = {
+								any_owned_location = {
+									culture_percentage = {
+										culture = scope:actor.culture
+										value = 0
+									}
+									dominant_culture = root
+									dominant_religion = scope:actor.religion
+								}
+							}
+						}
+						NOT = {
+							scope:actor = {
+								used_cultures_capacity >= modifier:cultures_capacity
+							}
+						}
+					}
+				}
+				AND = {
+					scope:actor = { is_ai = no }
+					scope:actor = {
+						OR = {
+							culture_percentage_in_country = {
+								culture = root
+								value >= 0.01
+							}
+
+							culture_population_in_country = {
+								culture = root
+								value >= 1000
+							}
+							any_estate = {
+								dominant_culture ?= { this = root }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		scope:actor = {
+			if = {
+				limit = {
+					exists = scope:target
+				}
+				add_tolerated_culture = scope:target
+			}
+		}
+	}
+	
+	ai_will_do = {
+		# handled in code
+	}
+}

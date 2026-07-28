@@ -33,6 +33,14 @@
 				}
 				has_policy = minority_rule
 			}
+			AND = {
+				tag = GRG
+				language_percentage_in_country = {
+					language = root.culture.language
+					value <= 0.20
+				}
+				has_policy = minority_rule
+			}
 		}
 	}
 
@@ -74,6 +82,13 @@
 						value <= 0.10
 					}
 					tag = PLE
+				}
+				AND = {
+					culture_percentage_in_country = {
+						culture = root.culture
+						value <= 0.20
+					}
+					tag = GRG
 				}
 			}
 		}
@@ -372,6 +387,53 @@
 		}
 	}
 	
+	dialects_of_tatar = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			cultures_capacity = 0.25
+			diplomatic_reputation = diplomatic_reputation_weak_bonus
+			add_tolerated_culture_cost_modifier = -0.5
+		}
+		potential = {
+			OR = {
+				culture = { has_culture_group = culture_group:tatar_group }
+				culture = culture:cuman_culture
+				culture = culture:kyrgyz_culture
+				culture = culture:kumyk_culture
+				culture = culture:karachay_culture
+				culture = culture:balkar_culture
+				culture = culture:bolghar_culture
+				culture = culture:yerle_qaliq_culture
+				culture = culture:uzbek_culture
+			}
+		}
+		allow = {
+			OR = {
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
+			}
+		}
+		
+		on_activate = {
+			custom_tooltip = dialects_of_tatar_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			icd_region_culture_law_tatar = yes
+		}
+		months = 1
+		ai_will_do = {
+			value = 700
+		}
+	}
+	
 
 	ethnoreligious_integration = {
 		price = icd_nothing_price
@@ -401,6 +463,16 @@
 				}
 				has_policy = icd_custodians
 			}
+			OR = {
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
+			}
 		}
 		
 		on_activate = {
@@ -420,7 +492,7 @@
 							culture = root.culture
 							value >= 0.1
 						}
-						dominant_culture ?= { has_culture_group = culture_group:turkic_group }
+						dominant_culture ?= root.culture
 						any_location_in_province = {
 							culture_percentage = {
 								culture = root.culture
@@ -439,29 +511,27 @@
 			potential_trigger = {
 				custom_tooltip = {
 					text = icd_ethnoreligious_integration_tt
-					"culture_group_percentage(culture_group:turkic_group)" > "religion_group_percentage(religion_group:muslim)"
-					OR = {	
-						owner = { culture = { has_culture_group = culture_group:jewish_group } }
-						owner = { culture = { has_culture_group = culture_group:turkic_group } }
-					}
-				}
-			}
-			local_heathen_pop_conversion_speed_modifier = 3.5
-		}
-		location_modifier = { ##turks###
-			potential_trigger = {
-				custom_tooltip = {
-					text = icd_ethnoreligious_integration_tt
-					"culture_percentage(owner.culture)" > "religion_group_percentage(religion_group:muslim)"
-					owner = {
-						NOT = { 
-							culture = { has_culture_group = culture_group:turkic_group } 
+					OR = {
+						AND = {
+							"culture_group_percentage(culture_group:turkic_group)" > "religion_group_percentage(religion_group:muslim)"
+							OR = {	
+								owner = { culture = { has_culture_group = culture_group:jewish_group } }
+								owner = { culture = { has_culture_group = culture_group:turkic_group } }
+							}
+						}
+						AND = {
+							"culture_percentage(owner.culture)" > "religion_group_percentage(religion_group:muslim)"
+							owner = {
+								NOT = { 
+									culture = { has_culture_group = culture_group:turkic_group } 
+								}
+							}
 						}
 					}
 				}
 			}
 			local_heathen_pop_conversion_speed_modifier = 3.5
-		}
+		}	
 		months = 1
 		ai_will_do = {
 			value = 700

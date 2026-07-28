@@ -111,6 +111,7 @@
 				modifier = dutch_culture_movement_momentum_waning_locally
 				size = 0.34
 				mode = add_and_extend
+				years = 15
 			}
 		}
 	}

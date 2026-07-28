@@ -87,13 +87,23 @@
 		
 		on_activate = {
 		}
-		
+
+		ai_will_do = {
+			if = {
+				limit = {
+					has_or_had_tag = TEU
+					has_or_had_tag = LIV
+				}
+				value = 5000
+			}
+		}
 	}
 	
 	icd_syncretic_persuasion = {
 		country_modifier = {
+			global_pop_conversion_speed_modifier = 0.025
 			cultures_capacity_modifier = 0.1
-			global_pop_assimilation_speed_modifier = -0.1
+			global_pop_assimilation_speed_modifier = -0.15
 		}
 		allow = {
 			NOT = {
@@ -510,6 +520,8 @@
 			}
 			OR = {
 				culture = { has_culture_group = culture_group:mongolian_group }
+				has_or_had_tag = GLH
+				has_or_had_tag = CHG
 				religion = religion:tengri
 			}
 		}

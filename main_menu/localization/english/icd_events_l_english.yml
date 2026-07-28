@@ -136,7 +136,7 @@
  
  
  icd_muslim_events.1.title: "Conversion of the Bosnians"
- icd_muslim_events.1.entry: "Conversion of the Bosnians"
+ icd_conversion_events.1.entry: "Conversion of the Bosnians"
  icd_muslim_events.1.desc: "The faithfulness of the $bosnian$s to local religions is surprisingly shallow. Historical competition between [ShowReligionName('catholic')] and [ShowReligionName('orthodox')] in Bosnia has weakened the religious fabric of society there and led to a lack of clerical and spiritual organization. Allowed to exist thanks to this vaccuum, the schismatic [ShowReligionAdjective('bosnian_church')], however, failed to create a stronger alternative. With our arrival and conquest of these lands, the local people have appeared surprisingly open to [ShowReligionGroupName('muslim')] and seem to be willing to convert and commit to our faith. If we begin proselytising efforts among them, we will be sure to see a large number of converts."
  icd_muslim_events.1.a: "Spread the word to the $bosnian$s"
  icd_muslim_events.1.b: "And lose a source of jizya tax? Never"
@@ -304,3 +304,14 @@
  icd_reformed.10.desc: "A recent arrival in our lands is [GetCharacter('icd_caspar_olevian').GetName], a [ShowReligionAdjective('calvinist')] theologian who has begun to promote Calvin's teachings over those of [ShowReligionName('lutheran')]. Should we welcome him into our territory and possibly give him a post in a local university, it might signal a significant shift in our population's religious beliefs."
  icd_reformed.10.a: "Welcome him with open arms"
  icd_reformed.10.b: "He has no business here"
+ 
+ icd_conversion_events.2.title: "Islamic Pressure"
+ icd_conversion_events.2.desc: "Our [ShowReligionAdjective('tengri')] faith has been challenged by the more coherent organization of [ShowReligionGroupName('muslim')]. Some [ShowReligionAdjective('sunni')] scholars and leaders in our society pressure our state and come to our court consistently, seeking to make our ruler convert and accept this new faith."
+ icd_conversion_events.2.a: "Ridiculous!"
+ icd_conversion_events.2.b: "These [ShowReligionGroupAdjectiveWithNoTooltip('muslim')]s may have a point"
+ icd_conversion_events.3.title: "Buddhist Missionaries"
+ icd_conversion_events.3.desc: "Lamas have arrived in our country, passing on teachings of the Buddha and spreading mystical techniques. In our court, they have proven quite influential and many have begun to question our exclusive commitment to our [ShowReligionAdjective('tengri')] faith, instead suggesting we should adopt the lamas' [ShowReligionAdjective('tibetan_buddhism')] religion."
+ icd_conversion_events.3.a: "Ridiculous!"
+ icd_conversion_events.3.b: "These [ShowReligionAdjectiveWithNoTooltip('tibetan_buddhism')]s may have a point"
+ icd_conversion_events.3.c: "What do the monks from neighbouring China have to say?"
+ 

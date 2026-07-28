@@ -384,14 +384,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -414,14 +414,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -446,14 +446,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:balkan_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -477,14 +477,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:anatolia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -508,14 +508,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:anatolia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -540,14 +540,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:anatolia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -573,14 +573,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:crescent_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -606,14 +606,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:ruthenia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -636,14 +636,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:ruthenia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -667,14 +667,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:north_german_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -697,14 +697,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:baltic_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -727,14 +727,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:baltic_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -758,14 +758,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:baltic_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -790,14 +790,14 @@ icd_minority_events.1 = { ###jewish exodus###
 		region:south_german_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -842,7 +842,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -854,7 +854,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -888,7 +888,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -924,7 +924,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -936,7 +936,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -948,7 +948,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -982,7 +982,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -1018,7 +1018,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -1030,7 +1030,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -1064,7 +1064,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -1100,7 +1100,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -1112,7 +1112,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -1124,7 +1124,7 @@ icd_minority_events.1 = { ###jewish exodus###
 						province_definition = {
 							NOT = {
 								any_location_in_province_definition = {
-									owner = root
+									owner ?= root
 								}
 							}
 						}
@@ -1210,7 +1210,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target1_sephardim.province_definition
 					religion = religion:judaism
@@ -1222,7 +1222,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target2_sephardim.province_definition
 					religion = religion:judaism
@@ -1234,7 +1234,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target3_sephardim.province_definition
 					religion = religion:judaism
@@ -1246,7 +1246,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target4_sephardim.province_definition
 					religion = religion:judaism
@@ -1258,7 +1258,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target5_sephardim.province_definition
 					religion = religion:judaism
@@ -1270,7 +1270,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target6_sephardim.province_definition
 					religion = religion:judaism
@@ -1282,7 +1282,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target7_sephardim.province_definition
 					religion = religion:judaism
@@ -1313,7 +1313,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					}
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target1_ashkenazi.province_definition
 					religion = religion:judaism
@@ -1325,7 +1325,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target2_ashkenazi.province_definition
 					religion = religion:judaism
@@ -1337,7 +1337,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target3_ashkenazi.province_definition
 					religion = religion:judaism
@@ -1349,7 +1349,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target4_ashkenazi.province_definition
 					religion = religion:judaism
@@ -1361,7 +1361,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target5_ashkenazi.province_definition
 					religion = religion:judaism
@@ -1373,7 +1373,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target6_sephardim.province_definition
 					religion = religion:judaism
@@ -1385,7 +1385,7 @@ icd_minority_events.1 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target7_sephardim.province_definition
 					religion = religion:judaism
@@ -1623,14 +1623,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1653,14 +1653,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1685,14 +1685,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:balkan_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1716,14 +1716,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:anatolia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1747,14 +1747,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:anatolia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1779,14 +1779,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:anatolia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1812,14 +1812,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:crescent_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1845,14 +1845,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:ruthenia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1875,14 +1875,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:ruthenia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1906,14 +1906,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:north_german_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1936,14 +1936,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:baltic_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1966,14 +1966,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:baltic_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -1997,14 +1997,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:baltic_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -2029,14 +2029,14 @@ icd_minority_events.4 = { ##jewish pogroms###
 		region:south_german_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -2395,7 +2395,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target1_sephardim.province_definition
 					religion = religion:judaism
@@ -2407,7 +2407,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target2_sephardim.province_definition
 					religion = religion:judaism
@@ -2419,7 +2419,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target3_sephardim.province_definition
 					religion = religion:judaism
@@ -2431,7 +2431,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target4_sephardim.province_definition
 					religion = religion:judaism
@@ -2443,7 +2443,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target5_sephardim.province_definition
 					religion = religion:judaism
@@ -2455,7 +2455,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target6_sephardim.province_definition
 					religion = religion:judaism
@@ -2467,7 +2467,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target7_sephardim.province_definition
 					religion = religion:judaism
@@ -2498,7 +2498,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					}
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target1_ashkenazi.province_definition
 					religion = religion:judaism
@@ -2510,7 +2510,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target2_ashkenazi.province_definition
 					religion = religion:judaism
@@ -2522,7 +2522,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target3_ashkenazi.province_definition
 					religion = religion:judaism
@@ -2534,7 +2534,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target4_ashkenazi.province_definition
 					religion = religion:judaism
@@ -2546,7 +2546,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target5_ashkenazi.province_definition
 					religion = religion:judaism
@@ -2558,7 +2558,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target6_sephardim.province_definition
 					religion = religion:judaism
@@ -2570,7 +2570,7 @@ icd_minority_events.4 = { ##jewish pogroms###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target7_sephardim.province_definition
 					religion = religion:judaism
@@ -2760,14 +2760,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -2790,14 +2790,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -2822,14 +2822,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:balkan_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -2853,14 +2853,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:anatolia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -2884,14 +2884,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:anatolia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -2916,14 +2916,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:anatolia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -2949,14 +2949,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:crescent_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -2982,14 +2982,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:ruthenia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -3012,14 +3012,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:ruthenia_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -3043,14 +3043,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:north_german_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							AND = {
@@ -3072,14 +3072,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:baltic_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -3102,14 +3102,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:baltic_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -3133,14 +3133,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:baltic_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -3165,14 +3165,14 @@ icd_minority_events.6 = { ###jewish exodus###
 		region:south_german_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					province_definition = {
 						any_province_in_province_definition = {
 							owner != root
 						}
 					}
-					owner = {
+					owner ?= {
 						OR = {
 							has_policy = icd_jewish_charter
 							has_policy = council_of_three_lands_policy
@@ -3446,7 +3446,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target1_sephardim.province_definition
 					religion = religion:judaism
@@ -3458,7 +3458,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target2_sephardim.province_definition
 					religion = religion:judaism
@@ -3470,7 +3470,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target3_sephardim.province_definition
 					religion = religion:judaism
@@ -3482,7 +3482,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target4_sephardim.province_definition
 					religion = religion:judaism
@@ -3494,7 +3494,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target5_sephardim.province_definition
 					religion = religion:judaism
@@ -3506,7 +3506,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target6_sephardim.province_definition
 					religion = religion:judaism
@@ -3518,7 +3518,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target7_sephardim.province_definition
 					religion = religion:judaism
@@ -3549,7 +3549,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					}
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target1_ashkenazi.province_definition
 					religion = religion:judaism
@@ -3561,7 +3561,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target2_ashkenazi.province_definition
 					religion = religion:judaism
@@ -3573,7 +3573,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target3_ashkenazi.province_definition
 					religion = religion:judaism
@@ -3585,7 +3585,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target4_ashkenazi.province_definition
 					religion = religion:judaism
@@ -3597,7 +3597,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target5_ashkenazi.province_definition
 					religion = religion:judaism
@@ -3609,7 +3609,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target6_sephardim.province_definition
 					religion = religion:judaism
@@ -3621,7 +3621,7 @@ icd_minority_events.6 = { ###jewish exodus###
 					months = 12
 				}
 				add_migration = {
-					owner = prev
+					owner ?= prev
 					from = this.province_definition
 					to = scope:escape_target7_sephardim.province_definition
 					religion = religion:judaism
@@ -4079,7 +4079,7 @@ icd_minority_events.9 = { #expel the crimeans ###
 			region:anatolia_region = {
 				random_location_in_region = {
 					limit = {
-						has_owner = yes
+						has_owner ?= yes
 						owner != root
 						dominant_religion.group ?= religion_group:muslim
 						is_coastal = yes
@@ -4103,7 +4103,7 @@ icd_minority_events.9 = { #expel the crimeans ###
 				random_location_in_region = {
 					limit = {
 						NOT = { this = scope:escape_target1 }
-						has_owner = yes
+						has_owner ?= yes
 						owner != root
 						dominant_religion.group ?= religion_group:muslim
 						is_coastal = yes
@@ -4127,7 +4127,7 @@ icd_minority_events.9 = { #expel the crimeans ###
 				random_location_in_region = {
 					limit = {
 						NOT = { this = scope:escape_target1 this = scope:escape_target2 }
-						has_owner = yes
+						has_owner ?= yes
 						owner != root
 						dominant_religion.group ?= religion_group:muslim
 						is_coastal = yes
@@ -4151,7 +4151,7 @@ icd_minority_events.9 = { #expel the crimeans ###
 				random_location_in_region = {
 					limit = {
 						NOT = { this = scope:escape_target1 this = scope:escape_target2 this = scope:escape_target3 }
-						has_owner = yes
+						has_owner ?= yes
 						owner != root
 						dominant_religion.group ?= religion_group:muslim
 						is_coastal = yes
@@ -4313,7 +4313,7 @@ icd_minority_events.9 = { #expel the crimeans ###
 			}
 			
 			add_migration = {
-				owner = prev
+				owner ?= prev
 				from = this.province_definition
 				to = scope:escape_target1.province_definition
 				culture = culture:crimean
@@ -4326,7 +4326,7 @@ icd_minority_events.9 = { #expel the crimeans ###
 				months = 30
 			}
 			add_migration = {
-				owner = prev
+				owner ?= prev
 				from = this.province_definition
 				to = scope:escape_target2.province_definition
 				culture = culture:crimean
@@ -4339,7 +4339,7 @@ icd_minority_events.9 = { #expel the crimeans ###
 				months = 30
 			}
 			add_migration = {
-				owner = prev
+				owner ?= prev
 				from = this.province_definition
 				to = scope:escape_target3.province_definition
 				culture = culture:crimean
@@ -4352,7 +4352,7 @@ icd_minority_events.9 = { #expel the crimeans ###
 				months = 30
 			}
 			add_migration = {
-				owner = prev
+				owner ?= prev
 				from = this.province_definition
 				to = scope:escape_target4.province_definition
 				culture = culture:crimean
@@ -4436,7 +4436,7 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					dominant_religion.group ?= religion_group:muslim
 					is_coastal = yes
@@ -4448,7 +4448,7 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					dominant_religion.group ?= religion_group:muslim
 					is_coastal = yes
@@ -4460,7 +4460,7 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					dominant_religion.group ?= religion_group:muslim
 					is_coastal = yes
@@ -4472,7 +4472,7 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 		region:maghreb_region = {
 			random_location_in_region = {
 				limit = {
-					has_owner = yes
+					has_owner ?= yes
 					owner != root
 					dominant_religion.group ?= religion_group:muslim
 					is_coastal = yes
@@ -4611,7 +4611,7 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 		every_owned_location = {
 			every_pop = {
 				limit = {
-					owner = root
+					owner ?= root
 					culture = culture:andalusi
 				}
 				change_pop_religion = religion:sunni
@@ -4632,7 +4632,7 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 				region = region:iberia_region
 			}
 			add_migration = {
-				owner = prev
+				owner ?= prev
 				from = this.province_definition
 				to = scope:escape_target1.province_definition
 				culture = culture:andalusi
@@ -4645,7 +4645,7 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 				months = 30
 			}
 			add_migration = {
-				owner = prev
+				owner ?= prev
 				from = this.province_definition
 				to = scope:escape_target2.province_definition
 				culture = culture:andalusi
@@ -4658,7 +4658,7 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 				months = 30
 			}
 			add_migration = {
-				owner = prev
+				owner ?= prev
 				from = this.province_definition
 				to = scope:escape_target3.province_definition
 				culture = culture:andalusi
@@ -4671,7 +4671,7 @@ icd_minority_events.10 = { #Assimilation of the Moriscos ###
 				months = 30
 			}
 			add_migration = {
-				owner = prev
+				owner ?= prev
 				from = this.province_definition
 				to = scope:escape_target4.province_definition
 				culture = culture:andalusi

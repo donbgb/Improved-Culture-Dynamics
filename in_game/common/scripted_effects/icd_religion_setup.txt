@@ -1,9 +1,217 @@
 ﻿
 icd_religion_setup = {
 
+
+	area:azerbaijan_area = {
+		every_location_in_area = {
+			every_pop= {
+				limit = {
+					religion = religion:zoroastrian
+				}
+				change_pop_religion = religion:sunni
+			}
+		}
+	}
+	province_definition:yazd_province = {
+		every_location_in_province_definition = {
+			every_pop= {
+				limit = {
+					religion = religion:sunni
+					pop_type = pop_type:peasants
+					culture = { has_culture_group = culture_group:iranian_group }
+				}
+				split_pop = {
+					fraction = 0.3
+					religion = religion:zoroastrian
+				}
+			}
+		}
+	}
+	province_definition:kerman_province = {
+		every_location_in_province_definition = {
+			every_pop= {
+				limit = {
+					religion = religion:sunni
+					pop_type = pop_type:peasants
+					culture = { has_culture_group = culture_group:iranian_group }
+				}
+				split_pop = {
+					fraction = 0.3
+					religion = religion:zoroastrian
+				}
+			}
+		}
+	}
+	province_definition:farah_province = {
+		every_location_in_province_definition = {
+			every_pop= {
+				limit = {
+					religion = religion:sunni
+					pop_type = pop_type:peasants
+					culture = { has_culture_group = culture_group:iranian_group }
+				}
+				split_pop = {
+					fraction = 0.1
+					religion = religion:zoroastrian
+				}
+			}
+		}
+	}
+	province_definition:zaranj_province = {
+		every_location_in_province_definition = {
+			every_pop= {
+				limit = {
+					religion = religion:sunni
+					pop_type = pop_type:peasants
+					culture = { has_culture_group = culture_group:iranian_group }
+				}
+				split_pop = {
+					fraction = 0.1
+					religion = religion:zoroastrian
+				}
+			}
+		}
+	}
+	province_definition:zabol_province = {
+		every_location_in_province_definition = {
+			every_pop= {
+				limit = {
+					religion = religion:sunni
+					pop_type = pop_type:peasants
+					culture = { has_culture_group = culture_group:iranian_group }
+				}
+				split_pop = {
+					fraction = 0.1
+					religion = religion:zoroastrian
+				}
+			}
+		}
+	}
+	province_definition:rafsanjan_province = {
+		every_location_in_province_definition = {
+			every_pop= {
+				limit = {
+					religion = religion:sunni
+					pop_type = pop_type:peasants
+				}
+				split_pop = {
+					fraction = 0.15
+					religion = religion:zoroastrian
+				}
+			}
+		}
+	}
+	location:meybod = {
+		every_pop = {
+			limit = {
+				religion = religion:sunni
+				pop_type = pop_type:peasants
+				culture = { has_culture_group = culture_group:iranian_group }
+			}
+			split_pop = {
+				fraction = 0.12
+				religion = religion:zoroastrian
+			}
+		}
+	}
+	location:bassein = {
+		every_pop = {
+			limit = {
+				religion = religion:hindu
+				pop_type = pop_type:peasants
+			}
+			split_pop = {
+				fraction = 0.005
+				religion = religion:zoroastrian
+				culture = culture:icd_parsi_culture
+			}
+		}
+	}
+	
+	location:meybod = {
+		every_pop = {
+			limit = {
+				religion = religion:sunni
+				pop_type = pop_type:clergy
+				culture = { has_culture_group = culture_group:iranian_group }
+			}
+			split_pop = {
+				fraction = 0.8
+				religion = religion:zoroastrian
+			}
+		}
+	}
+	province_definition:zanjan_province = {
+		every_location_in_province_definition = {
+			every_pop= {
+				limit = {
+					religion = religion:zoroastrian
+				}
+				split_pop = {
+					fraction = 0.1
+					religion = religion:sunni
+				}
+			}
+		}
+	}
+	province_definition:hamadan_province = {
+		every_location_in_province_definition = {
+			every_pop= {
+				limit = {
+					religion = religion:zoroastrian
+				}
+				split_pop = {
+					fraction = 0.3
+					religion = religion:sunni
+				}
+			}
+		}
+	}
+	area:kordestan_area = {
+		every_location_in_area = {
+			every_pop= {
+				limit = {
+					religion = religion:zoroastrian
+					culture = culture:adhari_culture
+				}
+				change_pop_religion = religion:sunni
+			}
+		}
+	}
+	
+	province_definition:lata = {
+		every_location_in_province_definition = {
+			limit = {
+				is_coastal = yes
+			}
+			every_pop= {
+				limit = {
+					religion = religion:hindu
+					pop_type = pop_type:peasants
+				}
+				split_pop = {
+					fraction = 0.025
+					religion = religion:zoroastrian
+					culture = culture:icd_parsi_culture
+				}
+			}
+		}
+	}
+	location:daman = {
+		every_pop = {
+			limit = {
+				religion = religion:hindu
+				pop_type = pop_type:peasants
+			}
+			split_pop = {
+				fraction = 0.055
+				religion = religion:zoroastrian
+				culture = culture:icd_parsi_culture
+			}
+		}
+	}
+
 	every_country = {
-	
-	
 		
 		every_pop= {
 			limit = { culture = culture:alawite_culture }

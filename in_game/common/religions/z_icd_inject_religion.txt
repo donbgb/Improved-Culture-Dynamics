@@ -1,4 +1,7 @@
 ﻿INJECT:mandeaism = { 
 	culture_locked = yes
 }
+INJECT:zoroastrian = { 
+	culture_locked = yes
+}
 

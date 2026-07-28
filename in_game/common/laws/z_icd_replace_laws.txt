@@ -314,7 +314,8 @@ REPLACE:inquisition_law = {
 							has_or_had_tag = FRA
 							current_year > 1650
 						}
-						
+						has_reform = government_reform:partitio_reform
+						has_policy = minority_rule
 					}
 				}
 				value = 6000

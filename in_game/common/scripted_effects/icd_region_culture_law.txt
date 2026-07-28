@@ -1117,3 +1117,372 @@ icd_region_culture_law_italian = {
 			}
 			
 }
+
+
+
+
+
+icd_region_culture_law_tatar = {
+			
+			every_province = {
+				limit = { 
+					OR = {
+						dominant_culture ?= { has_culture_group = culture_group:tatar_group }
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:mishar
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:mishar
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:crimean
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:crimean
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:kazani
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:kazani
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:astrakhani
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:astrakhani
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:nogai
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:nogai
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:cuman_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:cuman_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:kyrgyz_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:kyrgyz_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:kumyk_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:kumyk_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:karachay_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:karachay_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:balkar_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:balkar_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:bolghar_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:bolghar_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:yerle_qaliq_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:yerle_qaliq_culture
+				}
+			}
+			every_province = {
+				limit = { 
+					NOT = { dominant_culture ?= { has_culture_group = culture_group:tatar_group } 
+						dominant_culture ?= culture:cuman_culture
+						dominant_culture ?= culture:kyrgyz_culture
+						dominant_culture ?= culture:kumyk_culture
+						dominant_culture ?= culture:karachay_culture
+						dominant_culture ?= culture:balkar_culture
+						dominant_culture ?= culture:bolghar_culture
+						dominant_culture ?= culture:yerle_qaliq_culture
+						dominant_culture ?= culture:uzbek_culture
+					}
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:uzbek_culture
+						}
+					}
+					NOT = { has_variable = promoting_culture }
+				}
+				set_variable = {
+					name = promoting_culture
+					value = culture:uzbek_culture
+				}
+			}
+			every_province = {  
+				limit = {
+					NOT = {
+						any_location_in_province = {
+							any_neighbor_location = {
+								dominant_culture ?= root.culture
+							}
+						}
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.2
+							}
+						}
+						has_variable = promoting_culture
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+			
+}
