@@ -104,7 +104,6 @@ icd_cultural_setup = {
 	}
 	
 	
-
 	c:MAM = {
 		every_pop= {
 			limit = { culture = culture:syriac_culture pop_type = pop_type:slaves }

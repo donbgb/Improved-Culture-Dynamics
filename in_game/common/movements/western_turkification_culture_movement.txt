@@ -1,5 +1,5 @@
-﻿turkification_culture_movement = {
-	culture = turkmen_culture
+﻿western_turkification_culture_movement = {
+	culture = turkoman_culture
 
 	potential = {
 	}
@@ -57,8 +57,9 @@
 		}
 		if = {
 			limit = {
-				NOT = { root.region ?= region:persia_region }
-				NOT = { root.area ?= area:western_khorasan_area }
+				NOT = { root.region ?= region:crescent_region }
+				NOT = { root.region ?= region:caucasus_region }
+				NOT = { root.region ?= region:anatolia_region }
 			}
 			multiply = 0
 		}
@@ -79,6 +80,7 @@
 		religion = tengri
 		multiplier = 0.5
 	}
+
 	
 	on_calc_effect ={
 	}
@@ -89,7 +91,7 @@
 				OR = {
 					"culture_percentage(culture:mongolian_culture)" > 0
 					"culture_percentage(culture:oirat_culture)" > 0
-					"culture_percentage(culture:turkmen_culture)" > 0
+					"culture_percentage(culture:turkoman_culture)" > 0
 				}
 				root.owner ?= { 
 					culture = { has_culture_group = culture_group:mongolian_group }
@@ -120,20 +122,20 @@
 					"culture_percentage(culture:mongolian_culture)" < 0.02
 					"culture_percentage(culture:oirat_culture)" < 0.02
 				}
-				"culture_percentage(culture:turkmen_culture)" > 0.02
+				"culture_percentage(culture:turkoman_culture)" > 0.02
 			}
 			value = define:NMapColors|MAP_COLOR_MAX
 		}
 		else_if = {
 			limit = {
-				"culture_percentage(culture:turkmen_culture)" > "culture_percentage(culture:mongolian_culture)"
-				"culture_percentage(culture:turkmen_culture)" > "culture_percentage(culture:oirat_culture)"
+				"culture_percentage(culture:turkoman_culture)" > "culture_percentage(culture:mongolian_culture)"
+				"culture_percentage(culture:turkoman_culture)" > "culture_percentage(culture:oirat_culture)"
 			}
 			value = define:NMapColors|MAP_COLOR_HIGH
 		}
 		else_if = {
 			limit = {
-				"culture_percentage(culture:turkmen_culture)" > 0
+				"culture_percentage(culture:turkoman_culture)" > 0
 			}
 			value = define:NMapColors|MAP_COLOR_MID
 		}

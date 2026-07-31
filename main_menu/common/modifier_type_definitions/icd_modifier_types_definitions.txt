@@ -207,3 +207,31 @@ local_anabaptist_movement_growth_modifier={
 		category=location
 	}
 }
+
+national_western_turkification_culture_movement_resistance_modifier  ={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
+
+local_western_turkification_culture_movement_resistance_modifier ={
+	percent=yes
+	game_data={
+		category=location
+	}
+}
+
+national_western_turkification_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=movement
+	}
+}
+
+local_western_turkification_culture_movement_growth_modifier={
+	percent=yes
+	game_data={
+		category=location
+	}
+}

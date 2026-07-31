@@ -40,9 +40,10 @@
 
 	required_cultures = { adhari_culture }
 	
+	calc_interval_days = 90
 
 	r0 = { 
-		value = 0.01
+		value = 0.015
 		if = {
 			limit = {
 				OR = {
@@ -61,6 +62,7 @@
 						AND = {
 							NOT = {
 								culture = culture:azeri_culture
+								culture = { has_culture_group = culture_group:turkic_group }
 								culture:azeri_culture = { is_accepted_in = root.owner }
 							}
 							culture:adhari_culture = { is_accepted_in = root.owner }
@@ -71,8 +73,6 @@
 			multiply = 0
 		}
 	}
-
-	calc_interval_days = 90
 
 	development = negative
 	literacy = negative
@@ -94,25 +94,9 @@
 		pop_type = nobles
 		multiplier = 0.01
 	}
-	
 	specific_pop_type_effect = {
 		religion = zoroastrian
 		multiplier = 0
-	}
-
-	location_stagnation_chance = {
-		if = {
-			limit = {
-				dominant_culture ?= culture:azeri_culture
-			}
-			value = 1
-		}
-		if = {
-			limit = {
-				has_location_modifier = azeri_culture_movement_momentum_waning_locally
-			}
-			value = 1
-		}
 	}
 	
 	on_calc_effect ={
@@ -172,6 +156,8 @@
 			value = define:NMapColors|MAP_COLOR_MID
 		}
 		else = {
+			limit = {
+			}
 			value = define:NMapColors|MAP_COLOR_LOW
 		}
 	}

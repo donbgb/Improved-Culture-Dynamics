@@ -23,5 +23,28 @@ icd_movements_setup = {
 		}
 	}
 	
+	location:sivas = {
+		spawn_movement = {
+			movement_definition = movement_definition:western_turkification_culture_movement
+			supporters = {
+				value = population
+				multiply = 0.1
+			}
+		}
+	}
 	
+	culture:turkoman_culture = {
+		ordered_movement_in_culture = {
+			max = 1
+			order_by = { value = 1 }
+			spread_to_location = {
+				location = location:erbil
+				supporters_percent = 0.1
+			}
+			spread_to_location = {
+				location = location:kirkuk
+				supporters_percent = 0.1
+			}
+		}
+	}
 }
