@@ -1,0 +1,1318 @@
+﻿mandinka = { 
+	language = manding_language
+	
+	color = map_mandinka
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		soninke = positive
+		bozo_culture = positive
+		bambara = kindred
+		bainouk = positive
+		marka_culture = positive
+	}
+	
+	culture_groups = {
+		manden_group
+		west_sudanian_group
+	}
+}
+
+soninke = { 
+	language = soninke_language
+	
+	color = map_soninke
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		mandinka = positive
+		susu = positive
+		marka_culture = kindred
+		bozo_culture = positive
+		bambara = positive
+	}
+	
+	culture_groups = {
+		manden_group
+		west_sudanian_group
+	}
+}
+
+susu = { 
+	language = susu_language
+	
+	color = map_susu
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		soninke = positive
+	}
+	
+	culture_groups = {
+		manden_group
+		west_sudanian_group
+	}
+}
+
+kpelle = { 
+	language = kpelle_language
+	
+	color = map_kpelle
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		kono_cul = kindred
+		dan = kindred
+		kissi = kindred
+	}
+	
+	culture_groups = {
+		upper_guinean_group
+	}
+}
+
+kono_cul = { 
+	language = manding_language
+	
+	color = map_kono
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		kpelle = kindred
+		dan = kindred
+		kissi = kindred
+	}
+	
+	culture_groups = {
+		manden_group
+		upper_guinean_group
+		jallonkadu_group
+	}
+}
+
+dan = { 
+	language = dan_language
+	
+	color = map_dan
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		kpelle = kindred
+		kono_cul = kindred
+	}
+	
+	culture_groups = {
+		manden_group
+		upper_guinean_group
+	}
+}
+
+wolof = {
+	language = wolof_language
+	
+	color = map_jolof
+	
+	tags = { senegambian_gfx african_gfx }
+
+	opinions = {
+		serer = kindred
+	}
+	
+	culture_groups = {
+		senegambian_group
+	}
+	
+	use_patronym = yes
+}
+
+serer = { 
+	language = serer_language
+	
+	color = map_serer
+	
+	tags = { senegambian_gfx african_gfx }
+
+	opinions = {
+		wolof = kindred
+		fulbe = enemy
+	}
+	
+	culture_groups = {
+		senegambian_group
+	}
+	
+	use_patronym = yes
+}
+
+jola = {
+	language = bak_language
+	
+	color = map_jola
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		manjak = positive
+		balanta = kindred
+		biafada_culture = positive
+		tenda_culture = positive
+	}
+	
+	culture_groups = {
+		maritime_guinean_group
+	}
+	
+	
+}
+
+manjak = {
+	language = bak_language
+	
+	color = map_manjak
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		bainouk = positive
+		jola = positive
+		balanta = positive
+		biafada_culture = kindred
+		tenda_culture = positive
+	}
+	
+	culture_groups = {
+		maritime_guinean_group
+	}
+	
+}
+
+balanta = { 
+	language = bak_language
+	
+	color = map_balanta
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		bainouk = positive
+		manjak = positive
+		jola = kindred
+		biafada_culture = positive
+		tenda_culture = positive
+	}
+	
+	culture_groups = {
+		maritime_guinean_group
+	}
+	
+}
+
+fulbe = {
+	language = fula_language
+	
+	color = map_fulo
+	
+	tags = { fula_gfx african_gfx }
+
+	opinions = {
+		serer = negative
+		bambara = negative
+		bariba = positive
+	}
+	
+	culture_groups = {
+		senegambian_group
+		west_sudanian_group
+	}
+	
+	use_patronym = yes
+	
+}
+
+tenda_culture = {
+	language = tenda_language
+	
+	color = map_tenda
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		bainouk = positive
+		manjak = positive
+		balanta = positive
+		biafada_culture = positive
+		jola = positive
+	}
+	
+	culture_groups = {
+		maritime_guinean_group
+	}
+}
+
+temne = {
+	language = temne_language
+	
+	color = map_temne
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		baga_culture = positive
+	}
+	
+	culture_groups = {
+		guinean_group
+	}
+	
+	
+}
+
+baga_culture = {
+	language = temne_language
+	
+	color = map_baga
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		temne = positive
+	}
+	
+	culture_groups = {
+		maritime_guinean_group
+		guinean_group
+	}
+	
+}
+
+sherbro = {
+	language = kissi_language
+	
+	color = map_sherbro
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+		guinean_group
+	}
+	
+}
+
+bullom = { 
+	language = kissi_language
+	
+	color = map_bullom
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+		guinean_group
+	}
+}
+
+kissi = {
+	language = kissi_language
+	
+	color = map_kissi
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		kono_cul = kindred
+		kpelle = kindred
+	}
+	
+	culture_groups = {
+		upper_guinean_group
+	}
+	
+	
+}
+
+gola = {
+	language = gola_language
+	
+	color = map_gola
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+		guinean_group
+	}
+	
+}
+
+senufo = {
+	language = senufo_language
+	
+	color = map_kenedougou
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		bobo = positive
+	}
+	
+	
+}
+
+western_kru = {
+	language = kru_language
+	
+	color = map_western_kru
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		eastern_kru = kindred
+	}
+	
+	culture_groups = {
+		kru_group
+	}
+}
+
+eastern_kru = { 
+	language = kru_language
+	
+	color = map_eastern_kru
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		western_kru = kindred
+	}
+	
+	culture_groups = {
+		kru_group
+	}
+	
+}
+
+mossi = {
+	language = mabia_language
+	
+	color = map_mossi
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		mamprusi = kindred
+		dagbani = kindred
+		gurunsi = enemy
+		gurma = positive
+	}
+	
+	culture_groups = {
+		mole_dagbon_group
+	}
+}
+
+mamprusi = {
+	language = mabia_language
+	
+	color = map_mamprugu
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		mossi = kindred
+		dagbani = kindred
+		gurunsi = negative
+		gurma = positive
+	}
+	
+	culture_groups = {
+		mole_dagbon_group
+	}
+}
+
+dagbani = {
+	language = mabia_language
+	
+	color = map_dagbon
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		mamprusi = kindred
+		mossi = kindred
+		gurunsi = negative
+		gurma = positive
+	}
+	
+	culture_groups = {
+		mole_dagbon_group
+	}
+}
+
+dyula = { 
+	language = manding_language
+	
+	color = map_kong
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		
+	}
+	
+	culture_groups = {
+		manden_group
+	}
+}
+
+tem = {
+	language = gurunsi_language
+	
+	color = map_tem
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+		gurunsi_group
+	}
+}
+
+kabiye = {
+	language = gurunsi_language
+	
+	color = map_kabiye
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+		gurunsi_group
+	}
+}
+
+bariba = { 
+	language = bariba_language
+	
+	color = map_bariba
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		gurma = positive
+		busa_culture = kindred
+		yoruba = positive
+		fulbe = positive
+	}
+	
+	culture_groups = {
+		borgu_group
+	}
+}
+
+gonja = {
+	language = guang_language
+	
+	color = map_gonja
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		akan = kindred
+		ga_culture = positive
+	}
+	
+	culture_groups = {
+		kwa_group
+	}
+}
+
+akan = {
+	language = akan_language
+	
+	color = map_bonoman
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		ga_culture = positive
+		gonja = kindred
+	}
+	
+	culture_groups = {
+		kwa_group
+	}
+	
+}
+
+ewe = { 
+	language = gbe_language
+	
+	color = map_ewe
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		fon = kindred
+		ajan = kindred
+		xwla = kindred
+	}
+	
+	culture_groups = {
+		gbe_group
+	}
+	
+}
+
+ajan = { 
+	language = gbe_language
+	
+	color = map_ajan
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		fon = kindred
+		ewe = kindred
+		xwla = kindred
+	}
+	
+	culture_groups = {
+		gbe_group
+		yoruboid_group
+	}
+	
+}
+
+fon = { 
+	language = gbe_language
+	
+	color = map_fon
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		ewe = kindred
+		ajan = kindred
+		xwla = kindred
+	}
+	
+	culture_groups = {
+		gbe_group
+		yoruboid_group
+	}
+	
+}
+
+yoruba = { 
+	language = yoruba_language
+	
+	color = map_oyo
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		edo = kindred
+		itsekiri = kindred
+		bariba = positive
+		nupe = enemy
+	}
+	
+	culture_groups = {
+		yoruboid_group
+	}
+	
+}
+
+edo = { 
+	language = edo_language
+	
+	color = map_benin
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		yoruba = kindred
+	}
+	
+	culture_groups = {
+		yoruboid_group
+	}
+	
+}
+
+igbo = { 
+	language = igbo_language
+	
+	color = map_nri
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		idoma = positive
+		ibibio = negative
+	}
+	
+	culture_groups = {
+		lower_niger_group
+	}
+	
+}
+
+igala = { 
+	language = yoruba_language
+	
+	color = map_igala
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+		lower_niger_group
+		yoruboid_group
+	}
+	
+}
+
+ijaw = { 
+	language = ijaw_language
+	
+	color = map_ijaw
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		itsekiri = positive
+		ibibio = positive
+	}
+	
+	culture_groups = {
+		niger_delta_group
+	}
+	
+}
+
+bantoid = { 
+	language = bantoid_language
+	
+	color = map_bantoid
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+benue = { 
+	language = bantoid_language
+	
+	color = map_benue
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+		
+	culture_groups = {
+		benue_group
+	}
+	
+}
+	
+nupe = {
+	language = nupe_language
+	
+	color = map_nupe
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		yoruba = enemy
+		hausa = positive
+		gbari = positive
+	}
+	
+	culture_groups = {
+		central_sudanian_group
+	}
+	
+}
+
+idoma = { 
+	language = idoma_language
+	
+	color = map_idoma
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		igbo = positive
+		jukun = positive
+		gbari = positive
+	}
+	
+	culture_groups = {
+		lower_niger_group
+	}
+	
+}
+
+gbari = {
+	language = nupe_language
+	
+	color = map_gbari
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+		lower_niger_group
+		central_sudanian_group
+	}
+}
+
+hausa = { 
+	language = hausa_language
+	
+	color = map_zazzau
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		nupe = positive
+		gbari = positive
+	}
+	
+	use_patronym = yes
+		
+	culture_groups = {
+		central_sudanian_group
+	}
+}
+
+bambara = { 
+	language = manding_language
+	
+	color = map_bambara
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		soninke = positive
+		mandinka = kindred
+	}
+	
+	culture_groups = {
+		manden_group
+		west_sudanian_group
+	}
+}
+
+bobo = { 
+	language = manding_language
+	
+	color = map_bobo
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		senufo = positive
+	}
+	
+	culture_groups = {
+		manden_group
+	}
+}
+
+dogon = { 
+	language = dogon_language
+	
+	color = map_dogon
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+}
+
+songhai = {
+	language = songhai_language
+	
+	color = map_songhai
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		tuareg = positive
+	}
+	
+	culture_groups = {
+		west_sudanian_group
+	}
+}
+
+gurunsi = {
+	language = gurunsi_language
+	
+	color = map_gurunsi
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		mossi = enemy
+		mamprusi = negative
+		dagbani = negative
+	}
+	
+	culture_groups = {
+		gurunsi_group
+	}
+}
+
+gurma = {
+	language = gurma_language
+	
+	color = map_gurma
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		bariba = positive
+		mamprusi = positive
+		dagbani = positive
+		mossi = positive
+	}
+	
+	culture_groups = {
+		mole_dagbon_group
+	}
+}
+
+kanembu_culture = { 
+	language = kanuri_language
+	
+	color = map_kanembu
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+		chadic_group
+	}
+	
+	use_patronym = yes
+}
+
+bilala_culture = { 
+	language = baguirmi_language
+	
+	color = map_bilala
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+		chadic_group
+	}
+}
+
+zaghawa_culture = {
+	language = zaghawa_language
+	
+	color = map_zaghawa
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+}
+masalit_culture = {
+	language = maban_language
+	
+	color = map_masalit
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+maba_africa_culture = {
+	language = maban_language
+	
+	color = map_maba_africa
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+runga_culture = {
+	language = maban_language
+	
+	color = map_runga
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+
+}
+
+mandara_culture = {
+	language = mandara_language
+
+	color = map_mandara
+
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		sao_culture = positive
+	}
+	
+	culture_groups = {
+		chadic_group
+	}
+}
+
+sao_culture = {
+	language = mandara_language
+	
+	color = map_sao
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+		mandara_culture = positive
+	}
+	
+	
+	culture_groups = {
+		chadic_group
+	}
+	
+}
+
+baguirmi_culture = {
+	language = baguirmi_language
+	
+	color = map_baguirmi
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+	culture_groups = {
+		chadic_group
+	}
+	
+}
+
+messufa_culture = {
+	language = tamazight_language
+	
+	color = map_messufa
+	
+	tags = { tuareg_gfx middle_east_gfx }
+
+	opinions = {
+	}
+	
+	use_patronym = yes
+	
+	
+	
+	culture_groups = {
+		amazigh_group
+	}
+}
+
+lamtuna_culture = {
+	language = tamazight_language
+	
+	color = map_lamtuna
+	
+	tags = { tuareg_gfx middle_east_gfx }
+
+	opinions = {
+	}
+	
+	use_patronym = yes
+	
+	
+	culture_groups = {
+		amazigh_group
+	}
+	
+}
+
+godala_culture = {
+	language = tamazight_language
+	
+	color = map_godala
+	
+	tags = { tuareg_gfx middle_east_gfx }
+
+	opinions = {
+	}
+	
+	use_patronym = yes
+	
+	
+	culture_groups = {
+		amazigh_group
+	}
+	
+}
+
+adamawa_culture = {
+	language = adamawa_language
+	
+	color = map_adamawa
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+	
+}
+
+bubi_culture = {
+	language = bassa_language
+	
+	color = map_bubi
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+bassa_culture = {
+	language = bassa_language
+	
+	color = map_bassa
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+sara_culture = {
+	language = baguirmi_language
+	
+	color = map_sara
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+
+}
+
+mbay_culture = {
+	language = baguirmi_language
+	
+	color = map_mbay
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+
+}
+
+mandja_culture = { 
+	language = gbaya_language
+	
+	color = map_mandja
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+
+}
+
+gbaya_culture = { #https://en.wikipedia.org/wiki/Gbaya_people
+	language = gbaya_language
+	
+	color = map_gbaya
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+}
+
+bulu_culture = { #https://en.wikipedia.org/wiki/Beti-Pahuin_peoples#Bulu
+	language = bassa_language
+	
+	color = map_bulu
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+
+}
+
+baka_culture = {
+	language = mbaka_language
+	
+	color = map_baka
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+}
+
+gyele_culture = { #https://en.wikipedia.org/wiki/Gyele_people
+	language = bassa_language
+	
+	color = map_gyele
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+
+}
+
+madi_culture = { #https://en.wikipedia.org/wiki/Madi_people
+	language = moru_madi_language
+	
+	color = map_madi_culture
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+lugbara_culture = { #https://en.wikipedia.org/wiki/Lugbara_people
+	language = moru_madi_language
+	
+	color = map_lugbara
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+}
+
+banda_culture = { #https://en.wikipedia.org/wiki/Banda_people
+	language = ngbandi_language
+	
+	color = map_banda
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+bomassa_culture = {
+	language = mbaka_language
+	
+	color = map_bomassa
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+gula_iro_culture = {#https://en.wikipedia.org/wiki/Gula_Iro_language
+	language = bua_language
+	
+	color = map_gula_iro
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+ngbandi_culture = {#https://en.wikipedia.org/wiki/Ngbandi_people
+	language = ngbandi_language
+	
+	color = map_ngbandi
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}
+
+fang_culture = {#https://en.wikipedia.org/wiki/Fang_people
+	language = bassa_language
+	
+	color = map_fang
+	
+	tags = { mande_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	
+}

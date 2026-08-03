@@ -1015,7 +1015,7 @@ icd_africa_setup = {
 		every_pop = {
 			limit = { NOT = { culture = culture:mandinka } }
 			split_pop = {
-				fraction = 0.32
+				fraction = 0.45
 				pop_type = pop_type:peasants
 				culture = culture:mandinka
 				religion = religion:nyama_religion
@@ -1024,7 +1024,7 @@ icd_africa_setup = {
 		every_pop = {
 			limit = { NOT = { culture = culture:mandinka } }
 			split_pop = {
-				fraction = 0.20
+				fraction = 0.25
 				pop_type = pop_type:tribesmen
 				culture = culture:tenda_culture
 				religion = religion:nhaala_religion
@@ -1694,8 +1694,9 @@ icd_africa_setup = {
 	
 	location:kong = {
 		every_pop = {
+			limit = { culture = culture:dagbani }
 			split_pop = {
-				fraction = 0.07
+				fraction = 0.7
 				culture = culture:senufo
 				religion = religion:nyama_religion
 			}
@@ -1703,7 +1704,7 @@ icd_africa_setup = {
 		every_pop = {
 			limit = { culture = culture:dyula }
 			split_pop = {
-				fraction = 0.09
+				fraction = 0.1
 				culture = culture:lobi_culture
 				religion = religion:rogo_miki_religion
 			}
@@ -2222,12 +2223,13 @@ icd_africa_setup = {
 	location:daniski = {
 		every_pop = {
 			limit = { culture = culture:adamawa_culture }
-			change_pop_culture = culture:angas
-			change_pop_religion = religion:bori_religion
+			change_pop_culture = culture:bura_culture
+			change_pop_religion = religion:sao_religion
 		}
 		every_pop = {
 			limit = { culture = culture:sao_culture }
-			change_pop_culture = culture:bura_culture
+			change_pop_culture = culture:angas
+			change_pop_religion = religion:bori_religion
 		}
 	}
 	
@@ -2670,6 +2672,64 @@ icd_africa_setup = {
 		}
 	}
 	
+	location:hombori = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.65
+				culture = culture:dogon
+				religion = religion:dogon_religion
+			}
+		}
+	}
+	
+	location:mondoro = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.18
+				culture = culture:dogon
+				religion = religion:dogon_religion
+			}
+		}
+	}
+	
+	location:birni_ader = {
+		every_pop = {
+			limit = { culture = culture:tuareg }
+			change_pop_culture = culture:hausa
+			change_pop_religion = religion:bori_religion
+		}
+	}
+	
+	location:mir_loc = {
+		every_pop = {
+			limit = { culture = culture:tuareg }
+			split_pop = {
+				fraction = 0.25
+				culture = culture:kanembu_culture
+			}
+		}
+	}
+	
+	location:goure = {
+		every_pop = {
+			limit = { culture = culture:tuareg }
+			split_pop = {
+				fraction = 0.25
+				culture = culture:kanembu_culture
+			}
+		}
+	}
+	
+	location:boutti	= {
+		every_pop = {
+			limit = { culture = culture:tuareg }
+			split_pop = {
+				fraction = 0.2
+				culture = culture:kanembu_culture
+			}
+		}
+	}
+	
 	location:timbuktu = { ##safe to here#
 		every_pop = {
 			limit = { culture = culture:mandinka }
@@ -3007,14 +3067,14 @@ icd_africa_setup = {
 		every_pop = {
 			limit = { culture = culture:bambara }
 			split_pop = {
-				fraction = 0.4	
+				fraction = 0.28	
 				culture = culture:marka_culture
 			}
 		}
 		every_pop = {
 			limit = { culture = culture:bambara }
 			split_pop = {
-				fraction = 0.4
+				fraction = 0.51
 				culture = culture:bozo_culture
 			}
 		}
@@ -3501,33 +3561,33 @@ icd_africa_setup = {
 	
 	location:sutuko = {
 		every_pop = {
-			limit = { culture = culture:fulbe pop_type:peasants }
+			limit = { culture = culture:fulbe  }
 			split_pop = {
-				fraction = 0.27
+				fraction = 0.14
 				culture = culture:mandinka
 				religion = religion:nyama_religion
 			}
 		}
 		every_pop = {
-			limit = { culture = culture:fulbe pop_type:peasants }
+			limit = { culture = culture:fulbe  }
 			split_pop = {
-				fraction = 0.2
+				fraction = 0.1
 				culture = culture:tenda_culture
 				religion = religion:nhaala_religion
 			}
 		}
 		every_pop = {
-			limit = { culture = culture:fulbe pop_type:peasants }
+			limit = { culture = culture:fulbe  }
 			split_pop = {
-				fraction = 0.28
+				fraction = 0.05
 				culture = culture:bainouk
 				religion = religion:emit_religion
 			}
 		}
 		every_pop = {
-			limit = { culture = culture:fulbe pop_type:peasants }
+			limit = { culture = culture:fulbe }
 			split_pop = {
-				fraction = 0.21
+				fraction = 0.17
 				culture = culture:wolof
 				religion = religion:geno_religion
 			}
@@ -3535,202 +3595,487 @@ icd_africa_setup = {
 	}
 	
 	location:maghana = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 1.500
+		every_pop = {
+			split_pop = {
+				fraction = 0.35
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 1.020
+		every_pop = {
+			split_pop = {
+				fraction = 0.1
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:bakel = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 1.500
+		every_pop = {
+			split_pop = {
+				fraction = 0.3
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 1.020
+		every_pop = {
+			split_pop = {
+				fraction = 0.2
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:diawara = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 1.500
+		every_pop = {
+			split_pop = {
+				fraction = 0.35
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 1.020
+		every_pop = {
+			split_pop = {
+				fraction = 0.05
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:ballou = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 1.500
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 1.020
+		every_pop = {
+			split_pop = {
+				fraction = 0.09
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:kayes = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 2.000
+		every_pop = {
+			split_pop = {
+				fraction = 0.30
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 1.020
+		every_pop = {
+			split_pop = {
+				fraction = 0.05
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:sandare = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 1.500
+		every_pop = {
+			split_pop = {
+				fraction = 0.35
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 1.020
+		every_pop = {
+			split_pop = {
+				fraction = 0.05
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:nioro = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 2.200
+		every_pop = {
+			split_pop = {
+				fraction = 0.38
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 1.320
+		every_pop = {
+			split_pop = {
+				fraction = 0.1
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:diangounte_camara = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 0.700
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 0.420
+		every_pop = {
+			split_pop = {
+				fraction = 0.08
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:diara = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 0.700
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 0.420
+		every_pop = {
+			split_pop = {
+				fraction = 0.08
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:tourougoumbe = {
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:sunni
-			size = {
-				value = 0.700
+		every_pop = {
+			split_pop = {
+				fraction = 0.33
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
-		add_pop = {
-			type = pop_type:tribesmen
-			culture = culture:fulbe
-			religion = religion:geno_religion
-			size = {
-				value = 0.420
+		every_pop = {
+			split_pop = {
+				fraction = 0.12
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	location:dioumara = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.08
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:balle = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.08
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:mourdiah = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.08
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:goumbou = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.08
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:guire = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.08
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:sagala = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.05
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:sokolo = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.3
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.04
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:tenenkou = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.3
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.04
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:kare = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.3
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.04
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:dogo = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.05
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:soumpi = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.27
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.05
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:diamou = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.12
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.06
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:kourouninkoto = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.1
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.05
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:kolokani = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.1
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.08
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:bafoulabe = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.1
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.02
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:macina = {
 		add_pop = {
 			type = pop_type:tribesmen
 			culture = culture:fulbe
 			religion = religion:sunni
 			size = {
-				value = 0.700
+				value = { 0.800 1.000 }
 			}
 		}
 		add_pop = {
@@ -3738,18 +4083,177 @@ icd_africa_setup = {
 			culture = culture:fulbe
 			religion = religion:geno_religion
 			size = {
-				value = 0.420
+				value = { 0.520 0.750 }
+			}
+		}
+	}
+	
+	location:dia = {
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:sunni
+			size = {
+				value = { 0.800 1.000 }
+			}
+		}
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:geno_religion
+			size = {
+				value = { 0.520 0.750 }
+			}
+		}
+	}
+	
+	location:sansanding = {
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:sunni
+			size = {
+				value = { 0.600 0.800 }
+			}
+		}
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:geno_religion
+			size = {
+				value = { 0.300 0.500 }
+			}
+		}
+	}
+	
+	location:djenne = {
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:sunni
+			size = {
+				value = { 0.600 0.800 }
+			}
+		}
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:geno_religion
+			size = {
+				value = { 0.300 0.450 }
+			}
+		}
+	}
+	
+	location:sanga = {
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:sunni
+			size = {
+				value = { 0.700 0.900 }
+			}
+		}
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:geno_religion
+			size = {
+				value = { 0.400 0.600 }
+			}
+		}
+	}
+	
+	location:korientze = {
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:sunni
+			size = {
+				value = { 0.800 1.000 }
+			}
+		}
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:geno_religion
+			size = {
+				value = { 0.300 0.550 }
+			}
+		}
+	}
+	
+	location:safare = {
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:sunni
+			size = {
+				value = { 0.500 0.700 }
+			}
+		}
+		add_pop = {
+			type = pop_type:tribesmen
+			culture = culture:fulbe
+			religion = religion:geno_religion
+			size = {
+				value = { 0.200 0.400 }
+			}
+		}
+	}
+	
+	location:gossi = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.1
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.1
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+	}
+	
+	location:arlal = {
+		every_pop = {
+			split_pop = {
+				fraction = 0.1
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
+			}
+		}
+		every_pop = {
+			split_pop = {
+				fraction = 0.1
+				culture = culture:fulbe
+				pop_type = pop_type:tribesmen
+				religion = religion:sunni
 			}
 		}
 	}
 	
 	
-	##slaves in takedda## ##dyula what to do## ###songhai half become songhai religion - pagan distribution###
+	##slaves in takedda##
 	sub_continent:west_africa = {
-		every_location_in_sub_continent = { ###remove slaves### ###fulbe distribution##
+		every_location_in_sub_continent = { 
 			every_pop = {
 				limit = { pop_type = pop_type:slaves }
 				change_pop_type = pop_type:peasants
+			}
+			every_pop = {
+				limit = { culture = culture:songhai }
+				split_pop = {
+					fraction = 0.3
+					religion = religion:songhai_religion
+				}
 			}
 			every_pop = {
 				limit = { culture = culture:bariba }
@@ -3801,6 +4305,62 @@ icd_africa_setup = {
 				change_pop_religion = religion:adamawa_religion
 			}
 			force_refresh_culture_and_religion = this
+		}
+	}
+	every_country = {
+		limit = { culture = culture:bariba }
+		change_religion = religion:bunu_religion
+		every_character = {
+			limit = { culture = culture:bariba }
+			change_character_religion = religion:bunu_religion
+		}
+	}
+	every_country = {
+		limit = { culture = culture:gonja }
+		change_religion = religion:ebore_religion
+		every_character = {
+			limit = { culture = culture:gonja }
+			change_character_religion = religion:ebore_religion
+		}
+	}
+	every_country = {
+		limit = { culture = culture:dyula }
+		change_culture = culture:mandinka
+		every_character = {
+			limit = { culture = culture:dyula }
+			change_character_culture = culture:mandinka
+		}
+	}
+	every_country = {
+		limit = { culture = culture:nupe }
+		change_religion = religion:soko_religion
+		every_character = {
+			limit = { culture = culture:nupe }
+			change_character_religion = religion:soko_religion
+		}
+	}
+	every_country = {
+		limit = { religion = religion:buyli_religion }
+		change_religion = religion:rogo_miki_religion
+		every_character = {
+			limit = { religion = religion:buyli_religion }
+			change_character_religion = religion:rogo_miki_religion
+		}
+	}
+	every_country = {
+		limit = { culture = culture:kabiye }
+		change_culture = culture:gurunsi
+		every_character = {
+			limit = { culture = culture:kabiye }
+			change_character_culture = culture:gurunsi
+		}
+	}
+	every_country = {
+		limit = { religion = religion:naa_wuni_religion }
+		change_religion = religion:rogo_miki_religion
+		every_character = {
+			limit = { religion = religion:naa_wuni_religion }
+			change_character_religion = religion:rogo_miki_religion
 		}
 	}
 }

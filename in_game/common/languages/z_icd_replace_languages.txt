@@ -1,0 +1,200 @@
+﻿REPLACE:senufo_language  = {
+
+	color = rgb { 75 79 60 }
+ 
+
+	male_names = {
+		Zie Zanga Ngolo Be Do Denan Klotioloma Mikanidjo Midjembieri Minhfounh
+		Gnima Tennina Yalmassa Sibri Tchima Mbaha Gnonnan Kolo Dognimin
+		Birama Gane Kambine Majan Soumaoro Kouka Nonraogo Oubri
+	}
+	female_names = {
+		Yele Yo Yire Bere Niama Kapinnetioh Mikanidjo Midjembieri Minhfounh
+		Gnon Gnere Bara Zele Gnaman Gnondioh Kolo 
+		  Isatou Kabir Kaddy Makuto Ramata
+		Guessrima Kenga Poko
+	}
+	dynasty_names = {
+		Sekongo Silue Soro Tuho Yeo 
+	}
+	lowborn = {
+		Ziao 
+	}
+}
+
+REPLACE:kru_language = {
+
+	color = map_western_kru
+
+	family = north_volta_language_family
+
+	male_names = {
+		Pao Mufa So Trua Teagu Soconei Gebunger Jeer Tooar Whar Whay Maphy Fy Guyfor Sue Qingee Bar Pay Surar Boway Warsar Yar Fendoo
+		Weioh Quee Yerah Bagba Kickreegee Bonggammo Iochae Jom
+		Snorsio Mondueh Tarpeh Wlubateh Kronnisanyon 
+		Mechen Dwe Soetehpoe Togar Nyenwolo Gardiah
+	}
+	female_names = {
+		Jutar Ba Wohoway name_mama Guguy Tattio Cumbah Buggy Pieuro Bardy
+		Dekonti Jugbe Nyeswaju Nyeswati Juah Manneh Teti
+		Wehte Welleh Tiedi Jayplo Yenplu Mardea
+	}
+	dynasty_names = {
+	}
+	lowborn = {
+	}
+}
+REPLACE:ijaw_language  = {
+
+	color = rgb { 44 94 60 }
+
+	male_names = {
+		Abadi Abadibo Akpoebi Akpomatunemibofa Akpomofa Alabrah Aladeinyefa Alaowei Alatari Alazidei Alazimo Amaitari Amakama
+		Amakedi Apapa Arukubu Awaran Ayakpo Ayebatonye Ayebaye Ayibaemi Ayibanua Ayibatonbara Bebebomobo Beke Bekeowei
+		Beleuzi Beredugo Biebele Bolouikie Bomo Boukazi Buwozi Daubode Daulayefa Derifagha Dimien Dinini Diseye Ditorusin
+		Dooakpo Dookeme Doubra Douye Dumo Ebi Ebiakpo Ebiarede Ebibaratimi Ebidese Ebidisebofa Ebidowei Ebiegberi
+		Ebifinidei Ebigba Ebimie Ebimobowei Ebinimi Ebiowei Ebiundu Ebiye Ebizimor Egberibin Ekio
+		Ekiye Ekpolayun Emomu Eneikedi Enemo Enibraye Eremiemi Eseimokumo Esikumo Eteimowei Fasingha
+		Fedude Felagha Funebi Funkuro Funware Gbayena Gbeneowei Gesebo Gesekeme Gesiye Heineken
+		Idiebimo Ifiemi Igunikeme Ikiemoye Ikuromo Iniekenimi Inipere Isomubo Itonyo Ituaton Izonebi
+		Kariebi Kemelayefa Kpadia Kurokeme Kuroyefa Monubai Motimifagha Namatinbo Ndukari Nengimote Ngoebi
+		Odayi Ogbotubo Ogezimo Ogola Ogonoebi Oki Olotu Ondoukari Ondoutuapere Opukiri Owariladei
+		Oweikorogha Oweiyai Oyinedidei Oyintari Paaye Pekeikakai Pere Pereagbe Pereama Perebo Perezimo
+		Tamunoimim Tamunotonye Tari Taribi Tarimbele Tariperedei Tekena Tiekuromo Timidi Timieri Tiri
+		Tonye Tuburuode Waibodei Waridabo Wenikado Woyengiemi Woyinbode Woyinkule Ziola Ziperela Zoubo
+	}
+	female_names = {
+		Abadibo Akpoebi Akpomatunemibofa Akpomofa Aladeinyefa Alaere Alata Alatari Alazimo Arukubu Awaran Ayakpo Ayebatonye
+		Ayebaye Ayibaemi Ayibaifie Ayibanua Ayibatonbara Bebebomobo Beke Bekeara Bekes Beleuzi Beredugo Bibinidei
+		Biboye Biebele Bobolayefa Bobomiegha Bodisere Bolouikie Bomo Boukazi Buboupakumo Buwozi Derifagha Dimien Disemi
+		Diseye Ditorusin Diyinrin Dooakpo Doubra Duateme Ebeleakpo Ebi Ebiakpo Ebiarede Ebibaratimi Ebidese Ebidisebofa
+		Ebiegberi Ebiere Ebifinidei Ebikake Ebimie Ebimoboere Ebinimi Ebiye Ebizimor Ebrakumo Edubamo
+		Elayokon Emeleakpo Eniye Erebi Funere Ibinabo Inibrakemi Itohan Iyabode Kariara Lolia
+		Luckere Oyabrade Oyinbodei Pereasuodei Ere Pinaere Seiakumokumo Suoton Tariere Tienepre Tokoni
+		Wariboko Yinlayefa Yoroakpo     
+		Emomu Eneikedi Enemo Enibraye Eremiemi Esikumo Fasingha Fedude Felagha Funebi Gbayena
+		Gesebo Gesiye Idiebimo Ifiemi Ikiemoye Ikuromo Iniekenimi Inipere Itonyo Kariebi
+		Kuroyefa Monubai Motimifagha Namatinbo Nengimote Ngoebi Ogbotubo Ogezimo Ogola Ondoutuapere Owariladei
+		Oyinedidei Oyintari Pekeikakai Pere Pereagbe Perebo Perezimo Poukon Sele Seledebo Sonomo
+		Sunubai Suoyo Tamaralaifa Tamunotonye Tari Taribi Tarimbele Tariperedei Tekena Tiekuromo Timieri
+		Tiri Tonye Waibodei Waridabo Wenikado Woyengiemi Woyinbode Ziola Ziperela Zoubo Zuo
+	}
+	dynasty_names = {
+		Egbema Kalabari Mein Arogbo Boma Kabo Obolo Bille Ibani Andoni Ke Buseni Okodia 
+	}
+	lowborn = {
+		
+	}
+}
+
+REPLACE:songhai_language  = {
+
+	color = rgb { 62 174 150 }
+
+	male_names = {
+		Kosoi Yamadao Yosiboi Duro Zenko Bada Fadazu Tib Karbifo kolli_djimbo 
+		Sombo Maidanda Baamoy Kaahar Hasay Harber Farka Boosu Inaahongu Aruhenna Fondo Bonkan Gomni Zangu Jenber 
+		Ceegum Iguma Arubiyoo Hanakuku Guuruu Tondi Wura Nzorfu Arby Fodi
+		name_moses name_muhammad name_ali name_abraham name_abdullah name_abu_bakr Baru Ishak name_david
+	}
+	female_names = {
+		Naamoy Kaamoy Naaber Hawoy Woyber Woyhenna Wura Woyboriya Woyboyro Boori Awasa Fondo Bonkaano Bonkan Ceegum
+		Bibi Kara Waiby Izewai Furjine Bonkoyno Lakkalkano Inaahongu Aruhenna Gomni Zangu
+		name_eve name_fatima Zulekha name_sahar name_hanifa name_adila name_aisha name_aliya
+	}
+	dynasty_names = {
+		Maiga Mumuni Seydu Ka_songhai Gakoy
+	}
+	lowborn = {
+		
+	}
+	
+}
+
+REPLACE:hausa_language = {
+
+	color = rgb { 138 22 58 }
+
+	family = chadic_language_family_expanded
+
+	male_names = {
+	
+		Shekarau Yaji Bugaya Kanejeji Umaru Dauda Dakauta Atuma Bawa Dadi Soyaki Kumbari 
+	
+		Kawanissa Nohir Sukana Kirari Karama
+  
+		Dudufani Bakawa Gimshikki Karafau Gatamma Kudandam Bardau Gubarau Durkusa Mowashi Kigaya Tabarau Burum Taritu Fati Zartai Dakka Tasau Zaude Tukudu
+
+		Sakidamma Matsaura Dugurma Zaberma Umi Gozo Banizam Ciroma Majejeri Kasima Cida Baciri Munzakka Ubandoma Arkal 
+		Mairiga Cibi Gagarau Gambo Tanko Kumatu 
+		Sanmako Ranau Dare Shuka Nomau Damina Mairuwa Marka Cigero Korau Sadari 
+		Altine Dantala Balarabe Danami Asibi Lado 
+		
+		Kyauta Barau Dandawo Arzika Tunau Ana Ruwa Danyaro
+		
+		Brima
+		name_osman name_muhammad name_abdullah name_abraham name_james name_abu_bakr name_salomon name_ali
+		
+		name_muhammad.name_abraham
+		name_muhammad.name_abu_bakr
+		name_muhammad.Mairiga
+		name_muhammad.Gambo
+		name_muhammad.Dantala
+		name_muhammad.Kukuna
+		name_muhammad.Rumfa
+		name_muhammad.Sharefa
+		name_muhammad.Zaki
+		name_muhammad.Kisoki
+		name_muhammad.Alwali
+		name_abdullah.name_james
+		name_abdullah.name_osman
+		name_abdullah.Gambo
+		name_abdullah.Kasima
+		name_abdullah.Burja
+		name_abu_bakr.Gagarau
+		name_abu_bakr.Kado
+		Dauda.Abasama
+		name_abu_bakr.name_ali
+		name_muhammad.name_ali
+		name_ali.Dare
+		name_ali.Damina
+		
+	}
+	female_names = {
+
+		name_amina Zaria Bakwa Algoje Bakutu Balasha Shawai Tarana Dela Tune 
+		Danliti Talatu Tabawa Lami Asabe Asibi Ladidi Rani Sodangi Dawi Makau Hankuri 
+		Sanmako Ranau Dare Shuka Nomau Damina Mairuwa Marka Cigero Korau Sadari Nagona Maikasuwa Maikudi Fari Jatau Madugu 
+		name_aisha name_fatima Yaryarinya 
+		
+		name_amina.name_aisha
+		name_fatima.Lami
+		name_fatima.Girbau
+		name_fatima.Damina
+		name_fatima.name_amina
+		name_amina.Asabe
+		name_amina.Marka
+		
+		Tadaka Delu Tine Malka Girbau Mayafi
+		
+		Aishatu Alheri Bahijjah Baturiya Hassana Husiana
+		Albarka Altine Arziki Azumi Balaraba Binta Faidah Faiqah Faizah Gwaggo Idara
+		Kauna Laminde Laraba Luuluu Mairak Mairama Mairo Mansurah
+		Masoro name_narai Rahama Rukayyatu Sakinah Sambala Saratu Sarraounia Sharifiya Tasalla
+		Turai Uwa Yakutu Yarja Yohanse    
+		Hadadangi Hankali Kyaun Sadau Shanono Tijani       
+		
+	}
+	dynasty_names = {
+		Gimba Garaza Gabi Giwa Gardaye Kashingari Gwauran Daudu Kaura Dimau Dikakau Damamusau Wandara Gigama 
+		Korau  Gwantal Gado Dano Basilla Rumfar 
+		 Kaigama Gagu  
+	}
+	lowborn = {
+		Kakuri Baduku Mallami Maiwafika Mainika Makadi Dillali 
+	}
+	
+	patronym_prefix_son = "patronym_prefix_hausa_male"
+	patronym_prefix_daughter = "patronym_prefix_hausa_female"
+	location_prefix = "patronym_prefix_hausa_male"
+}

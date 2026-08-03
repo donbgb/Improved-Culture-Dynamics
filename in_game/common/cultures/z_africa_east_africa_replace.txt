@@ -1,4 +1,15 @@
 ﻿
+REPLACE:toubou_culture = {
+	language = tebu_language 
+	
+	color = color_culture_fezzan
+	
+	tags = { mande_gfx middle_east_gfx}
+
+	opinions = {
+	}
+}
+
 #REPLACE:tatoga_culture = {
 	#language = kalenjin_language
 	

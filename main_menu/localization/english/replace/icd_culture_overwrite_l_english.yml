@@ -77,3 +77,11 @@
  flavor_swi.9990.a: "There isn't much we can do about this"
  flavor_swi.9990.b: "Perhaps [target_character.GetNameWithNoTooltip] is right"
  flavor_swi.9990.c: "We must act to contain the spread of this heresy!"
+ 
+ adamawa_religion: "Kirdi" ####replace####
+ adamawa_religion_ADJ: "Kirdi" ### replace####
+ ajan: "Aja" ##replace##
+ ubangian_language: "Zande" ###replace####
+ north_volta_language_family: "Ubangian" ###replace####
+ kakongo: "Sansala" ###replace###
+ gula_iro_culture: "Gula" ## replace###

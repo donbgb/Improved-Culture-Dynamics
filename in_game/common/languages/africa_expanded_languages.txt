@@ -341,46 +341,7 @@ gola_language  = {
 	
 	fallback = temne_language
 }
-senufo_language_expanded  = {
 
-	color = rgb { 75 79 60 }
- 
-
-	male_names = {
-		Zie Zanga Ngolo Be Do Denan Klotioloma Mikanidjo Midjembieri Minhfounh
-		Gnima Tennina Yalmassa Sibri Tchima Mbaha Gnonnan Kolo
-	}
-	female_names = {
-		Yele Yo Yire Bere Niama Kapinnetioh Mikanidjo Midjembieri Minhfounh
-		Gnon Gnere Bara Zele Gnaman Gnondioh Kolo 
-	}
-	dynasty_names = {
-		Sekongo Silue Soro Tuho Yeo 
-	}
-	lowborn = {
-		Ziao 
-	}
-}
-kru_language_expanded   = {
-
-	color = rgb { 42 23 17 }
-
-
-	male_names = {
-		Snorsio Mondueh Tarpeh Wlubateh Kronnisanyon 
-		Mechen Dwe Soetehpoe Togar Nyenwolo Gardiah
-	}
-	female_names = {
-		Dekonti Jugbe Nyeswaju Nyeswati Juah Manneh Teti
-		Wehte Welleh Tiedi Jayplo Yenplu Mardea
-	}
-	dynasty_names = {
-		
-	}
-	lowborn = {
-		
-	}
-}
 mabia_language    = {
 
 	color = rgb { 27 129 45 }
@@ -662,48 +623,7 @@ igbo_language  = {
 		Nwodo Nwosu Obiora Okafor
 	}
 }
-ijaw_language_expanded  = {
 
-	color = rgb { 44 94 60 }
-
-	male_names = {
-		Abadi Abadibo Akpoebi Akpomatunemibofa Akpomofa Alabrah Aladeinyefa Alaowei Alatari Alazidei Alazimo Amaitari Amakama
-		Amakedi Apapa Arukubu Awaran Ayakpo Ayebatonye Ayebaye Ayibaemi Ayibanua Ayibatonbara Bebebomobo Beke Bekeowei
-		Beleuzi Beredugo Biebele Bolouikie Bomo Boukazi Buwozi Daubode Daulayefa Derifagha Dimien Dinini Diseye Ditorusin
-		Dooakpo Dookeme Doubra Douye Dumo Ebi Ebiakpo Ebiarede Ebibaratimi Ebidese Ebidisebofa Ebidowei Ebiegberi
-		Ebifinidei Ebigba Ebimie Ebimobowei Ebinimi Ebiowei Ebiundu Ebiye Ebizimor Egberibin Ekio
-		Ekiye Ekpolayun Emomu Eneikedi Enemo Enibraye Eremiemi Eseimokumo Esikumo Eteimowei Fasingha
-		Fedude Felagha Funebi Funkuro Funware Gbayena Gbeneowei Gesebo Gesekeme Gesiye Heineken
-		Idiebimo Ifiemi Igunikeme Ikiemoye Ikuromo Iniekenimi Inipere Isomubo Itonyo Ituaton Izonebi
-		Kariebi Kemelayefa Kpadia Kurokeme Kuroyefa Monubai Motimifagha Namatinbo Ndukari Nengimote Ngoebi
-		Odayi Ogbotubo Ogezimo Ogola Ogonoebi Oki Olotu Ondoukari Ondoutuapere Opukiri Owariladei
-		Oweikorogha Oweiyai Oyinedidei Oyintari Paaye Pekeikakai Pere Pereagbe Pereama Perebo Perezimo
-		Tamunoimim Tamunotonye Tari Taribi Tarimbele Tariperedei Tekena Tiekuromo Timidi Timieri Tiri
-		Tonye Tuburuode Waibodei Waridabo Wenikado Woyengiemi Woyinbode Woyinkule Ziola Ziperela Zoubo
-	}
-	female_names = {
-		Abadibo Akpoebi Akpomatunemibofa Akpomofa Aladeinyefa Alaere Alata Alatari Alazimo Arukubu Awaran Ayakpo Ayebatonye
-		Ayebaye Ayibaemi Ayibaifie Ayibanua Ayibatonbara Bebebomobo Beke Bekeara Bekes Beleuzi Beredugo Bibinidei
-		Biboye Biebele Bobolayefa Bobomiegha Bodisere Bolouikie Bomo Boukazi Buboupakumo Buwozi Derifagha Dimien Disemi
-		Diseye Ditorusin Diyinrin Dooakpo Doubra Duateme Ebeleakpo Ebi Ebiakpo Ebiarede Ebibaratimi Ebidese Ebidisebofa
-		Ebiegberi Ebiere Ebifinidei Ebikake Ebimie Ebimoboere Ebinimi Ebiye Ebizimor Ebrakumo Edubamo
-		Elayokon Emeleakpo Eniye Erebi Funere Ibinabo Inibrakemi Itohan Iyabode Kariara Lolia
-		Luckere Oyabrade Oyinbodei Pereasuodei Ere Pinaere Seiakumokumo Suoton Tariere Tienepre Tokoni
-		Wariboko Yinlayefa Yoroakpo     
-		Emomu Eneikedi Enemo Enibraye Eremiemi Esikumo Fasingha Fedude Felagha Funebi Gbayena
-		Gesebo Gesiye Idiebimo Ifiemi Ikiemoye Ikuromo Iniekenimi Inipere Itonyo Kariebi
-		Kuroyefa Monubai Motimifagha Namatinbo Nengimote Ngoebi Ogbotubo Ogezimo Ogola Ondoutuapere Owariladei
-		Oyinedidei Oyintari Pekeikakai Pere Pereagbe Perebo Perezimo Poukon Sele Seledebo Sonomo
-		Sunubai Suoyo Tamaralaifa Tamunotonye Tari Taribi Tarimbele Tariperedei Tekena Tiekuromo Timieri
-		Tiri Tonye Waibodei Waridabo Wenikado Woyengiemi Woyinbode Ziola Ziperela Zoubo Zuo
-	}
-	dynasty_names = {
-		Egbema Kalabari Mein Arogbo Boma Kabo Obolo Bille Ibani Andoni Ke Buseni Okodia 
-	}
-	lowborn = {
-		
-	}
-}
 nupe_language= {
 
 	color = map_nupe
@@ -755,7 +675,7 @@ idoma_language = {
 	lowborn = { 
 	}
 }
-hausa_language_expanded = {
+hausa_language = {
 
 	color = rgb { 138 22 58 }
 
@@ -839,48 +759,8 @@ hausa_language_expanded = {
 	patronym_prefix_daughter = "patronym_prefix_hausa_female"
 	location_prefix = "patronym_prefix_hausa_male"
 }
-dogon_language_expanded  = {
 
-	color = rgb { 201 77 21 }
 
-	male_names = {
-		
-	}
-	female_names = {
-		
-	}
-	dynasty_names = {
-		
-	}
-	lowborn = {
-		
-	}
-	
-	fallback = manding_language
-}
-songhai_language_expanded  = {
-
-	color = rgb { 62 174 150 }
-
-	male_names = {
-		Kosoi Yamadao Yosiboi Duro Zenko Bada Fadazu Tib Karbifo kolli_djimbo 
-		Sombo Maidanda Baamoy Kaahar Hasay Harber Farka Boosu Inaahongu Aruhenna Fondo Bonkan Gomni Zangu Jenber 
-		Ceegum Iguma Arubiyoo Hanakuku Guuruu Tondi Wura Nzorfu Arby Fodi
-		name_moses name_muhammad name_ali name_abraham name_abdullah name_abu_bakr Baru Ishak name_david
-	}
-	female_names = {
-		Naamoy Kaamoy Naaber Hawoy Woyber Woyhenna Wura Woyboriya Woyboyro Boori Awasa Fondo Bonkaano Bonkan Ceegum
-		Bibi Kara Waiby Izewai Furjine Bonkoyno Lakkalkano Inaahongu Aruhenna Gomni Zangu
-		name_eve name_fatima
-	}
-	dynasty_names = {
-		Maiga Mumuni Seydu Ka_songhai Gakoy
-	}
-	lowborn = {
-		
-	}
-	
-}
 gurma_language  = {
 
 	color = map_gurma
@@ -1110,7 +990,7 @@ angas_language= {
 		
 	}
 	
-	fallback = hausa_language_expanded
+	fallback = hausa_language
 }
 ibibio_language= {
 
@@ -1153,6 +1033,8 @@ grassfields_language = {
 	lowborn = {
 		
 	}
+	
+	fallback = ibibio_language
 }
 tikar_language = {
 
@@ -1171,6 +1053,8 @@ tikar_language = {
 	lowborn = {
 		
 	}
+	
+	fallback = ibibio_language
 }
 mambila_language = {
 
@@ -1189,6 +1073,8 @@ mambila_language = {
 	lowborn = {
 		
 	}
+	
+	fallback = ibibio_language
 }
 mumuye_language = {
 
@@ -1207,6 +1093,8 @@ mumuye_language = {
 	lowborn = {
 		
 	}
+	
+	fallback = ibibio_language
 }
 mbum_language = {
 
@@ -1225,6 +1113,8 @@ mbum_language = {
 	lowborn = {
 		
 	}
+	
+	fallback = ibibio_language
 }
 bambukic_language = {
 
@@ -1243,6 +1133,8 @@ bambukic_language = {
 	lowborn = {
 		
 	}
+	
+	fallback = ibibio_language
 }
 
 masa_language = {
@@ -1261,6 +1153,8 @@ masa_language = {
 	lowborn = {
 		
 	}
+	
+	fallback = ibibio_language
 
 }
 mandara_language  = {
@@ -1282,7 +1176,7 @@ mandara_language  = {
 		
 	}
 	
-	fallback = hausa_language_expanded
+	fallback = hausa_language
 }
 
 east_chadic_language  = {
@@ -1304,28 +1198,9 @@ east_chadic_language  = {
 		
 	}
 	
-	fallback = hausa_language_expanded
+	fallback = hausa_language
 }
-zaghawa_language_expanded = {
 
-	color = map_zaghawa
-	
-	family = saharan_language_family_expanded
-	
-	male_names = {
-		
-	}
-	female_names = {
-		
-	}
-	dynasty_names = {
-		
-	}
-	lowborn = {
-		
-	}
-	
-}
 tebu_language = {
 
 	color = color_culture_fezzan
@@ -1345,6 +1220,29 @@ tebu_language = {
 		
 	}
 	
+	fallback = kanuri_language
+}
+
+zaghawa_language = {
+
+	color = map_zaghawa
+	
+	family = saharan_language_family_expanded
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = kanuri_language
 }
 maban_language= {
 
@@ -1363,27 +1261,9 @@ maban_language= {
 		
 	}
 	
+	fallback = ibibio_language
 }
-gbaya_language_expanded = {
 
-	color = map_gbaya
-	
-	family = north_volta_language_family
-		
-	male_names = {
-		
-	}
-	female_names = {
-		
-	}
-	dynasty_names = {
-		
-	}
-	lowborn = {
-		
-	}
-	
-}
 mbaka_language = {
 
 	color = map_bomassa
@@ -1402,6 +1282,7 @@ mbaka_language = {
 	lowborn = {
 		
 	}
+	fallback = ibibio_language
 	
 }
 ngbandi_language = {
@@ -1422,5 +1303,26 @@ ngbandi_language = {
 	lowborn = {
 		
 	}
+	fallback = ibibio_language
+}
+
+gbaya_language  = {
+
+	color = map_gbaya
 	
+	family = north_volta_language_family
+		
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	fallback = ibibio_language
 }
