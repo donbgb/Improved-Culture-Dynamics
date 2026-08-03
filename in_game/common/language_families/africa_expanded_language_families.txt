@@ -1,0 +1,33 @@
+﻿mande_language_family = {
+	color = map_mali
+}
+senegambian_language_family = {
+	color = map_jolof
+}
+mel_language_family = {
+	color = map_kissi
+}
+gur_language_family = {
+	color = map_mossi
+}
+kwa_language_family = {
+	color = map_bonoman
+}
+volta_niger_language_family_expanded = {
+	color = map_ife
+}
+chadic_language_family_expanded = {
+	color = map_zazzau
+}
+central_nigerian_language_family  = {
+	color = rgb { 201 139 40 }
+}
+northern_bantoid_language_family = {
+	color = rgb { 13 145 34 }
+}
+ngaouan_language_family = {
+	color = rgb { 178 212 104 }
+}
+saharan_language_family_expanded = {
+	color = map_saharan
+}

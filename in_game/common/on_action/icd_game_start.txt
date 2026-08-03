@@ -86,6 +86,7 @@ icd_culture_on_action = {
 		icd_movements_setup = yes
 		icd_politics_setup = yes
 		icd_romani_setup = yes
+		icd_africa_setup = yes
 	}
 
 }

@@ -1,0 +1,55 @@
+﻿
+
+gurunsi_religion = {
+	color = rgb { 127 99 41 }
+	group = folk_african_group
+
+	religious_aspects = 1
+	
+	definition_modifier = {
+		global_burghers_estate_power = -0.2
+		prestige_from_land_battle = 0.1
+		land_morale_modifier = 0.05
+	}
+	
+	opinions = {
+	}
+
+	tags = { folk_african_gfx }
+}
+
+bunu_religion = {
+	color = rgb { 69 87 84 }
+	group = folk_african_group
+
+	religious_aspects = 1
+	
+	definition_modifier = {
+		global_burghers_estate_power = -0.2
+		prestige_from_land_battle = 0.1
+		land_morale_modifier = 0.05
+	}
+	
+	opinions = {
+	}
+
+	tags = { folk_african_gfx }
+}
+
+soko_religion = {
+	color = rgb { 124 81 78 }
+	group = folk_african_group
+
+	religious_aspects = 1
+	
+	definition_modifier = {
+		global_burghers_estate_power = -0.2
+		prestige_from_land_battle = 0.1
+		land_morale_modifier = 0.05
+	}
+	
+	opinions = {
+	}
+
+	tags = { folk_african_gfx }
+}

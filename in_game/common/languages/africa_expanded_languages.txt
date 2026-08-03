@@ -1,0 +1,1426 @@
+﻿manding_language = {
+
+	color = rgb { 103 89 72 }
+
+	family = mande_language_family
+
+	male_names = {
+		name_moses name_salomon name_sundiata yerelinkon name_wati name_sakura Kon name_mande_bori name_muhammad Maghan
+		Kamba Uli Samori Kasia Tabon name_abdullah Diara Djamere Dyabe Goleh Kamo Khine Maadi Mayan Soumaba Tunka Birama Bubu Gane Kambine Majan Soumaoro
+		name_osman Amadou Bintu name_ali Bamba Bano Demba Dobali Duwa Faraba name_abraham Jatou Jombo Jonkon Kawusu Keba Kemou Kitimu 
+		Lalou Landin Makan Mandu Sori Wasa Basiru Duta Fakeba Bala Kassa 
+		name_abu_bakr Alifa Badara Baturou Bora Boto Fabba Jalang Janko Jibou Jonkong Juma 
+		Junkung Kabiru Karamba Kausu Kekoto Kutu Landing Mamadi Manlafi 
+		Mita Nfansu Sajo Saikou Sama Tombong Wandi Yaya Yoro
+	}
+	female_names = {
+		Amie Birta Fatou name_eve Isatou Kabir Kaddy Makuto Ramata Sogolon
+		Gundo Henda Kansoleh Siya Kadiatou name_fatima ayisa  Famata Fatu 
+		Fili Hadan Hina Jara Jari Jabu Janke Jeneba Joma Kasi Kafu  Kumba Kuta 
+		Lafi Lama Makutu Mamandin Soto Sunkari Suntu Tomarin Yama Sira 
+		Aba Ajamboon Alimatou Binta Daba Filije Jahou Hadang Jankeh Juka Kati 
+		Kinti Koba Kunda Kurukemeh Mbasi Mboose Musu Nyima Sanji Sunkar
+	}
+	dynasty_names = {
+		Keita Traoré  Mane Conde Konaté Dansouba Diaby Diakité Fofana
+		 Kamissoko Koita Koroma Magassouba Sako Sangaré Sidibé Koulibaly
+		 
+	}
+	lowborn = {
+		Ba Bayo Damfa Jane Donde Diba Dumbuya Bari Jaban Ebou Lamin Pa Kouyate Balajo Baldeh Banora Damba Kunta
+		Sisawo Dabo Diarra Wana Soukhounou Yatabare Bérété Koma Diabaté
+		Kante Kamara Korouma 
+	}
+}
+
+soninke_language  = {
+
+	color = rgb { 76 65 41 }
+
+	family = mande_language_family
+
+	male_names = {
+		Diakrao Seydina Soma Samba Demba Daby Pate Yoxo Bangali name_abu_bakr name_muhammad name_osman name_abdullah
+		 name_abraham Siaka Maghan Dinga Diabe Tunka Diara Soumaba Sekou Doussou Djegui Khassa 
+		Zoumana Kamory Lamine Diadia Ganda Sadio Bingorou Mademba Landing
+	}
+	female_names = {
+		Sira Sirandou Sende Sokhona Sountou Sambe Sedinte Sarangue Sounkhaso Niame Niatou Niakhale Manda Majula 
+		Makka Dalla Dandi Diye Jogou Janke Jalla Jombo Korotomou Kangue Khase Kounda Koda Goune Gande Tako Tappa 
+		Godokhoule Sorokompe Bire Binne Boude Dali Wande Waye Yaly Aya Niarale name_fatima
+	}
+	dynasty_names = {
+		Toure Kante Cisse Konate Bassi Diabate Diawara Gassama Niakhate Tunkara Wague Soumare Diakhanke
+	}
+	lowborn = {
+		Batily Doucoure Doumbia Fadiga Fofana Sakho Sissako Sall Tanapo Somono Kwanta  Tomota Mano
+	}
+	
+	fallback = manding_language
+}
+
+##soninke used for females partly##
+susu_language  = {
+
+	color = rgb { 207 142 211 }
+
+	family = mande_language_family
+
+	male_names = {
+		Kambine name_solomon Bannu Magan Gane name_moses Birama Soumaoro
+		name_abraham name_muhammad name_osman Gassimu Foday Kandeh 
+		Salfu Alimany Fasineh Tejan Nbaimba Bundu name_ishmael
+		name_abu_bakr Yaruga Lamina 
+	}
+	female_names = { 
+		Allie name_eve name_fatima Aisata Aye Zainab Kura
+		Sira Sirandou Sende Sokhona Sountou Sambe Sedinte Sarangue Sounkhaso Niame Niatou Niakhale Manda Majula 
+		Makka Dalla Dandi Diye Jogou Janke Jalla Jombo Korotomou Kangue Khase Kounda Koda Goune Gande Tako Tappa 
+		Godokhoule Sorokompe Bire Binne Boude Dali Wande Waye Yaly Aya Niarale
+	}
+	dynasty_names = {
+		Bangura Konteh Fofana Sumah Yansaneh Yumkella Yillah Sankoh Khalo Koroma Swaray Sawaneh  
+		Sesay Turay
+	}
+	lowborn = {
+		Sylla Diarso Sankhon Suma Yattara Yula Dymbuya Sesay Turay Samura Janneh Jawara
+	}
+	
+	fallback = manding_language
+}
+
+kpelle_language   = {
+
+	color = rgb { 91 66 33 }
+
+	family = mande_language_family
+
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+
+	fallback = manding_language
+}
+
+dan_language   = {
+
+	color = map_dan
+
+	family = mande_language_family
+
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+
+	fallback = manding_language
+}
+
+wolof_language   = {
+
+	color = rgb { 130 127 98 }
+
+	family = senegambian_language_family
+
+	male_names = {
+		Gorgui Bori Jamba Jula Mandu Sare Ndiklam Leeyti Ndyelen Birayma Tase Bukaar Leele Gireun
+		Birawa Mba Samba Ndate Detye Amari Dauda Dior Faly Diakhere Dethialaw Mbang wolof_barka 
+		Tyaaka Tyukuli Naatago Fara Ndiak Dembaane Tani Kruli Saayodo Mbeu Yerim Jeleem
+	}
+	female_names = {
+		Faatu Lim Xadi Yaay Ndate Njembot Bori 
+	}
+	dynasty_names = {
+		Jonai Ndiaye Ba Mbanyik Diakekh Ngelogan Sango Konegil Diam Daaro Bakar Mbuno Bubu Diop
+		Borso Teg Sal Daano Ntanye
+	}
+	lowborn = {
+		Baayo Fande Ba Sow Bari 
+	}
+	
+	patronym_suffix_son = ""
+	patronym_suffix_daughter = ""
+
+	fallback = serer_language
+}
+serer_language   = {
+
+	color = map_serer
+
+	family = senegambian_language_family
+
+	male_names = {
+		Laity Fallou Ngalandu Wagane Laasuk Sanmoon Niokhobaye Gejopal Kumba Mahecor Dieme Wal
+		Ndaah Xole Fode Ngouye Semou Yungaari Niokhori Mangi Jegan Noxori Noxobaay Nilaan Geejoopaal
+		Ama Niop Amari Decee Kodu Mbegan Guiranokhap Latminge Thilor Walboumy Ndene Waldiodio 
+		Amadiouf Amafal Amakodu Amasiga Mbagne Sengane Bala Bale Fakha Niawut Sadiuka Semu 
+		Niokhor Amary Mamalik Tie Mbissan Tiande Mawa Biram Yaasin Sukaabe Tanor
+		Ngor Kaynak Tening Ndiig Seek Sedar Sonar 
+	}
+	female_names = {
+		Ndoye Ndoung Yande Fatim Yalla Selbe Siga Maan Soboel Ngoone Penda Tening Gnilane Awo Bande 
+		Bassine Ndew Wagane Modian Fakhane Mignane Khemess Dibor Guiniane Baraane Liwane Mbar Watew
+	}
+	dynasty_names = {
+		Dioof Faye Ngum Sene Khan Ndaw Diene Senghor Ndur Sarr Ndiane Kama Thior Thiare Fall Diome
+	}
+	lowborn = {
+		Diagne Tine Thiaw Gadio Dieye Saine
+	}
+
+}
+bak_language   = {
+
+	color = map_manjak
+
+	family = senegambian_language_family
+
+	male_names = {
+	   Dayotchanculle Dion Ebou Opa Biague Bidinkuk Blominh Mmebh
+		Albat Sansau Fo Putnha Tabile Mutna Dabana Watna Nghurgue Buelguet Isnaba Alaghate 
+		Togna Matchnha Mutnasum Buota Botche Fotna Kiletch Sitna Binam Sifna 
+		Nghala Kundok Brassia Bsindatch Domna Aful Baute Alamara Sunhana Kecna Demin
+		Nsumande Kufuk Blonbomh Klabus Busnasum Kidatche Bihinha Midana
+		Alnhomh Wassatna Sanduk Clode Blokpas Iemna Nlautch Sumbikte Thambe Mogna 
+		Binhansan Dingana Mbute Bianh Finhane Ntaiem Konghalbatwidna Nmaca Nmarate
+		Nkuk Runna Bifule 	
+	}
+	female_names = {
+		 Sori Ngran Kudum Alawind Brinsan Nharebat Siuna Blowinda 
+		Bessantewinda Betum Betumsan Buetnan Alanan Mbigba Nnatsan Nmonnhet 
+		Kibane Wilbonh Indeute Danghana Mbomba Abamh Nhikiba Binhite Wimandjane Nsimble
+		Nghinghe Bsanbodh Bioksan Toina Blosande Ntantua Sida Ianna Bessau Nlola 
+		Nhimanam Duturna Abebia Sanhob Bininfonde Tcholabonh Nbuia Ndjan Abene Mburta 
+		Wintasan Daiana Nninnumma Finhira
+	}
+	dynasty_names = {
+		Nnssassun Nnsso Nndjukomo Nnsafinte Nniga Nnssuzu Nnttat 
+	}
+	lowborn = {
+		
+	}
+}
+fula_language   = {
+
+	color = map_fulo
+
+	family = senegambian_language_family
+
+	male_names = {
+		Mobido Seikou Tenguella Koli Modibbo Salihijo Ardo Ndottijo Bamanga Bapetel Bobbo Bindowo
+		Labba Samba Gelaajo Yero Gata Sawa name_abu_bakr Sire Sabboyi Bubu Konko Sule Jaaye 
+		Karamokho Bokar name_ahmad Niamody name_omar Alfa name_abraham Molo name_abdullah
+		Hamma Paate Barkinado Naro Cenido Pano Mocede Bayero Kirowa Dotti Jokolle
+	}
+	female_names = {
+		Diko Kumba Pendo Daado Takko Kodda Cubado Barkindo Gidado Ceydo Setto Janno Belkoaku Beldohore
+		Laggi Jaye Lawlo Oro Duroji Barke Gurow Gurdo Layya Juulde Korka Juli Allareni Allaseni Labdo Boddo 
+		Jawdo Cewdo Cuso Yera Boyi Tobo Nali Hari Bajjo Korsudo Yatako Goggo Jodi Surbajo 
+	}
+	dynasty_names = {
+		Torodo Saibobe Tukur Gidado Dikko
+	}
+	lowborn = {
+		 Lamido Ba Sow Tall 
+	}
+	
+	patronym_prefix_son = ""
+	patronym_prefix_daughter = ""
+}
+tenda_language    = {
+
+	color = map_tenda
+
+	family = senegambian_language_family
+
+	male_names = {
+		Alassani Dahun Dana Ata Nyala Apo Ndabitche Kpante Baba Kpapo Tchapo Lantam Gafo Nadjombe Mako 
+		Tchandikou Tchen Tchontchoko Wapondi Gno Agbanti Kpandja Napar Nabin Okate Ymboti Djawe  
+		Gbati Kondi Bugou Wombur Nikabou Wake Fare Daku Kodjo Kpaa Gbandi Gnandi Uyi Tchedre Udjukuti 
+		Arufa Wagna Kissao Unon Bundju Ago Komlan Abu 
+	}
+	female_names = {
+		Assana name_fatima Pohun Pona Gado Ndabitche Gnamba Lova Walim Nunko Djidjao Djutib Dapo Agbassi
+		Dolib Nga Yake Djai Som Tchonanke Jambir Kpindi Sondo Numfon Mutoni Kungbon Bukumpu Nawo Amwin
+		Okpane Nafi Matu Pombo Djabi Kpinde Gniti Wanu Awu Mani 
+	}
+	dynasty_names = {
+		Nawale Nataka Nankiri Nayur Sondo Trebabe Koli Nakol Nankati Wattara 
+	}
+	lowborn = {
+		
+	}
+}
+
+##temne kissi names mixed###
+temne_language   = {
+
+	color = rgb { 47 52 56 }
+
+	family = mel_language_family
+
+	male_names = {
+	 Boineh Tamba Aya Kai Tawali Farama Kelfa Soriba
+		Foday Finnoh Gbassay Kaloko Kambi Lansana Sento
+		Pilleh Unisa Bomwara Komba Saa Faiyaa Fala 
+		Nyuma Hali Saakooli Sungmboo Seenggiangndo Fokpoo
+	}
+	female_names = {
+		Finda Yankai Posseh Yabom Siabanda Sia Kumba 
+		Teuwa Yauwa Tene Soona Fela Wanggo 
+		
+	}
+	dynasty_names = {
+		Sankoh Fofana Foray Bureh Gbla Tarawali 
+		Kamaa Tolnoo Kolumbaa 
+	}
+	lowborn = {
+		Brima Bundu Daboh 
+	}
+	
+}
+kissi_language   = {
+
+	color = map_kissi
+
+	family = mel_language_family
+
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = temne_language
+}
+gola_language  = {
+
+	color = map_gola
+	
+	family = mel_language_family
+
+
+	male_names = {
+		Kamagoleh Fofanah Zemebue Kwenja Kokulo Goiloi Konnah 
+		Kayme Gbotoe Zina Bobo Dormah Gbarnarkai Gbanjah Gotomo Gankai
+		Gbah Gandor 
+	}
+	female_names = {
+		Siaffa Wokie Wete Sombo Gbessi Sando Somo Danawea Loleia 
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = temne_language
+}
+senufo_language_expanded  = {
+
+	color = rgb { 75 79 60 }
+ 
+
+	male_names = {
+		Zie Zanga Ngolo Be Do Denan Klotioloma Mikanidjo Midjembieri Minhfounh
+		Gnima Tennina Yalmassa Sibri Tchima Mbaha Gnonnan Kolo
+	}
+	female_names = {
+		Yele Yo Yire Bere Niama Kapinnetioh Mikanidjo Midjembieri Minhfounh
+		Gnon Gnere Bara Zele Gnaman Gnondioh Kolo 
+	}
+	dynasty_names = {
+		Sekongo Silue Soro Tuho Yeo 
+	}
+	lowborn = {
+		Ziao 
+	}
+}
+kru_language_expanded   = {
+
+	color = rgb { 42 23 17 }
+
+
+	male_names = {
+		Snorsio Mondueh Tarpeh Wlubateh Kronnisanyon 
+		Mechen Dwe Soetehpoe Togar Nyenwolo Gardiah
+	}
+	female_names = {
+		Dekonti Jugbe Nyeswaju Nyeswati Juah Manneh Teti
+		Wehte Welleh Tiedi Jayplo Yenplu Mardea
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+}
+mabia_language    = {
+
+	color = rgb { 27 129 45 }
+
+	family = gur_language_family
+
+    male_names = {
+		Oubri Naskiemde Nasbire Soarba Gnignemdo Koudoumie Kouda Dawingna Zoetre Niandfo Nakienbzanga Namegue Kiba Kimba 
+		Goabga Guirga Zanna Oubi Motiba Warga Zombre Saga Kom Doulougou Sawadogo Karfo Koutou Sanem
+		Wobgho Siguiri Kougri Sapilem Nyambre Salma Korongo Koom Kiib Tigre Saagra Guiguem 
+		Kokoroko Sabana Tyeba Pintyeba Karamoko Yadega Yolomfaogoma Kourita Geda Kango Kaongo Tuguri Korogo
+		Ragongo Nyambe Totebaldbo Yemde Sanum Woboga Piiyo Baongo Bulli Sidiyete Ligidi Kobga Sigiri Gigma 
+		Ousseni Titinga Shitobu Nyayisi Zulandi Luro Mahami Bandamda Yamusa Sibido Azindoo Andani 
+	}
+	female_names = {
+		Roukiata Sidwaya Poko Sugrinongma Awa Djeneba Kenga Relwende Sanpoko Wenkouni Weoogo Saarare Tensigi 
+		Pusbila Napari Balima Nakpambo Balemini Sindoliwa Tipaga Jebuni Buguli Zenebu Tampulimpaga Kambungpaga
+		Kulikulipaga Zabagapaga Tunteya Zantale Suhuyini Nenpaga Niema Lahari Tani Talaata Lariba Azima Sibri 
+		Lamisi 
+	}
+	dynasty_names = {
+		Nayiri Sanogo Nogo
+		Zongo Zagre Sawadogo Kabore Zerbo Yameogo Ilboudo Bazie Tapsoba Bougma Kinda Nikiema Zida Some Guigma Pooda Tiendrebeogo
+	}
+	lowborn = {
+		
+	}
+
+}
+gurunsi_language    = {
+
+	color = map_gurunsi
+
+	family = gur_language_family
+
+	male_names = {
+		Awini Abagre Tindaan Atinga Anaba Bayala Dabre Hien 
+	}
+	female_names = {
+			Abena Atanga Awo Bati Ayamga Sira Poko Nabaloum
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+
+	fallback = mabia_language
+}
+bariba_language    = {
+
+	color = map_bariba
+
+	family = gur_language_family
+
+	male_names = {
+		Suru Wari Soru Bio Wonkuru Suanru Gunu Imoru Yaru Kperogi Bona
+		Sime Saka Koto Lafia Sero Bagiri Tamu
+		Kotonkumu Kada Burama Maasu Buru Babangurubi Gurubaru Gide Dotabu 
+		Gada bio_weene Asaburu bio_waare Ayogi Daba Abi Waagi Garaagi 
+		Mora Kora Tassigi Tamba Doko Toku Gawe Mansa Buara Birso Baatia 
+		Worudeke Gbeeru Tooru Daki Baku Oyonu Ayara Komilafia Sokobasi Sinaworu
+		Yirugi Meiyemi Mafara Kenken Yakasu Swaa Kuroboko Kpera Daraku Gaani
+	}
+	female_names = {
+		Yinre Gandigi Yaki Barekegi Gaiya Kore Solo Gomba
+		Suwa Taba Yare Neugi Yonbio Bonabiu Anigi Yoonweegi Bonaweegi Bakebio
+		Kpaayero Yiiri Due Manu Kpalome Deeru Kaano Itoo Tanson Kpaare Yenu 
+		Sebegi Nangi Woore Samanse Bara Mangu
+	}
+	dynasty_names = {
+		 Gberu Yeruma Mako Sesi Bare Kane Wanro Marafa 
+	}
+	lowborn = {
+		 Seko
+	}
+}
+
+ga_language   = {
+
+	color =  rgb { 80 149 209 }
+
+	family = kwa_language_family
+
+	male_names = {
+		
+	}
+	female_names = {
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = guang_language
+	
+}
+guang_language   = {
+
+	color = map_gonja
+
+	family = kwa_language_family
+
+	male_names = {
+		Achanso Atchulo Afiso Allela Amabanye Amankwa Amate Asowura Ataawa Awale Awaare Awalekiye Awoshe Awoshie Badow Bakoaso Banemu Bangben Bonyanso Booma Chepura
+      Daa mato Dambatu Dari Dariche Dokilebi Ebanyepo Edonbone Edonkufo Ekomato Ekoso Ekumpo Ekunfo Elempo Esapo Etimpo Ewanye Ewale Ewonye Ewunio Ewuntomah Ewura Eyrimodon
+	Foto Gbeadese Gyemche Jinapor Gyeowo Kakore Kanagbon Kanamo Kananmaluwe Kasha Keche Kenyiti Keshieko Fantan Kginginfra Koji Kowuribi Kramoase Kurabaso
+	Kurayerito Lempoche Lomashie Longefiye Longesai Maaman Mankpa Mankre Mantenso Mapoche Masagben  Masape Matuamo Nefa Nkpamafo Nndefeso Ntoba Obosu Okonfo
+	Owoshie Pumaya Safo Samafon Shunkpa Techira Titiaka Yomba
+	}
+	female_names = {
+		Achanso Atchulo Afiso Allela Amabanye Amankwa Amate Asowura Ataawa Awale Awaare Awalekiye Awoshe Awoshie Badow Bakoaso Banemu Bangben Bonyanso Booma Chepura
+      Daa mato Dambatu Dari Dariche Dokilebi Ebanyepo Edonbone Edonkufo Ekomato Ekoso Ekumpo Ekunfo Elempo Esapo Etimpo Ewanye Ewale Ewonye Ewunio Ewuntomah Ewura Eyrimodon
+	Foto Gbeadese Gyemche Jinapor Gyeowo Kakore Kanagbon Kanamo Kananmaluwe Kasha Keche Kenyiti Keshieko Fantan Kginginfra Koji Kowuribi Kramoase Kurabaso
+	Kurayerito Lempoche Lomashie Longefiye Longesai Maaman Mankpa Mankre Mantenso Mapoche Masagben  Masape Matuamo Nefa Nkpamafo Nndefeso Ntoba Obosu Okonfo
+	Owoshie Pumaya Safo Samafon Shunkpa Techira Titiaka Yomba
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+}
+akan_language   = {
+
+	color = rgb { 163 40 24 }
+
+	family = kwa_language_family
+
+	male_names = {
+		Kwasi Kwadwo Kwabena Siisi Kojo Kwaku Kukuuwa  Fiifi Komi Tawia Gaddo Efum Okwan Bekoe Afriyie Adofo 
+		Agyenim Nyamekye Nyameama Kumi Anto Piesie Manu Mensa Esuon Akron Badu Oti Kobia Antwi Twum Obiri Osei Opoku 
+		Ware Kusi Panyin Yaw Dua Kofi Karikari Bonsu Prempeh Agyeman Akumfi Obunumankoma Afena Dwamena 
+		Takyi Akwamo Gyako Yeboa Ananta Ati Kwame Ameyaw Kurompe Diamono Asamankwa Owusu Gyamfo Kumanini Boakye Tenten
+		Kwakye Kyereme Bampo Bafuo akumfi_ameyaw 
+	}
+	female_names = {
+		Akosua Adwoa Adjowa Ajao Ese Asi Abena Abrema Akua Yaa Abina Yaaba Afua Efua Amba Ameyo Juba Atta Nyankomago 
+		Piesie Maanu Baduwaa Kaakyire Efum Okwan Bekoe Afriyie Adofo Agyenim Nyamekye Nyameama Kumi Anto
+	}
+	dynasty_names = {
+		 Agona Aduana Asene Asakyiri Asona Bretuo Ekoona Oyoko
+	}
+	lowborn = {
+		Abeberese Aboah Abrafi Afrane Agyei Amankwah Amofah Andoh Awuah Baafi Baidoo Baako Boadi Daako Depay Dontoh
+		Dwamenah Ekuoba Essien Fofie Fokuo Fremah Gyakari Gyamera Gyasi Karikari Korsah
+	}
+	
+	
+}
+gbe_language   = {
+
+	color = map_ajan
+
+	family = volta_niger_language_family_expanded
+
+	male_names = {
+		Dakodonou Houegbadja Akaba Tegbesu Kpengla Agonglo Adandozan Ghezo Glele Gbehanzin Agoliagbo Aidododo
+		Dassu Adjakpa Yessu Azoton Akonde Agagnon Agbangba Hueze Agbande Mindji Kinha Akoli Kopon Hunungungu Pokonu Gbagwe Deka Ganhwa Gigla Kpodegbe
+		Kpasse Agbangia Amah Huffon Sagbe Dekpo Dede Dedji  Dedele Sekplon Bassoh Adjossogbe Jagba Zinhumme 
+		Dzidefo Edudzi Adzewoda Aliklpim Holanyo Etornam Sefenu Setordzi Semornu Seedoame Nokplim Enyam Yesutor Sefadzi Mawunya Xorlasime Xorsenyo
+		Kodzo Komla Koku Yao Komi Kosi Foli Gator Gomekadi Kaleno Kalee Korbla Korku Nuse 
+	}
+	female_names = {
+		Hangbe Adzo Abla Aku Yawa Afi Ami Kosiwa Abra Agbeko Ablorde Afenyo Agudze Blebu Dagbe Dormenyo Dzidedi Dzorgbenyui Fafa 
+		Humado Hlorbu Kekle Kpormor Lebene Lorlornu Nukunu Nyemebuio Nunya Nyuiematsor Nyuitor Susu Sika Sitso Setufe Setri Tafa Tamefa
+		Vlitanye Venyo Woelinam Woedem Xetsa Zorzornyuie 
+	}
+	dynasty_names = {
+		Agasuvi
+	}
+	lowborn = {
+		Kotoka Amu Agbeko Attipoe Utuka 
+	}
+}
+yoruba_language  = {
+
+	color = rgb { 211 184 178 }
+
+	family = volta_niger_language_family_expanded
+
+	male_names = {
+		Adeyemi Omodele Akinola Olugbodi Erinle Malomo Durojaye Kuti Ifagbemiro Shangobiyi Ogunwale Salako Amusan  
+		Adedeji Adekola Adedokun Adeleke Adewole Aderonke Bankole Rotimi Akintola Omoniyi Titilade Kolawole Olawole
+		Abiodun Oluwadamilare Olaoluwa Dada Abegunde Aborisade Abisogun Kosoko Igbekoyi Aja Esudina
+		Ojo Ajayi Oni Orisakiya Ogunsina Ayaniyi Oguntomole Odewumi Odekunle Odetunde Eranko Adedara 
+		Ajagungbade Amusaan Ijimere Abebi Osola Oluwaseun Oluwole Animashaun yoruba_ayetise
+		Lajamisan Oye Otaran Ogijan efon_ayioye Lamoro Lajemisin Larooka Owodo arirere_okinwe
+		Otaataa Lapeleke Otujabiojo Oluwo ajimuda_ekun laamoro_ogijan Lajodogun Lafogun Lafogido 
+		 Ekun Ajimuda Luciro Okunlajosin Adegbalu odidi_egbesin Lagbuja Omoropo Lagunja
+		Ogboru Giesi Luwo Lumobi Larunka Ademilu Osinkola Aroganganlagbo Omogbogbo Adejinle Aribiwoso
+		Shojuolu Ogbonsegbonde Agbedegbede Olojo Okiti Lugbade Ajifadesere Otuko odidimode ajila
+		Akinmoyero Ojigidiri Adagba obalufon Oluaso Onigbogi Ofiran
+		Eguguojo Orompoto Ajiboyede Abipa Obalokun Oluodo Ajagbo Odarawu Kanran Jayin Ayabi Osinyago 
+		Ojigi Gberu Amuniwaiye Onisile Labisi Awonbioju Agboluaje Majeogbe Adebu Majoto aole_arogangan
+		kori Erankikan Ija Ajibogun Obarabara Owaluse Atakunmosa Biladu Bilaro Apakiimo 
+	}
+	female_names = {
+		Talabi Ato Olugbodi Sangobiyi Kikelomo Omolabake Omoniyi Kolawole Rotimi Erinle Olawole Yetunde
+		Olubukola Demilade Adesewa Enioal Aina Ola Ige Adesina Adesoro Aborisade Kosoko Durojaye
+		Orisakiya Fabunmi Fakuade Awoyemi Ogundeji Banjoko Esudina Igbekoyi Akisaaatan Olabisi Ayodele Abebi 
+		Osola Oluwaseun Oyindamola Olayemi Omoteniola Morenikejimi Adeife Omowunmi Ilori Torera luwo_gbagida
+		Alaba Ida iyaayun Yeyeori
+ 	}
+	dynasty_names = {
+		Okin Erin Adunni Ayinla Alao Ajoke Erinmoje Ewu Ayerounfe Elese Aresa Elo Aro Ade Eri Iko Ogun
+		Ojo Agbo Edu Ogo Iji Olatunde Odeyemi Olakunle Irese Olofa Ikoyi Awinijo Olalomi 
+	}
+	lowborn = {
+		
+	}
+	
+	descendant_prefix = "patronym_prefix_yoruba"
+		
+}
+edo_language  = {
+
+	color = map_benin
+
+	family = volta_niger_language_family_expanded
+
+	male_names = {
+		Egbeka Olua Ozolua Esigie Orhogbua Ehengbuda Ohuan Ohenzae Akenzae Akengboi Ahenkpaye Akengbedo Oroghene Ewuakpe Ozuere Akenzua Eresoyen Akengbuda Obanosa Ogbebo
+		Osemwede Adolo Ovonramwen Eweka Erediauwa Ewuare 
+		Abaku Abebe Abudu Adesusu Adolor Agbonavbare Agidigbi Aigbogun Akpata Asoro Edionwe Edegbe Bamiyi Egharevba Eguavoen Eheneden Ekpenede Enarenren Erhengbo Ewaen 
+		Idemudia Igbinazaka Ifaluyi Igbinovia Igoghohon Iken Imasekha Ikhimwin Inegbinebor Odemwingie Odigie Ogbodu Oguname Ohiegbomwan Okosun Okundia Omofonmwan Osunbor
+		Oviasuyi Uwaifo Uwadia Ukponahusi Okpefua Uzamere Zomi Keneri Imafidon 
+		Adesotu Aghafua Aghomo Asenoguan Ebedeguowen Edamwen Edoghogho Egbenaloben Ehinomen Emwanta Idusuyi Igbinosun Ighalo Imose Imudia Irhonmwan Nohuwa Nowamagbe Oduwa Osenaga
+		Otokiti Ukpelukpe Uyi Uwaila Yalekhue
+	}
+	female_names = { 
+		Abieyuwa Ahunwan Amenze Adesuwa Dieya Ebiuwairo Edowaye Ediku Efua Eghenayahiure Ehinosen Ehizena Ekhorose Ekiuwa Elo Emotan Enibokun Eronmwon Esebor Evbusogie 
+		Ibieuwairo Iguehita Iguokundia Ikpakpa Imagbogho Irhenegbe Iroghama Iwero Iwuomo Iyonawan Izehi Kenekene Izogie Nekpen Nekpenekpen Noyin Noyoze Ododo Oghoye
+		Okankan Omorose Omosukpon Otibhor Osoyenmwen Oyenmwen Sogie Ulamen Uwafiokun Yoname Zaye Zona Yuwa
+	}
+	 ##these are personal names as I couldnt find totem clan names, edo wouldnt have surnames back then###
+	dynasty_names = {
+		Aburay Adanegbe Agbonkhese Aibuedefe Diagbonya Barewhuemoise Edehi Efehi Ehinomen Enomaorosiagbon Ereyimwen Idahagbon Imasogie Isokpunwu Iyekeoretin 
+		Odia Ohainlose Otasowie Owaeghianye Ukinebo Uhunamure Uyinmwen
+	}
+	lowborn = {
+		
+	}
+}
+igbo_language  = {
+
+	color = map_nri
+
+	family = volta_niger_language_family_expanded
+
+	male_names = {
+		Namoke Buife Omalo Jiofo Omalonyeso Anyamata Fenenu Agu Apia Alike Ezimilo Ewenetem Enweleana Obalike Mmaku Ikenga Nnewi Okpala  
+		Digbo Otolo Enem Nnofo Udude Agha Nnwa Oguine Ukwu 
+		Ikenna Obiora Obinna Nwokeoma Amadi Elozonam Ndubuisi Ndukwe Nduka Obumneme Ekene Nwokike Maduka Nwabueze Akuabata
+		Akuibe Akunesiobiike Asoanya Akobundu Bumma Buruisiomma Bekee Dikeogu Dubem Duru Diebere Durudike Duruoha Duruosimiri
+		Duruba Enyi Egwuatu Ejiofo Ebisike Ebeku Emola Ganiru Gburugburu Ibewuike Ifeagwu Ifezue Ihejiofo Ihezuorogioke Iheka 
+		Ikekaonwu Ikeogu Izuoma Kanebi Mojekwu Mbanefo Njikokamma Nwaogo Nwawelugo Nwamgba Nze Nwagu Obiagu Obodozie 
+		Odunze Ogudike Ojiugo Okonkwo Ugoloma Ugomba 
+	}
+	female_names = {
+		Adaeze Anurika Adannia Ahamefuna Akuudo Adiole Busomma Busondu Chebem Diriibe Dindu Diuto Ebere Eke Ezike Ebuka Ebube
+		Eziokwu Eziuzo Ezinwaanyi Eziama Ejezie Echebendu Echicheoma Echekwu Ebigbo Eberendu Ebeano Emereoha Ekene Ekwesirike 
+		Ekenta Eririmma Enyeribe Gbajie Ibekwe Ibeaso Ifeadigo Ifeoma Ihunanya Ifenyinwa Ifeatu Ifeanacho Ihezuru Ihenile Iheaku
+		Ijemma Ikedimma Ikwueze Ikenga Iruoma Ile Iwunze Iwudo Isioma Kambiri Kasiemobi Moma Mma Mgbeke Mgbafo Mgbeori Mgbokwo 
+		Nneoma Nkeoma Nchedo Ndidi Nkwo Nosike Nsofo Nwakanwa Nwaugwu Nwamma Nwabiaranuju Nwokocha Nzemeka Okenwa Olamma Obiora
+		Obiji Ojukwu Okonji Okoye Okafo Onwa Ugoyibo Ugonnie Ugonwa Ubochioma Ugwu Ukaamaka Uwadimma Uzodimma
+	}
+	dynasty_names = {
+		 Isuogu Ibere Bende Itumbauzo Ndoki Nkari Ngwo Oboro Ibeku Ngwa Abam Oloko Umuopara Ohuhu Agbaja 
+		 Nnaji Ofoma Ugwueze Obi Njoku Isu 
+	}
+	lowborn = {
+		Anozie Anyanwu Azikiwe Aneke Duru Ebere Ekwueme Ibekwe Ihemelu Iwobi Maduka Mbakwe Mbanefo Nnamani Nwakaeme 
+		Nwodo Nwosu Obiora Okafor
+	}
+}
+ijaw_language_expanded  = {
+
+	color = rgb { 44 94 60 }
+
+	male_names = {
+		Abadi Abadibo Akpoebi Akpomatunemibofa Akpomofa Alabrah Aladeinyefa Alaowei Alatari Alazidei Alazimo Amaitari Amakama
+		Amakedi Apapa Arukubu Awaran Ayakpo Ayebatonye Ayebaye Ayibaemi Ayibanua Ayibatonbara Bebebomobo Beke Bekeowei
+		Beleuzi Beredugo Biebele Bolouikie Bomo Boukazi Buwozi Daubode Daulayefa Derifagha Dimien Dinini Diseye Ditorusin
+		Dooakpo Dookeme Doubra Douye Dumo Ebi Ebiakpo Ebiarede Ebibaratimi Ebidese Ebidisebofa Ebidowei Ebiegberi
+		Ebifinidei Ebigba Ebimie Ebimobowei Ebinimi Ebiowei Ebiundu Ebiye Ebizimor Egberibin Ekio
+		Ekiye Ekpolayun Emomu Eneikedi Enemo Enibraye Eremiemi Eseimokumo Esikumo Eteimowei Fasingha
+		Fedude Felagha Funebi Funkuro Funware Gbayena Gbeneowei Gesebo Gesekeme Gesiye Heineken
+		Idiebimo Ifiemi Igunikeme Ikiemoye Ikuromo Iniekenimi Inipere Isomubo Itonyo Ituaton Izonebi
+		Kariebi Kemelayefa Kpadia Kurokeme Kuroyefa Monubai Motimifagha Namatinbo Ndukari Nengimote Ngoebi
+		Odayi Ogbotubo Ogezimo Ogola Ogonoebi Oki Olotu Ondoukari Ondoutuapere Opukiri Owariladei
+		Oweikorogha Oweiyai Oyinedidei Oyintari Paaye Pekeikakai Pere Pereagbe Pereama Perebo Perezimo
+		Tamunoimim Tamunotonye Tari Taribi Tarimbele Tariperedei Tekena Tiekuromo Timidi Timieri Tiri
+		Tonye Tuburuode Waibodei Waridabo Wenikado Woyengiemi Woyinbode Woyinkule Ziola Ziperela Zoubo
+	}
+	female_names = {
+		Abadibo Akpoebi Akpomatunemibofa Akpomofa Aladeinyefa Alaere Alata Alatari Alazimo Arukubu Awaran Ayakpo Ayebatonye
+		Ayebaye Ayibaemi Ayibaifie Ayibanua Ayibatonbara Bebebomobo Beke Bekeara Bekes Beleuzi Beredugo Bibinidei
+		Biboye Biebele Bobolayefa Bobomiegha Bodisere Bolouikie Bomo Boukazi Buboupakumo Buwozi Derifagha Dimien Disemi
+		Diseye Ditorusin Diyinrin Dooakpo Doubra Duateme Ebeleakpo Ebi Ebiakpo Ebiarede Ebibaratimi Ebidese Ebidisebofa
+		Ebiegberi Ebiere Ebifinidei Ebikake Ebimie Ebimoboere Ebinimi Ebiye Ebizimor Ebrakumo Edubamo
+		Elayokon Emeleakpo Eniye Erebi Funere Ibinabo Inibrakemi Itohan Iyabode Kariara Lolia
+		Luckere Oyabrade Oyinbodei Pereasuodei Ere Pinaere Seiakumokumo Suoton Tariere Tienepre Tokoni
+		Wariboko Yinlayefa Yoroakpo     
+		Emomu Eneikedi Enemo Enibraye Eremiemi Esikumo Fasingha Fedude Felagha Funebi Gbayena
+		Gesebo Gesiye Idiebimo Ifiemi Ikiemoye Ikuromo Iniekenimi Inipere Itonyo Kariebi
+		Kuroyefa Monubai Motimifagha Namatinbo Nengimote Ngoebi Ogbotubo Ogezimo Ogola Ondoutuapere Owariladei
+		Oyinedidei Oyintari Pekeikakai Pere Pereagbe Perebo Perezimo Poukon Sele Seledebo Sonomo
+		Sunubai Suoyo Tamaralaifa Tamunotonye Tari Taribi Tarimbele Tariperedei Tekena Tiekuromo Timieri
+		Tiri Tonye Waibodei Waridabo Wenikado Woyengiemi Woyinbode Ziola Ziperela Zoubo Zuo
+	}
+	dynasty_names = {
+		Egbema Kalabari Mein Arogbo Boma Kabo Obolo Bille Ibani Andoni Ke Buseni Okodia 
+	}
+	lowborn = {
+		
+	}
+}
+nupe_language= {
+
+	color = map_nupe
+
+	family = volta_niger_language_family_expanded
+
+	male_names = {
+		Ndako Ndace Ndana Ndadzan Ndamini Nnamandu Nkoci Tanko Tswanya Yaiye Saba Dzuma Kobo Kure Gboya Gborigi
+		Dzukoko Dokodza Bagi Bakuso Audu Babishe Abaji Asabe Badoko Bago Cece Balukuku Bamasin 
+		Banma Bawusa Bologi Ceceko Ceninya Daninya Dari Dewo Dombashi Dwale Dzukogi Giwa Jiya Jiwo 
+		Kaso Kere Keremi Ketso Koro Kolo Kofian Kpako Kpotun Kpwatwa Kudu Lile Lukpan Mamman Manfada Esun Zuma
+		Mayaki Masin Nagenu Nagia Ndagiman Ndalati Ndalolo Ndaman Ndatsakpe Ninwoye Sonfawa Tsunyankpa 
+		Tswasha Wambai Wogbo Zhiri Bako 
+		Shaba Zaulla Jiga Tsado Jimada
+	}
+	female_names = {Nnani 
+		Nnazua Nnawusa Gogo Gogbo Gulu Kaka Lakpene Lolo Mukun Nnadzuma Nnadzwa Nnagi Nnakuso Nnakun 
+		Nnalolo Nnashirun Ntatu Sagi Sakiwa Sambo Sheshi Shiru Swasun Tsadu Tsadza Woye Wusa Yabagi Yawo Yisa
+		Dzukogi Dzukoko Dwale Kudu Legbo
+	}
+	dynasty_names = {
+		Ndagi Sawaba Edegi
+	}
+	lowborn = {
+		
+	}
+	
+}
+idoma_language = {
+
+	color = map_idoma
+
+	family = volta_niger_language_family_expanded
+
+	male_names = {
+		Anuga Oyifioda Echechofu Otokpa Olodu Ochenehi Otache Obekah Adakoyi Emaikwu Audu Odoh Idoga Ugboh Okwoli Odiba Amedu 
+		Obagwu Okolobia Ojonye Ojima Ogolekwu Ogbada Odifioyi Agwu Adaebo Oda Ajibo Inyanda Ibenu Oji Ojile Olada Otaluwa
+		Eganta Egwa Achigli Ogah Olotu Aboche Adanu Eche Onyilo Ajeibi Odeh Umolo Oneh Ude Ekor Ikpa Ekoja Ujah Idoko Okwo
+		Obute Akor Akogwu Onnah Omaba Ogangbo Odumu Ngbede Igba Inyofu Ejugwu
+	}
+	female_names = {
+		Owoya Egbi Olije Odaije Eneotse Onyadanu Enelohi Ijato Oiwodu Onyale Ebowo Orefi Ota Elameyi Oyiwoja Idegwu Enenu 
+		Enanya Owota Ehi Ebamu Owakoyi Enebo Oyiwodu Onyema Iyefu Iyono Ikwubiela Eleyi Enene Owole Aneh Ema Oka Enyanwu Idenyi
+		Akum Oyife Onma Onyiowo Onyaomale Ogwa Ogodo Oganya Ijewoda Igbe Enanyi Edugwu Agbenu Anyaole Abahi Obiye
+	}
+	dynasty_names = {
+		Otukpo Adoka Ugboju Oglewu Edumoga Orokam Otukpa Agatu Yala Igwumale Akpa
+	}
+	lowborn = { 
+	}
+}
+hausa_language_expanded = {
+
+	color = rgb { 138 22 58 }
+
+	family = chadic_language_family_expanded
+
+#kano#	
+#zazau#	
+#zamfara# 
+#gobir# 	
+	male_names = {
+	
+		Shekarau Yaji Bugaya Kanejeji Umaru Dauda Dakauta Atuma Bawa Dadi Soyaki Kumbari 
+	
+		Kawanissa Nohir Sukana Kirari Karama
+  
+		Dudufani Bakawa Gimshikki Karafau Gatamma Kudandam Bardau Gubarau Durkusa Mowashi Kigaya Tabarau Burum Taritu Fati Zartai Dakka Tasau Zaude Tukudu
+
+		Sakidamma Matsaura Dugurma Zaberma Umi Gozo Banizam Ciroma Majejeri Kasima Cida Baciri Munzakka Ubandoma Arkal 
+		Mairiga Cibi Gagarau Gambo Tanko Kumatu 
+		Sanmako Ranau Dare Shuka Nomau Damina Mairuwa Marka Cigero Korau Sadari 
+		Altine Dantala Balarabe Danami Asibi Lado 
+		
+		Kyauta Barau Dandawo Arzika Tunau Ana Ruwa Danyaro
+		
+		Brima
+		name_osman name_muhammad name_abdullah name_abraham name_james name_abu_bakr name_salomon name_ali
+		
+		name_muhammad.name_abraham
+		name_muhammad.name_abu_bakr
+		name_muhammad.Mairiga
+		name_muhammad.Gambo
+		name_muhammad.Dantala
+		name_muhammad.Kukuna
+		name_muhammad.Rumfa
+		name_muhammad.Sharefa
+		name_muhammad.Zaki
+		name_muhammad.Kisoki
+		name_muhammad.Alwali
+		name_abdullah.name_james
+		name_abdullah.name_osman
+		name_abdullah.Gambo
+		name_abdullah.Kasima
+		name_abdullah.Burja
+		name_abu_bakr.Gagarau
+		name_abu_bakr.Kado
+		Dauda.Abasama
+		name_abu_bakr.name_ali
+		name_muhammad.name_ali
+		name_ali.Dare
+		name_ali.Damina
+		
+	}
+	female_names = {
+
+		name_amina Zaria Bakwa Algoje Bakutu Balasha Shawai Tarana Dela Tune 
+		Danliti Talatu Tabawa Lami Asabe Asibi Ladidi Rani Sodangi Dawi Makau Hankuri 
+		Sanmako Ranau Dare Shuka Nomau Damina Mairuwa Marka Cigero Korau Sadari Nagona Maikasuwa Maikudi Fari Jatau Madugu 
+		name_aisha name_fatima Yaryarinya 
+		
+		name_amina.name_aisha
+		name_fatima.Lami
+		name_fatima.Girbau
+		name_fatima.Damina
+		name_fatima.name_amina
+		name_amina.Asabe
+		name_amina.Marka
+		
+		Tadaka Delu Tine Malka Girbau Mayafi
+		
+	}
+	dynasty_names = {
+		Gimba Garaza Gabi Giwa Gardaye Kashingari Gwauran Daudu Kaura Dimau Dikakau Damamusau Wandara Gigama 
+		Korau sukuku_makaka toya_matsafa dakaki_biya_kora kogi_matukar_tayi Gwantal Gado Dano Basilla Rumfar giwa_marin_dawa
+		goje_gaban_gayya Kaigama Gagu katuma_warkin_aiki  
+	}
+	lowborn = {
+		Kakuri Baduku Mallami Maiwafika Mainika Makadi Dillali 
+	}
+	
+	patronym_prefix_son = "patronym_prefix_hausa_male"
+	patronym_prefix_daughter = "patronym_prefix_hausa_female"
+	location_prefix = "patronym_prefix_hausa_male"
+}
+dogon_language_expanded  = {
+
+	color = rgb { 201 77 21 }
+
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = manding_language
+}
+songhai_language_expanded  = {
+
+	color = rgb { 62 174 150 }
+
+	male_names = {
+		Kosoi Yamadao Yosiboi Duro Zenko Bada Fadazu Tib Karbifo kolli_djimbo 
+		Sombo Maidanda Baamoy Kaahar Hasay Harber Farka Boosu Inaahongu Aruhenna Fondo Bonkan Gomni Zangu Jenber 
+		Ceegum Iguma Arubiyoo Hanakuku Guuruu Tondi Wura Nzorfu Arby Fodi
+		name_moses name_muhammad name_ali name_abraham name_abdullah name_abu_bakr Baru Ishak name_david
+	}
+	female_names = {
+		Naamoy Kaamoy Naaber Hawoy Woyber Woyhenna Wura Woyboriya Woyboyro Boori Awasa Fondo Bonkaano Bonkan Ceegum
+		Bibi Kara Waiby Izewai Furjine Bonkoyno Lakkalkano Inaahongu Aruhenna Gomni Zangu
+		name_eve name_fatima
+	}
+	dynasty_names = {
+		Maiga Mumuni Seydu Ka_songhai Gakoy
+	}
+	lowborn = {
+		
+	}
+	
+}
+gurma_language  = {
+
+	color = map_gurma
+	
+	family = gur_language_family
+
+	male_names = {
+		Tontuoriba Lisongi Baahama Yenhamma Wurijuari Bantia
+		Yenkpaari Yembrima Yentema Hampandi Gmarba Wori Gamabu Pangangri Mabungu Bandigoo Wurbendi 
+		Yembuado Baalisongi Baahaama Hamicuuri Yentagma Labidiedo Yempaabu Tintuoriba Hampanli Huntani
+		Simadari Wurabiari Yaaparigu Yendieri Wuraacaari Tidarpo Untani Banydoba Labidiebo Tenin Tokurma 
+		Gima Gori Bogora Kampadiboaghi Kampadi Tantiari Lissoangui Yendabri Bancadi Kambambori Hamtiuri 
+		Kupiendieri 
+	}
+	female_names = {
+		Tenin Pokou Fati Djamilatou Talato Yema Bintou 
+	}
+	dynasty_names = {
+		Buricimba Namuno Tindano Yonli Lamboni Kompaore Koudougou Lankoande Diaba
+	}
+	lowborn = {
+		
+	}
+
+	fallback = mabia_language
+}
+kanuri_language = {  
+###remember to rename kanuri title possibly to shehu, which was the leader of the empire#####
+
+	family = saharan_language_family_expanded
+
+	color = map_kanembu
+	
+	male_names = {
+		Aji Mele Tahir Abatcha Musti Masaa Babagana Fannami Baagonyi Malem Mali Tuja
+		Hamat Koso Kuli Laminu Nur Sadu Taha Taibu Yasin 
+		
+		name_abraham
+		name_adam
+		name_idris
+		name_ishaq
+		name_ishmael
+		name_muhammad
+		name_moses
+		name_john
+		name_abdullah
+		name_gabriel
+		name_abu_bakr
+		name_omar
+		name_osman
+		name_ali
+		
+	}
+	female_names = {
+		Zara Yaaji Bintu Karu Mallams Tuma Sumain Mushe Baana Budu Buttaram Daso
+		name_mary
+		name_amina
+		name_khadija
+		name_aisha
+		name_fatima
+		name_hafsa
+		name_eve
+	}
+	dynasty_names = {
+		  Kai Kuburi Maami Karde Ngalaga Tera Tumaari 
+	}
+	lowborn = {
+		Bama Gonyiri Ajiri Gaidam Dikwa Guzamala Jere Mafonyi Kayeri Zulum Talwari Kalwa Ciromari Gajiram Gubiyo Yale Goyokura Bedem Fowori Kawuri
+		Alinma Sulloma Kaalma Kekema Tela Kafinta Birkila Kattima el_kanemi el_gazali el_bamawi
+	}
+	
+	location_suffix = "location_suffix_kanuri"
+	
+	patronym_suffix_son = "patronym_suffix_kanuri_son"
+	patronym_suffix_daughter = "patronym_suffix_kanuri_daughter"
+}
+
+limba_language = {
+
+	color = rgb { 196 246 91 }
+	
+	male_names = {
+		Sara Thamba Makoo Fatha Yemi Sekuna Simoko Kahota Pindeta Themota Maniyeke Fanka Kantho Sukuba
+		Baniyo Yapoo Fetheta Yandi Kuboli Gbanthan Tenneh Yaraba Seni
+	}
+	female_names = {
+		Sera Kumba Fina Sina Simoko Kahota Maniyeke Fanka Kantho Fetheta Yandi Nama Kathi Simithi Bale Bora
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+}
+somba_language = {
+
+	color = rgb { 208 39 117 }
+	
+	family = gur_language_family
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = mabia_language
+}
+bisa_busa_language= {
+
+	color = rgb { 189 163 195 }
+	
+	family = mande_language_family
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = manding_language
+}
+kainji_language= {
+
+	color = rgb { 247 62 109 }
+	
+	family = central_nigerian_language_family
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		Tukunguna Urakisa Shimbuwa Muroro Azake Biw Bisura Shirabo
+Kibigi Ubutu Ubba Bikutu
+Kashira
+Aogo Bundu Kwacikau
+Kwabukuru Sumaruma Kubyaru
+Tuera Shema Bioro
+Ekushe 
+	}
+	lowborn = {
+		
+	}
+	
+	
+	fallback = jukun_language
+}
+plateau_language= {
+
+	color = rgb { 163 197 43 }
+	
+	family = central_nigerian_language_family
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = jukun_language
+}
+jukun_language= {
+
+	color = rgb { 201 139 40 }
+	
+	family = central_nigerian_language_family
+	
+	male_names = {
+		Apaiku Tabyeh Azhifendi Naisi Avyo Asoh Iskan Uten Zuhweudi Imbasire Amisi Nbosire Nkasire Ndonnima Ufinfkore Akenmsire 
+		Ikumbem Idiambivo Voka Nfkandure Nkimanyen Ihwan Udimbore Ihwen Namuma Idi Nzema Nsirebwa Nzwensire Iskimsi Insewhere 
+		Nkasike Ambisaimu Intenrutsu 
+		Nakpumaikpu Nkpujire Uffi Ukachan Akenmisire Vokasi Nvore Iditere
+	}
+	female_names = {
+		Apaiku Tabyeh Azhifendi Naisi Avyo Asoh Iskan Uten Zuhweudi Imbasire Amisi Nbosire Nkasire Ndonnima Ufinfkore Akenmsire 
+		Ikumbem Idiambivo Voka Nfkandure Nkimanyen Ihwan Udimbore Ihwen Namuma Idi Nzema Nsirebwa Nzwensire Iskimsi Insewhere 
+		Nkasike Ambisaimu Intenrutsu 
+	}
+	dynasty_names = {
+		Afasi Atato Akon
+	}
+	lowborn = {
+		
+	}
+}
+angas_language= {
+
+	color = rgb { 125 174 162 }
+	
+	family = chadic_language_family_expanded
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = hausa_language_expanded
+}
+ibibio_language= {
+
+	color = rgb { 33 187 213 }
+			
+	male_names = {
+		Asukwo Edet Etim Efion Ekpe Anwa Omon Eso Asari Efiom Enan Mkpa Ndaeyo  
+		Emem Ubom Etop Idara Ekom Itoro Eno Idonesit Aniefiok Ibanga Nonkama 
+		Akpan Udo Ufot Esen Okon Urua Ufen Ime Utuk Esuene Uwa Ibok Usua Isinenyin Iko
+	 Essien Nyong Uyai Ifiok Uko Ofim Akang Umana Udeme Ita Asian Akai
+		Bassey Owoidem Abia Atat Akwa Ekpo Inyang Obong
+	}
+	female_names = {
+		Ikwo Arit Atim Afion Orok Eyo Obo Offiong Ntan Utin Ima Etop Idara Ekom Itoro
+		Eno Idonesit Aniefiok Ibanga Mbekenyin Nsese Adiaha Unwa Udonwan Urua Akon 
+		Inwang Ufen Ime Odung Akam Ukut Ibuk Usua Isinenyin Asian Akai Bassey
+		Akan Affiong Ekpo Ekaete Emem Inyang Iquoho
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+}
+grassfields_language = {
+
+	color = rgb { 20 204 118 }
+	
+	family = bantu_language_family
+			
+	male_names = {
+		
+	}
+	female_names = {
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+}
+tikar_language = {
+
+	color = rgb { 148 210 227 }
+	
+	family = northern_bantoid_language_family
+			
+	male_names = {
+		
+	}
+	female_names = {
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+}
+mambila_language = {
+
+	color = rgb { 138 35 164 }
+	
+	family = northern_bantoid_language_family
+			
+	male_names = {
+		
+	}
+	female_names = {
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+}
+mumuye_language = {
+
+	color = rgb { 185 44 149 }
+	
+	family = ngaouan_language_family
+			
+	male_names = {
+		
+	}
+	female_names = {
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+}
+mbum_language = {
+
+	color = rgb { 238 71 99 }
+	
+	family = ngaouan_language_family
+			
+	male_names = {
+		
+	}
+	female_names = {
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+}
+bambukic_language = {
+
+	color = rgb { 62 138 3 }
+	
+	family = ngaouan_language_family
+			
+	male_names = {
+		
+	}
+	female_names = {
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+}
+
+masa_language = {
+	color = rgb { 12 181 128 }
+	
+	family = chadic_language_family_expanded
+			
+	male_names = {
+		
+	}
+	female_names = {
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+
+}
+mandara_language  = {
+
+	color = map_mandara
+	
+	family = chadic_language_family_expanded
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = hausa_language_expanded
+}
+
+east_chadic_language  = {
+
+	color = rgb { 36 86 32 }
+	
+	family = chadic_language_family_expanded
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+	fallback = hausa_language_expanded
+}
+zaghawa_language_expanded = {
+
+	color = map_zaghawa
+	
+	family = saharan_language_family_expanded
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+}
+tebu_language = {
+
+	color = color_culture_fezzan
+	
+	family = saharan_language_family_expanded
+	
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+}
+maban_language= {
+
+	color = map_maba_africa
+		
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+}
+gbaya_language_expanded = {
+
+	color = map_gbaya
+	
+	family = north_volta_language_family
+		
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+}
+mbaka_language = {
+
+	color = map_bomassa
+	
+	family = north_volta_language_family
+		
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+}
+ngbandi_language = {
+
+	color = map_ngbandi
+	
+	family = north_volta_language_family
+		
+	male_names = {
+		
+	}
+	female_names = {
+		
+	}
+	dynasty_names = {
+		
+	}
+	lowborn = {
+		
+	}
+	
+}

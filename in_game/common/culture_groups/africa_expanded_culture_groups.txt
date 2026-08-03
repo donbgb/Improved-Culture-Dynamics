@@ -1,0 +1,47 @@
+﻿# avoid naming the same as Cultures and Languages
+
+manden_group = {}
+
+bisa_busa_group = {}
+
+west_sudanian_group = {}
+
+upper_guinean_group = {}
+
+jallonkadu_group = {}
+
+senegambian_group = {}
+
+maritime_guinean_group = {}
+
+guinean_group = {}
+
+mole_dagbon_group = {}
+
+gurunsi_group = {}
+
+kwa_group = {}
+
+gbe_group = {}
+
+yoruboid_group = {}
+
+lower_niger_group = {}
+
+niger_delta_group = {}
+
+benue_group = {}
+
+central_sudanian_group = {}
+
+chadic_group = {}
+
+plateau_group = {}
+
+borgu_group = {}
+
+mandaran_group = {}
+
+kru_group = {}
+
+bakongo_group = {}

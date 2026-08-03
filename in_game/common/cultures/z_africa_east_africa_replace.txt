@@ -1,0 +1,33 @@
+﻿
+#REPLACE:tatoga_culture = {
+	#language = kalenjin_language
+	
+	#color = color_culture_tatoga
+	
+	#tags = { nilotic_gfx african_gfx }
+
+	#opinions = {
+	#}
+#}
+
+#REPLACE:kalenjin_culture = {
+	#language = kalenjin_language
+	
+	#color = color_culture_kalenjin
+	
+	#tags = { nilotic_gfx african_gfx }
+
+	#opinions = {
+	#}
+#}
+
+#REPLACE:luo_culture = {
+	#language = luo_language
+	
+	#color = color_culture_luo
+	
+	#tags = { nilotic_gfx african_gfx }
+
+	#opinions = {
+	#}
+#}

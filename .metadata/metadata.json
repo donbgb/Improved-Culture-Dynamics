@@ -2,11 +2,10 @@
 	"name":	"Improved Culture Dynamics",
 	"id":	"improvedculturedynamics",
 	"version":	"1.3",
-	"game_id": "eu5",
-	"picture": "thumbnail.png",
 	"supported_game_version":	"1.3",
 	"short_description":	"Improved Culture Dynamics",
 	"tags":	["Gameplay", "Historical", "Balance", "Religion", "Culture & Art", "Events" ],
+	"picture": "thumbnail.png",
 	"relationships":	[],
 	"game_custom_data":	{
 }

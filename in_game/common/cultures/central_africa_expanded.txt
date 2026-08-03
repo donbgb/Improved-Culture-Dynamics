@@ -1,0 +1,87 @@
+﻿
+dondo_culture = {
+	language = kongo_language
+	
+	color = rgb { 237 66 66 }
+	
+	tags = { bantu_gfx african_gfx }
+
+	opinions = {
+		bembe_culture = kindred
+		kakongo = kindred
+		nsudi = kindred
+		solongo = kindred
+		mboma = kindred
+		bazombo = kindred
+		cabinda = kindred
+		vili = kindred
+		yombe = kindred
+		ntandu_culture = kindred
+	}
+	
+	culture_groups = {
+		bakongo_group
+	}
+}
+
+ntandu_culture = {
+	language = kongo_language
+	
+	color = rgb { 121 86 5 }
+	
+	tags = { bantu_gfx african_gfx }
+
+	opinions = {
+		bembe_culture = kindred
+		kakongo = kindred
+		nsudi = kindred
+		solongo = kindred
+		mboma = kindred
+		bazombo = kindred
+		cabinda = kindred
+		vili = kindred
+		yombe = kindred
+		dondo_culture = kindred
+	}
+	
+	culture_groups = {
+		bakongo_group
+	}
+}
+bembe_culture = {
+	language = kongo_language
+	
+	color = rgb { 185 208 210 }
+	
+	tags = { bantu_gfx african_gfx }
+
+	opinions = {
+		ntandu_culture = kindred
+		kakongo = kindred
+		nsudi = kindred
+		solongo = kindred
+		mboma = kindred
+		bazombo = kindred
+		cabinda = kindred
+		vili = kindred
+		yombe = kindred
+		dondo_culture = kindred
+	}
+	
+	culture_groups = {
+		bakongo_group
+	}
+}
+boma_culture = {
+	language = tsogo_language
+	
+	color = rgb { 88 98 40 }
+	
+	tags = { bantu_gfx african_gfx }
+
+	opinions = {
+	}
+	
+	culture_groups = {
+	}
+}
