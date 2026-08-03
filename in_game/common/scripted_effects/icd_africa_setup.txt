@@ -1,6 +1,0 @@
-﻿
-icd_africa_setup = {
-	
-
-
-}
