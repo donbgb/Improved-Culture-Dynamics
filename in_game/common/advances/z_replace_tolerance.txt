@@ -266,7 +266,7 @@ REPLACE:millets = {
 		has_or_had_tag = TUR
 	}
 	
-	tolerance_heathen = 0.5
+	tolerance_heathen = 0.1
 	cultures_capacity = 1
 }
 REPLACE:guj_jain_routes = {
@@ -297,7 +297,7 @@ REPLACE:crossroads_of_religions = {
 		original_capital ?= { continent = continent:asia }
 	}
 
-	tolerance_heathen = 0.5
+	tolerance_heathen = 0.2
 
 	requires = silk_road
 }

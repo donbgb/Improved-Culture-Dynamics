@@ -90,7 +90,7 @@ calvinist.2 = {
 			location:geneve.owner = {
 				trigger_event_silently = {
 					id = calvinist.3
-					days = { 365 900 }
+					months = { 12 25 }
 				}
 			}
 		}
@@ -156,7 +156,7 @@ calvinist.3 = {
 							estate_type = estate_type:nobles_estate
 						}
 					}
-					change_character_religion = religion:anglican
+					change_character_religion = religion:calvinist
 				}
 			}
 		}

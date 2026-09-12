@@ -9,3 +9,37 @@ REPLACE:is_subject = {
 	global_pop_assimilation_speed_modifier = 0
 	global_pop_conversion_speed_modifier = 0
 }
+
+REPLACE:cultural_intermixing_modifier = {
+	game_data = {
+		category = province
+	}
+
+	local_pop_assimilation_speed = 0.002
+}
+
+REPLACE:ws_show_unity_of_faith = {
+	game_data = {
+		category = province
+	}
+	
+	local_unrest = -0.15
+	local_pop_conversion_speed_modifier = 0.05
+}
+
+REPLACE:patronize_orthodox_monastery_modifier = {
+	game_data = {
+		category = country
+		decaying = yes
+	}
+
+	local_pop_conversion_speed_modifier = 0.25
+	local_pop_assimilation_speed_modifier = 0.25
+	local_monthly_prosperity = 0.005
+}
+REPLACE:hw_heretic_conversions_modifier = {
+	game_data = {
+		category = province 
+	}
+	local_pop_conversion_speed_modifier = 0.25
+}

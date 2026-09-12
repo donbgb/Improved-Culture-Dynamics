@@ -155,23 +155,30 @@ icd_anabaptist_polygamy = {
 	}
 
 	opinions = {
+		icd_anabaptist_polygamy = 10
 	}
 }
 
 icd_teetotalism = {
 	religion = anabaptist
+	religion = anglican
 	
 	visible = {
-		has_religious_aspect = religious_aspect:adult_baptism
+		OR = {
+			has_religious_aspect = religious_aspect:adult_baptism
+			NOT = {
+				religion = religion:unitarian
+			}
+		}
 	}
 	
 	modifier = {
 		ban_imports_of_wine = yes
 		ban_imports_of_beer = yes
 		ban_imports_of_liquor = yes
-		global_beer_pop_demand = -0.5
-		global_wine_pop_demand = -0.5
-		global_liquor_pop_demand = -0.5
+		global_beer_pop_demand = -0.75
+		global_wine_pop_demand = -0.75
+		global_liquor_pop_demand = -0.75
 		
 		global_production_efficiency = medium_production_efficiency_bonus
 	}

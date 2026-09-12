@@ -1,0 +1,339 @@
+﻿REPLACE:promote_religion = {
+	ability = mil
+	
+	allow_multiple = yes
+	
+	potential = {
+		num_locations > 0
+		has_game_rule = icd_religious_conversion_vanilla
+	}
+	
+	allow = {
+		religious_unity < 1.0
+		trigger_if = {
+			limit = {
+				has_country_modifier = sco_the_first_congregation
+			}
+			NOT = { religion = religion:catholic }
+		}
+		OR = {
+			modifier:global_nobles_conversion_blocked = no
+			modifier:global_burghers_conversion_blocked = no
+			modifier:global_clergy_conversion_blocked = no
+			modifier:global_peasants_conversion_blocked = no
+		}
+		OR = {
+			modifier:tolerance_heretic < 0
+			modifier:tolerance_heathen < 0
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = religion
+		target_flag = target_religion
+		#for the AI we have an optimisation to only look through religions that are present. Human can look at all...but will have some disabled
+		source_ai_override = actor
+		source_flags_ai_override = include_any_present
+		name = "promote_religion_select_religion"
+		none_available_msg_key = "convert_religion_no_religions"
+		column = {
+			data = name
+		}
+		column = {
+			data = religion_percentage_in_country
+		}
+		default_sort = religion_percentage_in_country
+		visible = {
+			group = scope:actor.religion.group
+			is_religion_enabled = yes
+			OR = {
+				scope:actor.religion = root
+				scope:actor = {
+					religion_percentage_in_country = {
+						religion = root
+						value >= 0.01
+					}
+				}
+			}
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = province
+		source = actor
+		target_flag = target_province
+		name = "promote_religion_select_province"
+		none_available_msg_key = "promote_religion_no_provinces"
+		column = {
+			data = name
+		}
+		column = {
+			data = province_religion_percentage
+		}
+		column = {
+			data = population
+		}
+		default_sort = province_religion_percentage
+		visible = {
+			any_location_in_province = {
+				OR = {
+					NOT = { dominant_religion = owner.religion }
+					local_religious_unity < 1.0
+				}
+			}
+			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_religion interaction_target = target_province } }
+		}
+		map_color = {
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_LOW
+				max_color = define:NMapColors|MAP_COLOR_HIGH
+				factor = "province.religion_percentage(scope:target_religion)"
+			}
+		}
+	}
+
+	is_finished = {
+		scope:target_province = {
+			"religion_percentage(scope:target_religion)" = 1.0
+		}
+	}
+
+	on_activate = {
+		if = {
+			limit = {
+				exists = scope:target_province
+			}
+			scope:target_province = {
+				set_variable = {
+					name = promoting_religion
+					value = scope:target_religion
+				}
+				add_province_modifier = {
+					modifier = icd_promote_religion_province_modifier
+					mode = add_and_extend
+				}
+			}
+		}
+	}
+
+	on_deactivate = {
+		if = {
+			limit = {
+				exists = scope:target_province
+			}
+			scope:target_province = {
+				remove_variable = promoting_religion
+				remove_province_modifier = icd_promote_religion_province_modifier
+			}
+		}
+	}
+
+	location_modifier = {
+		local_pop_conversion_speed = 0.02
+	}
+
+	progress = {
+		scope:target_province = {
+			value = "religion_percentage(scope:target_religion)"
+		}
+	}
+
+	map_marker = {
+		show_for_owner = yes
+	}
+
+	ai_will_do = {
+		add = {
+			desc = "Wrong religion"
+			if = {
+				limit = {
+					exists = scope:target_religion
+					scope:target_religion != scope:actor.religion				
+				}
+				value = -1000
+			}
+		}
+		if = {
+			limit = { exists = scope:target_province }
+			if = {
+				limit = {
+					scope:actor = {
+						has_policy = icd_aljama_communities
+					}
+					scope:target_province = {
+						any_location_in_province = {
+							OR = {
+								religion_group_percentage = {
+									religion_group = religion_group:muslim
+									value > 0
+								}
+								religion_group_percentage = {
+									religion_group = religion_group:israelite_group
+									value > 0
+								}
+							}
+							NOT = {
+								any_pop = {
+									religion != scope:actor.religion
+									religion.group != religion_group:muslim
+									religion.group != religion_group:israelite_group
+									percent > 0.1
+								}
+							}
+						}
+					}
+				}
+				add = -10000
+			}
+			if = {
+				limit = {
+					scope:actor = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = icd_jewish_ghetto
+							has_policy = council_of_three_lands_policy
+						}
+					}
+					scope:target_province = {
+						any_location_in_province = {
+							religion_group_percentage = {
+								religion_group = religion_group:israelite_group
+								value > 0
+							}
+							NOT = {
+								any_pop = {
+									religion != scope:actor.religion
+									religion.group != religion_group:israelite_group
+									percent > 0.1
+								}
+							}
+						}
+					}
+				}
+				add = -10000
+			}
+			if = {
+				limit = {
+					scope:actor = { modifier:tolerance_heathen > -0.5 }
+					scope:target_province = {
+						any_location_in_province = {
+							any_pop = {
+								religion.group != scope:actor.religion.group
+							}
+							NOT = {
+								any_pop = {
+									religion != scope:actor.religion
+									religion.group = scope:actor.religion.group
+									percent > 0.1
+								}
+							}
+						}
+					}
+				}
+				add = -10000
+			}
+			if = {
+				limit = {
+					scope:actor = { 
+						OR = {
+							culture = { has_culture_group = culture_group:carpathian_group }
+							culture = culture:albanian
+							AND = {
+								culture = { has_culture_group = culture_group:greek_group }
+								religion = religion:catholic
+							}
+							has_or_had_tag = VEN
+							has_or_had_tag = NAP
+							has_or_had_tag = ALB
+							has_reform = government_reform:partitio_reform
+							has_policy = minority_rule
+						}
+						religion = religion:catholic
+					}
+					scope:target_province = {
+						dominant_religion = religion:orthodox
+					}
+				}
+				add = -10000
+			}
+			if = {
+				limit = {
+					scope:actor = { religion.group = religion_group:muslim }
+					scope:target_province = {
+						icd_no_local_pagans = yes
+						any_location_in_province = {
+							any_pop = {
+								is_dhimmi = yes
+							}
+							NOT = {
+								any_pop = {
+									religion != scope:actor.religion
+									religion.group = scope:actor.religion.group
+									percent > 0.1
+								}
+							}
+						}
+					}
+				}
+				add = -10000
+			}
+			if = {
+				limit = {
+					scope:actor = { modifier:tolerance_heretic > -0.5 }
+					scope:target_province = {
+						any_location_in_province = {
+							any_pop = {
+								religion != scope:actor.religion
+								religion.group = scope:actor.religion.group
+							}
+							NOT = {
+								any_pop = {
+									religion.group != scope:actor.religion.group
+									percent > 0.1
+								}
+							}
+						}
+					}
+				}
+				add = -10000
+			}
+			if = {
+				limit = {
+					scope:actor = { religion.group = religion_group:muslim }
+					scope:actor = { 
+						modifier:tolerance_heretic > -0.5
+					}
+					scope:target_province = {
+						icd_no_local_pagans = yes
+						any_location_in_province = {
+							any_pop = {
+								is_dhimmi = yes
+							}
+						}
+					}
+				}
+				add = -100000
+			}
+			if = {
+				limit = {
+					scope:actor = { 
+						modifier:tolerance_heretic > -0.5
+						modifier:tolerance_heathen > -0.5
+					}
+				}
+				add = -100000
+			}
+			if = {
+				limit = {
+					scope:target_province = { 
+						religion_percentage = {
+							religion = scope:actor.religion
+							value > 0.9
+						}
+					}
+				}
+				add = -100000
+			}
+		}
+	}
+}

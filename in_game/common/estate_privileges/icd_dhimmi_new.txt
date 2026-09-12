@@ -9,9 +9,6 @@ icd_dhimmi_communities_protection = {
 	}
 	
 	can_revoke = {
-		NOT = { 
-			has_policy = ethnoreligious_integration
-		}
 		hidden_trigger = {
 			OR = {
 				is_human = yes
@@ -49,120 +46,8 @@ icd_dhimmi_communities_protection = {
 	
 	location_modifier = {
 		potential_trigger = {
-			custom_tooltip = {
-				text = icd_dhimmi_communities_trigger_tt
-				OR = {
-					dominant_religion ?= { 
-							group = religion_group:muslim
-						}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:israelite_group
-						}
-						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:christian
-						}
-						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:mandean_group
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:manichaean_group
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:zoroastrian_group
-						}
-						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:dharmic
-						}
-						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:buddhist
-						}
-						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
-					}
-				}
-				OR = {
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:israelite_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:christian
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
-					}
-					
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:mandean_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:manichaean_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:zoroastrian_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:dharmic
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:buddhist
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
-					}
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_asian_group
-					value = 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_european_group
-					value = 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_se_asian_group
-					value = 0
-				}
-			}
+			has_game_rule = icd_religious_conversion_vanilla
+			icd_dhimmi_location_trigger = yes
 		}
 		local_heathen_pop_conversion_speed_modifier = -0.5
 	}
@@ -177,9 +62,6 @@ icd_dhimmi_communities_protection = {
 	country_modifier = {
 		dhimmi_estate_target_satisfaction = small_privilege_target_satisfaction
 		global_dhimmi_estate_power = 1
-	}
-	country_modifier = {
-		tolerance_heathen = 0.25
 	}
 	
 }
@@ -211,120 +93,8 @@ icd_permitted_restoration = {
 	
 	location_modifier = {
 		potential_trigger = {
-			custom_tooltip = {
-				text = icd_dhimmi_communities_trigger_tt
-				OR = {
-					dominant_religion ?= { 
-							group = religion_group:muslim
-						}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:israelite_group
-						}
-						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:christian
-						}
-						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:mandean_group
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:manichaean_group
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:zoroastrian_group
-						}
-						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:dharmic
-						}
-						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:buddhist
-						}
-						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
-					}
-				}
-				OR = {
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:israelite_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:christian
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
-					}
-					
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:mandean_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:manichaean_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:zoroastrian_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:dharmic
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:buddhist
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
-					}
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_asian_group
-					value = 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_european_group
-					value = 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_se_asian_group
-					value = 0
-				}
-			}
+			has_game_rule = icd_religious_conversion_vanilla
+			icd_dhimmi_location_trigger = yes
 		}
 		local_heathen_pop_conversion_speed_modifier = -0.25
 	}
@@ -358,120 +128,8 @@ icd_permission_for_awqaf = {
 
 	location_modifier = {
 		potential_trigger = {
-			custom_tooltip = {
-				text = icd_dhimmi_communities_trigger_tt
-				OR = {
-					dominant_religion ?= { 
-							group = religion_group:muslim
-						}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:israelite_group
-						}
-						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:christian
-						}
-						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:mandean_group
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:manichaean_group
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:zoroastrian_group
-						}
-						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:dharmic
-						}
-						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
-					}
-					AND = {
-						dominant_religion ?= { 
-							group = religion_group:buddhist
-						}
-						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
-					}
-				}
-				OR = {
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:israelite_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:christian
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
-					}
-					
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:mandean_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:manichaean_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:zoroastrian_group
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:dharmic
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
-					}
-					AND = {
-						religion_group_percentage = {
-							religion_group = religion_group:buddhist
-							value > 0.01
-						}
-						owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
-					}
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_asian_group
-					value = 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_european_group
-					value = 0
-				}
-				religion_group_percentage = {
-					religion_group = religion_group:folk_se_asian_group
-					value = 0
-				}
-			}
+			has_game_rule = icd_religious_conversion_vanilla
+			icd_dhimmi_location_trigger = yes
 		}
 		local_heathen_pop_conversion_speed_modifier = -0.25
 	}

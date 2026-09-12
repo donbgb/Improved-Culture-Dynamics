@@ -1,0 +1,160 @@
+﻿namespace = icd_intro_event
+
+
+icd_intro_event.1 = {
+	type = country_event
+	title = icd_intro_event.1.title
+	desc = icd_intro_event.1.desc
+	outcome = neutral
+	image = "gfx/interface/illustrations/icd_illustration.dds"
+
+	trigger = {
+		is_ai = no
+	}
+
+	immediate = {
+		
+	}
+	
+	option = { ###Tell me about religion##
+		name = icd_intro_event.1.a
+		
+		trigger_event_silently = icd_intro_event.2
+	}
+	
+	option = { ###Tell me about culture##
+		name = icd_intro_event.1.b
+		
+		trigger_event_silently = icd_intro_event.3
+	}
+	
+	option = { ###Tell me about tribesmen##
+		name = icd_intro_event.1.c
+		
+		trigger_event_silently = icd_intro_event.4
+	}
+	option = { ###Tell me about reformation##
+		name = icd_intro_event.1.d
+		
+		trigger_event_silently = icd_intro_event.5
+	}
+	option = { ###Tell me about content##
+		name = icd_intro_event.1.e
+		
+		trigger_event_silently = icd_intro_event.6
+	}
+	option = { ###not interested##
+		name = icd_intro_event.1.a
+		
+	}
+}
+
+
+icd_intro_event.2 = { ##Religion##
+	type = country_event
+	title = icd_intro_event.2.title
+	desc = icd_intro_event.2.desc
+	outcome = neutral
+	image = "gfx/interface/illustrations/icd_illustration.dds"
+
+	immediate = {
+		
+	}
+	
+	option = { ###go back##
+		name = icd_intro_event.2.a
+		
+		trigger_event_silently = icd_intro_event.1
+	}
+	
+	option = { ###ok thats enough##
+		name = icd_intro_event.2.b
+	}
+}
+
+icd_intro_event.3 = { ##Culture##
+	type = country_event
+	title = icd_intro_event.3.title
+	desc = icd_intro_event.3.desc
+	outcome = neutral
+	image = "gfx/interface/illustrations/icd_illustration.dds"
+
+	immediate = {
+		
+	}
+	
+	option = { ###go back##
+		name = icd_intro_event.2.a
+		
+		trigger_event_silently = icd_intro_event.1
+	}
+	
+	option = { ###ok thats enough##
+		name = icd_intro_event.2.b
+	}
+}
+
+icd_intro_event.4 = { ##tribesmen##
+	type = country_event
+	title = icd_intro_event.4.title
+	desc = icd_intro_event.4.desc
+	outcome = neutral
+	image = "gfx/interface/illustrations/icd_illustration.dds"
+
+	immediate = {
+		
+	}
+	
+	option = { ###go back##
+		name = icd_intro_event.2.a
+		
+		trigger_event_silently = icd_intro_event.1
+	}
+	
+	option = { ###ok thats enough##
+		name = icd_intro_event.2.b
+	}
+}
+
+icd_intro_event.5 = { ##reformation##
+	type = country_event
+	title = icd_intro_event.5.title
+	desc = icd_intro_event.5.desc
+	outcome = neutral
+	image = "gfx/interface/illustrations/icd_illustration.dds"
+
+	immediate = {
+		
+	}
+	
+	option = { ###go back##
+		name = icd_intro_event.2.a
+		trigger_event_silently = icd_intro_event.1
+	}
+	
+	option = { ###ok thats enough##
+		name = icd_intro_event.2.b
+	}
+}
+
+icd_intro_event.6 = { ##content##
+	type = country_event
+	title = icd_intro_event.6.title
+	desc = icd_intro_event.6.desc
+	outcome = neutral
+	image = "gfx/interface/illustrations/icd_illustration.dds"
+
+	immediate = {
+		
+	}
+	
+	option = { ###go back##
+		name = icd_intro_event.2.a
+		
+		trigger_event_silently = icd_intro_event.1
+	}
+	
+	option = { ###ok thats enough##
+		name = icd_intro_event.2.b
+	}
+}

@@ -45,8 +45,8 @@ REPLACE:anti_heresy_act = {
 	
 	country_modifier = {
 		monthly_towards_spiritualist = societal_value_monthly_move
-		tolerance_heretic = -0.5
-		global_heretic_pop_conversion_speed_modifier = 0.25
+		tolerance_heretic = -1
+		global_pop_conversion_speed_modifier = 0.25
 	}
 
 	years = 2
@@ -98,3 +98,20 @@ REPLACE:feudal_theocracy = {
 	}
 }
 
+REPLACE:warsaw_confederation = {
+	age = age_4_reformation
+    unique = yes
+
+    potential = {
+        has_unlocked_government_reform_trigger = { type = warsaw_confederation }
+    }
+
+	country_modifier = {
+		tolerance_heretic = 2
+		tolerance_heathen = 3.5
+		monthly_towards_humanist = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+
+	years = 3
+}

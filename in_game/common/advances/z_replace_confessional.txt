@@ -3,7 +3,7 @@ REPLACE:confessionalism_advance = {
 	icon = pop_promotion_speed_age_4
 	age = age_4_reformation
 		
-	global_pop_conversion_speed = 0.001
+	global_pop_conversion_speed_modifier = 0.2
 
 	depth = 0
 	

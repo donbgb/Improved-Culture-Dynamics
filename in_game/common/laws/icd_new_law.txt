@@ -51,6 +51,7 @@
 			cultural_influence_modifier = -0.3
 		}
 		potential = {
+			is_colonial_subject = no
 			OR = {
 				AND = {
 					language_percentage_in_country = {
@@ -84,8 +85,8 @@
 					tag = PLE
 				}
 				AND = {
-					culture_percentage_in_country = {
-						culture = root.culture
+					language_percentage_in_country = {
+						language = root.culture.language
 						value <= 0.20
 					}
 					tag = GRG
@@ -105,20 +106,6 @@
 					value = this.dominant_culture
 				}
 			}
-			hidden_effect = {
-				if = {
-					limit = {
-						religion_percentage_in_country = {
-							religion = root.religion
-							value <= 0.05
-						}
-						NOT = {
-							government_type = government_type:theocracy
-						}
-					}
-					add_policy = policy:icd_minority_religion
-				}
-			}
 		}
 		ai_will_do = {
 			value = 750
@@ -130,6 +117,9 @@
 		country_modifier = {
 			global_pop_assimilation_speed_modifier = -0.1
 			cultures_capacity = 1.0
+		}
+		potential = {
+			is_colonial_subject = no
 		}
 		allow = {
 			OR = {
@@ -175,6 +165,9 @@
 			global_pop_assimilation_speed = 0.001
 			global_integration_speed_modifier = 0.1
 		}
+		potential = {
+			is_colonial_subject = no
+		}
 		allow = {
 			OR = {
 				language_percentage_in_country = {
@@ -208,7 +201,7 @@
 						any_location_in_province = {
 							culture_percentage = {
 								culture = root.culture
-								value >= 0.2
+								value >= 0.15
 							}
 						}
 					}
@@ -231,6 +224,9 @@
 			global_pop_assimilation_speed = 0.001
 			global_estate_target_satisfaction = small_permanent_target_satisfaction
 		}
+		potential = {
+			is_colonial_subject = no
+		}
 		allow = {
 			OR = {
 				language_percentage_in_country = {
@@ -243,11 +239,9 @@
 				}
 			}
 			OR = {
-				has_policy = unitary_administration
-				has_policy = absolute_rulership
 				has_policy = civic_nationhood
-				societal_value:centralization_vs_decentralization < -70
-				"estate_power(estate_type:crown_estate)" > 0.5
+				societal_value:centralization_vs_decentralization < -90
+				modifier:allow_cabinet_assimilate_area = yes
 			}
 		}
 		
@@ -259,7 +253,7 @@
 		}
 		months = 1
 		ai_will_do = {
-			value = 480
+			value = 0
 		}
 	}
 	
@@ -280,6 +274,7 @@
 				culture = culture:ashkenazi
 				culture = culture:czech
 			}
+			is_colonial_subject = no
 		}
 		allow = {
 			OR = {
@@ -320,6 +315,7 @@
 			NOT = {
 				culture = culture:italki
 			}
+			is_colonial_subject = no
 		}
 		allow = {
 			OR = {
@@ -360,6 +356,7 @@
 			NOT = {
 				culture = culture:syriac_culture
 			}
+			is_colonial_subject = no
 		}
 		allow = {
 			OR = {
@@ -407,6 +404,7 @@
 				culture = culture:yerle_qaliq_culture
 				culture = culture:uzbek_culture
 			}
+			is_colonial_subject = no
 		}
 		allow = {
 			OR = {
@@ -434,35 +432,22 @@
 		}
 	}
 	
-
-	ethnoreligious_integration = {
+	dialects_of_mandarin = {
 		price = icd_nothing_price
 		country_modifier = {
 			global_pop_assimilation_speed = 0.001
-			global_estate_target_satisfaction = small_permanent_target_satisfaction
+			cultures_capacity = 0.25
+			diplomatic_reputation = diplomatic_reputation_weak_bonus
+			add_tolerated_culture_cost_modifier = -0.5
 		}
 		potential = {
-			NOT = {
-				culture = { has_culture_group = culture_group:iranian_group }
-				culture = culture:lower_egyptian_culture
-				culture = culture:levantine_culture
-				culture = culture:iraqi_culture
-			}
 			OR = {
-				religion.group = religion_group:muslim
-				religion = religion:judaism
-				religion = religion:samaritanism
-				religion = religion:mandeaism
+				culture.language = language:mandarin_language
+				culture = culture:jin_culture
 			}
+			is_colonial_subject = no
 		}
 		allow = {
-			OR = {
-				AND = {
-					country_has_estate = estate_type:dhimmi_estate
-					has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
-				}
-				has_policy = icd_custodians
-			}
 			OR = {
 				language_percentage_in_country = {
 					language = root.culture.language
@@ -476,62 +461,12 @@
 		}
 		
 		on_activate = {
-			custom_tooltip = ethnic_communities_tt
+			custom_tooltip = dialects_of_mandarin_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
-			every_province = {
-				limit = {
-					NOT = {
-						any_location_in_province = {
-							any_neighbor_location = {
-								dominant_culture ?= root.culture
-							}
-						}
-						culture_percentage = {
-							culture = root.culture
-							value >= 0.1
-						}
-						dominant_culture ?= root.culture
-						any_location_in_province = {
-							culture_percentage = {
-								culture = root.culture
-								value >= 0.2
-							}
-						}
-					}
-				}
-				set_variable = {
-					name = promoting_culture
-					value = this.dominant_culture
-				}
-			}
+			icd_region_culture_law_mandarin = yes
 		}
-		location_modifier = { ##turks###
-			potential_trigger = {
-				custom_tooltip = {
-					text = icd_ethnoreligious_integration_tt
-					OR = {
-						AND = {
-							"culture_group_percentage(culture_group:turkic_group)" > "religion_group_percentage(religion_group:muslim)"
-							OR = {	
-								owner = { culture = { has_culture_group = culture_group:jewish_group } }
-								owner = { culture = { has_culture_group = culture_group:turkic_group } }
-							}
-						}
-						AND = {
-							"culture_percentage(owner.culture)" > "religion_group_percentage(religion_group:muslim)"
-							owner = {
-								NOT = { 
-									culture = { has_culture_group = culture_group:turkic_group } 
-								}
-							}
-						}
-					}
-				}
-			}
-			local_heathen_pop_conversion_speed_modifier = 3.5
-		}	
 		months = 1
 		ai_will_do = {
 			value = 700

@@ -322,5 +322,499 @@ icd_culture_assimilation_mode = {
 	
 	color_and_names_refresh_counters = { Month }
 	
+}
 
+icd_tolerance_heretic_map = {
+
+	map_color = {
+		if = {
+			limit = {
+				has_owner = yes
+			}
+
+			if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heretic >= 1.5
+					}
+				}
+				value = define:NMapColors|MAP_COLOR_MAX
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heretic >= 0.5
+						modifier:tolerance_heretic < 1.5
+					}
+				}
+				lerp = {
+					min_color = define:NMapColors|MAP_COLOR_HIGH
+					max_color = define:NMapColors|MAP_COLOR_MAX
+					factor = {
+						value = owner.modifier:tolerance_heretic
+						subtract = 0.5
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heretic >= -0.5
+						modifier:tolerance_heretic < 0.5
+					}
+				}
+				lerp = {
+					min_color = define:NMapColors|MAP_COLOR_MID
+					max_color = define:NMapColors|MAP_COLOR_HIGH
+					factor = {
+						value = owner.modifier:tolerance_heretic
+						add = 0.5
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heretic >= -1.5
+						modifier:tolerance_heretic < -0.5
+					}
+				}
+				lerp = {
+					min_color = define:NMapColors|MAP_COLOR_MID
+					max_color = define:NMapColors|MAP_COLOR_LOW
+					factor = {
+						value = owner.modifier:tolerance_heretic
+						multiply = -1
+						subtract = 0.5
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heretic >= -2.5
+						modifier:tolerance_heretic < -1.5
+					}
+				}
+				lerp = {
+					min_color = define:NMapColors|MAP_COLOR_LOW
+					max_color = define:NMapColors|MAP_COLOR_NULL
+					factor = {
+						value = owner.modifier:tolerance_heretic
+						multiply = -1
+						subtract = 1.5
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heretic < -2.5
+					}
+				}
+				value = define:NMapColors|MAP_COLOR_NULL
+			}
+			
+		}
+	}
+
+	tooltip_key = {
+		if = {
+			limit = {
+				has_owner = yes
+			}
+			value = ICD_HERETIC_TOLERANCE_SHOW
+		}
+	
+	}
+
+	map_markers = {
+		all = no
+	}
+
+	small_map_names = location
+	medium_map_names = country
+	large_map_names = country
+
+	small_tooltip_context = location
+	medium_tooltip_context = location
+	large_tooltip_context = location
+
+	flatmap_behaviour = Always
+	use_fow = no
+
+	category = government
+	index = 0
+
+	gradient_parameters = {
+		zoom_step = @zoom_step_near
+
+		gradient_alpha_inside = 	@data_gradient_alpha_inside
+		gradient_alpha_outside = 	@data_gradient_alpha_outside
+		gradient_width = 			@data_gradient_width
+		gradient_color_mult =		@data_gradient_color_mult
+		edge_width = 				@data_edge_width
+		edge_sharpness = 			@data_edge_sharpness
+		edge_alpha = 				@data_edge_alpha
+		edge_color_mult = 			@data_edge_color_mult
+		before_lighting_blend =		@data_before_lighting_blend
+		after_lighting_blend =		@data_after_lighting_blend
+	}
+	
+	flatmap_gradient_parameters = {
+		zoom_step = @zoom_step_flatmap
+
+		gradient_alpha_inside = 	@flatmap_gradient_alpha_inside
+		gradient_alpha_outside = 	@flatmap_gradient_alpha_outside
+		gradient_width = 			@flatmap_gradient_width
+		gradient_color_mult =		@flatmap_gradient_color_mult
+		edge_width = 				@flatmap_edge_width
+		edge_sharpness = 			@flatmap_edge_sharpness
+		edge_alpha = 				@flatmap_edge_alpha
+		edge_color_mult = 			@flatmap_edge_color_mult
+		before_lighting_blend =		@flatmap_before_lighting_blend
+		after_lighting_blend =		@flatmap_after_lighting_blend
+	}
+	flatmap_gradient_parameters = {
+		zoom_step = @zoom_step_flatmap_far
+
+		gradient_alpha_inside = 	@flatmap_far_gradient_alpha_inside
+		gradient_alpha_outside = 	@flatmap_far_gradient_alpha_outside
+		gradient_width = 			@flatmap_far_gradient_width 
+		gradient_color_mult =		@flatmap_far_gradient_color_mult 
+		edge_width = 				@flatmap_far_edge_width 		
+		edge_sharpness = 			@flatmap_far_edge_sharpness 	
+		edge_alpha = 				@flatmap_far_edge_alpha 	
+		edge_color_mult = 			@flatmap_far_edge_color_mult 
+		before_lighting_blend =		@flatmap_far_before_lighting_blend 
+		after_lighting_blend =		@flatmap_far_after_lighting_blend 
+	}
+	
+	refresh_colors_on_selection_change = yes
+	color_refresh_counters = { Month }
+
+}
+
+icd_tolerance_heathen_map = {
+
+	map_color = {
+		if = {
+			limit = {
+				has_owner = yes
+			}
+			if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heathen >= 1.5
+					}
+				}
+				value = define:NMapColors|MAP_COLOR_MAX
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heathen >= 0.5
+						modifier:tolerance_heathen < 1.5
+					}
+				}
+				lerp = {
+					min_color = define:NMapColors|MAP_COLOR_HIGH
+					max_color = define:NMapColors|MAP_COLOR_MAX
+					factor = {
+						value = owner.modifier:tolerance_heathen
+						subtract = 0.5
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heathen >= -0.5
+						modifier:tolerance_heathen < 0.5
+					}
+				}
+				lerp = {
+					min_color = define:NMapColors|MAP_COLOR_MID
+					max_color = define:NMapColors|MAP_COLOR_HIGH
+					factor = {
+						value = owner.modifier:tolerance_heathen
+						add = 0.5
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heathen >= -1.5
+						modifier:tolerance_heathen < -0.5
+					}
+				}
+				lerp = {
+					min_color = define:NMapColors|MAP_COLOR_MID
+					max_color = define:NMapColors|MAP_COLOR_LOW
+					factor = {
+						value = owner.modifier:tolerance_heathen
+						multiply = -1
+						subtract = 0.5
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heathen >= -2.5
+						modifier:tolerance_heathen < -1.5
+					}
+				}
+				lerp = {
+					min_color = define:NMapColors|MAP_COLOR_LOW
+					max_color = define:NMapColors|MAP_COLOR_NULL
+					factor = {
+						value = owner.modifier:tolerance_heathen
+						multiply = -1
+						subtract = 1.5
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					owner = {
+						modifier:tolerance_heathen < -2.5
+					}
+				}
+				value = define:NMapColors|MAP_COLOR_NULL
+			}
+		}
+	}
+
+	tooltip_key = {
+		if = {
+			limit = {
+				has_owner = yes
+			}
+			value = ICD_HEATHEN_TOLERANCE_SHOW
+		}
+	
+	}
+
+	map_markers = {
+		all = no
+	}
+
+	small_map_names = location
+	medium_map_names = country
+	large_map_names = country
+
+	small_tooltip_context = location
+	medium_tooltip_context = location
+	large_tooltip_context = location
+
+	flatmap_behaviour = Always
+	use_fow = no
+
+	category = government
+	index = 0
+
+	gradient_parameters = {
+		zoom_step = @zoom_step_near
+
+		gradient_alpha_inside = 	@data_gradient_alpha_inside
+		gradient_alpha_outside = 	@data_gradient_alpha_outside
+		gradient_width = 			@data_gradient_width
+		gradient_color_mult =		@data_gradient_color_mult
+		edge_width = 				@data_edge_width
+		edge_sharpness = 			@data_edge_sharpness
+		edge_alpha = 				@data_edge_alpha
+		edge_color_mult = 			@data_edge_color_mult
+		before_lighting_blend =		@data_before_lighting_blend
+		after_lighting_blend =		@data_after_lighting_blend
+	}
+	
+	flatmap_gradient_parameters = {
+		zoom_step = @zoom_step_flatmap
+
+		gradient_alpha_inside = 	@flatmap_gradient_alpha_inside
+		gradient_alpha_outside = 	@flatmap_gradient_alpha_outside
+		gradient_width = 			@flatmap_gradient_width
+		gradient_color_mult =		@flatmap_gradient_color_mult
+		edge_width = 				@flatmap_edge_width
+		edge_sharpness = 			@flatmap_edge_sharpness
+		edge_alpha = 				@flatmap_edge_alpha
+		edge_color_mult = 			@flatmap_edge_color_mult
+		before_lighting_blend =		@flatmap_before_lighting_blend
+		after_lighting_blend =		@flatmap_after_lighting_blend
+	}
+	flatmap_gradient_parameters = {
+		zoom_step = @zoom_step_flatmap_far
+
+		gradient_alpha_inside = 	@flatmap_far_gradient_alpha_inside
+		gradient_alpha_outside = 	@flatmap_far_gradient_alpha_outside
+		gradient_width = 			@flatmap_far_gradient_width 
+		gradient_color_mult =		@flatmap_far_gradient_color_mult 
+		edge_width = 				@flatmap_far_edge_width 		
+		edge_sharpness = 			@flatmap_far_edge_sharpness 	
+		edge_alpha = 				@flatmap_far_edge_alpha 	
+		edge_color_mult = 			@flatmap_far_edge_color_mult 
+		before_lighting_blend =		@flatmap_far_before_lighting_blend 
+		after_lighting_blend =		@flatmap_far_after_lighting_blend 
+	}
+	
+	refresh_colors_on_selection_change = yes
+	color_refresh_counters = { Month }
+
+}
+
+icd_conversion_map = {
+	map_color = {
+		
+		if = {
+			limit = { 
+				has_owner = yes
+				is_land = yes
+				icd_conversion_rate_province < 1
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_LOW
+				max_color = define:NMapColors|MAP_COLOR_MID
+				factor = {
+					value = icd_conversion_rate_province
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_owner = yes
+				is_land = yes
+				icd_conversion_rate_province >= 1
+				icd_conversion_rate_province < 2
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_MID
+				max_color = define:NMapColors|MAP_COLOR_HIGH
+				factor = {
+					value = icd_conversion_rate_province
+					subtract = 1
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_owner = yes
+				is_land = yes
+				icd_conversion_rate_province >= 2
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_HIGH
+				max_color = define:NMapColors|MAP_COLOR_MAX
+				factor = {
+					value = icd_conversion_rate_province
+					subtract = 2
+				}
+			}
+		}
+	}
+	
+	secondary_map_color = {
+		if = {
+			limit = { 
+				province ?= {
+					has_province_modifier = icd_promote_religion_province_modifier
+				}
+			}
+			value = black
+		}
+		
+	}
+	
+	tooltip_key = {
+		if = {
+			limit = {
+				has_owner = yes
+			}
+			value = icd_test_coerce
+		}
+	
+	}
+	
+	legend_key = {
+		desc = "icd_culture_assimilation_mode_orange"
+		color = black
+	}
+	
+	small_map_names = location
+	medium_map_names = country
+	large_map_names = country
+
+	small_tooltip_context = location
+	medium_tooltip_context = location
+	large_tooltip_context = location
+	
+	use_fow = no
+
+	category = demography
+	index = 0
+
+	map_markers = {
+		all = no
+	}
+
+	gradient_parameters = {
+		zoom_step = @zoom_step_near
+
+		gradient_alpha_inside = 	@filled_near_gradient_alpha_inside
+		gradient_alpha_outside = 	@filled_near_gradient_alpha_outside
+		gradient_width = 			@filled_near_gradient_width
+		gradient_color_mult =		@filled_near_gradient_color_mult
+		edge_width = 				@filled_near_edge_width
+		edge_sharpness = 			@filled_near_edge_sharpness
+		edge_alpha = 				@filled_near_edge_alpha
+		edge_color_mult = 			@filled_near_edge_color_mult
+		before_lighting_blend =		@filled_near_before_lighting_blend
+		after_lighting_blend =		@filled_near_after_lighting_blend
+	}
+	gradient_parameters = {
+		zoom_step = @zoom_step_far
+
+		gradient_alpha_inside = 	@filled_far_gradient_alpha_inside
+		gradient_alpha_outside = 	@filled_far_gradient_alpha_outside
+		gradient_width = 			@filled_far_gradient_width
+		gradient_color_mult =		@filled_far_gradient_color_mult
+		edge_width = 				@filled_far_edge_width
+		edge_sharpness = 			@filled_far_edge_sharpness
+		edge_alpha = 				@filled_far_edge_alpha
+		edge_color_mult = 			@filled_far_edge_color_mult
+		before_lighting_blend =		@filled_far_before_lighting_blend
+		after_lighting_blend =		@filled_far_after_lighting_blend
+	}
+	flatmap_gradient_parameters = {
+		zoom_step = @zoom_step_flatmap
+
+		gradient_alpha_inside = 	@flatmap_gradient_alpha_inside
+		gradient_alpha_outside = 	@flatmap_gradient_alpha_outside
+		gradient_width = 			@flatmap_gradient_width
+		gradient_color_mult =		@flatmap_gradient_color_mult
+		edge_width = 				@flatmap_edge_width
+		edge_sharpness = 			@flatmap_edge_sharpness
+		edge_alpha = 				@flatmap_edge_alpha
+		edge_color_mult = 			@flatmap_edge_color_mult
+		before_lighting_blend =		@flatmap_before_lighting_blend
+		after_lighting_blend =		@flatmap_after_lighting_blend
+	}
+	flatmap_gradient_parameters = {
+		zoom_step = @zoom_step_flatmap_far
+
+		gradient_alpha_inside = 	@flatmap_far_gradient_alpha_inside
+		gradient_alpha_outside = 	@flatmap_far_gradient_alpha_outside
+		gradient_width = 			@flatmap_far_gradient_width 
+		gradient_color_mult =		@flatmap_far_gradient_color_mult 
+		edge_width = 				@flatmap_far_edge_width 		
+		edge_sharpness = 			@flatmap_far_edge_sharpness 	
+		edge_alpha = 				@flatmap_far_edge_alpha 	
+		edge_color_mult = 			@flatmap_far_edge_color_mult 
+		before_lighting_blend =		@flatmap_far_before_lighting_blend 
+		after_lighting_blend =		@flatmap_far_after_lighting_blend 
+	}
+	
+	color_and_names_refresh_counters = { Month }
+	
 }

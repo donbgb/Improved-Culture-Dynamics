@@ -1,0 +1,202 @@
+﻿
+icd_num_provinces_for_conversion = {
+	if = {
+		limit = {
+			num_locations > 0
+			NOT = {
+				has_policy = icd_secular_state
+				has_policy = icd_yassa_tolerance
+				has_policy = icd_sulh_i_kul
+				has_policy = icd_custodians
+			}
+		}
+		value = num_provinces
+		divide = 10
+		round_to = 1
+		min = modifier:government_size
+		max = 15
+		if = {
+			limit = {
+				can_see_situation = situation:reformation
+				situation:reformation = {
+					situation_is_active = yes
+				}
+			}
+			add = 2
+		}
+	}
+	
+	every_province = {
+		if = {
+			limit = {
+				has_province_modifier = icd_promote_religion_province_modifier
+			}
+			subtract = 1
+		}
+	}
+}
+icd_communal_conversion_rate = {
+	value = 0.05
+	
+	if = {
+		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
+		add = {
+			value = 0.05
+			multiply = owner.modifier:global_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
+		}
+	}
+	if = {
+		limit = { location ?= { modifier:local_pop_conversion_speed_modifier > 0 } }
+		add = {
+			value = 0.05
+			multiply = location.modifier:local_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
+		}
+	}
+	subtract = {
+		value = 0.05
+		multiply = {
+			value = 1
+			subtract = location.local_control
+		}
+	}
+	if = {
+		limit = {
+			pop_type = pop_type:tribesmen
+		}
+		divide = 4
+	}
+	if = {
+		limit = {
+			owner ?= {
+				has_variable = icd_bosnian_conversion
+			}
+			culture = culture:bosnian
+		}
+		add = 0.25
+	}
+	if = {
+		limit = {
+			owner ?= {
+				has_variable = icd_sindhi_conversion
+			}
+			culture = culture:sindhi
+			religion = religion:sammitiya
+		}
+		add = 0.35
+	}
+	
+	
+}
+
+icd_voluntary_conversion_rate = {
+	value = 0.1 ##1 is equal to 0.1%, 0.1 equals to 0.01%#
+	
+	if = {
+		limit = { pop_satisfaction > 0.25 }
+		add = {
+			value = pop_satisfaction
+			subtract = 0.25
+			divide = 2 ##100% satisfaction equal to 0.375%, or 0.0375###
+		}
+	}
+	
+	if = {
+		add = {
+			value = owner.modifier:tolerance_heathen
+			min = 0
+		}
+	}
+	
+	if = {
+		add = {
+			value = owner.modifier:tolerance_heretic
+			min = 0
+		}
+	}
+
+	
+	if = {
+		limit = {
+			owner ?= {
+				country_has_estate = estate_type:dhimmi_estate
+			}
+		}
+		add = "owner.estate(estate_type:dhimmi_estate).num_privileges"
+		divide = 2   ##two equals 0.1###
+	}
+	
+	if = {
+		limit = {
+			owner ?= {
+				OR = {
+					has_policy = icd_secular_state
+					has_policy = icd_sulh_i_kul
+				}
+			}
+		}
+		add = 2
+	}
+	
+	if = {
+		limit = {
+			location = {
+				area = area:levant_area
+			}
+		}
+		divide = 6
+	}
+}
+
+
+icd_coercive_conversion_rate = {
+	value = 0.1
+
+	if = {
+		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
+		add = {
+			value = 0.15
+			multiply = owner.modifier:global_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
+		}
+	}
+	if = {
+		limit = { location ?= { modifier:local_pop_conversion_speed_modifier > 0 }	}
+		add = {
+			value = 0.15
+			multiply = location.modifier:local_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
+		}
+	}
+	subtract = {
+		value = 0.15
+		divide = 100
+		multiply = {
+			value = 1
+			subtract = location.local_control
+		}
+	}
+}
+
+
+icd_conversion_rate_province = {
+	value = 1
+	if = {
+		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
+		add = {
+			value = 1
+			multiply = owner.modifier:global_pop_conversion_speed_modifier
+		}
+	}
+	if = {
+		limit = { modifier:local_pop_conversion_speed_modifier > 0 }
+		add = {
+			value = 1
+			multiply = modifier:local_pop_conversion_speed_modifier
+		}
+	}
+	subtract = {
+		value = 1
+		multiply = {
+			value = 1
+			subtract = local_control
+		}
+	}
+}

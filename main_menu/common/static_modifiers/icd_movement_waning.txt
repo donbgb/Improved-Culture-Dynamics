@@ -31,10 +31,3 @@ ruthenian_culture_movement_momentum_waning_locally = {
 }
 
 
-azeri_culture_movement_momentum_waning_locally = {
-	game_data = {
-		category = movement
-	}
-    local_azeri_culture_movement_growth_modifier = -1
-}
-

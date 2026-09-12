@@ -1,0 +1,448 @@
+﻿
+icd_religious_view_setup = {
+	
+	religion:sanjiao = {
+		religion:mahayana = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+	}
+	
+	religion:tibetan_buddhism = {
+		religion:bon = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+		religion:tengri = {
+			set_religious_view = {
+				target = prev
+				value = positive
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+		religion:southern_mahayana = {
+			reverse_set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+	}
+
+	religion:tengri = {
+		religion:nestorianism = {
+			reverse_set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+		religion:sunni = {
+			reverse_set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+		religion:shia = {
+			reverse_set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+	}
+	
+	religion:judaism = {
+		religion:catholic = {
+			set_religious_view = {
+				target = prev
+				value = neutral
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = neutral
+			}
+		}
+		religion:sunni = {
+			set_religious_view = {
+				target = prev
+				value = neutral
+			}
+		}
+		religion:shia = {
+			set_religious_view = {
+				target = prev
+				value = neutral
+			}
+		}
+	}
+
+
+	religion:sunni = {
+		religion:shia = {
+			set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+		religion:shia = {
+			reverse_set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+	}
+	
+	every_religion = {
+		limit = {
+			OR = {
+				this = religion:shinto
+				this = religion:mahayana
+				this = religion:sanjiao
+			}
+		}
+		every_religion = {
+			limit = {
+				this != prev
+				religious_view = { target = prev value = neutral }
+				OR = {
+					this = religion:shinto
+					this = religion:mahayana
+					this = religion:sanjiao
+				}
+			}
+			set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+	}
+	
+	every_religion = {
+		limit = {
+			OR = {
+				this = religion:catholic
+				this = religion:orthodox
+				this = religion:miaphysite
+				this = religion:nestorianism
+			}
+		}
+		every_religion = {
+			limit = {
+				this != prev
+				religious_view = { target = prev value = neutral }
+				OR = {
+					this = religion:catholic
+					this = religion:orthodox
+					this = religion:miaphysite
+					this = religion:nestorianism
+				}
+			}
+			set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+	}
+	
+	religion:calvinist = {
+		set_religious_view = {
+			target = religion:anglican
+			value = positive
+		}
+		reverse_set_religious_view = {
+			target = religion:anglican
+			value = positive
+		} 
+	}
+
+	religion:hindu = {
+		set_religious_view = {
+			target = religion:jain
+			value = kindred
+		}
+		reverse_set_religious_view = {
+			target = religion:jain
+			value = kindred
+		}
+		set_religious_view = {
+			target = religion:nusantaran_hindu
+			value = kindred
+		}
+		reverse_set_religious_view = {
+			target = religion:nusantaran_hindu
+			value = kindred
+		}
+		set_religious_view = {
+			target = religion:sikhism
+			value = positive
+		}
+	}
+
+	every_religion = {
+		limit = {
+			OR = {
+				group = religion_group:christian
+				this != religion:unitarian
+				this != religion:catharism
+				this != religion:paulicianism
+				this != religion:bogomilism
+			}
+		}
+		set_religious_view = {
+			target = religion:unitarian
+			value = enemy
+		}
+	}
+	
+	every_religion = {
+		limit = {
+			OR = {
+				group = religion_group:dharmic
+				this = religion:sammitiya
+			}
+		}
+		every_religion = {
+			limit = {
+				this != prev
+				religious_view = { target = prev value = neutral }
+				OR = {
+					group = religion_group:dharmic
+					this = religion:sammitiya
+				}
+			}
+			set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+	}
+
+
+	religion:catholic = {
+		every_religion = {
+			limit = {
+				this != prev
+				OR = {
+					this = religion:lutheran
+					this = religion:calvinist
+					this = religion:anglican
+					this = religion:anabaptist
+				}
+			}
+			set_religious_view = {
+				target = prev
+				value = enemy
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = enemy
+			}
+		}
+	}
+
+	every_religion = {
+		limit = {
+			OR = {
+				this = religion:orthodox
+				this = religion:miaphysite
+				this = religion:nestorianism
+			}
+		}
+		every_religion = {
+			limit = {
+				this != prev
+				OR = {
+					this = religion:lutheran
+					this = religion:calvinist
+					this = religion:anglican
+					this = religion:anabaptist
+				}
+			}
+			set_religious_view = {
+				target = prev
+				value = negative
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = negative
+			}
+		}
+	}
+
+	religion:sunni = {
+		religion:sanjiao = {
+			set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+		religion:mahayana = {
+			set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+	}
+
+	every_religion = {
+		limit = {
+			OR = {
+				group = religion_group:folk_se_asian_group
+				group = religion_group:folk_asian_group
+			}
+		}
+		every_religion = {
+			limit = {
+				religious_view = { target = prev value = neutral }
+				OR = {
+					this = religion:theravada
+					this = religion:southern_mahayana
+					this = religion:sanjiao
+					this = religion:shinto
+					this = religion:mahayana
+					group = religion_group:dharmic
+				}
+			}
+			set_religious_view = {
+				target = prev
+				value = positive
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+		every_religion = {
+			limit = {
+				reverse_religious_view = { target = prev value = neutral }
+				OR = {
+					this = religion:theravada
+					this = religion:southern_mahayana
+					this = religion:sanjiao
+					this = religion:shinto
+					this = religion:mahayana
+					group = religion_group:dharmic
+				}
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = positive
+			}
+		}
+	}
+
+
+	every_religion = {
+		limit = {
+			OR = {
+				group = religion_group:christian
+			}
+		}
+		every_religion = {
+			limit = {
+				this != prev
+				group = religion_group:muslim
+			}
+			set_religious_view = {
+				target = prev
+				value = neutral
+			}
+		}
+	}
+
+	every_religion = {
+		limit = {
+			OR = {
+				group = religion_group:muslim
+			}
+		}
+		every_religion = {
+			limit = {
+				this != prev
+				OR = {
+					this = religion:catholic
+					this = religion:orthodox
+				}
+			}
+			set_religious_view = {
+				target = prev
+				value = negative
+			}
+		}
+	}
+
+	religion:zoroastrian = {
+		set_religious_view = {
+			target = religion:yazidism
+			value = positive
+		}
+		reverse_set_religious_view = {
+			target = religion:yazidism
+			value = positive
+		}
+		reverse_set_religious_view = {
+			target = religion:hindu
+			value = positive
+		}
+	}
+
+	religion:hussite = {
+		set_religious_view = {
+			target = religion:lutheran
+			value = positive
+		}
+	}
+	
+	every_religion = {
+		limit = {
+			OR = {
+				group = religion_group:folk_african_group
+				group = religion_group:folk_argentinian_group
+				group = religion_group:folk_aridoamerica_group
+				group = religion_group:folk_asian_group
+				group = religion_group:folk_australian_group
+				group = religion_group:folk_brazilian_group
+				group = religion_group:folk_caribbean_group
+				group = religion_group:folk_central_american_group
+				group = religion_group:tonal_group
+				group = religion_group:folk_european_group
+				group = religion_group:folk_melanesian_group
+				group = religion_group:folk_micronesian_group
+				group = religion_group:folk_north_american_group
+				group = religion_group:folk_papuan_group
+				group = religion_group:folk_permic_group
+				group = religion_group:folk_peruvian_group
+				group = religion_group:folk_polynesian_group
+				group = religion_group:folk_se_asian_group
+				group = religion_group:folk_south_american_group
+			}
+		}
+		every_religion = {
+			limit = {
+				religious_view = { target = prev value >= neutral }
+				OR = {
+					group = religion_group:christian
+					group = religion_group:muslim
+				}
+			}
+			set_religious_view = {
+				target = prev
+				value = enemy
+			}
+		}
+	}
+
+}

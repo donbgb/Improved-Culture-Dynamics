@@ -110,20 +110,22 @@
 	}	
 	self_governing_institutions = {
 		country_modifier = {
-			cultures_capacity = 0.5
-			add_accepted_culture_cost_modifier = -0.5
-			global_monthly_development = 0.0005
+			cultures_capacity = 1.0
+			add_accepted_culture_cost_modifier = -0.1
+			global_monthly_development = 0.0001
 			global_pop_assimilation_speed_modifier = -0.8
 			global_pop_conversion_speed_modifier = -0.5
 			monthly_towards_humanist = societal_value_minor_monthly_move
+			tolerance_heretic = 0.25
+			tolerance_heathen = 0.25
 		}
 		potential = {
 		}
 		allow = {
-			OR = {
-				has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
-				has_policy = minority_rule
-				has_policy = regional_autonomy
+			NOT = {
+				has_policy = monocultural_opportunity
+				has_policy = colonial_culture
+				has_policy = monolingual_courts
 			}
 		}
 		estate_preferences = {
@@ -132,7 +134,26 @@
 		years = 2
 		
 		ai_will_do = {
-			value = 200
+			value = 100
+			if = {
+				limit = {
+					OR = {
+						tag = BOH
+						tag = HAB
+						culture = { has_culture_group = culture_group:caucasian_group }
+						culture = { has_culture_group = culture_group:iranian_group }
+						capital.sub_continent = sub_continent:west_africa
+						capital.sub_continent = sub_continent:central_africa
+						capital.sub_continent = sub_continent:east_africa
+						capital.sub_continent = sub_continent:south_east_asia
+					}
+				}
+				add = 300
+			}
+			else = {
+				add = -500
+			}
+			
 		}
 		
 	}

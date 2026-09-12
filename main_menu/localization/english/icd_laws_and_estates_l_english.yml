@@ -58,10 +58,7 @@
  
  icd_jewish_charter: "Jewish Charter"
  icd_jewish_charter_desc: "By enacting a charter that protects the rights of Jewish communities in our territory, including legal protection, rights of residence, freedom of trade, and religious autonomy, we can ensure that both our towns and the local Jewish communities prosper."
-  
- standardised_system_of_education: "Standardised Education"
- standardised_system_of_education_desc: "A singular standardised system of education will permit us to not only greatly improve the acess that all of our people have to education but also ensure that we are promoting a singular culture that reflects our state's values."
-
+ 
  national_identity: "National Identity"
  national_identity_desc: "One state, one nation. We have become aware of our unity and our identity, and must spread it if we wish to hold to greater territory."
  
@@ -98,16 +95,12 @@
  
  icd_abolished_inquisition: "Inquisition Abolished"
  icd_abolished_inquisition_desc: "The inquisition has been abolished by decree and no longer has any power or authority over our territory."
- icd_distinct_civilizations_tt: "Where there is a community of a major religion:"
- icd_faiths_of_the_folk_tt: "Where [pops] of our [primary_culture|e] outnumber [pops|e] of our [religion|e]:" 
- icd_faiths_of_the_folk_tt_two: "Where [pops] of our [primary_culture|e] are equal to or fewer in number than [pops|e] of our [religion|e]:" 
- icd_ecumenic_traditions_tt: "Where there is an [ShowReligionAdjective('orthodox')] or [ShowReligionAdjective('catholic')] community and no other heretics:"
- icd_jewish_ghetto_tt: "Where there is a [ShowReligionAdjective('judaism')] community and no pagans:"
- icd_jewish_charter_tt: "Where there is a [ShowReligionAdjective('judaism')] community and no pagans:"
- icd_muslim_morerias_tt: "Where there is a [ShowReligionGroupAdjective('muslim')] or [ShowReligionAdjective('judaism')] community:"
- 
- ethnoreligious_integration: "Ethnoreligious Integration"
- ethnoreligious_integration_desc: "Our culture and our Muslim religion are inevitably tied. As we expand to the east and to the west, other cultures with different religions will likely be far more easier to convert if we assimilate them first." 
+ icd_ecumenic_traditions_tt: "[ShowReligionAdjective('orthodox')], [ShowReligionAdjective('catholic')], [ShowReligionAdjective('nestorianism')] and [ShowReligionAdjective('miaphysite')] are [protected_faiths|e]:"
+ icd_jewish_ghetto_tt: "[ShowReligionName('judaism')] is a [protected_religion|e]"
+ icd_jewish_charter_tt: "[ShowReligionName('judaism')] is a [protected_religion|e]"
+ icd_aljama_communities_tt: "[ShowReligionGroupName('muslim')] and [ShowReligionName('judaism')] are [protected_religions|e]"
+ icd_abrahamic_communities_tt: "[ShowReligionGroupName('muslim')], [ShowReligionGroupName('christian')] and [ShowReligionName('judaism')] are [protected_religions|e]"
+ icd_zoroastrian_communities_tt: "[ShowReligionName('zoroastrian')] is a [protected_religion|e]"
  
  icd_vlach_law: "Vlach Law"
  icd_vlach_law_desc: "By permitting our Vlach subjects to follow Romanian common law, we can respect their traditional way of life and profit from it through the animal goods their pastoralism brings to neighbouring communities." 
@@ -145,11 +138,11 @@
  icd_lingering_german_communities_desc: "Despite having ceased to accept German settlers and migrants, those Germans that have already found a place in our society remain a powerful political and cultural group. If we seek to integrate them into our polity, we will need to curtail a few of their privileges."
 
  ecumenic_traditions: "Ecumenic Traditions"
- ecumenic_traditions_desc: "Societal order and our state's acceptance of different religions has led to the assimilation and unison of peoples belonging to different religious communities."
- 
+ ecumenic_traditions_desc: "We sit on the frontier of the [ShowReligionAdjective('catholic')], [ShowReligionAdjective('orthodox')], [ShowReligionAdjective('nestorianism')] and [ShowReligionAdjective('miaphysite')] worlds. We have learnt to tolerate and accept some religious differences between these traditions, while denying new heresies."
  
  jewish_banned_tt: "We have not decided to expel or remove protections from our Jewish population"
  
+ icd_dharmic_coexistence_tt: "Every location with [ShowReligionAdjective('zoroastrian')] [pops|e]."
  
  icd_romani_privilege_tt: "Every [location|e] with [ShowCultureName('romani_culture')], [ShowCultureName('domari_culture')] or [ShowCultureName('lomari_culture')] [ShowPopTypeName('tribesmen')]:"
  icd_romani_slaves: "Romani Slaves"
@@ -160,7 +153,7 @@
  icd_romani_craftsmen_desc: "The Romani are treated as a distinct professional class. They are still heavily scrutinised and restricted in their activity, but are otherwise permitted to openly engage in various trades such as gunsmithing, smelting, tin-plating, sieve-making and others." 
  
  icd_dhimmi_communities_protection: "Contract of Protection"
- icd_dhimmi_communities_protection_desc: "A [ShowReligionGroupAdjective('muslim')] state and its [ShowEstateTypeName('dhimmi_estate')] subjects are bound by a contract of protection - the ʿaqd al-dhimma. Per the contract, the [ShowEstateTypeName('dhimmi_estate')] are not to be coerced into any faith and must be allowed to practice their religion freely and in safety. In return, they must pay the jizya tax and follow principles that ensure they show respect towards their [ShowReligionGroupAdjective('muslim')] sovereign. The question, however, is to what extent these protections should be upheld and which communities should be deserving of said protections. Deciding which faiths are part of the [ShowEstateTypeName('dhimmi_estate')] and whether they should have their faith fully protected is a question only our state will be able to answer."
+ icd_dhimmi_communities_protection_desc: "A [ShowReligionGroupAdjective('muslim')] state and its [ShowEstateTypeName('dhimmi_estate')] subjects are bound by a contract of protection - the ʿaqd al-dhimma. Per the contract, the [ShowEstateTypeName('dhimmi_estate')] are not to be coerced into any faith and must be allowed to practice their religion freely and in safety. In return, they must pay the jizya tax and follow principles that ensure they show respect towards their [ShowReligionGroupAdjective('muslim')] sovereign. Privileges given to the [ShowEstateTypeName('dhimmi_estate')] will usually reduce conversion. However, [ShowEstateTypeName('dhimmi_estate')] will also experience [voluntary_conversions|e] in smaller numbers once a year."
  icd_dhimmi_communities_trigger_tt: "Every [location|e] where a [ShowEstateTypeName('dhimmi_estate')] community is present:"
  icd_dhimmi_communities_allow_tt: "Must recognise the [ShowEstateTypeName('dhimmi_estate')]"
  icd_dhimmi_communities_revoke_tt: "Can only be revoked if no [ShowEstateTypeName('dhimmi_estate')] are recognised by the state."
@@ -177,45 +170,36 @@
  icd_druze_emirs: "Hereditary Levantine Emirs"
  icd_druze_emirs_desc: "By permitting Iqta appointments in Mount Lebanon, Jabal al-Druze, Jabal Amil and surrounding regions to become effectively hereditary, being passed from brother to brother and father to son amongst local Levantine Shia, Druze and Maronite dynasties, we ensure that we have powerful allies in this part of the Levant. They will be much more willing to support us militarily in return for their religious and political autonomy."
  
- icd_ethnoreligious_integration_tt: "Every location where our [primary_culture|e] outnumbers [ShowReligionGroupAdjective('muslim')]s:"
+ icd_ethnoreligious_integration_tt: "Where our [primary_culture|e] outnumbers our [religion_group|e]:"
  
  icd_tolerance_own: "State and Religion"
  icd_tolerance_own_desc: "The relationship between the state and its primary religion must be structured."
- icd_sanction_of_faith: "Sanctioned through Religion"
- icd_sanction_of_faith_desc: "Our religion legitimises and cements the political authority of our state and our ruler's authority."
- icd_confessional_state: "Confessional State"
- icd_confessional_state_desc: "One religion for one state. It is our sovereign right to impose and uphold our faith, as our nation and our beliefs are inevitably intertwined. The religion of the government shapes the religion of the governed."
+ icd_custodians: "Custodian People"
+ icd_custodians_desc: "Our role in this world is not to spread the word and convert, but to be a moral guide to those who adhere to lesser religions. We are custodians of the real faith, protecting it and nurturing it until the end times. Only in the end times, shall our religion prevail over others."
+ icd_ethnic_religion: "Ethnic Religion"
+ icd_ethnic_religion_desc: "Our religion is profoundly tied to our culture and ethnicity, and lacks a formal organization that would permit missionary activities beyond our culture's borders."
  icd_secular_state: "Secular State"
  icd_secular_state_desc: "The separation of church and state is a fundamental principle in our government, with religion no longer interfering with public functions."
+ icd_yassa_tolerance: "Yassa Pragmatism"
+ icd_yassa_tolerance_desc: "Our state lacks a formal mandated religion, upholding a form of nomadic pragmatism tied to the Yassa code. So long as our laws are followed, even our fellow countrymen are free to believe whatever they want."
+ icd_sulh_i_kul: "Ṣulḥ-i-kul"
+ icd_sulh_i_kul_desc: "The policy of sulḥ-i-kul ('universal peace') is the applied political manifestation of the theology of Dīn-i Ilāhī. It recognises the ruler as a representative of all religions - all of which deserve to be practiced freely and all who are to be represented politically."
+ 
+ 
+ 
+ 
+ 
  
  icd_proselytism_heathen: "Proselytization of Heathens"
  icd_proselytism_heathen_desc: "Our state openly cooperates with attempts of proselytism, trying to guide religious deviants into the true faith."
- icd_repressive_conversion_heathen: "Coercive Proselytization of Heathens"
- icd_repressive_conversion_heathen_desc: "Adopting our religion is no longer a choice. Those that disagree with our faith must be coerced and threatened into converting."
  icd_proselytism_heretic: "Proselytization of Heretics"
  icd_proselytism_heretic_desc: ""Our state openly cooperates with attempts of proselytism, trying to guide religious deviants into the true faith."
- icd_repressive_conversion_heretic: "Coercive Proselytization of Heretics"
- icd_repressive_conversion_heretic_desc: "Adopting our religion is no longer a choice. Those that disagree with our faith must be coerced and threatened into converting."
- icd_syncretic_persuasion: "Syncretic Persuasion"
- icd_syncretic_persuasion_desc: "It is faith that unites us, not language or ethnicity. Religion traverses the boundaries and limits of culture, and our faith must at times adopt to local traditions and customs rather than the contrary."
- icd_distinct_civilizations: "Separation of Civilizations"
- icd_distinct_civilizations_desc: "Each cultural civilization, even if we deem it inferior to ours, should be permitted to keep its own history and its own religion. The conversion of heathens extends only to those who lack a religion we deem to be truly organised."
- icd_integrated_religions_policy: "Accepted Yíjiào"
- icd_integrated_religions_policy_desc: "Some foreign religions have proven themselves an important and integral element in our state, such that they deserve to be recognised and protected."
- icd_protected_faiths_policy: "Protected Communities"
- icd_protected_faiths_policy_desc: "The large number of heathens in our state creates a need for us to protect their religion in order to avoid social and political disorder."
  icd_aljama_communities: "Aljama Communities"
  icd_aljama_communities_desc: "Jewish and Muslim communities are permitted to live in separate quarters from most people- juderías and morerías, where they are given some degree of religious and political autonomy in agreements with local bishops."
- icd_sulh_i_kul: "Ṣulḥ-i-kul"
- icd_sulh_i_kul_desc: "The policy of sulḥ-i-kul ('universal peace') is the applied political manifestation of the theology of Dīn-i Ilāhī. It recognises the ruler as a representative of all religions - all of which deserve to be practiced freely and all who are to be represented politically."
  icd_jewish_ghetto: "Jewish Ghettos"
  icd_jewish_ghetto_desc: "Jewish people can remain in our territory undisturbed but are confined to living in segregated districts. They are forbidden from participating in most professions, and are forced to wear distinctive clothes."
- light_unto_the_nations: "Light unto the Nations"
- light_unto_the_nations_desc: "Judaism does not need to be spread through evangelical work and gentiles need not be made Jewish. Rather, the role of the Jew is to serve as a teacher and guide - to mentor the lesser faiths spiritually and morally rather than eradicating them."
  icd_exalted_dhimmi: "Primacy of the Dhimmi"
  icd_exalted_dhimmi_desc: "The dhimmi are to be treated with the utmost care and principle. No opportunity is to be denied to them and no right is to truly be kept away from their reaches."
- icd_yassa_tolerance: "Tolerance of the Yassa"
- icd_yassa_tolerance_desc: "The Yassa mandates that so long as its laws are followed, all peoples are permitted to believe in what they wish and practice whichever religions they desire."
  icd_inquisition: "Inquisition"
  icd_inquisition_desc: "Religious policy towards heretics in our state has been transferred to an inquisition."
  icd_liberty_of_conscience: "Liberty of Conscience"
@@ -228,32 +212,48 @@
  icd_dharmic_coexistence_desc: "Our Dharmic religions have a history of existing in similar social and cultural spheres and interacting with each other openly. Though occasional violence and intolerance does occur, these can be averted through careful policy"
  icd_islamic_orthopraxy: "Islamic Orthopraxy"
  icd_islamic_orthopraxy_desc: "Our state has experienced strong influences from the different branches of Islam. So long as the Five Pillars of Islam are respected and practiced, we need not be necessarily concerned about specific creeds and beliefs."
- icd_faiths_of_the_folk: "Interconnected Folk Beliefs"
- icd_faiths_of_the_folk_desc: "Our religion does not hold exclusivist ideals. To practice our faith is to practice our culture, and much like there are many forms of culture in the world, there can be many faiths tied to each one. So long as they do not deviate too aggressively from our worldview, we may tolerate different religions in our society just as we tolerate other cultures."
  icd_tolerance_heathen_law: "State and Heathens"
  icd_tolerance_heathen_law_desc: "The relationship between the state and heathens who deviate from its religion must be structured."
  icd_tolerance_heretic_law: "State and Heretics"
  icd_tolerance_heretic_law_desc: "The relationship between the state and heretics who deviate from its creed must be structured."
  
- icd_custodians: "Custodians of the Faith"
- icd_custodians_desc: "Our role in this world is not to spread the word and convert, but to be a moral guide and teacher to those who adhere to lesser forms of religion. Only in the end times, shall our faith prevail."
- icd_city_of_faiths: "Haven of the Reformation"
- icd_city_of_faiths_desc: "Many Christian faiths shall be welcomed in our city, and all shall have the same right to be practiced."
- icd_minority_religion: "Minoritarian Religion"
- icd_minority_religion_desc: "Our state is ruled by a cultural-religious minority. Not only are we outnumbered in terms of language and culture, our faith will also likely struggle to spread among our subjects."
- icd_god_monarchy: "Deified Monarch"
- icd_god_monarchy_desc: "Our ruler is not only a representative of the divine or legitimised by it; our ruler is one of the divine - a living deity."
+ icd_city_of_faiths: "Rejection of Transubstiation Pledge"
+ icd_city_of_faiths_desc: "So long as the doctrine of transubstantiation is rejected and loyalty is pledged to the monarch, all Protestant faiths are welcome and accepted in our country."
  icd_privatization_of_religion: "Privatization of Religion"
  icd_privatization_of_religion_desc: "A state guided by Confucian values must not tolerate the spread of superstitions and the power of those who spread it. Buddhist monasteries and Daoist temples are to be systematically closed, their clergy is to be tightly restricted, and religion is to be transformed into an exclusively private practice."
  
  por_inquisition_policy: "Portuguese Inquisition"
  por_inquisition_policy_desc: "An inquisition modelled on the Spanish, organised and governed through the state but staffed primarily by clerical agents, bureaucratic officials and members of the nobility known as familiares."
  
- icd_minority_religion_tt: "Will block other [policies|e] from being chosen so long as it is valid"
- 
+ icd_liberty_of_conscience_tt: "[heretic|e] [religions|e] are treated as [protected_religions|e]"
  
  dialects_of_tatar: "Plural Tatar Identities"
  dialects_of_tatar_desc: "There are many kinds of Tatars in the world, and though we represent only a specific kind of Tatar, we recognise and appreciate the differences that exist between all of us."
  dialects_of_tatar_tt: "With this policy, pops of Tatar cultures are not assimilated. Pops that are not Tatar are assimilated to a neighbouring Tatar culture. The Promote Culture cabinet action or the Marking cabinet action can override this."
  
+ icd_cultural_hegemon_mass_assimilation: "May use the [ShowPolicyName('monocultural_opportunity')] [policy|e]"
+
+ dialects_of_mandarin: "Plural Mandarin Identities"
+ dialects_of_mandarin_desc: "There are many kinds of Mandarin-speaking Chinese in the world, and though we represent only a specific kind of Mandarin-speaking Chinese, we recognise and appreciate the differences that exist between all of us."
+ dialects_of_mandarin_tt: "With this policy, pops of Mandarin-speaking Chinese cultures are not assimilated. Pops that are not Mandarin-speaking Chinese are assimilated to a neighbouring Mandarin-speaking Chinese culture. The Promote Culture cabinet action or the Marking cabinet action can override this."
+ 
+ icd_abrahamic_communities: "Abrahamic Communities"
+ icd_abrahamic_communities_desc: "The existence of minorities with Abrahamic religions, though potentially destabilizing due to their universalist beliefs, has been largely accepted in our society."
+ icd_zoroastrian_communities: "Zoroastrian Communities"
+ icd_zoroastrian_communities_desc: "The existence of Zoroastrian minorities has been largely accepted in our society. Zoroastrians are free to practice their beliefs and rituals, and will not be harmed."
+ icd_loyal_clergies_administration: "Assemblies of Loyal Clergies"
+ icd_loyal_clergies_administration_desc: "Rather than try to convert or expel [heathens|e], we will simply subvert their religious institutions, making them loyal branches of our state. These [heathens|e] may practice the religion they want, but they will do so while upholding loyalty to our state."
+ 
+ icd_bureau_of_buddhist_and_tibetan_affairs: "Bureau of Buddhist and Tibetan Affairs"
+ icd_bureau_of_buddhist_and_tibetan_affairs_desc: "All Buddhists in our society are administered by a Bureau that upholds the supremacy of Tibetan Buddhism and uses lamas as governmnental agents. This permits us greater oversight and involvement with religion, but it may upset non-Tibetan Buddhists."
+ icd_imperial_patronage: "Imperial Patronage"
+ icd_imperial_patronage_desc: "Everything under Heaven is bound to the ruler, who often sponsors the clergy and religious institutions of many distinct religions. These distinct religions are subservient to the ruler, but may otherwise maintain their practices so long as they do not pose a threat or act in an openly hostile manner to our society."
+ 
+ icd_sanction_of_faith: "Sanctioned State"
+ icd_sanction_of_faith_desc: "The state is sanctioned by religion and a religious mandate."
+
+ icd_moriscos_banned_tt: "Muslims expelled"
+
+
+
 

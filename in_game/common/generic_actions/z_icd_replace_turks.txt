@@ -2,7 +2,7 @@
 	type = situation
 	show_message = no
 	potential = {
-		scope:actor = {
+		scope:actor ?= {
 			has_variable = enable_turkic_migration_variable
 			culture = { has_culture_group = culture_group:turkic_group }
 		}
@@ -84,7 +84,7 @@
 		}
 		enabled = {
 			NOT = {
-				dominant_culture = root.culture
+				dominant_culture ?= scope:actor.culture
 			}
 		}
 	}
@@ -97,6 +97,16 @@
 		}
 		else = {
 			custom_tooltip = roto_turkic_migration_tt
+		}
+		scope:target_province_destination = {
+			set_variable = {
+				name = promoting_culture
+				value = scope:actor.culture
+			}
+			set_variable = {
+				name = no_reapplying_promotion
+				years = 5
+			}
 		}
 	}
 
@@ -131,6 +141,22 @@
 				add = {
 					desc = "cultural_intermixing_modifier"
 					value = -50
+				}
+			}
+			if = {
+				limit = {
+					scope:target_province_destination = { 
+						region = region:balkan_region
+						NOT = {
+							province_definition = province_definition:constantinople_province
+							province_definition = province_definition:edirne_province
+							province_definition = province_definition:dardanelles_province
+						}
+					}
+				}
+
+				add = {
+					value = -100
 				}
 			}
 		}

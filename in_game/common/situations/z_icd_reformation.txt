@@ -57,11 +57,11 @@
 						area = area:brandenburg_area
 					}
 					modifier = {
-						add = 35
+						add = 40
 						area = area:upper_saxony_area
 					}
 					modifier = {
-						add = 40
+						add = 80
 						region = region:north_german_region
 					}
 					modifier = {
@@ -77,19 +77,19 @@
 						region = region:france_region
 					}
 					modifier = {
-						add = -10.5
+						add = -30.5
 						area = area:flanders_area
 					}
 					modifier = {
-						add = -10.5
+						add = -30.5
 						area = area:brabant_area
 					}
 					modifier = {
-						add = -10.5
+						add = -30.5
 						area = area:holland_area
 					}
 					modifier = {
-						add = -10.5
+						add = -30.5
 						area = area:friesland_area
 					}
 					modifier = {
@@ -207,6 +207,25 @@
 
 	on_monthly = {
 		# bible translations
+		if = {
+			limit = {
+				situation:reformation = {
+					years_since_situation_start >= 35
+				}
+			}
+			every_country = {
+				limit = {
+					any_owned_location = {
+						has_location_modifier = icd_religious_zeal
+					}
+				}
+				every_owned_location = {
+					remove_location_modifier = icd_religious_zeal
+				}
+				trigger_event_non_silently = icd_reformation_push.7
+			}
+		}
+		
 		random_country = {
 			limit = {
 				religion = religion:catholic
@@ -233,6 +252,41 @@
 			trigger_event_silently = icd_reformation_push.4
 		}
 		
+		every_country = {
+			limit = {
+				religion.group = religion_group:christian
+			}
+			every_character = {
+				limit = {
+					is_target_in_global_variable_list = {
+						name = reformer_list
+						target = this
+					}
+					religion != owner.religion
+					is_alive = yes
+					is_ruler = no
+					is_regent = no
+					is_heir = no
+				}
+				add_character_modifier = {
+					modifier = icd_protestant_in_wrong_country
+					years = -1
+					mode = add_and_extend
+				}
+			}
+			every_character = {
+				limit = {
+					is_target_in_global_variable_list = {
+						name = reformer_list
+						target = this
+					}
+					religion = owner.religion
+					has_character_modifier = icd_protestant_in_wrong_country
+					is_alive = yes
+				}
+				remove_character_modifier = icd_protestant_in_wrong_country
+			}
+		}
 
 		#Historical Reformers of the Faith
 		#Lutherans
@@ -579,6 +633,31 @@
 			}
 		}
 		
+		location:riga = { ##andreas knopken##
+			if = {
+				limit = {
+					NOT = {
+						has_variable = received_reformer
+					}
+				}
+			}
+			owner ?= {
+				if = {
+					limit = {
+						current_year >= 1521
+						current_year <= 1539
+						religion.group = religion_group:christian
+					}
+					random_list = {
+						30 = {
+							trigger_event_non_silently = icd_reformed.11
+						}
+						70 = {  }
+					}
+				}
+			}
+		}
+		
 		location:zurich = { ##Swiss Brethren Conrad##
 			if = {
 				limit = {
@@ -892,7 +971,7 @@
 							religion = religion:catholic
 						}
 						any_owned_location = {
-							dominant_religion.group = religion_group:christian
+							dominant_religion = { group = religion_group:christian }
 							dominant_religion != prev.religion
 						}
 						any_neighbor_country = {

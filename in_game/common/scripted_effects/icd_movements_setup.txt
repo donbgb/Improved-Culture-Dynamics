@@ -39,11 +39,23 @@ icd_movements_setup = {
 			order_by = { value = 1 }
 			spread_to_location = {
 				location = location:erbil
-				supporters_percent = 0.1
+				supporters_percent = 0.01
 			}
 			spread_to_location = {
 				location = location:kirkuk
-				supporters_percent = 0.1
+				supporters_percent = 0.01
+			}
+			spread_to_location = {
+				location = location:tabriz
+				supporters_percent = 0.05
+			}
+			spread_to_location = {
+				location = location:soltaniyeh
+				supporters_percent = 0.05
+			}
+			spread_to_location = {
+				location = location:shamkir
+				supporters_percent = 0.05
 			}
 		}
 	}

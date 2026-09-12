@@ -1,0 +1,203 @@
+﻿
+namespace = flavor_plc
+
+scripted_trigger can_target_livonian_lands = {
+	country_economical_base > {
+		value = ROOT.country_economical_base
+	}
+}
+
+# Fate of the Livonian Confederation - Powerful Nobility
+flavor_plc.2000 = {
+	hide_portraits = yes
+	type = country_event
+	title = flavor_plc.2000.title
+	desc = flavor_plc.2000.desc
+	outcome = neutral
+	historical_info = flavor_plc.2000.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = LIV
+		from = 1450.4.1
+		to = 1821.1.1
+		monthly_chance = 10
+	}
+
+	trigger = {
+		is_ai = yes
+		is_subject = no
+		OR = {
+			NOT = { country_exists = c:TEU }
+			c:TEU = { is_subject = yes }
+		}
+		"estate_power(estate_type:nobles_estate)" >= 0.25
+		trigger_if = {
+			limit = {
+				country_exists = c:PLC
+				any_neighbor_country = {
+					tag = PLC
+				}
+				c:PLC = {
+					religion = root.religion
+				}
+			}
+			c:PLC = { save_temporary_scope_as = polish_country }
+		}
+		trigger_else_if = {
+			limit = {
+				country_exists = c:POL
+				any_neighbor_country = {
+					tag = POL
+				}
+				c:POL = {
+					religion = root.religion
+				}
+			}
+			c:POL = { save_temporary_scope_as = polish_country }
+		}
+		trigger_else_if = {
+			limit = {
+				country_exists = c:LIT
+				any_neighbor_country = {
+					tag = LIT
+				}
+				c:LIT = {
+					religion = root.religion
+				}
+			}
+			c:LIT = { save_temporary_scope_as = polish_country }
+		}
+		trigger_else = {
+			always = no
+		}
+		OR = {
+			c:DAN ?= {
+				can_target_livonian_lands = yes
+			}
+			c:SWE ?= {
+				can_target_livonian_lands = yes
+			}
+			any_neighbor_country = {
+				NOR = {
+					c:SWE ?= {
+						this = prev
+					}
+					c:DAN ?= {
+						this = prev
+					}
+					this = scope:polish_country
+				}
+				can_target_livonian_lands = yes
+			}
+		}
+	}
+
+	illustration_tags = {
+        10 = angry
+        10 = interior
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		if = {
+			limit = {
+				country_exists = c:PLC
+			}
+			c:PLC = { save_scope_as = polish_country }
+		}
+		else = {
+			c:POL = { save_scope_as = polish_country }
+		}
+		random_list = {
+			10 = {
+				trigger = {
+					country_exists = c:DAN
+				}
+				c:DAN = { save_scope_as = other_country }
+			}
+			10 = {
+				trigger = {
+					country_exists = c:SWE
+				}
+				c:SWE = { save_scope_as = other_country }
+			}
+			10 = {
+				trigger = {
+					any_neighbor_country = {
+						NOR = {
+							c:SWE ?= {
+								this = prev
+							}
+							c:DAN ?= {
+								this = prev
+							}
+							this = scope:polish_country
+						}
+						can_target_livonian_lands = yes
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						NOR = {
+							c:SWE ?= {
+								this = prev
+							}
+							c:DAN ?= {
+								this = prev
+							}
+							this = scope:polish_country
+						}
+						can_target_livonian_lands = yes
+					}
+					save_scope_as = other_country
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:RUS ?= {
+					can_target_livonian_lands = yes
+				}
+			}
+			random = {
+				chance = 75
+				c:RUS = { save_scope_as = other_country }
+			}
+		}
+		save_scope_as = livonian_scope
+	}
+
+	option = {
+		name = flavor_plc.2000.a
+
+		historical_option = yes
+
+		change_societal_value = {
+			type = centralization_vs_decentralization
+			value = societal_value_large_move_to_left
+		}
+
+		scope:polish_country = {
+			trigger_event_non_silently = {
+				id = flavor_plc.2001
+				days = { 30 60 }
+			}
+		}
+	}
+	option = {
+		name = flavor_plc.2000.b
+
+		add_estate_satisfaction = {
+			type = estate_type:nobles_estate
+			value = estate_satisfaction_extreme_bonus
+		}
+
+		scope:other_country = {
+			trigger_event_non_silently = {
+				id = flavor_plc.2001
+				days = { 30 60 }
+			}
+		}
+	}
+}

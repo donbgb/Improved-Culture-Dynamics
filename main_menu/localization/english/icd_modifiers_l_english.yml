@@ -65,18 +65,18 @@
  MODIFIER_TYPE_DESC_national_azeri_culture_movement_growth_modifier: "Culture Movement Modifier"
  MODIFIER_TYPE_NAME_local_azeri_culture_movement_growth_modifier: "Local Azeri Culture Movement Growth Modifier"
  MODIFIER_TYPE_DESC_local_azeri_culture_movement_growth_modifier: "Culture Movement Modifier"
- MODIFIER_TYPE_NAME_national_turkification_culture_movement_resistance_modifier: "National turkification culture movement resistance modifier"
+ MODIFIER_TYPE_NAME_national_turkification_culture_movement_resistance_modifier: "Eastern Turco-Mongol Synthesis resistance modifier"
  MODIFIER_TYPE_DESC_national_turkification_culture_movement_resistance_modifier: "Write a desc"
- MODIFIER_TYPE_NAME_local_turkification_culture_movement_resistance_modifier: "Local turkification culture movement resistance modifier"
+ MODIFIER_TYPE_NAME_local_turkification_culture_movement_resistance_modifier: "Eastern Turco-Mongol Synthesis resistance modifier"
  MODIFIER_TYPE_DESC_local_turkification_culture_movement_resistance_modifier: "Write a desc"
- MODIFIER_TYPE_NAME_national_turkification_culture_movement_growth_modifier: "National turkification culture movement growth modifier"
+ MODIFIER_TYPE_NAME_national_turkification_culture_movement_growth_modifier: "Eastern Turco-Mongol Synthesis growth modifier"
  MODIFIER_TYPE_DESC_national_turkification_culture_movement_growth_modifier: "Write a desc"
- MODIFIER_TYPE_NAME_local_turkification_culture_movement_growth_modifier: "Local turkification culture movement growth modifier"
+ MODIFIER_TYPE_NAME_local_turkification_culture_movement_growth_modifier: "Eastern Turco-Mongol Synthesis growth modifier"
  MODIFIER_TYPE_DESC_local_turkification_culture_movement_growth_modifier: "Write a desc"
 
 
  azeri_culture_movement: "Azerification of Adharis"
- azeri_culture_movement_desc: "The migration of Turks into the Caucasus has caused a gradual transformation of Adhari culture. Adhari people increasingly speak the Turkic Azeri language and adopt Turkic customs. All Adhari pops will gradually become Azeri over time, unless they are ruled by fellow Adharis, Iranians that either accept them or do not accept the Azeri culture, or countries that accept Adhari but do not accept Azeri."
+ azeri_culture_movement_desc: "The migration of Turks into the Caucasus has caused a gradual transformation of Adhari culture. Adhari people increasingly speak the Turkic Azeri language and adopt Turkic customs. All Adhari pops will gradually become Azeri over time, unless they are ruled by fellow Adharis, Iranians that accept them or do not accept the Azeri culture, or countries that accept Adhari but do not accept Azeri."
  azeri_culture_movement_location_modifier: "Azeri Culture Movement Location Modifier"
  dutch_culture_movement: "Dutch Convergence"
  dutch_culture_movement_desc: "The creation of the Netherlands will lead to the formation of a distinct political culture associated with it. The primary culture of the Netherland's founding states will adopt this new identity first, partly followed by other cultures of the Low Countries. Once the formation of this identity begins, related cultures that sit outside the Netherlands will not adopt the identity so readily."
@@ -91,16 +91,21 @@
  ruthenian_culture_movement_desc: "The establishment of a united Ruthenia has brought the unification of distinct East Slavic dialects under a larger umbrella of Ruthenian identity. A new identity and culture will form among the East Slavs that are accepted by the Ruthenian state, but will exclude peoples that have not been brought under Ruthenian authority."
  ruthenian_culture_movement_location_modifier: "Ruthenian Culture Movement Location Modifier"
  
- turkification_culture_movement: "Turkification of Mongols"
- turkification_culture_movement_desc: "The intermixing of Turkish and Mongol culture has led to the formation of a distinct Turco-Mongol identity. Over time, Mongols that are not governed by a Mongol government that can defend their interests, will adopt the Turkish language and a Turkic identity." 
- turkification_culture_movement_location_modifier: "Turkification of Mongols Location Modifier"
- turkification_culture_movement_tt: "The Turkification of Mongols has not begun."
+ turkification_culture_movement: "Eastern Turco-Mongol Tradition"
+ turkification_culture_movement_desc: "The intermixing of Turkish and Mongol culture has led to the formation of a distinct Turco-Mongol identity. Over time, Mongols that are not governed by a Mongol government that can defend their interests, will adopt Turkic languages and a Turkic identity. In Iran and Central Asia, this is often translated as becoming Turkmen" 
+ turkification_culture_movement_location_modifier: "Eastern Turco-Mongol Tradition Location Modifier"
+ turkification_culture_movement_tt: "The Eastern Turco-Mongol Tradition has not begun."
+ 
+ western_turkification_culture_movement: "Western Turco-Mongol Tradition"
+ western_turkification_culture_movement_desc: "The intermixing of Turkish and Mongol culture has led to the formation of a distinct Turco-Mongol identity. Over time, Mongols that are not governed by a Mongol government that can defend their interests, will adopt Turkic languages and a Turkic identity. In the Caucasus and Anatolia, this is often translated as becoming Turkomans"
+ western_turkification_culture_movement_tt: ""The Western Turco-Mongol Tradition has not begun."
+ western_turkification_culture_movement_location_modifier: "Western Turco-Mongol Tradition Location Modifier"
  
  azeri_culture_movement_allow_tt: "The Azerification of Adharis into Azeris has not begun."
  lithuanian_culture_movement_allow_tt: "Lithuania exists as the only Lithuanian state and has begun establishing a new culture."
  russian_culture_movement_allow_tt: "Russia exists and has begun establishing a new culture."
  ruthenian_culture_movement_allow_tt: "Ruthenia exists and has begun establishing a new culture."
- turkification_culture_movement_allow_tt: "The Turkification of Mongols has not begun."
+ turkification_culture_movement_allow_tt: "The Eastern Turco-Mongol Tradition has not begun."
  dutch_culture_movement_allow_tt: "The Netherlands exists and has begun establishing a new culture."
  
  AUTO_MODIFIER_NAME_icd_tribesmen_assimilation: "Base Tribesmen Value"
@@ -124,18 +129,31 @@
  MODIFIER_TYPE_DESC_national_anabaptist_movement_growth_modifier: "TODO : Write a desc"
  MODIFIER_TYPE_NAME_local_anabaptist_movement_growth_modifier: "Local anabaptist movement growth modifier"
  MODIFIER_TYPE_DESC_local_anabaptist_movement_growth_modifier: "TODO : Write a desc"
- AUTO_MODIFIER_NAME_icd_tolerance_heretic: "[tolerance|e] of [heretics|e] Impact on [conversion|e]"
- AUTO_MODIFIER_NAME_icd_tolerance_heathen: "[tolerance|e] of [heathens|e] Impact on [conversion|e]"
+ AUTO_MODIFIER_NAME_icd_tolerance_heretic: "[heretic_tolerance|e] Impact on [conversion|e]"
+ AUTO_MODIFIER_NAME_icd_tolerance_heathen: "[heathenry_tolerance|e] Impact on [conversion|e]"
  anabaptist_movement: "Anabaptism"
  anabaptist_movement_desc: "The Radical Reformation is undercutting Christendom. Ideas regarding believer's baptism and new ways of structuring the community of the faithful have proven very influential."
  
+ STATIC_MODIFIER_NAME_icd_promote_religion_province_modifier: "Enforcing Religious Conversion"
+ STATIC_MODIFIER_NAME_icd_promote_religion_province_modifier_desc: "Enforcing conversion at [ROOT.GetLocation.MakeScope.ScriptValue('icd_conversion_rate_province')]x100 [pops|e] per year"
  
  
+ MODIFIER_TYPE_NAME_national_western_turkification_culture_movement_resistance_modifier: "Western Turco-Mongol Tradition National Resistance Modifier"
+ MODIFIER_TYPE_DESC_national_western_turkification_culture_movement_resistance_modifier: "Western Turco-Mongol Tradition National Resistance Modifier"
+ MODIFIER_TYPE_NAME_local_western_turkification_culture_movement_resistance_modifier: "Western Turco-Mongol Tradition Local Resistance Modifier"
+ MODIFIER_TYPE_DESC_local_western_turkification_culture_movement_resistance_modifier: "Western Turco-Mongol Tradition Local Resistance Modifier"
+ MODIFIER_TYPE_NAME_national_western_turkification_culture_movement_growth_modifier: "Western Turco-Mongol Tradition National Growth Modifier"
+ MODIFIER_TYPE_DESC_national_western_turkification_culture_movement_growth_modifier: "Western Turco-Mongol Tradition National Growth Modifier"
+ MODIFIER_TYPE_NAME_local_western_turkification_culture_movement_growth_modifier: "Western Turco-Mongol Tradition Local Growth Modifier"
+ MODIFIER_TYPE_DESC_local_western_turkification_culture_movement_growth_modifier: "Western Turco-Mongol Tradition Local Growth Modifier"
+
  
+ AUTO_MODIFIER_NAME_icd_acceptance: "Base Cultural Acceptance"
+ AUTO_MODIFIER_NAME_icd_conversion_less: "Vanilla Conversion Disabled"
+ AUTO_MODIFIER_NAME_icd_conversion_less_desc: "See Game Rules to enable it"
  
- 
- 
- 
+ STATIC_MODIFIER_NAME_icd_protestant_in_wrong_country: "Heretical Reformer"
+ STATIC_MODIFIER_NAME_icd_protestant_in_wrong_country_desc: "This Protestant reformer is in a country that considers him to be a [heretic|e]."
  
  
  

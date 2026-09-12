@@ -22,3 +22,18 @@ icd_tribesmen_assimilation = {
 
 	global_tribesmen_assimilation_blocked = yes
 }
+
+
+icd_acceptance = {
+	type = country
+	
+	potential_trigger = {
+		always = yes
+	}
+	
+	hide_effects = yes
+	alert = no
+	requires_real = yes
+	cultures_capacity = 0.5
+}
+

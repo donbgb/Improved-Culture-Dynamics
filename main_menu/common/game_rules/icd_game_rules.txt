@@ -1,4 +1,32 @@
-﻿icd_promote_culture_cabinet_action = {
+﻿
+icd_intro_event = {
+	default = icd_intro_event_on
+
+	icd_intro_event_on = {
+		flag = flavour_rule
+	}
+	
+	icd_intro_event_off = {
+		flag = flavour_rule
+	}
+}
+
+
+icd_religious_conversion = {
+	default = icd_religious_conversion_modded
+
+	icd_religious_conversion_vanilla = {
+		flag = flavour_rule
+	}
+	
+	icd_religious_conversion_modded = {
+		flag = flavour_rule
+	}
+}
+
+
+
+icd_promote_culture_cabinet_action = {
 	default = icd_cabinet_action_off
 
 	icd_cabinet_action_off = {

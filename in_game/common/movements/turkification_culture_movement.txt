@@ -29,7 +29,7 @@
 	calc_interval_days = 90
 
 	r0 = { 
-		value = 0.01
+		value = 0.02
 		if = {
 			limit = {
 				root.owner ?= { 

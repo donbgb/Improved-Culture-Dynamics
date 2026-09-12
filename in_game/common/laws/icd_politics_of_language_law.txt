@@ -67,7 +67,19 @@
 		}
 		
 		ai_will_do = {
-			value = 500
+			value = 400
+			if = {
+				limit = {
+					OR = {
+						tag = ENG
+						tag = MUS
+						tag = RUS
+						tag = KIE
+						culture = culture:turkish_culture
+					}
+				}
+				add = 300
+			}
 		}
 		
 		years = 2

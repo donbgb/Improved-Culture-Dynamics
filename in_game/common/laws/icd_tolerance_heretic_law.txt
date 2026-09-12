@@ -4,14 +4,13 @@
 
 	potential = {
 		num_locations > 0
-		religious_unity < 1.0
+		total_heretic_population > 0
 		NOT = {
 			has_policy = papal_control
 			has_policy = local_courts
 			has_policy = state_inquisitors
 			has_policy = spa_inquisition_policy
 			has_policy = por_inquisition_policy
-			has_policy = icd_minority_religion
 		}
 	}
 	
@@ -23,10 +22,7 @@
 		potential = {
 		}
 		allow = {
-			
-			NOT = {
-				has_policy = icd_minority_religion
-			}
+
 		}
 		months = 1
 		
@@ -35,113 +31,89 @@
 		
 	}
 	
-	icd_repressive_conversion_heretic = {
+	icd_bureau_of_buddhist_and_tibetan_affairs = {
+		price = icd_nothing_price
 		country_modifier = {
-			global_heretic_pop_conversion_speed_modifier = 0.20
-			global_pop_conversion_speed_modifier = 0.025
-			tolerance_heretic = -1
-		}
-		allow = {
-			NOT = {
-				has_policy = icd_secular_state
-			}
-		}
-		years = 2
-		
-		on_activate = {
-		}
-		
-	}
-
-	icd_liberty_of_conscience = {
-		country_modifier = {
-			tolerance_heretic = 3
-			global_pop_conversion_speed_modifier = -0.3
-			clergy_estate_target_satisfaction = -0.15
+			tolerance_own = 2
+			tolerance_heretic = -1  
+			tribes_estate_target_satisfaction = small_permanent_target_satisfaction
 		}
 		potential = {
-			has_embraced_institution = institution:enlightenment
+			tag = CHI
+			religion = religion:tibetan_buddhism
 		}
 		allow = {
 
 		}
-		years = 2
+		months = 1
 		
 		on_activate = {
 		}
-		
+		ai_will_do = {
+			value = 700
+		}
 	}
 	
 	icd_ecumenic_traditions = {
 		country_modifier = {
-			tolerance_heretic = 0.5
+			tolerance_heretic = 2
 		}
 		potential = {
 			OR = {
-				culture = { has_culture_group = culture_group:slavic_group }
+				culture = { has_culture_group = culture_group:lithuanian_group }
+				culture = { has_culture_group = culture_group:polish_group }
 				culture = { has_culture_group = culture_group:carpathian_group }
+				culture = { has_culture_group = culture_group:south_slavic_group }
+				culture = culture:albanian
+				AND = {
+					culture = { has_culture_group = culture_group:greek_group }
+					religion = religion:catholic
+				}
+				has_or_had_tag = VEN
+				has_or_had_tag = NAP
+				has_or_had_tag = ALB
+				culture = { has_culture_group = culture_group:caucasian_group }
+				culture = { has_culture_group = culture_group:arabic_group }
 			}
-			religion.group = religion_group:christian
-			has_or_had_tag = VEN
-			has_or_had_tag = NAP
-			has_or_had_tag = ALB
-			has_reform = government_reform:partitio_reform
+			OR = {
+				religion = religion:orthodox
+				religion = religion:catholic
+				religion = religion:miaphysite
+				religion = religion:nestorianism
+			}
 		}
 		allow = {
-			NOT = {
-				has_policy = icd_minority_religion
-			}
-		}
-		location_modifier = {
-			potential_trigger = {
-					custom_tooltip = icd_ecumenic_traditions_tt
-					hidden_trigger = {
-						OR = {
-							religion_percentage = {
-								religion = religion:orthodox
-								value > 0.05
-							}
-							religion_percentage = {
-								religion = religion:catholic
-								value > 0.05
-							}
-						}
-						religion_percentage = {
-							religion = religion:lutheran
-							value = 0
-						}
-						religion_percentage = {
-							religion = religion:lollardy
-							value = 0
-						}
-						religion_percentage = {
-							religion = religion:bogomilism
-							value = 0
-						}
-						religion_percentage = {
-							religion = religion:calvinist
-							value = 0
-						}
-						religion_percentage = {
-							religion = religion:catharism
-							value = 0
-						}
-						religion_percentage = {
-							religion = religion:hussite
-							value = 0
-						}
-						religion_percentage = {
-							religion = religion:waldensian
-							value = 0
-						}
-						religion_percentage = {
-							religion = religion:strigolniki
-							value = 0
-						}
-						dominant_religion = { group = religion_group:christian }
+			OR = {
+				AND = {
+					religion_percentage_in_country = {
+						religion = religion:orthodox
+						value > 0.01
 					}
+					religion != religion:orthodox
 				}
-			local_heretic_pop_conversion_speed_modifier = -1.5
+				AND = {
+					religion_percentage_in_country = {
+						religion = religion:catholic
+						value > 0.01
+					}
+					religion != religion:catholic
+				}
+				AND = {
+					religion_percentage_in_country = {
+						religion = religion:miaphysite
+						value > 0.01
+					}
+					religion != religion:miaphysite
+				}
+				AND = {
+					religion_percentage_in_country = {
+						religion = religion:nestorianism
+						value > 0.01
+					}
+					religion != religion:nestorianism
+				}
+			}
+			icd_heretic_oppression = no
 		}
 		years = 2
 		
@@ -151,103 +123,71 @@
 		ai_will_do = {
 			if = {
 				limit = {
-					has_reform = government_reform:partitio_reform
+					OR = {
+						culture = { has_culture_group = culture_group:polish_group }
+						culture = { has_culture_group = culture_group:lithuanian_group }
+						culture = { has_culture_group = culture_group:arabic_group }
+					}
 				}
 				value = 6000
+			}
+			if = {
+				limit = {
+					tag = GEO
+				}
+				value = -200
 			}
 		}
 	}
 	
 	icd_city_of_faiths = {
 		country_modifier = {
-			tolerance_heretic = 3.0
-			national_lutheranism_movement_resistance_modifier = 1.0
-			national_calvinism_movement_resistance_modifier = 1.0
+			tolerance_heretic = 2.25
 		}
 		potential = {	
 			OR = {
 				religion = religion:calvinist
 				religion = religion:lutheran
+				religion = religion:anglican
 				religion = religion:anabaptist
+				religion = religion:hussite
 			}
-			government_type = government_type:republic
 		}
-		years = 2
 		allow = {
-			
-			NOT = {
-				"religion_percentage_in_country(religion:catholic)" > 0.45
-				capital ?= {
-					dominant_religion = religion:catholic
-				}
-			}
-		}
-		on_activate = {
-		}
-		
-		
-		ai_will_do = {
-			if = {
-				limit = {
-					tag = SFC
-				}
-				value = 6000
-			}
-		}
-		
-	}
-	
-	icd_edict_of_torda = {
-		country_modifier = {
-			tolerance_heretic = 2.25
-			diplomatic_reputation = -2
-		}
-		potential = {	
 			OR = {
-				has_or_had_tag = TRA
-				has_or_had_tag = HUN
+				religion_percentage_in_country = {
+					religion = religion:catholic
+					value < 0.2
+				}
+				has_or_had_tag = ENG
 			}
-			religion.group = religion_group:christian
-			has_variable = icd_unlocked_torda
+			OR = {
+				government_type = government_type:republic
+				current_year > 1580
+			}
+			icd_heretic_oppression = no
 		}
 		years = 2
-		allow = {
-			
-		}
+		
 		on_activate = {
 		}
-		
-		
 		ai_will_do = {
 			if = {
 				limit = {
 					OR = {
-						religious_unity < 0.5
-						is_leader_of_international_organization = international_organization:hre
-						is_subject = yes
+						has_or_had_tag = SFC
+						has_or_had_tag = ENG
+						has_or_had_tag = BRA
+						AND = {
+							ruler.religion.group = root.religion.group
+							ruler.religion != root.religion
+							ruler.religion != religion:catholic
+						}
 					}
 				}
-				value = -6000
+				value = 6000
 			}
 		}
-		
-	}
-	
-	icd_dharmic_coexistence = {
-		country_modifier = {
-			tolerance_heretic = 1.75
-		}
-		potential = {
-			religion.group = religion_group:dharmic
-		}
-		allow = {
-			
-		}
-		years = 2
-		
-		on_activate = {
-		}
-		
 	}
 	
 	icd_islamic_orthopraxy = {
@@ -256,7 +196,7 @@
 			tolerance_heretic = 2
 		}
 		allow = {
-			
+			icd_heretic_oppression = no
 		}
 		potential = {
 			religion.group = religion_group:muslim
@@ -284,59 +224,137 @@
 		on_activate = {
 		}
 		
+		ai_will_do = {
+			value = 500
+		}
 	}
+
 	
-	icd_faiths_of_the_folk = {
+	icd_dharmic_coexistence = {
 		country_modifier = {
-			tolerance_heretic = 2.5
-		}
-		allow = {
-			
-		}
-		location_modifier = {
-			potential_trigger = {
-				custom_tooltip = icd_faiths_of_the_folk_tt
-				"culture_percentage(owner.culture)" > "religion_percentage(owner.religion)"
-			}
-			local_heretic_pop_conversion_speed_modifier = 2.0
-		}
-		location_modifier = {
-			potential_trigger = {
-				custom_tooltip = icd_faiths_of_the_folk_tt_two
-				 "culture_percentage(owner.culture)" <= "religion_percentage(owner.religion)"
-			}
-			local_heretic_pop_conversion_speed_modifier = -1.0
+			tolerance_heretic = 2
+			tolerance_heathen = 0.25
 		}
 		potential = {
-			OR = {
-				religion.group = religion_group:folk_african_group
-				religion.group = religion_group:folk_argentinian_group
-				religion.group = religion_group:folk_aridoamerica_group
-				religion.group = religion_group:folk_asian_group
-				religion.group = religion_group:folk_australian_group
-				religion.group = religion_group:folk_brazilian_group
-				religion.group = religion_group:folk_caribbean_group
-				religion.group = religion_group:folk_central_american_group
-				religion.group = religion_group:tonal_group
-				religion.group = religion_group:folk_european_group
-				religion.group = religion_group:folk_melanesian_group
-				religion.group = religion_group:folk_micronesian_group
-				religion.group = religion_group:folk_north_american_group
-				religion.group = religion_group:folk_papuan_group
-				religion.group = religion_group:folk_permic_group
-				religion.group = religion_group:folk_peruvian_group
-				religion.group = religion_group:folk_polynesian_group
-				religion.group = religion_group:folk_se_asian_group
-				religion.group = religion_group:folk_south_american_group
-			}
+			NOT = { has_game_rule = icd_religious_conversion_vanilla }
+			religion.group = religion_group:dharmic
+		}
+		allow = {
+			icd_heretic_oppression = no
 		}
 		years = 2
 		
 		on_activate = {
 		}
 		
+		ai_will_do = {
+			value = 50000
+		}
 	}
 	
+	icd_imperial_patronage = {
+		country_modifier = {
+			tolerance_heretic = 2
+			tolerance_heathen = 0.5
+		}
+		potential = {
+			NOT = { has_game_rule = icd_religious_conversion_vanilla }
+			OR = {
+				religion = religion:mahayana
+				religion = religion:shinto
+				religion = religion:tibetan_buddhism
+				religion = religion:sanjiao
+				religion = religion:southern_mahayana
+			}
+		}
+		allow = {
+			icd_heretic_oppression = no
+		}
+		years = 2
+		
+		on_activate = {
+		}
+		
+		ai_will_do = {
+			value = 300
+		}
+	}
+
+	icd_edict_of_torda = {
+		country_modifier = {
+			tolerance_heretic = 3
+			diplomatic_reputation = -2
+			clergy_estate_target_satisfaction = -0.05
+		}
+		potential = {	
+			OR = {
+				has_or_had_tag = TRA
+				has_or_had_tag = HUN
+			}
+			religion.group = religion_group:christian
+			has_variable = icd_unlocked_torda
+		}
+		years = 2
+		allow = {
+			icd_heretic_oppression = no
+		}
+		on_activate = {
+		}
+		
+		
+		ai_will_do = {
+			if = {
+				limit = {
+					OR = {
+						is_leader_of_international_organization = international_organization:hre
+						is_subject = yes
+					}
+				}
+				value = -6000
+			}
+			else_if = {
+				limit = {
+					OR = {
+						religion = religion:unitarian
+						religion = religion:calvinist
+						religion = religion:lutheran
+					}
+				}
+				value = 800
+			}
+			else = {
+				value = -900
+			}
+		}
+	}
 	
+	icd_liberty_of_conscience = {
+		country_modifier = {
+			tolerance_heretic = 3.5
+			tolerance_heathen = 0.2
+			pure_tooltip_entry = icd_liberty_of_conscience_tt
+		}
+		potential = {
+			OR = {
+				#has_variable = icd_unlocked_liberty_conscience#
+				has_embraced_institution = institution:enlightenment
+			}
+		}
+		years = 2
+		allow = {
+			icd_heretic_oppression = no
+		}
+		on_activate = {
+		}
+		
+		ai_will_do = {
+			if = {
+				limit = {
+					government_type = government_type:republic
+				}
+				value = 2000
+			}
+		}
+	}
 	
 }

@@ -11,6 +11,7 @@
 	
 	allow = {
 		cultural_unity < 1.0
+		always = no
 	}
 	
 	select_trigger = {
@@ -132,6 +133,25 @@
 					value = 150
 				}
 			}
+			if = {
+				limit = {
+					scope:target = {
+						is_accepted_in = scope:actor
+						has_shared_culture_group = scope:actor.culture
+						cultural_view = {
+							target = scope:actor.culture
+							value = neutral
+						}
+					}
+				}
+
+				add = {
+					value = 100
+				}
+			}
+		}
+		else = {
+			value = -5000
 		}
 	}
 }

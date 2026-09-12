@@ -1,0 +1,84 @@
+﻿
+
+yearly_country_pulse = {
+	
+	on_actions = {
+		icd_reapply_promoting_culture
+		icd_religious_conversion
+	}
+
+}
+
+icd_reapply_promoting_culture= {
+	trigger = {
+		always = yes
+	}
+	
+	events = {
+		icd_reapply_promoting.1
+		icd_minority_events.1
+		icd_minority_events.31
+		icd_minority_events.6
+		icd_romani_events.90
+		icd_romani_events.98
+	}
+
+}
+
+four_yearly_country_pulse = {
+	
+	on_actions = {
+		icd_four_yearly_conversions
+		icd_morisco_event
+		icd_random_four_yearly
+	}
+}
+
+icd_four_yearly_conversions = {
+	trigger = {
+		always = yes
+	}
+	
+	events = {
+		icd_conversion_events.1000
+		icd_conversion_events.2
+		icd_conversion_events.3
+	}
+}
+
+icd_morisco_event = {
+	
+	events = {
+		icd_minority_events.10
+		icd_minority_events.9
+		icd_minority_events.5
+		icd_minority_events.8
+	}
+
+}
+
+icd_random_four_yearly = {
+	trigger = {
+		always = yes
+	}
+
+	random_events = {
+		40 = icd_minority_events.4
+		5 = icd_romani_events.4
+		5 = icd_romani_events.5
+		5 = icd_romani_events.6
+		85 = 0
+		
+		chance_to_happen = 100
+	}
+}
+
+icd_religious_conversion = {
+	trigger = {
+		NOT = { has_game_rule = icd_religious_conversion_vanilla }
+	}
+	events = {
+		icd_conversion_events.999
+		icd_conversion_events.900
+	}
+}

@@ -1,4 +1,4 @@
-﻿orthodox_list = {
+﻿icd_muslim_list = {
 	potential = {
 		religion.group = religion_group:muslim
 	}

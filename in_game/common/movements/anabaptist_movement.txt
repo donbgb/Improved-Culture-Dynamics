@@ -24,7 +24,6 @@
 		if = {
 			limit = {
 				OR = {
-					situation:council_of_trent = { situation_has_ended = no }
 					situation:reformation = {
 						years_since_situation_start < 35
 					}
@@ -44,15 +43,22 @@
 					mode = add
 				}
 			}
-		}
-		else = {
-			every_country = {
+			every_location_with_movement = {
 				limit = {
-					any_owned_location = {
-						has_location_modifier = icd_religious_zeal
+					owner ?= {
+						religion = religion:catholic
+					}
+					province = {
+						OR = {
+							has_location_modifier = icd_promote_religion_province_modifier
+							has_variable = promoting_religion
+						}
 					}
 				}
-				trigger_event_non_silently = icd_reformation_push.7
+				province = {
+					remove_province_modifier = icd_promote_religion_province_modifier
+					remove_variable = promoting_religion
+				}
 			}
 		}
 	}
@@ -93,20 +99,6 @@
 			}
 			value = { 0.0 0.020 }
 		}
-		# Council of Trent active: world watches, growth slows but does not pause.
-		else_if = {
-			limit = { situation:council_of_trent = { situation_is_active = yes } }
-			value = { 0.0 0.020 }
-		}
-		# Counter-Reformation: Trent ended, <60y since Reformation spawn — borders harden.
-		else_if = {
-			limit = {
-				situation:council_of_trent = { situation_has_ended = yes }
-				situation:reformation = { years_since_situation_start < 50 }
-			}
-			value = { 0.0 0.004 }
-		}
-		# Stable confessional boundaries: post-Trent and ≥60y since Reformation spawn.
 		else_if = {
 			limit = { situation:council_of_trent = { situation_has_ended = yes } }
 			value = { 0.0 0.0015 }

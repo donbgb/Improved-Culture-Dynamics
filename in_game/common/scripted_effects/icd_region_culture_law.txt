@@ -56,10 +56,26 @@ icd_region_culture_law_german = {
 				}
 			}
 			every_province = {
-				limit = { 
+				limit = {
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:ripuarian_franconian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:ripuarian_franconian
+							}
+								culture_percentage = {
+								culture = culture:ripuarian_franconian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -70,10 +86,26 @@ icd_region_culture_law_german = {
 				}
 			}
 			every_province = {
-				limit = { 
+				limit = {
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:rhine_franconian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:rhine_franconian
+							}
+								culture_percentage = {
+								culture = culture:rhine_franconian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -85,9 +117,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:westphalian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:westphalian
+							}
+								culture_percentage = {
+								culture = culture:westphalian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -99,9 +147,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:high_alemannic
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:high_alemannic
+							}
+								culture_percentage = {
+								culture = culture:high_alemannic
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -113,9 +177,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:swabian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:swabian
+							}
+								culture_percentage = {
+								culture = culture:swabian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -127,9 +207,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:danube_bavarian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:danube_bavarian
+							}
+								culture_percentage = {
+								culture = culture:danube_bavarian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -141,9 +237,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:saxon
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:saxon
+							}
+								culture_percentage = {
+								culture = culture:saxon
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -155,9 +267,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:low_franconian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:low_franconian
+							}
+								culture_percentage = {
+								culture = culture:low_franconian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -169,9 +297,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:brandenburgish
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:brandenburgish
+							}
+								culture_percentage = {
+								culture = culture:brandenburgish
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -183,9 +327,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:prussian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:prussian
+							}
+							culture_percentage = {
+								culture = culture:prussian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -197,9 +357,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:eastern_pomeranian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:eastern_pomeranian
+							}
+							culture_percentage = {
+								culture = culture:eastern_pomeranian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -211,9 +387,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:lower_saxon
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:lower_saxon
+							}
+							culture_percentage = {
+								culture = culture:lower_saxon
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -225,9 +417,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:western_pomeranian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:western_pomeranian
+							}
+							culture_percentage = {
+								culture = culture:western_pomeranian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -239,9 +447,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:east_franconian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:east_franconian
+							}
+							culture_percentage = {
+								culture = culture:east_franconian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -253,9 +477,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:eastphalian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:eastphalian
+							}
+							culture_percentage = {
+								culture = culture:eastphalian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -267,9 +507,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:german_baltic
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:german_baltic
+							}
+							culture_percentage = {
+								culture = culture:german_baltic
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -281,9 +537,25 @@ icd_region_culture_law_german = {
 			}
 			every_province = {
 				limit = { 
+					OR = {
+						NOT = {
+							dominant_culture ?= { has_culture_group = culture_group:german_group }
+						}
+						dominant_culture ?= culture:frisian
+						dominant_culture ?= culture:walloon
+						dominant_culture ?= culture:dutch_culture_formed
+						dominant_culture ?= culture:ashkenazi
+						dominant_culture ?= culture:czech
+					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:german_carpathian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:german_carpathian
+							}
+							culture_percentage = {
+								culture = culture:german_carpathian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -344,8 +616,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:iraqi_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:iraqi_culture
+							}
+							culture_percentage = {
+								culture = culture:iraqi_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -362,8 +640,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:andalusi
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:andalusi
+							}
+							culture_percentage = {
+								culture = culture:andalusi
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -380,8 +664,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:hassaniya
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:hassaniya
+							}
+							culture_percentage = {
+								culture = culture:hassaniya
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -398,8 +688,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:moroccan
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:moroccan
+							}
+							culture_percentage = {
+								culture = culture:moroccan
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -416,8 +712,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:algerian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:algerian
+							}
+							culture_percentage = {
+								culture = culture:algerian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -434,8 +736,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:levantine_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:levantine_culture
+							}
+							culture_percentage = {
+								culture = culture:levantine_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -452,8 +760,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:najdi_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:najdi_culture
+							}
+							culture_percentage = {
+								culture = culture:najdi_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -470,8 +784,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:tunisian
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:tunisian
+							}
+							culture_percentage = {
+								culture = culture:tunisian
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -488,8 +808,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:libyan_arabic_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:libyan_arabic_culture
+							}
+							culture_percentage = {
+								culture = culture:libyan_arabic_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -506,8 +832,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:sudanese_arab
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:sudanese_arab
+							}
+							culture_percentage = {
+								culture = culture:sudanese_arab
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -524,8 +856,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:lower_egyptian_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:lower_egyptian_culture
+							}
+							culture_percentage = {
+								culture = culture:lower_egyptian_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -542,8 +880,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:hijazi_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:hijazi_culture
+							}
+							culture_percentage = {
+								culture = culture:hijazi_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -560,8 +904,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:yemeni_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:yemeni_culture
+							}
+							culture_percentage = {
+								culture = culture:yemeni_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -579,8 +929,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:kaliji_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:kaliji_culture
+							}
+							culture_percentage = {
+								culture = culture:kaliji_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -597,8 +953,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:bahrani_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:bahrani_culture
+							}
+							culture_percentage = {
+								culture = culture:bahrani_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -615,8 +977,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:shihhi_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:shihhi_culture
+							}
+							culture_percentage = {
+								culture = culture:shihhi_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -633,8 +1001,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:omani_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:omani_culture
+							}
+							culture_percentage = {
+								culture = culture:omani_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -651,8 +1025,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:hadhrami_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:hadhrami_culture
+							}
+							culture_percentage = {
+								culture = culture:hadhrami_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -669,8 +1049,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:mehri_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:mehri_culture
+							}
+							culture_percentage = {
+								culture = culture:mehri_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -687,8 +1073,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:dhofari_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:dhofari_culture
+							}
+							culture_percentage = {
+								culture = culture:dhofari_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -705,8 +1097,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:soqotri_culture
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:soqotri_culture
+							}
+							culture_percentage = {
+								culture = culture:soqotri_culture
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -723,8 +1121,14 @@ icd_region_culture_law_arabic = {
 						dominant_culture ?= culture:syriac_culture
 					}
 					any_location_in_province = {
-						any_neighbor_location = {
-							dominant_culture ?= culture:maltese
+						 OR = {
+							any_neighbor_location = {
+								dominant_culture ?= culture:maltese
+							}
+							culture_percentage = {
+								culture = culture:maltese
+								value >= 0.15
+							}
 						}
 					}
 					NOT = { has_variable = promoting_culture }
@@ -1485,4 +1889,379 @@ icd_region_culture_law_tatar = {
 				}
 			}
 			
+}
+
+
+
+icd_region_culture_law_mandarin = {
+		
+		every_province = {
+			limit = {
+				OR = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				}
+				NOT = {
+					has_variable = no_reapplying_promotion
+				}
+			}
+			set_variable = {
+				name = promoting_culture
+				value = this.dominant_culture
+			}
+		}
+		every_province = {
+			limit = {
+				OR = {
+					culture_percentage = {
+						culture = root.culture
+						value >= 0.1
+					}
+					any_location_in_province = {
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = {
+					has_variable = no_reapplying_promotion
+				}
+			}
+			set_variable = {
+				name = promoting_culture
+				value = root.culture
+			}
+		}
+		
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:liaodong_culture
+						}
+						culture_percentage = {
+							culture = culture:liaodong_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:liaodong_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:jiaodong_culture
+						}
+						culture_percentage = {
+							culture = culture:jiaodong_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:jiaodong_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:zhongyuan_culture
+						}
+						culture_percentage = {
+							culture = culture:zhongyuan_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:zhongyuan_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				}
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:qin_culture
+						}
+						culture_percentage = {
+							culture = culture:qin_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:qin_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				}
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:jianghuai_culture
+						}
+						culture_percentage = {
+							culture = culture:jianghuai_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:jianghuai_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:chu_culture
+						}
+						culture_percentage = {
+							culture = culture:chu_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:chu_culture
+			}
+		}
+		every_province = {
+			limit = { 
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:jilu_culture
+						}
+						culture_percentage = {
+							culture = culture:jilu_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:jilu_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:yan_culture
+						}
+						culture_percentage = {
+							culture = culture:yan_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:yan_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:liang_culture
+						}
+						culture_percentage = {
+							culture = culture:liang_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:liang_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:huaihai_culture
+						}
+						culture_percentage = {
+							culture = culture:huaihai_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:huaihai_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:tongtai_culture
+						}
+						culture_percentage = {
+							culture = culture:tongtai_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:tongtai_culture
+			}
+		}
+		every_province = {
+			limit = {
+				NOT = {
+					dominant_culture.language = language:mandarin_language
+					dominant_culture = culture:jin_culture
+				} 
+				any_location_in_province = {
+					OR = {
+						any_neighbor_location = {
+							dominant_culture ?= culture:changde_culture
+						}
+						culture_percentage = {
+							culture = culture:changde_culture
+							value >= 0.15
+						}
+					}
+				}
+				NOT = { has_variable = promoting_culture }
+			}
+			set_variable = {
+				name = promoting_culture
+				value = culture:changde_culture
+			}
+		}
+		#every_province = { ###no hui muslim###
+		#	limit = { 
+			#	any_location_in_province = {
+			##		OR = {
+			#			any_neighbor_location = {
+			#				dominant_culture ?= culture:hui_muslim_culture
+			#			}
+			#		}
+			#	}
+			#	NOT = { has_variable = promoting_culture }
+			#}
+			#set_variable = {
+			#	name = promoting_culture
+			#	value = culture:hui_muslim_culture
+			#}
+		#}
+		every_province = {
+			limit = {
+				NOT = {
+					any_location_in_province = {
+						any_neighbor_location = {
+							dominant_culture ?= root.culture
+						}
+					}
+					culture_percentage = {
+						culture = root.culture
+						value >= 0.1
+					}
+					any_location_in_province = {
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.2
+						}
+					}
+					has_variable = promoting_culture
+				}
+			}
+			set_variable = {
+				name = promoting_culture
+				value = this.dominant_culture
+			}
+		}
 }

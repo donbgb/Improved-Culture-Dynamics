@@ -1,0 +1,528 @@
+﻿
+icd_heretic_oppression = {
+	has_policy = de_heretico_comburendo
+	has_policy = mandate_of_ofen
+	has_reform = government_reform:anti_heresy_act
+}
+
+icd_heathen_oppression = {
+	has_policy = spa_inquisition_policy
+	has_policy = state_inquisitors
+	has_policy = por_inquisition_policy
+}
+
+is_protected_pop = {
+	OR = {
+		AND = {
+			religion.group = religion_group:israelite_group
+			owner ?= {
+				OR = {
+					has_policy = icd_aljama_communities
+					has_policy = icd_jewish_charter
+					has_policy = icd_jewish_ghetto
+					has_policy = council_of_three_lands_policy
+					has_policy = icd_abrahamic_communities
+				}
+			}
+			location.dominant_religion.group = owner.religion.group
+		}
+		AND = {
+			religion.group = owner.religion.group
+			owner ?= {
+				has_policy = icd_liberty_of_conscience
+			}
+		}
+		AND = {
+			religion.group = religion_group:zoroastrian_group
+			owner ?= {
+				has_policy = icd_zoroastrian_communities
+			}
+			location.dominant_religion.group = owner.religion.group
+		}
+		AND = {
+			religion.group = religion_group:muslim
+			owner ?= {
+				has_policy = icd_aljama_communities
+			}
+			location.dominant_religion.group = owner.religion.group
+		}
+		AND = {
+			is_dhimmi = yes
+			owner ?= {
+				religion.group = religion_group:muslim
+			}
+		}
+		AND = {
+			owner ?= {
+				modifier:tolerance_heretic >= -1.5
+			}
+			religion != owner.religion
+			religion.group = owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value = kindred } }	
+		}
+		AND = {
+			owner ?= {
+				modifier:tolerance_heretic >= -0.5
+			}
+			religion != owner.religion
+			religion.group = owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value = positive } }	
+		}
+		AND = {
+			owner ?= {
+				modifier:tolerance_heretic >= 0
+			}
+			religion != owner.religion
+			religion.group = owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value = neutral } }	
+		}
+		AND = {
+			owner ?= {
+				modifier:tolerance_heretic >= 0.5
+			}
+			religion != owner.religion
+			religion.group = owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value >= negative } }	
+		}
+		AND = {
+			owner ?= {
+				modifier:tolerance_heretic >= 1.5
+			}
+			religion != owner.religion
+			religion.group = owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value = enemy } }	
+		}
+		
+		AND = {
+			owner ?= {
+				modifier:tolerance_heathen >= -1.5
+			}
+			religion.group != owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value = kindred } }	
+		}
+		AND = {
+			owner ?= {
+				modifier:tolerance_heathen >= -0.5
+			}
+			religion.group != owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value = positive } }	
+		}
+		AND = {
+			owner ?= {
+				modifier:tolerance_heathen >= 0
+			}
+			religion.group != owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value = neutral } }	
+		}
+		AND = {
+			owner ?= {
+				modifier:tolerance_heathen >= 0.5
+			}
+			religion.group != owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value >= negative } }	
+		}
+		AND = {
+			owner ?= {
+				modifier:tolerance_heathen >= 1.5
+			}
+			religion.group != owner.religion.group
+			owner.religion = { religious_view = { target = prev.religion value = enemy } }	
+		}
+		
+		AND = {
+			owner ?= {
+				modifier:global_burghers_conversion_blocked = yes
+			}
+			pop_type = pop_type:burghers
+		}
+		AND = {
+			owner ?= {
+				modifier:global_clergy_conversion_blocked = yes
+			}
+			pop_type = pop_type:clergy
+		}
+		AND = {
+			owner ?= {
+				modifier:global_laborers_conversion_blocked = yes
+			}
+			pop_type = pop_type:laborers
+		}
+		AND = {
+			owner ?= {
+				modifier:global_nobles_conversion_blocked = yes
+			}
+			pop_type = pop_type:nobles
+		}
+		AND = {
+			owner ?= {
+				modifier:global_peasants_conversion_blocked = yes
+			}
+			pop_type = pop_type:peasants
+		}
+		AND = {
+			owner ?= {
+				modifier:global_soldiers_conversion_blocked = yes
+			}
+			pop_type = pop_type:soldiers
+		}
+		AND = {
+			owner ?= {
+				modifier:global_tribesmen_conversion_blocked = yes
+			}
+			pop_type = pop_type:tribesmen
+		}
+	}
+}
+
+icd_is_pagan = {
+	OR = {
+		religion.group = religion_group:folk_african_group
+		religion.group = religion_group:folk_argentinian_group
+		religion.group = religion_group:folk_aridoamerica_group
+		religion.group = religion_group:folk_asian_group
+		religion.group = religion_group:folk_australian_group
+		religion.group = religion_group:folk_brazilian_group
+		religion.group = religion_group:folk_caribbean_group
+		religion.group = religion_group:folk_central_american_group
+		religion.group = religion_group:tonal_group
+		religion.group = religion_group:folk_european_group
+		religion.group = religion_group:folk_melanesian_group
+		religion.group = religion_group:folk_micronesian_group
+		religion.group = religion_group:folk_north_american_group
+		religion.group = religion_group:folk_papuan_group
+		religion.group = religion_group:folk_permic_group
+		religion.group = religion_group:folk_peruvian_group
+		religion.group = religion_group:folk_polynesian_group
+		religion.group = religion_group:folk_se_asian_group
+		religion.group = religion_group:folk_south_american_group
+	}
+}
+
+icd_no_local_pagans = {
+	religion_group_percentage = {
+		religion_group = religion_group:folk_asian_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_european_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_se_asian_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_african_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_argentinian_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_aridoamerica_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_australian_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_brazilian_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_caribbean_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_central_american_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:tonal_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_north_american_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_melanesian_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_micronesian_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_papuan_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_permic_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_peruvian_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_polynesian_group
+		value < 0.005
+	}
+	religion_group_percentage = {
+		religion_group = religion_group:folk_south_american_group
+		value < 0.005
+	}
+}
+
+icd_no_organised_religion = {
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:muslim
+			percent > 0.005
+		}
+	}
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:buddhist
+			percent > 0.005
+		}
+	}
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:christian
+			percent > 0.005
+		}
+	}
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:dharmic
+			percent > 0.005
+		}
+	}
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:druze_group
+			percent > 0.005
+		}
+	}
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:israelite_group
+			percent > 0.005
+		}
+	}
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:mandean_group
+			percent > 0.005
+		}
+	}
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:manichaean_group
+			percent > 0.005
+		}
+	}
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:yazidi_group
+			percent > 0.005
+		}
+	}
+	NOT = {
+		any_pop = {
+			religion != owner.religion
+			religion.group ?= religion_group:zoroastrian_group
+			percent > 0.005
+		}
+	}
+}
+
+icd_traditional_christians_here = {
+	OR = {
+		religion_percentage = {
+			religion = religion:orthodox
+			value > 0.01
+		}
+		religion_percentage = {
+			religion = religion:catholic
+			value > 0.01
+		}
+		religion_percentage = {
+			religion = religion:miaphysite
+			value > 0.01
+		}
+		religion_percentage = {
+			religion = religion:nestorianism
+			value > 0.01
+		}
+	}
+}
+icd_has_protestants = {
+	religion_percentage = {
+		religion = religion:lutheran
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:anglican
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:anabaptist
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:unitarian
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:lollardy
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:paulicianism
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:bogomilism
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:calvinist
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:catharism
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:hussite
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:waldensian
+		value > 0.01
+	}
+	religion_percentage = {
+		religion = religion:strigolniki
+		value > 0.01
+	}
+}
+
+icd_dhimmi_location_trigger = {
+	custom_tooltip = {
+		text = icd_dhimmi_communities_trigger_tt
+		OR = {
+			dominant_religion ?= { 
+					group = religion_group:muslim
+				}
+			AND = {
+				dominant_religion ?= { 
+					group = religion_group:israelite_group
+				}
+				owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
+			}
+			AND = {
+				dominant_religion ?= { 
+					group = religion_group:christian
+				}
+				owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
+			}
+			AND = {
+				dominant_religion ?= { 
+					group = religion_group:mandean_group
+				}
+				owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+			}
+			AND = {
+				dominant_religion ?= { 
+					group = religion_group:manichaean_group
+				}
+				owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+			}
+			AND = {
+				dominant_religion ?= { 
+					group = religion_group:zoroastrian_group
+				}
+				owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
+			}
+			AND = {
+				dominant_religion ?= { 
+					group = religion_group:dharmic
+				}
+				owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
+			}
+			AND = {
+				dominant_religion ?= { 
+					group = religion_group:buddhist
+				}
+				owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
+			}
+		}
+		OR = {
+			AND = {
+				religion_group_percentage = {
+					religion_group = religion_group:israelite_group
+					value > 0.01
+				}
+				owner ?= { NOT = { has_variable = icd_israelite_dhimmi_disabled } }
+			}
+			AND = {
+				religion_group_percentage = {
+					religion_group = religion_group:christian
+					value > 0.01
+				}
+				owner ?= { NOT = { has_variable = icd_christian_dhimmi_disabled } }
+			}
+			
+			AND = {
+				religion_group_percentage = {
+					religion_group = religion_group:mandean_group
+					value > 0.01
+				}
+				owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+			}
+			AND = {
+				religion_group_percentage = {
+					religion_group = religion_group:manichaean_group
+					value > 0.01
+				}
+				owner ?= { NOT = { has_variable = icd_sabian_dhimmi_disabled} }
+			}
+			AND = {
+				religion_group_percentage = {
+					religion_group = religion_group:zoroastrian_group
+					value > 0.01
+				}
+				owner ?= { NOT = { has_variable = icd_iranic_dhimmi_disabled } }
+			}
+			AND = {
+				religion_group_percentage = {
+					religion_group = religion_group:dharmic
+					value > 0.01
+				}
+				owner ?= { NOT = { has_variable = icd_dharmic_dhimmi_disabled } }
+			}
+			AND = {
+				religion_group_percentage = {
+					religion_group = religion_group:buddhist
+					value > 0.01
+				}
+				owner ?= { NOT = { has_variable = icd_buddhist_dhimmi_disabled } }
+			}
+		}
+		icd_no_local_pagans = yes
+	}
+}

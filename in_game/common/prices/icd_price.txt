@@ -6,3 +6,7 @@ icd_nothing_price = {
 icd_dhimmi_price = {
 	
 }
+
+icd_convert_province_price = {
+	gold = 0
+}

@@ -1,0 +1,14 @@
+﻿
+on_location_changed_owner = {
+
+	on_actions = {
+		icd_stop_religion
+	}
+}
+
+icd_stop_religion = {
+	
+	effect = {
+		icd_conversion_stop = yes
+	}
+}

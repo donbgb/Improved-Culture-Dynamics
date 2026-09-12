@@ -29,7 +29,7 @@
 	calc_interval_days = 90
 
 	r0 = { 
-		value = 0.01
+		value = 0.02
 		if = {
 			limit = {
 				root.owner ?= { 
@@ -60,6 +60,11 @@
 				NOT = { root.region ?= region:crescent_region }
 				NOT = { root.region ?= region:caucasus_region }
 				NOT = { root.region ?= region:anatolia_region }
+				NOT = { root.region ?= region:anatolia_region }
+				NOT = { root.area ?= area:iraq_ajam_area }
+				NOT = { root.area ?= area:azerbaijan_area }
+				NOT = { root.area ?= area:kordestan_area }
+				NOT = { root.area ?= area:mazandaran_area }
 			}
 			multiply = 0
 		}

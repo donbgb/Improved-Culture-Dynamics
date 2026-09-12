@@ -30,57 +30,24 @@ icd_politics_setup = {
 		grant_estate_privilege = estate_privilege:dhimmi_promote_dhimmi_hierarchy
 		add_policy = policy:self_governing_institutions
 	}
-	
-	c:CRT = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
 
-	c:CYP = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
+	c:BOH = {
+		add_accepted_culture = culture:danube_bavarian
 	}
-	c:NAX = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
+	c:MVA = {
+		add_accepted_culture = culture:danube_bavarian
 	}
-
-	c:ARG = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
-
-	c:ACH = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
-	c:ATH = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
-	c:BOD = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
-	c:NEO = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
-	c:NEG = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
-	c:CEP = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
-	c:GAZ = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
-	}
-	c:CYP = {
-		add_policy = policy:minority_rule
-		add_policy = policy:icd_minority_religion	
+	c:BOH = {
+		every_subject_or_below = {
+			limit = { 
+				culture = culture:silesian 
+				culture_percentage_in_country = {
+					culture = culture:german_silesian
+					value >= 0.01
+				}
+			}
+			add_accepted_culture = culture:german_silesian
+		}
 	}
 	
 	every_country = {
@@ -307,111 +274,150 @@ icd_politics_setup = {
 		}
 		grant_estate_privilege = estate_privilege:ius_teutonicum
 	}
-			
-	every_country = {
-		if = {
-			limit = {
-				policy:icd_aljama_communities = {
-					is_implementable_in = prev
-				}
-				law:icd_tolerance_heathen_law = {
-					is_implementable_in = prev
-				}
-			}
-			add_policy = policy:icd_aljama_communities
-		}
-		else_if = {
-			limit = {
-				law:icd_tolerance_heathen_law = {
-					is_implementable_in = prev
-				}
-				policy:icd_jewish_charter = {
-					is_implementable_in = prev
-				}
-				NOT = {
-					tag = BRN
-					tag = HAB
-				}
-			}
-			add_policy = policy:icd_jewish_charter
-		}
-		else_if = {
-			limit = {
-				law:icd_tolerance_heathen_law = {
-					is_implementable_in = prev
-				}
-				policy:icd_proselytism_heathen = {
-					is_implementable_in = prev
-				}
-			}
-			add_policy = policy:icd_proselytism_heathen
-		}
-	}
-	
 	
 	every_country = {
-		if = {
+		#Tolerance Own#
+		if = { 
 			limit = {
-				law:icd_tolerance_heretic_law = {
-					is_implementable_in = prev
-				}
-				policy:icd_dharmic_coexistence = {
-					is_implementable_in = prev
-				}
-			}
-			add_policy = policy:icd_dharmic_coexistence
-		}
-		else_if = {
-			limit = {
-				law:icd_tolerance_heretic_law = {
-					is_implementable_in = prev
-				}
-				policy:icd_islamic_orthopraxy = {
-					is_implementable_in = prev
-				}
-			}
-			add_policy = policy:icd_islamic_orthopraxy
-		}
-		else_if = {
-			limit = {
-				law:icd_tolerance_heretic_law = {
-					is_implementable_in = prev
-				}
-				policy:icd_faiths_of_the_folk = {
-					is_implementable_in = prev
-				}
-			}
-			add_policy = policy:icd_faiths_of_the_folk
-		}
-		else_if = {
-			limit = {
-				law:icd_tolerance_heretic_law = {
-					is_implementable_in = prev
-				}
-				policy:icd_proselytism_heretic = {
-					is_implementable_in = prev
-				}
-			}
-			add_policy = policy:icd_proselytism_heretic
-		}
-	}
-	
-	every_country = {
-		if = {
-			limit = {
-				NOT = {
-					has_policy = icd_minority_religion
-				}
 				law:icd_tolerance_own = {
 					is_implementable_in = prev
 				}
-				policy:icd_sanction_of_faith = {
+			}
+			if = {
+				limit = {
+					policy:icd_yassa_tolerance = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_yassa_tolerance
+			}
+			else_if = {
+				limit = {
+					policy:icd_ethnic_religion = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_ethnic_religion
+			}
+			else_if = {
+				limit = {
+					policy:icd_sanction_of_faith = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_sanction_of_faith
+			}
+		}
+		
+		#Tolerance Heretic##
+		if = {
+			limit = {
+				law:icd_tolerance_heretic_law = {
 					is_implementable_in = prev
 				}
 			}
-			add_policy = policy:icd_sanction_of_faith
+			if = {
+				limit = { 
+					policy:icd_bureau_of_buddhist_and_tibetan_affairs = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_bureau_of_buddhist_and_tibetan_affairs
+			}
+			else_if = {
+				limit = {
+					policy:icd_dharmic_coexistence = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_dharmic_coexistence
+			}
+			else_if = {
+				limit = {
+					policy:icd_islamic_orthopraxy = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_islamic_orthopraxy
+			}
+			else_if = {
+				limit = {
+					OR = {
+						tag = HUN
+					}
+					policy:icd_ecumenic_traditions = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_ecumenic_traditions
+			}
+			else_if = {
+				limit = {
+					policy:icd_proselytism_heretic = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_proselytism_heretic
+			}
 		}
+		
+		##Tolerance Heathens#
+		if = {
+			limit = {
+				law:icd_tolerance_heathen_law = {
+					is_implementable_in = prev
+				}
+			}
+			if = {
+				limit = {
+					policy:religious_and_ritual_regulation = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:religious_and_ritual_regulation
+			}
+			else_if = {
+				limit = {
+					policy:icd_zoroastrian_communities = {
+						is_implementable_in = prev
+					}
+					culture = { has_culture_group = culture_group:indian_group }
+				}
+				add_policy = policy:icd_zoroastrian_communities
+			}
+			else_if = {
+				limit = {
+					policy:icd_aljama_communities = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_aljama_communities
+			}
+			else_if = {
+				limit = {
+					policy:icd_jewish_charter = {
+						is_implementable_in = prev
+					}
+					NOT = {
+						tag = BRN
+						tag = HAB
+					}
+				}
+				add_policy = policy:icd_jewish_charter
+			}
+			else_if = {
+				limit = {
+					policy:icd_proselytism_heathen = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_proselytism_heathen
+			}
+		}
+		
+		
 	}
+	
 
 	c:BRI = {
 		change_culture = culture:gallo
@@ -453,7 +459,15 @@ icd_politics_setup = {
 			}
 			religious_unity < 1.0
 		}
-		
+		if = {
+			limit = {
+				OR = {
+					tag = GRA
+					tag = MOR
+				}
+			}
+			set_variable = icd_christian_dhimmi_disabled
+		} 
 		if = {
 			limit = {
 				religion_group_percentage_in_country = {

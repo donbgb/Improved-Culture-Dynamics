@@ -1,0 +1,80 @@
+﻿
+REPLACE:mol_the_moldavian_road = {
+	age = age_1_traditions
+	icon = zmw_merchant_taxes
+
+	potential = {
+		OR = {
+			has_or_had_tag = MOL
+		}
+	}
+
+	global_trade_through_owned_territory_efficiency = 0.1
+	tax_income_efficiency = small_tax_income_efficiency_bonus
+	
+	requires = guilds
+}
+
+REPLACE:mol_the_banner_of_the_golden_bull = {
+	age = age_2_renaissance
+	icon = mol_the_banner_of_the_golden_bull
+
+	potential = {
+		OR = {
+			has_or_had_tag = MOL
+		}
+		religion.group = religion_group:christian
+	}
+
+	monthly_army_tradition = 0.05
+
+	requires = late_feudal_relations
+}
+
+REPLACE:mol_the_great_military_reforms = {
+	age = age_3_discovery
+	icon = offensive_army
+
+	potential = {
+		OR = {
+			has_or_had_tag = MOL
+		}
+	}
+	
+	global_manpower_modifier = 0.15
+
+	requires = regiment_reinforcement_speed_discovery
+}
+
+REPLACE:mol_the_chronicles_of_grigore_ureche = {
+	age = age_4_reformation
+	icon = renaissance_advance
+
+	potential = {
+		OR = {
+			has_or_had_tag = MOL
+		}
+	}
+
+	global_institution_growth_modifier = 0.20
+	skill_of_new_artists = 0.1
+	
+	requires = confessionalism_advance
+}
+
+REPLACE:mol_the_moldovan_enlightment = {
+	age = age_5_absolutism
+	icon = printing_press_advance
+
+	potential = {
+		OR = {
+			has_or_had_tag = MOL
+		}
+	}
+
+	global_monthly_literacy = 0.01
+	embrace_institution_cost_modifier = -0.10
+	
+	requires = absolutist_court
+}
+

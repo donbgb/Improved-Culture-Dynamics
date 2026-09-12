@@ -113,8 +113,12 @@ reformation.2 = {
 		ai_will_select  = {
 			if = {
 				limit = {
-					culture = { has_culture_group = culture_group:french_group }
-					culture = { has_culture_group = culture_group:netherlandish_group }
+					OR = {
+						culture = { has_culture_group = culture_group:french_group }
+						culture = { has_culture_group = culture_group:netherlandish_group }
+						has_or_had_tag = FRA
+						has_or_had_tag = HUN
+					}
 				}
 				value = -500000
 			}
@@ -155,7 +159,7 @@ reformation.2 = {
 			if = {
 				limit = {
 					OR = {
-						culture.dialect = dialect:low_german_dialect
+						culture.dialect = dialect:low_german_dialect						  
 						culture = culture:saxon
 					}
 				}
@@ -166,6 +170,8 @@ reformation.2 = {
 					OR = {
 						culture = { has_culture_group = culture_group:netherlandish_group }
 						culture = { has_culture_group = culture_group:british_group }
+						culture = { has_culture_group = culture_group:carpathian_group }
+						culture = culture:greater_polish
 						has_or_had_tag = SCO
 					}
 				}
@@ -239,7 +245,7 @@ reformation.7 = { #John Calvin
 		scope:target_location.owner = {
 			trigger_event_silently = {
 				id = calvinist.2
-				days = { 60 90 }
+				months = { 1 3 }
 			}
 		}
 		religion:calvinist = {
@@ -255,7 +261,7 @@ reformation.7 = { #John Calvin
 		location:paris.owner = {
 			trigger_event_silently = {
 				id = calvinist.1
-				days = { 60 90 }
+				months = { 1 3 }
 			}
 		}
 		set_variable = received_reformer
@@ -347,7 +353,7 @@ reformation.8 = { #Huldrych Zwingli
 							culture = culture:high_alemannic
 						}
 						split_pop = {
-							fraction = 0.3
+							fraction = 0.1
 							religion = religion:calvinist
 						}
 					}
@@ -361,7 +367,7 @@ reformation.8 = { #Huldrych Zwingli
 							culture = culture:high_alemannic
 						}
 						split_pop = {
-							fraction = 0.3
+							fraction = 0.1
 							religion = religion:calvinist
 						}
 					}
@@ -443,7 +449,7 @@ reformation.9 = { #Heinrich Bullinger
 				}
 				trigger_event_non_silently = {
 					id = flavor_swi.9990
-					days = 2
+					months = 1
 				}
 			}
 		}

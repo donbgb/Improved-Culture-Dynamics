@@ -11,6 +11,12 @@ icd_expel_minority_price_cost_modifier={
 		category=country
 	}
 }
+icd_dhimmi_price_cost_modifier={
+	percent=yes
+	game_data={
+		category=country
+	}
+}
 
 national_russian_culture_movement_resistance_modifier ={
 	percent=yes

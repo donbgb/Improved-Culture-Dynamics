@@ -180,6 +180,78 @@ icd_cultural_setup = {
 			}
 		}
 	}
+
+	location:yinxian = {
+		add_pop = {
+			culture = culture:qayfengi
+			religion = religion:judaism
+			type = pop_type:peasants
+			size = 1.6
+		}
+	}
+
+	location:ningxia = {
+		add_pop = {
+			culture = culture:qayfengi
+			religion = religion:judaism
+			type = pop_type:peasants
+			size = 0.7
+		}
+	}
+
+	location:hangzhou = {
+		add_pop = {
+			culture = culture:qayfengi
+			religion = religion:judaism
+			type = pop_type:peasants
+			size = 0.5
+		}
+	}
+
+	location:jiangdu = {
+		add_pop = {
+			culture = culture:qayfengi
+			religion = religion:judaism
+			type = pop_type:peasants
+			size = 0.3
+		}
+	}
+
+	location:jinjiang = {
+		add_pop = {
+			culture = culture:qayfengi
+			religion = religion:judaism
+			type = pop_type:peasants
+			size = 0.2
+		}
+	}
+
+	location:shangyuan = {
+		add_pop = {
+			culture = culture:qayfengi
+			religion = religion:judaism
+			type = pop_type:peasants
+			size = 0.15
+		}
+	}
+
+	location:guangzhou = {
+		add_pop = {
+			culture = culture:qayfengi
+			religion = religion:judaism
+			type = pop_type:peasants
+			size = 0.5
+		}
+	}
+
+	location:dadu = {
+		add_pop = {
+			culture = culture:qayfengi
+			religion = religion:judaism
+			type = pop_type:peasants
+			size = 0.65
+		}
+	}
 	
 	every_country = {
 

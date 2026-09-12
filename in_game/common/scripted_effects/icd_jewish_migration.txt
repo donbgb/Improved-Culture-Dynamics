@@ -1,0 +1,1069 @@
+﻿
+icd_jewish_migration_save_region = {
+
+	region:maghreb_region = {
+		random_location_in_region = {
+			limit = {
+				has_owner = yes
+				owner != root
+				province_definition = {
+					any_province_in_province_definition = {
+						owner != root
+					}
+					NOT = {
+						any_location_in_province_definition = {
+							"religion_percentage(religion:judaism)" > 0.4
+						}
+					}
+				}
+				owner = {
+					OR = {
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
+						AND = {
+							has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+							NOT = { has_variable = icd_israelite_dhimmi_disabled }
+						}
+						modifier:tolerance_heathen > 0.5
+					} 
+				}
+				is_coastal = yes
+				is_discovered_by = root
+				OR = {
+					location_rank = location_rank:city
+					location_rank = location_rank:town
+				}
+			}
+			save_scope_as = escape_target1_sephardim
+		}
+	}
+		region:maghreb_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						any_location_in_province_definition = {
+							NOT = { this = scope:escape_target1_sephardim }
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_coastal = yes
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+				}
+				save_scope_as = escape_target2_sephardim
+			}
+		}
+		region:balkan_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_coastal = yes
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target3_sephardim
+			}
+		}
+		region:anatolia_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_coastal = yes
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target4_sephardim
+			}
+		}
+		region:anatolia_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						any_location_in_province_definition = {
+							NOT = { this = scope:escape_target4_sephardim }
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_coastal = yes
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target5_sephardim
+			}
+		}
+		region:anatolia_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						any_location_in_province_definition = {
+							NOT = { this = scope:escape_target4_sephardim }
+							NOT = { this = scope:escape_target5_sephardim }
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_coastal = yes
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+				}
+				save_scope_as = escape_target6_sephardim
+			}
+		}
+		region:crescent_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_coastal = yes
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target7_sephardim
+			}
+		}
+		
+		
+		region:ruthenia_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target1_ashkenazi
+			}
+		}
+		region:ruthenia_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						any_location_in_province_definition = {
+							NOT = { this = scope:escape_target1_ashkenazi }
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target2_ashkenazi
+			}
+		}
+		region:north_german_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target3_ashkenazi
+			}
+		}
+		region:baltic_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target4_ashkenazi
+			}
+		}
+		region:baltic_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						any_location_in_province_definition = {
+							NOT = { this = scope:escape_target4_ashkenazi }
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target5_ashkenazi
+			}
+		}
+		region:baltic_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						any_location_in_province_definition = {
+							NOT = { this = scope:escape_target4_ashkenazi }
+							NOT = { this = scope:escape_target5_ashkenazi }
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}						
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}
+					
+				}
+				save_scope_as = escape_target6_ashkenazi
+			}
+		}
+		region:south_german_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					province_definition = {
+						any_province_in_province_definition = {
+							owner != root
+						}
+						NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+					}
+					owner = {
+						OR = {
+							has_policy = icd_jewish_charter
+							has_policy = council_of_three_lands_policy
+							AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+							modifier:tolerance_heathen > 0.5
+						} 
+					}
+					is_discovered_by = root
+					OR = {
+						location_rank = location_rank:city
+						location_rank = location_rank:town
+					}					
+				}
+				save_scope_as = escape_target7_sephardim
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target1_sephardim
+					exists = scope:escape_target2_sephardim
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = total_population
+				max = 1
+				limit = {
+					OR = {
+						capital.continent = continent:europe
+						capital.sub_continent = sub_continent:north_africa
+						capital.sub_continent = sub_continent:middle_east
+					}
+					OR = {
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
+						AND = {
+							has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+							NOT = { has_variable = icd_israelite_dhimmi_disabled }
+						}
+						any_province = {
+							province_definition = {
+								NOT = {
+									any_location_in_province_definition = {
+										"religion_percentage(religion:judaism)" > 0.4
+									}
+								}
+							}
+						}
+						num_provinces > 1
+					}
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+						}
+					}
+					save_scope_as = escape_target1_sephardim
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target2_sephardim
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target3_sephardim
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = total_population
+				max = 1
+				limit = {
+					OR = {
+						capital.continent = continent:europe
+						capital.sub_continent = sub_continent:north_africa
+						capital.sub_continent = sub_continent:middle_east
+					}
+					OR = {
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
+						AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+					}
+					any_province = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+						num_provinces > 1
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target3_sephardim
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target4_sephardim
+					exists = scope:escape_target5_sephardim
+					exists = scope:escape_target6_sephardim
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = total_population
+				max = 1
+				limit = {
+					OR = {
+						capital.continent = continent:europe
+						capital.sub_continent = sub_continent:north_africa
+						capital.sub_continent = sub_continent:middle_east
+					}
+					OR = {
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
+						AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+					}
+					any_province = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+						num_provinces > 1
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target4_sephardim
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target5_sephardim
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target6_sephardim
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target7_sephardim
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = total_population
+				max = 1
+				limit = {
+					OR = {
+						capital.continent = continent:europe
+						capital.sub_continent = sub_continent:north_africa
+						capital.sub_continent = sub_continent:middle_east
+					}
+					OR = {
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
+						AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+					}
+					any_province = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+						num_provinces > 1
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+							any_location_in_province_definition = {
+								"religion_percentage(religion:judaism)" > 0.4
+							}
+						}
+						}
+					}
+					save_scope_as = escape_target7_sephardim
+				}
+			}
+		}
+		
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target1_ashkenazi
+					exists = scope:escape_target2_ashkenazi
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = total_population
+				max = 1
+				limit = {
+					OR = {
+						capital.continent = continent:europe
+						capital.sub_continent = sub_continent:north_africa
+						capital.sub_continent = sub_continent:middle_east
+					}
+					OR = {
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
+						AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+					}
+					any_province = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+						num_provinces > 1
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target1_ashkenazi
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target2_ashkenazi
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target3_ashkenazi
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = total_population
+				max = 1
+				limit = {
+					OR = {
+						capital.continent = continent:europe
+						capital.sub_continent = sub_continent:north_africa
+						capital.sub_continent = sub_continent:middle_east
+					}
+					OR = {
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
+						AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+					}
+					any_province = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+						num_provinces > 1
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target3_ashkenazi
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target4_ashkenazi
+					exists = scope:escape_target5_ashkenazi
+					exists = scope:escape_target6_ashkenazi
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = total_population
+				max = 1
+				limit = {
+					OR = {
+						capital.continent = continent:europe
+						capital.sub_continent = sub_continent:north_africa
+						capital.sub_continent = sub_continent:middle_east
+					}
+					OR = {
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
+						AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+					}
+					any_province = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+						num_provinces > 1
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target4_ashkenazi
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target5_ashkenazi
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner = root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target6_ashkenazi
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target7_ashkenazi
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = total_population
+				max = 1
+				limit = {
+					OR = {
+						capital.continent = continent:europe
+						capital.sub_continent = sub_continent:north_africa
+						capital.sub_continent = sub_continent:middle_east
+					}
+					OR = {
+						has_policy = icd_jewish_charter
+						has_policy = council_of_three_lands_policy
+						AND = {
+								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
+								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							}
+					}
+					any_province = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+						num_provinces > 1
+				}
+				random_owned_location = {
+					limit = {
+						province_definition = {
+							NOT = {
+								any_location_in_province_definition = {
+									owner ?= root
+								}
+							}
+							NOT = {
+								any_location_in_province_definition = {
+									"religion_percentage(religion:judaism)" > 0.4
+								}
+							}
+						}
+					}
+					save_scope_as = escape_target7_ashkenazi
+				}
+			}
+		}
+}

@@ -17,7 +17,7 @@ icd_reformation_push.2 = {
 	dynamic_historical_event = {
 		tag = TEU
 		from = 1526.1.1
-		to = 1570.1.1
+		to = 1550.1.1
 		monthly_chance = 10
 	}
 
@@ -74,10 +74,7 @@ icd_reformation_push.2 = {
 			custom_tooltip = {
 				text = icd_livonians_will_decide
 				c:LIV = {
-					trigger_event_silently = {
-						id = icd_reformation_push.3
-						days = 5
-					}
+					trigger_event_silently = icd_reformation_push.3
 				}
 			}
 		}
@@ -88,6 +85,7 @@ icd_reformation_push.2 = {
 		form_country = formable_country:PRU_f
 		change_government_type = government_type:monarchy
 		
+		custom_tooltip = icd_loss_of_german_territories
 		hidden_effect = {
 			ordered_owned_location = {
 				limit = { dominant_religion = religion:catholic }
@@ -139,10 +137,8 @@ icd_reformation_push.2 = {
 			}
 			change_character_religion = religion:lutheran
 		}
-		historical_option = yes
-		
-		set_country_rank_effect = { rank = country_rank:rank_duchy }
-		
+		#historical_option = yes#
+				
 		add_legitimacy = legitimacy_mild_penalty
 		
 		hidden_effect = {
@@ -165,6 +161,7 @@ icd_reformation_push.2 = {
 					change_country_adjective = TEU_ADJ
 					change_country_color = map_TEU
 					change_country_flag = TEU
+					define_unique_country_tag = ITEUT
 					
 					set_capital = scope:target_order_capital
 					
@@ -427,6 +424,22 @@ icd_reformation_push.4 = { ###secularisation##
 				has_reform = government_reform:military_order_reform
 			}
 			remove_reform = government_reform:military_order_reform
+		}
+		if = {
+			limit = {
+				tag = TEU
+				NOT = {
+					country_exists = c:PRU
+				}
+			}
+			form_country = formable_country:PRU_f
+		}
+		if = {
+			limit = {
+				tag = ITEUT
+			}
+			change_country_name = IMERG
+			change_country_adjective = IMERG_ADJ
 		}
 		
 		change_government_type = government_type:monarchy
@@ -791,7 +804,7 @@ icd_reformation_push.9 = { ###calvins takeover of geneva##
 			root = {
 				OR = {
 					has_or_had_tag = GNV
-					num_locations_owned_or_owned_by_subjects_or_below < 20
+					num_locations_owned_or_owned_by_subjects_or_below < 30
 				}
 			}
 		}
@@ -819,6 +832,20 @@ icd_reformation_push.9 = { ###calvins takeover of geneva##
 			id = icd_reformation_push.10
 			months = 2
 		}
+		
+		every_neighbor_country = {
+			limit = {
+				is_member_of_international_organization = international_organization:swiss_confederation
+				OR = {
+					religion = religion:catholic
+					religion = religion:calvinist
+				}
+			}
+			trigger_event_silently = {
+				id = icd_reformation_push.11
+				months = 1
+			}
+		}
 	}
 	
 	option = { ##calvins failure##
@@ -827,12 +854,38 @@ icd_reformation_push.9 = { ###calvins takeover of geneva##
 		scope:john_calvin = {
 			move_country = scope:target_exile
 		}
+		
+		every_neighbor_country = {
+			limit = {
+				is_member_of_international_organization = international_organization:swiss_confederation
+				OR = {
+					religion = religion:catholic
+					religion = religion:calvinist
+				}
+			}
+			trigger_event_silently = {
+				id = icd_reformation_push.11
+				months = 1
+			}
+		}
 	}
 	
 	option = { ##nothing happens##
 		name = icd_reformation_push.9.c
 		
-		
+		every_neighbor_country = {
+			limit = {
+				is_member_of_international_organization = international_organization:swiss_confederation
+				OR = {
+					religion = religion:catholic
+					religion = religion:calvinist
+				}
+			}
+			trigger_event_silently = {
+				id = icd_reformation_push.11
+				months = 1
+			}
+		}
 	}
 	
 }
@@ -899,5 +952,72 @@ icd_reformation_push.10 = { ###calvins missionary work##
 	
 	option = { ##well##
 		name = icd_reformation_push.10.b
+	}
+}
+
+
+icd_reformation_push.11 = { ###calvin##
+	type = country_event
+	title = icd_reformation_push.11.title
+	desc = icd_reformation_push.11.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+	
+	fire_only_once = yes
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		
+		character:john_calvin = {
+			save_scope_as = john_calvin
+		}
+	}
+	
+	
+	option = { ##huh##
+		name = icd_reformation_push.11.a
+		
+		hidden_effect = {
+			while = {
+				count = {
+					value = num_characters
+					divide = 4
+				}
+				random_character = {
+					limit = {
+						religion = religion:catholic
+					}
+					change_character_religion = religion:calvinist
+				}
+			}
+		}
+		
+		change_religion = religion:calvinist
+		change_religion_for_ruler_and_family = { country = ROOT religion = religion:calvinist }
+		
+		custom_tooltip = {
+			text = lots_of_calvinists
+			every_owned_location = {
+				limit = { area = root.capital.area }
+				every_pop = {
+					limit = {
+						religion = religion:catholic
+					}
+					split_pop = {
+						fraction = { 0.4 0.55 }
+						religion = religion:calvinist
+					}
+				}
+			}
+		}
+		
+	}
+	
+	option = { ##nothing##
+		name = icd_reformation_push.11.b
 	}
 }

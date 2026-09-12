@@ -14,11 +14,11 @@
  
  anabaptist: "Anabaptism"
  anabaptist_ADJ: "Anabaptist"
- anabaptist_desc: "Anabaptism is a strand of Christianity, which believes that Christianity should be a consciously chosen faith, shared by a community of faithful that is organised separately from structures of the secular world. Among their beliefs, Anabaptists see baptism as being valid only when the baptised can make a conscious decision and they reject hierarchical priestly structures or state churches. Many Anabaptist groups also practice pacifism, the sharing of goods and seek to live a modest ascetic life."
+ anabaptist_desc: "Anabaptism is a strand of Christianity, which believes that Christianity should be a consciously chosen faith, shared by a community of faithful that is organised separately from the secular world. Among their beliefs, Anabaptists see baptism as being valid only when the baptised can make a conscious decision and they reject hierarchical priestly structures or state churches. Many Anabaptist groups also practice pacifism, the sharing of goods and seek to live a modest ascetic life."
  
  unitarian: "Unitarianism"
  unitarian_ADJ: "Unitarian"
- unitarian_desc: "Unitarianism is a nontrinitarian strand of Christianity that took shape during the Reformation in Poland and Transylvania primarily. Unitarians maintain that God is one and indivisible and they see Jesus as a lesser creation of God. Other beliefs may vary, but often include a rejection of the use of violence and an emphasis on the free will of humans."
+ unitarian_desc: "Unitarianism is a nontrinitarian strand of Christianity that took shape during the Reformation in Poland and Transylvania primarily. Unitarians maintain that God is one and indivisible, and they see Jesus as a lesser creation of God. Other beliefs may vary, but often include a rejection of the use of violence and an emphasis on the free will of humans."
  
  icd_enable_polygamy: "Enables the [ShowPolicyName('icd_abrahamic_marriage')] [policy|e]"
  
@@ -46,7 +46,7 @@
  silhak_school: "Silhak"
  silhak_school_desc: "Silhak, also known as 'practical studies', refers to a broad reform movement that arose in Korea in response to the supposed uncritical dogmatism of Confucianism there. The school advocates for an empiricism concerned with human society at the practical level rather than excessive metaphysical considerations, arguing for reforming the rigid Confucian social structure, implementing land reforms to relieve the plight of peasant farmers, encouraging the study of science, and advocating technology exchange with foreign countries"
  shenyan_school: "Shènyán"
- shenyan_school_desc: "Shènyán ('Well-Weighed Words'), refers to the work of Wang Tingxiang. Characterised by being heavily unorthodox, the school preaches that qi alone could explain all things in reality, arguing that principle does not exist, and as such, goodness and the predispositions for virtue aren’t necessary features of human nature, but rather responsive to social norms and expectations."
+ shenyan_school_desc: "Shènyán ('Well-Weighed Words'), refers to the work of Wang Tingxiang. Characterised by being heavily unorthodox, the school preaches that qi alone can explain all things in reality, arguing that principle does not exist, and as such, goodness and the predispositions for virtue aren’t necessary features of human nature, but rather responsive to social norms and expectations."
  quanzhen_school: "Quánzhēn"
  quanzhen_school_desc: "Quánzhēn, also known as Complete Perfection, is a branch of Daoism that specializes in internal alchemy and cultivation as the main means of harmonising oneself with the Dao- which should be the ultimate goal of existence."
  zhengyi_dao: "Zhèngyī Dào"
@@ -62,7 +62,7 @@
  yoshida_shinto: "Yoshida Shintō"
  yoshida_shinto_desc: "Yoshida Shintō is a sect arising from the teachings of Yoshida Kanetomo, which provides further structure to the idea of Han Honji Suijaku and seeks to organize Shintō coherently. It argues Shintō is the true primal religion from which all principles derive."
  fukko_shinto: "Fukko Shintō"
- fukko_shinto_desc: "Fukko Shintō is a sect within Shintō which seeks to reject Buddhist and Confucian influence and reemphasise a pure form of the faith. It puts emphasis on the kannagara no michi, the teachings of the gods that have been passed down through time, rather than Buddhist or Confucian perspectives."
+ fukko_shinto_desc: "Fukko Shintō is a sect within Shintō which seeks to reject Buddhist and Confucian influence and reemphasises a pure form of the faith. It puts emphasis on the kannagara no michi, the teachings of the gods that have been passed down through time, rather than Buddhist or Confucian perspectives."
  
  SECT_PERFECT_TEACHING_NAME: "Perfect Teaching"
  SECT_SOGATAN_NAME: "Sogatan"
@@ -90,13 +90,23 @@
  icd_teetotalism: "Teetotalism"
  icd_teetotalism_desc: "The consumption of alcohol is to be strictly forbidden"
  icd_godhead: "Membership in the Godhead"
- icd_godhead_desc: "Every true Christian is a member in the Godhead, and shares in God's grace and love."
+ icd_godhead_desc: "Every true Christian is a member of the Trinitarian Godhead, and shares in God's grace and love."
  icd_celestial_flesh: "Celestial Flesh"
  icd_celestial_flesh_desc: "Jesus did not have physical flesh formed from the Virgin Mary, but instead his human body was brought down directly from heaven"
  
  REFORMATION_HAS_ANABAPTIST_MOVEMENT: "[ShowReligionName('anabaptist')] movement active (Anabaptism spreading)"
  
- 
+ sola_scriptura: "Pietas Litterata"
+ sola_scriptura_desc: "It is the duty of every Protestant state to educate the young, so that through education they may attain greater learned devotion to Christ."
+ sola_fide: "Two Kingdoms"
+ sola_fide_desc: "God has therefore ordained two regiments- the spiritual which by the Holy Spirit produces Christians and pious folk under Christ, and the secular which restrains un-Christian and evil folk, so that they are obliged to keep outward peace."
  
  clergy_estate_nusantaran_hindu: "Paṇḍita"
+  
+ icd_seven_sacraments: "Seven Sacraments"
+ icd_seven_sacraments_desc: "We will embrace the seven sacraments in their entirety, treating all seven as full sacraments rather than simply sacramental rites."
+ icd_great_peasant_rebellion: "Icd great peasant rebellion"
+ icd_great_peasant_rebellion_country: "Icd great peasant rebellion country"
+ icd_great_peasant_rebellion_country_adjective: "Icd great peasant rebellion country adjective"
+
  

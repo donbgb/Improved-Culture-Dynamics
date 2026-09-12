@@ -61,7 +61,7 @@
  icd_dhimmi_communities_each_buddhist_custom: "[ShowReligionGroupAdjective('buddhist')] [pops|e] are currently part of the [ShowEstateTypeName('dhimmi_estate')]"
  
  icd_minority_events.7.title: "Status of the Dhimmi"
- icd_minority_events.7.desc: "We may choose which [religions|e] should be considered part of the [ShowEstateTypeName('dhimmi_estate')]. Members of the [ShowEstateTypeName('dhimmi_estate')] are protected from conversion and are afforded autonomy and certain rights, but in exchange must pay the jizya tax and are bound by several restrictions in their day-to-day life.\n\nIn societies with low [tolerance|e], the [ShowEstateTypeName('dhimmi_estate')] experience greater protections and liberties than other [heathens|e]. In societies with high [tolerance|e], the condition of being a [ShowEstateTypeName('dhimmi_estate')] is discriminatory. The position of [ShowEstateTypeName('dhimmi_estate')] can be used either as a tool of repression, or as a tool of promoting religious tolerance. The extent to which protections are in place depends on the [ShowEstateTypeName('dhimmi_estate')] [estate|e]'s privileges. Currently protected [religions|e]:\n\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_israelite')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_christian')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_sabian')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_iranic')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_dharmic')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_buddhist')]"
+ icd_minority_events.7.desc: "We may choose which [religions|e] should be considered part of the [ShowEstateTypeName('dhimmi_estate')]. Members of the [ShowEstateTypeName('dhimmi_estate')] are protected from conversion and are afforded autonomy and certain rights, but in exchange must pay the jizya tax and are bound by several restrictions in their day-to-day life.\n\nIn societies with low [heathenry_tolerance|e], the [ShowEstateTypeName('dhimmi_estate')] experience greater protections than other [heathens|e]. In societies with high [heathenry_tolerance|e], the condition of being a [ShowEstateTypeName('dhimmi_estate')] is discriminatory. The position of [ShowEstateTypeName('dhimmi_estate')] can be used either as a tool of repression, or as a tool of promoting religious tolerance. The extent to which protections are in place depends on the [ShowEstateTypeName('dhimmi_estate')] [estate|e]'s privileges. While protected, a small number of members of the [ShowEstateTypeName('dhimmi_estate')] will convert every year through [voluntary_conversions|e] due to their personal circumstances.\nCurrently protected [religions|e]:\n\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_israelite')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_christian')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_sabian')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_iranic')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_dharmic')]\n[ROOT.GetCountry.Custom('icd_dhimmi_communities_each_buddhist')]"
  
  
  icd_minority_events.7.a: "Change the status of Jews and Samaritans"
@@ -84,7 +84,7 @@
  icd_buddhist_dhimmi_remove_tt: "Removes [ShowReligionGroupAdjective('buddhist')] [pops|e] from the [ShowEstateTypeName('dhimmi_estate')]\nChanges regarding this will usually only take effect after the beginning of February."
  icd_minority_events.7.h: "Nevermind"
  
- icd_remove_dhimmi_tt: "If our [tolerance|e] of [heathens|e] is below 0, every [pop|e] belonging to the impacted [religion|e] will lose #color_red 15.00%#! [pop_satisfaction|e]"
+ icd_remove_dhimmi_tt: "If our [heathenry_tolerance|e] is below 0, every [pop|e] belonging to the impacted [religion|e] will lose #color_red 15.00%#! [pop_satisfaction|e]"
  
  
  icd_minority_events.31.title: "Leadership in the Levant"
@@ -111,13 +111,13 @@
  icd_romani_events.5.desc: "Our artist [SCOPE.sCharacter('icd_painting_artist_scope').GetName] has become inspired by scenes of the $romani_culture$ community in our country, and has been planning a large painting depicting their way of life. Should we support such a painting, it will provide a valuable addition to our galleries."
  icd_romani_events.5.a: "Paint it!"
  icd_romani_events.5.b: "It isn't worth the investment"
- icd_romani_events.6.title: "the King of the Gypsies"
+ icd_romani_events.6.title: "The King of the Gypsies"
  icd_romani_events.6.desc: "Among the $romani_culture$, a man by the name of [SCOPE.sCharacter('icd_romani_king_gypsy_scope').GetName] has stood out for his leadership and authority. He has begun taking on the title of 'King of the Gypsies', and has assumed an important role in the relationship and ties between $romani_culture$ and non-Romani in both the professional and political spheres. Should we recognise his position formally, we may inevitably profit."
  icd_king_of_the_gypsies_nickname: "King of the Gypsies"
  icd_romani_events.6.a: "He is a true king!"
  icd_romani_events.6.b: "We will have no part in this farse"
- icd_romani_events.7.title: "The Rise of Stefan Răzvan"
- icd_romani_events.7.entry: "The Rise of Stefan Răzvan"
+ icd_romani_events.7.title: "Stefan Răzvan"
+ icd_romani_events.7.entry: "Stefan Răzvan"
  icd_romani_events.7.desc: "The strategic brilliance and political charisma of [ROOT.GetVariable('icd_stefan_razvan_variable').GetCharacter.GetName] have proven very impressive, and despite his origins as a $romani_culture$, he has risen in society and achieved great success as a member of the [ShowEstateTypeName('nobles_estate')]. In particular, he has stood out for his strong relationship with $moldovan_culture$ common folk even outside our territory. In these difficult times, where our ruler has failed to maintain political authority, perhaps we should consider giving some degree of military and political influence to such a charismatic individual. Though the risk always exists that he uses said power and his popularity to further destabilise our rule."
  icd_romani_events.7.a: "Talent must be recognised!"
  icd_romani_events.7.b: "Have him quietly dispatched"
@@ -155,11 +155,11 @@
  flavor_eng.7.fallback_title: "The souring of relations and attrition between [ROOT.GetCountry.GetName] and the [GetCountry('PAP').GetName] amidst the [ShowSituationName('reformation')] has led to [ROOT.GetCountry.GetGovernment.GetRuler.GetName] forming ideas about a potential separation from the [GetCountry('PAP').GetGovernment.GetRulerTitle]. Should we undergo this religious break, we will be effectively establishing a new religion entirely separate from the Catholic world."
  icd_dhes.2.title: "Cum Nimis Absurdum"
  icd_dhes.2.entry: "Cum Nimis Absurdum"
- icd_dhes.2.desc: "In the past, the [GetCountry('PAP').GetName] and the [GetCountry('PAP').GetGovernment.GetRulerTitle] had been strong in advocating for the protection of Jewish peoples and their property and religious rights. These rights, however, have proven to be incompatible with the Inquisition and practices of religious investigation nowadays - and it is clear that as long as these rights and protections are in place, [ShowReligionAdjective('judaism')] people will have little reason to convert to the true faith. Perhaps a shift in policy might be necessary through a papal bull, revoking all the rights enjoyed by the [ShowReligionAdjective('judaism')], placing economic restrictions on them and forcing them to exist in a state of humiliation, secluded in separate neighbourhoods - ghettos."
- icd_dhes.2.a: "Enact Cum nimis absurdum - they must know their place"
+ icd_dhes.2.desc: "In the past, the [GetCountry('PAP').GetName] and the [GetCountry('PAP').GetGovernment.GetRulerTitle] had been strong in advocating for the protection of Jewish peoples and their property and religious rights. These rights, however, have proven to be incompatible with the Inquisition and the reality of current Christendom; it is clear that as long as these protections are in place, [ShowReligionAdjective('judaism')] people will have little reason to convert to the true faith. Perhaps a shift in policy is necessary, a proposal has been put forth for a papal bull (Cum Nimis Absurdum), where all rights currently enjoyed by the [ShowReligionAdjective('judaism')] would be revoked and economic restrictions would be placed on them, forcing them to exist in a state of humiliation, secluded in separate neighbourhoods - ghettos. "
+ icd_dhes.2.a: "Enact this papal bull, they must know their place"
  icd_dhes.2.b: "This would be too cruel"
  icd_dhes.3.title: "The Pope's Cum Nimis Absurdum"
- icd_dhes.3.desc: "The [GetCountry('PAP').GetGovernment.GetRulerTitle]'s decision to enact a papal bull revoking all protections enjoyed thus far by the [ShowReligionAdjective('judaism')] community has profoundly changed the situation of the [ShowReligionAdjective('judaism')] in his lands. Now, the [GetCountry('PAP').GetGovernment.GetRulerTitle] has also begun to pressure us to implement a similar policy, segregating the [ShowReligionAdjectiveWithNoTooltip('judaism')] to ghettos."
+ icd_dhes.3.desc: "The [GetCountry('PAP').GetGovernment.GetRulerTitle]'s decision to enact a papal bull revoking all protections enjoyed thus far by the [ShowReligionAdjective('judaism')] community has profoundly changed the situation of the [ShowReligionAdjective('judaism')] people in his lands. Now, the [GetCountry('PAP').GetGovernment.GetRulerTitle] has also begun to pressure us to implement a similar policy, urging for the segregation of our [ShowReligionAdjectiveWithNoTooltip('judaism')] population to ghettos."
  icd_dhes.3.a: "We obey the Papacy"
  icd_dhes.3.b: "The [GetCountry('PAP').GetGovernment.GetRulerTitle] has no right to dictate our policies"
  reformation.2.c: "Does this translation conform to the Geneva Bible?"
@@ -310,8 +310,28 @@
  icd_conversion_events.2.a: "Ridiculous!"
  icd_conversion_events.2.b: "These [ShowReligionGroupAdjectiveWithNoTooltip('muslim')]s may have a point"
  icd_conversion_events.3.title: "Buddhist Missionaries"
- icd_conversion_events.3.desc: "Lamas have arrived in our country, passing on teachings of the Buddha and spreading mystical techniques. In our court, they have proven quite influential and many have begun to question our exclusive commitment to our [ShowReligionAdjective('tengri')] faith, instead suggesting we should adopt the lamas' [ShowReligionAdjective('tibetan_buddhism')] religion."
+ icd_conversion_events.3.desc: "Lamas have arrived in our country, passing on teachings of the Buddha and spreading mystical techniques. In our court, they have proven quite influential and many have begun to question our exclusive commitment to our current faith, instead suggesting we should adopt the lamas' [ShowReligionAdjective('tibetan_buddhism')] religion."
  icd_conversion_events.3.a: "Ridiculous!"
  icd_conversion_events.3.b: "These [ShowReligionAdjectiveWithNoTooltip('tibetan_buddhism')]s may have a point"
  icd_conversion_events.3.c: "What do the monks from neighbouring China have to say?"
  
+ icd_loss_of_german_territories: "We will lose our [locations|e] in Central Germany that do not have a land connection to our capital."
+ 
+ icd_conversion_events.1000.title: "This"
+ icd_conversion_events.1000.desc: "That"
+ 
+ IMERG: "Mergentheim"
+ IMERG_ADJ: "Mergentheimer"
+ 
+ icd_conversion_events.4.title: "Conversion of the Sindhi"
+ icd_conversion_events.4.entry: "Conversion of the Sindhi"
+ icd_conversion_events.4.desc: "The presence of influential Sufi orders in Sindhi society and the gradual collapse of Buddhism as a strong religious institution has led to the increasing shift of Sindhi society away from its Buddhist past and into Islam. Should we uphold this shift, our populace will adopt Muslim values far more quickly than would be otherwise expected."
+ icd_conversion_events.4.a: "Uphold Islam!"
+ icd_conversion_events.4.b: "And lose a source of jizya tax? Never"
+ 
+ icd_reformation_push.11.title: "Spread of Calvinism"
+ icd_reformation_push.11.desc: "[GetCharacter('john_calvin').GetName]'s recent brilliant writings have proven a powerful addition and overhaul of the [ShowReligionAdjective('calvinist')] faith. Whereas once we may have rejected or avoided certain elements of the [ShowReligionName('calvinist')], many in our society are now willing to openly embrace it."
+ icd_reformation_push.11.a: "Embrace [ShowReligionName('calvinist')]"
+ icd_reformation_push.11.b: "Reject this nonsense"
+ icd_bosnian_conversion_tt: "[ShowCultureName('bosnian')] [pops|e] will convert in large numbers to [ShowReligionGroupName('muslim')]."
+ icd_sindhi_conversion_tt: "[ShowCultureName('sindhi')] [pops|e] will convert in large numbers to [ShowReligionGroupName('muslim')]."

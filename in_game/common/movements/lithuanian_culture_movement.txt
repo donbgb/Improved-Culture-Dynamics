@@ -40,7 +40,7 @@
 		value = 0.05
 	}
 
-	required_cultures = { aukstaitian samogitian curonian }
+	required_cultures = { aukstaitian samogitian }
 	
 
 	r0 = { 
@@ -66,11 +66,6 @@
 	specific_pop_type_effect = {
 		pop_type = tribesmen
 		multiplier = 0.5
-	}
-
-	specific_pop_type_effect = {
-		culture = curonian
-		multiplier = 0.025
 	}
 
 	location_stagnation_chance = {

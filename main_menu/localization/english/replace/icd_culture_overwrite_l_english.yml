@@ -69,6 +69,9 @@
  zwingli_support_rebels_joining: "All [ShowReligionAdjective('calvinist')] [pops|e] in [ROOT.GetCountry.GetNameWithNoTooltip] lose [ShowNamedValue('pop_satisfaction_ultimate_penalty')|+=2%] [pop_satisfaction|e] and join [target_zwingli_support_rebels.GetName]."
  flavor_swi.111.desc.fallback: "[ShowReligionAdjective('catholic')] and [ShowReligionAdjective('calvinist')] members alike see each other with hostility. Such an encounter eventually escalated in [target_location.GetName], becoming the trigger for what will be known as the Wars of [target_location.GetNameWithNoTooltip]."
 
+
+ game_concept_conversion_desc: "This is the process by which [pops|e] change from one [religion|e] to another over time. If vanilla conversion is disabled, this can happen in one of three ways: [pops|e] can be forced to convert via [forced_conversion|e], [pops|e] may individually convert every four years through [voluntary_conversion|e], and [pops|e] can convert in groups due to social circumstances based on [communal_conversion|e]."
+
  ##not overwrite change location later##
  flavor_swi.german_conversion.tt: "A lot of our [ShowCultureNameWithNoTooltip('high_alemannic')] [pops|e] in [ROOT.GetCountry.GetName] will convert to [ShowReligionName('calvinist')]."
  flavor_swi.german_small_conversion.tt: "Some of our [ShowCultureNameWithNoTooltip('high_alemannic')] [pops|e] in [ROOT.GetCountry.GetName] will convert to [ShowReligionName('calvinist')]."
@@ -77,3 +80,5 @@
  flavor_swi.9990.a: "There isn't much we can do about this"
  flavor_swi.9990.b: "Perhaps [target_character.GetNameWithNoTooltip] is right"
  flavor_swi.9990.c: "We must act to contain the spread of this heresy!"
+
+ qayfengi: "Yīcìlèyè"

@@ -98,10 +98,7 @@
 		custom_tooltip = expel_culture_people_activated_tt
 		
 		scope:actor = {
-			trigger_event_silently = {
-			 id = icd_minority_events.1000
-			 days = 1
-			} 
+			trigger_event_silently = icd_minority_events.1000
 		}
 	}
 			

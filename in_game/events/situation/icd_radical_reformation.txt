@@ -1064,11 +1064,36 @@ icd_radical_reformation.14 = { #edict of torda#
 		
 		add_policy = policy:icd_edict_of_torda
 		set_variable = icd_unlocked_torda
+		
+		ai_will_select = {
+			if = {
+				limit = {
+					OR = {
+						religion = religion:calvinist
+						religion = religion:lutheran
+						religion = religion:unitarian
+					}
+				}
+				value = 300
+			}
+		}
 	}
 
 	option = {
 		name = icd_radical_reformation.14.b
 		set_variable = icd_unlocked_torda
+		
+		ai_will_select = {
+			if = {
+				limit = {
+					OR = {
+						religion = religion:catholic
+						religion = religion:orthodox
+					}
+				}
+				value = 300
+			}
+		}
 	}
 	
 }
@@ -1473,7 +1498,7 @@ icd_radical_reformation.100 = { #great peasant war - beginnings
 		}
 		trigger_event_silently = {
 			id = icd_radical_reformation.102
-			days = 90
+			months = 3
 		}
 		
 		ai_will_select = { value = 100 }

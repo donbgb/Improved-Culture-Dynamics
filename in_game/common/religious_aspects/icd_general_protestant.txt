@@ -1,0 +1,14 @@
+﻿icd_seven_sacraments = {
+	religion = anglican
+	
+	modifier = {
+		tax_income_efficiency = small_tax_income_efficiency_bonus
+		monthly_religious_influence = 0.05
+		global_clergy_estate_power = 0.1
+	}
+
+	opinions = {
+		icd_seven_sacraments = 5
+		rejection_of_sacraments = -20
+	}
+}

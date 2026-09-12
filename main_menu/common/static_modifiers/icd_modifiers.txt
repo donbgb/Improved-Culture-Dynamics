@@ -44,26 +44,12 @@ icd_king_of_the_gypsies = {
 	global_merchant_capacity_modifier = 0.25
 }
 
-icd_muslim_bosnia = {
-	game_data = {
-		category = location
-	}
-	local_heathen_pop_conversion_speed_modifier = 5.0
-}
 
 icd_religious_zeal = {
 	game_data = {
 		category = location
 	}
 	local_pop_conversion_speed_modifier = -10.0
-}
-
-icd_strong_cult_of_saints = {
-	game_data = {
-		category = location
-	}
-	local_lutheranism_movement_resistance_modifier = 0.5
-	local_calvinism_movement_resistance_modifier = 0.5
 }
 icd_new_jerusalem_fervor = {
 	game_data = {
@@ -85,4 +71,17 @@ icd_rejection_of_novel_religions = {
 	national_anabaptist_movement_resistance_modifier = 0.85
 	national_lutheranism_movement_resistance_modifier = 0.85
 	national_calvinism_movement_resistance_modifier = 0.85
+}
+icd_promote_religion_province_modifier = {
+	pure_tooltip_entry = icd_promote_religion_province_tt
+	local_prosperity_decay = 0.025  
+	local_monthly_development_modifier = -0.25
+}
+icd_protestant_in_wrong_country = {
+	game_data = {
+		category = character
+	}
+	blocked_from_being_leader = yes
+	blocked_from_being_ruler = yes
+	blocked_from_cabinet = yes
 }

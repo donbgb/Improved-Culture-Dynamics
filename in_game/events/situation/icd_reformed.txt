@@ -757,3 +757,62 @@ icd_reformed.10 = { #Caspar Olevian#
 		}
 	}
 }
+
+icd_reformed.11 = { #andreas knopken# 
+	type = country_event
+	category = situation_event
+	title = reformation.3.title
+	desc = reformation.3.desc
+	outcome = neutral
+
+	fire_only_once = yes
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_andrew
+			last_name = Knopken
+			culture = culture:brandenburgish
+			birth_location = location:torzym
+			religion = religion:lutheran
+			script = icd_andreas_knopken
+			birth_date = 1468.1.1
+			estate = estate_type:clergy_estate
+			adm = { 50 70 }
+			dip = { 50 65 }
+			mil = { 50 65 }
+			save_scope_as = target_character
+		}
+		add_to_reformer_list = yes
+		situation:reformation = {
+			var:lutheran_character = {
+				save_scope_as = target_luther
+			}
+		}
+		location:riga = {
+			save_scope_as = target_location
+			set_variable = received_reformer
+		}
+	}
+
+	option = {
+		name = reformation.3.a
+
+		religion:lutheran = {
+			ordered_movement_in_religion = {
+				max = 1
+				order_by = { value = 1 }
+				add_spreader = {
+					character = scope:target_character
+					location = scope:target_location
+				}
+			}
+		}
+	}
+}

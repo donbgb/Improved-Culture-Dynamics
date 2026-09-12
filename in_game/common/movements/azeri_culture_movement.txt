@@ -43,7 +43,7 @@
 	calc_interval_days = 90
 
 	r0 = { 
-		value = 0.015
+		value = 0.01
 		if = {
 			limit = {
 				OR = {

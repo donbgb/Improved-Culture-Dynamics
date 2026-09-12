@@ -1,5 +1,8 @@
 ﻿l_english:
 
+
+ PROVINCE_SORT_BY_RELIGION_PERCENTAGE: "Click to sort by [religion|e] percentage in the [area|e]"
+
  mapmode_icd_culture_assimilation_mode_name: "Cultural Majority Assimilation"
  MAPMODE_ICD_CULTURE_ASSIMILATION_MODE: "#T $mapmode_icd_culture_assimilation_mode_name$#!\nThis shows which culture a location is assimilating to - be it our culture, another country's culture or the local dominant culture."
  icd_culture_assimilation_mode_max: "Assimilating to Our Primary Culture"
@@ -13,4 +16,19 @@
  ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP_NONE: "Uncolonized locations do not assimilate"
  ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP: "[ROOT.GetLocation.GetName]'s Dominant [culture|e] is [ROOT.GetLocation.GetDominantCulture.GetName]. The location is currently assimilating to [ROOT.GetLocation.GetProvince.MakeScope.GetVariable('promoting_culture').GetCulture.GetName]"
  ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP_NO_PROMOTING: "[ROOT.GetLocation.GetName]'s Dominant [culture|e] is [ROOT.GetLocation.GetDominantCulture.GetName]. The location is currently assimilating to [ROOT.GetLocation.GetOwner.GetCulture.GetName]"
+ 
+ 
+ ICD_HERETIC_TOLERANCE_SHOW: "The [ROOT.GetLocation.GetOwner.GetLongName] currently has a [heretic_tolerance|e] of [ROOT.GetLocation.GetOwner.GetModifierValue('tolerance_heretic')]"
+ ICD_HEATHEN_TOLERANCE_SHOW: "The [ROOT.GetLocation.GetOwner.GetLongName] currently has a [heathenry_tolerance|e] of [ROOT.GetLocation.GetOwner.GetModifierValue('tolerance_heathen')]"
+ icd_test_coerce: "[ROOT.GetLocation.GetProvince.MakeScope.GetVariable('promoting_religion').GetReligion.GetName]   [ROOT.GetLocation.MakeScope.ScriptValue('icd_conversion_rate_province')]" 
+ icd_communal_tooltip: "[ROOT.GetLocation.MakeScope.ScriptValue('icd_communal_conversion_rate_province')]" 
+ 
+ mapmode_icd_tolerance_heretic_map_name: "Tolerance of Heretics"
+ MAPMODE_ICD_TOLERANCE_HERETIC_MAP: "#T $mapmode_icd_tolerance_heretic_map_name$#!\nThis shows a country's [heretic_tolerance|e]."
+ mapmode_icd_tolerance_heathen_map_name: "Tolerance of Heathens"
+ MAPMODE_ICD_TOLERANCE_HEATHEN_MAP: "#T $mapmode_icd_tolerance_heretic_map_name$#!\nThis shows a country's [heathenry_tolerance|e]."
+ mapmode_icd_conversion_map_name: "Religious Conversion Rate (ICD)"
+ MAPMODE_ICD_CONVERSION_MAP: "This shows the rate at which ICD's unique religious conversion mechanics will apply"
+ 
+ 
  

@@ -74,13 +74,10 @@ icd_romani_migration_effect = {
 					}
 				}
 				this.owner = {
-					trigger_event_silently = {
-						id = icd_romani_events.99
-						days = 1
-					}
+					trigger_event_silently = icd_romani_events.99
 					set_variable = {
 						name = icd_temporary_romani_variable
-						days = 10
+						months = 1
 					}
 				}
 			}
@@ -122,13 +119,10 @@ icd_romani_migration_effect = {
 					}
 				}
 				this.owner = {
-					trigger_event_silently = {
-						id = icd_romani_events.99
-						days = 1
-					}
+					trigger_event_silently = icd_romani_events.99
 					set_variable = {
 						name = icd_temporary_romani_variable
-						days = 10
+						months = 1
 					}
 				}
 			}

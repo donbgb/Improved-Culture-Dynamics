@@ -77,6 +77,56 @@
 	}
 	
 	select_trigger = {
+		looking_for_a = pop_type
+		source = actor
+		target_flag = target_pop
+		name = "relocate_people_select_pop"
+		none_available_msg_key = "relocate_people_no_pops"
+		column = {
+			data = name
+		}
+		default_sort = population
+		visible = {
+			OR = {
+				AND = {
+					root = pop_type:peasants
+					scope:target_origin = {
+						any_location_in_province = {
+							any_pop = {
+								pop_type = pop_type:peasants
+								culture = scope:target
+							}
+						}
+					}
+				}
+				AND = {
+					root = pop_type:tribesmen
+					scope:target_origin = {
+						any_location_in_province = {
+							any_pop = {
+								pop_type = pop_type:tribesmen
+								culture = scope:target
+							}
+						}
+					}
+				}
+				AND = {
+					root = pop_type:laborers
+					scope:target_origin = {
+						any_location_in_province = {
+							any_pop = {
+								pop_type = pop_type:laborers
+								culture = scope:target
+							}
+						}
+					}
+				}
+			}
+		}
+		map_color = define:NMapColors|MAP_COLOR_HIGH
+	}
+	
+	select_trigger = {
 		looking_for_a = province
 		source = actor
 		target_flag = target_destination
@@ -111,6 +161,7 @@
 				from = scope:target_origin.province_definition
 				to = scope:target_destination.province_definition
 				culture = scope:target
+				type = scope:target_pop
 				amount = {
 					value = 0.250
 					multiply = {
@@ -148,6 +199,7 @@
 				from = scope:target_origin.province_definition
 				to = scope:target_destination.province_definition
 				culture = scope:target
+				type = scope:target_pop
 			}
 			scope:target_destination = {
 				remove_variable = promoting_culture

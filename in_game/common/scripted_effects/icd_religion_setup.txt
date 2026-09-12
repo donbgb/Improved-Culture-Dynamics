@@ -412,6 +412,5 @@ icd_religion_setup = {
 		}
 	}
 	
-	
 
 }

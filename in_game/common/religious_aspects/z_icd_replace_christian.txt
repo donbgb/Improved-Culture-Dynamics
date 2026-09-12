@@ -35,6 +35,7 @@ REPLACE:aniconism = {
 	religion = calvinist
 	religion = anabaptist
 	religion = unitarian
+	religion = anglican
 	
 	visible = {
 		OR = {
@@ -59,14 +60,38 @@ REPLACE:aniconism = {
 	opinions = {
 		aniconism = 10
 
+		monasticism = -5
+
+		crown_as_head_of_faith = -10
+	}
+}
+
+REPLACE:monasticism = {
+	religion = anglican
+	religion = bogomilism
+	religion = hussite
+	religion = lollardy
+	religion = lutheran
+	religion = miaphysite
+	
+	modifier = {
+		can_have_monasteries = yes
+		global_clergy_max_literacy = 5
+		monthly_towards_spiritualist = societal_value_monthly_move
+	}
+
+	opinions = {
+		monasticism = 10
+
+		aniconism = 5
 		asceticism = 5
-		clerical_poverty = 5
 		monasticism = 5
 		rejection_of_sacraments = 5
 
 		crown_as_head_of_faith = -10
 	}
 }
+
 
 REPLACE:asceticism = {
 	religion = anglican
@@ -103,14 +128,41 @@ REPLACE:asceticism = {
 	opinions = {
 		asceticism = 10
 
-		aniconism = 5
 		clerical_poverty = 5
-		monasticism = 5
-		rejection_of_sacraments = 5
-
+		
 		crown_as_head_of_faith = -10
 	}
 }
+
+REPLACE:crown_as_head_of_faith = {
+	religion = anglican
+	religion = calvinist
+	religion = hussite
+	religion = lollardy
+	religion = lutheran
+	religion = paulicianism
+	
+	modifier = {
+		global_crown_estate_power = 0.1
+		global_monthly_control = 0.001
+		monthly_towards_absolutism = societal_value_monthly_move
+		monthly_towards_centralization = societal_value_monthly_move
+	}
+
+	opinions = {
+		crown_as_head_of_faith = 10
+
+		punishment_of_sin = -5
+		freedom_to_preach = -5
+		individual_creeds = -5
+
+		aniconism = -10
+		asceticism = -10
+		monasticism = -10
+		rejection_of_sacraments = -10
+	}
+}
+
 
 REPLACE:freedom_to_preach = {
 	religion = anglican
@@ -157,6 +209,8 @@ REPLACE:freedom_to_preach = {
 	}
 }
 
+
+
 REPLACE:individual_creeds = {
 	religion = anglican
 	religion = bogomilism
@@ -197,6 +251,32 @@ REPLACE:individual_creeds = {
 
 		organized_through_bishops = -5
 		crown_as_head_of_faith = -5
+	}
+}
+
+REPLACE:organized_through_bishops = {
+	religion = anglican
+	religion = calvinist
+	religion = hussite
+	religion = lollardy
+	religion = lutheran
+	religion = waldensian
+	religion = miaphysite
+	
+	modifier = {
+		global_clergy_estate_power = 0.5
+		global_distance_from_capital_speed_propagation = 0.1
+		monthly_towards_traditionalist  = societal_value_monthly_move
+	}
+
+	opinions = {
+		organized_through_bishops = 10
+
+		punishment_of_sin = -5
+		freedom_to_preach = -5
+		individual_creeds = -5
+
+		freedom_to_preach = -10
 	}
 }
 
@@ -305,6 +385,7 @@ REPLACE:sola_scriptura = {
 	religion = lutheran
 	religion = anabaptist
 	religion = unitarian
+	religion = anglican
 	
 	visible = {
 		OR = {
@@ -333,6 +414,79 @@ REPLACE:sola_scriptura = {
 		soli_deo_gloria = 5
 
 		prima_scriptura = -20
+	}
+}
+
+REPLACE:sola_fide = {
+	religion = anglican
+	religion = calvinist
+	religion = hussite
+	religion = lutheran
+	religion = anabaptist
+	religion = unitarian
+	
+	visible = {
+		OR = {
+			has_religious_aspect = religious_aspect:adult_baptism
+			has_religious_aspect = religious_aspect:arianism
+			has_religious_aspect = religious_aspect:nonadorantism
+			has_religious_aspect = religious_aspect:adoptionism
+			has_religious_aspect = religious_aspect:modalism
+			NOT = {
+				religion = religion:anabaptist
+				religion = religion:unitarian
+			}
+		}
+	}
+
+	modifier = {
+		pop_join_rebel_threshold = -0.03
+		peasants_estate_target_satisfaction = small_permanent_target_satisfaction
+		monthly_towards_free_subjects = societal_value_monthly_move
+	}
+
+	opinions = {
+		sola_fide = 10
+
+		sola_scriptura = 5
+		soli_deo_gloria = 5
+	}
+}
+
+REPLACE:soli_deo_gloria = {
+	religion = anglican
+	religion = anabaptist
+	religion = unitarian
+	religion = calvinist
+	religion = hussite
+	religion = lutheran
+	
+	visible = {
+		OR = {
+			has_religious_aspect = religious_aspect:adult_baptism
+			has_religious_aspect = religious_aspect:arianism
+			has_religious_aspect = religious_aspect:nonadorantism
+			has_religious_aspect = religious_aspect:adoptionism
+			has_religious_aspect = religious_aspect:modalism
+			NOT = {
+				religion = religion:anabaptist
+				religion = religion:unitarian
+			}
+		}
+	}
+
+	modifier = {
+		skill_of_new_artists = 0.1
+		global_monthly_art_start_chance = 0.1
+		monthly_religious_influence = 0.1
+		monthly_towards_plutocracy = societal_value_monthly_move
+	}
+
+	opinions = {
+		soli_deo_gloria = 10
+
+		sola_fide = 5
+		sola_scriptura = 5
 	}
 }
 

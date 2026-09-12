@@ -52,10 +52,13 @@ icd_dhes.2 = { #
 				every_country_in_religion = {
 					limit = {
 						capital.region = region:italy_region
+						NOT = {
+							has_or_had_tag = PAP
+						}
 					}
 					trigger_event_non_silently = {
 						id = icd_dhes.3
-						days = 10
+						months = 1
 					}
 				}
 			}
@@ -68,7 +71,7 @@ icd_dhes.2 = { #
 				}
 				trigger_event_non_silently = {
 					id = icd_dhes.3
-					days = 10
+					months = 1
 				}
 			}
 		}

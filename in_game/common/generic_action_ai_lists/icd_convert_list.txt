@@ -1,0 +1,11 @@
+﻿
+icd_convert_list = {
+	potential = {
+		is_real_country = yes
+		religious_unity < 1.0
+		NOT = { has_game_rule = icd_religious_conversion_vanilla }
+	}
+	actions = {
+		icd_convert_province 
+	}
+}

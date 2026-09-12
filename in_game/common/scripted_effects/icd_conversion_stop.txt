@@ -1,0 +1,14 @@
+﻿
+icd_conversion_stop = {
+	if = {
+		limit = {
+			province ?= {
+				has_province_modifier = icd_promote_religion_province_modifier
+			}
+		}
+		province ?= {
+			remove_province_modifier = icd_promote_religion_province_modifier
+			remove_variable = promoting_religion
+		}
+	}
+}

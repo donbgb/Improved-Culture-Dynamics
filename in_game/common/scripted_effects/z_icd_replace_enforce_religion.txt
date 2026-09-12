@@ -9,12 +9,17 @@ REPLACE:enforce_religion_effect = {
 					NOT = {
 						religion = $actor$.religion
 					}
+					culture = $target$.culture
 				}
 				split_pop = {
 					fraction = 0.05
 					religion = $actor$.religion
 				}
 			}
+		}
+		set_variable = {
+			name = icd_enforced_religion
+			value = $actor$.religion
 		}
 	}
 }

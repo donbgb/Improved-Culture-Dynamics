@@ -36,7 +36,7 @@
  expel_culture_people_tt: "Begin preparing to expel a discriminated minority from the country.\nOnce selected, manually stopping this cabinet action is not recommended and may cause problems."
  expel_culture_people_activated_tt: "Begins expelling a discriminated minority from the country at a rate of around 500 to 1,500 [pops|e] per month for 24 months (for a total of around 12,000 to 36,000 [pops|e]) depending on the size of the recipient [country|e]."
  improve_cultural_opinion_tt: "Begins improving a [culture|e]'s opinion of our [country|e]'s primary [culture|e]."
- introduce_cultural_settlements_tt: "Begins bringing in settlers of an accepted or the primary [culture|e] into a integrated [province|e]."
+ introduce_cultural_settlements_tt: "Begins bringing in settlers of an accepted or the primary [culture|e] into a [province|e]."
 
  improve_cultural_opinion_no_culture: "$no_valid_cultures$"
  improve_cultural_opinion: "Improve Cultural Opinion"
@@ -127,12 +127,13 @@
  
  icd_begin_expelling_tt: "Begins expelling [SCOPE.sCulture('icd_migration_culture_scope').GetName] [pops|e] for 24 months"
  
- 
+ relocate_people_select_pop: "Select [pop_type|e]"
+ relocate_people_no_pops: "No valid [pop_types|e] available"
  
  icd_muslim_dhimmi_choose: "Status of the Dhimmi"
- icd_muslim_dhimmi_choose_desc: "Decide which religious minorities in our state count as dhimmi, and which do not."
+ icd_muslim_dhimmi_choose_desc: "Decide which religious minorities in our state count as [ShowEstateTypeName('dhimmi_estate')], and which do not."
  PERFORM_icd_muslim_dhimmi_choose_ACTION: "Status of the Dhimmi"
- PERFORM_icd_muslim_dhimmi_choose_ACTION_SETUP: "When the status of the dhimmi is changed."
+ PERFORM_icd_muslim_dhimmi_choose_ACTION_SETUP: "When the status of the [ShowEstateTypeName('dhimmi_estate')] is changed."
  PERFORM_icd_muslim_dhimmi_choose_ACTION_HEADER: "$MESSENGER$"
  PERFORM_icd_muslim_dhimmi_choose_ACTION_TITLE: "Reconsider the dhimmi!"
  PERFORM_icd_muslim_dhimmi_choose_ACTION_EFFECTS: "[SCOPE.sCountry('actor').GetName] are reconsidering the status of the dhimmi."
@@ -143,6 +144,22 @@
  PERFORM_icd_muslim_dhimmi_choose_ACTION_BTN3: "$common_string_go_to$"
  PERFORM_icd_muslim_dhimmi_choose_ACTION_MAP: ""
  
+ icd_dhimmi_ignored_dar_al_harb_tt: "The [ShowEstateTypeName('dhimmi_estate')] will lose their protections in all our [conquered|e] locations for 5 years."
+
+ icd_declare_dar_al_harb: "Declare Dar al-Harb"
+ icd_declare_dar_al_harb_desc: "The abode of war, dar al-harb, refer to those lands that are not under the sovereignty of an Islamic country and thus not safe for Muslims, who must use the necessary means to protect themselves from [heathens|e]. With our recent expansions, new territories may be declared not yet fully part of our state and consequently as abodes of war. In these declared territories, the protections usually given to the dhimmi will not apply."
+ PERFORM_icd_declare_dar_al_harb_ACTION: "Declare Dar al-Harb"
+ PERFORM_icd_declare_dar_al_harb_ACTION_SETUP: "When our conquered locations are declared as dar al-harb."
+ PERFORM_icd_declare_dar_al_harb_ACTION_HEADER: "$MESSENGER$"
+ PERFORM_icd_declare_dar_al_harb_ACTION_TITLE: "Declare Dar al-Harb"
+ PERFORM_icd_declare_dar_al_harb_ACTION_EFFECTS: "[SCOPE.sCountry('actor').GetName] have declared newly conquered territories to be abodes of war."
+ PERFORM_icd_declare_dar_al_harb_ACTION_DESC: "Newly conquered territories have been declared abodes of war by [SCOPE.sCountry('actor').GetName]"
+ PERFORM_icd_declare_dar_al_harb_ACTION_LOG: "Declare Dar al-Harb."
+ PERFORM_icd_declare_dar_al_harb_ACTION_BTN1: "OK"
+ PERFORM_icd_declare_dar_al_harb_ACTION_BTN2: "OK"
+ PERFORM_icd_declare_dar_al_harb_ACTION_BTN3: "$common_string_go_to$"
+ PERFORM_icd_declare_dar_al_harb_ACTION_MAP: ""
+ 
  icd_promote_the_counter_reformation: "Promote the Counter-Reformation"
  icd_promote_the_counter_reformation_desc: "Promotes the Counter-Reformation, restricting the spread of Protestant faiths into our territory."
  icd_promote_the_counter_reformation_active: "Promoting the Counter-Reformation"
@@ -150,3 +167,8 @@
  icd_promote_the_counter_reformation_action_progress: "Promoting the Counter-Reformation"
  icd_promote_the_counter_reformation_action_progress_wordier: "Promoting the Counter-Reformation"
  icd_promote_the_counter_reformation_action_progress_tooltip: "Promoting the Counter-Reformation"
+ 
+ 
+ 
+ icd_convert_province: "Enforce Religious Conversion ([Player.MakeScope.ScriptValue('icd_num_provinces_for_conversion')] Possible)"
+ icd_convert_province_pop_tt: "Does not belong to a Protected Religion"

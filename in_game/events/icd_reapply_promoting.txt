@@ -33,15 +33,6 @@ icd_reapply_promoting.1 = {
 					value = this.dominant_culture
 				}
 			}
-			if = {
-				limit = {
-					religion_percentage_in_country = {
-						religion = root.religion
-						value <= 0.10
-					}
-				}
-				add_policy = policy:icd_minority_religion
-			}
 		}
 		
 		if = {
@@ -73,7 +64,6 @@ icd_reapply_promoting.1 = {
 			limit = {
 				OR = {
 					has_policy = ethnic_communities
-					has_policy = ethnoreligious_integration
 				}
 			}
 			every_province = {
@@ -94,12 +84,12 @@ icd_reapply_promoting.1 = {
 						}
 						culture_percentage = {
 							culture = root.culture
-							value > 0.2
+							value >= 0.1
 						}
 						any_location_in_province = {
 							culture_percentage = {
 								culture = root.culture
-								value >= 0.2
+								value >= 0.15
 							}
 						}
 					}
@@ -186,6 +176,21 @@ icd_reapply_promoting.1 = {
 				remove_variable = promoting_culture
 			}
 			icd_region_culture_law_tatar = yes
+		}
+		
+		if = {
+			limit = {
+				has_policy = dialects_of_mandarin
+			}
+			every_province = {
+				limit = { 
+					NOT = {
+						has_variable = no_reapplying_promotion
+					}
+				}
+				remove_variable = promoting_culture
+			}
+			icd_region_culture_law_mandarin = yes
 		}
 		
 	}

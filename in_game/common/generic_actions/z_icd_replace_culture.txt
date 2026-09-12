@@ -41,12 +41,6 @@
 		}
 		visible = {
 			not = { is_accepted_in = scope:actor }
-		}
-		enabled = {
-			is_tolerated_in = scope:actor
-			NOT = {
-				scope:actor.culture = this
-			}
 			
 			OR = {
 				AND = {
@@ -88,6 +82,30 @@
 							has_shared_culture_group = scope:actor.culture
 							language = scope:actor.culture.language
 							language = scope:actor.court_language
+							AND = {
+								scope:actor = {
+									culture = culture:turkish_culture
+								}
+								OR = {
+									this = culture:greek_culture
+									this = culture:bosnian
+									this = culture:bulgarian
+									this = culture:albanian
+									this = culture:kurdish_culture
+								}
+							}
+							scope:actor.capital = {
+								dominant_culture = root
+							}
+							AND = {
+								scope:actor = {
+									OR = {
+										tag = CHI
+										is_leader_of_international_organization = international_organization:middle_kingdom
+									}
+								}
+								root = { has_culture_group = culture_group:chinese_group }
+							}
 							scope:actor = {
 								any_province = {
 									culture_percentage = {
@@ -123,6 +141,29 @@
 								dominant_culture ?= { this = root }
 							}
 						}
+					}
+				}
+			}
+		}
+		enabled = {
+			is_tolerated_in = scope:actor
+			NOT = {
+				scope:actor.culture = this
+			}
+			
+			scope:actor = {
+				OR = {
+					culture_percentage_in_country = {
+						culture = root
+						value >= 0.01
+					}
+
+					culture_population_in_country = {
+						culture = root
+						value >= 1000
+					}
+					any_estate = {
+						dominant_culture ?= { this = root }
 					}
 				}
 			}

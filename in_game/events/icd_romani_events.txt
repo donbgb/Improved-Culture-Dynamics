@@ -578,6 +578,7 @@ icd_romani_events.95 = { ####when privilege is revoked###
 	desc = icd_romani_events.95.desc
 	outcome = neutral
 	
+	orphan = yes
 	
 	trigger = {
 	}

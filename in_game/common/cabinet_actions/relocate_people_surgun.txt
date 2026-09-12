@@ -14,10 +14,7 @@
 	
 	allow = {
 		cultural_unity < 1.0
-		OR = {
-			country_rank = country_rank:rank_kingdom
-			country_rank = country_rank:rank_empire
-		}
+		country_rank = country_rank:rank_empire
 		has_embraced_institution = institution:legalism
 	}
 	

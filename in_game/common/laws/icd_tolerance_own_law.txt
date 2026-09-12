@@ -4,40 +4,14 @@
 
 	potential = {
 		num_locations > 0
+		has_game_rule = icd_religious_conversion_modded
 	}
 	
 	locked = {
-		has_policy = icd_minority_religion
-		religion_percentage_in_country = {
-			religion = root.religion
-			value <= 0.1
+		AND = {
+			has_variable = icd_enforced_religion
+			is_subject = yes
 		}
-	}
-	
-	icd_minority_religion = {
-		price = icd_nothing_price
-		country_modifier = {
-			tolerance_heretic = 2
-			tolerance_heathen = 3.5
-			global_pop_conversion_speed_modifier = -5.0
-			pure_tooltip_entry = icd_minority_religion_tt
-		}
-		potential = {
-			has_policy = minority_rule
-			religion_percentage_in_country = {
-				religion = root.religion
-				value <= 0.1
-			}
-			NOT = {
-				government_type = government_type:theocracy
-			}
-			is_colonial_subject = no
-		}
-		months = 1
-		
-		on_activate = {
-		}
-		
 	}
 	
 	icd_sanction_of_faith = {
@@ -46,6 +20,13 @@
 			monthly_prestige = 0.01
 		}
 		potential = {
+			NOT = {
+				religion = religion:judaism
+				religion = religion:samaritanism
+				religion = religion:mandeaism
+				religion = religion:druzism
+			}
+			icd_is_pagan = no
 		}
 		estate_preferences = {
 			nobles_estate
@@ -56,36 +37,114 @@
 		}
 	}
 	
-	icd_confessional_state = {
+	icd_ethnic_religion = {
+		potential = {
+			icd_is_pagan = yes
+		}
+		allow = {
+		}
 		country_modifier = {
-			global_pop_conversion_speed = 0.001
-			tolerance_heathen = -0.5
-			tolerance_heretic = -0.5
+			tolerance_heathen = 4
+			tolerance_heretic = 2
+			global_pop_conversion_speed_modifier = 0.2
+			pure_tooltip_entry = icd_culture_conversion_boost_tt
+			pure_tooltip_entry = icd_pagan_conversion_disabled_tt
+			pure_tooltip_entry = icd_voluntary_conversion_disabled_tt
+			pure_tooltip_entry = icd_coercive_conversion_disabled_tt
+		}
+		months = 1
+		ai_will_do = {
+			value = 2000
+		}
+	}
+	
+	icd_custodians = {
+		potential = {
+			OR = {
+				religion = religion:judaism
+				religion = religion:samaritanism
+				religion = religion:mandeaism
+				religion = religion:druzism
+			}
+		}
+		allow = {
+		}
+		country_modifier = {
+			tolerance_heathen = 4
+			pure_tooltip_entry = icd_culture_conversion_boost_tt
+			pure_tooltip_entry = icd_pagan_conversion_disabled_tt
+			pure_tooltip_entry = icd_voluntary_conversion_disabled_tt
+			pure_tooltip_entry = icd_coercive_conversion_disabled_tt
+		}
+		months = 1
+		ai_will_do = {
+			value = 2000
+		}
+	}
+
+	icd_privatization_of_religion = {
+		country_modifier = {
+			tolerance_own = -1.5
+			clergy_estate_blocked_from_cabinet = yes
+			clergy_estate_blocked_from_parliament = yes
+			global_clergy_estate_power = -3.0
+			clergy_estate_target_satisfaction = -0.3
+			research_speed_modifier = 0.03
+			country_cabinet_efficiency = 0.1
 		}
 		potential = {
-			has_embraced_institution = institution:confessionalism
+			religion = religion:sanjiao
 		}
+		allow = {
+			OR = {
+				has_religious_aspect = religious_aspect:lixue_school
+				has_religious_aspect = religious_aspect:songnihak_school
+			}
+		}
+
+
 		estate_preferences = {
-			clergy_estate
+			crown_estate
 		}
+
 		years = 2
 		
 		on_activate = {
 		}
-
+		
+		ai_will_do = {
+			if = {
+				limit = {
+					current_year > 1500
+					tag = KOR
+				}
+				value = 600
+			}
+		}
 	}
 	
 	icd_secular_state = {
 		country_modifier = {
+			pure_tooltip_entry = icd_voluntary_conversion_boosted_tt
+			pure_tooltip_entry = icd_culture_conversion_disabled_tt
+			pure_tooltip_entry = icd_coercive_conversion_disabled_tt
 			monthly_towards_humanist = societal_value_monthly_move
-			global_pop_conversion_speed_modifier = -0.25
-			clergy_estate_target_satisfaction = -0.2
+ 			clergy_estate_target_satisfaction = -0.25
 			research_speed_modifier = 0.025
-			tolerance_heathen = 1.5
-			tolerance_heretic = 1.5
+			tolerance_heathen = 3.5
+			tolerance_heretic = 3.5
 		}
 		potential = {
 			has_embraced_institution = institution:enlightenment
+			OR = {
+				government_type = government_type:republic
+				has_reform = government_reform:revolutionary_empire
+				has_reform = government_reform:revolutionary_autocracy
+			}
+			NOT = {
+				government_type = government_type:theocracy
+			}
+			has_game_rule = icd_religious_conversion_modded
 		}
 
 		estate_preferences = {
@@ -100,88 +159,61 @@
 
 		on_activate = {
 		}
-
-	}
-
-	icd_god_monarchy = {
-		country_modifier = {
-			tolerance_own = 1
-			stability_decay = 0.0001
-		}
-		potential = {
-			OR = {
-				religion = religion:nusantaran_hindu
-				religion = religion:isese_religion
-				religion = religion:inti
-				culture = culture:khmer_culture
-			}
-			government_type = government_type:monarchy
-		}
-		
-		estate_preferences = {
-			crown_estate
-		}
-		
-		ai_will_do = {
-			value = 400
-		}
-		
-		years = 2
 	}
 	
-	religious_and_ritual_regulation = {
-		country_modifier = {
-			monthly_religious_rebel_growth = -0.01
-			global_crown_estate_power = 0.025
-		}
+	icd_yassa_tolerance = {
 		potential = {
 			OR = {
-				religion = religion:sanjiao
-				religion = religion:mahayana
-				religion = religion:shinto
+				government_type = government_type:tribe
+				government_type = government_type:steppe_horde
+				has_reform = government_reform:legacy_of_kublai_khan
+				has_reform = government_reform:legacy_of_genghis
 			}
-		}
-		
-		estate_preferences = {
-			crown_estate
-		}
-		
-		ai_will_do = {
-			value = 400
-		}
-		
-		years = 2
-	}
-
-
-	icd_privatization_of_religion = {
-		country_modifier = {
-			tolerance_own = -1.5
-			clergy_estate_blocked_from_cabinet = yes
-			clergy_estate_blocked_from_parliament = yes
-			global_clergy_estate_power = -3.0
-			clergy_estate_target_satisfaction = -0.2
-			research_speed_modifier = 0.025
-			country_cabinet_efficiency = 0.1
-		}
-		potential = {
-			religion = religion:sanjiao
+			OR = {
+				culture = { has_culture_group = culture_group:mongolian_group }
+				has_or_had_tag = GLH
+				has_or_had_tag = CHG
+			}
 		}
 		allow = {
-			OR = {
-				has_religious_aspect = religious_aspect:lixue_school
-				has_religious_aspect = religious_aspect:songnihak_school
-			}
 		}
-
+		country_modifier = {
+			pure_tooltip_entry = icd_culture_conversion_disabled_tt
+			pure_tooltip_entry = icd_coercive_conversion_disabled_tt
+			tolerance_heathen = 3
+			tolerance_heretic = 2
+		}
+		estate_preferences = {
+			tribes_estate
+		}
+		years = 2
+		ai_will_do = {
+			value = 800
+		}
+	}
+	icd_sulh_i_kul = {
+		potential = {
+			religion.group = religion_group:muslim
+			religious_school ?= religious_school:din_i_ilahi_school
+			has_game_rule = icd_religious_conversion_modded
+		}
+		allow = {
+		}
+		country_modifier = {
+			pure_tooltip_entry = icd_culture_conversion_disabled_tt
+			pure_tooltip_entry = icd_coercive_conversion_disabled_tt
+			tolerance_heretic = 2.5
+			tolerance_heathen = 4
+			clergy_estate_target_satisfaction = -0.3
+		}
+		
 		estate_preferences = {
 			crown_estate
 		}
-
-		years = 2
-		
-		on_activate = {
+		ai_will_do = {
+			value = 2000
 		}
+		years = 2
 	}
-	
+
 }

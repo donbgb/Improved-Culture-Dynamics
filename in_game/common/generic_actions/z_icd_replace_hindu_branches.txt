@@ -1,4 +1,4 @@
-﻿join_branch = {
+﻿REPLACE:join_branch = {
 	type = religious
 
 	sound = UI_action_religion_generic
@@ -117,7 +117,7 @@
 	}
 }
 
-activate_avatar = {
+REPLACE:activate_avatar = {
 	type = religious
 
 	sound = UI_action_religion_generic
@@ -212,7 +212,7 @@ activate_avatar = {
 	}
 }
 
-deactivate_avatar = {
+REPLACE:deactivate_avatar = {
 	type = religious
 
 	sound = UI_action_religion_generic
@@ -287,7 +287,7 @@ deactivate_avatar = {
 	}
 }
 
-reroll_avatar = {
+REPLACE:reroll_avatar = {
 	type = religious
 
 	sound = UI_action_religion_generic
@@ -391,7 +391,7 @@ reroll_avatar = {
 	}
 }
 
-perform_yoga = {
+REPLACE:perform_yoga = {
 	type = religious
 
 	sound = UI_action_religion_generic
@@ -442,7 +442,7 @@ perform_yoga = {
 	}
 }
 
-indulge_in_feasts = {
+REPLACE:indulge_in_feasts = {
 	type = religious
 
 	sound = UI_action_religion_generic
@@ -494,7 +494,7 @@ indulge_in_feasts = {
 	}
 }
 
-discard_worldly_possessions = {
+REPLACE:discard_worldly_possessions = {
 	type = religious
 
 	sound = UI_action_religion_generic
@@ -546,7 +546,7 @@ discard_worldly_possessions = {
 	}
 }
 
-indulge_in_bloodbath = {
+REPLACE:indulge_in_bloodbath = {
 	type = religious
 
 	sound = UI_action_religion_generic
@@ -602,7 +602,7 @@ indulge_in_bloodbath = {
 	}
 }
 
-favor_god = {
+REPLACE:favor_god = {
 	type = religious
 
 	sound = UI_action_religion_generic
@@ -720,7 +720,7 @@ favor_god = {
 	}
 }
 
-stop_favoring_god = {
+REPLACE:stop_favoring_god = {
 	type = religious
 
 	sound = UI_action_religion_generic
