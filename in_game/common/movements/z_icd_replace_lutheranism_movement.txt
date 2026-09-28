@@ -22,6 +22,46 @@
 		}
 		if = {
 			limit = {
+				NOT = { has_game_rule = icd_religious_conversion_vanilla }
+				situation:reformation = {
+					years_since_situation_start < 45
+				}
+			}
+			every_location_with_movement = {
+				limit = {
+					NOT = {
+						has_location_modifier = icd_religious_zeal
+					}
+					owner ?= {
+						religion = religion:catholic
+					}
+				}
+				add_location_modifier = {
+					modifier = icd_religious_zeal
+					mode = add
+				}
+			}
+			every_location_with_movement = {
+				limit = {
+					owner ?= {
+						religion = religion:catholic
+					}
+					province = {
+						OR = {
+							has_province_modifier = icd_promote_religion_province_modifier
+							has_variable = promoting_religion
+						}
+					}
+				}
+				province = {
+					remove_province_modifier = icd_promote_religion_province_modifier
+					remove_variable = promoting_religion
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = icd_religious_conversion_vanilla
 				situation:reformation = {
 					years_since_situation_start < 35
 				}
@@ -86,12 +126,12 @@
 		# Council of Trent active: world watches, growth slows but does not pause.
 		else_if = {
 			limit = { situation:council_of_trent = { situation_is_active = yes } }
-			value = { 0.0 0.01 }
+			value = { 0.0 0.018 }
 		}
 		# Stable confessional boundaries: post-Trent and ≥60y since Reformation spawn.
 		else_if = {
 			limit = { situation:council_of_trent = { situation_has_ended = yes } }
-			value = { 0.0 0.0015 }
+			value = { 0.0 0.001 }
 		}
 		# Fallthrough: pre-boom (<5y post-spawn), or boom-exhaust (≥40y, Trent never convened).
 		else = {
@@ -112,6 +152,17 @@
 					}
 				}
 				multiply = 1.5
+			}
+			if = {
+				limit = {
+					owner ?= {
+						religion != religion:lutheran
+					}
+					province ?= {
+						has_province_modifier = icd_promote_religion_province_modifier
+					}
+				}
+				multiply = 0
 			}
 			if = {
 				limit = { location_rank ?= location_rank:town }

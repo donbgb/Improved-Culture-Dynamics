@@ -1,0 +1,14 @@
+﻿
+icd_religion_tolerance_heretic = {
+	value = 1
+	add = {
+		value = modifier:tolerance_heretic
+	}
+}
+
+icd_religion_tolerance_heathen = {
+	value = 1
+	add = {
+		value = modifier:tolerance_heathen
+	}
+}

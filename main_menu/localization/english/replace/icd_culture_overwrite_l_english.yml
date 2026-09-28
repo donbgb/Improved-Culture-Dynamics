@@ -16,6 +16,7 @@
  eastern_pomeranian: "Pomeranian"
  bedouin_culture: "Bedawi"
  ava_culture: "Guarani"
+ southern_bavarian: "Tyrolean"
  
  foreign_cultural_law: "Cultural Minorities"
  integrate_foreign_traditions: "Assimilate Identities"
@@ -71,6 +72,7 @@
 
 
  game_concept_conversion_desc: "This is the process by which [pops|e] change from one [religion|e] to another over time. If vanilla conversion is disabled, this can happen in one of three ways: [pops|e] can be forced to convert via [forced_conversion|e], [pops|e] may individually convert every four years through [voluntary_conversion|e], and [pops|e] can convert in groups due to social circumstances based on [communal_conversion|e]."
+ game_concept_tolerance_desc: "Tolerance represents how respectfully the population of a certain [religion|e] is treated in a society. Every [country|e] has a different $game_concept_tolerance$ value towards its [primary_religion|e], towards [heretics|e], and towards [heathens|e]. High tolerance increases [pop_satisfaction|e], while lower tolerance decreases it. Above a certain threshold, tolerance will protect certain [religions|e] from [conversion|e].\n\nA religion viewed as #color_white Kindred#! is protected at or above -1.5 [tolerance|e]\nA religion viewed as #color_white Positive#! is protected at or above -0.5 [tolerance|e]\nA religion viewed as #color_white Neutral#! is protected at or above 0 [tolerance|e]\nA religion viewed as #color_white Negative#! is protected at or above 0.5 [tolerance|e]\nA religion viewed as #color_white Enemy#! is protected at or above 1.5 [tolerance|e]."
 
  ##not overwrite change location later##
  flavor_swi.german_conversion.tt: "A lot of our [ShowCultureNameWithNoTooltip('high_alemannic')] [pops|e] in [ROOT.GetCountry.GetName] will convert to [ShowReligionName('calvinist')]."
@@ -82,3 +84,5 @@
  flavor_swi.9990.c: "We must act to contain the spread of this heresy!"
 
  qayfengi: "Yīcìlèyè"
+ 
+

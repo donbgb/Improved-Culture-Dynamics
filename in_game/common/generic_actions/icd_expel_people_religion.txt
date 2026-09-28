@@ -1,0 +1,108 @@
+﻿expel_religion_people = {	
+	type = religious
+
+	sound = UI_action_religion_generic
+	
+	potential = {
+		scope:actor = {
+			num_locations > 0
+			religious_unity < 1.0
+		}
+	}
+	
+	allow = {
+		scope:actor = {
+			at_war = no
+			in_civil_war = no
+		}
+	}
+		
+		
+	ai_tick = never
+		
+	select_trigger = {
+		looking_for_a = religion
+		source = actor
+		target_flag = recipient
+		name = "choose_religion"
+		column = {
+			data = name
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = religion
+		target_flag = target
+		source_ai_override = actor
+		source_flags_ai_override = include_any_present
+		name = "expel_religion_people_select_religion"
+		none_available_msg_key = "expel_culture_people_no_religion"
+		column = {
+			data = name
+		}
+		column = {
+			data = religion_percentage_in_country
+		}
+		visible = {
+			root != scope:actor.religion
+			scope:actor = {
+				religion_percentage_in_country = {
+					religion = root
+					value > 0
+				}
+				religion_population_in_country = {
+					religion = root
+					value > 0.100
+				}
+				religion_percentage_in_country = {
+					religion = root
+					value <= 0.1
+				}
+				NOT = {
+					any_owned_location = {
+						religion_percentage = {
+							religion = root
+							value >= 0.9
+						}
+					}
+				}
+				NOT = {
+					any_province = {
+						religion_percentage = {
+							religion = root
+							value >= 0.8
+						}
+					}
+				}
+			}
+			NOT = {
+				scope:actor = {
+					any_pop = {
+						religion = root
+						is_protected_pop = yes
+					}
+				}
+			}
+		}
+	}
+	
+	show_message = no
+	
+	effect = {
+		custom_tooltip = expel_religion_people_tt
+		scope:actor = {
+			set_variable = {
+				name = icd_expel_religion_people
+				value = scope:target
+			}
+		}
+		scope:actor = {
+			trigger_event_silently = icd_minority_events.2000 
+		}
+	}
+	
+	ai_will_do = {
+		value = -100
+		
+	}
+}

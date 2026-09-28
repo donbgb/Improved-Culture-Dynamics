@@ -73,7 +73,6 @@ icd_rejection_of_novel_religions = {
 	national_calvinism_movement_resistance_modifier = 0.85
 }
 icd_promote_religion_province_modifier = {
-	pure_tooltip_entry = icd_promote_religion_province_tt
 	local_prosperity_decay = 0.025  
 	local_monthly_development_modifier = -0.25
 }

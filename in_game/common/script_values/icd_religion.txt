@@ -12,7 +12,6 @@ icd_num_provinces_for_conversion = {
 		}
 		value = num_provinces
 		divide = 10
-		round_to = 1
 		min = modifier:government_size
 		max = 15
 		if = {
@@ -24,6 +23,7 @@ icd_num_provinces_for_conversion = {
 			}
 			add = 2
 		}
+		round_to = 1
 	}
 	
 	every_province = {
@@ -36,24 +36,191 @@ icd_num_provinces_for_conversion = {
 	}
 }
 icd_communal_conversion_rate = {
-	value = 0.05
+	value = pop_size
+	divide = {
+		value = 0
+		location = {
+			every_pop = {
+				limit = {
+					owner ?= root
+					religion != owner.religion
+					culture = root.culture
+					pop_type != pop_type:slaves
+				}
+				add = pop_size
+			}
+		}
+	}
+	multiply = 0.15
 	
 	if = {
 		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
 		add = {
-			value = 0.05
+			value = pop_size
+			divide = {
+				value = 0
+				location = {
+					every_pop = {
+						limit = {
+							owner ?= root
+							religion != owner.religion
+							culture = root.culture
+							pop_type != pop_type:slaves
+						}
+						add = pop_size
+					}
+				}
+			}
+			multiply = 0.15
 			multiply = owner.modifier:global_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
 		}
 	}
 	if = {
 		limit = { location ?= { modifier:local_pop_conversion_speed_modifier > 0 } }
 		add = {
-			value = 0.05
+			value = pop_size
+			divide = {
+				value = 0
+				location = {
+					every_pop = {
+						limit = {
+							owner ?= root
+							religion != owner.religion
+							culture = root.culture
+							pop_type != pop_type:slaves
+						}
+						add = pop_size
+					}
+				}
+			}
+			multiply = 0.15
 			multiply = location.modifier:local_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
 		}
 	}
 	subtract = {
-		value = 0.05
+		value = pop_size
+		divide = {
+			value = 0
+			location = {
+				every_pop = {
+					limit = {
+						owner ?= root
+						religion != owner.religion
+						culture = root.culture
+						pop_type != pop_type:slaves
+					}
+					add = pop_size
+				}
+			}
+		}
+		multiply = 0.15
+		multiply = {
+			value = 1
+			subtract = location.local_control
+		}
+	}
+	if = {
+		limit = {
+			owner ?= {
+				OR = {
+					has_policy = icd_ethnic_religion
+					has_policy = icd_custodians
+				}
+			}
+		}
+		multiply = 1.5
+	}
+	if = {
+		limit = {
+			pop_type = pop_type:tribesmen
+		}
+		multiply = 0.5
+	}	
+}
+
+icd_communal_conversion_rate_pagan = {
+	value = pop_size
+	divide = {
+		value = 0
+		location = {
+			every_pop = {
+				limit = {
+					owner ?= root
+					religion != owner.religion
+					icd_is_pagan = yes
+					is_protected_pop = no
+					pop_type != pop_type:slaves
+				}
+				add = pop_size
+			}
+		}
+	}
+	multiply = 0.15
+	
+	if = {
+		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
+		add = {
+			value = pop_size
+			divide = {
+				value = 0
+				location = {
+					every_pop = {
+						limit = {
+							owner ?= root
+							religion != owner.religion
+							icd_is_pagan = yes
+							is_protected_pop = no
+							pop_type != pop_type:slaves
+						}
+						add = pop_size
+					}
+				}
+			}
+			multiply = 0.15
+			multiply = owner.modifier:global_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
+		}
+	}
+	if = {
+		limit = { location ?= { modifier:local_pop_conversion_speed_modifier > 0 } }
+		add = {
+			value = pop_size
+			divide = {
+				value = 0
+				location = {
+					every_pop = {
+						limit = {
+							owner ?= root
+							religion != owner.religion
+							icd_is_pagan = yes
+							is_protected_pop = no
+							pop_type != pop_type:slaves
+						}
+						add = pop_size
+					}
+				}
+			}
+			multiply = 0.15
+			multiply = location.modifier:local_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
+		}
+	}
+	subtract = {
+		value = pop_size
+		divide = {
+			value = 0
+			location = {
+				every_pop = {
+					limit = {
+						owner ?= root
+						religion != owner.religion
+						icd_is_pagan = yes
+						is_protected_pop = no
+						pop_type != pop_type:slaves
+					}
+					add = pop_size
+				}
+			}
+		}
+		multiply = 0.15
 		multiply = {
 			value = 1
 			subtract = location.local_control
@@ -63,66 +230,54 @@ icd_communal_conversion_rate = {
 		limit = {
 			pop_type = pop_type:tribesmen
 		}
-		divide = 4
-	}
-	if = {
-		limit = {
-			owner ?= {
-				has_variable = icd_bosnian_conversion
-			}
-			culture = culture:bosnian
-		}
-		add = 0.25
-	}
-	if = {
-		limit = {
-			owner ?= {
-				has_variable = icd_sindhi_conversion
-			}
-			culture = culture:sindhi
-			religion = religion:sammitiya
-		}
-		add = 0.35
-	}
-	
-	
+		multiply = 0.5
+	}	
 }
 
 icd_voluntary_conversion_rate = {
-	value = 0.1 ##1 is equal to 0.1%, 0.1 equals to 0.01%#
+	value = 0.001 ##0.001 equals 0.1%###
 	
 	if = {
 		limit = { pop_satisfaction > 0.25 }
 		add = {
 			value = pop_satisfaction
-			subtract = 0.25
-			divide = 2 ##100% satisfaction equal to 0.375%, or 0.0375###
+			divide = 1000 ##100% pop satisfaction = 0.1%##
 		}
 	}
-	
-	if = {
-		add = {
-			value = owner.modifier:tolerance_heathen
-			min = 0
-		}
-	}
-	
-	if = {
-		add = {
-			value = owner.modifier:tolerance_heretic
-			min = 0
-		}
-	}
-
 	
 	if = {
 		limit = {
+			religion.group != owner.religion.group
+		}
+		add = {
+			value = owner.modifier:tolerance_heathen
+			min = 0
+			divide = 2000 ##1 tolerance = 0.1%##
+		}
+	}
+	
+	if = {
+		limit = {
+			religion.group = owner.religion.group
+		}
+		add = {
+			value = owner.modifier:tolerance_heretic
+			min = 0
+			divide = 2000 ##1 tolerance = 0.1%##
+		}
+	}
+	
+	if = {
+		limit = {
+			is_dhimmi = yes
 			owner ?= {
 				country_has_estate = estate_type:dhimmi_estate
 			}
 		}
-		add = "owner.estate(estate_type:dhimmi_estate).num_privileges"
-		divide = 2   ##two equals 0.1###
+		add = {
+			value = "owner.estate(estate_type:dhimmi_estate).num_privileges"
+			divide = 4000 ##1 privilege = 0.025%, 4 privileges = 0.1##
+		}
 	}
 	
 	if = {
@@ -134,7 +289,7 @@ icd_voluntary_conversion_rate = {
 				}
 			}
 		}
-		add = 2
+		add = 0.0015
 	}
 	
 	if = {
@@ -142,35 +297,183 @@ icd_voluntary_conversion_rate = {
 			location = {
 				area = area:levant_area
 			}
+			owner ?= {
+				is_ai = yes
+			}
 		}
-		divide = 6
+		divide = 4
 	}
+	
 }
 
 
 icd_coercive_conversion_rate = {
-	value = 0.1
-
+	value = pop_size
+	divide = {
+		value = 0
+		location = {
+			every_pop = {
+				limit = {
+					religion != location.province.var:promoting_religion
+					owner ?= root
+					is_protected_pop = no
+					pop_type != pop_type:slaves
+				}
+				add = pop_size
+			}
+		}
+	}
+	multiply = {
+		value = location.population
+		divide = 100
+	}
+	round_to = 0.001
+	
 	if = {
 		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
 		add = {
-			value = 0.15
-			multiply = owner.modifier:global_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
+			value = pop_size
+			divide = {
+				value = 0
+				location = {
+					every_pop = {
+						limit = {
+							religion != location.province.var:promoting_religion
+							owner ?= root
+							is_protected_pop = no
+							pop_type != pop_type:slaves
+						}
+						add = pop_size
+					}
+				}
+			}
+			multiply = {
+				value = location.population
+				divide = 100
+			}
+			multiply = owner.modifier:global_pop_conversion_speed_modifier
+			round_to = 0.001
 		}
 	}
 	if = {
 		limit = { location ?= { modifier:local_pop_conversion_speed_modifier > 0 }	}
 		add = {
-			value = 0.15
-			multiply = location.modifier:local_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
+			value = pop_size
+			divide = {
+				value = 0
+				location = {
+					every_pop = {
+						limit = {
+							religion != location.province.var:promoting_religion
+							owner ?= root
+							is_protected_pop = no
+							pop_type != pop_type:slaves
+						}
+						add = pop_size
+					}
+				}
+			}
+			multiply = {
+				value = location.population
+				divide = 100
+			}
+			multiply = location.modifier:local_pop_conversion_speed_modifier
+			round_to = 0.001
 		}
 	}
 	subtract = {
-		value = 0.15
-		divide = 100
+		value = {
+			value = pop_size
+			divide = {
+				value = 0
+				location = {
+					every_pop = {
+						limit = {
+							religion != location.province.var:promoting_religion
+							owner ?= root
+							is_protected_pop = no
+							pop_type != pop_type:slaves
+						}
+						add = pop_size
+					}
+				}
+			}
+			multiply = {
+				value = location.population
+				divide = 100
+			}
+		}
 		multiply = {
 			value = 1
 			subtract = location.local_control
+		}
+		round_to = 0.001
+	}
+	
+	if = {
+		limit = {
+			owner ?= {
+				has_variable = icd_convert_a_lot
+			}
+			OR = {
+				religion = religion:catholic
+				religion = religion:lutheran
+				religion = religion:calvinist
+				religion = religion:anabaptist
+				religion = religion:unitarian
+				religion = religion:anglican
+			}
+		}
+		add = {
+			value = {
+				value = pop_size
+				divide = {
+					value = 0
+					location = {
+						every_pop = {
+							limit = {
+								religion != location.province.var:promoting_religion
+								owner ?= root
+								is_protected_pop = no
+								pop_type != pop_type:slaves
+							}
+							add = pop_size
+						}
+					}
+				}
+				multiply = {
+					value = location.population
+					divide = 100
+				}
+			}
+			multiply = {
+				value = 1
+				subtract = location.local_control
+			}
+			round_to = 0.001
+		}
+		add = {
+			value = {
+				value = pop_size
+				divide = {
+					value = 0
+					location = {
+						every_pop = {
+							limit = {
+								religion != location.province.var:promoting_religion
+								owner ?= root
+								is_protected_pop = no
+								pop_type != pop_type:slaves
+							}
+							add = pop_size
+						}
+					}
+				}
+				multiply = {
+					value = location.population
+					divide = 100
+				}
+			}
 		}
 	}
 }
@@ -200,3 +503,216 @@ icd_conversion_rate_province = {
 		}
 	}
 }
+
+icd_conversion_rate_province_communal_value = {
+	value = 150
+	
+	
+	if = {
+		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
+		add = {
+			value = 150
+			multiply = owner.modifier:global_pop_conversion_speed_modifier
+		}
+	}
+	if = {
+		limit = { modifier:local_pop_conversion_speed_modifier > 0 }
+		add = {
+			value = 150
+			multiply = modifier:local_pop_conversion_speed_modifier
+		}
+	}
+	subtract = {
+		value = 150
+		multiply = {
+			value = 1
+			subtract = local_control
+		}
+	}
+	if = {
+		limit = {
+			owner ?= {
+				OR = {
+					has_policy = icd_ethnic_religion
+					has_policy = icd_custodians
+				}
+			}
+		}
+		multiply = 1.5
+	}
+	round_to = 1
+}
+
+icd_conversion_rate_province_forced_value = {
+	value = population
+	multiply = 10
+	
+	if = {
+		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
+		add = {
+			value = {
+				value = population
+				multiply = 10
+
+			}
+			multiply = owner.modifier:global_pop_conversion_speed_modifier
+		}
+	}
+	if = {
+		limit = { modifier:local_pop_conversion_speed_modifier > 0 }
+		add = {
+			value = {
+				value = population
+				multiply = 10
+			}
+			multiply = modifier:local_pop_conversion_speed_modifier
+		}
+	}
+	subtract = {
+		value = {
+			value = population
+			multiply = 10
+		}
+		multiply = {
+			value = 1
+			subtract = local_control
+		}
+	}
+	round_to = 1
+}
+
+icd_conversion_rate_province_voluntary = { ####
+	value = 1
+	
+	if = {
+		limit = { average_satisfaction > 0.25 }
+		add = {
+			value = average_satisfaction
+		}
+	}
+	
+	if = {
+		limit = {
+			owner ?= {
+				OR = {
+					has_policy = icd_secular_state
+					has_policy = icd_sulh_i_kul
+				}
+			}
+		}
+		add = 1.5
+	}
+	
+	add = {
+		value = 0
+		add = {
+			value = owner.modifier:tolerance_heathen
+			min = 0
+		}
+		add = {
+			value = owner.modifier:tolerance_heretic
+			min = 0
+		}
+		divide = 2
+	}
+	
+	if = {
+		limit = {
+			local_control < 0.1
+		}
+		value = 0
+	}
+				
+}
+
+icd_conversion_rate_province_voluntary_value_heathen = { ###0.19 at that point###
+	value = 0.1
+	
+	if = {
+		limit = { average_satisfaction > 0.25 }
+		add = {
+			value = average_satisfaction
+			divide = 10
+		}
+	}
+	
+	add = {
+		value = owner.modifier:tolerance_heathen
+		min = 0
+		divide = 10
+	}
+	
+	if = {
+		limit = {
+			owner ?= {
+				country_has_estate = estate_type:dhimmi_estate
+			}
+		}
+		add = {
+			value = "owner.estate(estate_type:dhimmi_estate).num_privileges"
+			divide = 40
+		}
+	}
+	
+	if = {
+		limit = {
+			owner ?= {
+				OR = {
+					has_policy = icd_secular_state
+					has_policy = icd_sulh_i_kul
+				}
+			}
+		}
+		add = 0.15
+	}
+	
+	round_to = 0.01
+	
+	if = {
+		limit = {
+			local_control < 0.1
+		}
+		value = 0
+	}
+}
+
+icd_conversion_rate_province_voluntary_value_heretic = { ###0.19 at that point###
+	value = 0.1
+	
+	if = {
+		limit = { average_satisfaction > 0.25 }
+		add = {
+			value = average_satisfaction
+			divide = 10
+		}
+	}
+	
+	add = {
+		value = owner.modifier:tolerance_heathen
+		min = 0
+		divide = 10
+	}
+	
+	if = {
+		limit = {
+			owner ?= {
+				OR = {
+					has_policy = icd_secular_state
+					has_policy = icd_sulh_i_kul
+				}
+			}
+		}
+		add = 0.15
+	}
+	
+	round_to = 0.01
+	
+	if = {
+		limit = {
+			local_control < 0.1
+		}
+		value = 0
+	}
+	
+}
+

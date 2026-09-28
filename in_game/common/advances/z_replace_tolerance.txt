@@ -28,6 +28,18 @@ REPLACE:tolerance_idea = {
 	peasants_estate_satisfaction_recovery = 0.001
 }
 
+REPLACE:buddhist_syncretism = {
+	age = age_1_traditions
+	
+	potential = {
+		religion.group = religion_group:buddhist
+	}
+	
+	tolerance_heathen = 0.75
+	
+	requires = scholasticism
+}
+
 REPLACE:ecumenism = {
 	age = age_4_reformation
 	icon = cultural_acceptance_advance
@@ -266,8 +278,8 @@ REPLACE:millets = {
 		has_or_had_tag = TUR
 	}
 	
-	tolerance_heathen = 0.1
-	cultures_capacity = 1
+	tolerance_heathen = 0.75
+	cultures_capacity = 0.5
 }
 REPLACE:guj_jain_routes = {
 	age = age_2_renaissance
@@ -297,7 +309,8 @@ REPLACE:crossroads_of_religions = {
 		original_capital ?= { continent = continent:asia }
 	}
 
-	tolerance_heathen = 0.2
+	tolerance_heathen = 0.1
+	trade_land_efficiency = small_trade_land_efficiency_bonus
 
 	requires = silk_road
 }

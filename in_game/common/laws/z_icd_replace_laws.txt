@@ -500,3 +500,101 @@ REPLACE:inquisition_law = {
 		years = 2
 	}
 }
+
+REPLACE:heir_religion_law = {
+	law_category = religious
+
+	locked = {
+		OR = {
+			AND = {
+				has_policy = heir_same_religion
+				custom_tooltip = {
+					text = act_of_settlement_tt
+					has_variable = act_of_settlement
+				}
+			}
+			custom_tooltip = {
+				text = recently_negotiated_succession_law_locked_tt
+				has_country_modifier = recently_negotiated_succession_law
+			}
+		}
+	}
+
+	heir_special_succession = {
+		potential = {
+			succession_law = {
+				has_tag = empty_heir_religion_law
+			}
+		}
+		country_modifier = {
+			legislative_efficiency = 0.1
+		}
+		years = 2
+	}
+
+	heir_same_religion = {
+		potential = {
+			succession_law = {
+				NOT = { has_tag = empty_heir_religion_law }
+			}
+			or = {
+				not = { country_exists = this } #if the country doesn't exist they can do what they like
+				not = { exists = ruler_or_heir_if_regent }
+				ruler_or_heir_if_regent = {
+					religion = root.religion
+				}
+				exists = union
+			}
+		}
+		country_modifier = {
+			heir_of_same_religion = yes
+			tolerance_own = 0.1
+			clergy_estate_satisfaction_recovery = 0.002
+			monthly_towards_spiritualist = societal_value_monthly_move
+		}
+		estate_preferences = {
+			clergy_estate
+		}
+		years = 2
+	}
+	heir_same_religion_group = {
+		potential = {
+			succession_law = {
+				NOT = { has_tag = empty_heir_religion_law }
+			}
+			or = {
+				not = { country_exists = this } #if the country doesn't exist they can do what they like
+				not = { exists = ruler_or_heir_if_regent }
+				ruler_or_heir_if_regent = {
+					religion.group = root.religion.group
+				}
+			}
+		}
+		country_modifier = {
+			heir_of_same_religion_group = yes
+			tolerance_heretic = 0.1
+			clergy_estate_satisfaction_recovery = 0.001
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+	heir_any_religion = {
+		potential = {
+			succession_law = {
+				NOT = { has_tag = empty_heir_religion_law }
+			}
+		}
+		country_modifier = {
+			heir_of_any_religion = yes
+			tolerance_heathen = 0.15
+			clergy_estate_satisfaction_decay = 0.01
+			monthly_towards_humanist = societal_value_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+}

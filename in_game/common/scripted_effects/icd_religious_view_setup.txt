@@ -1,18 +1,6 @@
 ﻿
 icd_religious_view_setup = {
 	
-	religion:sanjiao = {
-		religion:mahayana = {
-			set_religious_view = {
-				target = prev
-				value = kindred
-			}
-			reverse_set_religious_view = {
-				target = prev
-				value = kindred
-			}
-		}
-	}
 	
 	religion:tibetan_buddhism = {
 		religion:bon = {
@@ -343,6 +331,90 @@ icd_religious_view_setup = {
 			}
 		}
 	}
+	
+	religion:sanjiao = {
+		religion:mahayana = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+		religion:yao_religion = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+		religion:moism = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+		religion:nuo_religion = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+		religion:hmongism = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+		religion:bimoism = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+		religion:satsana_phi = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+		religion:muong_religion = {
+			set_religious_view = {
+				target = prev
+				value = kindred
+			}
+			reverse_set_religious_view = {
+				target = prev
+				value = kindred
+			}
+		}
+	}
+	
 
 
 	every_religion = {

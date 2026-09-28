@@ -107,9 +107,9 @@ REPLACE:warsaw_confederation = {
     }
 
 	country_modifier = {
-		tolerance_heretic = 2
-		tolerance_heathen = 3.5
-		monthly_towards_humanist = societal_value_monthly_move
+		tolerance_heretic = 1.5
+		tolerance_heathen = 2.0
+		global_nobles_conversion_blocked = yes
 		government_reform_slots = 1
 	}
 

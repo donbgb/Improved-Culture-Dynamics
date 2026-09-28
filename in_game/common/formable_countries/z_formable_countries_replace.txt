@@ -3,7 +3,7 @@
 	required_locations_fraction = 0.9
 	rule = historical
 	potential = {
-		culture = culture:greater_polish
+		culture = culture:mazovian
 	}
 	allow = {
 		owns = location:warsaw

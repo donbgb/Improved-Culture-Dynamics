@@ -141,7 +141,6 @@
 						tag = BOH
 						tag = HAB
 						culture = { has_culture_group = culture_group:caucasian_group }
-						culture = { has_culture_group = culture_group:iranian_group }
 						capital.sub_continent = sub_continent:west_africa
 						capital.sub_continent = sub_continent:central_africa
 						capital.sub_continent = sub_continent:east_africa
@@ -164,7 +163,6 @@
 		}
 		country_modifier = {
 			global_distance_from_capital_speed_propagation = 0.025
-			global_pop_assimilation_speed_modifier = 0.25
 			global_tribal_promotion = 0.1
 			global_tribes_estate_power = -1.0
 		}

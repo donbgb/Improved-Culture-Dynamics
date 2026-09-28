@@ -2,7 +2,7 @@
 	ability = dip
 	
 	country_modifier = {
-		global_pop_assimilation_speed_modifier = 0.2
+		global_pop_assimilation_speed_modifier = 0.1
 		cultural_influence_modifier = 0.5
 	}
 	

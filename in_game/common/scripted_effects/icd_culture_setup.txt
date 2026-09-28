@@ -362,12 +362,12 @@ icd_cultural_setup = {
 			}
 			
 			every_pop = {
-				limit = { OR = { culture = culture:lesser_polish culture = culture:mazovian }}
+				limit = { culture = culture:lesser_polish }
 				change_pop_culture = culture:greater_polish
 			}
 			
 			every_character = {
-				limit = { OR = { culture = culture:lesser_polish culture = culture:mazovian }}
+				limit = { culture = culture:lesser_polish }
 				change_character_culture = culture:greater_polish
 			}
 			
@@ -417,13 +417,63 @@ icd_cultural_setup = {
 			}
 			
 			every_pop = {
-				limit = { OR = { culture = culture:southern_bavarian culture = culture:upper_palatine }}
+				limit = { culture = culture:upper_palatine }
 				change_pop_culture = culture:danube_bavarian
 			}
 			
+			every_pop = {
+				limit = { 
+					culture = culture:southern_bavarian
+					location = {
+						NOT = {
+							this = location:lienz
+							this = location:garmisch
+							this = location:mittersill
+							area = area:tirol_area
+							area = area:veneto_area
+							area = area:eastern_switzerland_area
+						}
+					}
+				}
+				change_pop_culture = culture:danube_bavarian
+			}
+			every_pop = {
+				limit = {
+					location = location:kufstein
+					culture = culture:danube_bavarian
+				}
+				split_pop = {
+					fraction = 0.29
+					culture = culture:southern_bavarian
+				}
+			}
+			every_pop = {
+				limit = {
+					location = location:lienz
+					culture = culture:southern_bavarian
+				}
+				split_pop = {
+					fraction = 0.16
+					culture = culture:danube_bavarian
+				}
+			}
 			
 			every_character = {
-				limit = { OR = { culture = culture:southern_bavarian culture = culture:upper_palatine }}
+				limit = { culture = culture:upper_palatine }
+				change_character_culture = culture:danube_bavarian
+			}
+			
+			every_character = {
+				limit = { culture = culture:southern_bavarian
+					birth_location = {
+						NOT = {
+							area = area:tirol_area
+							area = area:veneto_area
+							area = area:eastern_switzerland_area
+							this = location:lienz
+						}
+					}
+				}
 				change_character_culture = culture:danube_bavarian
 			}
 			
@@ -483,7 +533,7 @@ icd_cultural_setup = {
 			
 			
 			if = {
-				limit = { OR = { culture = culture:lesser_polish culture = culture:mazovian }}
+				limit = { culture = culture:lesser_polish }
 				change_culture = culture:greater_polish
 			}
 			if = {
@@ -531,7 +581,20 @@ icd_cultural_setup = {
 				change_culture = culture:high_alemannic
 			}
 			if = {
-				limit = { OR = { culture = culture:southern_bavarian culture = culture:upper_palatine }}
+				limit = { culture = culture:upper_palatine }
+				change_culture = culture:danube_bavarian
+			}
+			if = {
+				limit = { culture = culture:southern_bavarian 
+					capital = {
+						NOT = {
+							this = location:lienz
+							area = area:tirol_area
+							area = area:veneto_area
+							area = area:eastern_switzerland_area
+						}
+					}
+				}
 				change_culture = culture:danube_bavarian
 			}
 			if = {
@@ -638,23 +701,6 @@ icd_remove_accepted_tolerated_cultures = {
 		
 		if = {
 			limit = {
-				has_tolerated_culture = culture:mazovian
-				NOT = { culture = culture:greater_polish }
-			}
-			remove_tolerated_culture = culture:mazovian
-			add_tolerated_culture = culture:greater_polish
-		}
-		if = {
-			limit = {
-				has_accepted_culture = culture:mazovian
-				NOT = { culture = culture:greater_polish }
-			}
-			remove_accepted_culture = culture:mazovian
-			add_accepted_culture = culture:greater_polish
-		}
-		
-		if = {
-			limit = {
 				has_tolerated_culture = culture:halychian_culture
 				NOT = { culture = culture:volhynian_culture }
 			}
@@ -750,23 +796,6 @@ icd_remove_accepted_tolerated_cultures = {
 			}
 			remove_accepted_culture = culture:rhine_alemannic
 			add_accepted_culture = culture:high_alemannic
-		}
-		
-		if = {
-			limit = {
-				has_tolerated_culture = culture:southern_bavarian
-				NOT = { culture = culture:danube_bavarian }
-			}
-			remove_tolerated_culture = culture:southern_bavarian
-			add_tolerated_culture = culture:danube_bavarian
-		}
-		if = {
-			limit = {
-				has_accepted_culture = culture:southern_bavarian
-				NOT = { culture = culture:danube_bavarian }
-			}
-			remove_accepted_culture = culture:southern_bavarian
-			add_accepted_culture = culture:danube_bavarian
 		}
 		
 		if = {
@@ -873,4 +902,4 @@ icd_remove_accepted_tolerated_cultures = {
 	}
 }
 
-###saintongeais|upper_egyptian_culture|northumbrian|markish|upper_palatine|southern_bavarian|angrian|holsatian|franc_comtois|vivaro_alpine|lesser_polish|mazovian|halychian_culture|transylvanian|wallachian|moselle_franconian|rhine_alemannic###
+###saintongeais|upper_egyptian_culture|northumbrian|markish|upper_palatine|angrian|holsatian|franc_comtois|vivaro_alpine|lesser_polish|halychian_culture|transylvanian|wallachian|moselle_franconian|rhine_alemannic###

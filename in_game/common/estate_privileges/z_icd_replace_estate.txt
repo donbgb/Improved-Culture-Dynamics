@@ -175,6 +175,15 @@ REPLACE:tribes_protected_faith = {
 		global_tribesmen_conversion_blocked = yes
 		global_tribes_estate_power = 0.5
 	}
+	
+	ai_weight = {
+		if = {
+			limit = {
+				culture = { has_culture_group = culture_group:indian_group }
+			}
+			add = 999999
+		}
+	}
 }
 
 REPLACE:clergy_enforced_unity = {
@@ -190,8 +199,8 @@ REPLACE:clergy_enforced_unity = {
 	country_modifier = {
 		global_clergy_estate_power = 0.25
 		global_pop_conversion_speed_modifier = 0.10
-		tolerance_heathen = -0.1
-		tolerance_heretic = -0.1
+		tolerance_heathen = -0.25
+		tolerance_heretic = -0.25
 		monthly_towards_communalism = societal_value_monthly_move
 
 	}

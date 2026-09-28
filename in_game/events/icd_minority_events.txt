@@ -20,7 +20,7 @@ icd_minority_events.1000 = { ###expel minority cabinet action###
 			save_scope_as = icd_expel_scope
 		}
 		
-		ordered_country_in_diplomatic_range = { ##check if has primary country###
+		ordered_country_in_diplomatic_range = { ##check if has primary country of necessary size###
 			limit = {
 				culture = scope:icd_expel_scope
 				NOT = { 
@@ -29,8 +29,10 @@ icd_minority_events.1000 = { ###expel minority cabinet action###
 						this = root
 					}
 				}
+				num_provinces >= 3
+				total_population > icd_country_doubled_population_culture
 			}
-			order_by = total_population
+			order_by = "border_distance_to(root)"
 			check_range_bounds = no
 			max = 1
 			save_scope_as = target_recipient_country
@@ -52,8 +54,9 @@ icd_minority_events.1000 = { ###expel minority cabinet action###
 							this = root
 						}
 					}
+					total_population > icd_country_doubled_population_culture
 				}
-				order_by = total_population
+				order_by = "border_distance_to(root)"
 				check_range_bounds = no
 				max = 1
 				save_scope_as = target_recipient_country
@@ -76,12 +79,37 @@ icd_minority_events.1000 = { ###expel minority cabinet action###
 						}
 						has_shared_culture_group = scope:icd_expel_scope
 					}
+					total_population > icd_country_doubled_population_culture
 					NOT = { 
 						this = root
 						any_overlord_or_above = { 
 							this = root
 						}
 					}
+				}
+				order_by = "border_distance_to(root)"
+				check_range_bounds = no
+				max = 1
+				save_scope_as = target_recipient_country
+			}
+		}
+		
+		if = { ##check for smaller prinary country ###
+			limit = {
+				NOT = {
+					exists = scope:target_recipient_country
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				limit = {
+					culture = scope:icd_expel_scope
+					NOT = { 
+						this = root
+						any_overlord_or_above = { 
+							this = root
+						}
+					}
+					num_provinces >= 3
 				}
 				order_by = total_population
 				check_range_bounds = no
@@ -101,6 +129,7 @@ icd_minority_events.1000 = { ###expel minority cabinet action###
 			}
 			ordered_country_in_diplomatic_range = {
 				limit = {
+					total_population > icd_country_doubled_population
 					num_provinces >= 3
 					NOT = { 
 						this = root
@@ -111,13 +140,18 @@ icd_minority_events.1000 = { ###expel minority cabinet action###
 					OR = {
 						has_policy = icd_jewish_charter
 						has_policy = council_of_three_lands_policy
+						has_policy = icd_subjugated_communities
+						modifier:tolerance_heathen > 0.5
 						AND = {
-								has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
-								NOT = { has_variable = icd_israelite_dhimmi_disabled }
+							country_has_estate = estate_type:dhimmi_estate
+							any_pop = {
+								is_dhimmi = yes
+								religion = religion:judaism
 							}
+						}
 					}
 				}
-				order_by = total_population
+				order_by = "border_distance_to(root)"
 				check_range_bounds = no
 				max = 1
 				save_scope_as = target_recipient_country
@@ -140,18 +174,14 @@ icd_minority_events.1000 = { ###expel minority cabinet action###
 			}
 			scope:target_recipient_country = {
 				trigger_event_silently = icd_minority_events.1001
-					
+				set_variable = {
+					name = icd_expel_origin_country
+					value = root
+				}	
 			}
 		}
 		else = {#####
 			trigger_event_silently = icd_minority_events.1002
-		}
-		
-		scope:target_recipient_country = {
-			set_variable = {
-				name = icd_expel_origin_country
-				value = root
-			}
 		}
 		
 	}
@@ -239,6 +269,10 @@ icd_minority_events.1003 = { ###begin expulsion###
     }
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = { #####
+		name = icd_minority_events.1003.a
 		
 		var:icd_expel_destination_country = {
 			save_scope_as = target_recipient_country
@@ -250,39 +284,44 @@ icd_minority_events.1003 = { ###begin expulsion###
 			}
 			random_province = {
 				limit = { NOT = { this = scope:target_destination }
-					NOT = { province_definition = { any_location_in_province_definition = { owner = root } }}
+					NOT = { province_definition = { any_location_in_province_definition = { owner ?= root } }}
 				}
 				save_scope_as = target_destination_two
 			}
 			random_province = {
 				limit = { NOT = { this = scope:target_destination }
 					NOT = { this = scope:target_destination_two }
-					NOT = { province_definition = { any_location_in_province_definition = { owner = root } }}
+					NOT = { province_definition = { any_location_in_province_definition = { owner ?= root } }}
 				}
 				save_scope_as = target_destination_three
 			}
 		}
 		
-		
-		
-		
-	}
-
-	option = { #####
-		name = icd_minority_events.1003.a
-		
 		var:icd_expel_culture_people = {
 			save_scope_as = icd_migration_culture_scope
 		}
-		
-		add_stability = stability_mild_penalty
-		add_prestige = prestige_weak_penalty
-		change_gold_effect = { scale = -25 }
 		
 		var:icd_expel_culture_people = {
 			change_cultural_view = {
 				target = root.culture
 				change = -3
+			}
+		}
+		
+		add_stability = {
+			value = {
+				value = -1
+				multiply = "culture_percentage_in_country(scope:icd_migration_culture_scope)"
+				multiply = 200
+			}
+		}
+		add_gold = {
+			value = {
+				value = 1
+				multiply = {
+					value = "culture_population_in_country(scope:icd_migration_culture_scope)"
+					max = 1000
+				}
 			}
 		}
 		
@@ -334,6 +373,369 @@ icd_minority_events.1003 = { ###begin expulsion###
 		remove_variable = icd_expel_destination_country
 	}
 }
+
+
+icd_minority_events.2000 = { ###expel minority cabinet action###
+	hide_portraits = yes
+	type = country_event
+	title = icd_minority_events.1.title
+	desc = icd_minority_events.1.desc
+	outcome = neutral
+
+	
+	illustration_tags = {
+        10 = angry
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_poptype_effect = { foreground = pop_type:soldiers background = pop_type:soldiers }
+		
+		var:icd_expel_religion_people = {
+			save_scope_as = icd_expel_scope
+		}
+		
+		ordered_country_in_diplomatic_range = { ##check if has primary country of necessary size###
+			limit = {
+				religion = scope:icd_expel_scope
+				NOT = { 
+					this = root
+					any_overlord_or_above = { 
+						this = root
+					}
+				}
+				num_provinces >= 3
+				total_population > icd_country_doubled_population
+			}
+			order_by = {
+				value = "border_distance_to(root)"
+				multiply = -1
+			}
+			check_range_bounds = no
+			max = 1
+			save_scope_as = target_recipient_country
+		}
+
+		if = { ##check if has accepted country###
+			limit = {
+				NOT = {
+					exists = scope:target_recipient_country
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				limit = {
+					num_provinces >= 3
+					OR = {
+						religion = {
+							religious_view = {
+								target = scope:icd_expel_scope
+								value = kindred
+							}
+						}
+						religion = {
+							religious_view = {
+								target = scope:icd_expel_scope
+								value = positive
+							}
+						}
+						AND = {
+							religion.group = scope:icd_expel_scope.group
+							modifier:tolerance_heretic > -0.5
+						}
+					}
+					any_pop = {
+						religion = scope:icd_expel_scope
+						is_protected_pop = yes
+					}
+					total_population > icd_country_doubled_population
+					NOT = { 
+						this = root
+						any_overlord_or_above = { 
+							this = root
+						}
+					}
+				}
+				order_by = {
+					value = "border_distance_to(root)"
+					multiply = -1
+				}
+				check_range_bounds = no
+				max = 1
+				save_scope_as = target_recipient_country
+			}
+		}
+		
+		if = { ##check for smaller prinary country ###
+			limit = {
+				NOT = {
+					exists = scope:target_recipient_country
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				limit = {
+					num_provinces >= 3
+					religion = scope:icd_expel_scope
+					NOT = { 
+						this = root
+						any_overlord_or_above = { 
+							this = root
+						}
+					}
+					total_population > icd_country_doubled_population
+				}
+				order_by = total_population
+				check_range_bounds = no
+				max = 1
+				save_scope_as = target_recipient_country
+			}
+		}
+		
+		if = { ##check if protected###
+			limit = {
+				NOT = {
+					exists = scope:target_recipient_country
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				limit = {
+					num_provinces >= 3
+					any_pop = {
+						religion = scope:icd_expel_scope
+						is_protected_pop = yes
+					}
+					total_population > icd_country_doubled_population
+					NOT = { 
+						this = root
+						any_overlord_or_above = { 
+							this = root
+						}
+					}
+				}
+				order_by = {
+					value = "border_distance_to(root)"
+					multiply = -1
+				}
+				check_range_bounds = no
+				max = 1
+				save_scope_as = target_recipient_country
+			}
+		}
+	}
+
+	option = { #####
+		name = icd_minority_events.1.a
+		
+		if = {#####
+			limit = {
+				exists = scope:target_recipient_country
+				scope:target_recipient_country = {
+					NOT = {
+						has_variable = icd_expel_origin_country_religion
+					}
+				}
+			}
+			scope:target_recipient_country = {
+				trigger_event_silently = icd_minority_events.2001
+				set_variable = {
+					name = icd_expel_origin_country_religion
+					value = root
+				}
+			}
+		}
+		else = {#####
+			trigger_event_silently = icd_minority_events.2002
+		}
+		
+	}
+}
+
+icd_minority_events.2001 = { ###checking with country###
+	hide_portraits = yes
+	type = country_event
+	title = icd_minority_events.2001.title
+	desc = icd_minority_events.2001.desc
+	outcome = neutral
+
+	
+	illustration_tags = {
+        10 = angry
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = { ###accept##
+		name = icd_minority_events.2001.a
+		
+		ai_will_select  = { value = 2000 }
+		
+		var:icd_expel_origin_country_religion = {
+			trigger_event_silently = icd_minority_events.2003
+			set_variable = {
+				name = icd_expel_destination_country_religion
+				value = root
+			}
+		}
+		
+		remove_variable = icd_expel_origin_country_religion
+	}
+	
+	option = { ###refuse##
+		name = icd_minority_events.2001.b
+		
+		ai_will_select  = { value = -500 }
+		
+		var:icd_expel_origin_country_religion = {
+			trigger_event_silently = icd_minority_events.2002
+		}
+		
+		remove_variable = icd_expel_origin_country_religion
+	}
+}
+
+icd_minority_events.2002 = { ###refused###
+	hide_portraits = yes
+	type = country_event
+	title = icd_minority_events.2002.title
+	desc = icd_minority_events.2002.desc
+	outcome = neutral
+
+	
+	illustration_tags = {
+        10 = angry
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = { #####
+		name = icd_minority_events.2002.a
+		
+		remove_variable = icd_expel_religion_people
+	}
+}
+
+icd_minority_events.2003 = { ###begin expulsion###
+	hide_portraits = yes
+	type = country_event
+	title = icd_minority_events.2003.title
+	desc = icd_minority_events.2003.desc
+	outcome = neutral
+
+	
+	illustration_tags = {
+        10 = angry
+        10 = exterior
+    }
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = { #####
+		name = icd_minority_events.2003.a
+		
+		var:icd_expel_destination_country_religion = {			
+			capital.province = {
+				save_scope_as = target_destination_religion
+			}
+			random_province = {
+				limit = { NOT = { this = scope:target_destination_religion }
+				}
+				save_scope_as = target_destination_religion_two
+			}
+			random_province = {
+				limit = { NOT = { this = scope:target_destination_religion }
+					NOT = { this = scope:target_destination_religion_two }
+				}
+				save_scope_as = target_destination_religion_three
+			}
+		}
+			
+		var:icd_expel_religion_people = {
+			save_scope_as = icd_migration_religion_scope
+		}
+	
+		
+		add_stability = {
+			value = {
+				value = -1
+				multiply = "religion_percentage_in_country(scope:icd_migration_religion_scope)"
+				multiply = 200
+			}
+		}
+		add_gold = {
+			value = {
+				value = 1
+				multiply = {
+					value = "religion_population_in_country(scope:icd_migration_religion_scope)"
+					max = 1000
+				}
+			}
+		}
+
+		custom_tooltip = {
+			text = icd_expel_religion_convert
+			every_pop = {
+				limit = {
+					religion = scope:icd_migration_religion_scope
+				}
+				split_pop = {
+					fraction = { 0.05 0.3 }
+					religion = root.religion
+				}
+			}
+		}
+			
+		custom_tooltip = icd_begin_expelling_religion_tt
+		hidden_effect = {
+			every_province = {
+				add_migration = {
+					from = this.province_definition
+					to = scope:target_destination_religion.province_definition
+					religion = scope:icd_migration_religion_scope
+					amount = {
+						value = 0.500
+					}
+					months = 24
+				}
+			}
+			every_province = {
+				add_migration = {
+					from = this.province_definition
+					to = scope:target_destination_religion_two.province_definition
+					religion = scope:icd_migration_religion_scope
+					amount = {
+					value = 0.500
+					}
+					months = 24
+				}
+			}
+			every_province = {
+				add_migration = {
+					from = this.province_definition
+					to = scope:target_destination_religion_three.province_definition
+					religion = scope:icd_migration_religion_scope
+					amount = {
+					value = 0.500
+					}
+					months = 24
+				}
+			}
+		}
+		
+		remove_variable = icd_expel_religion_people
+		remove_variable = icd_expel_destination_country_religion
+	}
+	
+	option = { ##on second thought###
+		name = icd_minority_events.2003.b
+		
+		remove_variable = icd_expel_religion_people
+		remove_variable = icd_expel_destination_country_religion
+	}
+}
+
 
 icd_minority_events.1 = { ###jewish exodus###
 	hide_portraits = yes
@@ -395,212 +797,7 @@ icd_minority_events.1 = { ###jewish exodus###
 			months = 12
 		}
 		
-			every_province = {
-				limit = {
-					religion_percentage = {
-						religion = religion:judaism
-						value > 0
-					}
-					OR = {
-						region = region:iberia_region
-						region = region:balkan_region
-						area = area:sicily_area
-						area = area:basilicata_area
-						area = area:apulia_area
-						area = area:campania_area
-						area = area:abruzzo_area
-						sub_continent = sub_continent:north_africa
-						sub_continent = sub_continent:middle_east
-					}
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target1_sephardim.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target2_sephardim.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target3_sephardim.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target4_sephardim.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target5_sephardim.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target6_sephardim.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target7_sephardim.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-			}
-			every_province = {
-				limit = {
-					religion_percentage = {
-						religion = religion:judaism
-						value > 0
-					}
-					NOT = {
-						region = region:iberia_region
-						region = region:balkan_region
-						area = area:sicily_area
-						area = area:basilicata_area
-						area = area:apulia_area
-						area = area:campania_area
-						area = area:abruzzo_area
-						sub_continent = sub_continent:north_africa
-						sub_continent = sub_continent:middle_east
-					}
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target1_ashkenazi.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target2_ashkenazi.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target3_ashkenazi.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target4_ashkenazi.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target5_ashkenazi.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target6_sephardim.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-				add_migration = {
-					owner = prev
-					from = this.province_definition
-					to = scope:escape_target7_sephardim.province_definition
-					religion = religion:judaism
-					amount = {
-						value = "religion_population(religion:judaism)"
-						divide = 7
-						divide = 11
-					}
-					months = 12
-				}
-			}
+		icd_jewish_migration_perform = yes
 	}
 	option = {
 		name = icd_minority_events.1.c
@@ -1457,7 +1654,7 @@ icd_minority_events.7 = { ###action religion###
 			custom_tooltip = icd_israelite_dhimmi_remove_tt
 			set_variable = icd_israelite_dhimmi_disabled
 			
-			add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_penalty }
+			add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_severe_penalty }
 
 			custom_tooltip = {
 				text = icd_remove_dhimmi_tt
@@ -1467,7 +1664,7 @@ icd_minority_events.7 = { ###action religion###
 					}
 					every_pop = {
 						limit = { religion.group = religion_group:israelite_group }
-						add_pop_satisfaction = pop_satisfaction_severe_penalty
+						add_pop_satisfaction = pop_satisfaction_ultimate_penalty
 					}
 				}
 			}
@@ -1511,7 +1708,7 @@ icd_minority_events.7 = { ###action religion###
 					}
 					every_pop = {
 						limit = { religion.group = religion_group:christian }
-						add_pop_satisfaction = pop_satisfaction_severe_penalty
+						add_pop_satisfaction = pop_satisfaction_ultimate_penalty
 					}
 				}
 			}
@@ -1557,7 +1754,7 @@ icd_minority_events.7 = { ###action religion###
 					}
 					every_pop = {
 						limit = { religion.group = religion_group:mandean_group }
-						add_pop_satisfaction = pop_satisfaction_severe_penalty
+						add_pop_satisfaction = pop_satisfaction_ultimate_penalty
 					}
 				}
 			}
@@ -1569,7 +1766,7 @@ icd_minority_events.7 = { ###action religion###
 					}
 					every_pop = {
 						limit = { religion.group = religion_group:manichaean_group }
-						add_pop_satisfaction = pop_satisfaction_severe_penalty
+						add_pop_satisfaction = pop_satisfaction_ultimate_penalty
 					}
 				}
 			}
@@ -1611,7 +1808,7 @@ icd_minority_events.7 = { ###action religion###
 					}
 					every_pop = {
 						limit = { religion.group = religion_group:zoroastrian_group }
-						add_pop_satisfaction = pop_satisfaction_severe_penalty
+						add_pop_satisfaction = pop_satisfaction_ultimate_penalty
 					}
 				}
 			}
@@ -1651,7 +1848,7 @@ icd_minority_events.7 = { ###action religion###
 					}
 					every_pop = {
 						limit = { religion.group = religion_group:dharmic }
-						add_pop_satisfaction = pop_satisfaction_severe_penalty
+						add_pop_satisfaction = pop_satisfaction_ultimate_penalty
 					}
 				}
 			}
@@ -1690,7 +1887,7 @@ icd_minority_events.7 = { ###action religion###
 					}
 					every_pop = {
 						limit = { religion.group = religion_group:buddhist }
-						add_pop_satisfaction = pop_satisfaction_severe_penalty
+						add_pop_satisfaction = pop_satisfaction_ultimate_penalty
 					}
 				}
 			}

@@ -1,0 +1,22 @@
+﻿
+icd_global_variable_setup = {
+	every_country = {
+		limit = {
+			NOT = {
+				any_pop = {
+					culture = prev.culture
+					religion != prev.religion
+					religion != religion:waldensian
+					religion != religion:catharism
+					religion != religion:bogomilism
+					religion != religion:paulicianism
+					pop_size > 0.1
+				}
+			}
+		}
+		set_variable = {
+			name = icd_confessional_culture
+			value = this.culture
+		}
+	}
+}

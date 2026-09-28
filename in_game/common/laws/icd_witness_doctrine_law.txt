@@ -1,16 +1,17 @@
-﻿icd_tolerance_heathen_law = {
+﻿icd_witness_doctrine = {
 	icon = icd_tolerance_own
 	law_category = religious
 
 	potential = {
-		num_locations > 0
-		total_heathen_population > 0
+		religion.group = religion_group:christian
+		NOT = {
+			has_policy = icd_secular_state
+		}
 	}
 	locked = {
 		OR = {
 			AND = {
 				has_policy = icd_jewish_charter
-				religion.group = religion_group:christian
 				NOT = {
 					is_human = yes
 					tag = FRA
@@ -50,7 +51,7 @@
 		}
 	}
 	
-	icd_proselytism_heathen = {
+	icd_mandatory_conversion = {
 		price = icd_nothing_price
 		country_modifier = {
 			global_pop_conversion_speed_modifier = 0.025
@@ -70,7 +71,6 @@
 	
 	icd_aljama_communities = {
 		potential = {
-			religion.group = religion_group:christian
 			culture = { has_culture_group = culture_group:iberian_group }
 			custom_tooltip = {
 				text = icd_moriscos_banned_tt
@@ -96,7 +96,7 @@
 		}
 		country_modifier = {
 			global_trades_per_burgher = 0.1
-			tolerance_heathen = 1
+			tolerance_heathen = 0.5
 			pure_tooltip_entry = icd_aljama_communities_tt
 		}
 		location_modifier = {
@@ -132,9 +132,6 @@
 					value > 0
 				}
 			}
-			NOT = {
-				country_has_estate = estate_type:dhimmi_estate
-			}
 		}
 		allow = {
 			
@@ -147,7 +144,7 @@
 			}
 		}
 		country_modifier = {
-			tolerance_heathen = 1.25
+			tolerance_heathen = 0.5
 			global_trades_per_burgher = 0.1
 			pure_tooltip_entry = icd_jewish_charter_tt
 		}
@@ -160,6 +157,7 @@
 						value > 0
 					}
 					icd_no_local_pagans = yes
+					dominant_religion = { group = religion_group:christian }
 				}
 			}
 			local_heathen_pop_conversion_speed_modifier = -6.0
@@ -173,7 +171,6 @@
 	
 	icd_jewish_ghetto = {
 		potential = {
-			religion.group = religion_group:christian
 			any_owned_location = {
 				religion_group_percentage = {
 					religion_group = religion_group:israelite_group
@@ -202,13 +199,11 @@
 				current_year > 1600
 				has_global_variable = icd_cum_nimis_absurdum
 			}
-			NOT = {
-				has_policy = icd_secular_state
-			}
 			
 		}
 		country_modifier = {
 			global_trades_per_burgher = 0.1
+			tolerance_own = 1
 			pure_tooltip_entry = icd_jewish_ghetto_tt
 		}
 		location_modifier = {
@@ -245,14 +240,14 @@
 		}
 		country_modifier = {
 			cultures_capacity = 1
-			tolerance_heathen = 1.5
+			tolerance_heathen = 1
 			pure_tooltip_entry = icd_jewish_charter_tt
 		}
 		country_modifier = {
 			potential_trigger = {
 				has_reform = government_reform:warsaw_confederation
 			}
-			tolerance_heathen = 2
+			tolerance_heathen = 0.5
 		}
 		location_modifier = {
 			potential_trigger = {
@@ -274,32 +269,28 @@
 		}
 	}
 	
-	icd_abrahamic_communities = {
+	icd_subjugated_communities = {
 		potential = {
-			NOT = {
-				religion.group = religion_group:christian
-				religion.group = religion_group:muslim
-				religion.group = religion_group:israelite_group
-			}
-			any_owned_location = {
-				OR = {
-					religion_group_percentage = {
-						religion_group = religion_group:israelite_group
-						value > 0.01
-					}
-					religion_group_percentage = {
-						religion_group = religion_group:muslim
-						value > 0.01
-					}
-					religion_group_percentage = {
-						religion_group = religion_group:christian
-						value > 0.01
-					}
+			NOT = { culture = { has_culture_group = culture_group:iberian_group } }
+			AND = {
+				religion_group_percentage_in_country = {
+					religion_group = religion_group:israelite_group
+					value > 0
+				}
+				religion_group_percentage_in_country = {
+					religion_group = religion_group:muslim
+					value > 0
 				}
 			}
 		}
 		allow = {
 			icd_heathen_oppression = no
+			custom_tooltip = {
+				text = jewish_banned_tt
+				NOT = {
+					has_variable = icd_jewish_banned
+				}
+			}
 		}
 		location_modifier = {
 			potential_trigger = {
@@ -314,182 +305,22 @@
 							religion_group = religion_group:muslim
 							value > 0
 						}
-						religion_group_percentage = {
-							religion_group = religion_group:folk_asian_group
-							value > 0
-						}
 					}
 					icd_no_local_pagans = yes
+					dominant_religion.group = religion_group:christian
 				}
 			}
 			local_heathen_pop_conversion_speed_modifier = -3.0
 		}
 		country_modifier = {
-			global_trades_per_burgher = 0.1
-			tolerance_heathen = 2
-			pure_tooltip_entry = icd_abrahamic_communities_tt
+			tax_income_efficiency = small_tax_income_efficiency_bonus
+			tolerance_heathen = 0.75
+			pure_tooltip_entry = icd_subjugated_communities_tt
 		}
 		years = 2
 		ai_will_do = {
-			value = 100
+			value = 10
 		}
-	}
-	
-	icd_zoroastrian_communities = {
-		potential = {
-			any_owned_location = {
-				religion_group_percentage = {
-					religion_group = religion_group:zoroastrian_group
-					value > 0
-				}
-			}
-			NOT = {
-				country_has_estate = estate_type:dhimmi_estate
-			}
-		}
-		allow = {
-			icd_heathen_oppression = no
-		}
-		location_modifier = {
-			potential_trigger = {
-				has_game_rule = icd_religious_conversion_vanilla
-				hidden_trigger = {
-					religion_group_percentage = {
-						religion_group = religion_group:zoroastrian_group
-						value > 0
-					}
-					icd_no_local_pagans = yes
-				}
-			}
-			local_heathen_pop_conversion_speed_modifier = -3.0
-		}
-		country_modifier = {
-			global_trades_per_burgher = 0.1
-			tolerance_heathen = 1
-			pure_tooltip_entry = icd_zoroastrian_communities_tt
-		}
-		ai_will_do = {
-			value = 600
-		}
-		years = 2
-		ai_will_do = {
-			value = 500
-		}
-	}
-	
-	religious_and_ritual_regulation = {
-		country_modifier = {
-			global_crown_estate_power = 0.025
-			tolerance_heathen = 3.5
-		}
-		potential = {
-			OR = {
-				religion = religion:sanjiao
-				tag = CHI
-				is_leader_of_international_organization = international_organization:middle_kingdom
-			}
-		}
-		allow = {
-			icd_heathen_oppression = no
-		}
-		
-		estate_preferences = {
-			crown_estate
-		}
-		
-		ai_will_do = {
-			if = {
-				limit = {
-					religion = religion:sanjiao
-				}
-				value = 600
-			}
-			else = {
-				value = -10
-			}
-		}
-		
-		years = 2
-		ai_will_do = {
-			value = 800
-		}
-	}
-	
-	icd_loyal_clergies_administration = {
-		country_modifier = {
-			monthly_religious_rebel_growth = -0.01
-			tolerance_heathen = 4.5
-		}
-		allow = {
-			icd_heathen_oppression = no
-		}
-		potential = {
-			OR = {
-				has_embraced_institution = institution:enlightenment
-				is_subject_type = trade_company
-			}
-			NOT = {
-				religion.group = religion_group:folk_african_group
-				religion.group = religion_group:folk_argentinian_group
-				religion.group = religion_group:folk_aridoamerica_group
-				religion.group = religion_group:folk_asian_group
-				religion.group = religion_group:folk_australian_group
-				religion.group = religion_group:folk_brazilian_group
-				religion.group = religion_group:folk_caribbean_group
-				religion.group = religion_group:folk_central_american_group
-				religion.group = religion_group:tonal_group
-				religion.group = religion_group:folk_european_group
-				religion.group = religion_group:folk_melanesian_group
-				religion.group = religion_group:folk_micronesian_group
-				religion.group = religion_group:folk_north_american_group
-				religion.group = religion_group:folk_papuan_group
-				religion.group = religion_group:folk_permic_group
-				religion.group = religion_group:folk_peruvian_group
-				religion.group = religion_group:folk_polynesian_group
-				religion.group = religion_group:folk_se_asian_group
-				religion.group = religion_group:folk_south_american_group
-			}
-		}
-		location_modifier = {
-			potential_trigger = {
-				has_game_rule = icd_religious_conversion_vanilla
-				hidden_trigger = {
-					icd_no_organised_religion = no
-					icd_no_local_pagans = yes
-				}
-			}
-			local_heathen_pop_conversion_speed_modifier = -5.0
-		}
-		estate_preferences = {
-			crown_estate
-		}
-		
-		ai_will_do = {
-			value = 600
-		}
-		
-		years = 2
-	}
-	
-	icd_exalted_dhimmi = {
-		potential = {
-			religion.group = religion_group:muslim
-			country_has_estate = estate_type:dhimmi_estate
-		}
-		allow = {
-			has_estate_privilege = estate_privilege:icd_dhimmi_communities_protection
-			"estate(estate_type:dhimmi_estate)" = {
-				num_privileges > 6
-			}
-			NOT = {
-				has_policy = icd_secular_state
-			}
-			icd_heathen_oppression = no
-		}
-		country_modifier = {
-			tolerance_heathen = 1
-		}
-		years = 2
 	}
 	
 }

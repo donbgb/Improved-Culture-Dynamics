@@ -1,0 +1,9 @@
+﻿icd_never_list = {
+	potential = {
+		always = no
+	}
+	actions = {
+		icd_remove_convert
+		icd_confessional_community
+	}
+}

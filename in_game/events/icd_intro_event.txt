@@ -9,6 +9,7 @@ icd_intro_event.1 = {
 	image = "gfx/interface/illustrations/icd_illustration.dds"
 
 	trigger = {
+		NOT = { has_game_rule = icd_religious_conversion_vanilla }
 		is_ai = no
 	}
 
@@ -158,3 +159,4 @@ icd_intro_event.6 = { ##content##
 		name = icd_intro_event.2.b
 	}
 }
+

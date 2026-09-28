@@ -1,0 +1,90 @@
+﻿icd_remove_convert = {	
+	type = religious
+
+	sound = UI_action_religion_generic
+	
+	potential = {
+		scope:actor = {
+			num_locations > 0
+			is_ai = no
+		}
+		NOT = { has_game_rule = icd_religious_conversion_vanilla }
+		
+	}
+	
+	allow = {
+		scope:actor = {
+			any_province = {
+				has_province_modifier = icd_promote_religion_province_modifier
+			}		
+		}
+	}
+	
+	ai_tick = never
+		
+	select_trigger = {
+		looking_for_a = religion
+		source = actor
+		target_flag = recipient
+		name = "choose_religion"
+		column = {
+			data = name
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = province
+		source = actor
+		target_flag = target_province
+		name = "promote_religion_select_province"
+		none_available_msg_key = "promote_religion_no_provinces"
+		column = {
+			data = name
+		}
+		column = {
+			data = province_religion_percentage
+		}
+		column = {
+			data = population
+		}
+		default_sort = province_religion_percentage
+		visible = {
+			has_province_modifier = icd_promote_religion_province_modifier
+		}
+		enabled = {
+		}
+		map_color = {
+			if = {
+				limit = {
+					province = {
+						has_province_modifier = icd_promote_religion_province_modifier
+					}
+				}
+				lerp = {
+					min_color = define:NMapColors|MAP_COLOR_LOW
+					max_color = define:NMapColors|MAP_COLOR_HIGH
+					factor = "province.religion_percentage(scope:actor.religion)"
+				}
+			}
+		}
+	}
+	
+	show_message = no
+	
+	effect = {
+		if = {
+			limit = {
+				exists = scope:target_province
+			}
+			scope:target_province = {
+				remove_variable = promoting_religion
+				remove_province_modifier = icd_promote_religion_province_modifier
+			}
+		}
+	}
+	
+	ai_will_do = {
+		value = 0
+		
+	}
+}

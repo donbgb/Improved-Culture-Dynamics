@@ -1,0 +1,9 @@
+﻿
+icd_country_doubled_population = {
+	value = "root.religion_population_in_country(scope:icd_expel_scope)"
+	multiply = 2
+}
+icd_country_doubled_population_culture = {
+	value = "root.culture_population_in_country(scope:icd_expel_scope)"
+	multiply = 2
+}

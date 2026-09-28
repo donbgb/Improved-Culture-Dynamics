@@ -14,7 +14,13 @@ icd_conversion_events.1000 = { # Voluntary Conversions##
 			has_policy = icd_ethnic_religion
 			has_policy = icd_custodians
 		}
+		OR = {
+			icd_is_pagan = no
+			is_ai = no
+		}
 	}
+	
+	hidden = yes
 
 	illustration_tags = {
 	  	10 = happy
@@ -23,11 +29,8 @@ icd_conversion_events.1000 = { # Voluntary Conversions##
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
-	}
-
-	option = {
-		name = icd_conversion_events.1000.desc
-	
+		
+		
 		every_owned_location = {
 			limit = {
 				NOT = {
@@ -54,13 +57,31 @@ icd_conversion_events.1000 = { # Voluntary Conversions##
 				split_pop = {
 					fraction = {
 						value = icd_voluntary_conversion_rate
-						divide = 1000
 					}
 					religion = root.religion
 				}
 			}
 		}
 
+		
+		every_pop = { ##remove the small minorities###
+			limit = {
+				location = {
+					religion_population = {
+						religion = prev.religion
+						value < 0.05
+					}
+				}
+				religion != root.religion
+				religion.group != religion_group:israelite_group
+				religion != religion:jain
+			}
+			change_pop_religion = location.dominant_religion
+		}
+	}
+
+	option = {
+		name = icd_conversion_events.1000.desc
 	}
 }
 
@@ -83,15 +104,20 @@ icd_conversion_events.999 = { # Coercive Conversions##
 	  	10 = happy
 		10 = interior
 	}
+	
+	#hidden = yes#
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		
 		
 	}
 
 	option = {
 		name = icd_conversion_events.1000.desc
 	
+		
+		
 		every_province = {
 			limit = {
 				has_province_modifier = icd_promote_religion_province_modifier
@@ -106,10 +132,8 @@ icd_conversion_events.999 = { # Coercive Conversions##
 					}
 					if = {
 						limit = {
-							OR = {
-								religion.group != root.religion.group
-								NOT = { owner ?= { can_see_situation = situation:reformation } }
-							}
+							NOT = { owner ?= { can_see_situation = situation:reformation } }
+							religion.group = religion_group:christian
 						}
 						add_pop_satisfaction = {
 							value = pop_satisfaction
@@ -126,7 +150,6 @@ icd_conversion_events.999 = { # Coercive Conversions##
 	}
 }
 
-
 icd_conversion_events.900 = { # Communal COnversions##
 	type = country_event
 	hide_portraits = yes
@@ -138,6 +161,7 @@ icd_conversion_events.900 = { # Communal COnversions##
 		NOT = { has_game_rule = icd_religious_conversion_vanilla }
 	}
 
+	hidden = yes
 
 	illustration_tags = {
 	  	10 = happy
@@ -147,17 +171,35 @@ icd_conversion_events.900 = { # Communal COnversions##
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
 		
-	}
-
-	option = {
 		name = icd_conversion_events.1000.desc
 	
+		if = {
+			limit = {
+				has_policy = force_slave_conversion
+			}
+			every_pop = {
+				limit = {
+					pop_type = pop_type:slaves
+				}
+				split_pop = {
+					religion = root.religion
+					size = {
+						value = 0.3
+					}
+				}
+			}
+		}
 		###Convert Pagan###
 		if = {
 			limit = {
 				NOT = {
 					has_policy = icd_ethnic_religion
 					has_policy = icd_custodians
+					has_policy = icd_dual_faiths
+				}
+				OR = {
+					icd_is_pagan = no
+					is_ai = no
 				}
 			}
 			every_pop = {
@@ -175,7 +217,7 @@ icd_conversion_events.900 = { # Communal COnversions##
 				split_pop = {
 					religion = root.religion
 					size = {
-						value = icd_communal_conversion_rate
+						value = icd_communal_conversion_rate_pagan
 					}
 				}
 			}
@@ -183,194 +225,107 @@ icd_conversion_events.900 = { # Communal COnversions##
 		
 		if = { ###Culture Conversion###
 			limit = {
-				culture = {
-					NOT = {
-						has_culture_group = culture_group:jewish_group
-						has_culture_group = culture_group:tatar_group
-						has_culture_group = culture_group:mongolian_group
-						has_culture_group = culture_group:russian_group
-						has_culture_group = culture_group:lithuanian_group
-						has_culture_group = culture_group:chinese_group
-						has_culture_group = culture_group:arabic_group
-						has_culture_group = culture_group:french_group
-						has_culture_group = culture_group:german_group
-						has_culture_group = culture_group:italian_group
-					}
-				}
 				NOT = {
 					has_policy = icd_secular_state
 					has_policy = icd_yassa_tolerance
 					has_policy = icd_sulh_i_kul
 				}
+				OR = {
+					AND = {
+						has_variable = icd_confessional_culture
+						root.culture = var:icd_confessional_culture
+					}
+					icd_is_pagan = yes
+					has_policy = icd_ethnic_religion
+					has_policy = icd_custodians
+				}
 				NOT = {
-					any_pop = {
+					is_subject_type = fiefdom
+					is_subject_type = dominion
+					AND = {
+						has_variable = icd_enforced_religion
+						religion = var:icd_enforced_religion
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						root.culture = {
+							has_culture_group = culture_group:jewish_group
+						}
+					}
+				}
+				every_pop = {
+					limit = { 
 						culture = root.culture
 						religion != root.religion
-						percent >= 0.05
-					}
-				}
-			}
-			every_pop = {
-				limit = { 
-					culture = root.culture
-					religion != root.religion
-					owner ?= root
-					pop_type != pop_type:slaves
-					location = {
-						NOT = {
-							has_location_modifier = icd_religious_zeal
-						}
-					}
-					OR = {
-						NOT = {
-							owner ?= {
-								has_estate_privilege = estate_privilege:icd_druze_emirs
+						owner ?= root
+						pop_type != pop_type:slaves
+						location = {
+							NOT = {
+								has_location_modifier = icd_religious_zeal
 							}
 						}
-						NOT = {
-							location.province_definition = province_definition:lebanon_province
-							location.province_definition = province_definition:hims_province
-							location.province_definition = province_definition:hawran_province
-							location.province_definition = province_definition:shaam_province
-							location.province_definition = province_definition:latakia_province
-						}
 					}
-				}
-				split_pop = {
-					religion = root.religion
-					size = {
-						value = icd_communal_conversion_rate
-						if = {
-							limit = {
-								owner ?= {
-									OR = {
-										has_policy = icd_ethnic_religion
-										has_policy = icd_custodians
-									}
-								}
-							}
-							multiply = 2
+					split_pop = {
+						religion = root.religion
+						size = {
+							value = icd_communal_conversion_rate
 						}
 					}
 				}
 			}
-		}
-		else_if = {
-			limit = {
-				culture = {
-					OR = {
-						has_culture_group = culture_group:jewish_group
-						has_culture_group = culture_group:tatar_group
-						has_culture_group = culture_group:mongolian_group
-						has_culture_group = culture_group:russian_group
-						has_culture_group = culture_group:lithuanian_group
-						has_culture_group = culture_group:chinese_group
-						has_culture_group = culture_group:arabic_group
-						has_culture_group = culture_group:french_group
-					}
-				}
-				NOT = {
-					has_policy = icd_secular_state
-					has_policy = icd_yassa_tolerance
-					has_policy = icd_sulh_i_kul
-				}
-				NOT = {
-					any_pop = {
-						culture = { has_shared_culture_group = root.culture }
-						culture = {
-							OR = {
-								has_culture_group = culture_group:jewish_group
-								has_culture_group = culture_group:tatar_group
-								has_culture_group = culture_group:mongolian_group
-								has_culture_group = culture_group:russian_group
-								has_culture_group = culture_group:lithuanian_group
-								has_culture_group = culture_group:chinese_group
-								has_culture_group = culture_group:arabic_group
-								has_culture_group = culture_group:french_group
-							}
-						}
-						religion != root.religion
-						percent >= 0.05
-					}
-				}
-			}
-			every_pop = {
+			else_if = {
 				limit = {
-					religion != root.religion
-					culture = { has_shared_culture_group = root.culture }
-					culture = {
-						OR = {
-							has_culture_group = culture_group:jewish_group
-							has_culture_group = culture_group:tatar_group
-							has_culture_group = culture_group:mongolian_group
-							has_culture_group = culture_group:russian_group
-							has_culture_group = culture_group:lithuanian_group
-							has_culture_group = culture_group:chinese_group
-							has_culture_group = culture_group:arabic_group
-							has_culture_group = culture_group:french_group
-						}
-					}
-					NOT = {
-						culture = culture:qayfengi
-						culture = culture:hui_muslim_culture
-					}
-					location = {
-						NOT = {
-							has_location_modifier = icd_religious_zeal
-						}
+					root.culture = {
+						has_culture_group = culture_group:jewish_group
 					}
 				}
-				split_pop = {
-					religion = root.religion
-					size = {
-						value = icd_communal_conversion_rate
-						if = {
-							limit = {
-								owner ?= {
-									OR = {
-										has_policy = icd_ethnic_religion
-										has_policy = icd_custodians
-									}
-								}
+				every_pop = {
+					limit = {
+						religion != root.religion
+						owner ?= root
+						pop_type != pop_type:slaves
+						location = {
+							NOT = {
+								has_location_modifier = icd_religious_zeal
 							}
-							multiply = 2
+						}
+						culture = { has_shared_culture_group = root.culture }
+					}
+					split_pop = {
+						religion = root.religion
+						size = {
+							value = icd_communal_conversion_rate
 						}
 					}
 				}
 			}
 		}
+		
+		
 		if = {
 			limit = {
-				can_see_situation = situation:reformation
-				situation:reformation = {
-					situation_is_active = yes
-				}
+				has_variable = icd_bosnian_conversion
 			}
 			every_pop = {
 				limit = {
+					culture = culture:bosnian
 					religion != root.religion
-					culture = root.culture
-					OR = {
-						religion = religion:catholic
-						religion = religion:calvinist
-						religion = religion:lutheran
-						religion = religion:anglican
-					}
-					location ?= {
-						NOT = {
-							has_location_modifier = icd_religious_zeal
-						}
-					}
 				}
 				split_pop = {
 					religion = root.religion
 					size = {
-						value = icd_communal_conversion_rate
-						divide = 2
+						value = 0.2
 					}
 				}
 			}
 		}
+	}
+
+	option = {
+		
 	}
 }
 
@@ -460,7 +415,10 @@ icd_conversion_events.2 = { #
 	outcome = neutral
 	
 	trigger = {
-		religion = religion:tengri
+		OR = {
+			religion = religion:tengri
+			
+		}
 		religion_percentage_in_country = {
 			religion = religion:sunni
 			value > 0
@@ -652,55 +610,3 @@ icd_conversion_events.3 = { #
 	}
 }
 
-icd_conversion_events.4 = { #conversion of sindhi#
-	type = country_event
-	hide_portraits = yes
-	fire_only_once = yes
-	title = icd_conversion_events.4.title
-	desc = icd_conversion_events.4.desc
-	outcome = neutral
-		
-	trigger = {
-		NOT = { has_game_rule = icd_religious_conversion_vanilla }
-		religion.group = religion_group:muslim
-		any_pop = {
-			culture = culture:sindhi
-			religion.group != religion_group:muslim
-		}
-	}
-
-
-	illustration_tags = {
-		10 = happy
-		10 = exterior
-	}
-	
-	dynamic_historical_event = {
-		tag = SMA
-		tag = SND
-		from = 1340.1.1
-		to = 1830.1.1
-		monthly_chance = 5
-	}
-
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
-	}
-
-	option = {
-		name = icd_conversion_events.4.a
-
-		custom_tooltip = icd_sindhi_conversion_tt
-		set_variable = icd_sindhi_conversion
-
-		ai_will_select = {
-			value = 500
-		}
-	}
-	
-	option = {
-		name = icd_conversion_events.4.b
-
-		add_estate_satisfaction = { type = estate_type:dhimmi_estate value = estate_satisfaction_severe_bonus }
-	}
-}

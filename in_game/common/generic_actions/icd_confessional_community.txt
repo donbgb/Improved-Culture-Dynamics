@@ -1,0 +1,74 @@
+﻿icd_confessional_community = {	
+	type = religious
+
+	sound = UI_action_religion_generic
+	
+	potential = {
+		scope:actor = {
+			OR = {
+				AND = {
+					has_variable = icd_enforced_religion
+					religion = var:icd_enforced_religion
+				}
+				OR = {
+					NOT = {
+						has_variable = icd_confessional_culture
+					}
+					NOT = { scope:actor.culture = var:icd_confessional_culture }
+				}
+			}
+		}
+		NOT = { has_game_rule = icd_religious_conversion_vanilla }
+		current_year > 1338
+	}
+	
+	allow = {
+		scope:actor = {
+			custom_tooltip = {
+				text = icd_confessional_community_requirements_tt
+				NOT = {
+					any_pop = {
+						culture = scope:actor.culture
+						religion != scope:actor.religion
+						pop_size > 0.3
+					}
+				}
+			}
+			NOT = {
+				is_subject_type = fiefdom
+				is_subject_type = dominion
+			}
+		}
+	}
+	
+	ai_tick = never
+		
+	select_trigger = {
+		looking_for_a = religion
+		source = actor
+		target_flag = recipient
+		name = "choose_religion"
+		column = {
+			data = name
+		}
+	}
+	
+	show_message = no
+	
+	effect = {
+		custom_tooltip = {
+			text = icd_confessional_community_tt
+			remove_variable = icd_confessional_culture
+			set_variable = {
+				name = icd_confessional_culture
+				value = this.culture
+			}
+			remove_variable = icd_enforced_religion
+		}
+	}
+	
+	ai_will_do = {
+		value = 0
+		
+	}
+}

@@ -10,10 +10,6 @@
 				tag = NOL
 				current_year < 1500 
 			}
-			AND = {
-				tag = MAZ
-				current_year < 1500 
-			}
 			tag = UKR
 			tag = LIT
 		}
@@ -67,26 +63,6 @@
 				current_year > 1380 
 			}
 			AND = {
-				tag = MAZ
-				OR = {
-					is_subject = no
-					any_overlord_or_above = {
-						NOT = {
-							has_or_had_tag = POL
-							culture = culture:greater_polish
-						}
-					}
-				}
-				num_locations_owned_or_owned_by_subjects_or_below > 4
-				area:mazovia_area = {
-					any_location_in_area = {
-						owner = root
-					}
-				}
-				culture = { has_culture_group = culture_group:polish_group }
-				NOT = { has_global_variable = mazovian_revival }
-			}
-			AND = {
 				tag = UKR
 				culture = { has_culture_group = culture_group:russian_group }
 				NOT = { has_global_variable = icd_ruthenian_culture_formed }
@@ -126,16 +102,6 @@
 			}
 			scope:actor = {
 				trigger_event_silently = icd_new_cultures.3
-			}
-		}
-		if = {
-			limit = {
-				scope:actor = { 
-					tag = MAZ
-				}
-			}
-			scope:actor = {
-				trigger_event_silently = icd_new_cultures.4
 			}
 		}
 		if = {

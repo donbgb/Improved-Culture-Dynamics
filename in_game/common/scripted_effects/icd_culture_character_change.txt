@@ -117,10 +117,6 @@ icd_character_culture_change = {
 				limit = { culture = culture:lesser_polish }
 				change_character_culture = culture:greater_polish
 			}
-			if = {
-				limit = { culture = culture:mazovian NOT = { has_global_variable = mazovian_revival } }
-				change_character_culture = culture:greater_polish
-			}
 			
 			if = {
 				limit = { culture = culture:halychian_culture }
@@ -161,7 +157,21 @@ icd_character_culture_change = {
 			}
 			
 			if = {
-				limit = { OR = { culture = culture:southern_bavarian culture = culture:upper_palatine }}
+				limit = { culture = culture:upper_palatine }
+				change_character_culture = culture:danube_bavarian
+			}
+			
+			if = {
+				limit = { culture = culture:southern_bavarian
+					birth_location = {
+						NOT = {
+							area = area:tirol_area
+							area = area:veneto_area
+							area = area:eastern_switzerland_area
+							this = location:lienz
+						}
+					}
+				}
 				change_character_culture = culture:danube_bavarian
 			}
 			

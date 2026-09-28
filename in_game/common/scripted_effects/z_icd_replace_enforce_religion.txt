@@ -23,3 +23,12 @@ REPLACE:enforce_religion_effect = {
 		}
 	}
 }
+
+INJECT:force_convert_religion = {
+	scope:loser = { 
+		set_variable = {
+			name = icd_enforced_religion
+			value = scope:winner.religion
+		}
+	}
+}

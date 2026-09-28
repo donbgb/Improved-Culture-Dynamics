@@ -291,6 +291,14 @@ icd_politics_setup = {
 				}
 				add_policy = policy:icd_yassa_tolerance
 			}
+			if = {
+				limit = {
+					policy:icd_dual_faiths = {
+						is_implementable_in = prev
+					}
+				}
+				add_policy = policy:icd_dual_faiths
+			}
 			else_if = {
 				limit = {
 					policy:icd_ethnic_religion = {
@@ -312,7 +320,7 @@ icd_politics_setup = {
 		#Tolerance Heretic##
 		if = {
 			limit = {
-				law:icd_tolerance_heretic_law = {
+				law:icd_tolerance_law = {
 					is_implementable_in = prev
 				}
 			}
@@ -353,39 +361,22 @@ icd_politics_setup = {
 			}
 			else_if = {
 				limit = {
-					policy:icd_proselytism_heretic = {
+					policy:icd_proselytism = {
 						is_implementable_in = prev
 					}
 				}
-				add_policy = policy:icd_proselytism_heretic
+				add_policy = policy:icd_proselytism
 			}
 		}
 		
 		##Tolerance Heathens#
 		if = {
 			limit = {
-				law:icd_tolerance_heathen_law = {
+				law:icd_witness_doctrine = {
 					is_implementable_in = prev
 				}
 			}
 			if = {
-				limit = {
-					policy:religious_and_ritual_regulation = {
-						is_implementable_in = prev
-					}
-				}
-				add_policy = policy:religious_and_ritual_regulation
-			}
-			else_if = {
-				limit = {
-					policy:icd_zoroastrian_communities = {
-						is_implementable_in = prev
-					}
-					culture = { has_culture_group = culture_group:indian_group }
-				}
-				add_policy = policy:icd_zoroastrian_communities
-			}
-			else_if = {
 				limit = {
 					policy:icd_aljama_communities = {
 						is_implementable_in = prev
@@ -407,11 +398,11 @@ icd_politics_setup = {
 			}
 			else_if = {
 				limit = {
-					policy:icd_proselytism_heathen = {
+					policy:icd_mandatory_conversion = {
 						is_implementable_in = prev
 					}
 				}
-				add_policy = policy:icd_proselytism_heathen
+				add_policy = policy:icd_mandatory_conversion
 			}
 		}
 		

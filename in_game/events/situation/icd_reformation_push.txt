@@ -64,6 +64,8 @@ icd_reformation_push.2 = {
 	option = {
 		name = icd_reformation_push.2.a  ##convert##
 		
+		ai_will_select = { value = 90 }
+		
 		if = {
 			limit = {
 				c:LIV = { 
@@ -192,6 +194,8 @@ icd_reformation_push.2 = {
 	}
 	option = {
 		name = icd_reformation_push.2.b
+		
+		ai_will_select = { value = 10 }
 	
 		add_stability = stability_mild_penalty
 	}
@@ -408,6 +412,15 @@ icd_reformation_push.4 = { ###secularisation##
 		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
 	
 	}
+	
+	trigger = {
+		OR = {
+			religion = religion:lutheran
+			religion = religion:calvinist
+		}
+		government_type = government_type:theocracy
+		NOT = { has_variable = icd_refused_secularization }
+	}
 
 	option = {
 		name = icd_reformation_push.4.a  ##okay##
@@ -456,6 +469,8 @@ icd_reformation_push.4 = { ###secularisation##
 	
 	option = { #no#
 		name = icd_reformation_push.4.b
+		
+		set_variable = icd_refused_secularization
 	}
 }
 
@@ -719,13 +734,17 @@ icd_reformation_push.7 = { ###religious zeal dying down##
 	option = {
 		name = icd_reformation_push.7.a  ##okay##
 		
-		every_owned_location = {
-			remove_location_modifier = icd_religious_zeal
+		hidden_effect = {
+			every_owned_location = {
+				remove_location_modifier = icd_religious_zeal
+			}
 		}
+		
+		custom_tooltip = icd_reformation_push_tt
 	}
 }
 
-icd_reformation_push.8 = { ###to all heathens##
+icd_reformation_push.8 = { ###to all heretics?##
 	type = country_event
 	title = icd_reformation_push.8.title
 	desc = icd_reformation_push.8.desc
@@ -742,7 +761,7 @@ icd_reformation_push.8 = { ###to all heathens##
 		
 		add_country_modifier = {
 			modifier = icd_rejection_of_novel_religions
-			years = 35
+			years = 45
 		}
 	}
 	

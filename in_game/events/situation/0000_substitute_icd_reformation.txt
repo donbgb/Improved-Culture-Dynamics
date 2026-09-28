@@ -61,7 +61,7 @@ reformation.2 = {
 									owner ?= c:PAP
 								}
 								c:PAP = {
-									num_locations_owned_or_owned_by_subjects_or_below > 6
+									num_locations_owned_or_owned_by_subjects_or_below > 4
 								}
 							}
 						}
@@ -167,6 +167,9 @@ reformation.2 = {
 			}
 			if = {
 				limit = {
+					NOT = {
+						capital.region = region:ireland_region
+					}
 					OR = {
 						culture = { has_culture_group = culture_group:netherlandish_group }
 						culture = { has_culture_group = culture_group:british_group }

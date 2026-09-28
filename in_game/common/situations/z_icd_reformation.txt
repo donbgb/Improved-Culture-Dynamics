@@ -206,9 +206,76 @@
 	}
 
 	on_monthly = {
-		# bible translations
 		if = {
 			limit = {
+				NOT = { has_game_rule = icd_religious_conversion_vanilla }
+				situation:reformation = {
+					years_since_situation_start < 45
+				}
+			}
+			every_country = {
+				limit = {
+					has_variable = icd_confessional_culture
+					OR = {
+						religion = religion:catholic
+						religion = religion:anglican
+						religion = religion:lutheran
+						religion = religion:calvinist
+						religion = religion:anabaptist
+						religion = religion:unitarian
+					}
+					any_pop = {
+						culture = prev.culture
+						religion.group = religion_group:christian
+						religion != prev.religion
+						pop_size > 0.3
+					}
+				}
+				remove_variable = icd_confessional_culture
+			}
+		}
+		# 
+		if = {
+			limit = {
+				NOT = { has_game_rule = icd_religious_conversion_vanilla }
+				situation:reformation = {
+					years_since_situation_start >= 45
+				}
+			}
+			every_country = {
+				limit = {
+					any_owned_location = {
+						has_location_modifier = icd_religious_zeal
+					}
+				}
+				every_owned_location = {
+					remove_location_modifier = icd_religious_zeal
+				}
+				trigger_event_non_silently = icd_reformation_push.7
+			}
+			every_country = {
+				limit = {
+					OR = {
+						religion = religion:catholic
+						religion = religion:lutheran
+						religion = religion:calvinist
+						religion = religion:anabaptist
+						religion = religion:unitarian
+						religion = religion:anglican
+					}
+					NOT = {
+						has_variable = icd_convert_a_lot
+					}
+				}
+				set_variable = {
+					name = icd_convert_a_lot
+					years = 100
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = icd_religious_conversion_vanilla
 				situation:reformation = {
 					years_since_situation_start >= 35
 				}
@@ -247,7 +314,8 @@
 					religion = religion:lutheran
 					religion = religion:calvinist
 				}
-				government_type = government_type:theocracy 
+				government_type = government_type:theocracy
+				NOT = { has_variable = icd_refused_secularization }
 			}
 			trigger_event_silently = icd_reformation_push.4
 		}

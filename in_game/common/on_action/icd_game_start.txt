@@ -10,6 +10,11 @@ on_game_start = {
 }
 
 icd_intro_event_action = {
+	trigger = {
+		NOT = {
+			has_game_rule = icd_intro_event_off
+		}
+	}
 	events = {
 		icd_intro_event.1
 	}
@@ -47,6 +52,7 @@ icd_culture_on_action_majority = {
 	
 	effect = {
 		icd_majority_law_setup = yes
+		icd_global_variable_setup = yes
 	}
 
 }

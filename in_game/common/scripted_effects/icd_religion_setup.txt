@@ -1,7 +1,6 @@
 ﻿
 icd_religion_setup = {
 
-
 	area:azerbaijan_area = {
 		every_location_in_area = {
 			every_pop= {

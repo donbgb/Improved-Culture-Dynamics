@@ -15,25 +15,23 @@
  relocate_people_action_progress_long_wordier: "@culture! [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] of [SCOPE.sProvince('target_origin').GetNameWithNoTooltip] is [SCOPE.sProvince('target_origin').GetCulturePercentage(SCOPE.sCulture('target'))|V2%]\n[SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] of [SCOPE.sProvince('target_destination').GetNameWithNoTooltip] is [SCOPE.sProvince('target_destination').GetCulturePercentage(SCOPE.sCulture('target'))|V2%]"
  relocate_people_action_progress_tooltip: "Relocating [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] from [SCOPE.sProvince('target_origin').GetNameWithNoTooltip] to [SCOPE.sProvince('target_destination').GetNameWithNoTooltip]\nMigration Change in [SCOPE.sProvince('target_origin').GetNameWithNoTooltip]: [SCOPE.sProvince('target_origin').GetMigrationChange]\nMigration Change in [SCOPE.sProvince('target_destination').GetNameWithNoTooltip]: [SCOPE.sProvince('target_destination').GetMigrationChange]\nCurrent [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] of [SCOPE.sProvince('target_origin').GetNameWithNoTooltip] is [SCOPE.sProvince('target_origin').GetCulturePercentage(SCOPE.sCulture('target'))|V2%]\nCurrent [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] of [SCOPE.sProvince('target_destination').GetNameWithNoTooltip] is [SCOPE.sProvince('target_destination').GetCulturePercentage(SCOPE.sCulture('target'))|V2%]"
  
- expel_minority: "Expel Cultural Minority"
- expel_minority_desc: "Expel [pops|e] of a discriminated [culture|e] to another [country|e]."
- expel_culture_people_no_provinces: "$no_valid_provinces$"
  expel_culture_people_no_culture: "$no_valid_cultures$"
+ expel_culture_people_no_provinces: "$no_valid_provinces$"
  expel_culture_people_no_countries: "$no_valid_countries$"
  expel_culture_people: "Expel Cultural Minority"
  expel_culture_people_desc: "Expel [pops|e] of a discriminated [culture|e] to another [country|e].\n\nOnly Discriminated [pops|e] that do not form more than 90% of a [location|e]'s [population|e], more than 80% of a [province|e]'s [population|e] or more than 10% of our [country|e]'s [population|e] are valid."
+ PERFORM_expel_minority_ACTION: "Expel [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] from [SCOPE.sCountry('actor').GetNameWithNoTooltip]"
  expel_culture_people_select_culture: "Select the [culture|e] that will be expelled:"
  expel_culture_people_select_origin_province: "Select the [province|e] from which these [pops|e] will originate."
- PERFORM_expel_minority_ACTION: "Prepare to expel [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] from [SCOPE.sCountry('actor').GetNameWithNoTooltip]"
- expel_culture_people_action: "Prepare to expel [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] from [SCOPE.sCountry('actor').GetNameWithNoTooltip]"
- expel_culture_people_active: "Preparing to expel [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] from [SCOPE.sCountry('actor').GetNameWithNoTooltip]"
- expel_culture_people_action_progress: "Preparing to expel [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] from [SCOPE.sCountry('actor').GetNameWithNoTooltip]"
- expel_culture_people_action_progress_wordier: "Preparing to expel [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] from [SCOPE.sCountry('actor').GetNameWithNoTooltip]"
- expel_culture_people_action_progress_long_wordier: "Preparing to expel [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] from [SCOPE.sCountry('actor').GetNameWithNoTooltip]"
- expel_culture_people_action_progress_tooltip: "Preparing to expel [SCOPE.sCulture('target').GetNameWithNoTooltip] [pops|e] from [SCOPE.sCountry('actor').GetNameWithNoTooltip]"
+ 
+ expel_religion_people: "Expel Religious Minority"
+ expel_religion_people_desc: "Expel [pops|e] of a non-protected [religion|e] to another [country|e].\n\nOnly [religions|e] that are not protected, do not form more than 90% of a [location|e]'s [population|e], more than 80% of a [province|e]'s [population|e] or more than 10% of our [country|e]'s [population|e] are valid."
+ PERFORM_expel_religion_people_ACTION: "Expel [SCOPE.sReligion('target').GetAdjectiveWithNoTooltip] [pops|e] from [SCOPE.sCountry('actor').GetNameWithNoTooltip]"
+ expel_religion_people_select_religion: "Select the [religion|e] that will be expelled:" 
  
  relocate_people_tt: "Begins relocating [pops|e] of a given [culture|e] from a chosen [province|e] to another at a rough rate of 100 [pops|e] per month.\nDuring the duration of this activity, the government will pay for a [ShowModifier('icd_relocation_effort_cost')] multipled by the distance between the chosen [provinces|e].\nThe [province|e] from where the [pops|e] originate will also experience the [ShowModifier('icd_population_removal_relocate')]."
- expel_culture_people_tt: "Begin preparing to expel a discriminated minority from the country.\nOnce selected, manually stopping this cabinet action is not recommended and may cause problems."
+ expel_culture_people_tt: "Expel a discriminated minority from the country."
+ expel_religion_people_tt: "Expel a religious group from the country."
  expel_culture_people_activated_tt: "Begins expelling a discriminated minority from the country at a rate of around 500 to 1,500 [pops|e] per month for 24 months (for a total of around 12,000 to 36,000 [pops|e]) depending on the size of the recipient [country|e]."
  improve_cultural_opinion_tt: "Begins improving a [culture|e]'s opinion of our [country|e]'s primary [culture|e]."
  introduce_cultural_settlements_tt: "Begins bringing in settlers of an accepted or the primary [culture|e] into a [province|e]."
@@ -128,7 +126,7 @@
  icd_begin_expelling_tt: "Begins expelling [SCOPE.sCulture('icd_migration_culture_scope').GetName] [pops|e] for 24 months"
  
  relocate_people_select_pop: "Select [pop_type|e]"
- relocate_people_no_pops: "No valid [pop_types|e] available"
+ relocate_people_no_pops: "$no_valid_pop_types$"
  
  icd_muslim_dhimmi_choose: "Status of the Dhimmi"
  icd_muslim_dhimmi_choose_desc: "Decide which religious minorities in our state count as [ShowEstateTypeName('dhimmi_estate')], and which do not."
@@ -145,20 +143,6 @@
  PERFORM_icd_muslim_dhimmi_choose_ACTION_MAP: ""
  
  icd_dhimmi_ignored_dar_al_harb_tt: "The [ShowEstateTypeName('dhimmi_estate')] will lose their protections in all our [conquered|e] locations for 5 years."
-
- icd_declare_dar_al_harb: "Declare Dar al-Harb"
- icd_declare_dar_al_harb_desc: "The abode of war, dar al-harb, refer to those lands that are not under the sovereignty of an Islamic country and thus not safe for Muslims, who must use the necessary means to protect themselves from [heathens|e]. With our recent expansions, new territories may be declared not yet fully part of our state and consequently as abodes of war. In these declared territories, the protections usually given to the dhimmi will not apply."
- PERFORM_icd_declare_dar_al_harb_ACTION: "Declare Dar al-Harb"
- PERFORM_icd_declare_dar_al_harb_ACTION_SETUP: "When our conquered locations are declared as dar al-harb."
- PERFORM_icd_declare_dar_al_harb_ACTION_HEADER: "$MESSENGER$"
- PERFORM_icd_declare_dar_al_harb_ACTION_TITLE: "Declare Dar al-Harb"
- PERFORM_icd_declare_dar_al_harb_ACTION_EFFECTS: "[SCOPE.sCountry('actor').GetName] have declared newly conquered territories to be abodes of war."
- PERFORM_icd_declare_dar_al_harb_ACTION_DESC: "Newly conquered territories have been declared abodes of war by [SCOPE.sCountry('actor').GetName]"
- PERFORM_icd_declare_dar_al_harb_ACTION_LOG: "Declare Dar al-Harb."
- PERFORM_icd_declare_dar_al_harb_ACTION_BTN1: "OK"
- PERFORM_icd_declare_dar_al_harb_ACTION_BTN2: "OK"
- PERFORM_icd_declare_dar_al_harb_ACTION_BTN3: "$common_string_go_to$"
- PERFORM_icd_declare_dar_al_harb_ACTION_MAP: ""
  
  icd_promote_the_counter_reformation: "Promote the Counter-Reformation"
  icd_promote_the_counter_reformation_desc: "Promotes the Counter-Reformation, restricting the spread of Protestant faiths into our territory."
@@ -168,7 +152,18 @@
  icd_promote_the_counter_reformation_action_progress_wordier: "Promoting the Counter-Reformation"
  icd_promote_the_counter_reformation_action_progress_tooltip: "Promoting the Counter-Reformation"
  
- 
+ expel_culture_people_select_religion: "Select the [religion|e] that will be expelled:"
+ expel_culture_people_no_religion: "$no_valid_religions$"
  
  icd_convert_province: "Enforce Religious Conversion ([Player.MakeScope.ScriptValue('icd_num_provinces_for_conversion')] Possible)"
- icd_convert_province_pop_tt: "Does not belong to a Protected Religion"
+ icd_convert_province_desc: "[icd_forces|e] [pops|e] in a province to adopt a given [religion|e]. [pops|e] of targeted religions have their [pop_satisfaction|e] drop to 0% (except when part or reacting to the Reformation).\n\nFor conversion rates check the Religious Conversion Rate map-mode or hover over the Monthly Conversion tooltip in the location demography tab."
+ icd_convert_province_pop_tt: "Does not belong to a [protected_religion|e]"
+ icd_convert_province_actions_tt: "Has an available Religious Conversion slot"
+ 
+ icd_confessional_community_tt: "[communal_conversion|e] will be applied to [pops|e] of our [culture|e]"
+ icd_confessional_community: "Establish a Confessional Community"
+ icd_confessional_community_desc: "By allowing the primacy of a single [religion|e] over our society and culture, we will fundamentally fuse our cultural norms with our faith. When people assimilate into our culture, they will inevitably end up adopting our religion."
+ icd_confessional_community_requirements_tt: "We must have no more than 300 [pops|e] of our [primary_culture|e] belonging to a [religion|e] other than our own."
+ 
+ icd_remove_convert: "Stop Enforcing Religious Conversion"
+ icd_remove_convert_desc: "Stops [forced_conversions|e] in chosen [provinces|e]."

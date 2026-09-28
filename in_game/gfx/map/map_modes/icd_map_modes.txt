@@ -115,6 +115,7 @@ icd_culture_assimilation_mode = {
 			limit = {
 				is_land = yes
 				is_ownable = yes
+				has_owner = yes
 				OR = {
 					province ?= {
 						has_variable = promoting_culture
@@ -132,6 +133,7 @@ icd_culture_assimilation_mode = {
 			limit = {
 				is_land = yes
 				is_ownable = yes
+				has_owner = yes
 				dominant_culture = scope:actor.culture
 				OR = {
 					province ?= {
@@ -732,6 +734,150 @@ icd_conversion_map = {
 				has_owner = yes
 			}
 			value = icd_test_coerce
+		}
+	
+	}
+	
+	legend_key = {
+		desc = "icd_culture_assimilation_mode_orange"
+		color = black
+	}
+	
+	small_map_names = location
+	medium_map_names = country
+	large_map_names = country
+
+	small_tooltip_context = location
+	medium_tooltip_context = location
+	large_tooltip_context = location
+	
+	use_fow = no
+
+	category = demography
+	index = 0
+
+	map_markers = {
+		all = no
+	}
+
+	gradient_parameters = {
+		zoom_step = @zoom_step_near
+
+		gradient_alpha_inside = 	@filled_near_gradient_alpha_inside
+		gradient_alpha_outside = 	@filled_near_gradient_alpha_outside
+		gradient_width = 			@filled_near_gradient_width
+		gradient_color_mult =		@filled_near_gradient_color_mult
+		edge_width = 				@filled_near_edge_width
+		edge_sharpness = 			@filled_near_edge_sharpness
+		edge_alpha = 				@filled_near_edge_alpha
+		edge_color_mult = 			@filled_near_edge_color_mult
+		before_lighting_blend =		@filled_near_before_lighting_blend
+		after_lighting_blend =		@filled_near_after_lighting_blend
+	}
+	gradient_parameters = {
+		zoom_step = @zoom_step_far
+
+		gradient_alpha_inside = 	@filled_far_gradient_alpha_inside
+		gradient_alpha_outside = 	@filled_far_gradient_alpha_outside
+		gradient_width = 			@filled_far_gradient_width
+		gradient_color_mult =		@filled_far_gradient_color_mult
+		edge_width = 				@filled_far_edge_width
+		edge_sharpness = 			@filled_far_edge_sharpness
+		edge_alpha = 				@filled_far_edge_alpha
+		edge_color_mult = 			@filled_far_edge_color_mult
+		before_lighting_blend =		@filled_far_before_lighting_blend
+		after_lighting_blend =		@filled_far_after_lighting_blend
+	}
+	flatmap_gradient_parameters = {
+		zoom_step = @zoom_step_flatmap
+
+		gradient_alpha_inside = 	@flatmap_gradient_alpha_inside
+		gradient_alpha_outside = 	@flatmap_gradient_alpha_outside
+		gradient_width = 			@flatmap_gradient_width
+		gradient_color_mult =		@flatmap_gradient_color_mult
+		edge_width = 				@flatmap_edge_width
+		edge_sharpness = 			@flatmap_edge_sharpness
+		edge_alpha = 				@flatmap_edge_alpha
+		edge_color_mult = 			@flatmap_edge_color_mult
+		before_lighting_blend =		@flatmap_before_lighting_blend
+		after_lighting_blend =		@flatmap_after_lighting_blend
+	}
+	flatmap_gradient_parameters = {
+		zoom_step = @zoom_step_flatmap_far
+
+		gradient_alpha_inside = 	@flatmap_far_gradient_alpha_inside
+		gradient_alpha_outside = 	@flatmap_far_gradient_alpha_outside
+		gradient_width = 			@flatmap_far_gradient_width 
+		gradient_color_mult =		@flatmap_far_gradient_color_mult 
+		edge_width = 				@flatmap_far_edge_width 		
+		edge_sharpness = 			@flatmap_far_edge_sharpness 	
+		edge_alpha = 				@flatmap_far_edge_alpha 	
+		edge_color_mult = 			@flatmap_far_edge_color_mult 
+		before_lighting_blend =		@flatmap_far_before_lighting_blend 
+		after_lighting_blend =		@flatmap_far_after_lighting_blend 
+	}
+	
+	color_and_names_refresh_counters = { Month }
+	
+}
+
+icd_voluntary_conversion_map = {
+	map_color = {
+		if = {
+			limit = { 
+				has_owner = yes
+				is_land = yes
+				OR = {
+					NOT = {
+						any_pop = {
+							is_protected_pop = yes
+						}
+					}
+					owner = {
+						icd_is_pagan = yes
+						is_ai = yes
+					}
+				}
+			}
+			value = define:NMapColors|MAP_COLOR_NULL
+		}
+		else_if = {
+			limit = { 
+				has_owner = yes
+				is_land = yes
+				any_pop = {
+					is_protected_pop = yes
+				}
+				icd_conversion_rate_province_voluntary = 0
+			}
+			value = define:NMapColors|MAP_COLOR_LOW
+		}
+		else_if = {
+			limit = { 
+				has_owner = yes
+				is_land = yes
+				any_pop = {
+					is_protected_pop = yes
+				}
+				icd_conversion_rate_province_voluntary > 0
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_LOW
+				max_color = define:NMapColors|MAP_COLOR_HIGH
+				factor = {
+					value = icd_conversion_rate_province_voluntary
+					divide = 5
+				}
+			}
+		}
+	}
+	
+	tooltip_key = {
+		if = {
+			limit = {
+				has_owner = yes
+			}
+			value = icd_voluntary_conversion_map_tt
 		}
 	
 	}

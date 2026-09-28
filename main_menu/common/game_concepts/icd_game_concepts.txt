@@ -5,7 +5,7 @@ voluntary_conversion = {
 }
 
 forced_conversion = {
-	alias = { forced_conversions }
+	alias = { forced_conversions icd_forces }
 	texture = "location_icons/main_religion"
 }
 

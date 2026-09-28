@@ -156,7 +156,18 @@
 				}
 
 				add = {
-					value = -100
+					value = -200
+				}
+			}
+			if = {
+				limit = {
+					scope:target_province_destination = { 
+						region = region:anatolia_region
+					}
+				}
+
+				add = {
+					value = 7
 				}
 			}
 		}

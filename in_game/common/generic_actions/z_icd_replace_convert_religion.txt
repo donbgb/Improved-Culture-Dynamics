@@ -63,6 +63,7 @@
 				current_year < 1600
 				OR = {
 					has_or_had_tag = SCO
+					has_or_had_tag = WUR
 					AND = {
 						is_member_of_international_organization = international_organization:hre
 						religion = religion:lutheran
@@ -433,13 +434,13 @@
 					}
 					religion = religion:catholic
 					OR = {
-						"religion_percentage_in_country(scope:actor.religion)" > 0.18
+						"religion_percentage_in_country(scope:actor.religion)" >= 0.1
 						has_or_had_tag = ITEUT
 					}
 				}
 			}
 			subtract = {
-				value = 4000
+				value = 4000000
 			}
 		}
 		if = { ##england will refuse unless ruler is of other religion###
@@ -607,6 +608,17 @@
 				}
 			}
 			add = {
+				value = 500000
+			}
+		}
+		if = { ##muslim conquerors shouldnt always adopt hindu###
+			limit = {
+				scope:actor = {  
+					religion.group = religion_group:muslim
+				}
+				scope:target = religion:hindu
+			}
+			subtract = {
 				value = 500000
 			}
 		}

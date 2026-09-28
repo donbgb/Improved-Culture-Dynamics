@@ -283,10 +283,45 @@ REPLACE:add_tolerated_culture = {
 									dominant_religion = scope:actor.religion
 								}
 							}
-						}
-						NOT = {
+							AND = {
+								scope:actor = {
+									culture = culture:turkish_culture
+								}
+								OR = {
+									this = culture:greek_culture
+									this = culture:bosnian
+									this = { has_culture_group = culture_group:south_slavic_group }
+									this = culture:albanian
+									this = { has_culture_group = culture_group:arabic_group }
+									this = culture:kurdish_culture
+								}
+							}
+							AND = {
+								scope:actor = {
+									culture = culture:prussian
+								}
+								OR = {
+									this = { has_culture_group = culture_group:lithuanian_group }
+									this = { has_culture_group = culture_group:polish_group }
+								}
+							}
+							scope:actor.capital = {
+								dominant_culture = root
+							}
 							scope:actor = {
-								used_cultures_capacity >= modifier:cultures_capacity
+								culture_percentage_in_country = {
+									culture = root
+									value >= 0.2
+								}
+							}
+							AND = {
+								scope:actor = {
+									OR = {
+										tag = CHI
+										is_leader_of_international_organization = international_organization:middle_kingdom
+									}
+								}
+								root = { has_culture_group = culture_group:chinese_group }
 							}
 						}
 					}

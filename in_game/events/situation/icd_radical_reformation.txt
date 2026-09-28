@@ -1265,6 +1265,18 @@ icd_radical_reformation.22 = { #munster rebellion#
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
 
+		create_rebel = {
+			category = religious
+			name = icd_new_jerusalem_rebel
+			religion = religion:anabaptist
+			save_scope_as = target_rebel
+		}
+
+		every_pop = {
+			limit = { religion = religion:anabaptist }
+			add_pop_satisfaction = pop_satisfaction_severe_penalty
+			change_pop_allegiance = scope:target_rebel
+		}
 		
 		create_character = {
 			first_name = name_john
@@ -1279,75 +1291,14 @@ icd_radical_reformation.22 = { #munster rebellion#
 			mil = { 70 95 }
 			script = icd_jan_matthys
 			save_scope_as = target_character_two
-		}
-
-		location:munster = {
-			create_country_from_location = {
-				set_capital = location:munster
-					
-				change_country_name = JERU_country
-				change_country_adjective = JERU_country_ADJ
-			
-				change_government_type = government_type:republic
-				change_religion = religion:anabaptist
-				
-				set_new_ruler = scope:target_character_two
-				change_culture = location:munster.dominant_culture
-				
-				add_government_power = 50
-				add_gold = 1500
-				add_estate_satisfaction = { type = estate_type:nobles_estate value = 5 }
-				add_estate_satisfaction = { type = estate_type:clergy_estate value = 5 }
-				add_estate_satisfaction = { type = estate_type:peasants_estate value = 5 }
-				add_estate_satisfaction = { type = estate_type:burghers_estate value = 5 }
-				add_estate_satisfaction = { type = estate_type:tribes_estate value = 5 }
-				every_pop = {
-					add_pop_satisfaction = pop_satisfaction_extreme_bonus
-				}
-				
-				save_scope_as = target_country
-				
-				add_country_modifier = {
-					modifier = icd_new_jerusalem_fervor
-					mode = add_and_extend
-					years = 5
-				}
-				if = {
-					limit = {
-						root = {
-							is_member_of_international_organization = international_organization:hre
-						}
-					}
-					international_organization:hre = {
-						add_country_to_international_organization = scope:target_country
-					}
-				}
-				
-				drop_antagonism_bomb = {
-					target = scope:target_country.capital
-					modifier = antagonism_subjugated_nation
-					value = 15
-				}
-			}
-			province = {
-				every_location_in_province = {
-					change_location_owner = scope:target_country
-				}
-			}
-			scope:target_country = {
-				every_province = {
-					limit = { any_location_in_province = { NOT = { integration_level = core } } }
-					change_province_integration = core
-				}
-			}
+			change_character_allegiance = scope:target_rebel
 		}
 		
 		character:icd_bernhard_knipperdolling = {
 			save_scope_as = target_character
 			remove_trait = trait:unsuited_for_naval_command
 			remove_trait = trait:unsuited_for_army_command
-			remove_character_modifier = permanently_banned_from_cabinet
-			move_country = scope:target_country
+			change_character_allegiance = scope:target_rebel
 		}
 		
 	}
@@ -1355,46 +1306,8 @@ icd_radical_reformation.22 = { #munster rebellion#
 	option = {
 		name = icd_radical_reformation.22.a
 		
-		scope:target_country = {
-			declare_war_with_cb = {	
-				target = c:MUN
-				type = casus_belli:cb_independence_war	
-			}
-		}
-		
-		hidden_effect = {
-			scope:target_country = {
-				raise_all_levies = {
-					type = army
-					instant = yes
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = icd_radical_reformation.22.b
-		
-		trigger = {
-			is_ai = no
-		}
-		
-		scope:target_country = {
-			declare_war_with_cb = {	
-				target = c:MUN
-				type = casus_belli:cb_independence_war	
-			}
-		}
-		
-		change_player = scope:target_country
-		
-		hidden_effect = {
-			scope:target_country = {
-				raise_all_levies = {
-					type = army
-					instant = yes
-				}
-			}
+		scope:target_rebel = {
+			add_rebel_progress = 1
 		}
 	}
 }

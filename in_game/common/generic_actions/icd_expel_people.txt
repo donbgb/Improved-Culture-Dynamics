@@ -1,0 +1,108 @@
+﻿expel_culture_people = {	
+	type = religious
+
+	sound = UI_action_religion_generic
+	
+	potential = {
+		scope:actor = {
+			num_locations > 0
+			cultural_unity < 1.0
+		}
+	}
+	
+	allow = {
+		scope:actor = {
+			at_war = no
+			in_civil_war = no
+		}
+	}
+		
+	cooldown = {
+		type = icd_expel_cooldown
+		years = 2
+	}
+	
+	ai_tick = never
+		
+	select_trigger = {
+		looking_for_a = religion
+		source = actor
+		target_flag = recipient
+		name = "choose_religion"
+		column = {
+			data = name
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = culture
+		target_flag = target
+		#for the AI we have an optimisation to only look through religions that are present. Human can look at all...but will have some disabled
+		source_ai_override = actor
+		source_flags_ai_override = include_any_present
+		name = "expel_culture_people_select_culture"
+		none_available_msg_key = "expel_culture_people_no_culture"
+		column = {
+			data = name
+		}
+		column = {
+			data = culture_percentage_in_country
+		}
+		visible = {
+			scope:actor = {
+				culture_percentage_in_country = {
+					culture = root
+					value > 0
+				}
+				culture_population_in_country = {
+					culture = root
+					value > 0.100
+				}
+				culture_percentage_in_country = {
+					culture = root
+					value <= 0.1
+				}
+				NOT = {
+					any_owned_location = {
+						culture_percentage = {
+							culture = root
+							value >= 0.9
+						}
+					}
+				}
+				NOT = {
+					any_province = {
+						culture_percentage = {
+							culture = root
+							value >= 0.8
+						}
+					}
+				}
+			}
+			NOT = {
+				is_primary_or_accepted_in = scope:actor
+				is_tolerated_in = scope:actor
+			}
+		}
+	}
+	
+	show_message = no
+	
+	effect = {
+		custom_tooltip = expel_culture_people_tt
+		scope:actor = {
+			set_variable = {
+				name = icd_expel_culture_people
+				value = scope:target
+			}
+		}
+		scope:actor = {
+			trigger_event_silently = icd_minority_events.1000
+		}
+	}
+	
+	ai_will_do = {
+		value = -100
+		
+	}
+}

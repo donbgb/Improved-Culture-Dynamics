@@ -38,24 +38,6 @@ REPLACE:moravian = {
 	
 }
 
-REPLACE:mazovian = {
-	language = polish_dialect
-	
-	color = map_MAZ
-	
-	tags = { polish_gfx west_slavic_gfx slavic_gfx eastern_european_gfx european_gfx }
-
-	opinions = {
-		greater_polish = kindred
-		lesser_polish = kindred
-	}
-	culture_groups = {
-		polish_group
-		slavic_group
-	}
-	
-	active = no
-}
 
 REPLACE:romani_culture = { # 
 	language = romani_dialect

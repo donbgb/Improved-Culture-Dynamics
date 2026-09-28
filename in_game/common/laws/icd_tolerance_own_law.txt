@@ -26,7 +26,10 @@
 				religion = religion:mandeaism
 				religion = religion:druzism
 			}
-			icd_is_pagan = no
+			OR = {
+				icd_is_pagan = no
+				is_ai = no
+			}
 		}
 		estate_preferences = {
 			nobles_estate
@@ -90,7 +93,7 @@
 			global_clergy_estate_power = -3.0
 			clergy_estate_target_satisfaction = -0.3
 			research_speed_modifier = 0.03
-			country_cabinet_efficiency = 0.1
+			country_cabinet_efficiency = 0.2
 		}
 		potential = {
 			religion = religion:sanjiao
@@ -131,7 +134,7 @@
 			monthly_towards_humanist = societal_value_monthly_move
  			clergy_estate_target_satisfaction = -0.25
 			research_speed_modifier = 0.025
-			tolerance_heathen = 3.5
+			tolerance_heathen = 3.75
 			tolerance_heretic = 3.5
 		}
 		potential = {
@@ -212,6 +215,22 @@
 		}
 		ai_will_do = {
 			value = 2000
+		}
+		years = 2
+	}
+	
+	icd_dual_faiths = {
+		potential = {
+			religion.group = religion_group:muslim
+			capital.sub_continent = sub_continent:west_africa
+		}
+		allow = {
+			icd_heathen_oppression = no
+		}
+		country_modifier = {
+			tolerance_heathen = 4.5
+			pure_tooltip_entry = icd_coercive_conversion_disabled_tt
+			pure_tooltip_entry = icd_pagan_conversion_disabled_tt
 		}
 		years = 2
 	}

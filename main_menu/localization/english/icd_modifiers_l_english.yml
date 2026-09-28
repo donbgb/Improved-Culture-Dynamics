@@ -2,8 +2,6 @@
  JERU_country: "New Jerusalem"
  JERU_country_ADJ: "New Jerusalemite"
  
- STATIC_MODIFIER_NAME_icd_population_removal: "Local Impact of Exiling Population"
- STATIC_MODIFIER_NAME_icd_population_removal_relocate: "Impact of Relocating Population"
  STATIC_MODIFIER_NAME_icd_relocation_effort_cost: "State Cost of Relocation"
  STATIC_MODIFIER_NAME_icd_cultural_opinion_cost: "Cost of Improving Cultural Opinion"
  STATIC_MODIFIER_NAME_icd_king_of_the_gypsies: "Support from the King of the Gypsies"
@@ -21,10 +19,8 @@
  MODIFIER_TYPE_DESC_icd_expel_minority_price_cost_modifier: ""
  
  STATIC_MODIFIER_NAME_icd_religious_zeal: "Religious Zeal"
- STATIC_MODIFIER_DESC_icd_religious_zeal: "This will elapse once 35 years have passed since [ShowSituationName('reformation')]'s start."
- STATIC_MODIFIER_NAME_icd_strong_cult_of_saints: "Strong Cult of Saints"
+ STATIC_MODIFIER_DESC_icd_religious_zeal: "This will elapse once 35 or 45 years have passed since [ShowSituationName('reformation')]'s start."
  
- STATIC_MODIFIER_NAME_icd_expel_minority_cost: "Price of Expelling Minorities"
  MODIFIER_TYPE_NAME_national_russian_culture_movement_resistance_modifier: "National Russian Culture Movement Resistance Modifier"
  MODIFIER_TYPE_DESC_national_russian_culture_movement_resistance_modifier: "Culture Movement Modifier"
  MODIFIER_TYPE_NAME_local_russian_culture_movement_resistance_modifier: "Local Russian Culture Movement Resistance Modifier"
@@ -135,7 +131,7 @@
  anabaptist_movement_desc: "The Radical Reformation is undercutting Christendom. Ideas regarding believer's baptism and new ways of structuring the community of the faithful have proven very influential."
  
  STATIC_MODIFIER_NAME_icd_promote_religion_province_modifier: "Enforcing Religious Conversion"
- STATIC_MODIFIER_NAME_icd_promote_religion_province_modifier_desc: "Enforcing conversion at [ROOT.GetLocation.MakeScope.ScriptValue('icd_conversion_rate_province')]x100 [pops|e] per year"
+ STATIC_MODIFIER_DESC_icd_promote_religion_province_modifier: "Pops are being converted through [forced_conversion|e]. See #T $mapmode_icd_conversion_map_name$ Map#!"
  
  
  MODIFIER_TYPE_NAME_national_western_turkification_culture_movement_resistance_modifier: "Western Turco-Mongol Tradition National Resistance Modifier"
@@ -149,7 +145,7 @@
 
  
  AUTO_MODIFIER_NAME_icd_acceptance: "Base Cultural Acceptance"
- AUTO_MODIFIER_NAME_icd_conversion_less: "Vanilla Conversion Disabled"
+ AUTO_MODIFIER_NAME_icd_conversion_less: "Vanilla Conversion Disabled\nRate of [forced_conversion|e] is [LocationView.GetLocation.MakeScope.ScriptValue('icd_conversion_rate_province_forced_value')] [pops|e] every year.\nRate of [communal_conversion|e] for [primary_culture|e] is [LocationView.GetLocation.MakeScope.ScriptValue('icd_conversion_rate_province_communal_value')] [pops|e] every year."
  AUTO_MODIFIER_NAME_icd_conversion_less_desc: "See Game Rules to enable it"
  
  STATIC_MODIFIER_NAME_icd_protestant_in_wrong_country: "Heretical Reformer"

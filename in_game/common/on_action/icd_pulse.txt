@@ -53,6 +53,7 @@ icd_morisco_event = {
 		icd_minority_events.9
 		icd_minority_events.5
 		icd_minority_events.8
+		icd_reformation_push.4
 	}
 
 }

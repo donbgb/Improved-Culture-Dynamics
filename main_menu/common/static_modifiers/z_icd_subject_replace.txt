@@ -43,3 +43,44 @@ REPLACE:hw_heretic_conversions_modifier = {
 	}
 	local_pop_conversion_speed_modifier = 0.25
 }
+REPLACE:blame_the_minorities = {
+	game_data = {
+		category = country
+	}
+	clergy_estate_target_satisfaction = medium_permanent_target_satisfaction
+	peasants_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+	tolerance_heathen = -2
+	tolerance_heretic = -2
+	tolerance_own = 1
+	global_pop_conversion_speed_modifier = 0.35
+	monthly_towards_traditionalist = societal_value_large_monthly_move
+}
+REPLACE:fra_ordonnance_of_slavery = {
+	game_data = {
+		category = country
+	}
+	global_population_growth = 0.0004
+	tolerance_own = 1
+	clergy_estate_target_satisfaction = small_permanent_target_satisfaction
+	monthly_towards_humanist = societal_value_minor_monthly_move
+	global_pop_conversion_speed_modifier = 0.3
+}
+
+REPLACE:fra_ordonnance_of_slavery_limited = {
+	game_data = {
+		category = country
+	}
+	global_population_growth = 0.0003
+	tolerance_own = 1
+	clergy_estate_target_satisfaction = small_permanent_target_satisfaction
+	colonial_maintenance_efficiency = 0.25
+	monthly_towards_humanist = societal_value_minor_monthly_move
+	global_pop_conversion_speed_modifier = 0.15
+}
+REPLACE:ira_shia_conversion_policy = {
+	game_data = {
+		category = country
+	}
+	tolerance_heretic = -3
+	global_pop_conversion_speed_modifier = 0.6
+}

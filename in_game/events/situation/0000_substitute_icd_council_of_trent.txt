@@ -1,0 +1,47 @@
+﻿namespace = council_of_trent
+
+council_of_trent.2 = { #on end event
+	type = country_event
+	category = situation_event
+	title = council_of_trent.2.title
+	desc = council_of_trent.2.desc
+	outcome = neutral
+	
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+	}
+	
+	option = { #Neutral "Historical" Outcome - not full hatred but not tolerant ###
+		name = council_of_trent.2.a
+		trigger = {
+			international_organization:catholic_church = {
+				AND = {
+					var:council_of_trent_value <= 2
+					var:council_of_trent_value >= 0
+				}
+			}
+		}
+		religion:catholic = {
+			change_protestant_view = { value = negative }
+		}
+		change_papal_authority = { value = papal_authority_mild_bonus }
+	}
+
+	option = { #Hostile Aggressive Outcome
+		name = council_of_trent.2.b
+		trigger = {
+			international_organization:catholic_church = {
+				var:council_of_trent_value < 0
+			}
+		}
+		religion:catholic = {
+			change_protestant_view = { value = enemy }
+		}
+		change_papal_authority = { value = papal_authority_strong_bonus }
+	}
+}

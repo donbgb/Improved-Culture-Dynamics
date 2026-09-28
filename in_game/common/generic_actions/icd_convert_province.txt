@@ -12,6 +12,13 @@
 				has_policy = icd_custodians
 				has_policy = icd_secular_state
 				has_policy = icd_yassa_tolerance
+				has_policy = icd_dual_faiths
+			}
+			hidden_trigger = {
+				OR = {
+					icd_is_pagan = no
+					is_ai = no
+				}
 			}
 		}
 		NOT = { has_game_rule = icd_religious_conversion_vanilla }
@@ -29,18 +36,40 @@
 					modifier:global_peasants_conversion_blocked = yes
 				}
 			}
-			OR = {
-				modifier:tolerance_heathen < 0
-				modifier:tolerance_heretic < 0
+			custom_tooltip = {
+				text = icd_convert_province_actions_tt
+				icd_num_provinces_for_conversion > 0
 			}
-			icd_num_provinces_for_conversion > 0		
+		}
+		hidden_trigger = {
+			scope:actor = {
+				OR = {
+					is_ai = no
+					is_colonial_subject = yes
+					AND = {
+						is_subject = no
+						NOT = { has_variable = icd_enforced_religion }
+					}
+					AND = {
+						is_subject_type = fiefdom
+						"religion_percentage_in_country(scope:actor.religion)" > 0.3
+					}
+					AND = {
+						is_subject_type = dominion
+						"religion_percentage_in_country(scope:actor.religion)" > 0.3
+					}
+					AND = {
+						has_variable = icd_enforced_religion
+						religion = var:icd_enforced_religion
+						"religion_percentage_in_country(scope:actor.religion)" > 0.3
+					}
+				}
+			}
 		}
 	}
 	
-	price = price:icd_convert_province_price
-
-	ai_tick = yearly
-	ai_tick_frequency = 1
+	ai_tick = monthly
+	ai_tick_frequency = 6
 		
 	maximum_targets_in_one_tick = 15
 
@@ -170,17 +199,34 @@
 		if = {
 			limit = {
 				exists = scope:target_province
+				scope:actor = { is_ai = yes }
 			}
 		scope:target_province = {
 				set_variable = {
 					name = promoting_religion
 					value = scope:target_religion
-					months = 12
+					months = 48
 				}
 				add_province_modifier = {
 					modifier = icd_promote_religion_province_modifier
 					mode = add_and_extend
-					months = 12
+					months = 48
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = scope:target_province
+				scope:actor = { is_ai = no }
+			}
+			scope:target_province = {
+				set_variable = {
+					name = promoting_religion
+					value = scope:target_religion
+				}
+				add_province_modifier = {
+					modifier = icd_promote_religion_province_modifier
+					mode = add_and_extend
 				}
 			}
 		}
@@ -210,6 +256,7 @@
 						has_or_had_tag = GRA
 						has_or_had_tag = ARA
 						has_or_had_tag = FRA
+						has_or_had_tag = HAB
 						culture = { has_culture_group = culture_group:russian_group }
 						culture = culture:danube_bavarian
 						has_or_had_tag = TIM
@@ -242,21 +289,12 @@
 				value = 150
 			}
 		}
-	
+		
 		if = {
 			limit = {
 				scope:actor = {
-					OR = {
-						ruler ?= {
-							has_trait = tolerant
-						}
-						is_subject_type = fiefdom
-						is_subject_type = dominion
-						AND = {
-							has_variable = icd_enforced_religion
-							religion = var:icd_enforced_religion
-						}
-						"religion_percentage_in_country(scope:target_religion)" < 0.1
+					ruler ?= {
+						has_trait = tolerant
 					}
 				}
 				OR = {
@@ -416,6 +454,16 @@
 				value = 10
 				multiply = "scope:target_province.religion_percentage(scope:target_religion)"
 			}
+			if = {
+				limit = {
+					scope:target_province = {
+						is_overseas_for_owner = no
+					}
+				}
+				add = {	
+					value = 5
+				}
+			}
 			
 			if = {
 				limit = {
@@ -445,7 +493,7 @@
 					}
 				}
 				subtract = {	
-					value = 4
+					value = 1
 				}
 			}
 			
@@ -492,8 +540,8 @@
 								owner ?= scope:actor
 								religion = { reverse_religious_view = { target = scope:actor.religion value = enemy } }
 								religion != scope:actor.religion
-								count > 0.05
 							}
+							"religion_percentage(scope:actor.religion)" < 0.95
 						}
 					}
 				}
@@ -509,12 +557,12 @@
 							owner ?= scope:actor
 							any_pop = {
 								pop_type != pop_type:slaves
-								is_protected_pop = no
 								owner ?= scope:actor
+								is_protected_pop = no
 								religion = { reverse_religious_view = { target = scope:actor.religion value = negative } }
 								religion != scope:actor.religion
-								count > 0.05
 							}
+							"religion_percentage(scope:actor.religion)" < 0.95
 						}
 					}
 				}
@@ -540,8 +588,8 @@
 								religion != religion:yazidism
 								religion = { reverse_religious_view = { target = scope:actor.religion  value = neutral } }
 								religion != scope:actor.religion
-								count > 0.05
 							}
+							"religion_percentage(scope:actor.religion)" < 0.95
 						}
 					}
 				}

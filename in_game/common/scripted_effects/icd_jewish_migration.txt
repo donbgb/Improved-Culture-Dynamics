@@ -1067,3 +1067,213 @@ icd_jewish_migration_save_region = {
 			}
 		}
 }
+
+icd_jewish_migration_perform = {
+	every_province = {
+		limit = {
+			religion_percentage = {
+				religion = religion:judaism
+				value > 0
+			}
+			OR = {
+				region = region:iberia_region
+				region = region:balkan_region
+				area = area:sicily_area
+				area = area:basilicata_area
+				area = area:apulia_area
+				area = area:campania_area
+				area = area:abruzzo_area
+				sub_continent = sub_continent:north_africa
+				sub_continent = sub_continent:middle_east
+			}
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target1_sephardim.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target2_sephardim.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target3_sephardim.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target4_sephardim.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target5_sephardim.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target6_sephardim.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target7_sephardim.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+	}
+	every_province = {
+		limit = {
+			religion_percentage = {
+				religion = religion:judaism
+				value > 0
+			}
+			NOT = {
+				region = region:iberia_region
+				region = region:balkan_region
+				area = area:sicily_area
+				area = area:basilicata_area
+				area = area:apulia_area
+				area = area:campania_area
+				area = area:abruzzo_area
+				sub_continent = sub_continent:north_africa
+				sub_continent = sub_continent:middle_east
+			}
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target1_ashkenazi.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target2_ashkenazi.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target3_ashkenazi.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target4_ashkenazi.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target5_ashkenazi.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target6_sephardim.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+		add_migration = {
+			owner = prev
+			from = this.province_definition
+			to = scope:escape_target7_sephardim.province_definition
+			religion = religion:judaism
+			amount = {
+				value = "religion_population(religion:judaism)"
+				divide = 7
+				divide = 11
+			}
+			months = 12
+		}
+	}
+	
+}
