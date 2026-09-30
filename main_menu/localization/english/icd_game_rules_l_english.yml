@@ -11,3 +11,16 @@
  setting_icd_culture_marking_off_desc: "The 'Marking' cabinet action is not available. This delivers a less exploitable but less creatively flexible experience."
  setting_icd_culture_marking_on: "Available"
  setting_icd_culture_marking_on_desc: "The 'Marking' cabinet action is available. This cabinet action can be abused by the player, which can lead to some of the cultural mechanics of the mod being rendered useless."
+ rule_icd_intro_event: "#color_yellow ICD#!: Intro Event"
+ setting_icd_intro_event_on: "Intro Event On"
+ setting_icd_intro_event_on_desc: "Whenever starting a new game, an introductory event will fire."
+ setting_icd_intro_event_off: "Intro Event Off"
+ setting_icd_intro_event_off_desc: "No introductory event."
+ rule_icd_religious_conversion: "#color_yellow ICD#!: Religious Conversion"
+ setting_icd_religious_conversion_vanilla: "Vanilla Religious Conversion"
+ setting_icd_religious_conversion_vanilla_desc: "Religious conversion is kept similar to vanilla but with accessory modifications by the mod - locations with Dhimmi aren't converted, locations with Jews in countries with protective laws aren't converted, etc."
+ setting_icd_religious_conversion_modded: "Modded Religious Conversion"
+ setting_icd_religious_conversion_modded_desc: "Passive vanilla conversion in locations and the Convert Province cabinet action are disabled. A brand new system of religious conversion is introduced, dividing conversion into three types: [forced_conversion|e], [voluntary_conversion|e] and [communal_conversion|e]."
+
+
+

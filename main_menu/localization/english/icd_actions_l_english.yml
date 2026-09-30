@@ -127,20 +127,10 @@
  
  relocate_people_select_pop: "Select [pop_type|e]"
  relocate_people_no_pops: "$no_valid_pop_types$"
+ no_valid_pop_types: "No valid [pop_type|e]s."
  
  icd_muslim_dhimmi_choose: "Status of the Dhimmi"
  icd_muslim_dhimmi_choose_desc: "Decide which religious minorities in our state count as [ShowEstateTypeName('dhimmi_estate')], and which do not."
- PERFORM_icd_muslim_dhimmi_choose_ACTION: "Status of the Dhimmi"
- PERFORM_icd_muslim_dhimmi_choose_ACTION_SETUP: "When the status of the [ShowEstateTypeName('dhimmi_estate')] is changed."
- PERFORM_icd_muslim_dhimmi_choose_ACTION_HEADER: "$MESSENGER$"
- PERFORM_icd_muslim_dhimmi_choose_ACTION_TITLE: "Reconsider the dhimmi!"
- PERFORM_icd_muslim_dhimmi_choose_ACTION_EFFECTS: "[SCOPE.sCountry('actor').GetName] are reconsidering the status of the dhimmi."
- PERFORM_icd_muslim_dhimmi_choose_ACTION_DESC: "Membership to the Dhimmi was altered in [SCOPE.sCountry('actor').GetName]"
- PERFORM_icd_muslim_dhimmi_choose_ACTION_LOG: "Reconsider the Status of the Dhimmi."
- PERFORM_icd_muslim_dhimmi_choose_ACTION_BTN1: "OK"
- PERFORM_icd_muslim_dhimmi_choose_ACTION_BTN2: "OK"
- PERFORM_icd_muslim_dhimmi_choose_ACTION_BTN3: "$common_string_go_to$"
- PERFORM_icd_muslim_dhimmi_choose_ACTION_MAP: ""
  
  icd_dhimmi_ignored_dar_al_harb_tt: "The [ShowEstateTypeName('dhimmi_estate')] will lose their protections in all our [conquered|e] locations for 5 years."
  
@@ -160,10 +150,14 @@
  icd_convert_province_pop_tt: "Does not belong to a [protected_religion|e]"
  icd_convert_province_actions_tt: "Has an available Religious Conversion slot"
  
- icd_confessional_community_tt: "[communal_conversion|e] will be applied to [pops|e] of our [culture|e]"
+ icd_confessional_community_tt: "[communal_conversion|e] will be applied to [pops|e] of our [primary_culture|e]"
  icd_confessional_community: "Establish a Confessional Community"
  icd_confessional_community_desc: "By allowing the primacy of a single [religion|e] over our society and culture, we will fundamentally fuse our cultural norms with our faith. When people assimilate into our culture, they will inevitably end up adopting our religion."
  icd_confessional_community_requirements_tt: "We must have no more than 300 [pops|e] of our [primary_culture|e] belonging to a [religion|e] other than our own."
+ icd_remove_confessional_community: "Disestablish our Confessional Community"
+ icd_remove_confessional_community_desc: "We shall restructure our sociopolitical organizations to break the relationship between our [religion|e] and our [primary_culture|e]. This will allow for our people to more easily change religions."
+ icd_remove_confessional_community_tt: "[communal_conversion|e] will no longer be applied to [pops|e] of our [primary_culture|e]"
+ 
  
  icd_remove_convert: "Stop Enforcing Religious Conversion"
  icd_remove_convert_desc: "Stops [forced_conversions|e] in chosen [provinces|e]."

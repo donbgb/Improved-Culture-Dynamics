@@ -32,8 +32,8 @@ flavor_plc.2000 = {
 			c:TEU = { is_subject = yes }
 		}
 		"estate_power(estate_type:nobles_estate)" >= 0.25
-		trigger_if = {
-			limit = {
+		OR = {
+			AND = {
 				country_exists = c:PLC
 				any_neighbor_country = {
 					tag = PLC
@@ -42,10 +42,7 @@ flavor_plc.2000 = {
 					religion = root.religion
 				}
 			}
-			c:PLC = { save_temporary_scope_as = polish_country }
-		}
-		trigger_else_if = {
-			limit = {
+			AND = {
 				country_exists = c:POL
 				any_neighbor_country = {
 					tag = POL
@@ -54,10 +51,7 @@ flavor_plc.2000 = {
 					religion = root.religion
 				}
 			}
-			c:POL = { save_temporary_scope_as = polish_country }
-		}
-		trigger_else_if = {
-			limit = {
+			AND = {
 				country_exists = c:LIT
 				any_neighbor_country = {
 					tag = LIT
@@ -66,10 +60,6 @@ flavor_plc.2000 = {
 					religion = root.religion
 				}
 			}
-			c:LIT = { save_temporary_scope_as = polish_country }
-		}
-		trigger_else = {
-			always = no
 		}
 		OR = {
 			c:DAN ?= {
@@ -106,8 +96,21 @@ flavor_plc.2000 = {
 			}
 			c:PLC = { save_scope_as = polish_country }
 		}
-		else = {
+		else_if = {
+			limit = {
+				any_neighbor_country = {
+					tag = POL
+				}
+			}
 			c:POL = { save_scope_as = polish_country }
+		}
+		else_if = {
+			limit = {
+				any_neighbor_country = {
+					tag = LIT
+				}
+			}
+			c:LIT = { save_scope_as = polish_country }
 		}
 		random_list = {
 			10 = {

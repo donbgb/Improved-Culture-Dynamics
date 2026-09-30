@@ -52,11 +52,15 @@
 			scope:actor = {
 				culture_percentage_in_country = {
 					culture = root
-					value > 0
+					value > 0.0005
 				}
 				culture_population_in_country = {
 					culture = root
 					value > 0.100
+				}
+				culture_population_in_country = {
+					culture = root
+					value < 1000
 				}
 				culture_percentage_in_country = {
 					culture = root

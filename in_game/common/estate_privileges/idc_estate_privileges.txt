@@ -136,10 +136,6 @@ icd_druze_emirs = {
 	estate = nobles_estate
 	
 	potential = {
-		religion_population_in_country = {
-			religion = religion:druzism
-			value > 0.200
-		}
 	}
 	
 	allow = {
@@ -169,9 +165,10 @@ icd_druze_emirs = {
 				province_definition = province_definition:latakia_province
 			}
 		}
-		local_pop_conversion_speed_modifier = -1.0
+		local_pop_conversion_speed_modifier = -1.5
 		local_defensive = 0.1
 		local_levy_size_modifier = 0.5
+		pure_tooltip_entry = icd_druze_emirs_tt
 	}
 }
 

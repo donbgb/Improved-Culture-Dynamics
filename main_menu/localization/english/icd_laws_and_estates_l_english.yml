@@ -157,9 +157,9 @@
  icd_dhimmi_communities_revoke_tt: "Can only be revoked if no [ShowEstateTypeName('dhimmi_estate')] are recognised by the state."
 
  icd_permitted_restoration: "Permitted Restorations"
- icd_permitted_restoration_desc: "The [ShowEstateTypeName('dhimmi_estate')] are permitted to freely repair and restore religious buildings and places of worship without requesting specific authorization from local [ShowReligionGroupAdjective('muslim')] authorities. Such permission strengthens the [ShowEstateTypeName('dhimmi_estate')]'s freedoms and makes them happier, at the cost of weakening our attempts at conversion."
+ icd_permitted_restoration_desc: "The [ShowEstateTypeName('dhimmi_estate')] are permitted to freely repair and restore religious buildings and places of worship without requesting specific authorization from local [ShowReligionGroupAdjective('muslim')] authorities. Such permission strengthens the [ShowEstateTypeName('dhimmi_estate')]'s freedoms and makes them happier."
  icd_permission_for_awqaf: "Permission for Awqāf"
- icd_permission_for_awqaf_desc: "Wealthy members of the [ShowEstateTypeName('dhimmi_estate')] who lack suitable heirs may choose to allocate charitable endowments, known as awqāf, to religious institutions and religious groups in their will. While many consider such donations to be aid in strengthening and propagating a heathen religion, permitting such a dynamic makes our people happier."
+ icd_permission_for_awqaf_desc: "Wealthy members of the [ShowEstateTypeName('dhimmi_estate')] may choose to allocate inalienable charitable endowments, known as awqāf, to religious institutions and religious groups in their will. Permitting such donations allows heathen religions to gain inalienable property that can be used to sustain religious activities beyond what may be considered acceptable by the state, yet it would also make our heathen people happier."
  icd_sufi_coexistence: "Sufi Syncretism"
  icd_sufi_coexistence_desc: "Sufi orders have an important role to play in bridging the divide between Muslims and non-Muslims. Their rituals and practices are often seen as similar to existing rituals held by the dhimmi, and by permitting the Sufis to occupy an important position in interfaith relations, we encourage heathens to seek Sufi counsel and wisdom and to syncretise some of their beliefs with Islam."
  icd_abandon_the_ghiyar: "Abandon the Ghiyār"
@@ -247,4 +247,12 @@
  icd_dual_faiths: "Dual Faiths"
  icd_dual_faiths_desc: "Islam is our state religion, but our local African traditions retain a significant amount of political influence. In and around cities and towns, Islamic law applies and many settlements are organized as theocracies ruled by qadis, but traditional principles and rituals are kept alive and well in the countryside."
 
-
+ icd_druze_emirs_tt: "If Vanilla Conversion is disabled, cannot apply [forced_conversion|e]"
+ 
+ icd_proselytism: "Active Proselytism"
+ icd_proselytism_desc: "We will spread the word to those that wish to hear it"
+ 
+ icd_repression: "Systemic Persecution"
+ icd_repression_desc: "In our state, religions are not to be merely dismantled by decree. We shall institutionalise religious persecution, rigorously asphyxiating all heretics and heathens."
+ icd_syncretic_persuasion: "Syncretic Persuasion"
+ icd_syncretic_persuasion_desc: "We seek to embrace and understand the strange and diverse cultures in our territory. So long as they follow our religious creeds, we can syncretise our beliefs with their indigenous practices. Doing so should aid religious conversion at the cost of changing what our religion's pure form."

@@ -15,6 +15,7 @@ INJECT:jungle = {
 	location_modifier = { 
 		local_tribal_promotion = -0.35
 		local_pop_assimilation_speed_modifier = -0.25
+		local_pop_conversion_speed_modifier = -0.2
 	}
 }
 

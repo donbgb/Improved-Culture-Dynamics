@@ -1,14 +1,21 @@
 ﻿
 icd_religion_tolerance_heretic = {
-	value = 1
-	add = {
+	if = {
+		limit = {
+			modifier:tolerance_heretic > 0
+		}
 		value = modifier:tolerance_heretic
+		multiply = 5
 	}
+	
 }
 
 icd_religion_tolerance_heathen = {
-	value = 1
-	add = {
+	if = {
+		limit = {
+			modifier:tolerance_heathen > 0
+		}
 		value = modifier:tolerance_heathen
+		multiply = 5
 	}
 }

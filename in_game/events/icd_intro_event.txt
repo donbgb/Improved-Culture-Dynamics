@@ -9,8 +9,8 @@ icd_intro_event.1 = {
 	image = "gfx/interface/illustrations/icd_illustration.dds"
 
 	trigger = {
-		NOT = { has_game_rule = icd_religious_conversion_vanilla }
 		is_ai = no
+		has_game_rule = icd_intro_event_on
 	}
 
 	immediate = {
@@ -45,7 +45,7 @@ icd_intro_event.1 = {
 		trigger_event_silently = icd_intro_event.6
 	}
 	option = { ###not interested##
-		name = icd_intro_event.1.a
+		name = icd_intro_event.1.f
 		
 	}
 }

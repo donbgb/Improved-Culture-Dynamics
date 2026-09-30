@@ -131,7 +131,16 @@
 		# Stable confessional boundaries: post-Trent and ≥60y since Reformation spawn.
 		else_if = {
 			limit = { situation:council_of_trent = { situation_has_ended = yes } }
-			value = { 0.0 0.001 }
+			value = { 0.0 0.0001 }
+		}
+		else_if = {
+			limit = { 
+				situation:council_of_trent = { situation_has_ended = yes } 
+				situation:reformation = {
+					years_since_situation_start > 70
+				}
+			}
+			value = 0.0
 		}
 		# Fallthrough: pre-boom (<5y post-spawn), or boom-exhaust (≥40y, Trent never convened).
 		else = {

@@ -19,3 +19,46 @@ icd_converting_province = {
 		localization_key = icd_converting_province_alternative_key
 	}
 }
+
+
+icd_communal_loc = {
+	type = location
+	
+	text = {
+		trigger = {
+			has_owner = yes
+			owner ?= {
+				icd_is_pagan = yes
+			}
+		}
+		localization_key = icd_communal_loc_pagan
+	}
+	text = {
+		trigger = {
+			has_owner = yes
+			owner ?= {
+				has_variable = icd_confessional_culture
+				culture = var:icd_confessional_culture
+				NOT = {
+					is_subject_type = fiefdom
+					is_subject_type = dominion
+					is_subject_type = appanage
+					AND = {
+						has_variable = icd_enforced_religion
+						religion = var:icd_enforced_religion
+					}
+				}
+				NOT = {
+					has_policy = icd_secular_state
+					has_policy = icd_yassa_tolerance
+					has_policy = icd_sulh_i_kul
+				}
+			}
+		}
+		localization_key = icd_communal_loc_confession
+	}
+	text = {
+		localization_key = icd_communal_loc_fallback
+		fallback = yes
+	}
+}

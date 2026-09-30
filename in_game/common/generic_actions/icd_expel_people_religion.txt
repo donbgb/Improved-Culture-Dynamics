@@ -48,11 +48,15 @@
 			scope:actor = {
 				religion_percentage_in_country = {
 					religion = root
-					value > 0
+					value > 0.0005
 				}
 				religion_population_in_country = {
 					religion = root
 					value > 0.100
+				}
+				religion_population_in_country = {
+					religion = root
+					value < 1000
 				}
 				religion_percentage_in_country = {
 					religion = root
@@ -62,7 +66,7 @@
 					any_owned_location = {
 						religion_percentage = {
 							religion = root
-							value >= 0.9
+							value >= 0.95
 						}
 					}
 				}
@@ -70,7 +74,7 @@
 					any_province = {
 						religion_percentage = {
 							religion = root
-							value >= 0.8
+							value >= 0.9
 						}
 					}
 				}

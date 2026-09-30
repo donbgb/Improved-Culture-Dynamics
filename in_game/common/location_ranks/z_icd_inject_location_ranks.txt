@@ -2,6 +2,7 @@
 	
 	rank_modifier = {
 		local_pop_assimilation_speed_modifier = 0.20
+		local_pop_conversion_speed_modifier = 0.2
 	}
 }
 
@@ -9,6 +10,7 @@ INJECT:town = {
 	
 	rank_modifier = {
 		local_pop_assimilation_speed_modifier = 0.05
+		local_pop_conversion_speed_modifier = 0.1
 	}
 }
 
@@ -20,5 +22,6 @@ INJECT:rural_settlement = {
 INJECT:megalopolis = {
 	rank_modifier = {
 		local_pop_assimilation_speed_modifier = 0.20
+		local_pop_conversion_speed_modifier = 0.2
 	}
 }

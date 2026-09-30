@@ -59,6 +59,10 @@
 						"religion_percentage_in_country(scope:actor.religion)" > 0.3
 					}
 					AND = {
+						is_subject_type = appanage
+						"religion_percentage_in_country(scope:actor.religion)" > 0.3
+					}
+					AND = {
 						has_variable = icd_enforced_religion
 						religion = var:icd_enforced_religion
 						"religion_percentage_in_country(scope:actor.religion)" > 0.3
@@ -354,28 +358,16 @@
 				scope:actor = {
 					OR = {
 						religion.group = religion_group:christian
+						religion.group = religion_group:muslim
 					}
 					any_pop = {
 						religion != scope:actor.religion
 						is_protected_pop = no
-						OR = {
-							religion = religion:lutheran
-							religion = religion:calvinist
-							religion = religion:anglican
-							religion = religion:bogomilism
-							religion = religion:bosnian_church
-							religion = religion:catharism
-							religion = religion:hussite
-							religion = religion:lollardy
-							religion = religion:paulicianism
-							religion = religion:strigolniki
-							religion = religion:waldensian
-						}
 					}
 				}
 			}
 			add = {
-				value = 20
+				value = 10
 			}
 		}
 		if = {
@@ -468,11 +460,11 @@
 			if = {
 				limit = {
 					scope:target_province = {
-						province_average_control < 0.08
+						province_average_control < 0.1
 					}
 				}
 				subtract = {	
-					value = 150
+					value = 500
 				}
 			}
 			

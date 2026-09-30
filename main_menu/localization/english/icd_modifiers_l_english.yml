@@ -2,6 +2,8 @@
  JERU_country: "New Jerusalem"
  JERU_country_ADJ: "New Jerusalemite"
  
+ STATIC_MODIFIER_NAME_icd_population_removal_relocate: "Local Impact of Relocation"
+ 
  STATIC_MODIFIER_NAME_icd_relocation_effort_cost: "State Cost of Relocation"
  STATIC_MODIFIER_NAME_icd_cultural_opinion_cost: "Cost of Improving Cultural Opinion"
  STATIC_MODIFIER_NAME_icd_king_of_the_gypsies: "Support from the King of the Gypsies"
@@ -10,7 +12,6 @@
  
  STATIC_MODIFIER_NAME_icd_expelled_anabaptists: "Expelled Anabaptist Leadership"
  STATIC_MODIFIER_NAME_icd_rejection_of_novel_religions: "Rejection of Novel Religions"
- STATIC_MODIFIER_NAME_icd_new_jerusalem_fervor: "Religious Fervor"
  
  MODIFIER_TYPE_NAME_icd_nothing_price_cost_modifier: ""
  MODIFIER_TYPE_DESC_icd_nothing_price_cost_modifier: ""
@@ -151,5 +152,6 @@
  STATIC_MODIFIER_NAME_icd_protestant_in_wrong_country: "Heretical Reformer"
  STATIC_MODIFIER_NAME_icd_protestant_in_wrong_country_desc: "This Protestant reformer is in a country that considers him to be a [heretic|e]."
  
- 
+ MODIFIER_TYPE_NAME_icd_dhimmi_price_cost_modifier: "dhimmi price cost modifier"
+ MODIFIER_TYPE_DESC_icd_dhimmi_price_cost_modifier: "dhimmi price cost modifier"
  

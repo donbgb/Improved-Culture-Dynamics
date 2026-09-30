@@ -85,4 +85,5 @@
 
  qayfengi: "Yīcìlèyè"
  
-
+ common_folk_religion_desc: "religion is a [ethnic_religion|e]. It refers to a given number of indigenous beliefs, mythologies, traditions and practices that are upheld by those cultures part of this faith."
+ common_folk_religion_group_desc: "group refers to a number of [ethnic_religions|e] present in"

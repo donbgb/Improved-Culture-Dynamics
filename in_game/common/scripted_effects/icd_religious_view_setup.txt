@@ -30,7 +30,22 @@ icd_religious_view_setup = {
 			}
 		}
 	}
-
+	
+	religion:sunni = {
+		religion:shia = {
+			reverse_set_religious_view = {
+				target = prev
+				value = neutral
+			}
+		}
+		religion:shia = {
+			set_religious_view = {
+				target = prev
+				value = neutral
+			}
+		}
+	}
+	
 	religion:tengri = {
 		religion:nestorianism = {
 			reverse_set_religious_view = {
@@ -77,22 +92,6 @@ icd_religious_view_setup = {
 		}
 	}
 
-
-	religion:sunni = {
-		religion:shia = {
-			set_religious_view = {
-				target = prev
-				value = positive
-			}
-		}
-		religion:shia = {
-			reverse_set_religious_view = {
-				target = prev
-				value = positive
-			}
-		}
-	}
-	
 	every_religion = {
 		limit = {
 			OR = {

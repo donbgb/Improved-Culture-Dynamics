@@ -11,29 +11,28 @@ icd_num_provinces_for_conversion = {
 			}
 		}
 		value = num_provinces
-		divide = 10
-		min = modifier:government_size
-		max = 15
+		divide = 5
+		add = 3
+		max = 25
+		round_to = 1
 		if = {
 			limit = {
-				can_see_situation = situation:reformation
-				situation:reformation = {
-					situation_is_active = yes
-				}
+				is_leader_of_international_organization = international_organization:hre
 			}
-			add = 2
+			add = 3
 		}
-		round_to = 1
+		max = num_provinces
+		
+		every_province = {
+			if = {
+				limit = {
+					has_province_modifier = icd_promote_religion_province_modifier
+				}
+				subtract = 1
+			}
+		}
 	}
 	
-	every_province = {
-		if = {
-			limit = {
-				has_province_modifier = icd_promote_religion_province_modifier
-			}
-			subtract = 1
-		}
-	}
 }
 icd_communal_conversion_rate = {
 	value = pop_size
@@ -97,28 +96,6 @@ icd_communal_conversion_rate = {
 			multiply = location.modifier:local_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
 		}
 	}
-	subtract = {
-		value = pop_size
-		divide = {
-			value = 0
-			location = {
-				every_pop = {
-					limit = {
-						owner ?= root
-						religion != owner.religion
-						culture = root.culture
-						pop_type != pop_type:slaves
-					}
-					add = pop_size
-				}
-			}
-		}
-		multiply = 0.15
-		multiply = {
-			value = 1
-			subtract = location.local_control
-		}
-	}
 	if = {
 		limit = {
 			owner ?= {
@@ -134,8 +111,16 @@ icd_communal_conversion_rate = {
 		limit = {
 			pop_type = pop_type:tribesmen
 		}
-		multiply = 0.5
-	}	
+		multiply = 0.1
+	}
+	if = {
+		limit = {
+			location = {
+				local_control < 0.1
+			}
+		}
+		value = 0
+	}
 }
 
 icd_communal_conversion_rate_pagan = {
@@ -203,39 +188,24 @@ icd_communal_conversion_rate_pagan = {
 			multiply = location.modifier:local_pop_conversion_speed_modifier #100% pop conversion is equal to a +0.01% increase#
 		}
 	}
-	subtract = {
-		value = pop_size
-		divide = {
-			value = 0
-			location = {
-				every_pop = {
-					limit = {
-						owner ?= root
-						religion != owner.religion
-						icd_is_pagan = yes
-						is_protected_pop = no
-						pop_type != pop_type:slaves
-					}
-					add = pop_size
-				}
-			}
-		}
-		multiply = 0.15
-		multiply = {
-			value = 1
-			subtract = location.local_control
-		}
-	}
 	if = {
 		limit = {
 			pop_type = pop_type:tribesmen
 		}
-		multiply = 0.5
+		multiply = 0.1
+	}
+	if = {
+		limit = {
+			location = {
+				local_control < 0.1
+			}
+		}
+		value = 0
 	}	
 }
 
 icd_voluntary_conversion_rate = {
-	value = 0.001 ##0.001 equals 0.1%###
+	value = 0.0005 ##0.001 equals 0.1%###
 	
 	if = {
 		limit = { pop_satisfaction > 0.25 }
@@ -276,7 +246,7 @@ icd_voluntary_conversion_rate = {
 		}
 		add = {
 			value = "owner.estate(estate_type:dhimmi_estate).num_privileges"
-			divide = 4000 ##1 privilege = 0.025%, 4 privileges = 0.1##
+			divide = 5000 ##1 privilege = 0.02%, 5 privileges = 0.1##
 		}
 	}
 	
@@ -325,88 +295,55 @@ icd_coercive_conversion_rate = {
 	}
 	multiply = {
 		value = location.population
-		divide = 100
+		divide = 200
 	}
 	round_to = 0.001
 	
-	if = {
-		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
-		add = {
-			value = pop_size
-			divide = {
-				value = 0
-				location = {
-					every_pop = {
-						limit = {
-							religion != location.province.var:promoting_religion
-							owner ?= root
-							is_protected_pop = no
-							pop_type != pop_type:slaves
-						}
-						add = pop_size
+	add = {
+		value = pop_size
+		divide = {
+			value = 0
+			location = {
+				every_pop = {
+					limit = {
+						religion != location.province.var:promoting_religion
+						owner ?= root
+						is_protected_pop = no
+						pop_type != pop_type:slaves
 					}
+					add = pop_size
 				}
-			}
-			multiply = {
-				value = location.population
-				divide = 100
-			}
-			multiply = owner.modifier:global_pop_conversion_speed_modifier
-			round_to = 0.001
-		}
-	}
-	if = {
-		limit = { location ?= { modifier:local_pop_conversion_speed_modifier > 0 }	}
-		add = {
-			value = pop_size
-			divide = {
-				value = 0
-				location = {
-					every_pop = {
-						limit = {
-							religion != location.province.var:promoting_religion
-							owner ?= root
-							is_protected_pop = no
-							pop_type != pop_type:slaves
-						}
-						add = pop_size
-					}
-				}
-			}
-			multiply = {
-				value = location.population
-				divide = 100
-			}
-			multiply = location.modifier:local_pop_conversion_speed_modifier
-			round_to = 0.001
-		}
-	}
-	subtract = {
-		value = {
-			value = pop_size
-			divide = {
-				value = 0
-				location = {
-					every_pop = {
-						limit = {
-							religion != location.province.var:promoting_religion
-							owner ?= root
-							is_protected_pop = no
-							pop_type != pop_type:slaves
-						}
-						add = pop_size
-					}
-				}
-			}
-			multiply = {
-				value = location.population
-				divide = 100
 			}
 		}
 		multiply = {
-			value = 1
-			subtract = location.local_control
+			value = location.population
+			divide = 200
 		}
+		multiply = owner.modifier:global_pop_conversion_speed_modifier
+		round_to = 0.001
+	}
+	
+	add = {
+		value = pop_size
+		divide = {
+			value = 0
+			location = {
+				every_pop = {
+					limit = {
+						religion != location.province.var:promoting_religion
+						owner ?= root
+						is_protected_pop = no
+						pop_type != pop_type:slaves
+					}
+					add = pop_size
+				}
+			}
+		}
+		multiply = {
+			value = location.population
+			divide = 200
+		}
+		multiply = location.modifier:local_pop_conversion_speed_modifier
 		round_to = 0.001
 	}
 	
@@ -443,65 +380,48 @@ icd_coercive_conversion_rate = {
 				}
 				multiply = {
 					value = location.population
-					divide = 100
-				}
-			}
-			multiply = {
-				value = 1
-				subtract = location.local_control
-			}
-			round_to = 0.001
-		}
-		add = {
-			value = {
-				value = pop_size
-				divide = {
-					value = 0
-					location = {
-						every_pop = {
-							limit = {
-								religion != location.province.var:promoting_religion
-								owner ?= root
-								is_protected_pop = no
-								pop_type != pop_type:slaves
-							}
-							add = pop_size
-						}
-					}
-				}
-				multiply = {
-					value = location.population
-					divide = 100
+					divide = 50
 				}
 			}
 		}
+	}
+	if = {
+		limit = {
+			pop_type = pop_type:tribesmen
+		}
+		multiply = 0.5
+	}
+	min = 0
+	if = {
+		limit = {
+			location = {
+				local_control < 0.1
+			}
+		}
+		value = 0
 	}
 }
 
 
 icd_conversion_rate_province = {
 	value = 1
-	if = {
-		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
-		add = {
-			value = 1
-			multiply = owner.modifier:global_pop_conversion_speed_modifier
-		}
-	}
-	if = {
-		limit = { modifier:local_pop_conversion_speed_modifier > 0 }
-		add = {
-			value = 1
-			multiply = modifier:local_pop_conversion_speed_modifier
-		}
-	}
-	subtract = {
+	
+	add = {
 		value = 1
-		multiply = {
-			value = 1
-			subtract = local_control
-		}
+		multiply = owner.modifier:global_pop_conversion_speed_modifier
 	}
+
+	add = {
+		value = 1
+		multiply = modifier:local_pop_conversion_speed_modifier
+	}
+	if = {
+		limit = {
+			local_control < 0.1
+		}
+		value = 0
+	}
+	min = 0
 }
 
 icd_conversion_rate_province_communal_value = {
@@ -522,13 +442,6 @@ icd_conversion_rate_province_communal_value = {
 			multiply = modifier:local_pop_conversion_speed_modifier
 		}
 	}
-	subtract = {
-		value = 150
-		multiply = {
-			value = 1
-			subtract = local_control
-		}
-	}
 	if = {
 		limit = {
 			owner ?= {
@@ -541,44 +454,66 @@ icd_conversion_rate_province_communal_value = {
 		multiply = 1.5
 	}
 	round_to = 1
+	if = {
+		limit = {
+			local_control < 0.1
+		}
+		value = 0
+	}
 }
 
 icd_conversion_rate_province_forced_value = {
 	value = population
-	multiply = 10
+	divide = 200
 	
-	if = {
-		limit = { owner = { modifier:global_pop_conversion_speed_modifier > 0 } }
-		add = {
-			value = {
-				value = population
-				multiply = 10
-
-			}
-			multiply = owner.modifier:global_pop_conversion_speed_modifier
-		}
-	}
-	if = {
-		limit = { modifier:local_pop_conversion_speed_modifier > 0 }
-		add = {
-			value = {
-				value = population
-				multiply = 10
-			}
-			multiply = modifier:local_pop_conversion_speed_modifier
-		}
-	}
-	subtract = {
+	add = {
 		value = {
 			value = population
-			multiply = 10
+			divide = 200
+			
 		}
-		multiply = {
-			value = 1
-			subtract = local_control
+		multiply = owner.modifier:global_pop_conversion_speed_modifier
+	}
+	add = {
+		value = {
+			value = population
+			divide = 200
+			
+		}
+		multiply = modifier:local_pop_conversion_speed_modifier
+	}
+	
+	if = {
+		limit = {
+			owner ?= {
+				has_variable = icd_convert_a_lot
+			}
+			dominant_religion = {
+				OR = {
+					this = religion:catholic
+					this = religion:lutheran
+					this = religion:calvinist
+					this = religion:anabaptist
+					this = religion:unitarian
+					this = religion:anglican
+				}
+			}
+		}
+		add = {
+			value = population
+			divide = 50
 		}
 	}
+	
+	multiply = 1000
+	min = 0
 	round_to = 1
+	if = {
+		limit = {
+			local_control < 0.1
+		}
+		value = 0
+	}
 }
 
 icd_conversion_rate_province_voluntary = { ####
@@ -716,3 +651,10 @@ icd_conversion_rate_province_voluntary_value_heretic = { ###0.19 at that point##
 	
 }
 
+icd_base_value = {
+	value = population
+	divide = 200
+	multiply = 1000
+	round_to = 1
+	min = 0
+}

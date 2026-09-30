@@ -348,4 +348,6 @@
  icd_reformation_push.11.a: "Embrace [ShowReligionName('calvinist')]"
  icd_reformation_push.11.b: "Reject this nonsense"
  icd_bosnian_conversion_tt: "[ShowCultureName('bosnian')] [pops|e] will convert in large numbers to [ShowReligionGroupName('muslim')]."
- icd_sindhi_conversion_tt: "[ShowCultureName('sindhi')] [pops|e] will convert in large numbers to [ShowReligionGroupName('muslim')]."
+ 
+ 
+ 

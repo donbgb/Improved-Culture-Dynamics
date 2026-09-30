@@ -47,8 +47,7 @@ icd_conversion_events.1000 = { # Voluntary Conversions##
 					religion != root.religion
 					NOT = { pop_type = pop_type:slaves }
 					NOT = { pop_type = pop_type:clergy }
-					NOT = { pop_type = pop_type:nobles }
-					NOT = { pop_type = pop_type:slaves }
+					NOT = { pop_type = pop_type:tribesmen }
 					location = {
 						local_control >= 0.1
 					}
@@ -105,17 +104,11 @@ icd_conversion_events.999 = { # Coercive Conversions##
 		10 = interior
 	}
 	
-	#hidden = yes#
+	hidden = yes
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
 		
-		
-	}
-
-	option = {
-		name = icd_conversion_events.1000.desc
-	
 		
 		
 		every_province = {
@@ -148,6 +141,12 @@ icd_conversion_events.999 = { # Coercive Conversions##
 			}
 		}
 	}
+
+	option = {
+		name = icd_conversion_events.1000.desc
+	
+		
+	}
 }
 
 icd_conversion_events.900 = { # Communal COnversions##
@@ -169,10 +168,7 @@ icd_conversion_events.900 = { # Communal COnversions##
 	}
 
 	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
-		
-		name = icd_conversion_events.1000.desc
-	
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }	
 		if = {
 			limit = {
 				has_policy = force_slave_conversion
@@ -209,6 +205,7 @@ icd_conversion_events.900 = { # Communal COnversions##
 					pop_type != pop_type:slaves
 					owner ?= root
 					location = {
+						"religion_percentage(root.religion)" >= 0.2
 						NOT = {
 							has_location_modifier = icd_religious_zeal
 						}
@@ -242,6 +239,7 @@ icd_conversion_events.900 = { # Communal COnversions##
 				NOT = {
 					is_subject_type = fiefdom
 					is_subject_type = dominion
+					is_subject_type = appanage
 					AND = {
 						has_variable = icd_enforced_religion
 						religion = var:icd_enforced_religion
@@ -419,6 +417,7 @@ icd_conversion_events.2 = { #
 			religion = religion:tengri
 			
 		}
+		num_locations > 0
 		religion_percentage_in_country = {
 			religion = religion:sunni
 			value > 0
@@ -476,8 +475,30 @@ icd_conversion_events.2 = { #
 					}
 					change_pop_religion = religion:sunni
 				}
+				every_pop = {
+					limit = {
+						pop_type = pop_type:clergy
+						religion = religion:tengri
+					}
+					change_pop_religion = religion:sunni
+				}
+				every_pop = {
+					limit = {
+						religion = religion:tengri
+					}
+					split_pop = {
+						fraction = {
+							value = location.local_control
+							subtract = 0.3
+							min = 0
+						}
+						religion = religion:sunni
+					}
+				}
 			}
 		}
+		
+		set_variable = icd_conversion_tengri_block
 		ai_will_select = {
 			value = 500
 		}
@@ -492,6 +513,7 @@ icd_conversion_events.3 = { #
 	outcome = neutral
 	
 	trigger = {
+		num_locations > 0
 		OR = {
 			religion = religion:tengri
 			religion = religion:tungusic_shamanism
@@ -555,8 +577,22 @@ icd_conversion_events.3 = { #
 					}
 					change_pop_religion = religion:tibetan_buddhism
 				}
+				every_pop = {
+					limit = {
+						religion = religion:tengri
+					}
+					split_pop = {
+						fraction = {
+							value = location.local_control
+							subtract = 0.3
+							min = 0
+						}
+						religion = religion:tibetan_buddhism
+					}
+				}
 			}
 		}
+		set_variable = icd_conversion_tengri_block
 		ai_will_select = {
 			value = 100
 		}

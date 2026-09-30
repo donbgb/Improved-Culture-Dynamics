@@ -103,6 +103,15 @@
 			limit = { situation:council_of_trent = { situation_has_ended = yes } }
 			value = { 0.0 0.0015 }
 		}
+		else_if = {
+			limit = { 
+				situation:council_of_trent = { situation_has_ended = yes } 
+				situation:reformation = {
+					years_since_situation_start > 70
+				}
+			}
+			value = 0.0
+		}
 		# Fallthrough: pre-boom (<5y post-spawn), or boom-exhaust (≥40y, Trent never convened).
 		else = {
 			value = { 0.0 0.015 }

@@ -1,0 +1,107 @@
+﻿
+icd_tolerance_map_heathen = {
+	type = location
+	
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heathen >= 1.5
+			}
+		}
+		localization_key = icd_tolerance_map_heathen_very_high
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heathen >= 0.5
+			}
+		}
+		localization_key = icd_tolerance_map_heathen_high
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heathen >= 0
+			}
+		}
+		localization_key = icd_tolerance_map_heathen_medium
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heathen >= -0.5
+			}
+		}
+		localization_key = icd_tolerance_map_heathen_low
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heathen >= -1.5
+			}
+		}
+		localization_key = icd_tolerance_map_heathen_very_low
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heathen < -1.5
+			}
+		}
+		localization_key = icd_tolerance_map_heathen_none
+	}
+}
+
+
+icd_tolerance_map_heretic = {
+	type = location
+	
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heretic >= 1.5
+			}
+		}
+		localization_key = icd_tolerance_map_heretic_very_high
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heretic >= 0.5
+			}
+		}
+		localization_key = icd_tolerance_map_heretic_high
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heretic >= 0
+			}
+		}
+		localization_key = icd_tolerance_map_heretic_medium
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heretic >= -0.5
+			}
+		}
+		localization_key = icd_tolerance_map_heretic_low
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heretic >= -1.5
+			}
+		}
+		localization_key = icd_tolerance_map_heretic_very_low
+	}
+	text = {
+		trigger = {
+			owner ?= {
+				modifier:tolerance_heretic < -1.5
+			}
+		}
+		localization_key = icd_tolerance_map_heretic_none
+	}
+}

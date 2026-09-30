@@ -4,6 +4,5 @@
 	}
 	actions = {
 		icd_remove_convert
-		icd_confessional_community
 	}
 }

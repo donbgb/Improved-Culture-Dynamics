@@ -223,6 +223,7 @@
 						religion = religion:calvinist
 						religion = religion:anabaptist
 						religion = religion:unitarian
+						religion = religion:hussite
 					}
 					any_pop = {
 						culture = prev.culture

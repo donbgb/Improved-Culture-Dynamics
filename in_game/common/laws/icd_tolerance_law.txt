@@ -16,7 +16,7 @@
 	icd_proselytism = {
 		price = icd_nothing_price
 		country_modifier = {
-			global_pop_conversion_speed_modifier = 0.1
+			global_pop_conversion_speed_modifier = 0.15
 		}
 		potential = {
 		}
@@ -28,6 +28,80 @@
 		on_activate = {
 		}
 		
+	}
+	
+	icd_syncretic_persuasion = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_conversion_speed_modifier = 0.2
+			cultures_capacity_modifier = 0.2
+			global_pop_assimilation_speed_modifier = -0.15
+		}
+		potential = {
+		}
+		allow = {
+		}
+		months = 1
+		
+		on_activate = {
+		}
+		
+		ai_will_do = {
+			value = -50
+		}
+	}
+	
+	icd_repression = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_conversion_speed_modifier = 0.25
+			tolerance_heathen = -1
+			tolerance_heretic = -1
+		}
+		potential = {
+			icd_is_pagan = no
+		}
+		allow = {
+			NOT = {
+				has_policy = icd_ethnic_religion
+				has_policy = icd_custodians
+				has_policy = icd_privatization_of_religion
+				has_policy = icd_secular_state
+				has_policy = icd_yassa_tolerance
+				has_policy = icd_sulh_i_kul
+				has_policy = icd_dual_faiths
+			}
+		}
+		months = 1
+		
+		on_activate = {
+		}
+		
+		ai_will_do = {
+			if = {
+				limit = {
+					OR = {
+						ruler ?= {
+							has_trait = zealot
+						}
+						AND = {
+							modifier:tolerance_heretic < -1
+							religion.group = religion_group:christian
+							"religion_percentage_in_country(root.religion)" < 0.5
+						}
+						AND = {
+							modifier:tolerance_heretic < -1
+							religion.group = religion_group:muslim
+							"religion_percentage_in_country(root.religion)" < 0.5
+						}
+					}
+				}
+				value = 600
+			}
+			else = {
+				value = -20
+			}
+		}
 	}
 	
 	icd_bureau_of_buddhist_and_tibetan_affairs = {

@@ -2,16 +2,20 @@
 icd_global_variable_setup = {
 	every_country = {
 		limit = {
-			NOT = {
-				any_pop = {
-					culture = prev.culture
-					religion != prev.religion
-					religion != religion:waldensian
-					religion != religion:catharism
-					religion != religion:bogomilism
-					religion != religion:paulicianism
-					pop_size > 0.1
+			OR = {
+				NOT = {
+					any_pop = {
+						culture = prev.culture
+						religion != prev.religion
+						religion != religion:waldensian
+						religion != religion:catharism
+						religion != religion:bogomilism
+						religion != religion:paulicianism
+						pop_size > 0.1
+					}
 				}
+				culture = culture:prussian
+				culture = { has_culture_group = culture_group:scandinavian_group }
 			}
 		}
 		set_variable = {

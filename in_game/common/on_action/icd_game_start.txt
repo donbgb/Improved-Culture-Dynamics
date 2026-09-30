@@ -5,18 +5,6 @@ on_game_start = {
 		icd_culture_on_action
 		delay = { days =  1 }
 		icd_culture_on_action_majority
-		icd_intro_event_action
-	}
-}
-
-icd_intro_event_action = {
-	trigger = {
-		NOT = {
-			has_game_rule = icd_intro_event_off
-		}
-	}
-	events = {
-		icd_intro_event.1
 	}
 }
 

@@ -6,15 +6,16 @@
 	potential = {
 		scope:actor = {
 			OR = {
-				AND = {
-					has_variable = icd_enforced_religion
+				trigger_if = {
+					limit = { has_variable = icd_enforced_religion }
 					religion = var:icd_enforced_religion
 				}
-				OR = {
-					NOT = {
-						has_variable = icd_confessional_culture
-					}
-					NOT = { scope:actor.culture = var:icd_confessional_culture }
+				NOT = {
+					has_variable = icd_confessional_culture
+				}
+				trigger_if = {
+					limit = { has_variable = icd_confessional_culture }
+					scope:actor.culture != var:icd_confessional_culture
 				}
 			}
 		}
@@ -24,24 +25,31 @@
 	
 	allow = {
 		scope:actor = {
-			custom_tooltip = {
-				text = icd_confessional_community_requirements_tt
-				NOT = {
-					any_pop = {
-						culture = scope:actor.culture
-						religion != scope:actor.religion
-						pop_size > 0.3
+			OR = {
+				AND = {
+					custom_tooltip = {
+						text = icd_confessional_community_requirements_tt
+						NOT = {
+							any_pop = {
+								culture = scope:actor.culture
+								religion != scope:actor.religion
+								pop_size > 0.3
+							}
+						}
+					}
+					NOT = {
+						is_subject_type = fiefdom
+						is_subject_type = dominion
+						is_subject_type = appanage
 					}
 				}
-			}
-			NOT = {
-				is_subject_type = fiefdom
-				is_subject_type = dominion
+				is_colonial_subject = yes
 			}
 		}
 	}
 	
-	ai_tick = never
+	ai_tick = monthly
+	ai_tick_frequency = 24
 		
 	select_trigger = {
 		looking_for_a = religion
@@ -56,19 +64,26 @@
 	show_message = no
 	
 	effect = {
-		custom_tooltip = {
-			text = icd_confessional_community_tt
-			remove_variable = icd_confessional_culture
-			set_variable = {
-				name = icd_confessional_culture
-				value = this.culture
+		if = {
+			limit = {
+				exists = scope:actor
 			}
-			remove_variable = icd_enforced_religion
+			scope:actor = {
+				custom_tooltip = {
+					text = icd_confessional_community_tt
+					remove_variable = icd_confessional_culture
+					set_variable = {
+						name = icd_confessional_culture
+						value = scope:actor.culture
+					}
+					remove_variable = icd_enforced_religion
+				}
+			}
 		}
 	}
 	
 	ai_will_do = {
-		value = 0
+		value = 200
 		
 	}
 }
