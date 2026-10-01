@@ -1,0 +1,36 @@
+﻿icd_caliphate_claimant = {
+	priority = 10
+
+	modifier = {
+	}
+
+	can_bestow_trigger = {
+		always = no #it's not granted, it's claimed
+	}
+
+	auto_bestowal_trigger = {
+	}
+
+	auto_rescind_trigger = {
+	}
+	
+	on_bestowed_effect = {
+	}
+	
+	on_rescinded_effect = {
+	}
+
+	map_color = {
+		if = {
+			limit = {
+				root.owner = {
+					is_leader_of_international_organization = international_organization:icd_sunni_caliphate
+			}
+			}
+			value = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+		}
+		else = {
+			value = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER1_COLOR
+		}
+	}
+}

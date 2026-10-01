@@ -1,0 +1,49 @@
+#Remember to write sons and daughters ALWAYS after their parents to avoid crashes
+
+character_db={
+
+	mam_al_hakim = {
+		first_name = { name = al_hakim }
+		culture = iraqi_culture
+		estate = nobles_estate
+		religion = sunni
+		birth_date = 1262.11.21
+		death_date = 1302.1.19
+		birth = baghdad
+		dynasty = icd_abbasid_dynasty
+		tag = MAM
+	}
+	mam_al_mustafki = {
+		first_name = { name = al_mustafki }
+		culture = lower_egyptian_culture
+		estate = nobles_estate
+		religion = sunni
+		father = mam_al_hakim
+		birth_date = 1285.3.23
+		birth = cairo
+		dynasty = icd_abbasid_dynasty
+		tag = MAM
+	}
+	mam_al_wathiq = {
+		first_name = { name = name_abu.name_abraham }
+		culture = lower_egyptian_culture
+		estate = nobles_estate
+		religion = sunni
+		father = mam_al_hakim
+		birth_date = 1300.1.1
+		birth = cairo
+		dynasty = icd_abbasid_dynasty
+		tag = MAM
+	}
+	mam_al_hakim_ii = {
+		first_name = { name = name_abu.name_ahmad }
+		culture = lower_egyptian_culture
+		estate = nobles_estate
+		religion = sunni
+		father = mam_al_mustafki
+		birth_date = 1310.1.1
+		birth = cairo
+		dynasty = icd_abbasid_dynasty
+		tag = MAM
+	}
+}

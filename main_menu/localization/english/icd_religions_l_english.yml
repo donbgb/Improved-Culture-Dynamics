@@ -109,4 +109,15 @@
  icd_great_peasant_rebellion_country: "Icd great peasant rebellion country"
  icd_great_peasant_rebellion_country_adjective: "Icd great peasant rebellion country adjective"
 
+ nizari_religion: "Nizarism"
+ nizari_religion_ADJ: "Nizari"
+ mustali_religion: "Musta'lism"
+ mustali_religion_ADJ: "Musta'li"
+ zaydi_religion: "Zaydisim"
+ zaydi_religion_ADJ: "Zaydi"
  
+ 
+ wahbi_school: "Wahbi"
+ azzabas_school: "Azzabas"
+ usuli_school: "Usuli"
+ akhbari_school: "Akhbari"

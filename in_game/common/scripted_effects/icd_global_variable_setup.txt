@@ -23,4 +23,5 @@ icd_global_variable_setup = {
 			value = this.culture
 		}
 	}
+
 }

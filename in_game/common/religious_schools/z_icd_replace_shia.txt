@@ -10,6 +10,131 @@ REPLACE:alawi_school = {
 	}
 	
 	modifier = {
+		tolerance_heathen = 0.75
+	}
+}
+
+REPLACE:jafari_school = {
+	color = rgb { 86 0 0 }
+
+	enabled_for_country = {
+		always = no
+	}
+	enabled_for_character = {
+		always = no
+	}
+	
+	modifier = {
+		global_population_growth = 0.00025
+	}
+}
+
+REPLACE:ismaili_school = {
+	color = rgb { 186 153 76 }
+
+	enabled_for_country = {
+		OR = {
+			religion = religion:nizari_religion
+			religion = religion:mustali_religion
+		}
+	}
+	enabled_for_character = {
+		OR = {
+			religion = religion:nizari_religion
+			religion = religion:mustali_religion
+		}
+	}
+	
+	modifier = {
+		monthly_legitimacy = 0.1
+		monthly_republican_tradition = 0.1
+		monthly_devotion = 0.1
+		monthly_horde_unity = 0.1
+		monthly_tribal_cohesion = 0.1
+	}
+}
+
+REPLACE:zaidi_school = {
+	color = rgb { 20 174 133 }
+
+	enabled_for_country = {
+		always = no
+	}
+	enabled_for_character = {
+		always = no
+	}
+	
+	modifier = {
+		tolerance_heretic = 0.5
+	}
+}
+
+#Schools of Theology
+
+REPLACE:imamiya_school = {
+	color = rgb { 72 5 0 }
+
+	enabled_for_country = {
+		always = no
+	}
+	enabled_for_character = {
+		always = no
+	}
+	
+	modifier = {
+		army_heavy_infantry_power = 0.05
+	}
+}
+
+REPLACE:nizari_school = {
+	color = rgb { 72 2 0 }
+
+	enabled_for_country = {
+		always = no
+	}
+	enabled_for_character = {
+		always = no
+	}
+	
+	modifier = {
 		tolerance_heathen = 1
+	}
+}
+
+REPLACE:mustali_school = {
+	color = rgb { 44 0 0 }
+
+	enabled_for_country = {
+		always = no
+	}
+	enabled_for_character = {
+		always = no
+	}
+	
+	modifier = {
+		global_pop_conversion_speed_modifier = 0.1
+	}
+}
+
+REPLACE:alevism_school = {
+	color = rgb { 20 150 0 }
+
+	enabled_for_country = {
+		religion = religion:shia
+		OR = {
+			culture = { has_culture_group = culture_group:turkic_group }
+			culture = culture:kurdish_culture
+		}
+	}
+	enabled_for_character = {
+		religion = religion:shia
+		OR = {
+			culture = { has_culture_group = culture_group:turkic_group }
+			culture = culture:kurdish_culture
+		}
+	}
+	
+	modifier = {
+		pop_join_rebel_threshold = -0.05
 	}
 }

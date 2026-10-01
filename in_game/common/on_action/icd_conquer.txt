@@ -12,3 +12,34 @@ icd_stop_religion = {
 		icd_conversion_stop = yes
 	}
 }
+
+on_character_death = {
+
+	on_actions = {
+		icd_caliph_check
+	}
+}
+icd_caliph_check = {
+	trigger = {
+		has_global_variable = icd_current_caliph
+		scope:target = global_var:icd_current_caliph
+	}
+	
+	effect = {
+		dynasty:icd_abbasid_dynasty = {
+			ordered_character_in_dynasty = {
+				limit = {
+					is_alive = yes
+					is_female = no
+				}
+				order_by = age_in_years
+				remove_global_variable = icd_current_caliph
+				set_global_variable = {
+					name = icd_current_caliph
+					value = this
+				}
+				
+			}
+		}
+	}
+}

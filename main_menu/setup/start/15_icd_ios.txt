@@ -1,0 +1,19 @@
+#Remember to write sons and daughters ALWAYS after their parents to avoid crashes
+
+international_organization_manager = {
+
+	add_international_organization = {
+		type = icd_sunni_caliphate
+		creation_date = 632.6.8
+
+
+		members = { MAM TUN }
+		
+		icd_caliphate_claimant = { 
+			MAM TUN
+		}
+		
+		leader = MAM
+
+	}
+}

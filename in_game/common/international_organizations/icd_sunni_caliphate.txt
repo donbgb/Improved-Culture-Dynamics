@@ -1,0 +1,113 @@
+﻿icd_sunni_caliphate = {
+	unique = yes
+	expel_members_who_are_targets_of_other_members = no
+	disband_if_no_leader = no
+	
+	has_leader_country = yes
+	leader_type = country
+	leader_change_trigger_type = none
+		
+	on_creation = {
+		
+	}
+	
+	can_declare_war = {
+		always = yes
+	}
+	
+	can_leave_trigger = {
+		always = no
+	}
+	
+	auto_leave_trigger = {
+		always = no
+	}
+	
+	modifier = {
+	}
+	
+	can_join_trigger = {
+		religion = religion:sunni
+		is_rebel_country = no
+	}
+	
+	create_visible_trigger = {
+		always = no
+	}
+	
+	auto_disband_trigger = {
+		international_organization_has_leader = no
+		NOT = {
+			any_international_organization_member = {
+				government_type = government_type:monarchy
+				is_subject = no
+				country_rank_level > 2
+				country_type = location
+			}
+		}
+	}
+	
+	on_joined = {
+	}
+
+	on_left = {
+	}
+	
+	monthly_effect = {
+
+		if = {
+			limit = {
+				any_country = {
+					is_rebel_country = no
+					religion = religion:sunni
+					NOT = { is_member_of_international_organization = international_organization:icd_sunni_caliphate }
+				}
+			}
+			every_country = {
+				limit = {
+					is_rebel_country = no
+					religion = religion:sunni
+					NOT = { is_member_of_international_organization = international_organization:icd_sunni_caliphate }
+				}
+				root = { add_country_to_international_organization = prev }
+			}
+		}
+		if = {
+			limit = {
+				has_global_variable = icd_current_caliph
+				global_var:icd_current_caliph = {
+					num_of_children = 0
+					is_adult = yes
+				}
+			}
+			global_var:icd_current_caliph.owner = {
+				create_character = {
+					culture = root.culture
+					religion = religion:sunni
+					age = 1
+					female = no
+					estate = estate_type:nobles_estate
+					dynasty = dynasty:icd_abbasid_dynasty
+					father = global_var:icd_current_caliph
+				}
+			}
+		}
+	}
+	
+	variables = {
+	}
+	
+	special_statuses_implemented = {
+		icd_caliphate_claimant
+	}
+	
+	ai_desire_to_join = {
+	}
+	
+	ai_desire_to_allow_new_member = {
+		add = {
+			desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+			value = 20
+		}
+	}
+}

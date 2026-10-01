@@ -1,0 +1,8 @@
+#Remember to write sons and daughters ALWAYS after their parents to avoid crashes
+
+dynasty_manager={
+	icd_abbasid_dynasty = {
+		name = { name = icd_abbasid_dynasty }
+		home = baghdad
+	}
+}

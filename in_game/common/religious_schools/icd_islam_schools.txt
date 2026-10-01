@@ -1,0 +1,88 @@
+﻿wahbi_school = {
+	color = rgb { 255 255 255 }
+
+	enabled_for_country = {
+		religion = religion:ibadi
+	}
+	enabled_for_character = {
+		religion = religion:ibadi
+	}
+
+	modifier = {
+		global_population_growth = 0.00025
+	}
+}
+
+azzabas_school = {
+	color = rgb { 130 143 74 }
+
+	enabled_for_country = {
+		religion = religion:ibadi
+	}
+	enabled_for_character = {
+		religion = religion:ibadi
+	}
+
+	modifier = {
+		monthly_army_tradition = 0.05
+	}
+}
+
+usuli_school = {
+	color = rgb { 72 5 0 }
+
+	enabled_for_country = {
+		religion = religion:shia
+	}
+	enabled_for_character = {
+		religion = religion:shia
+	}
+
+	modifier = {
+		stability_investment = standard_stability_investment
+	}
+}
+
+akhbari_school = {
+	color = rgb { 86 0 0 }
+
+	enabled_for_country = {
+		religion = religion:shia
+	}
+	enabled_for_character = {
+		religion = religion:shia
+	}
+
+	modifier = {
+		global_pop_conversion_speed_modifier = 0.1
+	}
+}
+
+hadawi_school = {
+	color = rgb { 150 0 80 }
+
+	enabled_for_country = {
+		religion = religion:zaydi_religion
+	}
+	enabled_for_character = {
+		religion = religion:zaydi_religion
+	}
+
+	modifier = {
+		tolerance_heretic = 0.5
+	}
+}
+nasiri_school = {
+	color = rgb { 20 174 133 }
+
+	enabled_for_country = {
+		religion = religion:zaydi_religion
+	}
+	enabled_for_character = {
+		religion = religion:zaydi_religion
+	}
+
+	modifier = {
+		army_light_infantry_power = 0.1
+	}
+}
