@@ -1,0 +1,11 @@
+﻿
+
+hint_icd_religion = {
+	sort_priority = 500
+	priority = {
+		has_game_rule = icd_religious_conversion_modded
+	}
+	hide = {
+		has_game_rule = icd_religious_conversion_vanilla
+	}
+}
