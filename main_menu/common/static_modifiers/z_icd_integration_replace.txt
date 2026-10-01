@@ -25,6 +25,6 @@ REPLACE:integration_core = {
 	local_max_control = 0.20
 	growth_is_primary_culture = no
 	owner_gets_vision_when_occupied = yes
-	local_tribal_promotion = 0.05
+	local_tribal_promotion = 0.01
 }
 

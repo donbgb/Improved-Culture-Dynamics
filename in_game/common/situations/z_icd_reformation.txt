@@ -5,8 +5,26 @@
 		current_year >= 1517
 	}
 	
-	can_end = {
-		reformation_end_trigger = yes
+	outcome = {
+		name = "reformation_confessional_settlement"
+		trigger = {
+			AND = {
+				situation:council_of_trent = {
+					situation_is_active = no
+					situation_has_ended = yes
+				}
+				situation:war_of_religions = {
+					situation_is_active = no
+					situation_has_ended = yes
+				}
+			}
+		}
+	}
+	outcome = {
+		name = "reformation_confessional_age_passes"
+		trigger = {
+			current_year >= 1700
+		}
 	}
 	
 	visible = {

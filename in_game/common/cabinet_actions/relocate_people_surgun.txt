@@ -94,16 +94,10 @@
 				to = scope:target_destination.province_definition
 				culture = scope:target
 				amount = {
-					value = 0.100
-					multiply = {
-						value = 1
-						if = {
-							limit = {
-								exists = scope:cabinet
-							}
-							add = "scope:cabinet.effective_skill"
-						}
-					}
+					value = scope:target_origin.population
+					multiply = 0.001
+					min = 0.001
+					max = 0.25
 				}
 				months = -1
 			}

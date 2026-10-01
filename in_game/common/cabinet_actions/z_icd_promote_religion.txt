@@ -2,10 +2,12 @@
 	ability = mil
 	
 	allow_multiple = yes
+	require_matching_character_religion = yes									  
 	
 	potential = {
 		num_locations > 0
 		has_game_rule = icd_religious_conversion_vanilla
+		NOT = { modifier:enable_religious_courts = yes }
 	}
 	
 	allow = {
@@ -78,7 +80,7 @@
 			any_location_in_province = {
 				OR = {
 					NOT = { dominant_religion = owner.religion }
-					local_religious_unity < 1.0
+					local_religious_unity < 0.95
 				}
 			}
 			NOT = { cabinet_already_performing_same_task_on_target = { cabinet_action = promote_religion interaction_target = target_province } }
@@ -94,7 +96,7 @@
 
 	is_finished = {
 		scope:target_province = {
-			"religion_percentage(scope:target_religion)" = 1.0
+			"religion_percentage(scope:target_religion)" >= 0.95
 		}
 	}
 

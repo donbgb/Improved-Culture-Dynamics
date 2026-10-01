@@ -5,6 +5,8 @@
 	}
 
 	allow = {
+		scope:actor = {
+			in_civil_war = no
 		trigger_if = {
 			limit = {
 				exists = scope:target
@@ -177,6 +179,7 @@
 					exists = scope:target
 				}
 				add_accepted_culture = scope:target
+				grant_culture_bonus_advances = scope:target							   
 			}
 		}
 	}
