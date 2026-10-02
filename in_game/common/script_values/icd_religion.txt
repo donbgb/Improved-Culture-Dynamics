@@ -12,9 +12,23 @@ icd_num_provinces_for_conversion = {
 		}
 		value = num_provinces
 		divide = 5
+		if = {
+			limit = {
+				is_subject = no
+			}
+			add = 3
+		}
 		add = 3
 		max = 25
-		round_to = 1
+		if = {
+			limit = {
+				OR = {
+					is_subject = no
+					is_ai = no
+				}
+			}
+			round_to = 1
+		}
 		if = {
 			limit = {
 				is_leader_of_international_organization = international_organization:hre

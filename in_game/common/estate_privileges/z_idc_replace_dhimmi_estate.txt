@@ -84,7 +84,7 @@ REPLACE:dhimmi_promote_tolerance = {
 		dhimmi_estate_target_satisfaction = small_privilege_target_satisfaction
 		tolerance_heathen = 0.5
 		monthly_towards_humanist = societal_value_minor_monthly_move
-		global_dhimmi_estate_power = 0.05
+		global_dhimmi_estate_power = 0.5
 	}
 
 	allow = {

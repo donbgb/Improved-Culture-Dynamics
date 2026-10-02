@@ -7,15 +7,16 @@
 	allow = {
 		scope:actor = {
 			in_civil_war = no
-		trigger_if = {
-			limit = {
-				exists = scope:target
-				exists = scope:actor
-			}
-			scope:actor = {
-				culture_population_in_country = {
-					culture = scope:target
-					value > 0
+			trigger_if = {
+				limit = {
+					exists = scope:target
+					exists = scope:actor
+				}
+				scope:actor = {
+					culture_population_in_country = {
+						culture = scope:target
+						value > 0
+					}
 				}
 			}
 		}
