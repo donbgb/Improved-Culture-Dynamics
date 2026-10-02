@@ -38,36 +38,7 @@
 			}
 			custom_tooltip = {
 				text = icd_convert_province_actions_tt
-				icd_num_provinces_for_conversion > 0
-			}
-		}
-		hidden_trigger = {
-			scope:actor = {
-				OR = {
-					is_ai = no
-					is_colonial_subject = yes
-					AND = {
-						is_subject = no
-						NOT = { has_variable = icd_enforced_religion }
-					}
-					AND = {
-						is_subject_type = fiefdom
-						"religion_percentage_in_country(scope:actor.religion)" > 0.3
-					}
-					AND = {
-						is_subject_type = dominion
-						"religion_percentage_in_country(scope:actor.religion)" > 0.3
-					}
-					AND = {
-						is_subject_type = appanage
-						"religion_percentage_in_country(scope:actor.religion)" > 0.3
-					}
-					AND = {
-						has_variable = icd_enforced_religion
-						religion = var:icd_enforced_religion
-						"religion_percentage_in_country(scope:actor.religion)" > 0.3
-					}
-				}
+				icd_num_provinces_for_conversion >= 1
 			}
 		}
 	}
