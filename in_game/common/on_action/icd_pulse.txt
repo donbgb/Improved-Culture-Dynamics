@@ -29,7 +29,7 @@ four_yearly_country_pulse = {
 	
 	on_actions = {
 		icd_four_yearly_conversions
-		icd_morisco_event
+		icd_four_year_minority
 		icd_random_four_yearly
 	}
 }
@@ -46,12 +46,9 @@ icd_four_yearly_conversions = {
 	}
 }
 
-icd_morisco_event = {
+icd_four_year_minority = {
 	
 	events = {
-		icd_minority_events.10
-		icd_minority_events.9
-		icd_minority_events.5
 		icd_minority_events.8
 		icd_reformation_push.4
 	}

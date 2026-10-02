@@ -37,3 +37,17 @@ icd_acceptance = {
 	cultures_capacity = 0.5
 }
 
+icd_assimilation = {
+	type = country
+	
+	potential_trigger = {
+		always = yes
+	}
+	
+	hide_effects = yes
+	alert = no
+	requires_real = no
+	
+	global_pop_assimilation_speed = 0.001
+}
+

@@ -1,0 +1,247 @@
+﻿icd_eng_act_of_supremacy = {
+	decision_category = country_specific_decisions
+	historical_info = flavor_eng.7.historical_info
+	only_once = yes
+
+	tags = { ENG GBR }
+
+	potential = {
+		religion = religion:catholic
+		religion:lutheran = { is_religion_enabled = yes }
+		situation:reformation = {
+			situation_is_active = yes
+		}
+	}
+
+	allow = {
+		OR = {
+			ruler ?= {
+				is_female = no
+				is_married = yes
+				any_child = {
+					is_female = no
+					is_alive = yes
+					count < 1
+				}
+				age_in_years > 25
+			}
+			ruler ?= {
+				has_character_modifier = excommunicated
+			}
+			c:PAP = {
+				is_rival_of = root
+			}
+		}
+		c:PAP ?= {	religion = religion:catholic }
+	}
+
+	ai_will_do = {
+		value = 500
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		
+		if = { 
+			limit = {
+				ruler ?= {
+					is_female = no
+					is_married = yes
+					any_child = {
+						is_female = no
+						is_alive = yes
+						count < 1
+					}
+					age_in_years > 25
+				}
+			}
+			create_character = {
+				first_name = name_anna
+				adm = 20
+				dip = 60
+				mil = 10
+				fertility = 25
+				female = yes
+				dynasty = dynasty:boleyn_dynasty
+				estate = estate_type:nobles_estate
+				religion = religion:anglican
+				age = 18
+				birth_location = location:rochester
+				save_scope_as = anne_boleyn
+				script = eng_anne_boleyn
+			}
+
+			ruler.first_spouse = {
+				save_scope_as = current_wife
+			}
+		}
+
+		capital = {
+			save_scope_as = target_location
+		}
+
+		root = { save_scope_as = target_root_country }
+
+		character:eng_thomas_wolsey ?= {
+			save_scope_as = thomas_wolsey
+		}
+	}
+
+	option = {
+		name = flavor_eng.7.a
+		ai_chance = { value = 100 }
+		effect = {
+			hidden_effect = {
+				
+			}
+			
+			if = { 
+				limit = {
+					ruler ?= {
+						is_female = no
+						is_married = yes
+						any_child = {
+							is_female = no
+							is_alive = yes
+							count < 1
+						}
+						age_in_years > 25
+					}
+				}
+			custom_tooltip = flavor_eng.7.tt1
+			}
+
+			religion:anglican = {
+				enable_religion = yes
+			}
+
+			custom_tooltip = {
+				text = flavor_eng.7.a.tooltip
+				ordered_owned_location = {
+					order_by = population
+					max = {
+						value = 1
+						add = {
+							value = num_provinces
+							multiply = 0.2
+						}
+					}
+					every_pop = {
+						limit = {
+							religion = religion:catholic
+						}
+						split_pop = {
+							fraction = 0.20
+							religion = religion:anglican
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				capital.area = {
+					every_location_in_area = {
+						every_pop = {
+							limit = {
+								culture = root.culture
+								religion = religion:catholic 
+								owner ?= root
+							}
+							split_pop = {
+								fraction = 0.7
+								religion = religion:anglican
+							}
+						}
+					}
+				}
+				every_owned_location = {
+					limit = { local_control > 0.5 }
+					every_pop = {
+						limit = {
+							culture = root.culture
+							religion = religion:catholic 
+							owner ?= root
+						}
+						split_pop = {
+							fraction = 0.1
+							religion = religion:anglican
+						}
+					}
+				}
+				every_pop = {
+					limit = {
+						religion = religion:catholic
+						pop_type = pop_type:clergy
+						culture = root.culture
+						pop_satisfaction > 0.65
+					}
+					change_pop_religion = religion:catholic
+				}
+			}
+
+			change_religion = religion:anglican
+			change_religion_for_ruler_and_family = { country = ROOT religion = religion:anglican }
+
+			add_stability = stability_extreme_penalty
+			if = { 
+				limit = {
+					ruler ?= {
+						is_female = no
+						is_married = yes
+						any_child = {
+							is_female = no
+							is_alive = yes
+							count < 1
+						}
+						age_in_years > 25
+					}
+				}
+				ruler ?= {
+					divorce_character = scope:current_wife
+					marry_character = scope:anne_boleyn
+					change_character_religion = religion:anglican
+					if = {
+						limit = {
+							has_character_modifier = enacted_placitum_regium
+						}
+						remove_character_modifier = enacted_placitum_regium 
+					}
+				}
+				custom_tooltip = flavor_eng.7.tt2
+			}
+
+			hidden_effect = {
+				if = {
+					limit = { is_member_of_international_organization_of_type = { type = union } }
+					union = {
+						every_international_organization_member = {
+							limit = { NOT = { this = root } }
+							trigger_event_non_silently = { id = flavor_eng.250 }
+						}
+					}
+				}
+				
+				while = {
+					count = {
+						value = num_characters
+						divide = 2
+					}
+					random_character = {
+						limit = {
+							religion = religion:catholic
+						}
+						change_character_religion = religion:anglican
+					}
+				}
+			}
+
+			add_estate_satisfaction = { type = estate_type:nobles_estate
+				value = estate_satisfaction_mild_penalty
+			}
+		}
+	}
+}

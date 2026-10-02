@@ -1,4 +1,4 @@
-﻿enforce_culture = {
+﻿REPLACE:enforce_culture = {
 
 	type = subject
 	category = CATEGORY_SUBJECT_ACTIONS

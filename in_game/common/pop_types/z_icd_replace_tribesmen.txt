@@ -3,6 +3,7 @@ REPLACE:tribesmen = {
 	color = pop_tribes
 	
 	promote_to = peasants
+	power_per_pop = 0.10
 	promote_to = soldiers
 	
 	pop_food_consumption = 0.0
@@ -13,6 +14,7 @@ REPLACE:tribesmen = {
 	
 	assimilation_conversion_factor = 0.05
 	
+	migration_factor = 0.1				   
 	pop_percentage_impact = {
 		local_crown_estate_power = -0.03
 		local_integration_speed_modifier = -0.005

@@ -1,0 +1,133 @@
+﻿cossack_culture_movement = {
+	culture = cossack_culture
+
+	potential = {
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = cossack_culture_movement_allow_tt
+			always = no
+		}
+	}
+
+	monthly_spawn_chance = {
+		value = 0
+	}
+	
+	spawn = {
+		
+	}
+
+	#what's done by spreaders
+	environmental_infection = {
+		value = 0.2
+	}
+
+	required_cultures = { mongolian_culture oirat_culture }
+	
+	calc_interval_days = 90
+
+	required_languages = { east_slavic_language ruthenian_language }
+	
+
+	r0 = { 
+		value = { 0.0 0.02 }
+		if = {
+			limit = {
+				region != region:steppes_region
+				area = area:kursk_area
+			}
+			multiply = 0
+		}
+		if = {
+			limit = {
+				NOT = { location_rank = location_rank:rural_settlement }
+			}
+			multiply = 0
+		}
+		if = {
+			limit = {
+				local_control > 0.7
+			}
+			multiply = 0
+		}
+	}
+
+	calc_interval_days = 30
+
+	development = negative
+	literacy = negative
+	local_control = negative
+
+	on_spread_to_country = {
+	}
+	
+	specific_pop_type_effect = {
+		pop_type = slaves
+		multiplier = 0
+	}
+	specific_pop_type_effect = {
+		pop_type = burghers
+		multiplier = 0
+	}
+	specific_pop_type_effect = {
+		pop_type = clergy
+		multiplier = 0
+	}
+	specific_pop_type_effect = {
+		pop_type = nobles
+		multiplier = 0
+	}
+	specific_pop_type_effect = {
+		pop_type = laborers
+		multiplier = 0
+	}
+	specific_pop_type_effect = {
+		pop_type = soldiers
+		multiplier = 0
+	}
+	
+	location_stagnation_chance = {
+	}
+	
+	on_calc_effect ={
+		if = {
+			limit = {
+				current_year < 1550
+			}
+			every_location_with_movement = {
+				limit = {
+					region = region:steppes_region
+					area != area:kursk_area
+					location_rank = location_rank:rural_settlement
+				}
+				every_pop = {
+					limit = {
+						culture = culture:cossack_culture
+						pop_type = pop_type:peasants
+					}
+					change_pop_type = pop_type:tribesmen
+				}
+			}
+		}
+	}
+
+	map_color = {
+		if = {
+			limit = {
+				"culture_percentage(culture:cossack_culture)" > 0.01
+				region = region:steppes_region
+				area != area:kursk_area
+			}
+			value = map_cossack
+		}
+	}
+	
+	location_spread_threshold = {
+		value = 0.1 # % of the people need to be infected to spread to neighbors
+	}
+	
+	
+
+}

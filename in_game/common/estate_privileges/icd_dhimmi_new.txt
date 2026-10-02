@@ -61,7 +61,7 @@ icd_dhimmi_communities_protection = {
 	
 	country_modifier = {
 		dhimmi_estate_target_satisfaction = small_privilege_target_satisfaction
-		global_dhimmi_estate_power = 1
+		global_dhimmi_estate_power = 0.05
 	}
 	
 }

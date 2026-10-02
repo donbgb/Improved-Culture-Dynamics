@@ -1,5 +1,268 @@
 ﻿namespace = flavor_cas
 
+flavor_cas.1002 = { #Conversion of the mudejares
+	hide_portraits = yes
+	fire_only_once = yes
+	title = flavor_cas.1002.title
+	desc = flavor_cas.1002.desc
+	outcome = neutral
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = CAS
+		from = 1400.1.1
+		to = 1540.1.1
+		monthly_chance = 50
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_peasants_foreign_religion_pop_type_effect = yes
+
+		ruler = {
+			save_scope_as = target_character
+		}
+		region:maghreb_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					dominant_religion ?= religion:sunni
+					is_coastal = yes
+					is_discovered_by = root
+				}
+				save_scope_as = escape_target1
+			}
+		}
+		region:maghreb_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					dominant_religion ?= religion:sunni
+					is_coastal = yes
+					is_discovered_by = root
+				}
+				save_scope_as = escape_target2
+			}
+		}
+		region:maghreb_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					dominant_religion ?= religion:sunni
+					is_coastal = yes
+					is_discovered_by = root
+				}
+				save_scope_as = escape_target3
+			}
+		}
+		region:maghreb_region = {
+			random_location_in_region = {
+				limit = {
+					has_owner = yes
+					owner != root
+					dominant_religion ?= religion:sunni
+					is_coastal = yes
+					is_discovered_by = root
+				}
+				save_scope_as = escape_target4
+			}
+		}
+	}
+
+	trigger = {
+		has_ruler = yes
+		religion = religion:catholic
+		custom_tooltip = {
+			text = variable_tt_spa_holy_inquisition
+			has_variable = spa_holy_inquisition
+		}
+		own_entire_area = area:granada_area
+		own_entire_area = area:andalusia_area
+	}
+
+	option = {
+		name = flavor_cas.1002.a
+		historical_option = yes
+
+		custom_tooltip = flavor_cas.1002.tt1
+		hidden_effect = {
+			every_owned_location = {
+				every_pop = {
+					limit = {
+						owner = root
+						religion = religion:sunni
+					}
+					split_pop = {
+						fraction = 0.75
+						religion = religion:catholic
+					}
+				}
+
+				if = {
+					limit = {
+						has_dlc = "d009_across_the_pillars"
+						"religion_population(religion:sunni)" > 0
+					}
+					add_location_modifier = {
+						modifier = crypto_muslim_community
+						years = crypto_community_duration
+						mode = add
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_dlc = "d009_across_the_pillars"
+				}
+				set_variable = d009_morisco_conversion_occurred
+			}
+
+			every_province = {
+				limit = {
+					religion_percentage = {
+						religion = religion:sunni
+						value > 0
+					}
+				}
+				add_migration = {
+					owner = prev
+					from = this.province_definition
+					to = scope:escape_target1.province_definition
+					religion = religion:sunni
+					amount = 0.200
+					months = 60
+				}
+				add_migration = {
+					owner = prev
+					from = this.province_definition
+					to = scope:escape_target2.province_definition
+					religion = religion:sunni
+					amount = 0.200
+					months = 60
+				}
+				add_migration = {
+					owner = prev
+					from = this.province_definition
+					to = scope:escape_target3.province_definition
+					religion = religion:sunni
+					amount = 0.200
+					months = 60
+				}
+				add_migration = {
+					owner = prev
+					from = this.province_definition
+					to = scope:escape_target4.province_definition
+					religion = religion:sunni
+					amount = 0.200
+					months = 60
+				}
+			}
+		}
+		set_variable = converted_moriscos
+		trigger_event_silently = {
+			id = flavor_cas.1003
+			years = { 2 10 }
+		}
+	}
+
+	option = {
+		name = flavor_cas.1002.b
+
+		change_societal_value = { type = traditionalist_vs_innovative value = societal_value_move_to_right }
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_severe_penalty }
+		add_stability = stability_severe_penalty
+	}
+}
+
+flavor_cas.1004 = { #War of the Alpujarras
+	hide_portraits = yes
+	type = country_event
+	title = flavor_cas.1004.title
+	desc = flavor_cas.1004.desc
+	outcome = neutral
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = CAS
+		from = 1500.1.1
+		to = 1640.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+	event_illustration_poptype_effect = { foreground = pop_type:soldiers background = pop_type:soldiers }
+		if = {
+			limit = {
+				NOT = {
+					any_rebel = {
+						rebel_name_key = alpujarras_rebels
+					}
+				}
+			}
+			create_rebel = {
+				category = nationalist
+				name = alpujarras_rebels
+				save_scope_as = alpujarras_rebels
+				culture = culture:andalusi
+			}
+		}
+		else = {
+			scope:alpujarras_rebels = {
+			add_rebel_progress = 0.5
+			}
+		}
+	}
+
+	trigger = {
+		religion = religion:catholic
+		own_entire_area = area:granada_area
+		own_entire_area = area:andalusia_area
+		custom_tooltip = {
+			text = variable_tt_converted_moriscos
+			has_variable = converted_moriscos
+		}
+	}
+
+	option = {
+		name = flavor_cas.1004.a
+
+		add_stability = stability_extreme_penalty
+		custom_tooltip = {
+			text = alpujarras_rebels_joining
+			every_owned_location = {
+				limit = {
+					OR = {
+						area = area:granada_area
+						area = area:andalusia_area
+					}
+				}
+				every_pop = {
+					limit = {
+						owner = root
+						culture = culture:andalusi
+					}
+					add_pop_satisfaction = pop_satisfaction_ultimate_penalty
+					change_pop_allegiance = scope:alpujarras_rebels
+				}
+			}
+		}
+		set_variable = icd_alpujarras
+	}
+}
+
 flavor_cas.1005 = { #Expulsion of the Moriscos
 	hide_portraits = yes
 	fire_only_once = yes
@@ -79,6 +342,7 @@ flavor_cas.1005 = { #Expulsion of the Moriscos
 		}
 		own_entire_area = area:granada_area
 		own_entire_area = area:andalusia_area
+		always = no
 	}
 
 	option = {

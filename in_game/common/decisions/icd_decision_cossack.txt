@@ -1,0 +1,220 @@
+﻿
+icd_settle_cossacks = { 
+	decision_category = expansion_decisions
+
+	potential = {
+		religion.group = religion_group:christian
+		NOT = { culture = { has_culture_group = culture_group:turkic_group } }
+		any_owned_location = {
+			region = region:steppes_region
+			dominant_culture = { has_culture_group = culture_group:turkic_group }
+		}
+		any_owned_location = {
+			dominant_culture = { has_culture_group = culture_group:russian_group }
+		}
+		OR = {
+			capital.region = region:ruthenia_region
+			capital.region = region:steppes_region
+			capital.region = region:russian_region
+			capital.region = region:baltic_region
+		}
+		NOT = { has_variable = icd_steppe_settled }
+	}
+
+	allow = {
+		current_year > 1380
+	}
+
+	ai_will_do = {
+		value = 500
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	illustration_scope = {
+		event_illustration_poptype_effect = { foreground = pop_type:peasants background = pop_type:soldiers }
+		
+		ordered_province = {
+			limit = {
+				region != region:steppes_region
+				dominant_culture = { has_culture_group = culture_group:russian_group }
+			}
+			order_by = "culture_group_population(culture_group:russian_group)"
+			max = 1
+			save_scope_as = target_steppe_one
+		}
+		ordered_province = {
+			limit = {
+				region != region:steppes_region
+				dominant_culture = { has_culture_group = culture_group:russian_group }
+				this != scope:target_steppe_one
+			}
+			order_by = "culture_group_population(culture_group:russian_group)"
+			max = 1
+			save_scope_as = target_steppe_two
+		}
+		ordered_province = {
+			limit = {
+				region != region:steppes_region
+				dominant_culture = { has_culture_group = culture_group:russian_group }
+				this != scope:target_steppe_one
+				this != scope:target_steppe_two
+			}
+			order_by = "culture_group_population(culture_group:russian_group)"
+			max = 1
+			save_scope_as = target_steppe_three
+		}
+		ordered_province = {
+			limit = {
+				region != region:steppes_region
+				dominant_culture = { has_culture_group = culture_group:russian_group }
+				this != scope:target_steppe_one
+				this != scope:target_steppe_two
+				this != scope:target_steppe_three
+			}
+			order_by = "culture_group_population(culture_group:russian_group)"
+			max = 1
+			save_scope_as = target_steppe_four
+		}
+		ordered_province = {
+			limit = {
+				region != region:steppes_region
+				dominant_culture = { has_culture_group = culture_group:russian_group }
+				this != scope:target_steppe_one
+				this != scope:target_steppe_two
+				this != scope:target_steppe_three
+				this != scope:target_steppe_four
+			}
+			order_by = "culture_group_population(culture_group:russian_group)"
+			max = 1
+			save_scope_as = target_steppe_five
+		}
+	}
+
+	option = {
+		name = icd_settle_cossacks.a
+		ai_chance = { value = 100 }
+		effect = {
+			custom_tooltip = {
+				text = icd_settle_cossacks_tt
+				set_variable = {
+					name = icd_steppe_settled
+					months = 60
+				}
+				every_province = {
+					limit = {
+						region = region:steppes_region
+						dominant_culture = { has_culture_group = culture_group:turkic_group }
+					}
+					every_pop = {
+						limit = {
+							culture = { has_culture_group = culture_group:turkic_group }
+							OR = {
+								pop_type = pop_type:peasants
+								pop_type = pop_type:tribesmen
+							}
+						}
+						split_pop = {
+							fraction = { 0.01 0.08 }
+							religion = religion:orthodox
+							culture = culture:cossack_culture
+						}
+					}
+					add_migration = {
+						owner = root
+						from = scope:target_steppe_one.province_definition
+						to = this.province_definition
+						type = pop_type:peasants
+						amount = {
+							value = "this.culture_group_population(culture_group:turkic_group)"
+							divide = 1.5
+							divide = 5
+							divide = 60
+							max = {
+								value = "scope:target_steppe_one.culture_group_population(culture_group:russian_group)"
+								divide = 2
+								divide = 60
+							}
+						}
+						months = 60
+					}
+					add_migration = {
+						owner = root
+						from = scope:target_steppe_two.province_definition
+						to = this.province_definition
+						type = pop_type:peasants
+						amount = {
+							value = "this.culture_group_population(culture_group:turkic_group)"
+							divide = 1.5
+							divide = 5
+							divide = 60
+							max = {
+								value = "scope:target_steppe_two.culture_group_population(culture_group:russian_group)"
+								divide = 2
+								divide = 60
+							}
+						}
+						months = 60
+					}
+					add_migration = {
+						owner = root
+						from = scope:target_steppe_three.province_definition
+						to = this.province_definition
+						type = pop_type:peasants
+						amount = {
+							value = "this.culture_group_population(culture_group:turkic_group)"
+							divide = 1.5
+							divide = 5
+							divide = 60
+							max = {
+								value = "scope:target_steppe_three.culture_group_population(culture_group:russian_group)"
+								divide = 2
+								divide = 60
+							}
+						}
+						months = 60
+					}
+					add_migration = {
+						owner = root
+						from = scope:target_steppe_four.province_definition
+						to = this.province_definition
+						type = pop_type:peasants
+						amount = {
+							value = "this.culture_group_population(culture_group:turkic_group)"
+							divide = 1.5
+							divide = 5
+							divide = 60
+							max = {
+								value = "scope:target_steppe_four.culture_group_population(culture_group:russian_group)"
+								divide = 2
+								divide = 60
+							}
+						}
+						months = 60
+					}
+					add_migration = {
+						owner = root
+						from = scope:target_steppe_five.province_definition
+						to = this.province_definition
+						type = pop_type:peasants
+						amount = {
+							value = "this.culture_group_population(culture_group:turkic_group)"
+							divide = 1.5
+							divide = 5
+							divide = 60
+							max = {
+								value = "scope:target_steppe_five.culture_group_population(culture_group:russian_group)"
+								divide = 2
+								divide = 60
+							}
+						}
+						months = 60
+					}
+				}
+			}
+		}
+	}
+}

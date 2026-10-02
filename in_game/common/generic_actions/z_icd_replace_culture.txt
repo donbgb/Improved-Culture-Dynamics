@@ -5,15 +5,18 @@
 	}
 
 	allow = {
-		trigger_if = {
-			limit = {
-				exists = scope:target
-				exists = scope:actor
-			}
-			scope:actor = {
-				culture_population_in_country = {
-					culture = scope:target
-					value > 0
+		scope:actor = {
+			in_civil_war = no
+			trigger_if = {
+				limit = {
+					exists = scope:target
+					exists = scope:actor
+				}
+				scope:actor = {
+					culture_population_in_country = {
+						culture = scope:target
+						value > 0
+					}
 				}
 			}
 		}
@@ -177,6 +180,7 @@
 					exists = scope:target
 				}
 				add_accepted_culture = scope:target
+				grant_culture_bonus_advances = scope:target							   
 			}
 		}
 	}

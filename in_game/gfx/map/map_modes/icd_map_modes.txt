@@ -755,11 +755,7 @@ icd_conversion_map = {
 		}
 	
 	}
-	
-	legend_key = {
-		desc = "icd_culture_assimilation_mode_orange"
-		color = black
-	}
+
 	
 	small_map_names = location
 	medium_map_names = country
@@ -918,10 +914,6 @@ icd_communal_conversion_map = {
 	
 	}
 	
-	legend_key = {
-		desc = "icd_culture_assimilation_mode_orange"
-		color = black
-	}
 	
 	small_map_names = location
 	medium_map_names = country
@@ -1060,11 +1052,6 @@ icd_voluntary_conversion_map = {
 			value = icd_voluntary_conversion_map_tt
 		}
 	
-	}
-	
-	legend_key = {
-		desc = "icd_culture_assimilation_mode_orange"
-		color = black
 	}
 	
 	small_map_names = location

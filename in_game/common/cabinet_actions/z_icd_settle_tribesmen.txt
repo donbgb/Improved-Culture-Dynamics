@@ -9,7 +9,20 @@
 			government_type = government_type:steppe_horde
 		}
 	}
-	
+	allow = {
+		trigger_if = {
+			limit = {
+				has_reform = government_reform:tle_support_of_banu_al_wad
+			}
+			NOT = { has_reform = government_reform:tle_support_of_banu_al_wad } # When removing, make sure to update pure_tooltip_entry = disables_tribal_cabinet_action in the gov reform
+		}
+		trigger_if = {
+			limit = {
+				has_estate_privilege = estate_privilege:tun_arab_bedouins
+			}
+			NOT = { has_estate_privilege = estate_privilege:tun_arab_bedouins } # When removing, make sure to update pure_tooltip_entry = disables_tribal_cabinet_action in the privilege
+		}
+	}
 
 
 	allow_multiple = yes

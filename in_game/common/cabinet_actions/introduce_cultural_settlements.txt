@@ -163,16 +163,10 @@
 				culture = scope:target
 				type = scope:target_pop
 				amount = {
-					value = 0.250
-					multiply = {
-						value = 1
-						if = {
-							limit = {
-								exists = scope:cabinet
-							}
-							add = "scope:cabinet.effective_skill"
-						}
-					}
+					value = "scope:target_origin.culture_population(scope:target)"
+					multiply = 0.01
+					min = 0.001
+					max = 0.25
 				}
 				months = -1
 			}

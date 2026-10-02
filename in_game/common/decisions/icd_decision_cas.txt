@@ -1,0 +1,242 @@
+﻿
+icd_cas_the_moriscos = { ###just the moriscos!##
+	decision_category = country_specific_decisions
+	tags = { CAS POR ARA SPA }
+
+	potential = {
+		religion.group = religion_group:christian
+		NOT = { culture = culture:andalusi }
+		any_owned_location = {
+			OR = {
+				culture_percentage = {
+					culture = culture:andalusi
+					value > 0.005
+				}
+				religion_percentage = {
+					religion = religion:sunni
+					value > 0.005
+				}
+			}
+			region = region:iberia_region
+		}
+		NOT = { has_variable = icd_no_andalusi_deportation }
+	}
+
+	allow = {
+		OR = {
+			custom_tooltip = {
+				text = icd_alpujarras_tt
+				has_variable = icd_alpujarras
+			}
+			current_year > 1560
+			any_neighbor_country = {
+				culture = { has_culture_group = culture_group:iberian_group }
+				custom_tooltip = {
+					text = icd_no_moriscos_none_tt
+					has_variable = icd_no_moriscos_none
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		value = 500
+	}
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
+		
+		icd_morisco_expel = yes
+	}
+
+	option = {
+		name = icd_minority_events.10.a
+		ai_chance = { value = 100 }
+		effect = {
+			custom_tooltip = flavor_cas.1005.tt1
+			hidden_effect = {
+				set_variable = {
+					name = icd_no_andalusi_deportation
+					months = 30
+				}
+			}
+			hidden_effect = {
+				every_owned_location = {
+					limit = { region = region:iberia_region }
+					every_pop = {
+						limit = {
+							owner ?= root
+							OR = {
+								culture = culture:andalusi
+								religion = religion:sunni
+							}
+						}
+						change_pop_religion = religion:sunni
+						split_pop = {
+							fraction = 0.3
+							culture = root.culture
+							religion = root.religion
+						}
+						add_pop_satisfaction = pop_satisfaction_ultimate_penalty
+					}
+				}
+				every_province = {
+					limit = {
+						culture_percentage = {
+							culture = culture:andalusi
+							value > 0
+						}
+						region = region:iberia_region
+					}
+					add_migration = {
+						owner = prev
+						from = this.province_definition
+						to = scope:escape_target1.province_definition
+						culture = culture:andalusi
+						amount = {
+							value = "this.culture_population(culture:andalusi)"
+							divide = 2
+							divide = 4
+							divide = 30
+							min = 0.02
+						}
+						months = 30
+					}
+					add_migration = {
+						owner = prev
+						from = this.province_definition
+						to = scope:escape_target2.province_definition
+						culture = culture:andalusi
+						amount = {
+							value = "this.culture_population(culture:andalusi)"
+							divide = 2
+							divide = 4
+							divide = 30
+							min = 0.02
+						}
+						months = 30
+					}
+					add_migration = {
+						owner = prev
+						from = this.province_definition
+						to = scope:escape_target3.province_definition
+						culture = culture:andalusi
+						amount = {
+							value = "this.culture_population(culture:andalusi)"
+							divide = 2
+							divide = 4
+							divide = 30
+							min = 0.02
+						}
+						months = 30
+					}
+					add_migration = {
+						owner = prev
+						from = this.province_definition
+						to = scope:escape_target4.province_definition
+						culture = culture:andalusi
+						amount = {
+							value = "this.culture_population(culture:andalusi)"
+							divide = 2
+							divide = 4
+							divide = 30
+							min = 0.02
+						}
+						months = 30
+					}
+				}
+				every_province = {
+					limit = {
+						religion_percentage = {
+							religion = religion:sunni
+							value > 0
+						}
+						region = region:iberia_region
+					}
+					add_migration = {
+						owner = prev
+						from = this.province_definition
+						to = scope:escape_target1.province_definition
+						religion = religion:sunni
+						amount = {
+							value = "this.religion_population(religion:sunni)"
+							divide = 2
+							divide = 4
+							divide = 30
+							min = 0.02
+						}
+						months = 30
+					}
+					add_migration = {
+						owner = prev
+						from = this.province_definition
+						to = scope:escape_target2.province_definition
+						religion = religion:sunni
+						amount = {
+							value = "this.religion_population(religion:sunni)"
+							divide = 2
+							divide = 4
+							divide = 30
+							min = 0.02
+						}
+						months = 30
+					}
+					add_migration = {
+						owner = prev
+						from = this.province_definition
+						to = scope:escape_target3.province_definition
+						religion = religion:sunni
+						amount = {
+							value = "this.religion_population(religion:sunni)"
+							divide = 2
+							divide = 4
+							divide = 30
+							min = 0.02
+						}
+						months = 30
+					}
+					add_migration = {
+						owner = prev
+						from = this.province_definition
+						to = scope:escape_target4.province_definition
+						religion = religion:sunni
+						amount = {
+							value = "this.religion_population(religion:sunni)"
+							divide = 2
+							divide = 4
+							divide = 30
+							min = 0.02
+						}
+						months = 30
+					}
+				}
+			}
+		}
+	}
+	
+	
+	option = {
+		name = icd_minority_events.10.b
+		ai_chance = { value = -10 }
+		
+		trigger = {
+			NOT = {
+				has_variable = icd_no_moriscos_none
+			}
+		}
+		effect = {
+			add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_extreme_penalty }
+			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
+			remove_variable = spa_holy_inquisition
+			lock_policy_effect = { type = spa_inquisition_policy }
+			add_stability = stability_ultimate_penalty
+			
+			set_variable = icd_no_andalusi_deportation
+		}
+	}
+}

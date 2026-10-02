@@ -73,8 +73,9 @@
 		potential = {
 			culture = { has_culture_group = culture_group:iberian_group }
 			custom_tooltip = {
-				text = icd_moriscos_banned_tt
+				text = icd_mudejares_converted_tt
 				NOT = {
+					has_variable = converted_moriscos
 					has_variable = icd_no_moriscos_none
 				}
 			}
