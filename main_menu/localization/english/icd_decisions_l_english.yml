@@ -1,0 +1,20 @@
+﻿l_english:
+ icd_eng_act_of_supremacy.title: "The Act of Supremacy"
+ icd_eng_act_of_supremacy.desc: "The [GetCountry('PAP').GetGovernment.GetRulerTitle]'s stance on a great number of issues clearly no longer aligns with the interests of our Crown and ruler. Be it on the topic of divorce and remarriage, or on other interests, many in our society have come to see the Church as an enemy and no longer representative of true Christianity. The eager [ROOT.GetCountry.GetGovernment.GetRulerTitle] has begun to consider drastic steps to solve this conundrum, including a complete break from [GetCountry('PAP').GetAdjective] authority."
+ icd_eng_act_of_supremacy.desc.entry: "$flavor_eng.7.title$"
+ 
+ icd_cas_the_moriscos.title: "Question of the Moriscos"
+ icd_cas_the_moriscos.desc: "Though many [ShowCultureNameWithNoTooltip('andalusi')] in our nation have converted to our faith, some of our advisors still suspect that they hold secret [ShowReligionGroupAdjective('muslim')] convictions and a potential loyalty to foreign states. Their insistence to continue using Arabic as a language and their unique identity are both seen as clear evidence of this. In order to ensure the integrity and security of our state, we could expel them as a solution. Or we could simply accept their existence."
+ icd_cas_the_moriscos.desc.entry: "The [ShowCultureNameWithNoTooltip('andalusi')] moriscos may have converted to our religion but their culture is too divergent from ours."
+ 
+ icd_settle_cossacks.title: "Settle the $steppes_region$"
+ icd_settle_cossacks.desc: "The $steppes_region$ is a land of open fertile plains, dominated by hostile nomadic groups, but it could easily be secured by our own people. We should be prepared though, as the lack of state control over the region will mean any of the incoming migrants will adopt a lifestyle built on lawlessness."
+ icd_settle_cossacks_tt: "Encourages [ShowCultureGroupName('russian_group')] [ShowPopTypeName('peasants')] to settle the $steppes_region$ for 60 months."
+ 
+ icd_alpujarras_tt: "The Rebellion of the Alpujarras has happened"
+ icd_no_moriscos_none_tt: "Expelled the [ShowCultureNameWithNoTooltip('andalusi')]"
+ 
+ icd_invite_the_jews.title: "Invite Jewish Settlement"
+ icd_invite_the_jews.desc: "The [ShowReligionAdjectiveWithNoTooltip('judaism')] communities in some of our neighbours have proven themselves to be economically and culturally valuable. Perhaps it is in our interest to invite a group of [ShowReligionAdjectiveWithNoTooltip('judaism')] families to our territory and provide them with legal protections, so they may contribute to our economy and society.
+ icd_invite_the_jews.entry: "Invite a small [ShowReligionAdjectiveWithNoTooltip('judaism')] community to our country and grant them legal protections."
+ icd_invite_the_jews_tt: "250 [ShowReligionAdjective('judaism')] [pops|e] will arrive in our capital and we will pass the [ShowPolicyName('icd_jewish_charter')] [policy|e]."

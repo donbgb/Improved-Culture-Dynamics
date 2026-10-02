@@ -23,6 +23,16 @@ icd_movements_setup = {
 		}
 	}
 	
+	location:berestyn = {
+		spawn_movement = {
+			movement_definition = movement_definition:cossack_culture_movement
+			supporters = {
+				value = population
+				multiply = 0.15
+			}
+		}
+	}
+	
 	location:sivas = {
 		spawn_movement = {
 			movement_definition = movement_definition:western_turkification_culture_movement

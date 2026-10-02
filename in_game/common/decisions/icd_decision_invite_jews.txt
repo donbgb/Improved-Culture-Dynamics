@@ -1,0 +1,109 @@
+﻿icd_invite_the_jews = {
+	decision_category = economy_decisions
+
+	potential = {
+		religion.group = religion_group:christian
+		capital.sub_continent = sub_continent:eastern_europe
+		"religion_percentage_in_country(religion:judaism)" = 0
+		NOT = {
+			has_variable = icd_jewish_banned
+		}
+	}
+
+	allow = {
+		#current_year > 1345#
+	}
+
+	ai_will_do = {
+		if = {
+			limit = {
+				OR = {
+					culture = { has_culture_group = culture_group:polish_group }
+					culture = { has_culture_group = culture_group:lithuanian_group }
+				}
+			}
+			value = 100
+		}
+		else = {
+			value = -20
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+        10 = exterior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = icd_minority_events.5.a
+		ai_chance = { 
+			if = {
+				limit = {
+					OR = {
+						culture = { has_culture_group = culture_group:polish_group }
+						culture = { has_culture_group = culture_group:lithuanian_group }
+					}
+				}
+				value = 100
+			}
+			else = {
+				value = -20
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = icd_invite_the_jews_tt
+				capital = {
+					add_pop = {
+						culture = culture:ashkenazi
+						religion = religion:judaism
+						type = pop_type:burghers
+						size = 0.25
+					}
+				}
+
+				sub_continent:western_europe = {
+					random_location_in_continent = {
+						limit = {
+							any_pop = {
+								pop_size > 0.25
+								religion = religion:judaism
+								culture = culture:ashkenazi
+							}
+							owner ?= {
+								is_ai = no
+							}
+						}
+						random_pop = {
+							limit = { religion = religion:judaism 
+								culture = culture:ashkenazi
+							}
+							add_pop_size = {
+								value = -0.25
+							}
+						}
+					}
+				}
+				
+				add_policy = policy:icd_jewish_charter				
+				set_variable = {
+					name = icd_jewish_permitted
+					years = 55
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = icd_minority_events.5.b
+		
+		set_variable = {
+			name = icd_jewish_banned
+			years = 55
+		}
+	}
+}

@@ -1,0 +1,466 @@
+﻿
+icd_morisco_expel = {
+	region:maghreb_region = {
+		random_location_in_region = {
+			limit = {
+				has_owner = yes
+				owner != root
+				dominant_religion.group ?= religion_group:muslim
+				is_coastal = yes
+				is_discovered_by = root
+			}
+			save_scope_as = escape_target1
+		}
+	}
+	region:maghreb_region = {
+		random_location_in_region = {
+			limit = {
+				has_owner = yes
+				owner != root
+				dominant_religion.group ?= religion_group:muslim
+				is_coastal = yes
+				is_discovered_by = root
+			}
+			save_scope_as = escape_target2
+		}
+	}
+	region:maghreb_region = {
+		random_location_in_region = {
+			limit = {
+				has_owner = yes
+				owner != root
+				dominant_religion.group ?= religion_group:muslim
+				is_coastal = yes
+				is_discovered_by = root
+			}
+			save_scope_as = escape_target3
+		}
+	}
+	region:maghreb_region = {
+		random_location_in_region = {
+			limit = {
+				has_owner = yes
+				owner != root
+				dominant_religion.group ?= religion_group:muslim
+				is_coastal = yes
+				is_discovered_by = root
+			}
+			save_scope_as = escape_target4
+		}
+	}
+	
+	if = {
+		limit = {
+			NOT = {
+				exists = scope:escape_target1
+			}
+		}
+		ordered_country_in_diplomatic_range = {
+			order_by = { # distance * (1 - integration)
+				value = "capital.distance_to(root.capital)"
+				multiply = {
+					value = -1
+				}
+			}
+			max = 1
+			limit = {
+				religion.group ?= religion_group:muslim
+				any_owned_location = {
+					is_coastal = yes
+				}
+			}
+			random_owned_location = {
+				save_scope_as = escape_target1
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = scope:escape_target2
+			}
+		}
+		ordered_country_in_diplomatic_range = {
+			order_by = { # distance * (1 - integration)
+				value = "capital.distance_to(root.capital)"
+				multiply = {
+					value = -1
+				}
+			}
+			max = 1
+			limit = {
+				religion.group ?= religion_group:muslim
+				any_owned_location = {
+					is_coastal = yes
+				}
+			}
+			random_owned_location = {
+				save_scope_as = escape_target2
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = scope:escape_target3
+			}
+		}
+		ordered_country_in_diplomatic_range = {
+			order_by = { # distance * (1 - integration)
+				value = "capital.distance_to(root.capital)"
+				multiply = {
+					value = -1
+				}
+			}
+			max = 1
+			limit = {
+				religion.group ?= religion_group:muslim
+				any_owned_location = {
+					is_coastal = yes
+				}
+			}
+			random_owned_location = {
+				save_scope_as = escape_target3
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = scope:escape_target4
+			}
+		}
+		ordered_country_in_diplomatic_range = {
+			order_by = { # distance * (1 - integration)
+				value = "capital.distance_to(root.capital)"
+				multiply = {
+					value = -1
+				}
+			}
+			max = 1
+			limit = {
+				religion.group ?= religion_group:muslim
+				any_owned_location = {
+					is_coastal = yes
+				}
+			}
+			random_owned_location = {
+				save_scope_as = escape_target4
+			}
+		}
+	}
+	
+	set_variable = icd_no_moriscos_none
+	
+}
+
+icd_crimean_expel_save = {
+		culture:crimean = {
+			ordered_country_in_culture = {
+				order_by = total_population
+				check_range_bounds = no
+				max = 1
+				limit = {
+					NOT = {
+						is_subject_or_below_of = root
+						any_overlord_or_above = {
+							religion.group = religion_group:christian
+						}
+						religion.group = religion_group:christian
+					}
+				}
+				
+				random_owned_location = {
+					save_scope_as = escape_target1
+				}
+				random_owned_location = {
+					limit = { NOT = { this = scope:escape_target1 } }
+					save_scope_as = escape_target2
+				}
+				random_owned_location = {
+					limit = { NOT = { this = scope:escape_target1 this = scope:escape_target2 } }
+					save_scope_as = escape_target3
+				}
+				random_owned_location = {
+					limit = { NOT = { this = scope:escape_target1 this = scope:escape_target2 this = scope:escape_target3 } }
+					save_scope_as = escape_target4
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target1
+				}
+			}
+			region:anatolia_region = {
+				random_location_in_region = {
+					limit = {
+						has_owner = yes
+						owner != root
+						dominant_religion.group ?= religion_group:muslim
+						is_coastal = yes
+						is_discovered_by = root
+						culture_percentage = {
+							culture = culture:crimean
+							value < 0.4
+						}
+					}
+					save_scope_as = escape_target1
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target2
+				}
+			}
+			region:anatolia_region = {
+				random_location_in_region = {
+					limit = {
+						NOT = { this = scope:escape_target1 }
+						has_owner = yes
+						owner != root
+						dominant_religion.group ?= religion_group:muslim
+						is_coastal = yes
+						is_discovered_by = root
+						culture_percentage = {
+							culture = culture:crimean
+							value < 0.4
+						}
+					}
+					save_scope_as = escape_target2
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target3
+				}
+			}
+			region:anatolia_region = {
+				random_location_in_region = {
+					limit = {
+						NOT = { this = scope:escape_target1 this = scope:escape_target2 }
+						has_owner = yes
+						owner != root
+						dominant_religion.group ?= religion_group:muslim
+						is_coastal = yes
+						is_discovered_by = root
+						culture_percentage = {
+							culture = culture:crimean
+							value < 0.4
+						}
+					}
+					save_scope_as = escape_target3
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target4
+				}
+			}
+			region:anatolia_region = {
+				random_location_in_region = {
+					limit = {
+						NOT = { this = scope:escape_target1 this = scope:escape_target2 this = scope:escape_target3 }
+						has_owner = yes
+						owner != root
+						dominant_religion.group ?= religion_group:muslim
+						is_coastal = yes
+						is_discovered_by = root
+						culture_percentage = {
+							culture = culture:crimean
+							value < 0.4
+						}
+					}
+					save_scope_as = escape_target4
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target1
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = { # distance * (1 - integration)
+					value = "capital.distance_to(root.capital)"
+					multiply = {
+						value = -1
+					}
+				}
+				max = 1
+				limit = {
+					religion.group ?= religion_group:muslim
+					any_owned_location = {
+						is_coastal = yes
+					}
+				}
+				random_owned_location = {
+					save_scope_as = escape_target1
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target2
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = { # distance * (1 - integration)
+					value = "capital.distance_to(root.capital)"
+					multiply = {
+						value = -1
+					}
+				}
+				max = 1
+				limit = {
+					religion.group ?= religion_group:muslim
+					any_owned_location = {
+						is_coastal = yes
+					}
+				}
+				random_owned_location = {
+					limit = { NOT = { this = scope:escape_target1 } }
+					save_scope_as = escape_target2
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target3
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = { # distance * (1 - integration)
+					value = "capital.distance_to(root.capital)"
+					multiply = {
+						value = -1
+					}
+				}
+				max = 1
+				limit = {
+					religion.group ?= religion_group:muslim
+					any_owned_location = {
+						is_coastal = yes
+					}
+				}
+				random_owned_location = {
+					limit = { NOT = { this = scope:escape_target1 this = scope:escape_target2 } }
+					save_scope_as = escape_target3
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = scope:escape_target4
+				}
+			}
+			ordered_country_in_diplomatic_range = {
+				order_by = { # distance * (1 - integration)
+					value = "capital.distance_to(root.capital)"
+					multiply = {
+						value = -1
+					}
+				}
+				max = 1
+				limit = {
+					religion.group ?= religion_group:muslim
+					any_owned_location = {
+						is_coastal = yes
+					}
+				}
+				random_owned_location = {
+					limit = { NOT = { this = scope:escape_target1 this = scope:escape_target2 this = scope:escape_target3 } }
+					save_scope_as = escape_target4
+				}
+			}
+		}
+}
+
+icd_crimean_expel_act = {
+	every_province = {
+		limit = {
+			culture_percentage = {
+				culture = culture:crimean
+				value > 0.4
+			}
+			OR = {
+				region = region:steppes_region
+				region = region:ruthenia_region
+			}
+		}
+		
+		add_migration = {
+			owner = root
+			from = this.province_definition
+			to = scope:escape_target1.province_definition
+			religion = religion:sunni
+			culture = culture:crimean
+			amount = {
+				value = "this.culture_population(culture:crimean)"
+				divide = 4
+				divide = 60
+			}
+			months = 60
+		}
+		add_migration = {
+			owner = root
+			from = this.province_definition
+			to = scope:escape_target2.province_definition
+			religion = religion:sunni
+			culture = culture:crimean
+			amount = {
+				value = "this.culture_population(culture:crimean)"
+				divide = 4
+				divide = 60
+			}
+			months = 60
+		}
+		add_migration = {
+			owner = root
+			from = this.province_definition
+			to = scope:escape_target3.province_definition
+			religion = religion:sunni
+			culture = culture:crimean
+			amount = {
+				value = "this.culture_population(culture:crimean)"
+				divide = 4
+				divide = 60
+			}
+			months = 60
+		}
+		add_migration = {
+			owner = root
+			from = this.province_definition
+			to = scope:escape_target4.province_definition
+			religion = religion:sunni
+			culture = culture:crimean
+			amount = {
+				value = "this.culture_population(culture:crimean)"
+				divide = 4
+				divide = 60
+			}
+			months = 60
+		}
+		every_location_in_province = {
+			every_pop = {
+				limit = { 
+					culture = culture:crimean 
+				}
+				add_pop_satisfaction = pop_satisfaction_extreme_penalty
+			}
+		}
+	}
+
+}

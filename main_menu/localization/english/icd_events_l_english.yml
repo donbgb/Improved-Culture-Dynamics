@@ -31,8 +31,6 @@
  icd_minority_events.4.a: "We shall continue protecting our [ShowReligionAdjectiveWithNoTooltip('judaism')] population"
  icd_minority_events.4.b: "The [ShowReligionAdjectiveWithNoTooltip('judaism')] can fend for themselves"
  
- icd_minority_events.5.title: "An Invitation to the Jewish"
- icd_minority_events.5.desc: "The [ShowReligionAdjectiveWithNoTooltip('judaism')] populations of some of our neighbours has proven itself to be quite valuable economically and culturally. As they face the threat of violence and religious persecution in those territories, perhaps it would be an interesting idea to preemptively grant all [ShowReligionAdjectiveWithNoTooltip('judaism')] people protections in the hopes that they flee from those lands to our state, with their expertise and knowledge."
  icd_minority_events.5.a: "Invite a small number of them and grant them protection!"
  icd_minority_events.5.b: "They will never be welcome here"
  
@@ -105,10 +103,10 @@
  icd_minority_events.31.a: "Recognise the power of the local dynasties"
  icd_minority_events.31.b: "These people are apostates and deserve no political authority"
  
- icd_romani_events.99.title: "Arrival of a Different People"
- icd_romani_events.99.desc: "Local authorities have reported the arrival of a distinct group of people into our lands, speaking a strange tongue. Some say they are Tatars, others that they are Egyptians, while others refer to them as cingane or $romani_culture$. Regardless, the reality is that these people appear to be destitute and seem to have fled exploitation in some of our neighbouring countries. Already, our [estates|e] expect us to implement similar laws, treating them as either slaves or unwanted folk, and they will not be pleased if we fail to abide."
+ icd_romani_events.99.title: "Arrival of a Strange People"
+ icd_romani_events.99.desc: "Local authorities have reported the arrival of a distinct group of people into our lands, speaking a strange tongue. Some say they are Tatars, others that they are Egyptians, while others refer to them as cingane or $romani_culture$. Regardless, the reality is that these people appear to be destitute and seem to have fled exploitation in some of our neighbouring countries. Already, our [estates|e] expect us to implement similar laws as our neighbors, treating these newcomers as either slaves or unwanted folk, and they will not be pleased if we fail to abide."
  icd_romani_events.99.a: "They may be owned as slaves by the nobility and the Crown"
- icd_romani_events.99.b: "They are to be separated from society and the common folk"
+ icd_romani_events.99.b: "They are to be separated from society and the commonfolk"
  icd_romani_events.99.c: "Let us take advantage of what skills they have"
  icd_romani_events.99.d: "Expel these outlandish people!"
  icd_romani_events.99.e: "They are to be treated with fairness and justice, as any other man"
@@ -154,8 +152,6 @@
  icd_muslim_events.1.a: "Spread the word to the $bosnian$s"
  icd_muslim_events.1.b: "And lose a source of jizya tax? Never"
  
- icd_minority_events.9.title: "Expel the Crimeans?"
- icd_minority_events.9.desc: "The presence of the [ShowCultureName('crimean')] people in our territory has proven to be a hinderance to our ambitions of taming the Steppes, and a source of conflict and disharmony. Their wildly different traditions and beliefs, and their nomadic heritage prove difficult for us to control. We are faced increasingly with having to make a decision on whether we should continue allowing these people to live in our lands by seeking to accept them into our society, or if we should expel them promptly.\n\nIf we do expel them, they will likely see us and our institutions as enemies, and we should be warned that all our efforts to convert them to our faith will have been wasted."
  icd_minority_events.9.a: "Expel them!"
  icd_minority_events.9.b: "Let them remain"
  

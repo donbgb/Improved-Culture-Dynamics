@@ -27,15 +27,10 @@ flavor_eng.7 = {
  	}
 	outcome = neutral
 
-	dynamic_historical_event = {
-		tag = ENG
-		from = 1500.1.1
-		to = 1600.1.1
-		monthly_chance = 100
-	}
-
+	orphan = yes
 	trigger = {
 
+		always = no
 		religion = religion:catholic
 
 		religion:lutheran = { is_religion_enabled = yes }
