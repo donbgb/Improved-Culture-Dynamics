@@ -98,6 +98,11 @@
  western_turkification_culture_movement_tt: ""The Western Turco-Mongol Tradition has not begun."
  western_turkification_culture_movement_location_modifier: "Western Turco-Mongol Tradition Location Modifier"
  
+ cossack_culture_movement: "Cossack Acculturation"
+ cossack_culture_movement_desc: "The arrival of peasant settlers to the Pontic Steppe does not usually accompany the arrival of a strong state control over the region. A distinct lifestyle built on semi-nomadism and semi-militarization, influenced by the existing lifestyle of the Tatar nomads, has begun to flourish."
+ cossack_culture_movement_location_modifier: "Cossack Location Modifier"
+ cossack_culture_movement_allow_tt: "The Acculturation of Cossacks has not begun"
+ 
  azeri_culture_movement_allow_tt: "The Azerification of Adharis into Azeris has not begun."
  lithuanian_culture_movement_allow_tt: "Lithuania exists as the only Lithuanian state and has begun establishing a new culture."
  russian_culture_movement_allow_tt: "Russia exists and has begun establishing a new culture."

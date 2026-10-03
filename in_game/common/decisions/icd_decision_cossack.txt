@@ -104,7 +104,7 @@ icd_settle_cossacks = {
 					name = icd_steppe_settled
 					months = 60
 				}
-				every_province = {
+				every_owned_location = {
 					limit = {
 						region = region:steppes_region
 						dominant_culture = { has_culture_group = culture_group:turkic_group }

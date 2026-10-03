@@ -64,8 +64,10 @@
  
  regional_autonomy: "Pluricultural Society"
  regional_autonomy_desc: "Our society emerges not from a singular culture but from multiple distinct identities. Distinct parts of our nation are given varying levels of cultural autonomy."
- ethnic_communities: "Gradual Integration"
- ethnic_communities_desc: "We encourage those communities and minorities closest to our primary culture to adopt our ways and learn from our behaviour. Areas that are more distant, however, are free to retain their own arrangements."
+ ethnic_communities: "Partial Assimilation"
+ ethnic_communities_desc: "We encourage those communities and minorities that are not accepted by our state to adopt our ways and learn from our behaviour. Areas that are more distant, however, are free to retain their own arrangements, as are cultures accepted in our state."
+ gradual_assimilation: "General Assimilation"
+ gradual_assimilation_desc: "Those cultures and communities that are exposed to our culture will inevitably be assimilated over time."
  monocultural_opportunity: "Mass Assimilation"
  monocultural_opportunity_desc: "Our society is built on one culture alone and we promote one culture only, as such. Wherever our state goes, it seeks to spread and promote our cultural attitudes and traditions."
  dialects_of_german: "Plural German Identities"
@@ -77,6 +79,21 @@
  
  colonial_culture: "Colonial Assimilation"
  colonial_culture_desc: "Colonial structures based on exploitation, colonization and the dismantlement of local cultural institutions make assimilation more efficient and economically productive."
+ 
+ 
+ icd_province_assimilate_dominant_tt: "[provinces|e] assimilate to their [dominant_culture|e]."
+ icd_province_assimilate_dominant_otherwise_tt: "[provinces|e] assimilate to their [dominant_culture|e] otherwise."
+ icd_province_assimilate_always_tt: "[provinces|e] will generally assimilate to your [primary_culture|e]."
+ icd_province_assimilate_primary_tt: "[provinces|e] assimilate to your [primary_culture|e] if:\nThey host a sizeable minority (10%) of your [primary_culture|e]\nThey neighbor a [location|e] of your [primary_culture]."
+ icd_location_assimilate_acceptance_tt: "[locations|e] where the [dominant_culture|e] is an [accepted_culture|e] always assimilate to their [dominant_culture|e]"
+ icd_location_assimilate_primary_tt: "[locations|e] where the [dominant_culture|e] is an [accepted_culture|e] assimilate to the [primary_culture|e] if conditions are met"
+ icd_province_assimilate_german_tt: "[provinces|e] will assimilate to [ShowCultureGroupName('german_group')] cultures if they are a minority or neighbor it (excluding Czech, Frisian and Ashkenazi)."
+ icd_province_assimilate_italian_tt: "[provinces|e] will assimilate to [ShowCultureGroupName('italian_group')] cultures if they are a minority or neighbor it (excluding Italki)."
+ icd_province_assimilate_arabic_tt: "[provinces|e] will assimilate to [ShowCultureGroupName('arabic_group')] cultures if they are a minority or neighbor it (excluding Syriac)."
+ icd_province_assimilate_tatar_tt: "[provinces|e] will assimilate to [ShowCultureGroupName('tatar_group')] and [ShowLanguageName('kipchak_language')]-speaking cultures if they are a minority or neighbor it."
+ icd_province_assimilate_mandarin_tt: "[provinces|e] will assimilate to [ShowCultureName('jin_culture')] and [ShowLanguageName('mandarin_language')]-speaking cultures if they are a minority or neighbor it."
+ 
+ 
  
  minority_rule_tt: "With this policy, pops will only assimilate to their province's dominant culture, regardless of the country's primary culture. This policy creates a risk for the primary culture as primary culture minorities will get assimilated into their respective locations' dominant culture. Reducing cultural assimilation becomes preferable to increasing it. This can only be altered with the use of the Promote Culture cabinet action. The Marking cabinet action is disabled."
  regional_autonomy_tt: "With this policy, pops will only assimilate to their province's dominant culture, regardless of the country's primary culture. This policy makes migration of your primary culture into dominant culture locations ineffective. This can only be altered with the use of the Promote Culture cabinet action or the Marking cabinet action, which temporarily changes this dynamic in the province it applies to."

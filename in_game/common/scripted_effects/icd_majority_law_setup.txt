@@ -13,6 +13,8 @@ icd_majority_law_setup = {
 				has_policy = monocultural_opportunity
 				has_policy = dialects_of_italian
 				has_policy = dialects_of_tatar
+				has_policy = dialects_of_mandarin
+				has_policy = gradual_assimilation
 			}
 		}
 		if = {
@@ -57,11 +59,11 @@ icd_majority_law_setup = {
 		}
 		else_if = {
 			limit = {
-				policy:ethnic_communities = {
+				policy:gradual_assimilation = {
 					is_implementable_in = prev
 				}
 			}
-			add_policy = policy:ethnic_communities
+			add_policy = policy:gradual_assimilation
 		}
 	}
 	

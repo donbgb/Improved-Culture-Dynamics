@@ -220,23 +220,23 @@ icd_cas_the_moriscos = { ###just the moriscos!##
 	}
 	
 	
-	option = {
-		name = icd_minority_events.10.b
-		ai_chance = { value = -10 }
+	#option = {
+		#name = icd_minority_events.10.b
+		#ai_chance = { value = -10 }
 		
-		trigger = {
-			NOT = {
-				has_variable = icd_no_moriscos_none
-			}
-		}
-		effect = {
-			add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_extreme_penalty }
-			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
-			remove_variable = spa_holy_inquisition
-			lock_policy_effect = { type = spa_inquisition_policy }
-			add_stability = stability_ultimate_penalty
+		#trigger = {
+			#NOT = {
+			#	has_variable = icd_no_moriscos_none
+			#}
+		#}
+		#effect = {
+			#add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_extreme_penalty }
+			#add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
+			#remove_variable = spa_holy_inquisition
+			#lock_policy_effect = { type = spa_inquisition_policy }
+			#add_stability = stability_ultimate_penalty
 			
-			set_variable = icd_no_andalusi_deportation
-		}
-	}
+			#set_variable = icd_no_andalusi_deportation
+		#}
+	#}
 }
