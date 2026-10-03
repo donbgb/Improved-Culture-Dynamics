@@ -67,7 +67,7 @@
 				}
 
 				sub_continent:western_europe = {
-					random_location_in_continent = {
+					random_location_in_sub_continent = {
 						limit = {
 							any_pop = {
 								pop_size > 0.25
@@ -101,9 +101,11 @@
 	option = {
 		name = icd_minority_events.5.b
 		
-		set_variable = {
-			name = icd_jewish_banned
-			years = 55
+		effect = {
+			set_variable = {
+				name = icd_jewish_banned
+				years = 55
+			}
 		}
 	}
 }

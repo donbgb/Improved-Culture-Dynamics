@@ -10,6 +10,7 @@ icd_reapply_promoting.1 = {
 	hidden = yes
 
 	immediate = {
+	
 		if = {
 			limit = {
 				has_policy = minority_rule
