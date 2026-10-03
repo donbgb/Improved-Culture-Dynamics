@@ -14,6 +14,12 @@ icd_sects_setup = {
 		name = icd_current_caliph
 		value = character:mam_al_mustafki
 	}
+	c:MAM = {
+		set_variable = {
+			name = icd_abbasid_caliph
+			value = character:mam_al_mustafki
+		}
+	}
 
 	create_international_organization = {
 		type = international_organization_type:sect

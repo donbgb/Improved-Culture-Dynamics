@@ -3,6 +3,7 @@ on_location_changed_owner = {
 
 	on_actions = {
 		icd_stop_religion
+		icd_caliph_change
 	}
 }
 
@@ -13,16 +14,40 @@ icd_stop_religion = {
 	}
 }
 
+icd_caliph_change = {
+	
+	effect = {
+		if = {
+			limit = {
+				this = location:cairo
+				scope:loser = { 
+					has_variable = icd_abbasid_caliph
+				}
+			}
+			scope:loser = {
+				remove_variable = icd_abbasid_caliph
+				international_organization_remove_special_status = {
+					type = special_status:icd_caliphate_claimant
+					country = scope:actor
+				}
+			}
+			international_organization_chooses_new_leader = international_organization:icd_sunni_caliphate
+		}
+	}
+}
+
 on_character_death = {
 
 	on_actions = {
-		icd_caliph_check
+		icd_caliph_check_abbasid
 	}
 }
-icd_caliph_check = {
+icd_caliph_check_abbasid = {
 	trigger = {
-		has_global_variable = icd_current_caliph
-		scope:target = global_var:icd_current_caliph
+		scope:target.owner = {
+			has_variable = icd_abbasid_caliph
+			scope:target = var:icd_abbasid_caliph
+		}
 	}
 	
 	effect = {
@@ -33,12 +58,13 @@ icd_caliph_check = {
 					is_female = no
 				}
 				order_by = age_in_years
-				remove_global_variable = icd_current_caliph
-				set_global_variable = {
-					name = icd_current_caliph
-					value = this
+				scope:target.owner = {
+					remove_variable = icd_abbasid_caliph
+					set_variable = {
+						name = icd_abbasid_caliph
+						value = prev
+					}
 				}
-				
 			}
 		}
 	}

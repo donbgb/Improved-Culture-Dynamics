@@ -1,4 +1,4 @@
-﻿icd_claim_caliphate = {
+﻿icd_claim_caliphate = { ###Amir al-Mu'minin###
 	type = internationalorganization
 
 	ai_tick = monthly
@@ -9,10 +9,13 @@
 
 
 	potential = {
-		NOT = {
-			has_special_status_in_international_organization = {
-				type = special_status:icd_caliphate_claimant
-				international_organization = international_organization:icd_claim_caliphate
+		scope:actor = {
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:icd_caliphate_claimant
+					international_organization = international_organization:icd_sunni_caliphate
+				}
+				has_reform = government_reform:mamluk_government
 			}
 		}
 	}
@@ -21,14 +24,21 @@
 		scope:actor = {
 			religion = religion:sunni
 			is_rebel_country = no
-			government_type = government_type:monarchy
+			OR = {
+				government_type = government_type:monarchy
+				government_type = government_type:theocracy
+			}
 			is_subject = no
-			country_rank_level > 3
+			country_rank = country_rank:rank_empire
 			country_type = location
+			NOT = {
+				has_policy = icd_secular_state
+				has_policy = icd_dual_faiths
+			}
 		}
 	}
 
-	price = government_power_weak_penalty
+	price = government_power_medium_penalty
 
 	select_trigger = {
 		looking_for_a = international_organization
@@ -58,6 +68,222 @@
 	}
 	ai_will_do = {
 		add = 500 #Base value
-
 	}
 }
+
+icd_claim_caliphate_through_abbasid = { ######
+	type = internationalorganization
+
+	ai_tick = monthly
+	ai_tick_frequency = 12
+
+	automation_tick = never
+	automation_tick_frequency = 12
+
+
+	potential = {
+		scope:actor = {
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:icd_caliphate_claimant
+					international_organization = international_organization:icd_sunni_caliphate
+				}
+			}
+		}
+	}
+
+	allow = {
+		scope:actor = {
+			religion = religion:sunni
+			is_rebel_country = no
+			is_subject = no
+			OR = {
+				country_rank = country_rank:rank_empire
+				country_rank = country_rank:rank_kingdom
+			}
+			country_type = location
+			NOT = {
+				has_policy = icd_secular_state
+				has_policy = icd_dual_faiths
+			}
+			owns = location:cairo
+		}
+	}
+
+	price = government_power_medium_penalty
+
+	select_trigger = {
+		looking_for_a = international_organization
+		source = actor
+		target_flag = recipient
+		name = "choose_international_organization"
+		column = {
+			data = name
+		}
+		visible = {
+			international_organization_type = international_organization_type:icd_sunni_caliphate
+		}
+	}
+
+	effect = {
+		if = {
+			limit = { exists = scope:actor }
+			hidden_effect = {
+				every_country = {
+					limit = {
+						has_variable = icd_abbasid_caliph
+					}
+					remove_variable = icd_abbasid_caliph
+				}
+				dynasty:icd_abbasid_dynasty = {
+					ordered_character_in_dynasty = {
+						limit = {
+							is_alive = yes
+							is_female = no
+						}
+						order_by = age_in_years
+						save_scope_as = icd_temporary_abbasid_caliph
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							exists = scope:icd_temporary_abbasid_caliph
+						}
+					}
+					create_character = {
+						culture = location:cairo.dominant_culture
+						religion = religion:sunni
+						age = 20
+						female = no
+						estate = estate_type:nobles_estate
+						dynasty = dynasty:icd_abbasid_dynasty
+						save_scope_as = icd_temporary_abbasid_caliph
+					}
+				}
+				scope:actor = {
+					set_variable = {
+						name = icd_abbasid_caliph
+						value = scope:icd_temporary_abbasid_caliph
+					}
+				}
+			}
+			var:icd_abbasid_caliph = {
+				move_country = scope:actor
+			}
+			scope:actor = {
+				international_organization:icd_sunni_caliphate = {
+					international_organization_add_special_status = {
+						type = special_status:icd_caliphate_claimant
+						country = scope:actor
+					}
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		add = 500 #Base value
+	}
+}
+
+icd_challenge_caliph = { ######
+	type = internationalorganization
+
+	ai_tick = monthly
+	ai_tick_frequency = 24
+
+	automation_tick = never
+	automation_tick_frequency = 24
+
+
+	potential = {
+		scope:actor = {
+			has_special_status_in_international_organization = {
+				type = special_status:icd_caliphate_claimant
+				international_organization = international_organization:icd_sunni_caliphate
+			}
+		}
+	}
+
+	allow = {
+		any_neighbor_country = {
+			has_special_status_in_international_organization = {
+				type = special_status:icd_caliphate_claimant
+				international_organization = international_organization:icd_sunni_caliphate
+			}
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = international_organization
+		source = actor
+		target_flag = recipient
+		name = "choose_international_organization"
+		column = {
+			data = name
+		}
+		visible = {
+			international_organization_type = international_organization_type:icd_sunni_caliphate
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = country
+		ai_interaction_source_list = {
+			scope:actor = {
+				ordered_neighbor_country = {
+					limit = {
+						this != scope:actor
+						has_special_status_in_international_organization = {
+							type = special_status:icd_caliphate_claimant
+							international_organization = international_organization:icd_sunni_caliphate
+						}
+					}
+					order_by = {
+						value = military_strength
+						multiply = -1
+					}
+					max = 3
+					check_range_bounds = no
+					add_to_list = source
+				}
+			}
+		}
+		target_flag = target
+		name = "choose_country"
+		none_available_msg_key = "no_valid_countries"
+		column = {
+			data = name
+		}
+		visible = {
+			root != scope:actor
+			has_special_status_in_international_organization = {
+				type = special_status:icd_caliphate_claimant
+				international_organization = international_organization:icd_sunni_caliphate
+			}
+			is_rebel_country = no
+			is_neighbor_of = scope:actor
+		}
+	}
+	
+	cooldown = {
+		type = icd_challenge_caliph_cooldown
+		years = 30
+	}
+	
+	effect = {
+		if = {
+			limit = { exists = scope:actor }
+			scope:actor = {
+				add_casus_belli = {
+					target = scope:target
+					type = casus_belli:cb_icd_caliph_conquest
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		add = 500 #Base value
+	}
+}
+

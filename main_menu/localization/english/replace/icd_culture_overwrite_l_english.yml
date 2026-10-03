@@ -100,3 +100,9 @@
  alawi_school: "'Alawī"
  alawi_school_desc: "The $alawi_school$, also called Nuṣairī, proclaim 'Alī ibn Abī Ṭālib, the first Imām according to Shia beliefs, to be the manifestation of $muslim_god_name$ Himself. They differ substantially from the rest of the Shia faith in both rituals and theology, believing in reincarnation and allowing the consumption of alcohol."
 
+
+ flavor_tur.204.desc: "With the occupation of [ShowLocationName('cairo')], the caliph lies at our mercy. Brought within the [ROOT.GetCountry.GetAdjective] [ROOT.GetCountry.GetGovernment.GetCourtTitle] and meeting face-to-face with [target_character.GetName], it is apparent to everyone that this religious figurehead is no more than a mere human, one currently weaker than our [ROOT.GetCountry.GetGovernment.GetRulerTitle]. He is now at our mercy."
+ flavor_tur.204.a: "Commemorate such triumph!"
+ flavor_tur.204.b: "Let us not exaggerate in our celebrations"
+ tur_all_muslim_pops_gain_satisfaction: "All our [ShowReligionGroupAdjective('muslim')] [pops|e] will gain [ShowNamedValue('pop_satisfaction_weak_bonus')|+=2%] [pop_satisfaction|e]"
+

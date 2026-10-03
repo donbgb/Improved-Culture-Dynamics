@@ -77,3 +77,12 @@ icd_protestant_in_wrong_country = {
 	blocked_from_being_ruler = yes
 	blocked_from_cabinet = yes
 }
+icd_abbasid_dynasty_modifier = {
+	game_data = {
+		category = character
+	}
+	blocked_from_being_leader = yes
+	blocked_from_being_ruler = yes
+	blocked_from_cabinet = yes
+	blocked_from_character_interactions = yes
+}

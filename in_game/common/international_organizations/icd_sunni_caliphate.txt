@@ -5,7 +5,29 @@
 	
 	has_leader_country = yes
 	leader_type = country
-	leader_change_trigger_type = none
+	leader_change_method = score
+    leader_change_trigger_type = timed
+    months_between_leader_changes = 12
+    leader_score = {
+		if = {
+			limit = {
+				has_special_status_in_international_organization = {
+					type = special_status:icd_caliphate_claimant
+					international_organization = international_organization:icd_sunni_caliphate
+				}
+			}
+			add = {
+				desc = "ICD_CALIPH_GREAT_POWER_SCORE"
+				value = great_power_score
+			}
+		}
+		else = {
+			add = {
+				desc = "ICD_NOT_CALIPH"
+				value = 1
+			}
+		}
+    }
 		
 	on_creation = {
 		
@@ -20,7 +42,9 @@
 	}
 	
 	auto_leave_trigger = {
-		always = no
+		NOT = {
+			religion = religion:sunni
+		}
 	}
 	
 	modifier = {
@@ -54,47 +78,310 @@
 	}
 	
 	monthly_effect = {
-
-		if = {
-			limit = {
-				any_country = {
-					is_rebel_country = no
-					religion = religion:sunni
-					NOT = { is_member_of_international_organization = international_organization:icd_sunni_caliphate }
-				}
-			}
-			every_country = {
+		hidden_effect = {
+			if = { ##sunni countries join###
 				limit = {
-					is_rebel_country = no
-					religion = religion:sunni
-					NOT = { is_member_of_international_organization = international_organization:icd_sunni_caliphate }
+					any_country = {
+						is_rebel_country = no
+						religion = religion:sunni
+						NOT = { is_member_of_international_organization = international_organization:icd_sunni_caliphate }
+					}
 				}
-				root = { add_country_to_international_organization = prev }
-			}
-		}
-		if = {
-			limit = {
-				has_global_variable = icd_current_caliph
-				global_var:icd_current_caliph = {
-					num_of_children = 0
-					is_adult = yes
+				every_country = {
+					limit = {
+						is_rebel_country = no
+						religion = religion:sunni
+						NOT = { is_member_of_international_organization = international_organization:icd_sunni_caliphate }
+					}
+					root = { add_country_to_international_organization = prev }
 				}
 			}
-			global_var:icd_current_caliph.owner = {
-				create_character = {
-					culture = root.culture
-					religion = religion:sunni
-					age = 1
-					female = no
-					estate = estate_type:nobles_estate
-					dynasty = dynasty:icd_abbasid_dynasty
-					father = global_var:icd_current_caliph
+			if = { ##ensuring abbasids have children###
+				limit = {
+					any_international_organization_member = {
+						has_variable = icd_abbasid_caliph
+					}
+				}
+				dynasty:icd_abbasid_dynasty = {
+					every_character_in_dynasty = {
+						limit = {
+							NOT = {
+								has_character_modifier = icd_abbasid_dynasty_modifier
+							}
+						}
+						add_character_modifier = {
+							modifier = icd_abbasid_dynasty_modifier
+							mode = add_and_extend
+							years = -1
+						}
+					}
+				}
+				every_international_organization_member = {
+					limit = {
+						has_variable = icd_abbasid_caliph
+					}
+					if = {
+						limit = {
+							var:icd_abbasid_caliph = {
+								is_adult = yes
+								is_female = no
+								NOT = {
+									any_child = {
+										is_alive = yes
+										is_female = no
+									}
+								}
+							}
+						}
+						create_character = {
+							culture = location:cairo.dominant_culture
+							religion = religion:sunni
+							age = 1
+							female = no
+							estate = estate_type:nobles_estate
+							dynasty = dynasty:icd_abbasid_dynasty
+							father = var:icd_abbasid_caliph
+						}
+					}
+				}
+			}
+			
+			
+			if = {  ##if you got the abbasids, you got them in power###
+				limit = {
+					leader_country = {
+						has_variable = icd_abbasid_caliph
+						OR = {
+							var:icd_abbasid_caliph != global_var:icd_current_caliph
+							global_var:icd_current_caliph = {
+								is_alive = no
+							}
+						}
+						var:icd_abbasid_caliph = {
+							is_alive = yes
+						}
+					}
+				}
+				remove_global_variable = icd_current_caliph
+				set_global_variable = {
+					name = icd_current_caliph
+					value = root.leader_country.var:icd_abbasid_caliph
+				}
+			}
+			else_if = {  ##if you got the abbasids, you got them in power###
+				limit = {
+					leader_country = {
+						has_variable = icd_abbasid_caliph
+						OR = {
+							var:icd_abbasid_caliph != global_var:icd_current_caliph
+							global_var:icd_current_caliph = {
+								is_alive = no
+							}
+						}
+						var:icd_abbasid_caliph = {
+							is_alive = no
+						}
+					}
+				}
+				leader_country = {
+					create_character = {
+						culture = location:cairo.dominant_culture
+						religion = religion:sunni
+						age = 20
+						female = no
+						estate = estate_type:nobles_estate
+						dynasty = dynasty:icd_abbasid_dynasty
+						save_scope_as = icd_this_one_caliph
+					}
+					set_variable = {
+						name = icd_abbasid_caliph
+						value = scope:icd_this_one_caliph
+					}
+				}
+				remove_global_variable = icd_current_caliph
+				set_global_variable = {
+					name = icd_current_caliph
+					value = root.leader_country.var:icd_abbasid_caliph
+				}
+			}
+			else_if = {  ##no abbasids means your ruler##
+				limit = {
+					NOT = {
+						leader_country = {
+							has_variable = icd_abbasid_caliph
+						}
+					}
+					leader_country = {
+						has_ruler = yes
+					}
+					leader_country.ruler != global_var:icd_current_caliph
+				}
+				remove_global_variable = icd_current_caliph
+				set_global_variable = {
+					name = icd_current_caliph
+					value = root.leader_country.ruler
+				}
+			}
+			else_if = { ##no abbasids but no ruler means no ruler full stop###
+				limit = {
+					NOT = {
+						leader_country = {
+							has_variable = icd_abbasid_caliph
+						}
+					}
+					leader_country = {
+						has_ruler = no
+						has_heir = yes
+					}
+					leader_country.ruler != global_var:icd_current_caliph
+				}
+				remove_global_variable = icd_current_caliph
+				set_global_variable = {
+					name = icd_current_caliph
+					value = root.leader_country.heir
+				}
+			}
+			else_if = { ##no abbasids but no ruler means no ruler full stop###
+				limit = {
+					NOT = {
+						leader_country = {
+							has_variable = icd_abbasid_caliph
+						}
+					}
+					leader_country = {
+						has_ruler = no
+						has_heir = no
+					}
+					leader_country.ruler != global_var:icd_current_caliph
+				}
+				remove_global_variable = icd_current_caliph
+				set_global_variable = {
+					name = icd_current_caliph
+					value = root.leader_country.regent
+				}
+			}
+			
+			if = { ###check, wonder if this is necessary##
+				limit = {
+					leader_country = {
+						NOT = { 
+							has_special_status_in_international_organization = {
+								type = special_status:icd_caliphate_claimant
+								international_organization = international_organization:icd_sunni_caliphate
+							}			
+						}
+					}
+				}
+				international_organization_add_special_status = {
+					type = special_status:icd_caliphate_claimant
+					country = leader_country
 				}
 			}
 		}
 	}
 	
 	variables = {
+		icd_caliphate_supremacy = {
+			format = "RELIGIOUS_ZEAL_DISPLAY"
+			change_format = "VARIABLE_CHANGE_FORMAT"
+			min = 0
+			max = 100
+			start = 5
+			monthly_change = {
+				add = {
+					desc = "BASE_INCREASE"
+					value = 0.1
+				}
+				add = {
+					desc = "ICD_LEADER_TERM"
+					value = international_organization_leader_reign
+					divide = 100
+				}
+				subtract = {
+					desc = "ICD_POWERFUL_SPECIAL_STATUS_CALIPHATE_MORE_POWERFUL"
+					every_international_organization_member = {
+						limit = {
+							this != root.leader_country
+							great_power_score > prev.leader_country.great_power_score
+						}
+						add = {
+							value = great_power_score
+							subtract = prev.leader_country.great_power_score
+							min = 0
+							divide = 1000
+						}
+					}
+				}
+				subtract = {
+					desc = "ICD_POWERFUL_SPECIAL_STATUS_NUMBER"
+					every_international_organization_member = {
+						limit = {
+							this != root.leader_country
+							has_special_status_in_international_organization = {
+								type = special_status:icd_caliphate_claimant
+								international_organization = international_organization:icd_sunni_caliphate
+							}
+						}
+						add = 0.05
+					}
+				}
+				subtract = {
+					desc = "ICD_LOW_LEGITIMACY"
+					if = {
+						limit = {
+							leader_country = {
+								legitimacy < 0
+							}
+						}
+						add = 0.2
+					}
+				}
+				subtract = {
+					desc = "ICD_HOLY_SITE_OWNED_BY_NON_MUSLIM"
+					religion:sunni = {
+						every_holy_site_in_religion = {
+							limit = {
+								location = {
+									owner ?= {
+										religion.group != religion_group:muslim
+									}
+								}
+							}
+							add = 0.1
+						}
+					}
+				}
+				add = {
+					desc = "ICD_WAR_AGAINST_INFIDELS"
+					if = {
+						limit = {
+							leader_country = {
+								any_country_at_war_with = {
+									religion.group = religion_group:muslim
+								}
+							}
+						}
+						value = 0.1
+					}
+				}
+				add = {
+					desc = "ICD_WAR_AGAINST_OTHER_CALIPHATES"
+					if = {
+						limit = {
+							leader_country = {
+								any_country_at_war_with = {
+									has_special_status_in_international_organization = {
+										type = special_status:icd_caliphate_claimant
+										international_organization = international_organization:icd_sunni_caliphate
+									}
+								}
+							}
+						}
+						value = 0.1
+					}
+				}
+			}
+		}
 	}
 	
 	special_statuses_implemented = {
