@@ -96,7 +96,7 @@
 		months = 1
 		
 		on_activate = {
-			custom_tooltip = minority_rule_tt
+			custom_tooltip = icd_province_assimilate_dominant_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
@@ -142,7 +142,7 @@
 		}
 		
 		on_activate = {
-			custom_tooltip = regional_autonomy_tt
+			custom_tooltip = icd_province_assimilate_dominant_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
@@ -182,7 +182,9 @@
 		}
 		
 		on_activate = {
-			custom_tooltip = ethnic_communities_tt
+			custom_tooltip = icd_province_assimilate_primary_tt
+			custom_tooltip = icd_province_assimilate_dominant_otherwise_tt
+			custom_tooltip = icd_location_assimilate_acceptance_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
@@ -214,15 +216,15 @@
 		}
 		months = 1
 		ai_will_do = {
-			value = 500
+			value = 0
 		}
 	}
 	
-	monocultural_opportunity = {
+	gradual_assimilation = {
 		price = icd_nothing_price
 		country_modifier = {
 			global_pop_assimilation_speed = 0.001
-			global_estate_target_satisfaction = small_permanent_target_satisfaction
+			global_integration_speed_modifier = 0.1
 		}
 		potential = {
 			is_colonial_subject = no
@@ -238,15 +240,97 @@
 					value >= 3000
 				}
 			}
+		}
+		
+		on_activate = {
+			custom_tooltip = icd_province_assimilate_primary_tt
+			custom_tooltip = icd_province_assimilate_dominant_otherwise_tt
+			custom_tooltip = icd_location_assimilate_primary_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						any_location_in_province = {
+							any_neighbor_location = {
+								dominant_culture ?= root.culture
+							}
+						}
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.15
+							}
+						}
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = this.dominant_culture
+				}
+			}
+			every_province = {
+				limit = {
+					OR = {
+						any_location_in_province = {
+							any_neighbor_location = {
+								dominant_culture ?= root.culture
+							}
+						}
+						culture_percentage = {
+							culture = root.culture
+							value >= 0.1
+						}
+						any_location_in_province = {
+							culture_percentage = {
+								culture = root.culture
+								value >= 0.15
+							}
+						}
+					}
+				}
+				set_variable = {
+					name = promoting_culture
+					value = root.culture
+				}
+			}
+		}
+		months = 1
+		ai_will_do = {
+			value = 500
+		}
+	}
+	
+	monocultural_opportunity = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			global_estate_target_satisfaction = small_permanent_target_satisfaction
+		}
+		potential = {
+			modifier:allow_cabinet_assimilate_area = yes
+		}
+		allow = {
 			OR = {
-				has_policy = civic_nationhood
-				societal_value:centralization_vs_decentralization < -90
-				modifier:allow_cabinet_assimilate_area = yes
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
 			}
 		}
 		
 		on_activate = {
-			custom_tooltip = monocultural_opportunity_tt
+			custom_tooltip = icd_province_assimilate_always_tt
+			custom_tooltip = icd_location_assimilate_acceptance_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
@@ -290,7 +374,10 @@
 		}
 		
 		on_activate = {
-			custom_tooltip = dialects_of_german_tt
+			custom_tooltip = icd_province_assimilate_primary_tt
+			custom_tooltip = icd_province_assimilate_german_tt
+			custom_tooltip = icd_province_assimilate_dominant_otherwise_tt
+			custom_tooltip = icd_location_assimilate_primary_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
@@ -331,7 +418,10 @@
 		}
 		
 		on_activate = {
-			custom_tooltip = dialects_of_italian_tt
+			custom_tooltip = icd_province_assimilate_primary_tt
+			custom_tooltip = icd_province_assimilate_italian_tt
+			custom_tooltip = icd_province_assimilate_dominant_otherwise_tt
+			custom_tooltip = icd_location_assimilate_primary_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
@@ -372,7 +462,10 @@
 		}
 		
 		on_activate = {
-			custom_tooltip = dialects_of_arabic_tt
+			custom_tooltip = icd_province_assimilate_primary_tt
+			custom_tooltip = icd_province_assimilate_arabic_tt
+			custom_tooltip = icd_province_assimilate_dominant_otherwise_tt
+			custom_tooltip = icd_location_assimilate_primary_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
@@ -420,7 +513,10 @@
 		}
 		
 		on_activate = {
-			custom_tooltip = dialects_of_tatar_tt
+			custom_tooltip = icd_province_assimilate_primary_tt
+			custom_tooltip = icd_province_assimilate_tatar_tt
+			custom_tooltip = icd_province_assimilate_dominant_otherwise_tt
+			custom_tooltip = icd_location_assimilate_primary_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
@@ -461,7 +557,10 @@
 		}
 		
 		on_activate = {
-			custom_tooltip = dialects_of_mandarin_tt
+			custom_tooltip = icd_province_assimilate_primary_tt
+			custom_tooltip = icd_province_assimilate_mandarin_tt
+			custom_tooltip = icd_province_assimilate_dominant_otherwise_tt
+			custom_tooltip = icd_location_assimilate_primary_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}
@@ -487,6 +586,8 @@
 		}
 		
 		on_activate = {
+			custom_tooltip = icd_province_assimilate_always_tt
+			custom_tooltip = icd_location_assimilate_primary_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}

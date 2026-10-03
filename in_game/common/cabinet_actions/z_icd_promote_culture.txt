@@ -117,6 +117,7 @@
 					trigger_else = { always = no }
 				}
 			}
+		}
 		map_color = {
 			lerp = {
 				min_color = define:NMapColors|MAP_COLOR_LOW

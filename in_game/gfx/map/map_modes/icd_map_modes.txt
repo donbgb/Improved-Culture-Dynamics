@@ -121,9 +121,24 @@ icd_culture_assimilation_mode = {
 						has_variable = promoting_culture
 						var:promoting_culture = scope:actor.culture
 					}
-					province ?= {
-						NOT = { has_variable = promoting_culture }
-						owner.culture ?= scope:actor.culture
+					AND = {
+						province ?= {
+							NOT = { has_variable = promoting_culture }
+							owner.culture ?= scope:actor.culture
+						}
+						OR = {
+							NOT = {
+								dominant_culture = {
+									is_accepted_in = prev.owner
+								}
+							}
+							owner = {
+								NOT = {
+									has_policy = monocultural_opportunity
+									has_policy = ethnic_communities
+								}
+							}
+						}
 					}
 				}
 			}
@@ -140,9 +155,24 @@ icd_culture_assimilation_mode = {
 						has_variable = promoting_culture
 						NOT = { var:promoting_culture = scope:actor.culture }
 					}
-					province ?= {
-						NOT = { has_variable = promoting_culture }
-						NOT = { owner.culture ?= scope:actor.culture }
+					AND = {
+						province ?= {
+							NOT = { has_variable = promoting_culture }
+							NOT = { owner.culture ?= scope:actor.culture }
+						}
+						OR = {
+							NOT = {
+								dominant_culture = {
+									is_accepted_in = prev.owner
+								}
+							}
+							owner = {
+								NOT = {
+									has_policy = monocultural_opportunity
+									has_policy = ethnic_communities
+								}
+							}
+						}
 					}
 				}
 			}
@@ -157,8 +187,23 @@ icd_culture_assimilation_mode = {
 						has_variable = promoting_culture
 						var:promoting_culture = root.owner.culture
 					}
-					province ?= {
-						NOT = { has_variable = promoting_culture }
+					AND = {
+						province ?= {
+							NOT = { has_variable = promoting_culture }
+						}
+						OR = {
+							NOT = {
+								dominant_culture = {
+									is_accepted_in = prev.owner
+								}
+							}
+							owner = {
+								NOT = {
+									has_policy = monocultural_opportunity
+									has_policy = ethnic_communities
+								}
+							}
+						}
 					}
 				}
 			}
@@ -168,9 +213,22 @@ icd_culture_assimilation_mode = {
 			limit = {
 				is_land = yes
 				is_ownable = yes
-				province ?= {
-					has_variable = promoting_culture
-					var:promoting_culture = root.dominant_culture
+				OR = {
+					province ?= {
+						has_variable = promoting_culture
+						var:promoting_culture = root.dominant_culture
+					}
+					AND = {
+						dominant_culture = {
+							is_accepted_in = prev.owner
+						}
+						owner = {
+							OR = {
+								has_policy = monocultural_opportunity
+								has_policy = ethnic_communities
+							}
+						}
+					}
 				}
 			}
 			value = define:NMapColors|MAP_COLOR_MID
@@ -239,8 +297,21 @@ icd_culture_assimilation_mode = {
 				is_land = yes
 				is_ownable = yes
 				province ?= {
-						NOT = { has_variable = promoting_culture }
+					NOT = { has_variable = promoting_culture }
+				}
+				OR = {
+					NOT = {
+						dominant_culture = {
+							is_accepted_in = prev.owner
+						}
 					}
+					owner = {
+						NOT = {
+							has_policy = monocultural_opportunity
+							has_policy = ethnic_communities
+						}
+					}
+				}
 			}
 			value = ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP_NO_PROMOTING
 		}
@@ -252,6 +323,14 @@ icd_culture_assimilation_mode = {
 				province ?= { has_variable = promoting_culture }
 			}
 			value = ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP
+		}
+		
+		else = {
+			limit = {
+				is_land = yes
+				is_ownable = yes
+			}
+			value = ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP_NO_PROMOTING_ACCEPTED
 		}
 	
 	}

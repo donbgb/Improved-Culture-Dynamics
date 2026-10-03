@@ -16,7 +16,7 @@
  ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP_NONE: "Uncolonized locations do not assimilate"
  ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP: "[ROOT.GetLocation.GetName]'s Dominant [culture|e] is [ROOT.GetLocation.GetDominantCulture.GetName]. The location is currently assimilating to [ROOT.GetLocation.GetProvince.MakeScope.GetVariable('promoting_culture').GetCulture.GetName]"
  ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP_NO_PROMOTING: "[ROOT.GetLocation.GetName]'s Dominant [culture|e] is [ROOT.GetLocation.GetDominantCulture.GetName]. The location is currently assimilating to [ROOT.GetLocation.GetOwner.GetCulture.GetName]"
- 
+ ICD_CULTURE_ASSIMILATION_MODE_TOOLTIP_NO_PROMOTING_ACCEPTED: "[ROOT.GetLocation.GetName]'s Dominant [culture|e] is [ROOT.GetLocation.GetDominantCulture.GetName]. The location is currently assimilating to [ROOT.GetLocation.GetDominantCulture.GetName]"
  
  ICD_HERETIC_TOLERANCE_SHOW: "The [ROOT.GetLocation.GetOwner.GetLongName] currently has a [heretic_tolerance|e] of [ROOT.GetLocation.GetOwner.GetModifierValue('tolerance_heretic')].\n\n[ROOT.GetLocation.Custom('icd_tolerance_map_heretic')]"
  ICD_HEATHEN_TOLERANCE_SHOW: "The [ROOT.GetLocation.GetOwner.GetLongName] currently has a [heathenry_tolerance|e] of [ROOT.GetLocation.GetOwner.GetModifierValue('tolerance_heathen')].\n\n[ROOT.GetLocation.Custom('icd_tolerance_map_heathen')]"
