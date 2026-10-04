@@ -93,3 +93,11 @@ icd_caliphate_inspired_revolt = {
 	monthly_religious_rebel_growth = 0.2
 	pop_join_rebel_threshold = 0.2
 }
+icd_sponsored_madhhab = {
+	game_data = {
+		category = country
+	}
+	stability_investment = small_stability_investment
+	cultural_influence_modifier = 0.25
+	cultures_capacity_modifier = 0.25
+}

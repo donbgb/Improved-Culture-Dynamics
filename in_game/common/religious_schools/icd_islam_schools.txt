@@ -9,7 +9,11 @@
 	}
 
 	modifier = {
-		global_population_growth = 0.00025
+		global_merchant_power = 0.15
+		country_cabinet_efficiency = 0.1
+		monthly_towards_plutocracy = societal_value_minor_monthly_move
+		
+		tax_income_efficiency = small_tax_income_efficiency_penalty
 	}
 }
 
@@ -25,6 +29,10 @@ azzabas_school = {
 
 	modifier = {
 		monthly_army_tradition = 0.05
+		global_population_growth = 0.00025
+		monthly_towards_communalism = societal_value_minor_monthly_move
+		
+		country_cabinet_efficiency = -0.15
 	}
 }
 
@@ -55,6 +63,9 @@ akhbari_school = {
 
 	modifier = {
 		global_pop_conversion_speed_modifier = 0.1
+		monthly_towards_jurisprudence = societal_value_monthly_move
+		
+		tolerance_heretic = -1
 	}
 }
 

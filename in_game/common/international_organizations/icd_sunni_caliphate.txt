@@ -297,6 +297,17 @@
 					value = international_organization_leader_reign
 					divide = 100
 				}
+				add = {
+					desc = "ICD_GIVEN_AID"
+					if = {
+						limit = {
+							leader_country = {
+								has_variable = icd_caliph_aid
+							}
+						}
+						add = 0.2
+					}
+				}
 				subtract = {
 					desc = "ICD_POWERFUL_SPECIAL_STATUS_CALIPHATE_MORE_POWERFUL"
 					every_international_organization_member = {

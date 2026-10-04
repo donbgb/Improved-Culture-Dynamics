@@ -10,7 +10,7 @@ REPLACE:alawi_school = {
 	}
 	
 	modifier = {
-		tolerance_heathen = 0.75
+		tolerance_heathen = 1.0
 	}
 }
 

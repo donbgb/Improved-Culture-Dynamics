@@ -686,8 +686,8 @@ icd_sponsor_madhhab = { ######
 	}
 	
 	cooldown = {
-		type = icd_petition_for_support_cooldown
-		years = 25
+		type = icd_sponsor_madhhab_cooldown
+		years = 15
 	}
 	
 	select_trigger = {
@@ -707,12 +707,13 @@ icd_sponsor_madhhab = { ######
 		if = {
 			limit = { exists = scope:actor }
 			scope:actor = {
-				
-			}
-			international_organization:icd_sunni_caliphate = {
-				change_variable = {
-					name = icd_caliphate_supremacy
-					subtract = 5
+				religious_school = {
+					every_country_in_religious_school = {
+						add_country_modifier = {
+							modifier = icd_sponsored_madhhab
+							years = 15
+						}
+					}
 				}
 			}
 		}

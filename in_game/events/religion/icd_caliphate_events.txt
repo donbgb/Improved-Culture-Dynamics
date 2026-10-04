@@ -107,8 +107,41 @@ icd_caliphate_events.3 = { ##Petition for aid##
 	option = {
 		name = icd_caliphate_events.3.a
 		
+		custom_tooltip = {
+			text = icd_caliph_aid_tt
+			set_variable = {
+				name = icd_caliph_aid
+				years = 50
+			}
+		}
+		
 	}
-
 }
 
 
+icd_caliphate_events.4 = { ##Petition for aid##
+	type = country_event
+	title = icd_caliphate_events.4.title
+	desc = icd_caliphate_events.4.desc
+	outcome = neutral
+	trigger = {
+	}
+
+	illustration_tags = {
+        10 = armed
+		10 = exterior
+    }
+
+	immediate = {
+		event_illustration_peasants_foreign_religion_pop_type_effect = yes
+		
+		international_organization:icd_sunni_caliphate.leader_country = {
+			save_scope_as = icd_caliph_scope
+		}
+	}
+
+	option = {
+		name = icd_caliphate_events.4.a
+		
+	}
+}

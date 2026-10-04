@@ -11,8 +11,10 @@ REPLACE:hanafi_school = {
 	}
 
 	modifier = {
-		global_clergy_max_literacy = 10
-		monthly_towards_mysticism = societal_value_monthly_move
+		stability_investment = standard_stability_investment
+		monthly_towards_free_subjects = societal_value_minor_monthly_move
+		
+		minting_inflation_threshold = -0.005
 	}
 }
 
@@ -27,8 +29,11 @@ REPLACE:hanbali_school = {
 	}
 	
 	modifier = {
-		antagonism_received_modifier = -0.05
-		monthly_towards_jurisprudence = societal_value_monthly_move
+		tolerance_own = 1
+		pop_join_rebel_threshold = -0.05
+		monthly_towards_belligerent = societal_value_minor_monthly_move
+		
+		diplomatic_capacity_modifier = -0.1
 	}
 }
 
@@ -44,7 +49,10 @@ REPLACE:maliki_school = {
 	
 	modifier = {
 		global_monthly_development = 0.001
-		monthly_towards_mysticism = societal_value_minor_monthly_move
+		cultures_capacity_modifier = 0.2
+		monthly_towards_communalism = societal_value_minor_monthly_move
+		
+		counter_espionage = -0.2
 	}
 }
 
@@ -60,8 +68,10 @@ REPLACE:shafii_school = {
 	
 	modifier = {
 		global_merchant_capacity_modifier = 0.1
-		monthly_towards_jurisprudence = societal_value_minor_monthly_move
-
+		monthly_prestige = 0.1
+		monthly_towards_capital_economy = societal_value_minor_monthly_move
+	
+		antagonism_received_modifier = 0.1
 	}
 }
 
@@ -76,7 +86,8 @@ REPLACE:zahiri_school = {
 	}
 	
 	modifier = {
-		global_pop_conversion_speed_modifier = 0.1
+		court_spending_efficiency = -0.1
+		monthly_towards_traditionalist = societal_value_minor_monthly_move
 	}
 }
 
