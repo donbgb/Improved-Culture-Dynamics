@@ -1,0 +1,114 @@
+﻿namespace = icd_caliphate_events
+
+icd_caliphate_events.1 = {
+	type = country_event
+	title = icd_caliphate_events.1.title
+	desc = icd_caliphate_events.1.desc
+	outcome = neutral
+	trigger = {
+	}
+
+	illustration_tags = {
+        10 = neutral
+        10 = exterior
+    }
+
+	immediate = {
+		event_illustration_poptype_effect = { foreground = pop_type:soldiers background = pop_type:soldiers }
+		
+		international_organization:icd_sunni_caliphate.leader_country = {
+			save_scope_as = icd_caliph_scope
+		}
+	}
+
+	option = {
+		name = icd_caliphate_events.1.a
+		
+
+		make_subject_of = {
+			target = scope:icd_caliph_scope
+			type = subject_type:tributary
+		}
+		
+		ai_will_select = {
+			value = 20
+		}
+	}
+
+	option = {
+		name = icd_caliphate_events.1.b
+
+		add_government_power = government_power_severe_penalty
+		
+		set_variable = {
+			name = icd_denied_tribute
+			years = 70
+		}
+
+	}
+}
+
+icd_caliphate_events.2 = {
+	type = country_event
+	title = icd_caliphate_events.2.title
+	desc = icd_caliphate_events.2.desc
+	outcome = neutral
+	trigger = {
+	}
+
+	illustration_tags = {
+        10 = armed
+		10 = exterior
+    }
+
+	immediate = {
+		event_illustration_peasants_foreign_religion_pop_type_effect = yes
+		
+		international_organization:icd_sunni_caliphate.leader_country = {
+			save_scope_as = icd_caliph_scope
+		}
+	}
+
+	option = {
+		name = icd_caliphate_events.2.a
+		
+		add_country_modifier = {
+			modifier = icd_caliphate_inspired_revolt
+			mode = add_and_extend
+			years = 10
+		}
+		
+		
+	}
+
+}
+
+icd_caliphate_events.3 = { ##Petition for aid##
+	type = country_event
+	title = icd_caliphate_events.3.title
+	desc = icd_caliphate_events.3.desc
+	outcome = neutral
+	trigger = {
+	}
+
+	illustration_tags = {
+        10 = armed
+		10 = exterior
+    }
+
+	immediate = {
+		event_illustration_peasants_foreign_religion_pop_type_effect = yes
+		
+		international_organization:icd_sunni_caliphate.leader_country = {
+			save_scope_as = icd_caliph_scope
+		}
+	}
+
+	option = {
+		name = icd_caliphate_events.3.a
+		
+	}
+
+}
+
+

@@ -86,3 +86,10 @@ icd_abbasid_dynasty_modifier = {
 	blocked_from_cabinet = yes
 	blocked_from_character_interactions = yes
 }
+icd_caliphate_inspired_revolt = {
+	game_data = {
+		category = country
+	}
+	monthly_religious_rebel_growth = 0.2
+	pop_join_rebel_threshold = 0.2
+}

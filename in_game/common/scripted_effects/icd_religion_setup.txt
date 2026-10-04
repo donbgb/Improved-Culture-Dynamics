@@ -7,7 +7,14 @@ icd_religion_setup = {
 			limit = { religion = religion:shia }
 			split_pop = {
 				religion = religion:mustali_religion
-				fraction = { 0.5 0.55 }
+				fraction = { 0.45 0.5 }
+			}
+		}
+		every_pop = {
+			limit = { religion = religion:judaism }
+			split_pop = {
+				religion = religion:mustali_religion
+				fraction = { 0.15 0.2 }
 			}
 		}
 	}
@@ -17,7 +24,14 @@ icd_religion_setup = {
 			limit = { religion = religion:shia }
 			split_pop = {
 				religion = religion:mustali_religion
-				fraction = { 0.65 0.7 }
+				fraction = { 0.5 0.55 }
+			}
+		}
+		every_pop = {
+			limit = { religion = religion:judaism }
+			split_pop = {
+				religion = religion:mustali_religion
+				fraction = { 0.15 0.2 }
 			}
 		}
 	}

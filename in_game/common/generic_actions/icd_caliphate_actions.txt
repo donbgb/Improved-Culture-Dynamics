@@ -17,6 +17,7 @@
 				}
 				has_reform = government_reform:mamluk_government
 			}
+			religion = religion:sunni
 		}
 	}
 
@@ -89,6 +90,7 @@ icd_claim_caliphate_through_abbasid = { ######
 					international_organization = international_organization:icd_sunni_caliphate
 				}
 			}
+			religion = religion:sunni
 		}
 	}
 
@@ -262,7 +264,15 @@ icd_challenge_caliph = { ######
 				international_organization = international_organization:icd_sunni_caliphate
 			}
 			is_rebel_country = no
-			is_neighbor_of = scope:actor
+			OR = {
+				is_neighbor_of = scope:actor
+				AND = {
+					scope:actor = {
+						has_ports = yes
+					}
+					has_ports = yes
+				}
+			}
 		}
 	}
 	
@@ -287,3 +297,427 @@ icd_challenge_caliph = { ######
 	}
 }
 
+icd_demand_allegiance = { ######
+	type = internationalorganization
+
+	ai_tick = monthly
+	ai_tick_frequency = 20
+
+	automation_tick = never
+	automation_tick_frequency = 20
+
+
+	potential = {
+		scope:actor = {
+			is_leader_of_international_organization = international_organization:icd_sunni_caliphate
+		}
+	}
+
+	allow = {
+		international_organization:icd_sunni_caliphate = {
+			var:icd_caliphate_supremacy > 20
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = international_organization
+		source = actor
+		target_flag = recipient
+		name = "choose_international_organization"
+		column = {
+			data = name
+		}
+		visible = {
+			international_organization_type = international_organization_type:icd_sunni_caliphate
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = country
+		ai_interaction_source_list = {
+			scope:actor = {
+				ordered_neighbor_country = {
+					limit = {
+						religion = religion:sunni
+					}
+					order_by = {
+						value = military_strength
+						multiply = -1
+					}
+					max = 3
+					check_range_bounds = no
+					add_to_list = source
+				}
+			}
+		}
+		target_flag = target
+		name = "choose_country"
+		none_available_msg_key = "no_valid_countries"
+		column = {
+			data = name
+		}
+		visible = {
+			root != scope:actor
+			religion = religion:sunni
+			is_subject = no
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:icd_caliphate_claimant
+					international_organization = international_organization:icd_sunni_caliphate
+				}
+			}
+			country_tax_base < {
+				value = scope:actor.country_tax_base
+				divide = 2
+			}
+			num_locations < 100
+			NOT = {
+				has_variable = icd_denied_tribute
+			}
+		}
+	}
+	
+	cooldown = {
+		type = icd_demand_allegiance_cooldown
+		years = 5
+	}
+	
+	effect = {
+		if = {
+			limit = { exists = scope:target }
+			scope:target = {
+				trigger_event_non_silently = icd_caliphate_events.1
+			}
+			international_organization:icd_sunni_caliphate = {
+				change_variable = {
+					name = icd_caliphate_supremacy
+					subtract = 20
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		add = 500 #Base value
+	}
+}
+
+icd_incite_unrest = { ######
+	type = internationalorganization
+
+	ai_tick = monthly
+	ai_tick_frequency = 20
+
+	automation_tick = never
+	automation_tick_frequency = 20
+
+
+	potential = {
+		scope:actor = {
+			is_leader_of_international_organization = international_organization:icd_sunni_caliphate
+		}
+	}
+
+	allow = {
+		international_organization:icd_sunni_caliphate = {
+			var:icd_caliphate_supremacy > 20
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = international_organization
+		source = actor
+		target_flag = recipient
+		name = "choose_international_organization"
+		column = {
+			data = name
+		}
+		visible = {
+			international_organization_type = international_organization_type:icd_sunni_caliphate
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = country
+		ai_interaction_source_list = {
+			scope:actor = {
+				ordered_rival = {
+					limit = {
+						religion != religion:sunni
+					}
+					order_by = {
+						value = military_strength
+					}
+					max = 3
+					check_range_bounds = no
+					add_to_list = source
+				}
+			}
+		}
+		target_flag = target
+		name = "choose_country"
+		none_available_msg_key = "no_valid_countries"
+		column = {
+			data = name
+		}
+		visible = {
+			root != scope:actor
+			religion != religion:sunni
+			"religion_population_in_country(religion:sunni)" > 1.0
+			NOT = {
+				any_pop = {
+					religion = religion:sunni
+					is_protected_pop = yes
+				}
+			}
+		}
+	}
+	
+	cooldown = {
+		type = icd_incite_unrest_cooldown
+		years = 25
+	}
+	
+	effect = {
+		if = {
+			limit = { exists = scope:target }
+			scope:target = {
+				custom_tooltip = {
+					text = icd_incite_unrest_tt
+					every_pop = {
+						limit = {
+							religion = religion:sunni
+						}
+						add_pop_satisfaction = pop_satisfaction_radical_penalty
+					}
+				}
+				trigger_event_non_silently = icd_caliphate_events.2
+			}
+			international_organization:icd_sunni_caliphate = {
+				change_variable = {
+					name = icd_caliphate_supremacy
+					subtract = 20
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		add = 200 #Base value
+	}
+}
+
+icd_petition_for_support = { ######
+	type = internationalorganization
+
+	ai_tick = monthly
+	ai_tick_frequency = 20
+
+	automation_tick = never
+	automation_tick_frequency = 20
+
+
+	potential = {
+		scope:actor = {
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:icd_caliphate_claimant
+					international_organization = international_organization:icd_sunni_caliphate
+				}
+			}
+			religion = religion:sunni
+		}
+		OR = {
+			scope:actor = {
+				is_ai = no
+			}
+			NOT = { has_global_variable = icd_claimed_gold }
+		}
+		is_subject = no
+	}
+
+	allow = {
+		international_organization:icd_sunni_caliphate.leader_country.country_tax_base > scope:actor.country_tax_base
+		international_organization:icd_sunni_caliphate.leader_country.gold > international_organization:icd_sunni_caliphate.country_tax_base
+		
+		international_organization:icd_sunni_caliphate.leader_country = {
+			NOT = {
+				is_rival_of = scope:actor
+			}
+			opinion = { target = scope:actor value > 50 }
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = international_organization
+		source = actor
+		target_flag = recipient
+		name = "choose_international_organization"
+		column = {
+			data = name
+		}
+		visible = {
+			international_organization_type = international_organization_type:icd_sunni_caliphate
+		}
+	}
+	
+	cooldown = {
+		type = icd_petition_for_support_cooldown
+		years = 50
+	}
+	
+	effect = {
+		if = {
+			limit = { exists = scope:actor }
+			international_organization_type:icd_sunni_caliphate.leader_country = {
+				trigger_event_non_silently = icd_caliphate_events.3
+			}
+			international_organization.leader_country = {
+				add_gold = {
+					value = international_organization.leader_country.country_tax_base
+					max = {
+						value = scope:actor.country_tax_base
+						multiply = 2
+					}
+					multiply = -1
+				}
+			}
+			scope:actor = {
+				add_gold = {
+					value = international_organization.leader_country.country_tax_base
+					max = {
+						value = scope:actor.country_tax_base
+						multiply = 2
+					}
+				}
+			}
+			hidden_effect = {
+				if= {
+					limit = {
+						scope:actor = {
+							is_ai = yes
+						}
+					}
+					set_global_variable = {
+						name = icd_claimed_gold
+						years = 70
+					}
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		add = 300 #Base value
+	}
+}
+
+icd_secure_bayah = { ######
+	type = internationalorganization
+
+	ai_tick = monthly
+	ai_tick_frequency = 20
+
+	automation_tick = never
+	automation_tick_frequency = 20
+
+
+	potential = {
+		scope:actor = {
+			is_leader_of_international_organization = international_organization:icd_sunni_caliphate
+		}
+	}
+
+	allow = {
+		international_organization:icd_sunni_caliphate = {
+			var:icd_caliphate_supremacy > 20
+		}
+	}
+	
+	select_trigger = {
+		looking_for_a = international_organization
+		source = actor
+		target_flag = recipient
+		name = "choose_international_organization"
+		column = {
+			data = name
+		}
+		visible = {
+			international_organization_type = international_organization_type:icd_sunni_caliphate
+		}
+	}
+	
+	effect = {
+		if = {
+			limit = { exists = scope:actor }
+			scope:actor = {
+				add_political_influence = political_influence_severe_bonus
+			}
+			international_organization:icd_sunni_caliphate = {
+				change_variable = {
+					name = icd_caliphate_supremacy
+					subtract = 20
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		add = 500 #Base value
+	}
+}
+
+icd_sponsor_madhhab = { ######
+	type = internationalorganization
+
+	ai_tick = monthly
+	ai_tick_frequency = 12
+
+	automation_tick = never
+	automation_tick_frequency = 20
+
+
+	potential = {
+		scope:actor = {
+			is_leader_of_international_organization = international_organization:icd_sunni_caliphate
+		}
+	}
+
+	allow = {
+		international_organization:icd_sunni_caliphate = {
+			var:icd_caliphate_supremacy > 5
+		}
+	}
+	
+	cooldown = {
+		type = icd_petition_for_support_cooldown
+		years = 25
+	}
+	
+	select_trigger = {
+		looking_for_a = international_organization
+		source = actor
+		target_flag = recipient
+		name = "choose_international_organization"
+		column = {
+			data = name
+		}
+		visible = {
+			international_organization_type = international_organization_type:icd_sunni_caliphate
+		}
+	}
+	
+	effect = {
+		if = {
+			limit = { exists = scope:actor }
+			scope:actor = {
+				
+			}
+			international_organization:icd_sunni_caliphate = {
+				change_variable = {
+					name = icd_caliphate_supremacy
+					subtract = 5
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		add = 500 #Base value
+	}
+}
