@@ -63,6 +63,7 @@ akhbari_school = {
 
 	modifier = {
 		global_pop_conversion_speed_modifier = 0.1
+		
 		monthly_towards_jurisprudence = societal_value_monthly_move
 		
 		tolerance_heretic = -1
