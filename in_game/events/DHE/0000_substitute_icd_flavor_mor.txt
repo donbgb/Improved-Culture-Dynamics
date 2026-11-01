@@ -6,7 +6,7 @@ flavor_mor.35 = {
 	desc = flavor_mor.35.desc
 	outcome = neutral
 	
-	is_orphan = yes
+	orphan = yes
 	fire_only_once = yes
 
 	illustration_tags = {

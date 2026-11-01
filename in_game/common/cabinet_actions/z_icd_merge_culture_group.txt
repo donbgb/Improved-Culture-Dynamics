@@ -75,5 +75,4 @@
 			merge_culture_group = scope:target
 		}
 	}				
-	}
 }

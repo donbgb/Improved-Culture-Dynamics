@@ -7,8 +7,6 @@
 		 always = no
 	}
 	
-	war_goal_type = take_capital_imperial
-
 	war_goal_type = take_capital
 
 	additional_war_enthusiasm = 0.05

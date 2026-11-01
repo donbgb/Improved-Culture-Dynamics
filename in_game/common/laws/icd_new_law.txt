@@ -572,6 +572,50 @@
 		}
 	}
 	
+	dialects_of_english = {
+		price = icd_nothing_price
+		country_modifier = {
+			global_pop_assimilation_speed = 0.001
+			cultures_capacity = 0.25
+			diplomatic_reputation = diplomatic_reputation_weak_bonus
+			add_tolerated_culture_cost_modifier = -0.5
+		}
+		potential = {
+			OR = {
+				culture = culture:english
+				culture = culture:scottish
+			}
+			is_colonial_subject = no
+		}
+		allow = {
+			OR = {
+				language_percentage_in_country = {
+					language = root.culture.language
+					value > 0.10
+				}
+				culture_population_in_country = {
+					culture = root.culture
+					value >= 3000
+				}
+			}
+		}
+		
+		on_activate = {
+			custom_tooltip = icd_province_assimilate_primary_tt
+			custom_tooltip = icd_province_assimilate_english_scottish_tt
+			custom_tooltip = icd_province_assimilate_dominant_otherwise_tt
+			custom_tooltip = icd_location_assimilate_primary_tt
+			every_province = {
+				remove_variable = promoting_culture
+			}
+			icd_region_culture_law_english = yes
+		}
+		months = 1
+		ai_will_do = {
+			value = 700
+		}
+	}
+	
 	colonial_culture = {
 		price = icd_nothing_price
 		country_modifier = {

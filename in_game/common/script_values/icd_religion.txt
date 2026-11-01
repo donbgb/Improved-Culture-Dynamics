@@ -279,6 +279,37 @@ icd_voluntary_conversion_rate = {
 	if = {
 		limit = {
 			location = {
+				province = {
+					any_location_in_province = {
+						any_religious_order_in_location = {
+							order_calling ?= calling:icd_syncretic_calling
+						}
+					}
+				}
+			}
+		}
+		add = 0.001
+	}
+
+	if = {
+		limit = {
+			location = {
+				province = {
+					any_location_in_province = {
+						has_building_with_at_least_one_level = icd_jamatkhana
+					}
+				}
+				owner ?= {
+					religion = religion:nizari_religion
+				}
+			}
+		}
+		add = 0.001
+	}
+	
+	if = {
+		limit = {
+			location = {
 				area = area:levant_area
 			}
 			owner ?= {
@@ -563,6 +594,33 @@ icd_conversion_rate_province_voluntary = { ####
 			min = 0
 		}
 		divide = 2
+	}
+	
+	if = {
+		limit = {
+			province = {
+				any_location_in_province = {
+					any_religious_order_in_location = {
+						order_calling ?= calling:icd_syncretic_calling
+					}
+				}
+			}
+		}
+		add = 1
+	}
+
+	if = {
+		limit = {
+			province = {
+				any_location_in_province = {
+					has_building_with_at_least_one_level = icd_jamatkhana
+				}
+			}
+			owner ?= {
+				religion = religion:nizari_religion
+			}
+		}
+		add = 1
 	}
 	
 	if = {

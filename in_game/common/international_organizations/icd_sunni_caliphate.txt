@@ -2,6 +2,7 @@
 	unique = yes
 	expel_members_who_are_targets_of_other_members = no
 	disband_if_no_leader = no
+	show_leave_message = no
 	
 	has_leader_country = yes
 	leader_type = country
@@ -33,6 +34,8 @@
 		
 	}
 	
+	
+	
 	can_declare_war = {
 		always = yes
 	}
@@ -48,6 +51,16 @@
 	}
 	
 	modifier = {
+	}
+	
+	leader_modifier = {
+		allow_tributary_subject = yes
+		monthly_political_influence_gain_modifier = 0.25
+		monthly_legitimacy = 0.1
+		monthly_republican_tradition = 0.1
+		monthly_devotion = 0.1
+		monthly_horde_unity = 0.1
+		monthly_tribal_cohesion = 0.1
 	}
 	
 	can_join_trigger = {
@@ -197,6 +210,9 @@
 						name = icd_abbasid_caliph
 						value = scope:icd_this_one_caliph
 					}
+					scope:icd_this_one_caliph = {
+						icd_abbasid_rename = yes
+					}
 				}
 				remove_global_variable = icd_current_caliph
 				set_global_variable = {
@@ -281,118 +297,6 @@
 	}
 	
 	variables = {
-		icd_caliphate_supremacy = {
-			format = "RELIGIOUS_ZEAL_DISPLAY"
-			change_format = "VARIABLE_CHANGE_FORMAT"
-			min = 0
-			max = 100
-			start = 5
-			monthly_change = {
-				add = {
-					desc = "BASE_INCREASE"
-					value = 0.1
-				}
-				add = {
-					desc = "ICD_LEADER_TERM"
-					value = international_organization_leader_reign
-					divide = 100
-				}
-				add = {
-					desc = "ICD_GIVEN_AID"
-					if = {
-						limit = {
-							leader_country = {
-								has_variable = icd_caliph_aid
-							}
-						}
-						add = 0.2
-					}
-				}
-				subtract = {
-					desc = "ICD_POWERFUL_SPECIAL_STATUS_CALIPHATE_MORE_POWERFUL"
-					every_international_organization_member = {
-						limit = {
-							this != root.leader_country
-							great_power_score > prev.leader_country.great_power_score
-						}
-						add = {
-							value = great_power_score
-							subtract = prev.leader_country.great_power_score
-							min = 0
-							divide = 1000
-						}
-					}
-				}
-				subtract = {
-					desc = "ICD_POWERFUL_SPECIAL_STATUS_NUMBER"
-					every_international_organization_member = {
-						limit = {
-							this != root.leader_country
-							has_special_status_in_international_organization = {
-								type = special_status:icd_caliphate_claimant
-								international_organization = international_organization:icd_sunni_caliphate
-							}
-						}
-						add = 0.05
-					}
-				}
-				subtract = {
-					desc = "ICD_LOW_LEGITIMACY"
-					if = {
-						limit = {
-							leader_country = {
-								legitimacy < 0
-							}
-						}
-						add = 0.2
-					}
-				}
-				subtract = {
-					desc = "ICD_HOLY_SITE_OWNED_BY_NON_MUSLIM"
-					religion:sunni = {
-						every_holy_site_in_religion = {
-							limit = {
-								location = {
-									owner ?= {
-										religion.group != religion_group:muslim
-									}
-								}
-							}
-							add = 0.1
-						}
-					}
-				}
-				add = {
-					desc = "ICD_WAR_AGAINST_INFIDELS"
-					if = {
-						limit = {
-							leader_country = {
-								any_country_at_war_with = {
-									religion.group = religion_group:muslim
-								}
-							}
-						}
-						value = 0.1
-					}
-				}
-				add = {
-					desc = "ICD_WAR_AGAINST_OTHER_CALIPHATES"
-					if = {
-						limit = {
-							leader_country = {
-								any_country_at_war_with = {
-									has_special_status_in_international_organization = {
-										type = special_status:icd_caliphate_claimant
-										international_organization = international_organization:icd_sunni_caliphate
-									}
-								}
-							}
-						}
-						value = 0.1
-					}
-				}
-			}
-		}
 	}
 	
 	special_statuses_implemented = {

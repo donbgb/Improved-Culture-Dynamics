@@ -165,7 +165,7 @@
 				amount = {
 					value = "scope:target_origin.culture_population(scope:target)"
 					multiply = 0.01
-					min = 0.001
+					min = 0.1
 					max = 0.25
 				}
 				months = -1

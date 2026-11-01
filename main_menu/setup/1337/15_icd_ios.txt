@@ -14,6 +14,18 @@ international_organization_manager = {
 		}
 		
 		leader = MAM
+	}
 
+	add_international_organization = {
+		type = icd_nizari_imamate_io
+		creation_date = 1095.1.1
+
+		members = { ASR GLI HNZ SND }
+
+		laws = {
+			icd_taqiyya_stance
+		}
+		
+		leader = NIZAR
 	}
 }

@@ -207,3 +207,20 @@ REPLACE:clergy_enforced_unity = {
 
 	months = 3
 }
+
+REPLACE:tax_exemption = {
+	estate = clergy_estate
+		
+	potential = {
+		NOT = { religion = religion:catholic }
+		NOT = { has_policy = icd_imperial_ulama }
+	}
+
+	country_modifier = {
+		clergy_estate_max_tax = -1
+		clergy_estate_target_satisfaction = large_privilege_target_satisfaction
+		global_clergy_estate_power = 1.0
+		
+		monthly_towards_spiritualist = societal_value_minor_monthly_move
+	}
+}

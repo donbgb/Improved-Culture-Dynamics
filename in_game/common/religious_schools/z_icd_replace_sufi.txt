@@ -148,3 +148,24 @@ REPLACE:isawiyya_school = {
 	}
 }
 
+REPLACE:din_i_ilahi_school = {
+	color = rgb { 0 38 10 }
+
+	enabled_for_country = {
+		religion.group = religion_group:muslim
+		has_global_variable = din_i_ilahi_founded
+	}
+	enabled_for_character = {
+		has_global_variable = din_i_ilahi_founded
+		OR = {
+			religion = religion:shia
+			religion = religion:sunni
+		}
+	}
+	
+	modifier = {
+		cultures_capacity = 2
+		tolerance_own = -1
+		tolerance_heathen = 1
+	}
+}

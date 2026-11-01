@@ -518,11 +518,7 @@ icd_religious_view_setup = {
 
 	###Religious Schools####
 
-	religious_school:ismaili_school = {
-		set_school_opinion = {
-			target = religious_school:nizari_school
-			value = neutral
-		}
+	religious_school:nizari_school = {
 		set_school_opinion = {
 			target = religious_school:mustali_school
 			value = neutral
@@ -531,8 +527,30 @@ icd_religious_view_setup = {
 			target = religious_school:mustali_school
 			value = neutral
 		}
+		reverse_set_school_opinion = {
+			target = religious_school:jafari_school
+			value = neutral
+		}
+		reverse_set_school_opinion = {
+			target = religious_school:ismaili_school
+			value = neutral
+		}
+		set_school_opinion = {
+			target = religious_school:jafari_school
+			value = neutral
+		}
+	}
+	religious_school:mustali_school = {
 		reverse_set_school_opinion = {
 			target = religious_school:maliki_school
+			value = neutral
+		}
+		set_school_opinion = {
+			target = religious_school:ismaili_school
+			value = neutral
+		}
+		reverse_set_school_opinion = {
+			target = religious_school:ismaili_school
 			value = neutral
 		}
 	}

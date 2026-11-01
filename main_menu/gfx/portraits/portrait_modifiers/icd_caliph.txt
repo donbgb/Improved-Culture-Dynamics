@@ -14,7 +14,10 @@ INJECT:clothes = {
 			base = 0
 			modifier = {
 				add = 90000
-				this = global_var:icd_current_caliph
+				OR = {
+					this = global_var:icd_current_caliph
+					is_ruler_of = c:NIZAR
+				}
 			}
 		}
 	}
@@ -34,7 +37,10 @@ INJECT:headwear = {
 			base = 0
 			modifier = {
 				add = 90000
-				this = global_var:icd_current_caliph
+				OR = {
+					this = global_var:icd_current_caliph
+					is_ruler_of = c:NIZAR
+				}
 			}
 		}
 	}
