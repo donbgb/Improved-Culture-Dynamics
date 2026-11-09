@@ -1,5 +1,5 @@
 ﻿
-REPLACE:call_jihad = {
+TRY_REPLACE:call_jihad = {
 	type = religious
 
 	sound = UI_action_religion_generic

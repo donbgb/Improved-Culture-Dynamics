@@ -59,14 +59,14 @@
 					}
 				}
 			}
-			value = { 0.0 0.01 }
+			value = { 0.0 0.02 }
 		}
 		else_if = {
 			limit = { dominant_religion ?= religion:shia }
 			value = { 0.0 0.001 }
 		}
 		else = {
-			value = { 0.0 0.007 }
+			value = { 0.0 0.01 }
 		}
 	}
 

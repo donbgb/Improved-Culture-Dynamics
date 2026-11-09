@@ -1,6 +1,6 @@
 ﻿
 
-REPLACE:sufi_lodge = {
+TRY_REPLACE:sufi_lodge = {
 	audio_tier = 1
 	is_foreign = no
 	max_levels = 1
@@ -44,7 +44,7 @@ REPLACE:sufi_lodge = {
 	}
 }
 
-REPLACE:missionary_building = {
+TRY_REPLACE:missionary_building = {
 	audio_tier = 1
 	in_empty = empty
 	is_foreign = yes

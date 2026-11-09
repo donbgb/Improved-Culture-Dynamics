@@ -1,4 +1,4 @@
-﻿REPLACE:zeal_papal_authority_alignment = {
+﻿TRY_REPLACE:zeal_papal_authority_alignment = {
 	order_trigger = {
 		exists = international_organization:catholic_church
 		this.religion = religion:catholic

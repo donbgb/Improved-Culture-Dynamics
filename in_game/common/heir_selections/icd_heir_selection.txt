@@ -63,7 +63,7 @@ agnatic_seniority = {
 	}
 	traverse_family_tree = yes
 	depth_first = yes
-	calc = {
+	sibling_score = {
 		if = {
 			limit = {
 				exists = root

@@ -1,6 +1,6 @@
 ﻿
 
-REPLACE:change_main_school = {
+TRY_REPLACE:change_main_school = {
 	type = religious
 
 	sound = UI_action_religion_generic

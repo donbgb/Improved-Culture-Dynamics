@@ -1,5 +1,5 @@
 ﻿
-REPLACE:change_order_calling = {
+TRY_REPLACE:change_order_calling = {
 	type = religious
 
 	sound = UI_action_religion_generic

@@ -1,6 +1,6 @@
 ﻿
 
-INJECT:clothes = {
+TRY_INJECT:clothes = {
 	icd_caliphate = {
 		dna_modifiers = {
 			accessory = {
@@ -23,7 +23,7 @@ INJECT:clothes = {
 	}
 }
 
-INJECT:headwear = {
+TRY_INJECT:headwear = {
 	icd_caliphate_headwear = {
 		dna_modifiers = {
 			accessory = {

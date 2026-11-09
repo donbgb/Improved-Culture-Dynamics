@@ -110,8 +110,13 @@ icd_zaydi_khuruj = {
 		scope:target.owner ?= {
 			religion ?= religion:zaydi_religion
 		}
+		scope:target = {
+			is_ruler = yes
+		}
 	}
-	events = {
-		icd_muslim_events.27
+	effect = {
+		scope:target.owner ?= {
+			trigger_event_silently = icd_muslim_events.27
+		}
 	}
 }

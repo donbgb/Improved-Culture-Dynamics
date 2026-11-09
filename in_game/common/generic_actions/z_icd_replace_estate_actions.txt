@@ -1,4 +1,4 @@
-﻿REPLACE:extraordinary_taxes = {
+﻿TRY_REPLACE:extraordinary_taxes = {
 	icon = extraordinary_taxes
 	type = owncountry
 	estate_interaction_action = yes
@@ -226,7 +226,7 @@
 	}
 }
 
-REPLACE:call_emergency_parliament = {
+TRY_REPLACE:call_emergency_parliament = {
 	icon = call_emergency_parliament
 	type = owncountry
 	estate_interaction_action = yes

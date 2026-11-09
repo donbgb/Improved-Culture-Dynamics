@@ -1,4 +1,4 @@
-﻿REPLACE:country_name_construction = {
+﻿TRY_REPLACE:country_name_construction = {
 	type = country
 	text = {
 		localization_key = country_name_construction_ROM_republic # Senatus Populusque Romanus

@@ -47,6 +47,7 @@
  improve_cultural_opinion_action_progress_long_wordier: "@culture! [cabinet.GetDaysUntilFullyImplemented] until [SCOPE.sCulture('target').GetNameWithNoTooltip]'s opinion of [SCOPE.sCountry('actor').GetCulture.GetNameWithNoTooltip] is increased"
  improve_cultural_opinion_action_progress_tooltip: "Improving [SCOPE.sCulture('target').GetNameWithNoTooltip]'s opinion of [SCOPE.sCountry('actor').GetCulture.GetNameWithNoTooltip]\n [cabinet.GetDaysUntilFullyImplemented] until finished."
 
+ icd_no_send_settlers_tt: "No Cabinet is enacting the Send Settlers cabinet action"
  introduce_cultural_settlements_no_provinces: "$no_valid_provinces$"
  introduce_cultural_settlements_no_culture: "$no_valid_cultures$"
  introduce_cultural_settlements: "Send Settlers"

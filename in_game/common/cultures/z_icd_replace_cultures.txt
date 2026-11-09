@@ -1,4 +1,4 @@
-﻿REPLACE:azeri_culture = {
+﻿TRY_REPLACE:azeri_culture = {
 	language = azeri_dialect
 	
 	color = map_azeri
@@ -15,7 +15,7 @@
 
 }
 
-REPLACE:romani_culture = { # 
+TRY_REPLACE:romani_culture = { # 
 	language = romani_dialect
 	
 	color = map_romani

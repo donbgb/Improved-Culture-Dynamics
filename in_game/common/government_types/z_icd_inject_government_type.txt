@@ -1,9 +1,9 @@
-﻿INJECT:monarchy = {
+﻿TRY_INJECT:monarchy = {
 	heir_selection = agnatic_primogeniture
 	heir_selection = agnatic_seniority
 }
 
-INJECT:tribe = {
+TRY_INJECT:tribe = {
 	heir_selection = agnatic_primogeniture
 	heir_selection = agnatic_seniority
 }

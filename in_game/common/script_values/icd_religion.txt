@@ -135,6 +135,7 @@ icd_communal_conversion_rate = {
 		}
 		value = 0
 	}
+	min = 0
 }
 
 icd_communal_conversion_rate_pagan = {
@@ -215,7 +216,8 @@ icd_communal_conversion_rate_pagan = {
 			}
 		}
 		value = 0
-	}	
+	}
+	min = 0	
 }
 
 icd_voluntary_conversion_rate = {
@@ -318,7 +320,7 @@ icd_voluntary_conversion_rate = {
 		}
 		divide = 4
 	}
-	
+	min = 0
 }
 
 

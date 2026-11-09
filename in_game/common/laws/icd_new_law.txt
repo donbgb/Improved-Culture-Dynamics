@@ -60,7 +60,7 @@
 					}
 					culture_population_in_country = {
 						culture = root.culture
-						value < 3000000
+						value < 5000
 					}
 				}
 				AND = {
@@ -330,7 +330,6 @@
 		
 		on_activate = {
 			custom_tooltip = icd_province_assimilate_always_tt
-			custom_tooltip = icd_location_assimilate_acceptance_tt
 			every_province = {
 				remove_variable = promoting_culture
 			}

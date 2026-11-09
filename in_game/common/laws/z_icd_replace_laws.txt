@@ -23,7 +23,7 @@
 	}
 }
 
-REPLACE:native_policy = {
+TRY_REPLACE:native_policy = {
 	law_category = socioeconomic
 	potential = {
 	}
@@ -69,7 +69,7 @@ REPLACE:native_policy = {
 
 }
 
-REPLACE:tribal_religious_values_law = {
+TRY_REPLACE:tribal_religious_values_law = {
 	law_category = religious
     potential = { has_tribal_government = yes }
     allow = { has_tribal_government = yes }
@@ -105,7 +105,7 @@ REPLACE:tribal_religious_values_law = {
     }
 }
 
-REPLACE:education_elites_law = {
+TRY_REPLACE:education_elites_law = {
 	law_category = socioeconomic
 	potential = {}
 
@@ -253,7 +253,7 @@ REPLACE:education_elites_law = {
 	}
 }
 
-REPLACE:inquisition_law = {
+TRY_REPLACE:inquisition_law = {
 	law_category = religious
 	law_religion_group = {
 		catholic
@@ -501,7 +501,7 @@ REPLACE:inquisition_law = {
 	}
 }
 
-REPLACE:iqta_law = {
+TRY_REPLACE:iqta_law = {
 	law_category = religious
 	law_religion_group = {
 		sunni
@@ -617,7 +617,7 @@ REPLACE:iqta_law = {
 	}
 }
 
-REPLACE:heir_religion_law = {
+TRY_REPLACE:heir_religion_law = {
 	law_category = religious
 
 	locked = {
@@ -715,7 +715,7 @@ REPLACE:heir_religion_law = {
 	}
 }
 
-REPLACE:sharia_law = {
+TRY_REPLACE:sharia_law = {
 	law_category = administrative
 	potential = {
 		has_policy = sharia_law_policy

@@ -1,5 +1,5 @@
 ﻿
-REPLACE:force_parliament_issue = {
+TRY_REPLACE:force_parliament_issue = {
 	icon = call_parliament
 	type = parliament
 	allow = {
@@ -119,7 +119,7 @@ REPLACE:force_parliament_issue = {
 	}
 }
 
-REPLACE:force_parliament_support = {
+TRY_REPLACE:force_parliament_support = {
 	type = parliament
 
 	sound = PARLIAMENT_REQUEST_MORE_TAXES

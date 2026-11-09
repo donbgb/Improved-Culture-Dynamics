@@ -1,4 +1,4 @@
-﻿REPLACE:character_title_prefix = {
+﻿TRY_REPLACE:character_title_prefix = {
 	type = character
 	
 	###ICD####
